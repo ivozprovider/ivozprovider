@@ -175,8 +175,27 @@ class NotificationTemplateDoctrineRepository extends ServiceEntityRepository imp
     /**
      * @return null | NotificationTemplateInterface
      */
-    public function findGenericVoicemailTemplate()
-    {
+    public function findVoicemailTemplateByCompany(
+        CompanyInterface $company,
+        LanguageInterface $language
+    ) {
+        // Get Company Notification Template for voicemails
+        $notificationTemplate = $company->getVoicemailNotificationTemplate();
+        if ($notificationTemplate) {
+            if ($notificationTemplate->getContentsByLanguage($language)) {
+                return $notificationTemplate;
+            }
+        }
+
+        // If company has no template associated, fallback to brand notification template for voicemails
+        $notificationTemplate = $company->getBrand()->getVoicemailNotificationTemplate();
+        if ($notificationTemplate) {
+            if ($notificationTemplate->getContentsByLanguage($language)) {
+                return $notificationTemplate;
+            }
+        }
+
+        // use generic notification template
         /** @var NotificationTemplateInterface $response */
         $response = $this->findOneBy([
             'brand' => null,

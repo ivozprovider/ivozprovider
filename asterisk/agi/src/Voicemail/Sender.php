@@ -114,31 +114,18 @@ class Sender extends RouteHandlerAbstract
             '${VM_DATE}' => $vmdata[self::VM_DATE],
         );
 
-
-        // Get Company Notification Template for voicemails
-        $vmNotificationTemplate = $company->getVoicemailNotificationTemplate();
-
-        // If company has no template associated, fallback to brand notification template for voicemails
-        if (!$vmNotificationTemplate) {
-            $vmNotificationTemplate = $brand->getVoicemailNotificationTemplate();
-        }
-
         // Get Generic Notification Template for voicemails
         /** @var NotificationTemplateRepository $notificationTemplateRepository */
         $notificationTemplateRepository = $this->em->getRepository(NotificationTemplate::class);
-        $genericVoicemailNotificationTemplate = $notificationTemplateRepository->findGenericVoicemailTemplate();
-
-        // If no template is associated, fallback to generic notification template for voicemails
-        if (!$vmNotificationTemplate) {
-            $vmNotificationTemplate = $genericVoicemailNotificationTemplate;
-        }
+        $vmNotificationTemplate = $notificationTemplateRepository->findVoicemailTemplateByCompany(
+            $company,
+            $user->getLanguage()
+        );
 
         // Get Notification contents for required language
-        $notificationTemplateContent = $vmNotificationTemplate->getContentsByLanguage($user->getLanguage());
-        if (!$notificationTemplateContent) {
-            // Fallback to generic template language content
-            $notificationTemplateContent = $genericVoicemailNotificationTemplate->getContentsByLanguage($user->getLanguage());
-        }
+        $notificationTemplateContent = $vmNotificationTemplate->getContentsByLanguage(
+            $user->getLanguage()
+        );
 
         // Get data from template
         $fromName = $notificationTemplateContent->getFromName();

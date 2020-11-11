@@ -34,7 +34,7 @@ interface NotificationTemplateRepository extends ObjectRepository, Selectable
     /**
      * @return null | NotificationTemplateInterface
      */
-    public function findGenericVoicemailTemplate();
+    public function findVoicemailTemplateByCompany(CompanyInterface $company, LanguageInterface $language);
 
     /**
      * @param BalanceNotificationInterface $balanceNotification
