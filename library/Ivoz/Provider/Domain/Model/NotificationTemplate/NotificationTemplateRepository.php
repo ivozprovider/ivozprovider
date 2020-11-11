@@ -17,7 +17,7 @@ interface NotificationTemplateRepository extends ObjectRepository, Selectable
     /**
      * @return null | NotificationTemplateInterface
      */
-    public function findGenericInvoiceTemplate();
+    public function findInvoiceNotificationTemplateByCompany(CompanyInterface $company);
 
     /**
      * @return null | NotificationTemplateInterface

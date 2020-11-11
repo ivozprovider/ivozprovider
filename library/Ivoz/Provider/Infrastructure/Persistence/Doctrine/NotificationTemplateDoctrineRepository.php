@@ -4,6 +4,7 @@ namespace Ivoz\Provider\Infrastructure\Persistence\Doctrine;
 
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Ivoz\Provider\Domain\Model\BalanceNotification\BalanceNotificationInterface;
+use Ivoz\Provider\Domain\Model\Company\CompanyInterface;
 use Ivoz\Provider\Domain\Model\Language\LanguageInterface;
 use Ivoz\Provider\Domain\Model\NotificationTemplate\NotificationTemplate;
 use Ivoz\Provider\Domain\Model\NotificationTemplate\NotificationTemplateInterface;
@@ -38,10 +39,47 @@ class NotificationTemplateDoctrineRepository extends ServiceEntityRepository imp
     }
 
     /**
-     * @return null | NotificationTemplateInterface
+     * @param CallCsvReportInterface $callCsvReport
+     * @return NotificationTemplateInterface | null
      */
-    public function findGenericInvoiceTemplate()
+    private function getNotificationTemplateByReport(CallCsvReportInterface $callCsvReport)
     {
+        $company = $callCsvReport->getCompany();
+        if ($company) {
+            $callCsvNotificationTemplate = $company->getCallCsvNotificationTemplate();
+            if (!$callCsvNotificationTemplate) {
+                $brand = $company->getBrand();
+                $callCsvNotificationTemplate = $brand->getCallCsvNotificationTemplate();
+            }
+            return $callCsvNotificationTemplate;
+        }
+
+        $scheduler = $callCsvReport
+            ->getCallCsvScheduler();
+
+        if (!$scheduler) {
+            return null;
+        }
+
+        return $scheduler->getCallCsvNotificationTemplate();
+    }
+
+    /**
+     * @param CompanyInterface $company
+     * @return NotificationTemplateInterface
+     */
+    public function findInvoiceNotificationTemplateByCompany(
+        CompanyInterface $company
+    ) {
+        $language = $company->getLanguage();
+        $invoiceNotificationTemplate = $company->getInvoiceNotificationTemplate();
+
+        if ($invoiceNotificationTemplate
+            && $invoiceNotificationTemplate->getContentsByLanguage($language)
+        ) {
+            return $invoiceNotificationTemplate;
+        }
+
         /** @var NotificationTemplateInterface $response */
         $response = $this->findOneBy([
             'brand' => null,
