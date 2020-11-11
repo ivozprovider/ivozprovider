@@ -4,6 +4,7 @@ namespace Ivoz\Provider\Infrastructure\Persistence\Doctrine;
 
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Ivoz\Provider\Domain\Model\BalanceNotification\BalanceNotificationInterface;
+use Ivoz\Provider\Domain\Model\Language\LanguageInterface;
 use Ivoz\Provider\Domain\Model\NotificationTemplate\NotificationTemplate;
 use Ivoz\Provider\Domain\Model\NotificationTemplate\NotificationTemplateInterface;
 use Ivoz\Provider\Domain\Model\NotificationTemplate\NotificationTemplateRepository;
@@ -96,11 +97,17 @@ class NotificationTemplateDoctrineRepository extends ServiceEntityRepository imp
      * @inheritdoc
      * @see NotificationTemplateRepository::findTemplateByBalanceNotification
      */
-    public function findTemplateByBalanceNotification(BalanceNotificationInterface $balanceNotification)
-    {
+    public function findTemplateByBalanceNotification(
+        BalanceNotificationInterface $balanceNotification,
+        LanguageInterface $language
+    ) {
         $notificationTemplate = $balanceNotification->getNotificationTemplate();
         if ($notificationTemplate) {
-            return $notificationTemplate;
+            //make sure we've contents for required language,
+            // use default notification template otherwise
+            if ($notificationTemplate->getContentsByLanguage($language)) {
+                return $notificationTemplate;
+            }
         }
 
         return $this->findOneBy([
