@@ -32,44 +32,13 @@ class CallCsvNotificationTemplateByCallCsvReport
             ? $company->getLanguage()
             : $brand->getLanguage();
 
-        $callCsvNotificationTemplate = $this->getNotificationTemplate($callCsvReport);
-        if (!$callCsvNotificationTemplate) {
-            $callCsvNotificationTemplate = $this
-                ->notificationTemplateRepository
-                ->findGenericCallCsvTemplate();
-        }
+        $callCsvNotificationTemplate = $this
+            ->notificationTemplateRepository
+            ->findCallCsvTemplateByCallCsvReport($callCsvReport);
 
         // Get Notification contents for required language
-        $notificationTemplateContent = $callCsvNotificationTemplate->getContentsByLanguage(
+        return $callCsvNotificationTemplate->getContentsByLanguage(
             $language
         );
-
-        return $notificationTemplateContent;
-    }
-
-    /**
-     * @param CallCsvReportInterface $callCsvReport
-     * @return NotificationTemplateInterface | null
-     */
-    private function getNotificationTemplate(CallCsvReportInterface $callCsvReport)
-    {
-        $company = $callCsvReport->getCompany();
-        if ($company) {
-            $callCsvNotificationTemplate = $company->getCallCsvNotificationTemplate();
-            if (!$callCsvNotificationTemplate) {
-                $brand = $company->getBrand();
-                $callCsvNotificationTemplate = $brand->getCallCsvNotificationTemplate();
-            }
-            return $callCsvNotificationTemplate;
-        }
-
-        $scheduler = $callCsvReport
-            ->getCallCsvScheduler();
-
-        if (!$scheduler) {
-            return null;
-        }
-
-        return $scheduler->getCallCsvNotificationTemplate();
     }
 }

@@ -5,6 +5,7 @@ namespace Ivoz\Provider\Domain\Model\NotificationTemplate;
 use Doctrine\Common\Collections\Selectable;
 use Doctrine\Persistence\ObjectRepository;
 use Ivoz\Provider\Domain\Model\BalanceNotification\BalanceNotificationInterface;
+use Ivoz\Provider\Domain\Model\CallCsvReport\CallCsvReportInterface;
 use Ivoz\Provider\Domain\Model\Company\CompanyInterface;
 use Ivoz\Provider\Domain\Model\Language\LanguageInterface;
 

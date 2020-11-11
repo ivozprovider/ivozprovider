@@ -4,6 +4,7 @@ namespace Ivoz\Provider\Infrastructure\Persistence\Doctrine;
 
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Ivoz\Provider\Domain\Model\BalanceNotification\BalanceNotificationInterface;
+use Ivoz\Provider\Domain\Model\CallCsvReport\CallCsvReportInterface;
 use Ivoz\Provider\Domain\Model\Company\CompanyInterface;
 use Ivoz\Provider\Domain\Model\Language\LanguageInterface;
 use Ivoz\Provider\Domain\Model\NotificationTemplate\NotificationTemplate;
@@ -27,8 +28,22 @@ class NotificationTemplateDoctrineRepository extends ServiceEntityRepository imp
     /**
      * @return null | NotificationTemplateInterface
      */
-    public function findGenericCallCsvTemplate()
+    public function findCallCsvTemplateByCallCsvReport(CallCsvReportInterface $callCsvReport)
     {
+        $template = $this->getNotificationTemplateByReport($callCsvReport);
+        $company = $callCsvReport->getCompany();
+        $brand = $callCsvReport->getBrand();
+
+        $language = $company
+            ? $company->getLanguage()
+            : $brand->getLanguage();
+
+        if ($template
+            && $template->getContentsByLanguage($language)
+        ) {
+            return $template;
+        }
+
         /** @var NotificationTemplateInterface $response */
         $response = $this->findOneBy([
             'brand' => null,
