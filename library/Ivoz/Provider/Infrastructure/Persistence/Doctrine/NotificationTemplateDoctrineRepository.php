@@ -126,8 +126,28 @@ class NotificationTemplateDoctrineRepository extends ServiceEntityRepository imp
     /**
      * @return null | NotificationTemplateInterface
      */
-    public function findGenericMaxDailyUsageTemplate()
+    public function findMaxDailyUsageTemplateByCompany(CompanyInterface $company)
     {
+        $notificationTemplate = $company->getMaxDailyUsageNotificationTemplate();
+        if (!$notificationTemplate) {
+            $notificationTemplate = $company
+                ->getBrand()
+                ->getMaxDailyUsageNotificationTemplate();
+        }
+
+        $language = $company->getLanguage();
+        if (!$language) {
+            $language = $company
+                ->getBrand()
+                ->getLanguage();
+        }
+
+        if ($notificationTemplate
+            && $notificationTemplate->getContentsByLanguage($language)
+        ) {
+            return $notificationTemplate;
+        }
+
         /** @var NotificationTemplateInterface $response */
         $response = $this->findOneBy([
             'brand' => null,
