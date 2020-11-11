@@ -92,8 +92,28 @@ class NotificationTemplateDoctrineRepository extends ServiceEntityRepository imp
     /**
      * @return null | NotificationTemplateInterface
      */
-    public function findGenericFaxTemplate()
+    public function findFaxTemplateByCompany(CompanyInterface $company)
     {
+        $language = $company->getLanguage();
+        $faxNotificationTemplate = $company->getFaxNotificationTemplate();
+        if ($faxNotificationTemplate) {
+            if ($faxNotificationTemplate->getContentsByLanguage($language)) {
+                return $faxNotificationTemplate;
+            }
+        }
+
+        // no company template associated, fallback to brand notification template for faxes
+        $faxNotificationTemplate = $company
+            ->getBrand()
+            ->getFaxNotificationTemplate();
+
+        if ($faxNotificationTemplate) {
+            if ($faxNotificationTemplate->getContentsByLanguage($language)) {
+                return $faxNotificationTemplate;
+            }
+        }
+
+        // use generic template
         /** @var NotificationTemplateInterface $response */
         $response = $this->findOneBy([
             'brand' => null,

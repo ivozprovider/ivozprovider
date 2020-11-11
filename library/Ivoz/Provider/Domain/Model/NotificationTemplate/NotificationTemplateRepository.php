@@ -5,6 +5,7 @@ namespace Ivoz\Provider\Domain\Model\NotificationTemplate;
 use Doctrine\Common\Collections\Selectable;
 use Doctrine\Persistence\ObjectRepository;
 use Ivoz\Provider\Domain\Model\BalanceNotification\BalanceNotificationInterface;
+use Ivoz\Provider\Domain\Model\Company\CompanyInterface;
 use Ivoz\Provider\Domain\Model\Language\LanguageInterface;
 
 interface NotificationTemplateRepository extends ObjectRepository, Selectable
@@ -22,7 +23,7 @@ interface NotificationTemplateRepository extends ObjectRepository, Selectable
     /**
      * @return null | NotificationTemplateInterface
      */
-    public function findGenericFaxTemplate();
+    public function findFaxTemplateByCompany(CompanyInterface $company);
 
     /**
      * @return null | NotificationTemplateInterface
