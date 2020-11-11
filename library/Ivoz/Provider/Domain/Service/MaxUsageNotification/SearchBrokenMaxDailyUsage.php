@@ -57,11 +57,6 @@ class SearchBrokenMaxDailyUsage implements CompanyLifecycleEventHandlerInterface
         }
 
         $language = $company->getLanguage();
-        if (!$language) {
-            $language = $company
-                ->getBrand()
-                ->getLanguage();
-        }
 
         $notificationTemplate = $this
             ->notificationTemplateRepository

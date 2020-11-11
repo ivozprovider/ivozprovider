@@ -151,11 +151,6 @@ class NotificationTemplateDoctrineRepository extends ServiceEntityRepository imp
         }
 
         $language = $company->getLanguage();
-        if (!$language) {
-            $language = $company
-                ->getBrand()
-                ->getLanguage();
-        }
 
         if ($notificationTemplate
             && $notificationTemplate->getContentsByLanguage($language)

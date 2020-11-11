@@ -6,6 +6,7 @@ use Assert\Assertion;
 use Doctrine\Common\Collections\Criteria;
 use Ivoz\Provider\Domain\Model\FeaturesRelCompany\FeaturesRelCompany;
 use Ivoz\Provider\Domain\Model\Friend\Friend;
+use Ivoz\Provider\Domain\Model\Language\LanguageInterface;
 
 /**
  * Company
@@ -54,7 +55,7 @@ class Company extends CompanyAbstract implements CompanyInterface
             );
         }
 
-        if (!$this->getLanguage()) {
+        if (!parent::getLanguage()) {
             $this->setLanguage(
                 // @todo create a shortcut
                 $this->getBrand()->getLanguage()
@@ -89,6 +90,18 @@ class Company extends CompanyAbstract implements CompanyInterface
                 );
             }
         }
+    }
+
+    public function getLanguage(): ?LanguageInterface
+    {
+        $language = parent::getLanguage();
+        if ($language) {
+            return $language;
+        }
+
+        return $this
+            ->getBrand()
+            ->getLanguage();
     }
 
     /**
@@ -208,7 +221,7 @@ class Company extends CompanyAbstract implements CompanyInterface
      */
     public function getLanguageCode()
     {
-        $language = $this->getLanguage();
+        $language = parent::getLanguage();
         if (! $language) {
             return $this->getBrand()->getLanguageCode();
         }
