@@ -3,6 +3,11 @@
 namespace Tests\Provider\NotificationTemplate;
 
 use Ivoz\Provider\Domain\Model\BalanceNotification\BalanceNotification;
+use Ivoz\Provider\Domain\Model\CallCsvReport\CallCsvReport;
+use Ivoz\Provider\Domain\Model\CallCsvReport\CallCsvReportRepository;
+use Ivoz\Provider\Domain\Model\Company\Company;
+use Ivoz\Provider\Domain\Model\Company\CompanyRepository;
+use Ivoz\Provider\Domain\Model\Language\Language;
 use Ivoz\Provider\Domain\Model\NotificationTemplate\NotificationTemplateInterface;
 use Ivoz\Provider\Domain\Model\NotificationTemplate\NotificationTemplateRepository;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
@@ -19,8 +24,8 @@ class NotificationTemplateRepositoryTest extends KernelTestCase
     public function test_runner()
     {
         $this->its_instantiable();
-        $this->its_finds_generic_call_csv_template();
-        $this->its_finds_generic_invoice_template();
+        $this->its_finds_call_csv_template();
+        $this->its_finds_invoice_template();
         $this->its_finds_template_by_balance_notification();
     }
 
@@ -37,15 +42,22 @@ class NotificationTemplateRepositoryTest extends KernelTestCase
         );
     }
 
-    public function its_finds_generic_call_csv_template()
+    public function its_finds_call_csv_template()
     {
         /** @var NotificationTemplateRepository $repository */
         $repository = $this
             ->em
             ->getRepository(NotificationTemplate::class);
 
+        /** @var CallCsvReportRepository $callCsvReportRepository */
+        $callCsvReportRepository = $this
+            ->em
+            ->getRepository(CallCsvReport::class);
+
         $genericCallCsvTemplate = $repository
-            ->findGenericCallCsvTemplate();
+            ->findCallCsvTemplateByCallCsvReport(
+                $callCsvReportRepository->find(1)
+            );
 
         $this->assertInstanceOf(
             NotificationTemplate::class,
@@ -53,15 +65,22 @@ class NotificationTemplateRepositoryTest extends KernelTestCase
         );
     }
 
-    public function its_finds_generic_invoice_template()
+    public function its_finds_invoice_template()
     {
         /** @var NotificationTemplateRepository $repository */
         $repository = $this
             ->em
             ->getRepository(NotificationTemplate::class);
 
+        /** @var CompanyRepository $companyRepository */
+        $companyRepository = $this
+            ->em
+            ->getRepository(Company::class);
+
         $genericCallCsvTemplate = $repository
-            ->findGenericInvoiceTemplate();
+            ->findInvoiceNotificationTemplateByCompany(
+                $companyRepository->find(1)
+            );
 
         $this->assertNull(
             $genericCallCsvTemplate
@@ -79,9 +98,14 @@ class NotificationTemplateRepositoryTest extends KernelTestCase
             ->em
             ->getRepository(BalanceNotification::class);
 
+        $languageRepository = $this
+            ->em
+            ->getRepository(Language::class);
+
         $notificationTemplates = $notificationTemplateRepository
             ->findTemplateByBalanceNotification(
-                $balanceNotificationRepository->find(1)
+                $balanceNotificationRepository->find(1),
+                $languageRepository->find(1)
             );
 
         $this->assertInstanceOf(
