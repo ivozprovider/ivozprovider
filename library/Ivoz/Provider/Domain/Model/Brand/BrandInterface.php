@@ -112,7 +112,7 @@ interface BrandInterface extends LoggableEntityInterface, FileContainerInterface
 
     public function getDomain(): ?DomainInterface;
 
-    public function getLanguage(): ?LanguageInterface;
+    public function getLanguage(): LanguageInterface;
 
     public function getDefaultTimezone(): TimezoneInterface;
 
