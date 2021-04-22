@@ -355,11 +355,9 @@ class User extends UserAbstract implements UserInterface, SymfonyUserInterface, 
     }
 
     /**
-     * Get user language
      * returns company language if empty
-     * @return \Ivoz\Provider\Domain\Model\Language\LanguageInterface
      */
-    public function getLanguage(): ?LanguageInterface
+    public function getLanguage(): LanguageInterface
     {
         $language = parent::getLanguage();
         if ($language) {

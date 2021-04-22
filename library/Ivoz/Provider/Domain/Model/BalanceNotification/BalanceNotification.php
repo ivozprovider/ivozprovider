@@ -2,6 +2,8 @@
 
 namespace Ivoz\Provider\Domain\Model\BalanceNotification;
 
+use Ivoz\Provider\Domain\Model\Language\LanguageInterface;
+
 /**
  * BalanceNotification
  */
@@ -38,10 +40,7 @@ class BalanceNotification extends BalanceNotificationAbstract implements Balance
         }
     }
 
-    /**
-     * @return \Ivoz\Provider\Domain\Model\Language\LanguageInterface | null
-     */
-    public function getLanguage()
+    public function getLanguage(): ?LanguageInterface
     {
         $carrier = $this->getCarrier();
         if ($carrier) {
@@ -54,17 +53,6 @@ class BalanceNotification extends BalanceNotificationAbstract implements Balance
         $language = $company
             ? $company->getLanguage()
             : null;
-
-        if (!$language && $company) {
-
-            /**
-             * @todo remove this. Company will already have brand language
-             * @see Company::sanitizeValues()
-             */
-            $language = $company
-                ->getBrand()
-                ->getLanguage();
-        }
 
         return $language;
     }
