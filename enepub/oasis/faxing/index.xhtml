@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Virtual Fax System</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../billing_and_invoices/index.xhtml" title="Billing and Invoices"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../retail/retail_ddis.xhtml" title="Retail DDIs"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">IvozProvider Oasis documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../retail/index.xhtml" accesskey="U">Retail Clients</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="virtual-fax-system">
+<span id="faxing-system"></span><h1>Virtual Fax System</h1>
+<p>IvozProvider includes a simple but efficient <em>faxing</em> solution that allows:</p>
+<ul class="simple">
+<li>Sending PDF files via Fax.</li>
+<li>Receiving faxes through email or check them through the web portal.</li>
+</ul>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p class="last">IvozProvider uses
+<a class="reference external" href="http://www.voip-info.org/wiki/view/T.38">T.38</a><span class="link-target"> [http://www.voip-info.org/wiki/view/T.38]</span> for both sending and receiving
+faxes. Brand Operator must use <em>peering contracts</em> that have support for it.</p>
+</div>
+<div class="section" id="creating-a-virtual-fax">
+<h2>Creating a virtual fax</h2>
+<p>This is the interface that turns up when we create a new fax in section
+<strong>Company configuration</strong> &gt; <strong>Virtual Faxes</strong>:</p>
+<img alt="../_images/fax_add.png" class="align-center" src="../_images/fax_add.png" />
+<p>Fields are nearly self-explanatory:</p>
+<dl class="glossary docutils">
+<dt id="term-name">Name</dt>
+<dd>Used by remaining section to reference a fax</dd>
+<dt id="term-email">Email</dt>
+<dd>Email address when we want to receive incoming faxes (if we check &#8216;Send
+by email&#8217;)</dd>
+<dt id="term-outbound-ddi">Outbound DDI</dt>
+<dd>DDI used as source number for outgoing faxes</dd>
+</dl>
+<p>To receive faxes in this DDI, we need to point it to our new fax in the section
+<strong>DDIs</strong>:</p>
+<img alt="../_images/fax_ddi.png" class="align-center" src="../_images/fax_ddi.png" />
+<p>Brand Operator can choose one or more <em>Outgoing Routes</em> for sending faxes:</p>
+<img alt="../_images/fax_routes.png" class="align-center" src="../_images/fax_routes.png" />
+<p>This route applies to all faxes sent by selected company (or for all companies).</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><em>load-balancing</em> y <em>failover</em> logics described in <a class="reference internal" href="../external_outgoing_calls/call_routing.xhtml#routes-metrics"><span class="std std-ref">previous sections</span></a>
+apply to faxes too.</p>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">If no fax-specific route is defined, faxes will be routed using
+standard call routes.</p>
+</div>
+</div>
+<div class="section" id="sending-a-fax">
+<h2>Sending a fax</h2>
+<p>Sending a fax is an easy task. First, we upload de PDF file and set the destination:</p>
+<img alt="../_images/fax_send.png" class="align-center" src="../_images/fax_send.png" />
+<p>The list shows the fax and its status:</p>
+<img alt="../_images/fax_send2.png" class="align-center" src="../_images/fax_send2.png" />
+</div>
+<div class="section" id="incoming-faxes-display">
+<h2>Incoming faxes display</h2>
+<p>Apart from being received by mail, faxes can be watched and downloaded within
+the web portal too:</p>
+<img alt="../_images/fax_list.png" src="../_images/fax_list.png" />
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

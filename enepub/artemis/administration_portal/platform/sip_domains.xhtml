@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>SIP domains</title>
+    
+    <link rel="stylesheet" href="../../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="portals.xhtml" title="Platform Portals"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="global_special_numbers.xhtml" title="Global Special Numbers"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.xhtml">IvozProvider Artemis documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Platform Configuration</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="sip-domains">
+<span id="god-sipdomains"></span><h1>SIP domains</h1>
+<p>The section <strong>Domains</strong> will display the SIP domains that point to <a class="reference internal" href="infrastructure/proxy_users.xhtml#proxyusers"><span class="std std-ref">Proxy Users</span></a> public address.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">DNS register can be type A (supported by all the hardphones/softphones
+) or even NAPTR+SRV.</p>
+</div>
+<p>There are two type of SIP domains:</p>
+<dl class="glossary docutils">
+<dt id="term-vpbx-client-sip-domain">vPBX client SIP domain</dt>
+<dd>Each vPBX client has a unique SIP domain.</dd>
+<dt id="term-brand-sip-domain">Brand SIP domain</dt>
+<dd>Shared by all retail and residential clients in the brand.</dd>
+</dl>
+<p>All these SIP domains will be displayed in this list so that global administrator can check
+what domains are registered for each client/brand:</p>
+<dl class="glossary docutils">
+<dt id="term-domain">Domain</dt>
+<dd>DNS pointing to <a class="reference internal" href="infrastructure/proxy_users.xhtml#proxyusers"><span class="std std-ref">Proxy Users</span></a> public address</dd>
+<dt id="term-brand">Brand</dt>
+<dd>Brand of specific brand domain or vPBX client.</dd>
+<dt id="term-client">Client</dt>
+<dd>vPBX client of specific vPBX client domain. Empty for brand domains.</dd>
+</dl>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2019, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

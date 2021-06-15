@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Reglas DDI de salida</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="external_filters.xhtml" title="Filtros de entrada externo"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="sounds.xhtml" title="Locuciones"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">documentación de IvozProvider - Oasis</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Funcionalidades de PBX</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="outgoing-ddi-rules">
+<span id="outgoingddi-rules"></span><h1>Reglas DDI de salida</h1>
+<p>La mayoría de entidades en IvozProvider requiren un DDI saliente para poder realizar llamadas a números externos. Esto incluye: Usuarios, Friends, Faxes, Cuentas Retails, etc..</p>
+<p>Pero existen algunos casos en los que un solo DDI de salida no es suficiente, y el DDI presentado depende del número llamado. Para lograr esta selección dinámica de DDI saliente se pueden emplear las Reglas DDI de salida.</p>
+<p>Antes de crear una nueva regla, es necesario primero agrupar los números destino en <a class="reference internal" href="match_lists.xhtml#match-lists"><span class="std std-ref">Listas de coincidencia</span></a>.</p>
+<p>Para este ejemplo, crearemos una lista de los números móviles corporativos con todos los números de los trabajadores de la compañía. Cuando llamemos a esos números, mantendremos el DDI de salida original asignado al usuario, y para el resto de casos, forzaremos el DDI al principal de la compañía.</p>
+<p class="rubric">Crear una nueva Regla DDI de salida</p>
+<p>La pantalla principal de creación define la acción que se realizará cuando el destino no coincida con ninguna de las reglas, así que definiremos aquí la acción de forzar el DDI principal de la compañía.</p>
+<img alt="../_images/outgoingddi_rules_edit1.png" class="align-center" src="../_images/outgoingddi_rules_edit1.png" />
+<p class="rubric">Asignar acciones a las reglas</p>
+<p>Ahora añadiremos una nueva regla que coincidirá con nuestros móviles para mantener el DDI saliente del usuario sin tocar.</p>
+<img alt="../_images/outgoingddi_rulepatterns_edit1.png" class="align-center" src="../_images/outgoingddi_rulepatterns_edit1.png" />
+<p class="rubric">Asignar reglas a los llamantes</p>
+<p>Como último paso, tendremos que configurar quien emplea esta regla para cambiar dinámicamente su número presentado. Esto puede realizarse en la <strong>pantalla de edición de Compañía</strong> o en la <strong>pantalla de edición de Usuario</strong>.</p>
+<img alt="../_images/user_outgoingddirule1.png" class="align-center" src="../_images/user_outgoingddirule1.png" />
+<p>En este caso, el usuario presentará el DDI 777777777 cuando llame a los móviles corporativos y 666666666 cuando llame al resto de números externos.</p>
+<div class="admonition attention">
+<p class="first admonition-title">Atención</p>
+<p class="last">La implementación actual de Reglas DDI de salida no funciona para llamadas desviadas (fuera de horario, festivo o desvíos de usuario).</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

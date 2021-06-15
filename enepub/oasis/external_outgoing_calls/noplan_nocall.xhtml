@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>No pricing plan, no call</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../pbx_features/index.xhtml" title="PBX Features"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="external_ddi.xhtml" title="Outgoing DDI configuration"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">IvozProvider Oasis documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Making external calls</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <p>At this point, we are looking forward to make our first outgoing call with our
+new IvozProvider, we may have even tried to call with current configuration but...</p>
+<div class="section" id="no-pricing-plan-no-call">
+<span id="noplan-nocall"></span><h1>No pricing plan, no call</h1>
+<p>Just the way we warned <a class="reference internal" href="../operation_roles/index.xhtml#brand-responsibilities"><span class="std std-ref">when we described the duties of the brand operator</span></a>, the brand operator is <strong>responsible for making all the
+needed setup so that IvozProvider is able to bill all external calls</strong>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>Billing a call</strong> is the action of <strong>assigning price</strong> to a call that implies
+cost.</p>
+</div>
+<p><strong>IvozProvider checks live that a call can be billed when it is established</strong> to avoid
+placing calls that imply cost but won&#8217;t be billed because Brand Operator, due to
+a mistake, hasn&#8217;t assigned a price.</p>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p class="last">If a call can&#8217;t be billed, IvozProvider won&#8217;t allow its establishment.</p>
+</div>
+<div class="section" id="creating-a-pricing-pattern">
+<span id="price-pattern"></span><h2>Creating a pricing pattern</h2>
+<p>Just the way <a class="reference internal" href="call_types.xhtml#target-patterns"><span class="std std-ref">target patterns</span></a> exist, <strong>pricing patterns</strong>
+exist and are configured in this section:</p>
+<img alt="../_images/pricing_pattern_section.png" src="../_images/pricing_pattern_section.png" />
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">A call is considered billable if there is a pricing pattern that
+matches this call.</p>
+</div>
+<p>Pricing patterns section is empty by default, as opposed to target patterns section,
+that has all the 254 countries of the world. The reason is that pricing pattern
+will usually imply lots of pattern per country (GSM networks, especial numbers,
+mobile numbers, fixed lines, etc.).</p>
+<p>We will create the pricing plan &#8216;Spain&#8217; for our outgoing call:</p>
+<img alt="../_images/pricing_pattern_add.png" src="../_images/pricing_pattern_add.png" />
+</div>
+<div class="section" id="creating-a-pricing-plan">
+<span id="price-plan"></span><h2>Creating a pricing plan</h2>
+<p>A <strong>Pricing plan</strong> determines the price of a type of call (of a pricing pattern)
+and is configured in this section:</p>
+<img alt="../_images/pricing_plans_section.png" src="../_images/pricing_plans_section.png" />
+<p>We create a <strong>pricing plan</strong> for our goal:</p>
+<img alt="../_images/pricing_plans_add1.png" src="../_images/pricing_plans_add1.png" />
+<p>And we add the <strong>pricing patter</strong> we have just created:</p>
+<img alt="../_images/pricing_plans_add_price1.png" src="../_images/pricing_plans_add_price1.png" />
+<img alt="../_images/pricing_plans_add_price2.png" src="../_images/pricing_plans_add_price2.png" />
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Floating number must use the &#8221;.&#8221; as decimal separator (e.g. 0.02)</p>
+</div>
+<p class="rubric">Finding a pricing plan for a specific destination</p>
+<p>To check the configuration so far we can <strong>find a pricing plan</strong> for a call
+pressing:</p>
+<img alt="../_images/pricing_plans_find_plan.png" src="../_images/pricing_plans_find_plan.png" />
+<p>We introduce the destination number in <a class="reference internal" href="../external_incoming_calls/numeric_transformations.xhtml#e164"><span class="std std-ref">E.164 format</span></a>:</p>
+<img alt="../_images/pricing_plans_find_plan2.png" src="../_images/pricing_plans_find_plan2.png" />
+<p>And we can check that it matches the <strong>precing plan</strong> we have just created:</p>
+<img alt="../_images/pricing_plans_find_plan3.png" src="../_images/pricing_plans_find_plan3.png" />
+</div>
+<div class="section" id="assigning-a-pricing-plan-to-a-company">
+<span id="pricing-plan-to-company"></span><h2>Assigning a pricing plan to a company</h2>
+<p>A specific <strong>pricing plan</strong> can be linked to &#8216;n&#8217; companies and the <em>brand
+operator</em> is responsible for this task.</p>
+<p>In the section <strong>Brand configuration</strong> &gt; <strong>Companies</strong> we select the <em>demo</em>
+company:</p>
+<img alt="../_images/pricing_plans_relate_company.png" src="../_images/pricing_plans_relate_company.png" />
+<p>The <strong>Pricing plan</strong> and <strong>Companies</strong> relationship is set for a determined
+period of time, that&#8217;s why we have to select <em>Start time</em> and <em>End time</em>:</p>
+<img alt="../_images/pricing_plans_relate_company2.png" src="../_images/pricing_plans_relate_company2.png" />
+<p>The <strong>metric</strong> of the link lets you assign more than one <em>pricing plan</em> for a
+company, even though some destinations are included in more than one of those
+pricing plans.</p>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">If a given call can be billed with more than one active pricing
+plan, it will be billed using the pricing plan with lower metric.</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">This allows having a general <em>Pricing plan</em> and concrete the price of
+a specific destination in another <em>pricing plan</em> with lower metric (free cell
+phone calls, for example).</p>
+</div>
+<p class="rubric">Simulating a call of a specific company</p>
+<p>We can simulate a call for a given company and check the price it will imply.
+This way, we can be sure that the configuration is ok and that calls to that
+destination will be billed using a specific <em>Pricing plan</em>:</p>
+<img alt="../_images/pricing_plans_simulate_companycall.png" src="../_images/pricing_plans_simulate_companycall.png" />
+<p>We introduce the destination number in <a class="reference internal" href="../external_incoming_calls/numeric_transformations.xhtml#e164"><span class="std std-ref">E.164 format</span></a>:</p>
+<img alt="../_images/pricing_plans_simulate_companycall2.png" class="align-center" src="../_images/pricing_plans_simulate_companycall2.png" />
+<p>And we confirm that it will be billed with the pricing plan that we have just
+created and linked:</p>
+<img alt="../_images/pricing_plans_simulate_companycall3.png" src="../_images/pricing_plans_simulate_companycall3.png" />
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">At this point, <em>Alice</em> should be able to make outgoing calls to
+spanish destinations and this calls should be billed accordingly.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Invoice schedulers</title>
+    
+    <link rel="stylesheet" href="../../../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="invoice_number_sequences.xhtml" title="Invoice number sequences"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="invoices.xhtml" title="Invoices"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.xhtml">IvozProvider Artemis documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.xhtml" >Brand Configuration</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.xhtml" accesskey="U">Invoicing</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="invoice-schedulers">
+<h1>Invoice schedulers</h1>
+<p>This section allows programming the automatic periodical creation of invoices.</p>
+<p>When adding a new definition, these fields are shown:</p>
+<dl class="glossary docutils">
+<dt id="term-name">Name</dt>
+<dd>Name of the scheduled invoice</dd>
+<dt id="term-client">Client</dt>
+<dd>Which client calls should be included</dd>
+<dt id="term-email">Email</dt>
+<dd>Send generated invoices via email. Empty if no automatic mail is wanted.</dd>
+<dt id="term-frequency-unit">Frequency/Unit</dt>
+<dd>Defines the frequency (once a month, every 7 days, etc.) of the programmed task</dd>
+<dt id="term-invoice-number-sequence">Invoice number sequence</dt>
+<dd>Scheduled invoices will use the next invoice number available in a given predefined sequence</dd>
+<dt id="term-call-discount">Call discount</dt>
+<dd>Percentage to discount calls, prior to tax rate calculation. No effect on fixed concepts.</dd>
+<dt id="term-tax-rate">Tax rate</dt>
+<dd>Taxes to add to the final cost (e.g. VAT)</dd>
+</dl>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Fixed concepts can be added in the same way as in manual invoice definitions</p>
+</div>
+<p>Invoices generated due to an schedule can be seen in two ways:</p>
+<ul class="simple">
+<li>In each row of <em>Invoice schedulers</em> section, <strong>List of Invoices</strong> option.</li>
+<li>In <em>Invoices</em> section, indistinguishable to manually generated invoices.</li>
+</ul>
+<div class="section" id="frequency-definition">
+<h2>Frequency definition</h2>
+<p>It is interesting to understand how <em>Frequency</em> and <em>Unit</em> fields define the periodical task:</p>
+<ul class="simple">
+<li>Invoices are programmed at 08:00:00 by default on mondays, 1st of month or 1st of January (depending on Unit value).</li>
+<li>Once created a new schedule, <strong>Next execution</strong> shows when will happen next invoice generation.</li>
+</ul>
+<p><strong>Next execution</strong> value can be mangled, but generated invoice always will:</p>
+<ul class="simple">
+<li>Discard current day (2018/11/01 08:00:00 will set 2018/10/31 23:59:59 as <em>Out date</em>).</li>
+<li><em>In date</em> will be <em>out date</em> minus X week(s), X month(s) or X year(s) (X equals to <em>Frequency</em> value) + 1 second.</li>
+</ul>
+<p class="rubric">Example 1: Unit: week - Frequency 2</p>
+<p>Next execution will be set to next monday at 08:00 and invoices will include calls of last 2 weeks.</p>
+<p class="rubric">Example 1: Unit: month - Frequency 3</p>
+<p>Next execution will be set to next 1st of month at 08:00 and invoices will include calls of last 3 months.</p>
+<p class="rubric">Example 1: Unit: month - Frequency 1 - Next execution mangling</p>
+<p>Next execution will be set to next 1st of month at 08:00 but we mangle it to 3rd of month at 10:00:00.</p>
+<p>Invoice will include calls from 3nd of previous month at 00:00:00 to 2nd to current month at 23:59:59.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last"><em>Last execution</em> shows the date of last execution and its result (success/error).</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Both <em>next execution</em> and <em>last execution</em> are shown using brand timezone.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2019, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

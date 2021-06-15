@@ -1,0 +1,412 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Terminal provisioning &mdash; IvozProvider Oasis documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'Oasis',
+              LANGUAGE:'en',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/banner.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="User Portal" href="../userportal/index.html" />
+    <link rel="prev" title="Invoice generation" href="../billing_and_invoices/invoices.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> IvozProvider
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.7
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Introduction to IvozProvider</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/index.html">Platform general architecture</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../operation_roles/index.html">Platform roles</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Minimum Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Initial Installation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../internal_calls/index.html">Making internal calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external_incoming_calls/index.html">Receive external calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external_outgoing_calls/index.html">Making external calls</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../pbx_features/index.html">PBX Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../retail/index.html">Retail Clients</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../billing_and_invoices/index.html">Billing and Invoices</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Terminal provisioning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration-of-supported-models">Configuration of supported models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getting-technical">Getting technical</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../faxing/index.html">Virtual Fax System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userportal/index.html">User Portal</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Security and Maintenance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html">Security elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maintenance/index.html">Maintenance and troubleshooting</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IvozProvider</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Terminal provisioning</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/provisioning/index.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="terminal-provisioning">
+<span id="provisioning"></span><h1>Terminal provisioning<a class="headerlink" href="#terminal-provisioning" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>IvozProvider supports provisioning of terminals via HTTP/HTTPS that fulfill the
+following requirements:</p>
+<ul>
+<li><p class="first">Assuming a just unboxed terminal, just plugged and connected to the network:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Ask IP address via DHCP.</li>
+<li>DCHP has enabled the option 66 that points to the platform portal</li>
+<li>The first requested provisioning file is a static file (different for each
+model) prefixed with the previous step URL.</li>
+<li>The served file can redefine the URL for further requests</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p>Any terminal model that can adapt to this provisioning way can be added into
+the section <strong>Platform Configuration &gt; Terminal manufacturers</strong>.</p>
+<p class="rubric">Example Cisco SPA504G</p>
+<ul>
+<li><p class="first">Cisco SPA504G is turned on and requests an IP address to DHCP</p>
+</li>
+<li><p class="first">Receives “<a class="reference external" href="http://provision.example.com/provision">http://provision.example.com/provision</a>” as DHCP option 66</p>
+</li>
+<li><p class="first">Request HTTP configuration from <a class="reference external" href="http://provision.example.com/provision/spa504g.cfg">http://provision.example.com/provision/spa504g.cfg</a></p>
+</li>
+<li><p class="first">All 504G request the same file (spa504.cfg), prefixed with the given URL</p>
+</li>
+<li><p class="first">This file only contain basic configuration settings for the model and the URL
+for the next request (p.e. <a class="reference external" href="https://provision.example.com/provision/$MAC.cfg">https://provision.example.com/provision/$MAC.cfg</a>)</p>
+</li>
+<li><p class="first">This way, each terminal (MAC should be unique) request a specific file
+(and different) after the generic one has been served.</p>
+</li>
+<li><p class="first">This file will contain the specific configuration for the terminal:</p>
+<blockquote>
+<div><ul class="simple">
+<li>User</li>
+<li>Password</li>
+<li>SIP Domain</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">IvozProvider provisioning system, right now, only has one goal:
+provide credentials and language settings for the terminals.</p>
+</div>
+</div>
+<div class="section" id="configuration-of-supported-models">
+<h2>Configuration of supported models<a class="headerlink" href="#configuration-of-supported-models" title="Permalink to this headline">¶</a></h2>
+<p>IvozProvider uses a template system that allows global operator (God) to
+define new models and configure what files will be served.</p>
+<p>The help section of <strong>Terminal manufacturers</strong> has examples for some models
+that work (in the moment of writting this) with IvozProvider provisioning system.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">These models will be available after the initial installation, but
+you must edit them and load the default configuration before
+you can use the provisioning system (option <strong>Restore default template</strong>).</p>
+</div>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p class="last">UACs firmware changes may cause that given examples stop working. We
+will try to keep templates updated, but we can&#8217;t guarantee this point.</p>
+</div>
+<p>Analyzing the suggested templates you can have a basic idea of the flexibility of
+the system to configure any existing terminal model in the market and to adapt
+them to eventual changes in given examples.</p>
+</div>
+<div class="section" id="getting-technical">
+<h2>Getting technical<a class="headerlink" href="#getting-technical" title="Permalink to this headline">¶</a></h2>
+<p>Imagine an environment with this configuration:</p>
+<ul class="simple">
+<li>Provisioning URLs:<ul>
+<li>Generic file: <a class="reference external" href="http://PROV_IP/provision">http://PROV_IP/provision</a></li>
+<li>Specific file: <a class="reference external" href="https://PROV_IP:PROV_PORT/provision">https://PROV_IP:PROV_PORT/provision</a></li>
+</ul>
+</li>
+<li>TerminalModels.genericUrlPattern: y000000000044.cfg</li>
+</ul>
+<p>Which requested URLs will be valid?</p>
+<p>For generic file, just one: <a class="reference external" href="http://PROV_IP/provision/y000000000044.cfg">http://PROV_IP/provision/y000000000044.cfg</a></p>
+<p>For specific file, requests are right as long as this rules are fulfilled:</p>
+<ul class="simple">
+<li>All HTTP requests are wrong.</li>
+<li>HTTPS requests to 443 are wrong (PROV_PORT must be used).</li>
+<li>Subpaths after provisioning URL are ignored, both in request and in
+specificUrlPattern.</li>
+<li>On specific file request, extension must match as long as extension is used
+in specificUrlPattern.</li>
+<li>On specific file request, the filename must match exactly once {mac} is replaced.</li>
+<li>MAC address is case insensitive and can contain colons or not (&#8216;:&#8217;).</li>
+</ul>
+<p>Let&#8217;s analyze the examples below to understand this rules better:</p>
+<p class="rubric">Example 1 - TerminalModels.specificUrlPattern: {mac}.cfg</p>
+<p>Working requests:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">https://PROV_IP:PROV_PORT/provision/aabbccddeeff.cfg</span>
+<span class="go">https://PROV_IP:PROV_PORT/provision/aa:bb:cc:dd:ee:ff.cfg</span>
+<span class="go">https://PROV_IP:PROV_PORT/provision/aabbccdd:ee:ff.cfg</span>
+<span class="go">https://PROV_IP:PROV_PORT/provision/aabbccddeeff.cfg</span>
+<span class="go">https://PROV_IP:PROV_PORT/provision/AABBCCDDEEFF.cfg</span>
+<span class="go">https://PROV_IP:PROV_PORT/provision/subpath1/aabbccddeeff.cfg</span>
+<span class="go">https://PROV_IP:PROV_PORT/provision/subpath1/subpath2/aabbccddeeff.cfg</span>
+</pre></div>
+</div>
+<p>Wrong requests:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">https://PROV_IP:PROV_PORT/provision/aabbccddeeff.boot</span>
+<span class="go">https://PROV_IP:PROV_PORT/provision/subpath1/subpath2/aabbccddeeff.boot</span>
+</pre></div>
+</div>
+<p>This example is identical to &#8216;t23/{mac}.cfg&#8217;, as subpaths are ignored.</p>
+<p class="rubric">Example 2 - TerminalModels.specificUrlPattern: {mac}</p>
+<p>All previous examples are ok, as extension is ignored if no extension is found
+in specificUrlPattern.</p>
+<p>This example is identical to &#8216;t23/{mac}&#8217;, as subpaths are ignored.</p>
+<p class="rubric">Example 3 - TerminalModels.specificUrlPattern: yea-{mac}.cfg</p>
+<p>All previous examples are wrong, as no &#8216;yea-&#8216; is found (&#8216;yea&#8217; match is case
+sensitive).</p>
+<p>Working requests:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">https://PROV_IP:PROV_PORT/provision/subpath1/yea-aabbccdd:ee:ff.cfg</span>
+</pre></div>
+</div>
+<p>Wrong requests:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">https://PROV_IP:PROV_PORT/provision/subpath1/yea-aabbccdd:ee:ff.boot</span>
+<span class="go">https://PROV_IP:PROV_PORT/provision/subpath1/YEA-aabbccdd:ee:ff.cfg</span>
+</pre></div>
+</div>
+<p>This example is identical to &#8216;t23/yea-{mac}.cfg&#8217;, as subpaths are ignored.</p>
+<p class="rubric">Example 4 - TerminalModels.specificUrlPattern: yea-{mac}</p>
+<p>As no extension is given:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">https://PROV_IP:PROV_PORT/provision/subpath1/yea-aabbccdd:ee:ff.cfg</span>
+<span class="go">https://PROV_IP:PROV_PORT/provision/subpath1/yea-aabbccdd:ee:ff.boot</span>
+</pre></div>
+</div>
+<p>Wrong requests:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">https://PROV_IP:PROV_PORT/provision/subpath1/YEA-aabbccdd:ee:ff.cfg</span>
+</pre></div>
+</div>
+<p>This example is identical to &#8216;t23/yea-{mac}&#8217;, as subpaths are ignored.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../userportal/index.html" class="btn btn-neutral float-right" title="User Portal" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../billing_and_invoices/invoices.html" class="btn btn-neutral float-left" title="Invoice generation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016-2017, Irontec
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-book"> Other Versions</span>
+        v: oasis
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Branches</dt>
+            <dd><a href="../../artemis/index.html">artemis</a></dd>
+            <dd><a href="../../bleeding/index.html">bleeding</a></dd>
+            <dd><a href="index.html">oasis</a></dd>
+        </dl>
+    </div>
+</div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

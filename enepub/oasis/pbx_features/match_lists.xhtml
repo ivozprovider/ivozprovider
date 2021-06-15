@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Match Lists</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="route_locks.xhtml" title="Route locks"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="external_filters.xhtml" title="External Call filters"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">IvozProvider Oasis documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">PBX Features</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="match-lists">
+<span id="id1"></span><h1>Match Lists</h1>
+<p>Mach Lists are designed to group well known numbers or patterns in order to use
+them in specific treatments.</p>
+<p>Depending on the section used, this numbers can be matched with the origin or
+the destination of the call, so be sure to use distinctive names for your match
+lists.</p>
+<p>For example, like mentioned in the previous section <a class="reference internal" href="external_filters.xhtml#external-filters"><span class="std std-ref">External Call filters</span></a>,
+white and black lists contain one or more match lists. In this case, the
+<strong>origin</strong> of the call will be matched agains the list entries to determime if
+the treatment of <strong>skipping</strong> the filter or <strong>rejecting</strong> the call will be applied.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Match lists themselfs have no behaviour associated, they only provide
+a common way for all process to determine if a number has a treatment.</p>
+</div>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">Beware that numbers of a Match list are checked against origins
+or destinations depending on the configuration section that use them.</p>
+</div>
+<p>The section <strong>Company configuration</strong> &gt; <strong>Match Lists</strong> allows to configure
+different items that will group the numbers and patterns.</p>
+<p>The screen displayed to the company administrator looks like this:</p>
+<img alt="../_images/matchlist_add.png" class="align-center" src="../_images/matchlist_add.png" />
+<p>After creating a new Match list, you can include numbers and patterns.</p>
+<img alt="../_images/matchlist_patterns_add.png" class="align-center" src="../_images/matchlist_patterns_add.png" />
+<p>As shown, the match list can contain specific numbers or groups using
+<a class="reference external" href="http://php.net/manual/en/reference.pcre.pattern.syntax.php">Regular Expressions</a><span class="link-target"> [http://php.net/manual/en/reference.pcre.pattern.syntax.php]</span></p>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

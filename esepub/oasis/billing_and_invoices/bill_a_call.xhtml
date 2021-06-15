@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Tarificación de llamadas</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="invoices.xhtml" title="Generación de facturas"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="pricing_plans.xhtml" title="Planes de precio"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">documentación de IvozProvider - Oasis</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Tarificación y facturación</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="call-billing">
+<h1>Tarificación de llamadas</h1>
+<p>Tarificar una llamada es la <strong>acción de poner precio</strong> a una llamada que implica coste.</p>
+<div class="section" id="automatic-billing">
+<h2>Tarificación automática</h2>
+<p>Tal y como se ha explicado con anterioridad, el proceso de tarificación es automático:</p>
+<ul>
+<li><p class="first">En el momento en el que una llamada se va a establecer, se verifica que se vaya a poder tarificar.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="first">Si no se va a poder tarificar atendiendo a los planes de precios activos para la empresa, la llamada no se cursará.</p>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">En el momento en el que una llamada que implique coste se cuelga, aparece en el listado de <a class="reference internal" href="billable_calls.xhtml#billable-calls"><span class="std std-ref">Llamadas facturables</span></a>.</p>
+</li>
+<li><p class="first">Pasados unos minutos, el proceso tarificador evaluará las llamadas tarificables sin coste y rellenará los siguientes campos del registro anterior:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="first">Precio</p>
+</li>
+<li><p class="first">Plan de precio</p>
+</li>
+<li><p class="first">Patrón de destino (que es en realidad el patrón de precio)</p>
+</li>
+<li><p class="first">Tarificado a &#8216;Sí&#8217;</p>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="manual-re-billing">
+<h2>Retarificación manual</h2>
+<p>Puede ocurrir que una llamada se tarifique de forma incorrecta, por múltiples motivos:</p>
+<ul class="simple">
+<li><p class="first">Plan de precio importado con una errata.</p>
+</li>
+<li><p class="first">Múltiples planes de precios con métricas incorrectas.</p>
+</li>
+<li><p class="first">Plan de precio adicional sin vincular.</p>
+</li>
+<li>Etc.</li>
+</ul>
+<p>Para estos casos, el <em>administrador de marca</em> puede re-tarificar las llamadas que considere mal tarificadas.</p>
+<div class="admonition important">
+<p class="first admonition-title">Importante</p>
+<p class="last">Retarificar una llamada consiste en volver a calcular el precio de la misma. Lógicamente, la retarificación se calculará en el momento solicitado, teniendo en cuenta las configuración actual de planes de precio y no las del momento del establecimiento de la llamada).</p>
+</div>
+<p>Para retarificar, basta con seleccionar las llamadas en <strong>Configuración de Marca</strong> &gt; <strong>Llamada facturables</strong> y presionar el botón <strong>Tarificar llamadas</strong>:</p>
+<img alt="../_images/retarificate.png" src="../_images/retarificate.png" />
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p class="last"><strong>No se puede retarificar una llamada que esté incluida en una factura</strong>. Es decir, si la llamada seleccionada tiene el campo <strong>Factura</strong> con valor, habrá que borrar esta factura previamente. El motivo es estar seguros que no existen facturas con llamadas mal tarificadas: si retarificas una llamada, regeneras la factura que la contiene.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

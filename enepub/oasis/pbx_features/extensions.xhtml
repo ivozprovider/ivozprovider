@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Extensions</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="terminals.xhtml" title="Terminals configuration"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.xhtml" title="PBX Features"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">IvozProvider Oasis documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">PBX Features</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="extensions">
+<h1>Extensions</h1>
+<p>The base configuration includes 2 extensions (101 and 102) that route directly
+to <em>Alice</em> and <em>Bob</em>, so we had almost nothing to do with the section
+<strong>Company configuration</strong> &gt; <strong>Extensions</strong>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>An extensions is</strong>, by definition, <strong>an internal number with an
+assigned logic</strong>.</p>
+</div>
+<p class="rubric">Create a new extension</p>
+<p>The new extension window looks like this:</p>
+<img alt="../_images/extension_add.png" src="../_images/extension_add.png" />
+<dl class="glossary docutils">
+<dt id="term-number">Number</dt>
+<dd>The number that must be dialed by the internal user that will trigger
+the configured logic. It must have a minimum length of 2 and must be
+a number.</dd>
+<dt id="term-route">Route</dt>
+<dd>This select will allow us to choose the logic that will use this
+extension when is dialed from an internal user. Depending on the selected
+route, and additional select or input will be shown to select the
+hungroup, conference room, user, etc.</dd>
+</dl>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">If an extension has a number that conflicts with an external
+number, this external number will be masked and, in practice, will be
+unavailable for the whole company.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

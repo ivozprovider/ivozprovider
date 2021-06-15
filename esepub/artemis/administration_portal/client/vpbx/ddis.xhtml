@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>DDIs</title>
+    
+    <link rel="stylesheet" href="../../../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="routing_endpoints/index.xhtml" title="Routing endpoints"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="extensions.xhtml" title="Extensions"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.xhtml">documentación de IvozProvider - Artemis</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.xhtml" >Client Configuration</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.xhtml" accesskey="U">Clientes vPBX</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="ddis">
+<span id="pbx-ddis"></span><h1>DDIs</h1>
+<dl class="glossary docutils">
+<dt id="term-country">Country</dt>
+<dd>The country of the new created DDI. Used for E164 standardization.</dd>
+<dt id="term-ddi">DDI</dt>
+<dd>The number, without country code.</dd>
+<dt id="term-ddi-provider">DDI Provider</dt>
+<dd>The <a class="reference internal" href="../../brand/providers/ddi_providers.xhtml#ddi-providers"><span class="std std-ref">DDI Provider</span></a> that provides this number. This relation has no functional purpose, it
+is just for DDI Provider &lt;-&gt; DDI navigation in some brand level sections.</dd>
+<dt id="term-external-call-filter">External Call Filter</dt>
+<dd>Allows configuration based on Calendars and Schedulers as shown in
+<a class="reference internal" href="routing_tools/external_call_filters.xhtml#external-call-filters"><span class="std std-ref">External call filters</span></a>. Leave empty if you don&#8217;t need to apply any
+kind of filter.</dd>
+<dt id="term-route">Route</dt>
+<dd>A DDI can have different <a class="reference internal" href="#routing-logics"><span class="std std-ref">treatments</span></a>. For our
+current goal, set route to user and select <em>Alice</em>.</dd>
+<dt id="term-record-calls">Record calls</dt>
+<dd>Can be used to record external calls (see <a class="reference internal" href="calls/call_recordings.xhtml#call-recordings"><span class="std std-ref">Call recordings</span></a>).</dd>
+<dt id="term-tarificate-incoming-calls">Tarificate incoming calls</dt>
+<dd>This setting requires the external tarification module and allows
+tarification on special numbers. This module is not standard so don&#8217;t
+hesitate in <a class="reference internal" href="../../../basic_concepts/intro/getting_help.xhtml#getting-help"><span class="std std-ref">contact us</span></a> if you are interested.</dd>
+</dl>
+<div class="section" id="ddi-external-filters">
+<h2>DDI external filters</h2>
+<p>We can assign a <strong>external call filter</strong> configured in <a class="reference internal" href="routing_tools/external_call_filters.xhtml#external-call-filters"><span class="std std-ref">External call filters</span></a>.</p>
+</div>
+<div class="section" id="ddi-routes">
+<span id="routing-logics"></span><h2>DDI routes</h2>
+<p>Once the call has passed all the checks in the filter (schedules and calendars)
+and after the welcome locution has been played (if there is any configured),
+we can route the call to the following processes:</p>
+<ul class="simple">
+<li><a class="reference internal" href="users.xhtml#users"><span class="std std-ref">Users</span></a></li>
+<li><a class="reference internal" href="routing_endpoints/hunt_groups.xhtml#huntgroups"><span class="std std-ref">Hunt groups</span></a></li>
+<li><a class="reference internal" href="routing_endpoints/ivrs.xhtml#ivrs"><span class="std std-ref">IVRs</span></a></li>
+<li><a class="reference internal" href="routing_endpoints/conference_rooms.xhtml#conference-rooms"><span class="std std-ref">Conference rooms</span></a></li>
+<li><a class="reference internal" href="routing_endpoints/conditional_routes.xhtml#conditional-routes"><span class="std std-ref">Conditional routes</span></a></li>
+<li><a class="reference internal" href="routing_endpoints/queues.xhtml#queues"><span class="std std-ref">Queues</span></a></li>
+<li><a class="reference internal" href="routing_endpoints/friends/index.xhtml#friends"><span class="std std-ref">Friends</span></a></li>
+</ul>
+<div class="admonition hint">
+<p class="first admonition-title">Consejo</p>
+<p class="last">We can also route the DDI to a <a class="reference internal" href="faxes.xhtml#faxing-system"><span class="std std-ref">Virtual Fax</span></a>, but
+this is something we will explain in the following block.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2019, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

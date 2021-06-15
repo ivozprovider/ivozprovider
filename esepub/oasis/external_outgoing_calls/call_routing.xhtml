@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Rutas salientes</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="external_ddi.xhtml" title="Configurar DDI saliente"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="call_types.xhtml" title="¿A dónde llamo?"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">documentación de IvozProvider - Oasis</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Realizar llamadas externas</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <p id="outgoing-routes">Ya tenemos nuestra llamada de pruebas categorizada dentro del <strong>Patrón de destino</strong> &#8216;España&#8217;. Es más, también tenemos un <strong>Grupo de patrones de destino</strong> que incluye &#8216;España&#8217;, &#8216;Europa&#8217;.</p>
+<p>Ahora solo nos falta decir a IvozProvider que las llamadas de &#8216;España&#8217; o de &#8216;Europa&#8217; salgan por nuestro <strong>Contrato de peering</strong>.</p>
+<div class="section" id="outgoing-routing">
+<h1>Rutas salientes</h1>
+<p>Para realizar esta vinculación, accedemos a la sección <strong>Rutas salientes</strong>:</p>
+<img alt="../_images/outgoing_routes_section1.png" class="align-center" src="../_images/outgoing_routes_section1.png" />
+<p>Si optamos por enrutar solamente las llamadas de España por nuestro Contrato de <em>peering</em>, tendremos que realizar la siguiente configuración:</p>
+<img alt="../_images/outgoing_routes_by_pattern1.png" class="align-center" src="../_images/outgoing_routes_by_pattern1.png" />
+<p>Por el contrario, si somos más generosos y decidimos permitir todas las llamadas a países europeos, la configuración a aplicar sería la siguiente:</p>
+<img alt="../_images/outgoing_routes_by_patterngroup1.png" class="align-center" src="../_images/outgoing_routes_by_patterngroup1.png" />
+<p id="routes-metrics">Existen dos parámetros que merecen explicación:</p>
+<dl class="glossary docutils">
+<dt id="term-priority">Prioridad</dt>
+<dd><p class="first last">Si una llamada concreta encaja con rutas de distinta prioridad, la llamada se sacará por la que menor prioridad tenga siempre y cuando esté disponible.</p>
+</dd>
+<dt id="term-metric">Métrica</dt>
+<dd><p class="first last">Si una llamada concreta encaja con rutas con la misma prioridad, la métrica determina cuántas se sacarán por una ruta y cuántas por otra.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Estos dos parámetros son clave para conseguir dos funcionalidades muy interesantes: <strong>load-balancing</strong> y <strong>failover-routes</strong>.</p>
+</div>
+<div class="section" id="load-balancing">
+<h2>Balanceo de carga</h2>
+<p>El balanceo de carga o <em>load-balancing</em> nos permite sacar un porcentaje de llamadas por una ruta y otro porcentaje de llamadas por otra ruta, es decir, nos permite repartir las llamadas entre dos o más rutas igualmente válidas.</p>
+<p class="rubric">Ejemplo 1</p>
+<ul class="simple">
+<li><p class="first">Ruta A: prioridad 1, métrica 1</p>
+</li>
+<li><p class="first">Ruta B: prioridad 1, métrica 1</p>
+</li>
+</ul>
+<p>Call matching these routes will use route A for %50 of the calls and route B for
+%50 of the calls.</p>
+<p class="rubric">Ejemplo 2</p>
+<ul class="simple">
+<li><p class="first">Ruta A: prioridad 1, métrica 1</p>
+</li>
+<li><p class="first">Ruta B: prioridad 1, métrica 2</p>
+</li>
+</ul>
+<p>Call matching these routes will use route A for %33 of the calls and route B for
+%66 of the calls.</p>
+</div>
+<div class="section" id="failover-routes">
+<h2>Conmutación por error</h2>
+<p>Las rutas en caso de fallo o <em>failover-routes</em> nos permite disponer de una ruta adicional en caso de que la ruta preferida falle.</p>
+<p class="rubric">Ejemplo</p>
+<ul class="simple">
+<li><p class="first">Ruta A: prioridad 1, métrica 1</p>
+</li>
+<li><p class="first">Ruta B: prioridad 2, métrica 1</p>
+</li>
+</ul>
+<p>All calls matching these routes will try to use route A. In case the call fails,
+the call will be placed using route B.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Truco</p>
+<p class="last">Tanto el balanceo de carga como las rutas de fallo permiten encadenar/utilizar más de 2 rutas, aunque en los ejemplo se hayan utilizado solo 2.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

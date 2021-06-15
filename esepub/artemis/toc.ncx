@@ -1,0 +1,1412 @@
+<?xml version="1.0"?>
+<ncx version="2005-1" xmlns="http://www.daisy.org/z3986/2005/ncx/">
+  <head>
+    <meta name="dtb:uid" content="unknown"/>
+    <meta name="dtb:depth" content="3"/>
+    <meta name="dtb:totalPageCount" content="0"/>
+    <meta name="dtb:maxPageNumber" content="0"/>
+  </head>
+  <docTitle>
+    <text>documentación de IvozProvider - Artemis</text>
+  </docTitle>
+  <navMap>
+    <navPoint id="navPoint1" playOrder="1">
+      <navLabel>
+        <text>Documentación oficial de IvozProvider</text>
+      </navLabel>
+      <content src="index.xhtml" />
+    </navPoint>
+    <navPoint id="navPoint2" playOrder="2">
+      <navLabel>
+        <text>Introduction to IvozProvider</text>
+      </navLabel>
+      <content src="basic_concepts/intro/index.xhtml" />
+      <navPoint id="navPoint3" playOrder="2">
+        <navLabel>
+          <text>Introduction to IvozProvider</text>
+        </navLabel>
+        <content src="basic_concepts/intro/index.xhtml" />
+      </navPoint>
+      <navPoint id="navPoint4" playOrder="3">
+        <navLabel>
+          <text>About this documentation</text>
+        </navLabel>
+        <content src="basic_concepts/intro/about.xhtml" />
+      </navPoint>
+      <navPoint id="navPoint5" playOrder="4">
+        <navLabel>
+          <text>Getting help</text>
+        </navLabel>
+        <content src="basic_concepts/intro/getting_help.xhtml" />
+      </navPoint>
+      <navPoint id="navPoint6" playOrder="5">
+        <navLabel>
+          <text>What is IvozProvider?</text>
+        </navLabel>
+        <content src="basic_concepts/intro/what_is_ivozprovider.xhtml" />
+        <navPoint id="navPoint7" playOrder="5">
+          <navLabel>
+            <text>What is IvozProvider?</text>
+          </navLabel>
+          <content src="basic_concepts/intro/what_is_ivozprovider.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint8" playOrder="6">
+          <navLabel>
+            <text>IP Telephony</text>
+          </navLabel>
+          <content src="basic_concepts/intro/what_is_ivozprovider.xhtml#ip-telephony" />
+        </navPoint>
+        <navPoint id="navPoint9" playOrder="7">
+          <navLabel>
+            <text>Multilevel</text>
+          </navLabel>
+          <content src="basic_concepts/intro/what_is_ivozprovider.xhtml#multilevel" />
+        </navPoint>
+        <navPoint id="navPoint10" playOrder="8">
+          <navLabel>
+            <text>Provider oriented</text>
+          </navLabel>
+          <content src="basic_concepts/intro/what_is_ivozprovider.xhtml#provider-oriented" />
+        </navPoint>
+        <navPoint id="navPoint11" playOrder="9">
+          <navLabel>
+            <text>Exposed to the public network</text>
+          </navLabel>
+          <content src="basic_concepts/intro/what_is_ivozprovider.xhtml#exposed-to-the-public-network" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navPoint12" playOrder="10">
+        <navLabel>
+          <text>What is inside IvozProvider?</text>
+        </navLabel>
+        <content src="basic_concepts/intro/what_is_inside.xhtml" />
+      </navPoint>
+      <navPoint id="navPoint13" playOrder="11">
+        <navLabel>
+          <text>Who should use IvozProvider?</text>
+        </navLabel>
+        <content src="basic_concepts/intro/use_cases.xhtml" />
+      </navPoint>
+    </navPoint>
+    <navPoint id="navPoint14" playOrder="12">
+      <navLabel>
+        <text>Platform general architecture</text>
+      </navLabel>
+      <content src="basic_concepts/architecture/index.xhtml" />
+      <navPoint id="navPoint15" playOrder="12">
+        <navLabel>
+          <text>Platform general architecture</text>
+        </navLabel>
+        <content src="basic_concepts/architecture/index.xhtml" />
+      </navPoint>
+      <navPoint id="navPoint16" playOrder="13">
+        <navLabel>
+          <text>General diagram</text>
+        </navLabel>
+        <content src="basic_concepts/architecture/index.xhtml#general-diagram" />
+      </navPoint>
+      <navPoint id="navPoint17" playOrder="14">
+        <navLabel>
+          <text>SIP signalling flow</text>
+        </navLabel>
+        <content src="basic_concepts/architecture/index.xhtml#sip-signalling-flow" />
+      </navPoint>
+      <navPoint id="navPoint18" playOrder="15">
+        <navLabel>
+          <text>RTP audio flow</text>
+        </navLabel>
+        <content src="basic_concepts/architecture/index.xhtml#rtp-audio-flow" />
+      </navPoint>
+      <navPoint id="navPoint19" playOrder="16">
+        <navLabel>
+          <text>HTTPS traffic</text>
+        </navLabel>
+        <content src="basic_concepts/architecture/index.xhtml#https-traffic" />
+      </navPoint>
+      <navPoint id="navPoint20" playOrder="17">
+        <navLabel>
+          <text>Additional elements</text>
+        </navLabel>
+        <content src="basic_concepts/architecture/index.xhtml#additional-elements" />
+      </navPoint>
+      <navPoint id="navPoint21" playOrder="18">
+        <navLabel>
+          <text>Auxiliary elements</text>
+        </navLabel>
+        <content src="basic_concepts/architecture/index.xhtml#auxiliary-elements" />
+      </navPoint>
+    </navPoint>
+    <navPoint id="navPoint22" playOrder="19">
+      <navLabel>
+        <text>Instalación inicial</text>
+      </navLabel>
+      <content src="basic_concepts/installation/index.xhtml" />
+      <navPoint id="navPoint23" playOrder="19">
+        <navLabel>
+          <text>Instalación inicial</text>
+        </navLabel>
+        <content src="basic_concepts/installation/index.xhtml" />
+      </navPoint>
+      <navPoint id="navPoint24" playOrder="20">
+        <navLabel>
+          <text>Tipos de instalación</text>
+        </navLabel>
+        <content src="basic_concepts/installation/install_types.xhtml" />
+        <navPoint id="navPoint25" playOrder="20">
+          <navLabel>
+            <text>Tipos de instalación</text>
+          </navLabel>
+          <content src="basic_concepts/installation/install_types.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint26" playOrder="21">
+          <navLabel>
+            <text>Instalación distribuida</text>
+          </navLabel>
+          <content src="basic_concepts/installation/install_types.xhtml#distributed-install" />
+        </navPoint>
+        <navPoint id="navPoint27" playOrder="22">
+          <navLabel>
+            <text>Instalación standalone</text>
+          </navLabel>
+          <content src="basic_concepts/installation/install_types.xhtml#standalone-install" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navPoint28" playOrder="23">
+        <navLabel>
+          <text>Requisitos mínimos</text>
+        </navLabel>
+        <content src="basic_concepts/installation/requirements.xhtml" />
+        <navPoint id="navPoint29" playOrder="23">
+          <navLabel>
+            <text>Requisitos mínimos</text>
+          </navLabel>
+          <content src="basic_concepts/installation/requirements.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint30" playOrder="24">
+          <navLabel>
+            <text>Requisitos de sistema</text>
+          </navLabel>
+          <content src="basic_concepts/installation/requirements.xhtml#system-requirements" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navPoint31" playOrder="25">
+        <navLabel>
+          <text>Instalación por paquetes Debian</text>
+        </navLabel>
+        <content src="basic_concepts/installation/debian_install.xhtml" />
+        <navPoint id="navPoint32" playOrder="25">
+          <navLabel>
+            <text>Instalación por paquetes Debian</text>
+          </navLabel>
+          <content src="basic_concepts/installation/debian_install.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint33" playOrder="26">
+          <navLabel>
+            <text>Configurar repositorios APT</text>
+          </navLabel>
+          <content src="basic_concepts/installation/debian_install.xhtml#apt-repository-configuration" />
+        </navPoint>
+        <navPoint id="navPoint34" playOrder="27">
+          <navLabel>
+            <text>Instalar el paquete del rol</text>
+          </navLabel>
+          <content src="basic_concepts/installation/debian_install.xhtml#installing-profile-package" />
+        </navPoint>
+        <navPoint id="navPoint35" playOrder="28">
+          <navLabel>
+            <text>Completar instalación</text>
+          </navLabel>
+          <content src="basic_concepts/installation/debian_install.xhtml#finish-the-installation" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navPoint36" playOrder="29">
+        <navLabel>
+          <text>CDs automáticos de instalación</text>
+        </navLabel>
+        <content src="basic_concepts/installation/cd_install.xhtml" />
+      </navPoint>
+      <navPoint id="navPoint37" playOrder="30">
+        <navLabel>
+          <text>Componentes extra</text>
+        </navLabel>
+        <content src="basic_concepts/installation/extra_components.xhtml" />
+        <navPoint id="navPoint38" playOrder="30">
+          <navLabel>
+            <text>Componentes extra</text>
+          </navLabel>
+          <content src="basic_concepts/installation/extra_components.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint39" playOrder="31">
+          <navLabel>
+            <text>G.729</text>
+          </navLabel>
+          <content src="basic_concepts/installation/extra_components.xhtml#g-729" />
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint id="navPoint40" playOrder="32">
+      <navLabel>
+        <text>Roles de la plataforma</text>
+      </navLabel>
+      <content src="basic_concepts/operation_roles/index.xhtml" />
+      <navPoint id="navPoint41" playOrder="32">
+        <navLabel>
+          <text>Roles de la plataforma</text>
+        </navLabel>
+        <content src="basic_concepts/operation_roles/index.xhtml" />
+      </navPoint>
+      <navPoint id="navPoint42" playOrder="33">
+        <navLabel>
+          <text>Rol de administrador global</text>
+        </navLabel>
+        <content src="basic_concepts/operation_roles/index.xhtml#global-administrator-role" />
+      </navPoint>
+      <navPoint id="navPoint43" playOrder="34">
+        <navLabel>
+          <text>Rol de administrador de marca</text>
+        </navLabel>
+        <content src="basic_concepts/operation_roles/index.xhtml#brand-administrator-role" />
+      </navPoint>
+      <navPoint id="navPoint44" playOrder="35">
+        <navLabel>
+          <text>Rol de administrador de cliente</text>
+        </navLabel>
+        <content src="basic_concepts/operation_roles/index.xhtml#client-administrator-role" />
+      </navPoint>
+      <navPoint id="navPoint45" playOrder="36">
+        <navLabel>
+          <text>Rol de usuario final</text>
+        </navLabel>
+        <content src="basic_concepts/operation_roles/index.xhtml#final-user-role" />
+      </navPoint>
+    </navPoint>
+    <navPoint id="navPoint46" playOrder="37">
+      <navLabel>
+        <text>Realizar llamadas internas</text>
+      </navLabel>
+      <content src="getting_started/internal_calls/index.xhtml" />
+      <navPoint id="navPoint47" playOrder="37">
+        <navLabel>
+          <text>Realizar llamadas internas</text>
+        </navLabel>
+        <content src="getting_started/internal_calls/index.xhtml" />
+      </navPoint>
+      <navPoint id="navPoint48" playOrder="38">
+        <navLabel>
+          <text>Configuración Global</text>
+        </navLabel>
+        <content src="getting_started/internal_calls/god_portal.xhtml" />
+        <navPoint id="navPoint49" playOrder="38">
+          <navLabel>
+            <text>Configuración Global</text>
+          </navLabel>
+          <content src="getting_started/internal_calls/god_portal.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint50" playOrder="39">
+          <navLabel>
+            <text>Emular la marca Demo</text>
+          </navLabel>
+          <content src="getting_started/internal_calls/god_portal.xhtml#emulate-the-demo-brand" />
+        </navPoint>
+        <navPoint id="navPoint51" playOrder="40">
+          <navLabel>
+            <text>¿Qué implica esta emulación?</text>
+          </navLabel>
+          <content src="getting_started/internal_calls/god_portal.xhtml#what-emulation-means" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navPoint52" playOrder="41">
+        <navLabel>
+          <text>Brand Configuration</text>
+        </navLabel>
+        <content src="getting_started/internal_calls/brand_portal.xhtml" />
+        <navPoint id="navPoint53" playOrder="41">
+          <navLabel>
+            <text>Brand Configuration</text>
+          </navLabel>
+          <content src="getting_started/internal_calls/brand_portal.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint54" playOrder="42">
+          <navLabel>
+            <text>Client SIP Domain</text>
+          </navLabel>
+          <content src="getting_started/internal_calls/brand_portal.xhtml#client-sip-domain" />
+        </navPoint>
+        <navPoint id="navPoint55" playOrder="43">
+          <navLabel>
+            <text>Emulate Demo client</text>
+          </navLabel>
+          <content src="getting_started/internal_calls/brand_portal.xhtml#emulate-demo-client" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navPoint56" playOrder="44">
+        <navLabel>
+          <text>Client Configuration</text>
+        </navLabel>
+        <content src="getting_started/internal_calls/client_portal.xhtml" />
+        <navPoint id="navPoint57" playOrder="44">
+          <navLabel>
+            <text>Client Configuration</text>
+          </navLabel>
+          <content src="getting_started/internal_calls/client_portal.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint58" playOrder="45">
+          <navLabel>
+            <text>Creando Terminales</text>
+          </navLabel>
+          <content src="getting_started/internal_calls/client_portal.xhtml#creating-terminals" />
+        </navPoint>
+        <navPoint id="navPoint59" playOrder="46">
+          <navLabel>
+            <text>Creando Extensiones</text>
+          </navLabel>
+          <content src="getting_started/internal_calls/client_portal.xhtml#creating-extensions" />
+        </navPoint>
+        <navPoint id="navPoint60" playOrder="47">
+          <navLabel>
+            <text>Creando usuarios</text>
+          </navLabel>
+          <content src="getting_started/internal_calls/client_portal.xhtml#creating-users" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navPoint61" playOrder="48">
+        <navLabel>
+          <text>Configurar terminales SIP</text>
+        </navLabel>
+        <content src="getting_started/internal_calls/configure_sipuacs.xhtml" />
+      </navPoint>
+    </navPoint>
+    <navPoint id="navPoint62" playOrder="49">
+      <navLabel>
+        <text>Receiving external calls</text>
+      </navLabel>
+      <content src="getting_started/external_incoming_calls/index.xhtml" />
+      <navPoint id="navPoint63" playOrder="49">
+        <navLabel>
+          <text>Receiving external calls</text>
+        </navLabel>
+        <content src="getting_started/external_incoming_calls/index.xhtml" />
+      </navPoint>
+      <navPoint id="navPoint64" playOrder="50">
+        <navLabel>
+          <text>Configuración de transformaciones</text>
+        </navLabel>
+        <content src="getting_started/external_incoming_calls/transformations.xhtml" />
+      </navPoint>
+      <navPoint id="navPoint65" playOrder="51">
+        <navLabel>
+          <text>Peering configuration</text>
+        </navLabel>
+        <content src="getting_started/external_incoming_calls/peering.xhtml" />
+      </navPoint>
+      <navPoint id="navPoint66" playOrder="52">
+        <navLabel>
+          <text>Dar de alta un DDI externo</text>
+        </navLabel>
+        <content src="getting_started/external_incoming_calls/configure_ddi.xhtml" />
+      </navPoint>
+    </navPoint>
+    <navPoint id="navPoint67" playOrder="53">
+      <navLabel>
+        <text>Realizar llamadas externas</text>
+      </navLabel>
+      <content src="getting_started/external_outgoing_calls/index.xhtml" />
+      <navPoint id="navPoint68" playOrder="53">
+        <navLabel>
+          <text>Realizar llamadas externas</text>
+        </navLabel>
+        <content src="getting_started/external_outgoing_calls/index.xhtml" />
+      </navPoint>
+      <navPoint id="navPoint69" playOrder="54">
+        <navLabel>
+          <text>Create a new carrier</text>
+        </navLabel>
+        <content src="getting_started/external_outgoing_calls/create_carrier.xhtml" />
+      </navPoint>
+      <navPoint id="navPoint70" playOrder="55">
+        <navLabel>
+          <text>¿A dónde llamo?</text>
+        </navLabel>
+        <content src="getting_started/external_outgoing_calls/where_do_i_call.xhtml" />
+      </navPoint>
+      <navPoint id="navPoint71" playOrder="56">
+        <navLabel>
+          <text>Configuración Rutas salientes</text>
+        </navLabel>
+        <content src="getting_started/external_outgoing_calls/call_routing.xhtml" />
+      </navPoint>
+      <navPoint id="navPoint72" playOrder="57">
+        <navLabel>
+          <text>Configurar DDI saliente</text>
+        </navLabel>
+        <content src="getting_started/external_outgoing_calls/outgoing_ddi.xhtml" />
+      </navPoint>
+      <navPoint id="navPoint73" playOrder="58">
+        <navLabel>
+          <text>No rating plan, no call</text>
+        </navLabel>
+        <content src="getting_started/external_outgoing_calls/noplan_nocall.xhtml" />
+        <navPoint id="navPoint74" playOrder="58">
+          <navLabel>
+            <text>No rating plan, no call</text>
+          </navLabel>
+          <content src="getting_started/external_outgoing_calls/noplan_nocall.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint75" playOrder="59">
+          <navLabel>
+            <text>Creating a rating plan</text>
+          </navLabel>
+          <content src="getting_started/external_outgoing_calls/noplan_nocall.xhtml#creating-a-rating-plan" />
+        </navPoint>
+        <navPoint id="navPoint76" playOrder="60">
+          <navLabel>
+            <text>Assign rating plan to client</text>
+          </navLabel>
+          <content src="getting_started/external_outgoing_calls/noplan_nocall.xhtml#assign-rating-plan-to-client" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navPoint77" playOrder="61">
+        <navLabel>
+          <text>¡Configuración saliente completada!</text>
+        </navLabel>
+        <content src="getting_started/external_outgoing_calls/finish.xhtml" />
+      </navPoint>
+    </navPoint>
+    <navPoint id="navPoint78" playOrder="62">
+      <navLabel>
+        <text>Platform Configuration</text>
+      </navLabel>
+      <content src="administration_portal/platform/index.xhtml" />
+      <navPoint id="navPoint79" playOrder="62">
+        <navLabel>
+          <text>Platform Configuration</text>
+        </navLabel>
+        <content src="administration_portal/platform/index.xhtml" />
+      </navPoint>
+      <navPoint id="navPoint80" playOrder="63">
+        <navLabel>
+          <text>Brands</text>
+        </navLabel>
+        <content src="administration_portal/platform/brands.xhtml" />
+      </navPoint>
+      <navPoint id="navPoint81" playOrder="64">
+        <navLabel>
+          <text>Main operators</text>
+        </navLabel>
+        <content src="administration_portal/platform/main_operators.xhtml" />
+      </navPoint>
+      <navPoint id="navPoint82" playOrder="65">
+        <navLabel>
+          <text>Antiflood banned IPs</text>
+        </navLabel>
+        <content src="administration_portal/platform/antiflood_banned_ips.xhtml" />
+      </navPoint>
+      <navPoint id="navPoint83" playOrder="66">
+        <navLabel>
+          <text>Terminal manufacturers</text>
+        </navLabel>
+        <content src="administration_portal/platform/terminal_manufacturers.xhtml" />
+      </navPoint>
+      <navPoint id="navPoint84" playOrder="67">
+        <navLabel>
+          <text>Services</text>
+        </navLabel>
+        <content src="administration_portal/platform/services.xhtml" />
+      </navPoint>
+      <navPoint id="navPoint85" playOrder="68">
+        <navLabel>
+          <text>Currencies</text>
+        </navLabel>
+        <content src="administration_portal/platform/currencies.xhtml" />
+      </navPoint>
+      <navPoint id="navPoint86" playOrder="69">
+        <navLabel>
+          <text>Default Notification Templates</text>
+        </navLabel>
+        <content src="administration_portal/platform/default_notification_templates.xhtml" />
+      </navPoint>
+      <navPoint id="navPoint87" playOrder="70">
+        <navLabel>
+          <text>Default Invoice Templates</text>
+        </navLabel>
+        <content src="administration_portal/platform/default_invoice_templates.xhtml" />
+      </navPoint>
+      <navPoint id="navPoint88" playOrder="71">
+        <navLabel>
+          <text>Global Special Numbers</text>
+        </navLabel>
+        <content src="administration_portal/platform/global_special_numbers.xhtml" />
+      </navPoint>
+      <navPoint id="navPoint89" playOrder="72">
+        <navLabel>
+          <text>SIP domains</text>
+        </navLabel>
+        <content src="administration_portal/platform/sip_domains.xhtml" />
+      </navPoint>
+      <navPoint id="navPoint90" playOrder="73">
+        <navLabel>
+          <text>Platform Portals</text>
+        </navLabel>
+        <content src="administration_portal/platform/portals.xhtml" />
+      </navPoint>
+      <navPoint id="navPoint91" playOrder="74">
+        <navLabel>
+          <text>Active calls</text>
+        </navLabel>
+        <content src="administration_portal/platform/active_calls.xhtml" />
+      </navPoint>
+      <navPoint id="navPoint92" playOrder="75">
+        <navLabel>
+          <text>External calls</text>
+        </navLabel>
+        <content src="administration_portal/platform/external_calls.xhtml" />
+      </navPoint>
+      <navPoint id="navPoint93" playOrder="76">
+        <navLabel>
+          <text>Infrastructure</text>
+        </navLabel>
+        <content src="administration_portal/platform/infrastructure/index.xhtml" />
+        <navPoint id="navPoint94" playOrder="76">
+          <navLabel>
+            <text>Infrastructure</text>
+          </navLabel>
+          <content src="administration_portal/platform/infrastructure/index.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint95" playOrder="77">
+          <navLabel>
+            <text>Proxy Users</text>
+          </navLabel>
+          <content src="administration_portal/platform/infrastructure/proxy_users.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint96" playOrder="78">
+          <navLabel>
+            <text>Proxy Trunks</text>
+          </navLabel>
+          <content src="administration_portal/platform/infrastructure/proxy_trunks.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint97" playOrder="79">
+          <navLabel>
+            <text>Media relay sets</text>
+          </navLabel>
+          <content src="administration_portal/platform/infrastructure/media_relay_sets.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint98" playOrder="80">
+          <navLabel>
+            <text>Application Servers</text>
+          </navLabel>
+          <content src="administration_portal/platform/infrastructure/application_servers.xhtml" />
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint id="navPoint99" playOrder="81">
+      <navLabel>
+        <text>Brand Configuration</text>
+      </navLabel>
+      <content src="administration_portal/brand/index.xhtml" />
+      <navPoint id="navPoint100" playOrder="81">
+        <navLabel>
+          <text>Brand Configuration</text>
+        </navLabel>
+        <content src="administration_portal/brand/index.xhtml" />
+      </navPoint>
+      <navPoint id="navPoint101" playOrder="82">
+        <navLabel>
+          <text>Clients</text>
+        </navLabel>
+        <content src="administration_portal/brand/clients/index.xhtml" />
+        <navPoint id="navPoint102" playOrder="82">
+          <navLabel>
+            <text>Clients</text>
+          </navLabel>
+          <content src="administration_portal/brand/clients/index.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint103" playOrder="83">
+          <navLabel>
+            <text>Virtual PBX</text>
+          </navLabel>
+          <content src="administration_portal/brand/clients/virtual_pbx.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint104" playOrder="84">
+          <navLabel>
+            <text>Residential</text>
+          </navLabel>
+          <content src="administration_portal/brand/clients/residential.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint105" playOrder="85">
+          <navLabel>
+            <text>Retail</text>
+          </navLabel>
+          <content src="administration_portal/brand/clients/retail.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint106" playOrder="86">
+          <navLabel>
+            <text>Wholesale</text>
+          </navLabel>
+          <content src="administration_portal/brand/clients/wholesale.xhtml" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navPoint107" playOrder="87">
+        <navLabel>
+          <text>Providers</text>
+        </navLabel>
+        <content src="administration_portal/brand/providers/index.xhtml" />
+        <navPoint id="navPoint108" playOrder="87">
+          <navLabel>
+            <text>Providers</text>
+          </navLabel>
+          <content src="administration_portal/brand/providers/index.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint109" playOrder="88">
+          <navLabel>
+            <text>Carriers</text>
+          </navLabel>
+          <content src="administration_portal/brand/providers/carriers.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint110" playOrder="89">
+          <navLabel>
+            <text>DDI Providers</text>
+          </navLabel>
+          <content src="administration_portal/brand/providers/ddi_providers.xhtml" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navPoint111" playOrder="90">
+        <navLabel>
+          <text>Routing</text>
+        </navLabel>
+        <content src="administration_portal/brand/routing/index.xhtml" />
+        <navPoint id="navPoint112" playOrder="90">
+          <navLabel>
+            <text>Routing</text>
+          </navLabel>
+          <content src="administration_portal/brand/routing/index.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint113" playOrder="91">
+          <navLabel>
+            <text>Outgoing Routings</text>
+          </navLabel>
+          <content src="administration_portal/brand/routing/outgoing_routings.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint114" playOrder="92">
+          <navLabel>
+            <text>Routing patterns</text>
+          </navLabel>
+          <content src="administration_portal/brand/routing/routing_patterns.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint115" playOrder="93">
+          <navLabel>
+            <text>Routing pattern groups</text>
+          </navLabel>
+          <content src="administration_portal/brand/routing/routing_patterns_groups.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint116" playOrder="94">
+          <navLabel>
+            <text>Routing tags</text>
+          </navLabel>
+          <content src="administration_portal/brand/routing/routing_tags.xhtml" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navPoint117" playOrder="95">
+        <navLabel>
+          <text>Billing</text>
+        </navLabel>
+        <content src="administration_portal/brand/billing/index.xhtml" />
+        <navPoint id="navPoint118" playOrder="95">
+          <navLabel>
+            <text>Billing</text>
+          </navLabel>
+          <content src="administration_portal/brand/billing/index.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint119" playOrder="96">
+          <navLabel>
+            <text>Rating plans</text>
+          </navLabel>
+          <content src="administration_portal/brand/billing/rating_plans.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint120" playOrder="97">
+          <navLabel>
+            <text>Destination Rates</text>
+          </navLabel>
+          <content src="administration_portal/brand/billing/destination_rates.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint121" playOrder="98">
+          <navLabel>
+            <text>Destinations</text>
+          </navLabel>
+          <content src="administration_portal/brand/billing/destinations.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint122" playOrder="99">
+          <navLabel>
+            <text>Prepaid balances</text>
+          </navLabel>
+          <content src="administration_portal/brand/billing/prepaid_balances.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint123" playOrder="100">
+          <navLabel>
+            <text>Current day usages</text>
+          </navLabel>
+          <content src="administration_portal/brand/billing/current_day_usages.xhtml" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navPoint124" playOrder="101">
+        <navLabel>
+          <text>Invoicing</text>
+        </navLabel>
+        <content src="administration_portal/brand/invoicing/index.xhtml" />
+        <navPoint id="navPoint125" playOrder="101">
+          <navLabel>
+            <text>Invoicing</text>
+          </navLabel>
+          <content src="administration_portal/brand/invoicing/index.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint126" playOrder="102">
+          <navLabel>
+            <text>Invoices</text>
+          </navLabel>
+          <content src="administration_portal/brand/invoicing/invoices.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint127" playOrder="103">
+          <navLabel>
+            <text>Invoice schedulers</text>
+          </navLabel>
+          <content src="administration_portal/brand/invoicing/invoice_schedulers.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint128" playOrder="104">
+          <navLabel>
+            <text>Invoice number sequences</text>
+          </navLabel>
+          <content src="administration_portal/brand/invoicing/invoice_number_sequences.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint129" playOrder="105">
+          <navLabel>
+            <text>Fixed costs</text>
+          </navLabel>
+          <content src="administration_portal/brand/invoicing/fixed_costs.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint130" playOrder="106">
+          <navLabel>
+            <text>Invoice templates</text>
+          </navLabel>
+          <content src="administration_portal/brand/invoicing/invoice_templates.xhtml" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navPoint131" playOrder="107">
+        <navLabel>
+          <text>Calls</text>
+        </navLabel>
+        <content src="administration_portal/brand/calls/index.xhtml" />
+        <navPoint id="navPoint132" playOrder="107">
+          <navLabel>
+            <text>Calls</text>
+          </navLabel>
+          <content src="administration_portal/brand/calls/index.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint133" playOrder="108">
+          <navLabel>
+            <text>Active calls</text>
+          </navLabel>
+          <content src="administration_portal/brand/calls/active_calls.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint134" playOrder="109">
+          <navLabel>
+            <text>External calls</text>
+          </navLabel>
+          <content src="administration_portal/brand/calls/external_calls.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint135" playOrder="110">
+          <navLabel>
+            <text>Call CSV schedulers</text>
+          </navLabel>
+          <content src="administration_portal/brand/calls/call_csv_schedulers.xhtml" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navPoint136" playOrder="111">
+        <navLabel>
+          <text>Settings</text>
+        </navLabel>
+        <content src="administration_portal/brand/settings/index.xhtml" />
+        <navPoint id="navPoint137" playOrder="111">
+          <navLabel>
+            <text>Settings</text>
+          </navLabel>
+          <content src="administration_portal/brand/settings/index.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint138" playOrder="112">
+          <navLabel>
+            <text>Client Portals</text>
+          </navLabel>
+          <content src="administration_portal/brand/settings/client_portals.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint139" playOrder="113">
+          <navLabel>
+            <text>Special Numbers</text>
+          </navLabel>
+          <content src="administration_portal/brand/settings/special_numbers.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint140" playOrder="114">
+          <navLabel>
+            <text>Numeric transformations</text>
+          </navLabel>
+          <content src="administration_portal/brand/settings/numeric_transformations.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint141" playOrder="115">
+          <navLabel>
+            <text>Notification Templates</text>
+          </navLabel>
+          <content src="administration_portal/brand/settings/notification_templates.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint142" playOrder="116">
+          <navLabel>
+            <text>Generic Music on Hold</text>
+          </navLabel>
+          <content src="administration_portal/brand/settings/generic_music_on_hold.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint143" playOrder="117">
+          <navLabel>
+            <text>Generic Services</text>
+          </navLabel>
+          <content src="administration_portal/brand/settings/generic_services.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint144" playOrder="118">
+          <navLabel>
+            <text>Generic Match Lists</text>
+          </navLabel>
+          <content src="administration_portal/brand/settings/generic_match_lists.xhtml" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navPoint145" playOrder="119">
+        <navLabel>
+          <text>Views</text>
+        </navLabel>
+        <content src="administration_portal/brand/views/index.xhtml" />
+        <navPoint id="navPoint146" playOrder="119">
+          <navLabel>
+            <text>Views</text>
+          </navLabel>
+          <content src="administration_portal/brand/views/index.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint147" playOrder="120">
+          <navLabel>
+            <text>DDIs</text>
+          </navLabel>
+          <content src="administration_portal/brand/views/ddis.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint148" playOrder="121">
+          <navLabel>
+            <text>Retail accounts</text>
+          </navLabel>
+          <content src="administration_portal/brand/views/retail_accounts.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint149" playOrder="122">
+          <navLabel>
+            <text>Residential devices</text>
+          </navLabel>
+          <content src="administration_portal/brand/views/residential_devices.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint150" playOrder="123">
+          <navLabel>
+            <text>Users</text>
+          </navLabel>
+          <content src="administration_portal/brand/views/users.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint151" playOrder="124">
+          <navLabel>
+            <text>IP filter blocked addresses</text>
+          </navLabel>
+          <content src="administration_portal/brand/views/ipfilter_blocked_addresses.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint152" playOrder="125">
+          <navLabel>
+            <text>Brute-force attacks</text>
+          </navLabel>
+          <content src="administration_portal/brand/views/bruteforce_attacks.xhtml" />
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint id="navPoint153" playOrder="126">
+      <navLabel>
+        <text>Client Configuration</text>
+      </navLabel>
+      <content src="administration_portal/client/index.xhtml" />
+      <navPoint id="navPoint154" playOrder="126">
+        <navLabel>
+          <text>Client Configuration</text>
+        </navLabel>
+        <content src="administration_portal/client/index.xhtml" />
+      </navPoint>
+      <navPoint id="navPoint155" playOrder="127">
+        <navLabel>
+          <text>Clientes vPBX</text>
+        </navLabel>
+        <content src="administration_portal/client/vpbx/index.xhtml" />
+        <navPoint id="navPoint156" playOrder="127">
+          <navLabel>
+            <text>Clientes vPBX</text>
+          </navLabel>
+          <content src="administration_portal/client/vpbx/index.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint157" playOrder="128">
+          <navLabel>
+            <text>Users</text>
+          </navLabel>
+          <content src="administration_portal/client/vpbx/users.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint158" playOrder="129">
+          <navLabel>
+            <text>Terminals</text>
+          </navLabel>
+          <content src="administration_portal/client/vpbx/terminals.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint159" playOrder="130">
+          <navLabel>
+            <text>Extensions</text>
+          </navLabel>
+          <content src="administration_portal/client/vpbx/extensions.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint160" playOrder="131">
+          <navLabel>
+            <text>DDIs</text>
+          </navLabel>
+          <content src="administration_portal/client/vpbx/ddis.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint161" playOrder="132">
+          <navLabel>
+            <text>Routing endpoints</text>
+          </navLabel>
+          <content src="administration_portal/client/vpbx/routing_endpoints/index.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint162" playOrder="133">
+          <navLabel>
+            <text>Routing tools</text>
+          </navLabel>
+          <content src="administration_portal/client/vpbx/routing_tools/index.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint163" playOrder="134">
+          <navLabel>
+            <text>User configuration</text>
+          </navLabel>
+          <content src="administration_portal/client/vpbx/user_configuration/index.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint164" playOrder="135">
+          <navLabel>
+            <text>Multimedia</text>
+          </navLabel>
+          <content src="administration_portal/client/vpbx/multimedia/index.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint165" playOrder="136">
+          <navLabel>
+            <text>Faxes</text>
+          </navLabel>
+          <content src="administration_portal/client/vpbx/faxes.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint166" playOrder="137">
+          <navLabel>
+            <text>Services</text>
+          </navLabel>
+          <content src="administration_portal/client/vpbx/services.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint167" playOrder="138">
+          <navLabel>
+            <text>Rating profiles</text>
+          </navLabel>
+          <content src="administration_portal/client/vpbx/rating_profiles.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint168" playOrder="139">
+          <navLabel>
+            <text>Calls</text>
+          </navLabel>
+          <content src="administration_portal/client/vpbx/calls/index.xhtml" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navPoint169" playOrder="140">
+        <navLabel>
+          <text>Clientes residenciales</text>
+        </navLabel>
+        <content src="administration_portal/client/residential/index.xhtml" />
+        <navPoint id="navPoint170" playOrder="140">
+          <navLabel>
+            <text>Clientes residenciales</text>
+          </navLabel>
+          <content src="administration_portal/client/residential/index.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint171" playOrder="141">
+          <navLabel>
+            <text>Residential devices</text>
+          </navLabel>
+          <content src="administration_portal/client/residential/residential_devices.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint172" playOrder="142">
+          <navLabel>
+            <text>DDIs</text>
+          </navLabel>
+          <content src="administration_portal/client/residential/ddis.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint173" playOrder="143">
+          <navLabel>
+            <text>External call filters</text>
+          </navLabel>
+          <content src="administration_portal/client/residential/external_call_filters.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint174" playOrder="144">
+          <navLabel>
+            <text>Faxes</text>
+          </navLabel>
+          <content src="administration_portal/client/residential/faxes.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint175" playOrder="145">
+          <navLabel>
+            <text>Rating profiles</text>
+          </navLabel>
+          <content src="administration_portal/client/residential/rating_profiles.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint176" playOrder="146">
+          <navLabel>
+            <text>Calls</text>
+          </navLabel>
+          <content src="administration_portal/client/residential/calls/index.xhtml" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navPoint177" playOrder="147">
+        <navLabel>
+          <text>Clientes retail</text>
+        </navLabel>
+        <content src="administration_portal/client/retail/index.xhtml" />
+        <navPoint id="navPoint178" playOrder="147">
+          <navLabel>
+            <text>Clientes retail</text>
+          </navLabel>
+          <content src="administration_portal/client/retail/index.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint179" playOrder="148">
+          <navLabel>
+            <text>Retail Accounts</text>
+          </navLabel>
+          <content src="administration_portal/client/retail/retail_accounts.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint180" playOrder="149">
+          <navLabel>
+            <text>DDIs</text>
+          </navLabel>
+          <content src="administration_portal/client/retail/ddis.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint181" playOrder="150">
+          <navLabel>
+            <text>Rating profiles</text>
+          </navLabel>
+          <content src="administration_portal/client/retail/rating_profiles.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint182" playOrder="151">
+          <navLabel>
+            <text>Calls</text>
+          </navLabel>
+          <content src="administration_portal/client/retail/calls/index.xhtml" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navPoint183" playOrder="152">
+        <navLabel>
+          <text>Clientes wholesale</text>
+        </navLabel>
+        <content src="administration_portal/client/wholesale/index.xhtml" />
+        <navPoint id="navPoint184" playOrder="152">
+          <navLabel>
+            <text>Clientes wholesale</text>
+          </navLabel>
+          <content src="administration_portal/client/wholesale/index.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint185" playOrder="153">
+          <navLabel>
+            <text>Rating profiles</text>
+          </navLabel>
+          <content src="administration_portal/client/wholesale/rating_profiles.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint186" playOrder="154">
+          <navLabel>
+            <text>Calls</text>
+          </navLabel>
+          <content src="administration_portal/client/wholesale/calls/index.xhtml" />
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint id="navPoint187" playOrder="155">
+      <navLabel>
+        <text>Portal de usuario</text>
+      </navLabel>
+      <content src="user_portal/index.xhtml" />
+      <navPoint id="navPoint188" playOrder="155">
+        <navLabel>
+          <text>Portal de usuario</text>
+        </navLabel>
+        <content src="user_portal/index.xhtml" />
+      </navPoint>
+      <navPoint id="navPoint189" playOrder="156">
+        <navLabel>
+          <text>URLs</text>
+        </navLabel>
+        <content src="user_portal/urls.xhtml" />
+        <navPoint id="navPoint190" playOrder="156">
+          <navLabel>
+            <text>URLs</text>
+          </navLabel>
+          <content src="user_portal/urls.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint191" playOrder="157">
+          <navLabel>
+            <text>Operador global</text>
+          </navLabel>
+          <content src="user_portal/urls.xhtml#god-operator" />
+        </navPoint>
+        <navPoint id="navPoint192" playOrder="158">
+          <navLabel>
+            <text>Operador de marca</text>
+          </navLabel>
+          <content src="user_portal/urls.xhtml#brand-operator" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navPoint193" playOrder="159">
+        <navLabel>
+          <text>Credenciales</text>
+        </navLabel>
+        <content src="user_portal/credentials.xhtml" />
+      </navPoint>
+      <navPoint id="navPoint194" playOrder="160">
+        <navLabel>
+          <text>Funcionalidades</text>
+        </navLabel>
+        <content src="user_portal/features.xhtml" />
+      </navPoint>
+    </navPoint>
+    <navPoint id="navPoint195" playOrder="161">
+      <navLabel>
+        <text>Seguridad</text>
+      </navLabel>
+      <content src="security_and_maintenance/security/index.xhtml" />
+      <navPoint id="navPoint196" playOrder="161">
+        <navLabel>
+          <text>Seguridad</text>
+        </navLabel>
+        <content src="security_and_maintenance/security/index.xhtml" />
+      </navPoint>
+      <navPoint id="navPoint197" playOrder="162">
+        <navLabel>
+          <text>Cortafuegos</text>
+        </navLabel>
+        <content src="security_and_maintenance/security/firewall.xhtml" />
+        <navPoint id="navPoint198" playOrder="162">
+          <navLabel>
+            <text>Cortafuegos</text>
+          </navLabel>
+          <content src="security_and_maintenance/security/firewall.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint199" playOrder="163">
+          <navLabel>
+            <text>Puertos/Servicios expuestos</text>
+          </navLabel>
+          <content src="security_and_maintenance/security/firewall.xhtml#exposed-ports-services" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navPoint200" playOrder="164">
+        <navLabel>
+          <text>SIP Antiflooding</text>
+        </navLabel>
+        <content src="security_and_maintenance/security/antiflooding.xhtml" />
+        <navPoint id="navPoint201" playOrder="164">
+          <navLabel>
+            <text>SIP Antiflooding</text>
+          </navLabel>
+          <content src="security_and_maintenance/security/antiflooding.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint202" playOrder="165">
+          <navLabel>
+            <text>Which requests are taken into account in KamUsers?</text>
+          </navLabel>
+          <content src="security_and_maintenance/security/antiflooding.xhtml#which-requests-are-taken-into-account-in-kamusers" />
+        </navPoint>
+        <navPoint id="navPoint203" playOrder="166">
+          <navLabel>
+            <text>Which requests are taken into account in KamTrunks?</text>
+          </navLabel>
+          <content src="security_and_maintenance/security/antiflooding.xhtml#which-requests-are-taken-into-account-in-kamtrunks" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navPoint204" playOrder="167">
+        <navLabel>
+          <text>GeoIP filter</text>
+        </navLabel>
+        <content src="security_and_maintenance/security/geoip_filter.xhtml" />
+      </navPoint>
+      <navPoint id="navPoint205" playOrder="168">
+        <navLabel>
+          <text>Rangos de IPs autorizadas</text>
+        </navLabel>
+        <content src="security_and_maintenance/security/authorized_ip_ranges.xhtml" />
+        <navPoint id="navPoint206" playOrder="168">
+          <navLabel>
+            <text>Rangos de IPs autorizadas</text>
+          </navLabel>
+          <content src="security_and_maintenance/security/authorized_ip_ranges.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint207" playOrder="169">
+          <navLabel>
+            <text>Usuarios remotos</text>
+          </navLabel>
+          <content src="security_and_maintenance/security/authorized_ip_ranges.xhtml#roadwarrior-users" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navPoint208" playOrder="170">
+        <navLabel>
+          <text>Límite de llamadas concurrentes</text>
+        </navLabel>
+        <content src="security_and_maintenance/security/concurrent_call_limit.xhtml" />
+      </navPoint>
+      <navPoint id="navPoint209" playOrder="171">
+        <navLabel>
+          <text>Current day max usage</text>
+        </navLabel>
+        <content src="security_and_maintenance/security/current_day_max_usage.xhtml" />
+      </navPoint>
+      <navPoint id="navPoint210" playOrder="172">
+        <navLabel>
+          <text>Anti brute-force attacks</text>
+        </navLabel>
+        <content src="security_and_maintenance/security/antibruteforce.xhtml" />
+      </navPoint>
+    </navPoint>
+    <navPoint id="navPoint211" playOrder="173">
+      <navLabel>
+        <text>Resolución de problemas</text>
+      </navLabel>
+      <content src="security_and_maintenance/maintenance/index.xhtml" />
+      <navPoint id="navPoint212" playOrder="173">
+        <navLabel>
+          <text>Resolución de problemas</text>
+        </navLabel>
+        <content src="security_and_maintenance/maintenance/index.xhtml" />
+      </navPoint>
+      <navPoint id="navPoint213" playOrder="174">
+        <navLabel>
+          <text>Analizador de tráfico SIP</text>
+        </navLabel>
+        <content src="security_and_maintenance/maintenance/sip_captures.xhtml" />
+        <navPoint id="navPoint214" playOrder="174">
+          <navLabel>
+            <text>Analizador de tráfico SIP</text>
+          </navLabel>
+          <content src="security_and_maintenance/maintenance/sip_captures.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint215" playOrder="175">
+          <navLabel>
+            <text>sngrep</text>
+          </navLabel>
+          <content src="security_and_maintenance/maintenance/sip_captures.xhtml#sngrep" />
+        </navPoint>
+        <navPoint id="navPoint216" playOrder="176">
+          <navLabel>
+            <text>Otras herramientas de captura</text>
+          </navLabel>
+          <content src="security_and_maintenance/maintenance/sip_captures.xhtml#other-capturing-tools" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navPoint217" playOrder="177">
+        <navLabel>
+          <text>Visor de logs</text>
+        </navLabel>
+        <content src="security_and_maintenance/maintenance/log_viewer.xhtml" />
+        <navPoint id="navPoint218" playOrder="177">
+          <navLabel>
+            <text>Visor de logs</text>
+          </navLabel>
+          <content src="security_and_maintenance/maintenance/log_viewer.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint219" playOrder="178">
+          <navLabel>
+            <text>CLI de Asterisk</text>
+          </navLabel>
+          <content src="security_and_maintenance/maintenance/log_viewer.xhtml#asterisk-cli" />
+        </navPoint>
+        <navPoint id="navPoint220" playOrder="179">
+          <navLabel>
+            <text>Visualización en tiempo real de logs de Kamailio</text>
+          </navLabel>
+          <content src="security_and_maintenance/maintenance/log_viewer.xhtml#kamailio-realtime-log-viewing" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navPoint221" playOrder="180">
+        <navLabel>
+          <text>Otras herramientas</text>
+        </navLabel>
+        <content src="security_and_maintenance/maintenance/other_tools.xhtml" />
+        <navPoint id="navPoint222" playOrder="180">
+          <navLabel>
+            <text>Otras herramientas</text>
+          </navLabel>
+          <content src="security_and_maintenance/maintenance/other_tools.xhtml" />
+        </navPoint>
+        <navPoint id="navPoint223" playOrder="181">
+          <navLabel>
+            <text>Visor de métricas</text>
+          </navLabel>
+          <content src="security_and_maintenance/maintenance/other_tools.xhtml#metrics-viewer" />
+        </navPoint>
+        <navPoint id="navPoint224" playOrder="182">
+          <navLabel>
+            <text>Monitorización activa</text>
+          </navLabel>
+          <content src="security_and_maintenance/maintenance/other_tools.xhtml#active-monitoring" />
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint id="navPoint225" playOrder="183">
+      <navLabel>
+        <text>Introducción a la API de Ivoz Provider</text>
+      </navLabel>
+      <content src="api_rest/introduction.xhtml" />
+    </navPoint>
+    <navPoint id="navPoint226" playOrder="184">
+      <navLabel>
+        <text>Multi-level API</text>
+      </navLabel>
+      <content src="api_rest/multilevel.xhtml" />
+    </navPoint>
+    <navPoint id="navPoint227" playOrder="185">
+      <navLabel>
+        <text>Cliente web incorporado</text>
+      </navLabel>
+      <content src="api_rest/web_client.xhtml" />
+    </navPoint>
+    <navPoint id="navPoint228" playOrder="186">
+      <navLabel>
+        <text>Integraciones de terceros</text>
+      </navLabel>
+      <content src="api_rest/integrations.xhtml" />
+    </navPoint>
+    <navPoint id="navPoint229" playOrder="187">
+      <navLabel>
+        <text>Use Case</text>
+      </navLabel>
+      <content src="api_rest/use_case.xhtml" />
+    </navPoint>
+    <navPoint id="navPoint230" playOrder="188">
+      <navLabel>
+        <text>ACLs</text>
+      </navLabel>
+      <content src="api_rest/acls.xhtml" />
+      <navPoint id="navPoint231" playOrder="188">
+        <navLabel>
+          <text>ACLs</text>
+        </navLabel>
+        <content src="api_rest/acls.xhtml" />
+      </navPoint>
+      <navPoint id="navPoint232" playOrder="189">
+        <navLabel>
+          <text>Restricted global/brand administrators</text>
+        </navLabel>
+        <content src="api_rest/acls.xhtml#restricted-global-brand-administrators" />
+      </navPoint>
+      <navPoint id="navPoint233" playOrder="190">
+        <navLabel>
+          <text>Client restricted administrators</text>
+        </navLabel>
+        <content src="api_rest/acls.xhtml#client-restricted-administrators" />
+      </navPoint>
+    </navPoint>
+  </navMap>
+</ncx>

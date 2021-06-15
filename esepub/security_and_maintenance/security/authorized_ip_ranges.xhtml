@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Rangos de IPs autorizadas</title>
+    
+    <link rel="stylesheet" href="../../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="concurrent_call_limit.xhtml" title="Límite de llamadas concurrentes"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="geoip_filter.xhtml" title="GeoIP filter"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.xhtml">documentación de IvozProvider - Artemis</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Seguridad</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="authorized-ip-ranges">
+<span id="client-authorized-ip-ranges"></span><h1>Rangos de IPs autorizadas</h1>
+<p>Los <a class="reference internal" href="../../administration_portal/client/vpbx/index.xhtml#vpbx-clients"><span class="std std-ref">Clientes vPBX</span></a>, <a class="reference internal" href="../../administration_portal/client/retail/index.xhtml#retail-clients"><span class="std std-ref">Clientes retail</span></a> y <a class="reference internal" href="../../administration_portal/client/residential/index.xhtml#residential-clients"><span class="std std-ref">Clientes residenciales</span></a> pueden añadir direcciones o rangos de direcciones IPs  (en formato CIDR) con la combinación de la opción <strong>Filtrado por IP</strong> y la subsección <strong>Lista de orígenes autorizados</strong>.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Advertencia</p>
+<p class="last">Los <a class="reference internal" href="../../administration_portal/client/wholesale/index.xhtml#wholesale-clients"><span class="std std-ref">Clientes wholesale</span></a> no disponen de la opción <strong>Filtrado IP</strong> ya que este tipo de clientes se autentica por IP y hace que sea obligatorio completar la lista de direcciones IP.</p>
+</div>
+<p>Cuando el <strong>Filtrado por IP</strong> está activado, los usuarios no podrán llamar desde otros orígenes, a pesar de tener unas credenciales SIP válidas.</p>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p class="last">Enabling <strong>Filter by IP address</strong> and leaving blank both <strong>GeoIP countries</strong> and <strong>List of authorized sources</strong>
+will prevent all calls.</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Truco</p>
+<p class="last">Addresses listed in <a class="reference internal" href="../../administration_portal/brand/views/ipfilter_blocked_addresses.xhtml#ip-filter-blocked-addresses"><span class="std std-ref">IP filter blocked addresses</span></a> gives a clue of legitimate sources that should be
+added in <strong>List of authorized sources</strong> subsection.</p>
+</div>
+<div class="section" id="roadwarrior-users">
+<span id="id1"></span><h2>Usuarios remotos</h2>
+<p>Algunos clientes vPBX tienen usuarios roadwarriors que viajan con frecuencia y se conectan desde redes externas, forzando a los clientes a deshabilitar el <strong>Filtrado por IP</strong>.</p>
+<p>Para solucionar este problema, existe una opción de usuario llamada <strong>Llamadas desde IPs no autorizadas</strong> que permite a ciertos usuarios realizar un número concreto de llamadas desde redes remotas, haciendo que las credenciales del resto de usuarios solo se puedan utilizar desde las redes autorizadas.</p>
+<p>Cuando estos usuarios llaman desde IPs no autorizadas, el número de llamadas salientes concurrentes se limitará a 1, 2 o 3, evitando que supongan una brecha de seguridad.</p>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Solo se limitarán las <strong>llamadas generadas</strong> (internas y externas), la recepción de llamadas no se verán afectadas por este parámetro.</p>
+</div>
+<p>En resumen, con esta funcionalidad:</p>
+<ul class="simple">
+<li><p class="first">Existen usuarios que pueden realizar un número limitado de llamadas desde IPs no autorizadas.</p>
+</li>
+<li><p class="first">Estas llamadas desde redes no autorizadas se cuentan y se limitan.</p>
+</li>
+</ul>
+<p class="rubric">Ejemplo 1 - Cliente sin Filtrado de IP</p>
+<p>No importa si el usuario puede realizar llamadas desde redes no autorizadas, al no existir redes autorizadas.</p>
+<p class="rubric">Ejemplo 2- Cliente con Filtrado de IP</p>
+<ul class="simple">
+<li><p class="first">Si el usuario llamada desde una IP permitida, no importa si puede llamar o no desde redes no autorizadas: las llamadas desde IPs permitidas no se limitan.</p>
+</li>
+<li><p class="first">Si el usuario llamada desde una IP NO autorizada, se verifica cuántas llamadas puede realizar saltándose el filtrado de IPs. Si el usuario puede realizar llamadas desde IPs no autorizadas y no ha llegado a su límite, la llamada se permite y se cuenta.</p>
+</li>
+</ul>
+<p>En resumen, si <strong>Llamadas desde IPs no autorizadas</strong> se configura a <em>Ninguna</em> el usuario tiene que cumplir la política de seguridad del cliente.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2019, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

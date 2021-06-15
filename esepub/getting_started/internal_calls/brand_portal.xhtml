@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Brand Configuration</title>
+    
+    <link rel="stylesheet" href="../../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="client_portal.xhtml" title="Client Configuration"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="god_portal.xhtml" title="Configuración Global"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.xhtml">documentación de IvozProvider - Artemis</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Realizar llamadas internas</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="brand-configuration">
+<h1>Brand Configuration</h1>
+<p>We need that the default DemoBrand has a client with at least 2 users. In
+order to achieve this we will require a little configuration in this section.</p>
+<p>De hecho, al acceder a la sección <strong>PBXs virtuales</strong>, vemos que ya existe una compañía <em>DemoCompany</em> que podremos utilizar para cumplir nuestro ansiado objetivo :)</p>
+<p>Only a thing is required to configure for this client, pressing <strong>Edit client</strong> option.</p>
+<div class="section" id="client-sip-domain">
+<span id="domain-per-client"></span><h2>Client SIP Domain</h2>
+<p>As mentioned in the previous section, is <strong>required</strong> that each of the vPBX clients
+has a public domain that resolves to the configured IP address for
+<a class="reference internal" href="../../administration_portal/platform/infrastructure/proxy_users.xhtml#proxyusers"><span class="std std-ref">Proxy Users</span></a>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">El registro DNS puede ser de tipo A (soportado por todos los hardphones/softphones) o del tipo NAPTR+SRV.</p>
+</div>
+<p>Once the domain has been configured (by means that are out of scope of this
+document), it will be enough to write it in our client configuration <strong>SIP Domain</strong> field.</p>
+<p>Once the client has been saved, the domain will be also displayed in the list in the column <strong>SIP domain</strong>.</p>
+<div class="admonition attention">
+<p class="first admonition-title">Atención</p>
+<p class="last">It&#8217;s important to understand this block. <a class="reference internal" href="#dnshack"><span class="std std-ref">Unless we&#8217;ve a
+single client registered</span></a>, without a DNS domain pointing to our
+users proxy IP address, everything will fail.</p>
+</div>
+<div class="admonition danger">
+<p class="first admonition-title">Peligro</p>
+<p class="last">Have we repeated enough that without a properly configured DNS
+pointing to the Users proxy IP address nothing will work?</p>
+</div>
+<div class="section" id="i-have-no-time-for-a-dns-registry">
+<span id="dnshack"></span><h3>No tengo tiempo para crear registros DNS</h3>
+<p>Everything we have said is true: as we create new brands and brands create new
+clients, each of them will need a DNS registry.</p>
+<p>But the first client of the platform is quite special and can take over the IP
+address of the proxy to use it as a domain.</p>
+<p>Although it is not a domain, but being used like it was, it will be displayed
+in <a class="reference internal" href="../../administration_portal/platform/sip_domains.xhtml#sip-domains"><span class="std std-ref">SIP domains</span></a> section.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Truco</p>
+<p class="last">It’s important to understand the this trick is only valid for the first
+client of the platform ;)</p>
+</div>
+</div>
+</div>
+<div class="section" id="emulate-demo-client">
+<span id="emulate-client"></span><h2>Emulate Demo client</h2>
+<p>The client emulation process is the same as the brand emulation, with the
+difference that it filters the block ‘Client Configuration’ instead of
+‘Brand Configuration’.</p>
+<p>Once the client has been emulated, the top right corner of the portal will
+show that we are in the right path :)</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2019, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

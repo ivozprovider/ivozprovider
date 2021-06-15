@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Extra components</title>
+    
+    <link rel="stylesheet" href="../../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../operation_roles/index.xhtml" title="Platform roles"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="cd_install.xhtml" title="Automatic ISO CD image"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.xhtml">IvozProvider Artemis documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Initial Installation</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="extra-components">
+<h1>Extra components</h1>
+<div class="section" id="g-729">
+<h2>G.729</h2>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">G.729 codec is offered by default for outgoing external calls. If you
+don&#8217;t install it using following instructions, it must be removed from pjsip.conf
+configuration file. Otherwise, application servers will be offering a not available codec.</p>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">In some countries, you might have to pay royalty fees in order to
+use G.729 codec to their patent holders. We&#8217;re not legal advisers regarding
+active or withdrawn world patents.</p>
+</div>
+<p>You can use G.729 with IvozProvider, but installation must be done manually.
+G.729 codec is optimized for each CPU type and version of asterisk, so each
+installation may require a different codec module.</p>
+<p>You can download codec from <a class="reference external" href="http://asterisk.hosting.lv/">here</a><span class="link-target"> [http://asterisk.hosting.lv/]</span> under the
+section Asterisk 13.</p>
+<p>Once downloaded, move the <cite>.so</cite> file to <strong>/usr/lib/asterisk/modules/</strong> and rename
+it to <strong>codec_g729.so</strong></p>
+<p>You can check the codec is valid by loading the module in asterisk and printing the
+available codec translations using:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">asterisk -rx &#39;module load codec_g729.so&#39;</span>
+<span class="go">asterisk -rx &#39;core show translation&#39; | grep 729</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2019, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Call billing</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="invoices.xhtml" title="Invoice generation"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pricing_plans.xhtml" title="Pricing plans"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">IvozProvider Oasis documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Billing and Invoices</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="call-billing">
+<h1>Call billing</h1>
+<p>Billing a call is the <strong>action of setting a price</strong> to a call that implies cost.</p>
+<div class="section" id="automatic-billing">
+<h2>Automatic billing</h2>
+<p>As exposed previously, billing calls depends upon an automatic process:</p>
+<ul>
+<li><p class="first">When a call is about to be established, IvozProvider verifies that it will be
+able to bill it.</p>
+<blockquote>
+<div><ul class="simple">
+<li>If with the current configuration (active and applicable pricing plans for
+a given company and for the specific destination) it won&#8217;t be possible to
+bill the call, IvozProvider will prevent its establishment.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Once a call that implies cost is hung up, it is listed in <a class="reference internal" href="billable_calls.xhtml#billable-calls"><span class="std std-ref">Billable calls</span></a>.</p>
+</li>
+<li><p class="first">Some minutes later, the billing task will evaluate each unbilled call and will
+update this fields:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Price</li>
+<li>Pricing plan</li>
+<li>Pricing pattern</li>
+<li>Set Metered to &#8216;yes&#8217;</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="manual-re-billing">
+<h2>Manual re-billing</h2>
+<p>It may happen that the brand operator needs to re-bill an specific call due to
+multiple reasons:</p>
+<ul class="simple">
+<li>Mistake on imported pricing plan/pattern.</li>
+<li>Multiple pricing plans with incorrect metric value.</li>
+<li>Not asociated pricing plan.</li>
+<li>Etc.</li>
+</ul>
+<p>In these cases, the <em>brand operator</em> can re-bill wrongly billed calls.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Billing a call again means setting the price as it is made right
+now. It uses, therefore, the current configuration of pricing plans
+not the configuration of the moment the call was made.</p>
+</div>
+<p>In order to re-bill some calls (or just one), select them in <strong>Brand configuration</strong>
+&gt; <strong>Billable calls</strong> and press the button <strong>Bill calls</strong>.</p>
+<img alt="../_images/retarificate.png" src="../_images/retarificate.png" />
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p class="last"><strong>It is not possible to re-bill a call that is currently included in
+an existing invoice</strong>. In other words, if a selected call has a non-empty
+<strong>Invoice</strong> field, this invoice must be deleted before. The reason behind this
+logic is that we don&#8217;t want and invoice containing calls with a wrong price.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

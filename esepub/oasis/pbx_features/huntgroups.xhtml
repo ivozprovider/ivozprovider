@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Grupos de salto</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="queues.xhtml" title="Colas"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="conditional_routes.xhtml" title="Rutas condicionales"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">documentación de IvozProvider - Oasis</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Funcionalidades de PBX</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="hunt-groups">
+<span id="huntgroups"></span><h1>Grupos de salto</h1>
+<p>Los grupos de salto nos permiten definir lógicas de <em>ringado</em> más allá de la básica <strong>llamada a usuario</strong>.</p>
+<p>Existen de varios tipos:</p>
+<dl class="glossary docutils">
+<dt id="term-ring-all">A todos</dt>
+<dd><p class="first last">La llamada suena en varios terminales a la vez durante el tiempo definido.</p>
+</dd>
+<dt id="term-sequential">Secuencialmente</dt>
+<dd><p class="first last">Suenan los usuarios definidos, en el orden definido y durante el tiempo definido a cada uno de ellos. Al acabar la secuencia, la llamada se cuelga.</p>
+</dd>
+<dt id="term-sequential-infinite">Secuencialmente (infito)</dt>
+<dd><p class="first last">Suenan los usuarios definidos, en el orden definido y durante el tiempo definido. Al acabar la secuencia, se vuelve a iniciar la secuencia.</p>
+</dd>
+<dt id="term-random">Aleatoriamente</dt>
+<dd><p class="first last">Reparte las llamadas entre los usuarios elegidos de forma aleatoria, sonando cada uno de ellos el tiempo acordado. Una vez que suenan todos, la llamada se cuelga.</p>
+</dd>
+</dl>
+<p class="rubric">Ejemplo 1: Grupo de salto <em>ringall</em></p>
+<p>Creemos por ejemplo un grupo de salto que llame a la par a nuestros 2 usuarios durante 30 segundos:</p>
+<img alt="../_images/huntgroup_add.png" src="../_images/huntgroup_add.png" />
+<p>Pulsando el icono de las personas podemos añadir a Alice y Bob a nuestro grupo de salto:</p>
+<img alt="../_images/huntgroup_add2.png" src="../_images/huntgroup_add2.png" />
+<p class="rubric">Ejemplo 2: Grupo de salto secuencial</p>
+<p>Editemos ahora este grupo de salto para que llame 10 segundos a Alice y después 15 segundos a Bob, reiniciando la secuencia si ninguno de los 2 contesta:</p>
+<img alt="../_images/huntgroup_add3.png" src="../_images/huntgroup_add3.png" />
+<p>En este caso tenemos que indicar una <strong>prioridad</strong> (los usuarios suenan de menos a mayor prioridad) y un tiempo de <em>ringing</em>:</p>
+<img alt="../_images/huntgroup_add4.png" src="../_images/huntgroup_add4.png" />
+<div class="admonition hint">
+<p class="first admonition-title">Consejo</p>
+<p class="last">Para que ciertas lógicas (desvíos, etc.) alcancen un <strong>Grupo de salto</strong>, basta con crear una extensión apuntando a dicho grupo de salto y utilizar esta extensión como destino de la lógica.</p>
+</div>
+<p>Creemos la extensión 200 que apunte a este grupo de salto:</p>
+<img alt="../_images/huntgroup_extension.png" src="../_images/huntgroup_extension.png" />
+<div class="admonition hint">
+<p class="first admonition-title">Consejo</p>
+<p>Al configurar un grupo de salto, puedes evitar que las llamadas generen llamadas perdidas en los miembros con el parámetro <strong>Evitar llamadas perdidas</strong>:</p>
+<ul class="last simple">
+<li><p class="first"><strong>Sí</strong>: las llamadas del grupo de salto no generarán perdidas nunca.</p>
+</li>
+<li><p class="first"><strong>No</strong>: El comportamiento dependerá del tipo de grupo de salto:</p>
+<ul>
+<li><p class="first"><strong>RingAll</strong>: las llamadas generarán perdida solo si no contesta ninguno de los miembros.</p>
+</li>
+<li><p class="first"><strong>Resto de tipos</strong>: las llamadas generarán perdida en los miembros que no contesten.</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

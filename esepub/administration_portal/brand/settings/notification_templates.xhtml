@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Notification Templates</title>
+    
+    <link rel="stylesheet" href="../../../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="generic_music_on_hold.xhtml" title="Generic Music on Hold"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="numeric_transformations.xhtml" title="Numeric transformations"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.xhtml">documentación de IvozProvider - Artemis</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.xhtml" >Brand Configuration</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.xhtml" accesskey="U">Settings</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="notification-templates">
+<span id="id1"></span><h1>Notification Templates</h1>
+<p>Brand administrators can configure the notifications sent by IvozProvider:</p>
+<ul class="simple">
+<li>Email sent when a new voicemail is received</li>
+<li>Email sent when a new fax is received</li>
+<li>Email sent when a balance is below configured threshold</li>
+<li>Email sent when an automatic invoice is generated</li>
+<li>Email sent when scheduled CDR CSVs are generated</li>
+<li>Email sent when max daily usage is reached</li>
+</ul>
+<div class="admonition hint">
+<p class="first admonition-title">Consejo</p>
+<p class="last">When no custom notification is configured, default ones will be used</p>
+</div>
+<p>Notifications are created in two steps: Create a notification type and add contents to the notification for each
+required language.</p>
+<div class="section" id="creating-a-new-notification">
+<h2>Creating a new notification</h2>
+<p>Brand administrators can create new notification templates in <strong>Brand configuration</strong> &gt; <strong>Notification templates</strong>:</p>
+<p>Fields are nearly self-explanatory:</p>
+<dl class="glossary docutils">
+<dt id="term-name">Name</dt>
+<dd>Used to identify this notification template</dd>
+<dt id="term-type">Type</dt>
+<dd>Determine the notification type. Each notification type has its own substitution variables available to replace
+the contents of the subject and body.</dd>
+</dl>
+</div>
+<div class="section" id="adding-notification-contents">
+<h2>Adding Notification contents</h2>
+<p>Once the notification has been created, you can add different language contents. IvozProvider will automatically use
+the proper language based on the destination:</p>
+<blockquote>
+<div><ul class="simple">
+<li>For Voicemails, the user language will be used</li>
+<li>For Faxes, the client language will be used.</li>
+</ul>
+</div></blockquote>
+<p>Configurable fields of each content:</p>
+<dl class="glossary docutils">
+<dt id="term-language">Language</dt>
+<dd>Language of the contents.</dd>
+<dt id="term-from-name">From Name</dt>
+<dd>The from name used while sending emails (p.e. IvozProvider Voicemail Notifications)</dd>
+<dt id="term-from-address">From Address</dt>
+<dd>The from address used while sending emails (p.e. <a class="reference external" href="mailto:no-reply&#37;&#52;&#48;ivozprovider&#46;com">no-reply<span>&#64;</span>ivozprovider<span>&#46;</span>com</a>)</dd>
+<dt id="term-substitution-variables">Substitution variables</dt>
+<dd>Available variables that can be used in subject and body that will be replaced before sending the email. Each
+notification type has its own variables.</dd>
+<dt id="term-subject">Subject</dt>
+<dd>Subject of the email to be sent. You can include Substitution variables here.</dd>
+<dt id="term-body-type">Body type</dt>
+<dd>Body of the mail can be both plaintext or html.</dd>
+<dt id="term-body">Body</dt>
+<dd>Body of the email to be sent. You can include Substitution variables here.</dd>
+</dl>
+<div class="admonition hint">
+<p class="first admonition-title">Consejo</p>
+<p class="last">There is no need to create all content languages. If custom notification has some languages not defined the
+default contents will be used for that notification type.</p>
+</div>
+</div>
+<div class="section" id="assigning-templates-to-clients">
+<h2>Assigning templates to clients</h2>
+<p>Once the notification has been configured for the desired languages, Brand administrator can assign it to the
+client that will use it. This can be done in the Notification configuration section of each client.
+If client has no notification configured, brand notifications will be used for that client instead. If brand has no
+notification configured, default notifications will be used.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2019, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

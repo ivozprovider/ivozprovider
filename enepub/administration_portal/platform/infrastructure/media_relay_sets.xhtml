@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Media relay sets</title>
+    
+    <link rel="stylesheet" href="../../../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="application_servers.xhtml" title="Application Servers"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="proxy_trunks.xhtml" title="Proxy Trunks"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.xhtml">IvozProvider Artemis documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.xhtml" >Platform Configuration</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.xhtml" accesskey="U">Infrastructure</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="media-relay-sets">
+<h1>Media relay sets</h1>
+<p>Media relays are in charge of bridging RTP traffic of established calls. Like
+the Application Servers, they can scale horizontally as much as required.</p>
+<p>Media relays are organized in groups so they can be assigned to a client/provider. Each
+element of the group has a <strong>metric</strong> that allows non-equal load balancing
+within the same group (i.e. media-relay1 metric 1; media-relay2 metric 2:
+the second media relay will handle two times the calls than the first one).</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">The static assignment of media relay groups is not the common practice
+but allow us to assign strategic resources to clients that need a warranted
+service. The most common usage of this <strong>groups of media relays</strong> is to
+place them near the geographic area of the client (usually far from the
+rest of the platform systems) in order to reduce <strong>latencies</strong> in their
+conversations.</p>
+</div>
+<p>In a standalone installation, only one media relay group will exist. By default this group only has a media server.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The address displayed is the control socket, not the SDP address that
+will be included during SIP negotiation. By default this alone media-relay
+will share the same IP address that the User&#8217;s SIP proxy.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2019, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Conditional routes</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="huntgroups.xhtml" title="Hunt groups"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="route_locks.xhtml" title="Route locks"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">IvozProvider Oasis documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">PBX Features</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="conditional-routes">
+<span id="id1"></span><h1>Conditional routes</h1>
+<p>Conditional routes allows changing a call logic depending on:</p>
+<ul class="simple">
+<li>Who is calling.</li>
+<li>What time is calling.</li>
+<li>What day is calling.</li>
+<li>Route lock status</li>
+</ul>
+<p>These routes are electable in three sections:</p>
+<ul class="simple">
+<li>DDIs</li>
+<li>Extensions</li>
+<li>IVR custom options</li>
+</ul>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Remaining sections could use conditional routes creating an extension
+that point to a conditional route first, and routing to this extension.</p>
+</div>
+<div class="section" id="creating-a-conditional-route">
+<h2>Creating a conditional route</h2>
+<p>First of all we create a conditional route in <strong>Conditional routes</strong> section:</p>
+<img alt="../_images/conditional_route_edit.png" src="../_images/conditional_route_edit.png" />
+<p>On creation we define what should be done with a call that does not satisfy any
+of the rules described below.</p>
+</div>
+<div class="section" id="adding-rules">
+<h2>Adding rules</h2>
+<p>Once created, we need to add rules, for example:</p>
+<p class="rubric">Calls from Japan and Germany received in the morning to an specific user</p>
+<img alt="../_images/conditional_route_rule1.png" src="../_images/conditional_route_rule1.png" />
+<p class="rubric">Calls from Japan and Germany received in the afternoon to another user</p>
+<img alt="../_images/conditional_route_rule2.png" src="../_images/conditional_route_rule2.png" />
+<p class="rubric">Override the reception IVR for summer days</p>
+<img alt="../_images/conditional_route_rule3.png" src="../_images/conditional_route_rule3.png" />
+<p>With this example rules, our example conditional route will look like this:</p>
+<img alt="../_images/conditional_route_rules.png" src="../_images/conditional_route_rules.png" />
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Since IvozProvider 1.7 <strong>Route locks</strong> (see <a class="reference internal" href="route_locks.xhtml#route-locks"><span class="std std-ref">Route locks</span></a>) can be used as a criteria too.</p>
+</div>
+<p>Some notes about this example:</p>
+<ul class="simple">
+<li>Rules are evaluated following the metric parameter. Once a rule matches, its
+logic is applied.</li>
+<li>Rules may have from 1 to 4 criteria:<ul>
+<li>None, one or more matchlist (pre-created, see <a class="reference internal" href="match_lists.xhtml#match-lists"><span class="std std-ref">Match Lists</span></a>)</li>
+<li>None, one or more schedules (pre-created, see <a class="reference internal" href="external_filters.xhtml#schedules"><span class="std std-ref">Schedules</span></a>)</li>
+<li>None, one or more calendar (pre-created, see <a class="reference internal" href="external_filters.xhtml#calendars"><span class="std std-ref">Calendars</span></a>)</li>
+<li>None, one or more route locks (pre-created, see <a class="reference internal" href="route_locks.xhtml#route-locks"><span class="std std-ref">Route locks</span></a>)</li>
+</ul>
+</li>
+<li>These 4 criteria are combined (applying an AND logic).</li>
+</ul>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">When adding more than one route lock, if any of them is Opened, this criteria will be considered as fulfilled.</p>
+</div>
+</div>
+<div class="section" id="using-a-conditional-route">
+<h2>Using a conditional route</h2>
+<p>The behaviour when an IVR option or an extension is routed to a conditional
+route is easy to understand, but using conditional routes with DDIs need an
+additional explanation.</p>
+<p>Imagine this scenario:</p>
+<img alt="../_images/conditional_route_ddi.png" src="../_images/conditional_route_ddi.png" />
+<p>DDI has an external call filter and is routed to the new conditional route.</p>
+<p>When a call is received:</p>
+<ul class="simple">
+<li>External call filter is evaluated:<ul>
+<li>If current day is marked in any calendar, the holiday logic applies.</li>
+<li>If current time is not inside any time-gap, out-of-schedule logic applies.</li>
+</ul>
+</li>
+<li>If external call filter logics have not applied, conditional route is evaluated.</li>
+</ul>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">Conditional route is not intented as an external call filter
+replacement. Filter is evaluated first, conditional route afterwards.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

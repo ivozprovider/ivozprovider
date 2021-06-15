@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>What is IvozProvider?</title>
+    
+    <link rel="stylesheet" href="../../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="what_is_inside.xhtml" title="What is inside IvozProvider?"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="getting_help.xhtml" title="Getting help"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.xhtml">IvozProvider Artemis documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Introduction to IvozProvider</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="what-is-ivozprovider">
+<h1>What is IvozProvider?</h1>
+<p>IvozProvider is a <a class="reference internal" href="#operator-oriented"><span class="std std-ref">provider oriented</span></a>
+<a class="reference internal" href="#multilevel"><span class="std std-ref">multilevel</span></a> <a class="reference internal" href="#voip"><span class="std std-ref">IP telephony</span></a> solution
+<a class="reference internal" href="#exposed"><span class="std std-ref">exposed to the public network</span></a>.</p>
+<div class="section" id="ip-telephony">
+<span id="voip"></span><h2>IP Telephony</h2>
+<p>IvozProvider supports telephony systems that use <em>Session Initiation
+Protocol</em>, <strong>SIP</strong>, described in <a class="reference external" href="https://tools.ietf.org/html/rfc3261">RFC 3261</a><span class="link-target"> [https://tools.ietf.org/html/rfc3261]</span> and any <a class="reference external" href="https://www.packetizer.com/ipmc/sip/standards.html">related RFCs</a><span class="link-target"> [https://www.packetizer.com/ipmc/sip/standards.html]</span> independent of
+manufacturers.</p>
+<p>This allows total freedom to choose <em>softphones</em>, <em>hardphones</em> and the
+rest of elements that interact with IvozProvider, without any kind of
+binding with a manufacturer.</p>
+<p>Right now, IvozProvider supports the following <strong>transport protocols</strong>
+for SIP:</p>
+<blockquote>
+<div><ul class="simple">
+<li>UDP</li>
+<li>TCP</li>
+<li>TLS</li>
+<li>Websockets</li>
+</ul>
+</div></blockquote>
+<p>This last transport protocol described in <a class="reference external" href="https://tools.ietf.org/html/rfc7118">RFC 7118</a><span class="link-target"> [https://tools.ietf.org/html/rfc7118]</span> supports web integrated
+softphones, using the <a class="reference external" href="https://webrtc.org/">WebRTC</a><span class="link-target"> [https://webrtc.org/]</span> standard allowing
+browsers to establish real-time <em>peer-to-peer</em> connections.</p>
+<p>The <strong>supported audio codec</strong> list is:</p>
+<blockquote>
+<div><ul class="simple">
+<li>PCMA (<em>alaw</em>)</li>
+<li>PCMU (<em>ulaw</em>)</li>
+<li>GSM</li>
+<li>SpeeX</li>
+<li>G.722</li>
+<li>G.726</li>
+<li>G.729 (manual installation required)</li>
+<li>iLBC</li>
+<li><a class="reference external" href="http://opus-codec.org/">OPUS</a><span class="link-target"> [http://opus-codec.org/]</span></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="multilevel">
+<h2>Multilevel</h2>
+<p>The web portal design of IvozProvider allows <strong>multiple actors within the
+same infrastructure</strong>:</p>
+<img alt="../../_images/operator_levels.png" src="../../_images/operator_levels.png" />
+<p>In <a class="reference internal" href="../operation_roles/index.xhtml#operation-roles"><span class="std std-ref">Platform roles</span></a> section, the different roles are deeply
+described, but to sum up:</p>
+<ul class="simple">
+<li><strong>God Admin</strong>: The administrator and maintainer of the solution. Provides
+access to multiple brand operators.</li>
+<li><strong>Brand Operator</strong>: Responsible of configuring carrier routing, billing and invoicing to
+multiple clients.</li>
+<li><strong>Client Operator</strong>: Responsible of its own configuration and to manage the final platform users.</li>
+<li><strong>Users</strong>: The last link of the chain, has SIP credentials and can access
+its own portal for custom configurations. This level is only available for vPBX client types.</li>
+</ul>
+<p><strong>Each one</strong> of this roles <strong>has its own portal</strong> that allows them to
+fulfill their tasks. Each portal can be customized in the following
+ways:</p>
+<ul class="simple">
+<li>Themes and <em>skins</em> for corporate colours.</li>
+<li>Client Logos.</li>
+<li>Customized URLs with the Brand or Client domain.</li>
+</ul>
+</div>
+<div class="section" id="provider-oriented">
+<span id="operator-oriented"></span><h2>Provider oriented</h2>
+<p>IvozProvider is a telephony solution <strong>designed with horizontal scaling
+in mind</strong>. This allows handling a great amount of <strong>traffic and users</strong>
+only by increasing the machines and resources of them.</p>
+<p>This are the main ideas that makes this product provider oriented:</p>
+<ul>
+<li><p class="first">Despite the fact that all machine profiles can run in the same host,
+what makes it easier for the initial testing, each profile of IvozProvider
+can be separated from the rest to make it run in its own machine.</p>
+</li>
+<li><p class="first">A <strong>distributed installation</strong> allows to distribute the correct amount of
+resources to each task, but also:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Geographic distribution of elements to warranty high availability in
+case of CPD failure.</li>
+<li>Setup of key elements near the final users, to minimize the communication
+latencies.</li>
+<li>Horizontal scaling of key profiles to handle hundred of thousands
+concurrent calls.</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p>The resource consuming elements that limit the service of VoIP solutions
+use to be:</p>
+<ul class="simple">
+<li>Already established calls audio management.</li>
+<li>Managing configuration for each client administrator (IVRs, conference
+rooms, external call filters, etc.)</li>
+<li>Databases of configuration and records.</li>
+</ul>
+<p>IvozProvider was designed always keeping in mind the <strong>horizontal
+scaling</strong> of each of its elements, so it <strong>can handle thousands concurrent calls</strong>
+and what is more important, <strong>adapt the platform resources to the expected service quality</strong>:</p>
+<ul>
+<li><p class="first"><strong>Media-relay</strong> servers handle audio frames for the already established
+calls:</p>
+<blockquote>
+<div><ul class="simple">
+<li>You can use as many media-relays as you need.</li>
+<li>You can join media-relay in groups, and force some clients to use a
+group if you want.</li>
+<li>You can setup media-relays near the final users, to minimize network
+latencies in the calls.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>Application servers</strong> are in charge of processing the configured logic:</p>
+<blockquote>
+<div><ul class="simple">
+<li>They scale horizontally: new Application Serves can be installed and
+added to the pool if you feel the need.</li>
+<li>Every call is handled by the least busy Application Server</li>
+<li>By default, there is no static assignment * between Clients and
+Application Servers. This way failure of any Application Server is not
+critical: the platform will ignore the faulty Application Server while
+distributing calls.</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="exposed-to-the-public-network">
+<span id="exposed"></span><h2>Exposed to the public network</h2>
+<p>As showed in the installation process, <strong>IvozProvider is designed to serve
+users directly from Internet</strong>. Although it can be used in local
+environments, IvozProvider is designed to use public IP addresses for its
+services, removing the need of VPN or IPSec tunnels that connect the
+infrastructure with the final users</p>
+<p>Highlights:</p>
+<ul class="simple">
+<li>Only the required services will be exposed to Internet.</li>
+<li>The untrusted origins access can be filtered out by integrated firewall</li>
+<li>Access from IP addresses or networks can be filtered to avoid any kind of
+phishing.</li>
+<li>There is also an anti-flood mechanism to avoid short-life Denial of
+Service attacks.</li>
+<li>Each client concurrent calls can be limited to a fixed amount.</li>
+<li>IvozProvider supports connection from terminals behind
+<a class="reference external" href="https://en.wikipedia.org/wiki/Network_address_translation">NAT</a><span class="link-target"> [https://en.wikipedia.org/wiki/Network_address_translation]</span>.</li>
+<li>IvozProvider keep track of those NAT windows and keep them alive with
+<em>nat-piercing</em> mechanisms.</li>
+</ul>
+<table class="docutils footnote" frame="void" id="id1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[*]</td><td>The global administrator can assign Application Servers to some client types but
+this feature is more designed as a temporal debug and troubleshoot measure.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2019, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

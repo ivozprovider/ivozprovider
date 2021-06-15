@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Portal de usuario</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="../security/index.xhtml" title="Elementos de seguridad"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="../provisioning/index.xhtml" title="Provisión de terminales"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">documentación de IvozProvider - Oasis</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="user-portal">
+<span id="userportal"></span><h1>Portal de usuario</h1>
+<p>IvozProvider provee un portal de usuario donde los usuarios finales pueden realizar las siguientes acciones:</p>
+<ul>
+<li><p class="first">Ver un listado de las llamadas en las que ha participado.</p>
+</li>
+<li><p class="first">Configurar sus desvíos:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="first">A su buzón de voz</p>
+</li>
+<li><p class="first">A una extensión interna</p>
+</li>
+<li><p class="first">A un número externo</p>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Activar funcionalidades:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="first">Llamada en espera</p>
+</li>
+<li><p class="first">No molestar</p>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Ver el estado del registro de su dispositivo SIP</p>
+</li>
+</ul>
+<div class="section" id="access-urls">
+<h2>URLs de acceso</h2>
+<p>Para acceder al portal de usuario, es necesario que previamente se haya definido en IvozProvider la URL (que apuntará a cualquiera de las IPs de la plataforma).</p>
+<p>Existen 2 roles que pueden realizar esta tarea:</p>
+<div class="section" id="god-operator">
+<h3>Operador global</h3>
+<p>En la sección <strong>Gestión general &gt; Marcas</strong> se pueden configurar tantas URLs de Usuario como se desee, por medio del botón <strong>Listado de portales</strong> de cada marca.</p>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">La vinculación, por tanto, es de URL &lt;-&gt; Marca, por lo que el operador global puede elegir entre crear una URL para cada marca o uno por cada empresa de dicha marca.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Advertencia</p>
+<p class="last">La URL tiene que ser https.</p>
+</div>
+<p>Esta sección permite configurar el logo que se mostrará, así como un tema de colores y una cadena de caracteres que se utilizará como título.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Consejo</p>
+<p class="last">De esta forma, si se desea,  se puede adaptar a los colores corporativos de cada empresa.</p>
+</div>
+</div>
+<div class="section" id="brand-operator">
+<h3>Operador de marca</h3>
+<p>El operador marca puede realizar también esta misma tarea, para ser autónomo y no depender del operador global para crear las URLs de sus empresas.</p>
+<p>De esta forma, puede configurar tantas URLs como quiera, con los dominios, colores y logos que desee, para cada una de sus empresas.</p>
+<p>La sección para realizar esta tarea es <strong>Configuración de Marca</strong> &gt; <strong>Portal URLs</strong>.</p>
+</div>
+</div>
+<div class="section" id="access-credentials">
+<h2>Credenciales de acceso</h2>
+<p>Las credenciales de acceso al portal de usuario se configuran en la sección <strong>Configuración de Empresa &gt; Usuarios</strong>.</p>
+<p>En concreto:</p>
+<ul class="simple">
+<li><p class="first">En el bloque <strong>Información de Login</strong>, se activa/desactiva el acceso de cada usuario.</p>
+</li>
+<li><p class="first">En el apartado <strong>Contraseña</strong> se especifica la contraseña del usuario.</p>
+</li>
+<li><p class="first">El portal de usuario pedirá el email del usuario para acceder, por lo que cada usuario que quiera acceder al portal tiene que tener una dirección de email.</p>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Advertencia</p>
+<p class="last">El <strong>email</strong> de cada usuario tiene que ser <strong>único a nivel global</strong>.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

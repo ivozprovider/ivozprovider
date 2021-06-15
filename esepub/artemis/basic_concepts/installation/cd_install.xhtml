@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>CDs automáticos de instalación</title>
+    
+    <link rel="stylesheet" href="../../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="extra_components.xhtml" title="Componentes extra"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="debian_install.xhtml" title="Instalación por paquetes Debian"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.xhtml">documentación de IvozProvider - Artemis</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Instalación inicial</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="automatic-iso-cd-image">
+<h1>CDs automáticos de instalación</h1>
+<p>Puedes descargar uno de los <a class="reference external" href="https://github.com/irontec/ivozprovider">CDs automáticos de instalación de IvozProvider</a><span class="link-target"> [https://github.com/irontec/ivozprovider]</span> (generados mediante <a class="reference external" href="https://wiki.debian.org/Simple-CDD">simplecdd</a><span class="link-target"> [https://wiki.debian.org/Simple-CDD]</span>) en su versión estable o en una de las builds nocturnas:</p>
+<div class="admonition important">
+<p class="first admonition-title">Importante</p>
+<p class="last">IMPORTANTE: Los CDs de instalación formatearán automáticamente el disco de la máquina.</p>
+</div>
+<ul class="simple">
+<li><p class="first">Configure la máquina para iniciar desde CD, mostrará el menú de instalación de Debian GNU/Linux.</p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Si lo desea puede emplear la instalación gráfica del CD, pero los pantallazos a continuación se muestran con la instalación estándar.</p>
+</div>
+<img alt="../../_images/installcd-intro.png" src="../../_images/installcd-intro.png" />
+<ul class="simple">
+<li><p class="first">Seleccione el idioma de la instalación:</p>
+</li>
+</ul>
+<img alt="../../_images/installcd-language.png" src="../../_images/installcd-language.png" />
+<ul class="simple">
+<li><p class="first">Seleccione la ubicación:</p>
+</li>
+</ul>
+<img alt="../../_images/installcd-location.png" src="../../_images/installcd-location.png" />
+<ul class="simple">
+<li><p class="first">Introduzca la contraseña para root</p>
+</li>
+</ul>
+<img alt="../../_images/installcd-rootpass.png" src="../../_images/installcd-rootpass.png" />
+<ul class="simple">
+<li><p class="first">Seleccione la configuración de hora:</p>
+</li>
+</ul>
+<img alt="../../_images/installcd-clock.png" src="../../_images/installcd-clock.png" />
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">En este punto se realizará la configuración automática de red y particionado de disco, así como la instalación del sistema base.</p>
+</div>
+<ul class="simple">
+<li><p class="first">Configure la contraseña del usuario root del Servidor MySQL</p>
+</li>
+</ul>
+<img alt="../../_images/installcd-mysqlpass.png" src="../../_images/installcd-mysqlpass.png" />
+<div class="admonition important">
+<p class="first admonition-title">Importante</p>
+<p class="last">La contraseña de MySQL debe introducirse en esta pantalla y de nuevo en el menú de configuración de IvozProvider. Si deja este campo vacío, se empleará la constraseña por defecto (ver abajo).</p>
+</div>
+<ul class="simple">
+<li><p class="first">Configuración IvozProvider:</p>
+</li>
+</ul>
+<img alt="../../_images/installcd-ivozmenu.png" src="../../_images/installcd-ivozmenu.png" />
+<p>Como se mencionó en <a class="reference internal" href="requirements.xhtml#minimum-requirements"><span class="std std-ref">Requisitos mínimos</span></a> se requiere al menos una dirección IP pública para los proxies de Usuarios y Troncales. Recordar que en caso de utilizar una única dirección IP, los puertos SIP del proxy de salida se cambiarán para evitar la colisión entre ambos.</p>
+<p>Puede asignar sus valores ahora y configurar sus interfaces más tarde, o bien puede mostar el siguiente menu para configurar estos valores más adelante.</p>
+<img alt="../../_images/installcd-proxyaddr.png" src="../../_images/installcd-proxyaddr.png" />
+<p>También puede configurar el valor por defecto para acceder a MySQL en este momento.</p>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Si no configura contraseña para el administrador de MySQL, se empleará la de por defecto (changeme). Puede cambiarla más adelante si lo desea.</p>
+</div>
+<img alt="../../_images/installcd-mysql.png" src="../../_images/installcd-mysql.png" />
+<p>Y el idioma por defecto de los portales web:</p>
+<img alt="../../_images/installcd-portallang.png" src="../../_images/installcd-portallang.png" />
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">No es preciso configurar todas estas cosas durante la instalación. En caso de que algún dato esté sin configurar se mostará un diálogo de aviso:</p>
+</div>
+<img alt="../../_images/installcd-warning.png" src="../../_images/installcd-warning.png" />
+<p>Por último, seleccione el disco donde se instalará el cargador de arranque GRUB.</p>
+<img alt="../../_images/installcd-grub.png" src="../../_images/installcd-grub.png" />
+<p>Una vez reiniciada la máquina podrá entrar y acceder a través de los portales web!</p>
+<div class="admonition important">
+<p class="first admonition-title">Importante</p>
+<p class="last">Cualquiera de las IPs públicas configuradas en la instalación servirá para acceder al panel web. Las credenciales por defecto son <strong>admin / changeme</strong>.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2019, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

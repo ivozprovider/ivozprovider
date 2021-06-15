@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Global Configuration</title>
+    
+    <link rel="stylesheet" href="../../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="brand_portal.xhtml" title="Brand Configuration"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.xhtml" title="Making internal calls"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.xhtml">IvozProvider Artemis documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Making internal calls</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="global-configuration">
+<h1>Global Configuration</h1>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Any of the 2 Public IP addresses configured during the
+installation will work to access the web portal. Default credentials are
+<strong>admin / changeme</strong>.</p>
+</div>
+<p>In this section will reference global administrator configuration options,
+available in the menu (<strong>Main management</strong>) of the web portal (only visible to
+God Admins):</p>
+<div class="section" id="emulate-the-demo-brand">
+<h2>Emulate the Demo brand</h2>
+<p>As mentioned above, the initial installation will have an already created brand
+called DemoBrand, that will be used for our goal: to have 2 telephones registered
+that can call each other.</p>
+<p>Before going to the next section, is quite important to understand how the
+<strong>emulation</strong> works.</p>
+<ul class="simple">
+<li>As global operator, you have access to the menu <strong>Global Configuration</strong> only
+visible to <em>God</em> administrators.</li>
+<li>Apart from that menu, you will also have access to the <strong>Brand Configuration</strong>
+and <strong>Client configuration</strong> blocks.</li>
+<li>Last two blocks have a red button in the right side.</li>
+<li>When pressed, a popup will be displayed that lists all existing brands / clients.</li>
+<li>After selecting the DemoBrand brand, the icon will change.</li>
+<li>The upper right corner of the portal will also display the brand that is being
+emulated.</li>
+</ul>
+</div>
+<div class="section" id="what-emulation-means">
+<h2>What emulation means</h2>
+<p>Basically, that <strong>everything in the menu &#8216;Brand configuration&#8217; will be relative
+to the chosen brand</strong> and is <strong>exactly</strong> the same menu entries that the brand
+operator will see using its brand portal.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Ok, ok, maybe exactly is not totally accurate. The global operator is
+able to see some fields in some screens that other admins can&#8217;t (i.e. On
+Client edit screen, fields like &#8216;Media relays&#8217; or &#8216;Application server&#8217; are
+only configurable by the global operator.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2019, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

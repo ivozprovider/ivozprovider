@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Numeric transformations</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="peering_contracts.xhtml" title="Configuring a Peering Contract"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.xhtml" title="Receive external calls"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">IvozProvider Oasis documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Receive external calls</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="numeric-transformations">
+<span id="id1"></span><h1>Numeric transformations</h1>
+<div class="section" id="concept">
+<h2>Concept</h2>
+<p><strong>IvozProvider</strong> is designed to provide service <strong>anywhere in the planet</strong>, not
+only the original country where the platform is installed.</p>
+<p>A very important contept to archive this goal is the numeric transformation,
+that <strong>adapts the different number format systems of the countries of the world</strong>
+defined in <a class="reference external" href="https://www.itu.int/rec/T-REC-E.164/es">E.164</a><span class="link-target"> [https://www.itu.int/rec/T-REC-E.164/es]</span> <strong>to a neutral
+format</strong>.</p>
+<p>The section that allows the brand operator to configure all the <strong>numeric
+transformations</strong> is:</p>
+<img alt="../_images/numeric_transformations_section.png" class="align-center" src="../_images/numeric_transformations_section.png" />
+<p>There are two different transformation scenarios:</p>
+<div class="section" id="incoming-transformations">
+<h3>Incoming transformations</h3>
+<p>When a new call is received in IvozProvider matching a provider that has been
+configured for <em>peering</em>, we must adapt the numbers that make reference to:</p>
+<ul class="simple">
+<li>Origin of the call</li>
+<li>Destination of the call</li>
+</ul>
+<p>Depending on the country of the provider, the international numbers will have
+a format or another. In this case, the spanish provider will use, for example:</p>
+<ul class="simple">
+<li>00 + 33 + number belonging to France</li>
+<li>It&#8217;s possible that the international numbers came without the 00 code.</li>
+<li>It&#8217;s possible that, if the call comes from the same country that the provider,
+the number comes without the calling code (911234567 insted of 00 + 34 +
+911234567 for Spain).</li>
+</ul>
+<p>For an Ukranian provider, that doesn&#8217;t use the 00 as international code:</p>
+<ul class="simple">
+<li>It will use 810 + 33 + number belonging to France.</li>
+<li>It&#8217;s possible that even part of the internation code (00 in most of the
+countries of the world) the provider use specific codes as prefix.</li>
+</ul>
+<p>The goal of the incoming transformation is that, no matter what numeric system
+the provider uses, the number will end in a general and common format.</p>
+<div class="admonition important" id="e164">
+<p class="first admonition-title">Important</p>
+<p class="last">This common format is usually called E.164 and shows the numbers
+without internation code, but with country calling code: i.e. 34911234567</p>
+</div>
+</div>
+<div class="section" id="outgoing-transformations">
+<h3>Outgoing transformations</h3>
+<p>In the same whay the origin and destination must adaptat incoming numbers, it
+will be required to adapt outgoing dialed numbers to properly work with each
+of the providers that will route our call.</p>
+<p>For example, for a number with spanish number system:</p>
+<ul class="simple">
+<li><em>Spanish provider</em>: Destination will come in E164 (34911234567) and for this
+provider, we can remove the calling code (will understand it belongs to
+its country), so the number sent to them will be 911234567.</li>
+<li><em>French provider</em>: The destination will come in E164 (34911234567) and we must
+add the international code for France, so the number sent to them will be
+0034911234567.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">To sum up, we aim to send the origin and destination in the format the
+provider is expecting.</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Numeric transformation uses <a class="reference external" href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">simple regular expresions</a><span class="link-target"> [https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular]</span> to describe the
+changes done to the numbers. You can find multiple tutorials on net with the
+basic regular expression format.</p>
+</div>
+</div>
+</div>
+<div class="section" id="national-provider-transformations">
+<h2>&#8216;National provider&#8217; transformations</h2>
+<p>IvozProvider comes with an automatic transformation rules generator that fits
+with most of the countries.</p>
+<p>In order to create a new set of transformations for spanish provider:</p>
+<img alt="../_images/numeric_transformations_auto.png" class="align-center" src="../_images/numeric_transformations_auto.png" />
+<p>The rules that has been auto-created will transform the numbers for spanish
+providers that follow this rules:</p>
+<ul class="simple">
+<li>A spanish number: Neither international nor calling code (34).</li>
+<li>Not a spanish number: International code (00) and calling code (34).</li>
+</ul>
+<p>The numeric transformation <em>sets</em> must be assigned to <strong>Peering Contracts</strong>, as
+shown in the following section. This <em>set</em> can be shared by multiple spanish
+providers.</p>
+<p>Let&#8217;s check this <em>set</em> to understand what transformation rule does:</p>
+<img alt="../_images/numeric_transformations.png" src="../_images/numeric_transformations.png" />
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">The automatic rule generation will create 8 common rules based on
+the given parameters. This rules can be edited later to match the provider
+requirements.</p>
+</div>
+<div class="section" id="spanish-incoming-transformation">
+<h3>Spanish incoming transformation</h3>
+<p>Displayed in blue in the previous image:</p>
+<ul class="simple">
+<li>Left called/destination</li>
+<li>Right callee/origin</li>
+</ul>
+<p>The same rules will be applied for the origin and destination:</p>
+<img alt="../_images/numeric_transformations2.png" src="../_images/numeric_transformations2.png" />
+<ul>
+<li><p class="first">The <strong>metric</strong> field will be used to order the rules (smaller first).</p>
+<blockquote>
+<div><ul class="simple">
+<li>If a rule doesnt <em>match</em>, the next rule is evaluated.</li>
+<li>If a rule <em>matches</em>, no more rules are evaluated.</li>
+<li>If no rule <em>matches</em>, no change is applied.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">The <strong>Search</strong> field is evaluated agains the number (depending of the
+tranformation type it will be destination or origin).</p>
+<blockquote>
+<div><ul class="simple">
+<li>Metric 1: Starting with (^) 00 or &#8216;+&#8217;, followed by a digit between 1 and 9
+and only digits between 0 and 9 until the end ($).</li>
+<li>Metric 2: Starting with a digit bewteen 1 and 9, followed by eight digits
+between 0 and 9 until the end($).</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">The <strong>Replace</strong> field will use the capture groups that matched the Search
+field (displayed between brackets, 1 for the first one, 2 for the second
+one, and so on) to determine how the number will end.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Metric 1: The number will be converted just to the second capture (2)</li>
+<li>Metric 2: The number will be converted to the first capture with 34 prefix</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Or <em>in other words</em>:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Metric 1: Strip the international code (00 or &#8216;+&#8217;)</li>
+<li>Metric 2: Add 34 to spanish numbers that comes without calling code.</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="spanish-outgoing-transformation">
+<h3>Spanish outgoing transformation</h3>
+<img alt="../_images/numeric_transformations3.png" src="../_images/numeric_transformations3.png" />
+<p>Following the same logic, this 2 rules make the change of the outgoig external
+destination numbers:</p>
+<ul class="simple">
+<li>Metric 1: If the number starts with 34 prefix, remove it. This converts
+E.164 spanish numbers to national format.</li>
+<li>Metric 2: If the number doesn&#8217;t start with 34 prefix, add 00. This converts
+E.164 international numbers to spanish international numbers.</li>
+</ul>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last"><strong>To sum up</strong>: numeric tranformation can adapt origin and
+destination numbers to E.164 for the platform, and to providers expected
+formats, based on regular expresions and metric that can be grouped in <em>sets</em>
+to be shared between multiple <strong>Peering Contracts</strong>.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

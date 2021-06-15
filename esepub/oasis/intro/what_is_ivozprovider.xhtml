@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>¿Qué es IvozProvider?</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="what_is_inside.xhtml" title="¿Qué hay dentro de IvozProvider?"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="getting_help.xhtml" title="Obtener ayuda"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">documentación de IvozProvider - Oasis</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Introducción a Ivozprovider</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="what-is-ivozprovider">
+<h1>¿Qué es IvozProvider?</h1>
+<p>IvozProvider es una solución de <a class="reference internal" href="#voip"><span class="std std-ref">telefonía IP</span></a> <a class="reference internal" href="#multilevel"><span class="std std-ref">multinivel</span></a> <a class="reference internal" href="#operator-oriented"><span class="std std-ref">orientada a operador</span></a> <a class="reference internal" href="#exposed"><span class="std std-ref">expuesta a la red pública</span></a>.</p>
+<div class="section" id="ip-telephony">
+<span id="voip"></span><h2>Telefonía IP</h2>
+<p>IvozProvider es compatible con los sistemas de telefonía que utilicen el protocolo <em>Session Initiation Protocol</em>, <strong>SIP</strong>, descrito en el <a class="reference external" href="https://tools.ietf.org/html/rfc3261">RFC 3261</a><span class="link-target"> [https://tools.ietf.org/html/rfc3261]</span> y todos los <a class="reference external" href="https://www.packetizer.com/ipmc/sip/standards.html">RFCs relacionados</a><span class="link-target"> [https://www.packetizer.com/ipmc/sip/standards.html]</span>, independientemente del fabricante.</p>
+<p>Esto implica libertad total a la hora de elegir <em>softphones</em>, <em>hardphones</em> y el resto de elementos que interactúan con IvozProvider, sin ningún tipo de ataduras a ningún fabricante.</p>
+<p>En lo relativo a los <strong>protocolos de transporte</strong> para transportar SIP, actualmente IvozProvider soporta:</p>
+<blockquote>
+<div><ul class="simple">
+<li>UDP</li>
+<li>TCP</li>
+<li>TLS</li>
+<li>Websockets</li>
+</ul>
+</div></blockquote>
+<p>Este último protocolo de transporte descrito en el <a class="reference external" href="https://tools.ietf.org/html/rfc7118">RFC 7118</a><span class="link-target"> [https://tools.ietf.org/html/rfc7118]</span> permite la utilización de softphones desde la web, utilizando el estándar <a class="reference external" href="https://webrtc.org/">WebRTC</a><span class="link-target"> [https://webrtc.org/]</span> de los navegadores web para establecer comunicaciones en tiempo real <em>peer-to-peer</em>.</p>
+<p>En lo relativo a los <strong>codecs de audio soportados</strong>, la lista sería la siguiente:</p>
+<blockquote>
+<div><ul class="simple">
+<li>PCMA (<em>alaw</em>)</li>
+<li>PCMU (<em>ulaw</em>)</li>
+<li>GSM</li>
+<li>SpeeX</li>
+<li>G.722</li>
+<li>G.726</li>
+<li>G.729</li>
+<li>iLBC</li>
+<li><a class="reference external" href="http://opus-codec.org/">OPUS</a><span class="link-target"> [http://opus-codec.org/]</span></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="multilevel">
+<h2>Multinivel</h2>
+<p>El esquema de portales y diseño de IvozProvider permite que <strong>múltiples actores cohabiten en una misma infraestructura</strong>:</p>
+<img alt="../_images/operator_levels1.png" src="../_images/operator_levels1.png" />
+<p>En la sección <a class="reference internal" href="../operation_roles/index.xhtml#operation-roles"><span class="std std-ref">Roles de la plataforma</span></a> se describen los distintos roles en profundidad, pero se puede resumir en:</p>
+<ul class="simple">
+<li><p class="first"><strong>Nivel God</strong>: instalador y mantenedor de la solución. Da acceso a n operadores de marca.</p>
+</li>
+<li><p class="first"><strong>Nivel Brand Operator</strong>: Responsable de dar acceso, tarificar y facturar a n operadores de empresa.</p>
+</li>
+<li><p class="first"><strong>Nivel Company Operator</strong>: Responsable de configurar el comportamiento de su centralita y dar de alta n usuarios finales.</p>
+</li>
+<li><p class="first"><strong>Nivel de Usuario</strong>: Dispone de unas credenciales para sus terminales SIP y otra para el acceso a su panel web.</p>
+</li>
+</ul>
+<p>Cabe destacar que <strong>cada uno</strong> de estos niveles <strong>dispone de un acceso web</strong> que le permite realizar sus funciones. Los acceso web se pueden personalizar a nivel de:</p>
+<ul class="simple">
+<li><p class="first">Temas y <em>skins</em> con los colores corporativos.</p>
+</li>
+<li><p class="first">Logo de la empresa.</p>
+</li>
+<li><p class="first">URLs personalizadas con el dominio de la marca/empresa.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="provider-oriented">
+<span id="operator-oriented"></span><h2>Orientada a operador</h2>
+<p>IvozProvider es una solución de telefonía <strong>diseñada con el escalado horizontal en mente</strong>, lo que la permite adecuarse a <strong>altos volúmenes de tráfico y de usuarios</strong> sin más que adaptar el número de máquinas y los recursos de éstas.</p>
+<p>Estas son las ideas principales que lo hacen un producto orientado a operador:</p>
+<ul>
+<li><p class="first">A pesar de que todas las piezas pueden correr en una misma máquina, lo que facilita las pruebas iniciales, cada elemento de IvozProvider se puede separar del resto y correr en su propio hardware.</p>
+</li>
+<li><p class="first">Una <strong>instalación distribuida</strong> permite asignar máquinas con recursos adecuados a cada tarea, pero también posibilita:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="first">Separación geográfica de los elementos para garantizar una disponibilidad a prueba de fallo de CPD.</p>
+</li>
+<li><p class="first">Instalación de elementos clave cerca de los usuarios finales, para minimizar latencias en sus comunicaciones.</p>
+</li>
+<li><p class="first">Escalado horizontal de los elementos clave para dar servicios a cientos de miles de llamadas concurrentes.</p>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p>Los elementos que limitan la capacidad de servicio de las soluciones VoIPsuelen ser:</p>
+<ul class="simple">
+<li><p class="first">Gestión del audio de las llamadas establecidas.</p>
+</li>
+<li><p class="first">Gestión de las lógicas programadas por cada administador de empresa (IVRs, salas de conferencias, filtros de horario, etc.)</p>
+</li>
+<li><p class="first">Bases de datos de almacenamiento de configuraciones y registros.</p>
+</li>
+</ul>
+<p>IvozProvider ha sido diseñado con la idea de mantener el <strong>escalado horizontal</strong> de cada uno de estos elementos, <strong>para así poder llegar a poder gestionar cientos de miles de llamadas concurrentes</strong> y, lo que es más importante, poder <strong>adaptar los recursos de la plataforma al nivel deservicio que se espera en cada momento</strong>:</p>
+<ul>
+<li><p class="first">Los <strong>Media-relays</strong> se encargan de reenviar las tramas de audio de las sesiones establecidas:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="first">Se pueden poner tantos media-relays como sean necesarios.</p>
+</li>
+<li><p class="first">Se pueden crear grupos de media-relays y hacer una asignación estática a las empresas deseadas.</p>
+</li>
+<li><p class="first">Se pueden poner los media-relays cerca de los usuarios finales, para evitar latencias en las llamadas.</p>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Los <strong>Servidores de Aplicación</strong> se encargan de la fase previa de toda llamada: hacer que siga la lógica programada. Este rol:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="first">Se puede escalar horizontalmente: que los Servidores de Aplicación empiezan a estar saturados, se instalan más y se añaden al pool.</p>
+</li>
+<li><p class="first">Una llamada acaba en el Servidor de Aplicación que menos cargado esté en cada momento.</p>
+</li>
+<li><p class="first">En la configuración por defecto no existe asignación estática * que envíe las llamadas de una empresa a un Servidor de Aplicación concreto, de modo que la caída de cualquier Servidor de Aplicación no es crítica: el sistema dejará de contar con él a la hora de distribuir las llamadas.</p>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="exposed-to-the-public-network">
+<span id="exposed"></span><h2>Expuesta a la red pública</h2>
+<p>Tal y como se verá en el proceso de instalación, <strong>IvozProvider está diseñado para servir a usuarios directamente desde Internet</strong>. Aunque pueda utilizarse en entornos locales, IvozProvider se ha diseñado para disponer de direcciones IPs públicas para dar servicio sin necesidad de túneles VPN o IPsec que te conecten con la infraestructura.</p>
+<p>Cabe destacar:</p>
+<ul class="simple">
+<li><p class="first">Solo los elementos imprescindibles están expuestos a Internet.</p>
+</li>
+<li><p class="first">Los accesos desde países de dudosa confianza se cortan en el firewall incorporado.</p>
+</li>
+<li><p class="first">Se puede filtrar el acceso desde IPs/redes autorizadas para evitar fraudes.</p>
+</li>
+<li><p class="first">Existe un mecanismo anti-flood para evitar grandes consumos en poco tiempo.</p>
+</li>
+<li><p class="first">Existe un mecanismo de control de llamadas concurrentes por empresa.</p>
+</li>
+<li><p class="first">IvozProvider soporta la conexión desde terminales tras <a class="reference external" href="https://es.wikipedia.org/wiki/Traducci%C3%B3n_de_direcciones_de_red">NAT</a><span class="link-target"> [https://es.wikipedia.org/wiki/Traducci%C3%B3n_de_direcciones_de_red]</span>.</p>
+</li>
+<li><p class="first">IvozProvider se encarga de mantener activas dichas ventanas de NAT con mecanismos de <em>nat-piercing</em>.</p>
+</li>
+</ul>
+<table class="docutils footnote" frame="void" id="id1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[*]</td><td><p class="first last">El administrador global puede asignar Servidores de Aplicación estáticamente a empresas, pero esta funcionalidad está pensada como herramienta de <em>troubleshooting</em> puntual.</p>
+</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

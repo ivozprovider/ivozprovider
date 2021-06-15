@@ -1,0 +1,317 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="es" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="es" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Dar de alta un DDI externo &mdash; documentación de IvozProvider - Oasis</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'Oasis',
+              LANGUAGE:'es',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/banner.css" type="text/css" />
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="next" title="Realizar llamadas externas" href="../external_outgoing_calls/index.html" />
+    <link rel="prev" title="Configurar Contrato de Peering" href="peering_contracts.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> IvozProvider
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.7
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Introducción a Ivozprovider</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/index.html">Arquitectura general de la plataforma</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../operation_roles/index.html">Roles de la plataforma</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Minimum Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Instalación inicial</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../internal_calls/index.html">Realizar llamadas internas</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Recibir llamadas externas</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="numeric_transformations.html">Transformaciones numéricas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peering_contracts.html">Configurar Contrato de Peering</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Dar de alta un DDI externo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configure-incoming-routes">Configurar tratamiento en entrada</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../external_outgoing_calls/index.html">Realizar llamadas externas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../pbx_features/index.html">Funcionalidades de PBX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../retail/index.html">Clientes Retail</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../billing_and_invoices/index.html">Tarificación y facturación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../provisioning/index.html">Provisión de terminales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faxing/index.html">Sistema de Fax Virtual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userportal/index.html">Portal de usuario</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Security and Maintenance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html">Elementos de seguridad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maintenance/index.html">Mantenimiento de la solución</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IvozProvider</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Recibir llamadas externas</a> &raquo;</li>
+        
+      <li>Dar de alta un DDI externo</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/external_incoming_calls/configure_ddi.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <p>Una vez que hemos llegado a un acuerdo con un Operador VoIP y hemos configuradoesta relación de <em>peering</em>, solo faltan dos tareas:</p>
+<div class="section" id="configuring-an-external-ddi">
+<span id="settingup-ddi"></span><h1>Dar de alta un DDI externo<a class="headerlink" href="#configuring-an-external-ddi" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>El operador de marca, como único responsable de llegar a acuerdos de <em>peering</em> con operadores IP, es el responsable de dar de alta los DDIs de cada operador.</p>
+<p>Para ello, tiene que acceder a la siguiente sección:</p>
+<img alt="../_images/ddis_company_section1.png" class="align-center" src="../_images/ddis_company_section1.png" />
+<p>Observar que para poder acceder a esta sección el operador de marca (o <em>god</em>) tiene que haber emulado una empresa concreta y acceder desde el bloque <strong>Configuración de empresa</strong>.</p>
+<div class="admonition attention">
+<p class="first admonition-title">Atención</p>
+<p class="last">La sección <strong>Configuración de empresa &gt; DDIs</strong> es distinta cuando accede un administrador de empresa que cuando accede un operador global o de marca. El administrador de empresa no puede crear nuevos DDIs ni borrar los que ya existen, solo puede editar los que el operador de marca haya creado.</p>
+</div>
+<p>Por otra parte, la sección <strong>Configuración de marca &gt; DDIs</strong> solo sirve para que el operador de marca pueda ver los DDIs asociados a sus distintas empresas, es un listado en <em>read-only</em>.</p>
+<img alt="../_images/ddis_brand_section1.png" class="align-center" src="../_images/ddis_brand_section1.png" />
+<p>Una vez explicados estos conceptos, añadimos un nuevo DDI y rellenamos los campos necesarios:</p>
+<img alt="../_images/ddis_add1.png" class="align-center" src="../_images/ddis_add1.png" />
+<dl class="glossary docutils">
+<dt id="term-country">País</dt>
+<dd><p class="first last">El país de la númeración pública que estamos dando de alta.</p>
+</dd>
+<dt id="term-ddi">DDI</dt>
+<dd><p class="first last">El número en cuestión, sin códigos de país.</p>
+</dd>
+<dt id="term-peering-contract">Contrato de peering</dt>
+<dd><p class="first last">El contrato de peering por el que entra la numeración. Esta relación permite aplicar las <a class="reference internal" href="numeric_transformations.html#numeric-transformations"><span class="std std-ref">Transformaciones numéricas</span></a> adecuadas.</p>
+</dd>
+<dt id="term-external-call-filter">Filtro de entrada</dt>
+<dd><p class="first last">Permite aplicar lógicas de filtrado en base a horario y calendario, se verán en <a class="reference internal" href="../pbx_features/external_filters.html#external-filters"><span class="std std-ref">Filtros de entrada externo</span></a>. Dejar sin seleccionar para no aplicar filtro alguno.</p>
+</dd>
+<dt id="term-route">Enrutar</dt>
+<dd><p class="first last">Un DDI puede tener distintos <a class="reference internal" href="../pbx_features/external_ddis.html#routing-logics"><span class="std std-ref">tratamientos</span></a>. Para nuestro objetivo, enrutar al usuario <em>Alice</em>.</p>
+</dd>
+<dt id="term-record-calls">Grabar llamadas</dt>
+<dd><p class="first last">Dejar desactivado de momento, se explicará en <a class="reference internal" href="../pbx_features/call_recording.html#call-recordings"><span class="std std-ref">Grabación de llamadas</span></a>.</p>
+</dd>
+<dt id="term-tarificate-incoming-calls">Tarificar llamadas entrantes</dt>
+<dd><p class="first last">Requiere del módulo de tarificación externa y permite tarificar llamadas entrantes a numeraciones especiales. Consultar a los <a class="reference internal" href="../intro/getting_help.html#getting-help"><span class="std std-ref">desarrolladores de la solución</span></a> en caso de estar interesados.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="configure-incoming-routes">
+<h1>Configurar tratamiento en entrada<a class="headerlink" href="#configure-incoming-routes" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>En la sección anterior hemos dado de alta el DDI y lo hemos configurado, pero conviene tener claro que <strong>en un uso normal, el administrador de marca</strong> simplemente <strong>daría de alta el DDI y el administrador de empresa</strong>, accediendo a la misma sección, <strong>lo configuraría</strong> apuntándolo al usuario / grupo de salto / etc. adecuado, configurando horarios, calendarios, etc.</p>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">En este punto, marcando el número público debería de sonar el teléfono de <em>Alice</em> consiguiendo, por tanto, el objetivo de este bloque :)</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../external_outgoing_calls/index.html" class="btn btn-neutral float-right" title="Realizar llamadas externas" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="peering_contracts.html" class="btn btn-neutral float-left" title="Configurar Contrato de Peering" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016-2017, Irontec
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-book"> Other Versions</span>
+        v: oasis
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Branches</dt>
+            <dd><a href="../../artemis/index.html">artemis</a></dd>
+            <dd><a href="../../bleeding/index.html">bleeding</a></dd>
+            <dd><a href="configure_ddi.html">oasis</a></dd>
+        </dl>
+    </div>
+</div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

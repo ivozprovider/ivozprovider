@@ -1,0 +1,418 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Call recording &mdash; IvozProvider Oasis documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'Oasis',
+              LANGUAGE:'en',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/banner.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Retail Clients" href="../retail/index.html" />
+    <link rel="prev" title="Additional services" href="services.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> IvozProvider
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.7
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Introduction to IvozProvider</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/index.html">Platform general architecture</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../operation_roles/index.html">Platform roles</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Minimum Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Initial Installation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../internal_calls/index.html">Making internal calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external_incoming_calls/index.html">Receive external calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external_outgoing_calls/index.html">Making external calls</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Configuration</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">PBX Features</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="extensions.html">Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="terminals.html">Terminals configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_permissions.html">Call ACL Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="users.html">Users configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="friends.html">Friends</a></li>
+<li class="toctree-l2"><a class="reference internal" href="music_on_hold.html">Music on Hold</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sounds.html">Locutions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="outgoingddi_rules.html">Outgoing DDI Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_filters.html">External Call filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="match_lists.html">Match Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="route_locks.html">Route locks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conditional_routes.html">Conditional routes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="huntgroups.html">Hunt groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="queues.html">Queues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ivrs.html">Interactive Voice Response (IVR)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conference_rooms.html">Conference rooms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_ddis.html">External DDIs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_captures.html">Call pickup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="services.html">Additional services</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Call recording</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#automatic-ddi-recordings">Automatic DDI recordings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#on-demand-recordings">On demand recordings</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#activated-using-the-record-key">Activated using the <em>Record</em> key</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#activated-using-dtmf-codes">Activated using <em>DTMF</em> codes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#activated-using-a-frustated-blind-transfer">Activated using a frustated blind transfer</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#recordings-list">Recordings list</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../retail/index.html">Retail Clients</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../billing_and_invoices/index.html">Billing and Invoices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../provisioning/index.html">Terminal provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faxing/index.html">Virtual Fax System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userportal/index.html">User Portal</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Security and Maintenance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html">Security elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maintenance/index.html">Maintenance and troubleshooting</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IvozProvider</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">PBX Features</a> &raquo;</li>
+        
+      <li>Call recording</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/pbx_features/call_recording.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="call-recording">
+<span id="call-recordings"></span><h1>Call recording<a class="headerlink" href="#call-recording" title="Permalink to this headline">¶</a></h1>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">Beware that local legislation may enforce to announce that the
+call is being recorded (sometimes to both parties). You should include
+a recording disclaimer in your welcome locutions for DDIs with automatic
+recording enabled.</p>
+</div>
+<p>IvozProvider supports two different ways of recording calls:</p>
+<ul class="simple">
+<li><strong>Automatic recordings</strong> for the incoming/outgoing calls that use a
+<a class="reference internal" href="external_ddis.html#external-ddis"><span class="std std-ref">External DDI</span></a>.</li>
+<li><strong>On demand recordings</strong> requested by a user during a call.</li>
+</ul>
+<div class="section" id="automatic-ddi-recordings">
+<h2>Automatic DDI recordings<a class="headerlink" href="#automatic-ddi-recordings" title="Permalink to this headline">¶</a></h2>
+<p>In this type of recording, <strong>the whole conversation will be recorded</strong>: from
+the start until it finishes.</p>
+<p>Two different scenarios:</p>
+<ul class="simple">
+<li><strong>Incoming calls to a DDI</strong>: The call will continue until the external
+dialer hangups (no matter whom is talking to).</li>
+<li><strong>Outgoing calls using a DDI</strong> as <a class="reference internal" href="external_ddis.html#external-ddis"><span class="std std-ref">Outgoing DDI</span></a>: the
+recording will continue as long as the external destination keeps in the
+conversation.</li>
+</ul>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">Take into account that the call will be recorded while the
+external entity is present, even it the call is being transfered between
+multiple users of the platform.</p>
+</div>
+<p class="rubric">Record all the calls of a DDI</p>
+<p>To enable this feature, edit the DDI and configure the field under the section
+recording data:</p>
+<img alt="../_images/recordings_ddi.png" src="../_images/recordings_ddi.png" />
+<p>There are 4 available options:</p>
+<ul class="simple">
+<li>Disable recordings</li>
+<li>Enable incoming recordings</li>
+<li>Enable outgoing recordings</li>
+<li>Enable all call recordings</li>
+</ul>
+</div>
+<div class="section" id="on-demand-recordings">
+<h2>On demand recordings<a class="headerlink" href="#on-demand-recordings" title="Permalink to this headline">¶</a></h2>
+<p>The <em>on-demand</em> recordings must be enabled by the <em>brand administator</em> for the
+companies that request it. This can be done in the companey edit screen:</p>
+<img alt="../_images/recordings_ondemand.png" src="../_images/recordings_ondemand.png" />
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Contrary to the <a class="reference internal" href="services.html#services"><span class="std std-ref">Services</span></a> mentioned in the
+previous section, the on demand record are actived within a conversation.</p>
+</div>
+<p>Contrary to automatic ones, on demand recording can be stoped using the same
+process that started them.</p>
+<div class="section" id="activated-using-the-record-key">
+<h3>Activated using the <em>Record</em> key<a class="headerlink" href="#activated-using-the-record-key" title="Permalink to this headline">¶</a></h3>
+<p>Some terminals (for example, <em>Yealink</em>) support sending a <a class="reference external" href="https://tools.ietf.org/html/rfc6086">SIP INFO</a> message during the conversation with a
+special <em>Record</em> header (see <a class="reference external" href="http://www.yealink.com/Upload/document/UsingCallRecordingFeatureonYealinkPhones/UsingCallRecordingFeatureonYealinkSIPT2XPphonesRev_610-20561729764.pdf">reference</a>).
+This is not a standard for the protocol, but being Yealink one of the supported
+manufacturers of the solution, we include this kind of on-demand recording.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">For this recording requests, the configured code doesn&#8217;t matter
+but the company still must have on demand records enabled.</p>
+</div>
+<p>To start or stop this kind of recordings, just press the Record key in the
+terminal and the system will handle the sent message.</p>
+</div>
+<div class="section" id="activated-using-dtmf-codes">
+<h3>Activated using <em>DTMF</em> codes<a class="headerlink" href="#activated-using-dtmf-codes" title="Permalink to this headline">¶</a></h3>
+<p>The more traditional approach for this feature is to press a combination of
+keys during the call. Some notification will be played and the recording will
+start or stop. This combination is sent to the system using <a class="reference external" href="https://es.wikipedia.org/wiki/Marcaci%C3%B3n_por_tonos">DTMF tones</a> using the same audio
+stream that the conversation (as mentioned in <a class="reference external" href="https://tools.ietf.org/html/rfc4733">RFC 4733</a>).</p>
+<p>IvozProvider supports this kind of on demand record activation but with an
+important downside. In order to capture this codes, the pbx must process each
+audio packet to detect the code, avoiding the direct flow of media between the
+final endpoints.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Enabling this record mode highly affects the performance of the
+platform. Use at your own risk.</p>
+</div>
+</div>
+<div class="section" id="activated-using-a-frustated-blind-transfer">
+<h3>Activated using a frustated blind transfer<a class="headerlink" href="#activated-using-a-frustated-blind-transfer" title="Permalink to this headline">¶</a></h3>
+<p>There is a tricky way to access this feature for terminals that does not support
+the INFO message and don&#8217;t want its audio to be parsed:</p>
+<div class="admonition danger">
+<p class="first admonition-title">Danger</p>
+<p class="last">This method is a workaround for those terminals that does not support
+the native <em>Record</em> key activation (recommended). Take into account that not
+all terminals will behave the same way while performing the transfer described
+in this section.</p>
+</div>
+<p>The keys for this methods are:</p>
+<ul class="simple">
+<li>It&#8217;s not activated using a code during the conversation.</li>
+<li>It&#8217;s activated making a <strong>blind transfer</strong> to the on demand record code.</li>
+<li>The system will understand this as a request to record and will reject the transfer.</li>
+<li>The user will continue with the existing call and keep talking.</li>
+</ul>
+<p class="rubric">Why this method does even exist?</p>
+<p>The reason behind this tricky method is based, as explained in the previous
+block, on the design of the <a class="reference internal" href="../architecture/index.html#architecture"><span class="std std-ref">Platform general architecture</span></a> and the <a class="reference internal" href="../architecture/index.html#audioflow"><span class="std std-ref">RTP audio
+flow</span></a>.</p>
+</div>
+</div>
+<div class="section" id="recordings-list">
+<h2>Recordings list<a class="headerlink" href="#recordings-list" title="Permalink to this headline">¶</a></h2>
+<p>The <em>company administrator</em> can access to all the recordings in the section
+<strong>Company configuration</strong> &gt; <strong>Recordings</strong>:</p>
+<img alt="../_images/recordings_list.png" src="../_images/recordings_list.png" />
+<p>Recordings can be heard from the <em>web</em> or downloaded in MP3 format:</p>
+<img alt="../_images/recordings_list2.png" src="../_images/recordings_list2.png" />
+<p>If the recording has been started on demand, it will also include the user
+that requested it:</p>
+<img alt="../_images/recordings_list3.png" src="../_images/recordings_list3.png" />
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../retail/index.html" class="btn btn-neutral float-right" title="Retail Clients" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="services.html" class="btn btn-neutral float-left" title="Additional services" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016-2017, Irontec
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-book"> Other Versions</span>
+        v: oasis
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Branches</dt>
+            <dd><a href="../../artemis/index.html">artemis</a></dd>
+            <dd><a href="../../bleeding/index.html">bleeding</a></dd>
+            <dd><a href="call_recording.html">oasis</a></dd>
+        </dl>
+    </div>
+</div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

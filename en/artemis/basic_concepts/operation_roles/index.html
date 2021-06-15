@@ -1,0 +1,417 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Platform roles &mdash; IvozProvider Artemis documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../',
+              VERSION:'Artemis',
+              LANGUAGE:'en',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/banner.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Making internal calls" href="../../getting_started/internal_calls/index.html" />
+    <link rel="prev" title="Extra components" href="../installation/extra_components.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> IvozProvider
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.17
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Concepts</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Introduction to IvozProvider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/index.html">Platform general architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Initial Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Platform roles</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#global-administrator-role">Global administrator role</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#brand-administrator-role">Brand administrator role</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#client-administrator-role">Client administrator role</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#final-user-role">Final user role</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/internal_calls/index.html">Making internal calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/external_incoming_calls/index.html">Receiving external calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/external_outgoing_calls/index.html">Making external calls</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Administration portal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../administration_portal/platform/index.html">Platform Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administration_portal/brand/index.html">Brand Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administration_portal/client/index.html">Client Configuration</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Specific portals</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../user_portal/index.html">User Portal</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Security and Maintenance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../security_and_maintenance/security/index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_and_maintenance/maintenance/index.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Rest API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api_rest/introduction.html">Introduction to IvozProvider API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api_rest/multilevel.html">Multi-level API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api_rest/web_client.html">Built-in web client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api_rest/integrations.html">Third party integrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api_rest/use_case.html">Use Case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api_rest/acls.html">ACLs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IvozProvider</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Platform roles</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/basic_concepts/operation_roles/index.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="platform-roles">
+<span id="operation-roles"></span><h1>Platform roles<a class="headerlink" href="#platform-roles" title="Permalink to this headline">¶</a></h1>
+<p>IvozProvider is a multilevel role provider solution.</p>
+<p>The following images shows the different available levels and the
+relation between them:</p>
+<img alt="../../_images/operator_levels2.png" src="../../_images/operator_levels2.png" />
+<p>This section will explain each of the available roles, describing their
+responsibilities and more important tasks.</p>
+<div class="section" id="global-administrator-role">
+<h2>Global administrator role<a class="headerlink" href="#global-administrator-role" title="Permalink to this headline">¶</a></h2>
+<p>The global administrator role (operator in the image) is usually done by
+the installation responsible.</p>
+<p>All options and platform features are visible to this role and usually is
+in charge of its maintenance.</p>
+<p>Their most important task is to <strong>create Brands</strong> and configure them so
+they have the enough autonomy to properly use the platform:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Configure their web access.</li>
+<li>Configure their brand portal look and feel: themes, colors, etc.</li>
+</ul>
+</div></blockquote>
+<p>Apart from their main task, their global visibility and total access
+makes them responsible of:</p>
+<ul>
+<li><p class="first">Monitor the platform so it keeps always UP &amp; RUNNING</p>
+</li>
+<li><p class="first">Analyze platform logs to track possible errors.</p>
+</li>
+<li><p class="first">Polish the security mechanisms to avoid external attacks.</p>
+</li>
+<li><p class="first">Obtain global statistics of calls audio quality.</p>
+</li>
+<li><p class="first">Increase the available resources of the platform as long as is needed:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Increasing resources available in a standalone installation</li>
+<li>Migrating, whenever required, to a distributed installation with multiple
+AS, media relays, etc.</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p>To sum up, <strong>this role is the only one that has no limits within the
+platform</strong>, that&#8217;s why <em>God</em> is a term used in multiple places along this
+documentation.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last"><em>This role is responsible of maintaining the platform*</em>, configuring
+it for the correct behaviour. This role <strong>doesn&#8217;t have any kind
+of limit</strong> and <strong>grants access</strong> to the <strong>brand operators</strong>.</p>
+</div>
+</div>
+<div class="section" id="brand-administrator-role">
+<h2>Brand administrator role<a class="headerlink" href="#brand-administrator-role" title="Permalink to this headline">¶</a></h2>
+<p>Brand operator can access a portal with less sections available compared
+to the previous role. The general (God) administrator is in charge of
+providing an URL with credentials for its brand portal.</p>
+<p>The most important task for brand operator is to <strong>create and configure
+clients so they can work properly</strong>.</p>
+<p>Due to brand operators are also responsible of billing their clients and
+make sure the external calls are properly setup, it must also manage:</p>
+<ul class="simple">
+<li>Peering contracts with other IP providers for PSTN interconnection.</li>
+<li>Include all required client information for the billing process.</li>
+<li>Pricing plans that will offer to their clients, that will determine how
+match they pay for each call.</li>
+<li>Setup the routes for each outgoing call types based on their final
+destination</li>
+<li>Create the invoices for each billing period and send them to their
+clients.</li>
+</ul>
+<p>As you can see, the task of brand operator has little in common with the
+global operator, but their importance is vital so the final users can use
+all the features includes in IvozProvider</p>
+<div class="admonition important" id="brand-responsibilities">
+<p class="first admonition-title">Important</p>
+<p class="last"><strong>To sum up</strong>, brand operators <strong>grant access</strong> to their
+<strong>clients</strong> administrators and <strong>configure the platform
+to route and rate their calls</strong>.</p>
+</div>
+</div>
+<div class="section" id="client-administrator-role">
+<h2>Client administrator role<a class="headerlink" href="#client-administrator-role" title="Permalink to this headline">¶</a></h2>
+<p>The client administrator has access to the portal supplied by the brand
+operator.</p>
+<p>From its point of view, it has a virtual pbx in the cloud that must
+configure for its users.</p>
+<p>To accomplish that, it&#8217;s required:</p>
+<ul>
+<li><p class="first">Configure terminals, extensions and users.</p>
+</li>
+<li><p class="first">Configure the DDI incoming process with the proper logic:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Directly to an user</li>
+<li>IVRs</li>
+<li>Hunt groups</li>
+<li>Faxes</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Give access to the final users to their web portal, so they can configure
+their profile options:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Call forward</li>
+<li>Do not disturb</li>
+<li>Call waiting</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">To sum up, the client administrators are responsible for
+<strong>configuring the telephony system and make use of all the
+features available in IvozProvider</strong>.</p>
+</div>
+</div>
+<div class="section" id="final-user-role">
+<h2>Final user role<a class="headerlink" href="#final-user-role" title="Permalink to this headline">¶</a></h2>
+<p>The final user has two different kinds of credentials, both supplied by
+its client administrator:</p>
+<ul class="simple">
+<li>User portal access credentials</li>
+<li>SIP credentials used to register terminals to IvozProvider</li>
+</ul>
+<p>Through the user portal, it can browse their call registry and configure:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Call forward</li>
+<li>Do not disturb</li>
+<li>Call waiting</li>
+<li>Displayed data when calling</li>
+<li>Geographical configuration</li>
+</ul>
+</div></blockquote>
+<p>On the other hand, the SIP credentials allow users to configure their terminals to place and receive calls.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The same SIP credentials can be used in multiple devices at the same
+time,generating what is known as <em>parallel-forking</em>: whenever a call is
+placed to an user, all the active devices will ring so the user can
+answer the call from any of them.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../getting_started/internal_calls/index.html" class="btn btn-neutral float-right" title="Making internal calls" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../installation/extra_components.html" class="btn btn-neutral float-left" title="Extra components" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016-2019, Irontec
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-book"> Other Versions</span>
+        v: artemis
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Branches</dt>
+            <dd><a href="index.html">artemis</a></dd>
+            <dd><a href="../../../bleeding/basic_concepts/operation_roles/index.html">bleeding</a></dd>
+            <dd><a href="../../../oasis/index.html">oasis</a></dd>
+        </dl>
+    </div>
+</div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

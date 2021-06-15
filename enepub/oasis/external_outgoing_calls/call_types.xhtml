@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Where do I call?</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="call_routing.xhtml" title="Outgoing Routing"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.xhtml" title="Making external calls"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">IvozProvider Oasis documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Making external calls</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="where-do-i-call">
+<h1>Where do I call?</h1>
+<p>At this point of the configuration, we have to configure IvozProvider to use the
+already configured <em>Contract Peering</em> to place the external calls we are making.</p>
+<p>To achieve this, in first place, we need that the dialed external numbers fall
+in an existing <strong>target pattern</strong>.</p>
+<div class="section" id="target-patterns">
+<span id="id1"></span><h2>Target patterns</h2>
+<p>When a user dials an external phone number, IvozProvider tries to categorize
+this call into a one of the target patterns defined in this section:</p>
+<img alt="../_images/target_patterns_section.png" class="align-center" src="../_images/target_patterns_section.png" />
+<p>Usually, it will we useful to have one target pattern for the 254 countries
+defined in the <a class="reference external" href="https://es.wikipedia.org/wiki/ISO_3166">ISO 3166</a><span class="link-target"> [https://es.wikipedia.org/wiki/ISO_3166]</span>. That&#8217;s why IvozProvider automatically
+includes all this countries and their prefixes:</p>
+<img alt="../_images/target_patterns_default.png" class="align-center" src="../_images/target_patterns_default.png" />
+<p>Within this list we can find Spain&#8217;s prefix, that will be the prefix of the test
+call we are going to make in this section:</p>
+<img alt="../_images/target_patterns_spain.png" class="align-center" src="../_images/target_patterns_spain.png" />
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Brand operator can choose between keeping this target pattern if
+finds them useful or deleting them an creating the ones that meet his needs. In
+fact, apart from phone prefixes it is also possible to use regular expressions.
+e.g. Unique target pattern that contains all possible targets: ^[0-9]+$</p>
+</div>
+<div class="admonition danger">
+<p class="first admonition-title">Danger</p>
+<p class="last">Notice that using regular expressions instead of prefixes can make
+a phone number to match more than one target pattern. Use with responsibility.</p>
+</div>
+</div>
+<div class="section" id="target-pattern-groups">
+<h2>Target pattern groups</h2>
+<p>As we will see in <a class="reference internal" href="call_routing.xhtml#outgoing-routes"><span class="std std-ref">rutas salientes</span></a> section, every target
+pattern will be linked to a Peering Contract.</p>
+<p>That&#8217;s why it can be useful to group the target patterns in <strong>target pattern group</strong>
+so that we can link a whole group to a Peering Contract more easily.</p>
+<p>This is the goal of this section:</p>
+<img alt="../_images/target_patterngroups_section.png" class="align-center" src="../_images/target_patterngroups_section.png" />
+<p>By default we can see the 254 countries grouped in the continents defined in
+<a class="reference external" href="https://es.wikipedia.org/wiki/ISO_3166">ISO 3166</a><span class="link-target"> [https://es.wikipedia.org/wiki/ISO_3166]</span>:</p>
+<img alt="../_images/target_patterngroups_default.png" class="align-center" src="../_images/target_patterngroups_default.png" />
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last"><strong>To sum up</strong>, when a user dials an external number, IvozProvider
+looks up a matching target pattern to decide which PeeringContract must be used
+to place this call.</p>
+</div>
+<p>To achive our goal of making an external call to a spanish number, we didn&#8217;t have
+to modify the initial contents of this two sections :)</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

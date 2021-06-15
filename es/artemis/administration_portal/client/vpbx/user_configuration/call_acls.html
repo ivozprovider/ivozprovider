@@ -1,0 +1,362 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="es" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="es" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Call ACLs &mdash; documentación de IvozProvider - Artemis</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../../../',
+              VERSION:'Artemis',
+              LANGUAGE:'es',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../../_static/translations.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/banner.css" type="text/css" />
+    <link rel="index" title="Índice" href="../../../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../../../search.html" />
+    <link rel="next" title="Multimedia" href="../multimedia/index.html" />
+    <link rel="prev" title="Pick up groups" href="pick_up_groups.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> IvozProvider
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.17
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../basic_concepts/intro/index.html">Introduction to IvozProvider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../basic_concepts/architecture/index.html">Platform general architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../basic_concepts/installation/index.html">Instalación inicial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../basic_concepts/operation_roles/index.html">Roles de la plataforma</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../getting_started/internal_calls/index.html">Realizar llamadas internas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../getting_started/external_incoming_calls/index.html">Receiving external calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../getting_started/external_outgoing_calls/index.html">Realizar llamadas externas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Administration portal</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../platform/index.html">Platform Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../brand/index.html">Brand Configuration</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Client Configuration</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Clientes vPBX</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../users.html">Users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../terminals.html">Terminals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../extensions.html">Extensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ddis.html">DDIs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routing_endpoints/index.html">Routing endpoints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routing_tools/index.html">Routing tools</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">User configuration</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="outgoing_ddi_rules.html">Outgoing DDI Rules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pick_up_groups.html">Pick up groups</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Call ACLs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../multimedia/index.html">Multimedia</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faxes.html">Faxes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services.html">Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../rating_profiles.html">Rating profiles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../calls/index.html">Calls</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../residential/index.html">Clientes residenciales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../retail/index.html">Clientes retail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../wholesale/index.html">Clientes wholesale</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Specific portals</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../user_portal/index.html">Portal de usuario</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Security and Maintenance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security_and_maintenance/security/index.html">Seguridad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security_and_maintenance/maintenance/index.html">Resolución de problemas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Rest API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api_rest/introduction.html">Introducción a la API de Ivoz Provider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api_rest/multilevel.html">Multi-level API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api_rest/web_client.html">Cliente web incorporado</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api_rest/integrations.html">Integraciones de terceros</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api_rest/use_case.html">Use Case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api_rest/acls.html">ACLs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">IvozProvider</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Client Configuration</a> &raquo;</li>
+        
+          <li><a href="../index.html">Clientes vPBX</a> &raquo;</li>
+        
+          <li><a href="index.html">User configuration</a> &raquo;</li>
+        
+      <li>Call ACLs</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../../_sources/administration_portal/client/vpbx/user_configuration/call_acls.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="call-acls">
+<span id="call-permissions"></span><h1>Call ACLs<a class="headerlink" href="#call-acls" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>The <strong>Call ACLs</strong> determines what users can call to external numbers.</p>
+<div class="admonition attention">
+<p class="first admonition-title">Atención</p>
+<p class="last">The internal extensions (the ones listed in <a class="reference internal" href="../extensions.html#extensions"><span class="std std-ref">Extensions</span></a>) are allowed to all users, the <strong>Call
+ACLs only apply to external numbers</strong>. Calls to friends extensions are considered internal too, no call ACL is needed.</p>
+</div>
+<p>The <strong>Call ACL</strong> setup has two different parts:</p>
+<ul>
+<li><p class="first">Classify the call in different types based on <strong>match lists</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Brand level: <strong>Brand Configuration</strong> &gt; <strong>Generic Match Lists</strong></li>
+<li>Client level: <strong>Client Configuration</strong> &gt; <strong>Match Lists</strong></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Choose policies for groups of patterns: <strong>Client Configuration</strong> &gt; <strong>Call
+ACLs</strong></p>
+</li>
+</ul>
+<div class="section" id="call-acl-matchlists">
+<h2>Call ACL Matchlists<a class="headerlink" href="#call-acl-matchlists" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>The destination number is matched against the <strong>ACL MatchLists</strong> to determine
+the call permission.</p>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Brand matchlists can be used by any of its clients, so most common
+ACL Patterns (p.e. country prefixes) can be reused easily.</p>
+</div>
+<p>For more information of how MatchLists patterns are created, please refer to section
+<a class="reference internal" href="../routing_tools/match_lists.html#match-lists"><span class="std std-ref">Match Lists</span></a>.</p>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p class="last"><strong>Regular expressions</strong> of Match List patterns must be <strong>in E.164</strong> format and <strong>plus symbol must be
+escaped</strong> (e.g. ^\+34 for all spanish numbers).</p>
+</div>
+</div>
+<div class="section" id="call-acl">
+<h2>Call ACL<a class="headerlink" href="#call-acl" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>When a new <strong>Call ACL</strong> is created, these two fields turn up:</p>
+<dl class="glossary docutils">
+<dt id="term-name">Name</dt>
+<dd>Used to reference this Call ACL.</dd>
+<dt id="term-default-policy">Default policy</dt>
+<dd>If no rule matches, this ACL will deny the call or allow it?</dd>
+</dl>
+<p>After creating the <strong>Call ACL</strong> we can edit it to add the required rules:</p>
+<ul class="simple">
+<li>Rules to deny some specific destinations.</li>
+<li>Rules to allow some specific destinations.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">The <strong>metric</strong> determines the evaluation order of the rules.</p>
+</div>
+<div class="section" id="assign-call-acls">
+<h3>Assign Call ACLs<a class="headerlink" href="#assign-call-acls" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Created <em>Call ACLs</em> can be assigned to:</p>
+<ul class="simple">
+<li>Friends through <em>Call ACL</em> parameter.</li>
+<li>Users through <em>Call ACL</em> parameter.</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../multimedia/index.html" class="btn btn-neutral float-right" title="Multimedia" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pick_up_groups.html" class="btn btn-neutral float-left" title="Pick up groups" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016-2019, Irontec
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-book"> Other Versions</span>
+        v: artemis
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Branches</dt>
+            <dd><a href="call_acls.html">artemis</a></dd>
+            <dd><a href="../../../../../bleeding/administration_portal/client/vpbx/user_configuration/call_acls.html">bleeding</a></dd>
+            <dd><a href="../../../../../oasis/index.html">oasis</a></dd>
+        </dl>
+    </div>
+</div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

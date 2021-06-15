@@ -1,0 +1,412 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="es" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="es" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Provisión de terminales &mdash; documentación de IvozProvider - Oasis</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'Oasis',
+              LANGUAGE:'es',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/banner.css" type="text/css" />
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="next" title="Portal de usuario" href="../userportal/index.html" />
+    <link rel="prev" title="Generación de facturas" href="../billing_and_invoices/invoices.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> IvozProvider
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.7
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Introducción a Ivozprovider</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/index.html">Arquitectura general de la plataforma</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../operation_roles/index.html">Roles de la plataforma</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Minimum Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Instalación inicial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../internal_calls/index.html">Realizar llamadas internas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external_incoming_calls/index.html">Recibir llamadas externas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external_outgoing_calls/index.html">Realizar llamadas externas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../pbx_features/index.html">Funcionalidades de PBX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../retail/index.html">Clientes Retail</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../billing_and_invoices/index.html">Tarificación y facturación</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Provisión de terminales</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Introducción</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration-of-supported-models">Configuración de modelos soportados</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getting-technical">Detalles técnicos</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../faxing/index.html">Sistema de Fax Virtual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userportal/index.html">Portal de usuario</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Security and Maintenance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html">Elementos de seguridad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maintenance/index.html">Mantenimiento de la solución</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IvozProvider</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Provisión de terminales</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/provisioning/index.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="terminal-provisioning">
+<span id="provisioning"></span><h1>Provisión de terminales<a class="headerlink" href="#terminal-provisioning" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="section" id="overview">
+<h2>Introducción<a class="headerlink" href="#overview" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>IvozProvider soporta provisionar terminales vía HTTP/HTTPS que sigan la forma de provisionarse que se explica a continuación:</p>
+<ul>
+<li><p class="first">Cuando un terminal sale de la caja, se alimenta y se conecta a la red:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="first">Pide IP por DHCP.</p>
+</li>
+<li><p class="first">Se fija en la opción 66 de DHCP que le indica a quién tiene que pedir su configuración.</p>
+</li>
+<li><p class="first">Pide un primer archivo añadiendo a la ruta recibida por DHCP un archivo estático (cada modelo de terminal, uno distinto).</p>
+</li>
+<li><p class="first">En ese archivo se le puede indicar un siguiente archivo a pedir.</p>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p>Todo terminal que sea capaz de adaptarse a este formato podrá provisionarse utilizando la sección <strong>Configuración general &gt; Fabricantes de terminales</strong>.</p>
+<p class="rubric">Ejemplo Cisco SPA504G</p>
+<ul>
+<li><p class="first">Cisco 504G se despierta y pide IP.</p>
+</li>
+<li><p class="first">Recibe “<a class="reference external" href="http://provision.ejemplo.com/provision">http://provision.ejemplo.com/provision</a>”</p>
+</li>
+<li><p class="first">Pide la configuración vía http a <a class="reference external" href="http://provision.ejemplo.com/provision/spa504g.cfg">http://provision.ejemplo.com/provision/spa504g.cfg</a></p>
+</li>
+<li><p class="first">Todos los 504G solicitan el mismo archivo (spa504g.cfg), añadiéndolo a la ruta que reciban.</p>
+</li>
+<li><p class="first">En ese primer archivo común se especifican los parámetros comunes a todos los terminales de ese modelo concreto y qué archivo tienen que pedir a continuación (ejemplo <a class="reference external" href="https://provision.example.com/provision/$MAC.cfg">https://provision.example.com/provision/$MAC.cfg</a>)</p>
+</li>
+<li><p class="first">De esta forma, hacemos que cada terminal (la MAC es única) pida un archivo concreto (y distinto) una vez que ha pedido el genérico.</p>
+</li>
+<li><p class="first">En este archivo se le sirve su configuración específica:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="first">Usuario</p>
+</li>
+<li><p class="first">Contraseña</p>
+</li>
+<li><p class="first">Dominio SIP</p>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">El sistema de provisión de IvozProvider, a día de hoy, configura los terminales con el único objetivo de que se registren y se queden en el idioma del usuario.</p>
+</div>
+</div>
+<div class="section" id="configuration-of-supported-models">
+<h2>Configuración de modelos soportados<a class="headerlink" href="#configuration-of-supported-models" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>IvozProvider utiliza un sistema de plantillas que permite que el operador global (God) defina nuevos modelos de terminales y configure los archivos que se les servirá.</p>
+<p>La sección de ayuda de <strong>Fabricantes de Terminales</strong> contiene ejemplos que funcionan (en el momento de escribir esta documentación) con el sistema de provisión de IvozProvider.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Consejo</p>
+<p class="last">Estos modelos aparecen en la sección tras la instalación, pero hay que entrar a cada uno de ellos a cargar la configuración por defecto antes de poder usarlos (opción <strong>Restore default template</strong>).</p>
+</div>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p class="last">Cambios en el firmware de los terminales pueden provocar que los ejemplos proporcionados dejen de funcionar. Se intentará mantenerlos actualizados, pero no podemos garantizar que siempre lo estén.</p>
+</div>
+<p>Analizando las plantillas sugeridas, puede hacerse una idea básica de la flexibilidad del sistema para configurar cualquier modelo de terminal en el mercado y para adaptarse de posibles cambios en los ejemplos dados.</p>
+</div>
+<div class="section" id="getting-technical">
+<h2>Detalles técnicos<a class="headerlink" href="#getting-technical" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Imaginemos un escenario con esta configuración:</p>
+<ul class="simple">
+<li><p class="first">URLs de provisión:</p>
+<ul>
+<li><p class="first">Archivo genérico: <a class="reference external" href="http://PROV_IP/provision">http://PROV_IP/provision</a></p>
+</li>
+<li><p class="first">Archivo específico: <a class="reference external" href="https://PROV_IP:PROV_PORT/provision">https://PROV_IP:PROV_PORT/provision</a></p>
+</li>
+</ul>
+</li>
+<li>TerminalModels.genericUrlPattern: y000000000044.cfg</li>
+</ul>
+<p>¿Qué URLs de petición serán correctas?</p>
+<p>Para el archivo genérico, solo una: <a class="reference external" href="http://PROV_IP/provision/y000000000044.cfg">http://PROV_IP/provision/y000000000044.cfg</a></p>
+<p>Para el archivo específico, la petición tiene que satisfacer las siguientes reglas</p>
+<ul class="simple">
+<li><p class="first">Todas las peticiones HTTP son erróneas.</p>
+</li>
+<li><p class="first">Las peticiones HTTPS al puerto 443 son erróneas (se tiene que usar PROV_PORT)</p>
+</li>
+<li><p class="first">Las subrutas después de la URL de provisión son ignoradas, tanto en la petición como en el campo specificUrlPattern.</p>
+</li>
+<li><p class="first">La extensión de la petición tiene que ser la misma que la extensión del campo specificUrlPattern (en caso de que la tenga). Si no, la extensión es ignorada.</p>
+</li>
+<li><p class="first">El nombre del archivo solicitado tiene que coincidir exactamente con el nombre especificado en specificUrlPattern, una vez que {mac} se sustituya por el valor adecuado.</p>
+</li>
+<li><p class="first">La dirección MAC no distingue mayúsculas/minúsculas y puede contener dos puntos o no.</p>
+</li>
+</ul>
+<p>Analicemos los siguientes ejemplos para entender estas reglas mejor:</p>
+<p class="rubric">Ejemplo 1 - TerminalModels.specificUrlPattern: {mac}.cfg</p>
+<p>Peticiones correctas:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">https://PROV_IP:PROV_PORT/provision/aabbccddeeff.cfg</span>
+<span class="go">https://PROV_IP:PROV_PORT/provision/aa:bb:cc:dd:ee:ff.cfg</span>
+<span class="go">https://PROV_IP:PROV_PORT/provision/aabbccdd:ee:ff.cfg</span>
+<span class="go">https://PROV_IP:PROV_PORT/provision/aabbccddeeff.cfg</span>
+<span class="go">https://PROV_IP:PROV_PORT/provision/AABBCCDDEEFF.cfg</span>
+<span class="go">https://PROV_IP:PROV_PORT/provision/subpath1/aabbccddeeff.cfg</span>
+<span class="go">https://PROV_IP:PROV_PORT/provision/subpath1/subpath2/aabbccddeeff.cfg</span>
+</pre></div>
+</div>
+<p>Peticiones erróneas:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">https://PROV_IP:PROV_PORT/provision/aabbccddeeff.boot</span>
+<span class="go">https://PROV_IP:PROV_PORT/provision/subpath1/subpath2/aabbccddeeff.boot</span>
+</pre></div>
+</div>
+<p>Este ejemplo es idéntico a &#8216;t23/{mac}.cfg&#8217;, ya que las subrutas se ignoran.</p>
+<p class="rubric">Ejemplo 2 - TerminalModels.specificUrlPattern: {mac}</p>
+<p>Todos los ejemplos anteriores son correctos, ya que la extensión de la petición se ignora al no haber especificado extensión alguna en specificUrlPattern.</p>
+<p>Este ejemplo es idéntico a &#8216;t23/{mac}&#8217;, ya que las subrutas se ignoran.</p>
+<p class="rubric">Ejemplo 3 - TerminalModels.specificUrlPattern: yea-{mac}.cfg</p>
+<p>Todos los ejemplos anteriores son incorrectos, ya que ninguno contiene &#8216;yea-&#8216; (en minúsculas).</p>
+<p>Peticiones correctas:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">https://PROV_IP:PROV_PORT/provision/subpath1/yea-aabbccdd:ee:ff.cfg</span>
+</pre></div>
+</div>
+<p>Peticiones erróneas:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">https://PROV_IP:PROV_PORT/provision/subpath1/yea-aabbccdd:ee:ff.boot</span>
+<span class="go">https://PROV_IP:PROV_PORT/provision/subpath1/YEA-aabbccdd:ee:ff.cfg</span>
+</pre></div>
+</div>
+<p>Este ejemplo es idéntico a &#8216;t23/yea-{mac}.cfg&#8217;, ya que las subrutas se ignoran.</p>
+<p class="rubric">Ejemplo 4 - TerminalModels.specificUrlPattern: yea-{mac}</p>
+<p>Como no se especifica ninguna extensión:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">https://PROV_IP:PROV_PORT/provision/subpath1/yea-aabbccdd:ee:ff.cfg</span>
+<span class="go">https://PROV_IP:PROV_PORT/provision/subpath1/yea-aabbccdd:ee:ff.boot</span>
+</pre></div>
+</div>
+<p>Peticiones erróneas:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">https://PROV_IP:PROV_PORT/provision/subpath1/YEA-aabbccdd:ee:ff.cfg</span>
+</pre></div>
+</div>
+<p>Este ejemplo es idéntico a &#8216;t23/yea-{mac}&#8217;, ya que las subrutas se ignoran.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../userportal/index.html" class="btn btn-neutral float-right" title="Portal de usuario" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../billing_and_invoices/invoices.html" class="btn btn-neutral float-left" title="Generación de facturas" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016-2017, Irontec
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-book"> Other Versions</span>
+        v: oasis
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Branches</dt>
+            <dd><a href="../../artemis/index.html">artemis</a></dd>
+            <dd><a href="../../bleeding/index.html">bleeding</a></dd>
+            <dd><a href="index.html">oasis</a></dd>
+        </dl>
+    </div>
+</div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

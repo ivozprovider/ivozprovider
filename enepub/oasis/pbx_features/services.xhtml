@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Additional services</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="call_recording.xhtml" title="Call recording"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="call_captures.xhtml" title="Call pickup"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">IvozProvider Oasis documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">PBX Features</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="additional-services">
+<span id="services"></span><h1>Additional services</h1>
+<p>There are <strong>special services</strong> that can be accessed by calling to some codes
+<strong>from the terminal</strong>.</p>
+<div class="admonition danger">
+<p class="first admonition-title">Danger</p>
+<p class="last">Services defined in this section <strong>are not accessible during a
+conversation</strong>. They are activated by <strong>calling the codes</strong>, not using
+DTMF codes while talking.</p>
+</div>
+<div class="section" id="global-services-codes">
+<h2>Global Services codes</h2>
+<p>There are the folowing <strong>special services</strong> avaialble in the section <strong>Global
+configuration</strong> &gt; <strong>Services</strong>:</p>
+<img alt="../_images/services_god.png" src="../_images/services_god.png" />
+<dl class="glossary docutils">
+<dt id="term-direct-pickup">Direct pickup</dt>
+<dd>This service allows capturing a ringing call from another terminal by
+calling the code followed by the extension from the target user.</dd>
+<dt id="term-group-pickup">Group pickup</dt>
+<dd>This service allows capturing a ringing call for any terminal whose user
+is part of one of the capturer pickup groups.</dd>
+<dt id="term-check-voicemail">Check voicemail</dt>
+<dd>This service allows checking the user&#8217;s voicemail using an interactive
+menu from which new voicemails can be listen, deleted, etc. This is an
+active alternative to receive voicemails via the email. Since 1.4, this
+service allows optional extension after the service code to check
+another users voicemails. Users can protect their voicemail using the
+internal menu options.</dd>
+<dt id="term-record-locution">Record locution</dt>
+<dd>This service allows any user to record their company&#8217;s locutions by
+dialing an special code. Voice instructions will be provided in the
+user&#8217;s language.</dd>
+<dt id="term-open-lock">Open Lock</dt>
+<dd>Calling this service code will set route lock status to &#8216;Opened&#8217; (see <a class="reference internal" href="route_locks.xhtml#route-locks"><span class="std std-ref">Route locks</span></a>).</dd>
+<dt id="term-close-lock">Close Lock</dt>
+<dd>Calling this service code will set route lock status to &#8216;Closed&#8217; (see <a class="reference internal" href="route_locks.xhtml#route-locks"><span class="std std-ref">Route locks</span></a>).</dd>
+<dt id="term-toggle-lock">Toggle Lock</dt>
+<dd>Calling this service code will change the current status of the lock (see <a class="reference internal" href="route_locks.xhtml#route-locks"><span class="std std-ref">Route locks</span></a>).</dd>
+</dl>
+<p>As soon as new services are implemented into IvozProvider, they will be listed
+in this section.</p>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">This section lists the available services and the default codes
+when a <strong>new brand</strong> is created.</p>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Changing the default code in this section will only affect new
+created brands.</p>
+</div>
+</div>
+<div class="section" id="services-and-codes-for-brands">
+<h2>Services and codes for Brands</h2>
+<p>The section <strong>Brand configuration</strong> &gt; <strong>Services</strong> allows the brand operator to:</p>
+<ul class="simple">
+<li>Change the default service code for all the brand companies (assuming the
+company hasn&#8217;t already customized the code)</li>
+<li>Delete services so it won&#8217;t be available for the companies.</li>
+</ul>
+<p>By default this list has all the services and codes from the global
+configuration:</p>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">This section lists the available services and the default codes
+when a <strong>new company</strong> is created.</p>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Changing the default code in this section will only affect new
+created companies.</p>
+</div>
+</div>
+<div class="section" id="services-and-codes-for-companies">
+<h2>Services and codes for Companies</h2>
+<p>Each company can <em>customize</em> the default values assigned by the <em>brand operator</em>
+using the section <strong>Company configuration</strong> &gt; <strong>Services</strong> and changing the codes
+listed there.</p>
+<p class="rubric">Company that wants to capture using ** instead of the default *95:</p>
+<img alt="../_images/services_company_edit.png" src="../_images/services_company_edit.png" />
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Services deleted by the <em>company admin</em> will not available to users.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

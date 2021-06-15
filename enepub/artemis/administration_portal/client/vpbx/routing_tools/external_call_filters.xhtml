@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>External call filters</title>
+    
+    <link rel="stylesheet" href="../../../../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="calendars.xhtml" title="Calendars"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.xhtml" title="Routing tools"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../../index.xhtml">IvozProvider Artemis documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.xhtml" >Client Configuration</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.xhtml" >vPBX Clients</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="index.xhtml" accesskey="U">Routing tools</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="external-call-filters">
+<span id="external-filters"></span><h1>External call filters</h1>
+<p>One of the most common task a client&#8217;s administrator will do is to
+configure schedules and calendars to apply to existing <a class="reference internal" href="../ddis.xhtml#ddis"><span class="std std-ref">DDIs</span></a>.</p>
+<p>Once we have our new created <a class="reference internal" href="schedules.xhtml#schedules"><span class="std std-ref">Schedules</span></a> and <a class="reference internal" href="calendars.xhtml#calendars"><span class="std std-ref">Calendars</span></a>, it&#8217;s time to apply them
+in what we call <strong>External call filter</strong>.</p>
+<p>The client admin can configure them in the following screen:</p>
+<dl class="glossary docutils">
+<dt id="term-name">Name</dt>
+<dd>Descriptive name that will reference this filter in DDIs configuration.</dd>
+<dt id="term-welcome-locution">Welcome locution</dt>
+<dd>This locution will be played if the call is not going to be
+forwarded by out of schedule or holiday filtering (in other words if
+the normal routing of the DDI is going to be applied).</dd>
+<dt id="term-black-list">Black list</dt>
+<dd>External origin will be checked against the associated <a class="reference internal" href="match_lists.xhtml#match-lists"><span class="std std-ref">Match Lists</span></a>,
+if a coincidence is found, the call will be rejected immediately.</dd>
+<dt id="term-white-list">White list</dt>
+<dd>External origin will be checked against the associated <a class="reference internal" href="match_lists.xhtml#match-lists"><span class="std std-ref">Match Lists</span></a>,
+if a coincidence is found, the call will be directly routed to the DDI
+destination, skipping the filter process. Take into account that black
+listed are checked before white lists.</dd>
+<dt id="term-holiday-locution">Holiday locution</dt>
+<dd>The locution will be  played when the day is marked as holiday in any
+of the calendars associated with the filter <strong>if the calendar entry has
+no locution</strong> for that day.</dd>
+<dt id="term-holiday-forward-type">Holiday forward type</dt>
+<dd>After playing the above locution (if configured), call can be forwarded
+to a voicemail, external number or internal extension. For example, the
+filter of the image will redirect calls during holidays to the external
+number 676 676 676.</dd>
+<dt id="term-out-of-schedule-locution">Out of schedule locution</dt>
+<dd>The locution will be played when, not being holiday, the current time
+is not in any of the time gaps defined in the schedules assigned to the
+filter.</dd>
+<dt id="term-out-of-schedule-forward-type">Out of schedule forward type</dt>
+<dd>Like in the holidays forward, but for out of schedule. The image above
+won&#8217;t apply any forward (and the call will be hung up).</dd>
+<dt id="term-calendars">Calendars</dt>
+<dd>One or more calendars can be associated with the filter. The combination
+of all the calendars will be applied.</dd>
+<dt id="term-schedules">Schedules</dt>
+<dd>One or more schedules can be applied. The combination of all the time
+gaps defined in the schedules will be applied.</dd>
+</dl>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">Holidays are processed <strong>before</strong> out of schedule events.</p>
+</div>
+<p>In the next section we will use this new created filter with
+<a class="reference internal" href="../ddis.xhtml#ddis"><span class="std std-ref">DDIs</span></a> so we can configure a welcome locution for normal days,
+and especial behaviours for holidays and out of schedule events.</p>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2019, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

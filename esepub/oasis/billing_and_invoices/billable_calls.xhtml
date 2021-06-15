@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Llamadas facturables</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="pricing_plans.xhtml" title="Planes de precio"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="call_registry.xhtml" title="Histórico de llamadas"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">documentación de IvozProvider - Oasis</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Tarificación y facturación</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="billable-calls">
+<span id="id1"></span><h1>Llamadas facturables</h1>
+<p>Los listados de llamadas de las secciones <strong>Llamadas facturables</strong> muestran solo las <strong>llamadas que implican coste</strong>.</p>
+<div class="admonition important">
+<p class="first admonition-title">Importante</p>
+<p class="last">La gran diferencia respecto a las llamadas del <a class="reference internal" href="call_registry.xhtml#call-registry"><span class="std std-ref">Histórico de llamadas</span></a> es que todas las que aparecen aquí implican coste (no aparecen, por tanto, llamadas internas, etc.)</p>
+</div>
+<p>Se muestra el coste asociado a las llamadas (una vez calculado) y, dado que las empresas son notificadas de sus llamadas por medio de facturas emitidas por el <em>operador de marca</em>, solo se existe a dos niveles:</p>
+<ul class="simple">
+<li><p class="first">A nivel global (<em>god</em>).</p>
+</li>
+<li><p class="first">A nivel de marca.</p>
+</li>
+</ul>
+<p>Estos listados muestran la siguiente información:</p>
+<dl class="glossary docutils">
+<dt id="term-date">Fecha</dt>
+<dd><p class="first last">Fecha y hora del establecimiento de la llamada.</p>
+</dd>
+<dt id="term-brand">Marca</dt>
+<dd><p class="first last">Solo visible a nivel <em>god</em>, indica la marca de la empresa en cuestión.</p>
+</dd>
+<dt id="term-company">Compañía</dt>
+<dd><p class="first last">Empresa responsable de la llamada.</p>
+</dd>
+<dt id="term-destination">Destino</dt>
+<dd><p class="first last">Número externo al que se ha llamado.</p>
+</dd>
+<dt id="term-pricing-pattern">Patrón de destino (que es en realidad el patrón de precio)</dt>
+<dd><p class="first last">Indica el <a class="reference internal" href="../external_outgoing_calls/noplan_nocall.xhtml#price-pattern"><span class="std std-ref">patrón de precio</span></a> en base al cual se ha puesto precio a la llamada.</p>
+</dd>
+<dt id="term-duration">Duración</dt>
+<dd><p class="first last">Indica cuánto ha durado la llamada.</p>
+</dd>
+<dt id="term-metered-yes-no">Tarificado (sí/no)</dt>
+<dd><p class="first last">Indica si el proceso que pone precio a las llamadas ha calculado el precio de esta llamada concreta.</p>
+</dd>
+<dt id="term-price">Precio</dt>
+<dd><p class="first last">Coste calculado para la llamada.</p>
+</dd>
+<dt id="term-pricing-plan">Plan de precio</dt>
+<dd><p class="first last"><a class="reference internal" href="../external_outgoing_calls/noplan_nocall.xhtml#price-plan"><span class="std std-ref">Plan de precio</span></a> en base al cual se ha puesto precio a la llamada.</p>
+</dd>
+<dt id="term-peering-contract">Contrato de peering</dt>
+<dd><p class="first last">Indica por qué <a class="reference internal" href="../external_incoming_calls/peering_contracts.xhtml#peering-contracts"><span class="std std-ref">Contrato de peering</span></a> ha salido la llamada.</p>
+</dd>
+<dt id="term-invoice">Factura</dt>
+<dd><p class="first last">Indica si la llamada está incluida en alguna <a class="reference internal" href="invoices.xhtml#invoices"><span class="std std-ref">factura</span></a>.</p>
+</dd>
+<dt id="term-type-inbound-outbound">Tipo (entrante/saliente)</dt>
+<dd><p class="first last">Dado que ciertas llamadas entrantes pueden implicar coste (ver <a class="reference internal" href="../external_incoming_calls/configure_ddi.xhtml#bill-inbound"><span class="std std-ref">tarificación de llamadas entrantes</span></a>), indica si la llamada es entrante o saliente.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Las llamadas aparecen en este listado en cuanto se cuelgan. Pasados unos minutos, el proceso que pone precios a las llamadas habrá tarificado la llamada (<em>Tarificado</em> igual a &#8216;Sí&#8217;) y tendremos disponible el <strong>Precio</strong> calculado.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Sin plan de precio, no hay llamada</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="../pbx_features/index.xhtml" title="Funcionalidades de PBX"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="external_ddi.xhtml" title="Configurar DDI saliente"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">documentación de IvozProvider - Oasis</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Realizar llamadas externas</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <p>Llegados a este punto y estando deseosos como estamos de hacer nuestra primera llamada, habremos intentando llamar con la configuración actual pero...</p>
+<div class="section" id="no-pricing-plan-no-call">
+<span id="noplan-nocall"></span><h1>Sin plan de precio, no hay llamada</h1>
+<p>Tal y como advertimos <a class="reference internal" href="../operation_roles/index.xhtml#brand-responsibilities"><span class="std std-ref">cuando describimos las funciones del operador de marca</span></a>, el operador de marca era el <strong>responsable de realizar la configuración necesaria para que todas las llamadas externas se puedan tarificar</strong>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last"><strong>Billing a call</strong> is the action of <strong>assigning price</strong> to a call that implies
+cost.</p>
+</div>
+<p>Para evitar que por un descuido el operador de marca no defina el precio para un tipo de llamada y llamadas que implican coste salgan a precio 0, <strong>en el momento del establecimiento de una llamada se comprueba que la llamada se va a poder tarificar</strong>.</p>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p class="last">Si una llamada no se va a poder tarificar, IvozProvider no permitirá su establecimiento.</p>
+</div>
+<div class="section" id="creating-a-pricing-pattern">
+<span id="price-pattern"></span><h2>Crear un patrón de precio</h2>
+<p>Del mismo modo que existen los <a class="reference internal" href="call_types.xhtml#target-patterns"><span class="std std-ref">patrones de destino</span></a>, existen los <strong>patrones de precio</strong> y se configuran en esta sección:</p>
+<img alt="../_images/pricing_pattern_section1.png" src="../_images/pricing_pattern_section1.png" />
+<div class="admonition important">
+<p class="first admonition-title">Importante</p>
+<p class="last">Para que una llamada se considere tarificable, tiene que <em>matchear</em> con algún patrón de precio dado de alta previamente.</p>
+</div>
+<p>A diferencia de los patrones de destino, que vienen precreados con los 254 países del mundo, los patrones de precio no se crean ya que lo habitual es que un país se divida en muchos patrones de precio (redes GSM de un operador, numeraciones especiales, números fijos, números móviles, etc.).</p>
+<p>Creemos el patrón de precio <em>Spain</em> para nuestra llamada saliente externa:</p>
+<img alt="../_images/pricing_pattern_add1.png" src="../_images/pricing_pattern_add1.png" />
+</div>
+<div class="section" id="creating-a-pricing-plan">
+<span id="price-plan"></span><h2>Crear un plan de precio</h2>
+<p>Un <strong>Plan de precio</strong> determina el coste de un tipo de llamada (de un patrón de precio) y se configura en esta sección:</p>
+<img alt="../_images/pricing_plans_section1.png" src="../_images/pricing_plans_section1.png" />
+<p>Creamos un <strong>plan de precio</strong> para nuestro objetivo:</p>
+<img alt="../_images/pricing_plans_add2.png" src="../_images/pricing_plans_add2.png" />
+<p>Y le añadimos el <strong>patrón de precio</strong> que hemos creado antes:</p>
+<img alt="../_images/pricing_plans_add_price3.png" src="../_images/pricing_plans_add_price3.png" />
+<img alt="../_images/pricing_plans_add_price21.png" src="../_images/pricing_plans_add_price21.png" />
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Los números decimales se tienen que introducir utilizando el &#8221;.&#8221; como separador decimal (e.g. 0.02)</p>
+</div>
+<p class="rubric">Encontrar un plan de precios para un destino concreto</p>
+<p>Para comprobar que hasta este punto la configuración es correcta, podemos <strong>encontrar un plan de precio</strong> para una llamada concreta pulsando:</p>
+<img alt="../_images/pricing_plans_find_plan1.png" src="../_images/pricing_plans_find_plan1.png" />
+<p>Introducimos el número destino en <a class="reference internal" href="../external_incoming_calls/numeric_transformations.xhtml#e164"><span class="std std-ref">formato E.164</span></a>:</p>
+<img alt="../_images/pricing_plans_find_plan21.png" src="../_images/pricing_plans_find_plan21.png" />
+<p>Y vemos que <em>matchea</em> con el <strong>plan de precio</strong> que acabamos de crear:</p>
+<img alt="../_images/pricing_plans_find_plan31.png" src="../_images/pricing_plans_find_plan31.png" />
+</div>
+<div class="section" id="assigning-a-pricing-plan-to-a-company">
+<span id="pricing-plan-to-company"></span><h2>Vincular plan de precio a empresa</h2>
+<p>Un <strong>plan de precios</strong> concreto se puede vincular a <em>n</em> empresas y corresponde al <em>Operador de marca</em> realizar esta vinculación.</p>
+<p>Para ello, desde la sección <strong>Configuración de Marca</strong> &gt; <strong>Empresas</strong>, seleccionando la empresa <em>demo</em>:</p>
+<img alt="../_images/pricing_plans_relate_company1.png" src="../_images/pricing_plans_relate_company1.png" />
+<p>La vinculación de <strong>Planes de precio</strong> y <strong>Empresas</strong> es efectiva en un período de tiempo concreto, de ahí que haya que seleccionar <em>Fecha inicio</em> y <em>Fecha fin</em>:</p>
+<img alt="../_images/pricing_plans_relate_company21.png" src="../_images/pricing_plans_relate_company21.png" />
+<p>La <strong>metrica</strong> de la vinculación permite vincular más de un <em>plan de precios</em> a una empresa de forma coincidente en el tiempo, aunque ciertos destinos estén incluidos en más de uno de esos planes de precio.</p>
+<div class="admonition attention">
+<p class="first admonition-title">Atención</p>
+<p class="last">Una llamada que puede tarificarse en base a más de un plan de    precio vinculado a una empresa y activo en un momento dado lo hará en base al    plan de precio con menor métrica.</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Truco</p>
+<p class="last">Esto permite tener un <em>Plan de precios</em> general y matizar el coste de algún tipo de llamada en otro <em>Plan de precio</em> (móviles gratis, por ejemplo).</p>
+</div>
+<p class="rubric">Simular una llamada desde una empresa concreta</p>
+<p>Del mismo modo que al crear un <em>Plan de precios</em> hemos comprobado que a nuestra llamada aplicaba dicho plan, podemos simular una llamada concreta en una empresa concreta y saber qué coste se le aplicaría:</p>
+<img alt="../_images/pricing_plans_simulate_companycall1.png" src="../_images/pricing_plans_simulate_companycall1.png" />
+<p>Introducimos el número destino en <a class="reference internal" href="../external_incoming_calls/numeric_transformations.xhtml#e164"><span class="std std-ref">formato E.164</span></a>:</p>
+<img alt="../_images/pricing_plans_simulate_companycall21.png" class="align-center" src="../_images/pricing_plans_simulate_companycall21.png" />
+<p>Y vemos que <em>matchea</em> con el <strong>plan de precio</strong> que acabamos de crear:</p>
+<img alt="../_images/pricing_plans_simulate_companycall31.png" src="../_images/pricing_plans_simulate_companycall31.png" />
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">En este punto, <em>Alice</em> debería de ser capaz de realizar llamadas nacionales externas, que se tendrían que cursar y tarificar con normalidad.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

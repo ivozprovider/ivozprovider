@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Colas</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="ivrs.xhtml" title="Interactive Voice Response (IVR)"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="huntgroups.xhtml" title="Grupos de salto"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">documentación de IvozProvider - Oasis</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Funcionalidades de PBX</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="queues">
+<h1>Colas</h1>
+<p>El comportamiento básico de colas está incluido en la version 1.3 de IvozProvider. Es una aproximación simple con <strong>el único propósito de proveer un mencanismo para procesar más llamadas que usuarios puedan atenderlas</strong>.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Advertencia</p>
+<p class="last">Colas y Callcenter son términos cercanos pero diferentes. <strong>IvozProvider no es un producto adecuado para callcenters</strong>, y no proporciona las funcionalidades avanzadas cruciales para ellos (como Reportes, visualización realtime, estadísticas de colas, etc..).</p>
+</div>
+<p>En <strong>Instalaciones distribuidas</strong> el uso de colas solo es compatible con una asignación estática o &#8216;basada en hash&#8217; (ver <strong>Método de distribución</strong> <a class="reference internal" href="../internal_calls/brand_portal.xhtml#remaining-parameters"><span class="std std-ref">aquí</span></a>).</p>
+<div class="admonition hint">
+<p class="first admonition-title">Consejo</p>
+<p class="last">Los operadores de marca pueden elegir que Compañía tiene colas (ver <strong>Features</strong> en <a class="reference internal" href="../internal_calls/brand_portal.xhtml#brand-configuration"><span class="std std-ref">Configuración de Marca</span></a> y <a class="reference internal" href="../internal_calls/company_portal.xhtml#company-configuration"><span class="std std-ref">Configuración de Compañía</span></a>).</p>
+</div>
+<div class="section" id="queue-configuration">
+<h2>Configuración de cola</h2>
+<p>Estas son las configuraciones relacionadas con una cola:</p>
+<dl class="glossary docutils">
+<dt id="term-name">Nombre</dt>
+<dd><p class="first last">Empleado para referenciar esta cola</p>
+</dd>
+<dt id="term-weight">Peso</dt>
+<dd><p class="first last">Cuando un miembro está en varias colas, se atenderán primero las llamadas de las colas con mayor peso.</p>
+</dd>
+<dt id="term-strategy">Estrategia</dt>
+<dd><p class="first last">¿Como se enviarán las llamadadas encoladas? Llamando a todos los miembros, llamando a uno al azar, etc.</p>
+</dd>
+<dt id="term-member-call-seconds">Duración llamada a miembro</dt>
+<dd><p class="first last">Tiempo en segundos que se llamará a cada miembro de la cola</p>
+</dd>
+<dt id="term-member-rest-seconds">Descanso miembro</dt>
+<dd><p class="first last">Tiempo en segundos que el miembro no será molestado tras atender una llamada de cola.</p>
+</dd>
+<dt id="term-announce">Anuncio</dt>
+<dd><p class="first last">Seleccione la locución y frecuencia. Las llamadas esperando en la cola escucharán esta locución.</p>
+</dd>
+<dt id="term-timeout-configuration">Configuración no contesta</dt>
+<dd><p class="first last">Limita el tiempo que una llamada esperará en la cola y el tratamiento a realizar cuando se supere ese tiempo.</p>
+</dd>
+<dt id="term-full-queue-configuration">Configuración cola llena</dt>
+<dd><p class="first last">Limita el número de llamadas que podrán esperar en la cola y el comportamiento a realizar cuando se alcance esa cantidad.</p>
+</dd>
+</dl>
+<p>Además de crear una cola, es preciso asignarle usuarios. Estos usuarios tendrán una <strong>prioridad: Un usuario de prioridad alta no será no será molestado siempre que exista un usuario de menor prioridad disponible.</strong></p>
+<div class="admonition hint">
+<p class="first admonition-title">Consejo</p>
+<p class="last">Una llamada puede ser enviada a una cola eligiendo la opción cola del selector &#8220;Enrutar&#8221; disponible en varias seciones de IvozProvider (extension a cola, DDI a cola, ...)</p>
+</div>
+</div>
+<div class="section" id="queue-strategy">
+<h2>Estrategia de cola</h2>
+<p>La estrategia de cola <strong>siempre aplica a los miembros de la prioridad actual</strong> comenzando con la menor de las prioridades y saltando a la siguiente prioridad solo cuando todos los miembros de la actual estén ocupados o no disponibles.</p>
+<dl class="glossary docutils">
+<dt id="term-ring-all">A todos</dt>
+<dd><p class="first last">La llamada hará sonar todos los miembros de la prioridad actual al mismo tiempo durante un tiempo predefinido.</p>
+</dd>
+<dt id="term-least-recent">Menos reciente</dt>
+<dd><p class="first last">La llamada <em>saltará</em> de un miembro a otro en un orden predefinido en base a la última vez que los miembros atendieron a llamadas. Miembros cuya llamada atendida sea mas antigua serán llamados primero.</p>
+</dd>
+<dt id="term-fewer-calls">Menos atendidas</dt>
+<dd><p class="first last">La llamada <em>saltará</em> de un miembro a otro en un orden predefinido en base al número de llamadas atendidas. Miembros con menos llamadas antendidas serán llamados primero.</p>
+</dd>
+<dt id="term-random">Aleatoriamente</dt>
+<dd><p class="first last">La llamada <em>saltará</em> de un miembro a otro en un orden aleatorio.</p>
+</dd>
+<dt id="term-round-robin-memory">Secuencialmente (memoria)</dt>
+<dd><p class="first last">La llamada <em>saltará</em> de un miembro a otro en un orden predefinido empezando a partir del último miembro que atendió una llamada.</p>
+</dd>
+<dt id="term-linear">Secuencialmente (∞)</dt>
+<dd><p class="first last">La llamada <em>saltará</em> de un miembro a otro en un orden predefinido en base a la fecha de creación de cada miembro.</p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

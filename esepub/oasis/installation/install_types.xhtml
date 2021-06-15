@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Tipos de instalación</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="requirements.xhtml" title="Requisitos mínimos"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="index.xhtml" title="Instalación inicial"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">documentación de IvozProvider - Oasis</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Instalación inicial</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="installation-types">
+<h1>Tipos de instalación</h1>
+<div class="section" id="distributed-install">
+<h2>Instalación distribuida</h2>
+<p>IvozProvider está diseñado para que la mayor parte del software trabaje de manera distribuida en lo que llamamos perfiles.</p>
+<p>Cada perfil es encargado de realizar una de las funciones de la plataforma:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="first">Base de Datos</p>
+</li>
+<li><p class="first">Proxy SIP</p>
+</li>
+<li><p class="first">Servidor Aplicaciones</p>
+</li>
+<li><p class="first">Portal Web</p>
+</li>
+</ul>
+</div></blockquote>
+<p>Para cada uno de estos perfiles existe un paquete virtual que instalará todas las dependencias necesarias (ver <a class="reference internal" href="debian_install.xhtml#installing-profile-package"><span class="std std-ref">Instalar el paquete del rol</span></a>).</p>
+<p>Puedes instalar cuantas instancias desees de cada perfil, pero ten en cuenta que, mientras algunos estan pensados para escalar horizontalmente de manera nativa (por ejemplo: asterisk o media-relays) otros requerirán software adicional para que las máquinas del mismo perfil esten coordinadas (por ejemplo: replicación de bases de datos o balanceo de peticiones web).</p>
+</div>
+<div class="section" id="standalone-install">
+<h2>Instalación standalone</h2>
+<p>Pero si lo que deseas es tener una plataforma pequeña para realizar tus pruebas o dar un servicio básico, hemos diseñado todas las configuraciones para que puedan convivir en una sola máquina.</p>
+<p>Hemos bautizado este tipo de instalaciones como <strong>StandAlone</strong> y hemos  creado <a class="reference internal" href="cd_install.xhtml#automatic-iso-cd-image"><span class="std std-ref">CDs automáticos de instalación</span></a> para que puedas instalarlos en un par de minutos.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>&lt;no title&gt;</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">IvozProvider Oasis documentation</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <p>Sessions initiated by SIP signalling protocol imply media streams shared by
+involved entities.</p>
+<p>This media streams use <a class="reference external" href="https://tools.ietf.org/html/rfc3550">RTP</a><span class="link-target"> [https://tools.ietf.org/html/rfc3550]</span> to send and
+receive the media itself, usually using UDP as a transport protocol.</p>
+<p><strong>External entities</strong> involved in RTP sessions can be divided in:</p>
+<ul class="simple">
+<li>Users.</li>
+<li>Carriers.</li>
+</ul>
+<p>Both entities exchanges RTP with the same IvozProvider entity: <em>media-relays</em>.</p>
+<p>IvozProvider implements <em>media-relays</em> using both <a class="reference external" href="https://github.com/sipwise/rtpengine">RTPengine</a><span class="link-target"> [https://github.com/sipwise/rtpengine]</span> and
+<a class="reference external" href="http://www.rtpproxy.org/">RTPproxy</a><span class="link-target"> [http://www.rtpproxy.org/]</span>.</p>
+<p>Similar to SIP, these <em>media-relays</em> exchanges RTP when is needed with
+<em>Application Servers</em>, but <strong>external entities never talk directly to them</strong>.</p>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

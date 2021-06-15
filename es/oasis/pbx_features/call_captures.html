@@ -1,0 +1,326 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="es" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="es" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Capturas de llamada &mdash; documentación de IvozProvider - Oasis</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'Oasis',
+              LANGUAGE:'es',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/banner.css" type="text/css" />
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="next" title="Servicios adicionales" href="services.html" />
+    <link rel="prev" title="DDIs externos" href="external_ddis.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> IvozProvider
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.7
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Introducción a Ivozprovider</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/index.html">Arquitectura general de la plataforma</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../operation_roles/index.html">Roles de la plataforma</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Minimum Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Instalación inicial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../internal_calls/index.html">Realizar llamadas internas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external_incoming_calls/index.html">Recibir llamadas externas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external_outgoing_calls/index.html">Realizar llamadas externas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Configuration</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Funcionalidades de PBX</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="extensions.html">Extensiones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="terminals.html">Terminales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_permissions.html">Control ACL para llamadas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="users.html">Usuarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="friends.html">Friends</a></li>
+<li class="toctree-l2"><a class="reference internal" href="music_on_hold.html">Música en espera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sounds.html">Locuciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="outgoingddi_rules.html">Reglas DDI de salida</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_filters.html">Filtros de entrada externo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="match_lists.html">Listas de coincidencia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="route_locks.html">Candados</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conditional_routes.html">Rutas condicionales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="huntgroups.html">Grupos de salto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="queues.html">Colas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ivrs.html">Interactive Voice Response (IVR)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conference_rooms.html">Salas de audioconferencias</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_ddis.html">DDIs externos</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Capturas de llamada</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#call-pickup-groups">Captura de llamadas indirecta</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#group-pickup-service-code">Código de captura de llamada</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="services.html">Servicios adicionales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_recording.html">Grabación de llamadas</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../retail/index.html">Clientes Retail</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../billing_and_invoices/index.html">Tarificación y facturación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../provisioning/index.html">Provisión de terminales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faxing/index.html">Sistema de Fax Virtual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userportal/index.html">Portal de usuario</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Security and Maintenance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html">Elementos de seguridad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maintenance/index.html">Mantenimiento de la solución</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IvozProvider</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Funcionalidades de PBX</a> &raquo;</li>
+        
+      <li>Capturas de llamada</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/pbx_features/call_captures.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="call-pickup">
+<span id="capture-groups"></span><h1>Capturas de llamada<a class="headerlink" href="#call-pickup" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Se entiende por captura de llamada <strong>la acción de un usuario que escucha</strong> (o se entera de otro modo, vía panel de supervisión, etc.) <strong>que una extensión está sonando y, desde su terminal, roba dicha llamada</strong>.</p>
+<p>IvozProvider soporta dos tipos de captura de llamadas:</p>
+<dl class="glossary docutils">
+<dt id="term-direct-pickup">Captura de llamadas directa</dt>
+<dd><p class="first last">En las capturas de llamadas directas el usuario indica un código que incluye la extensión del teléfono cuya llamada quiere <em>robar</em>. Si el código fuera *95, por ejemplo, marcaría *95101 para capturar una llamada que esté sonando en la extensión 101.</p>
+</dd>
+<dt id="term-group-pickup">Captura de grupo</dt>
+<dd><p class="first last">En las capturas de llamadas indirectas, en cambio, el usuario indica un código y el sistema busca qué teléfono está sonando dentro de sus grupos de captura.</p>
+</dd>
+</dl>
+<div class="section" id="call-pickup-groups">
+<h2>Captura de llamadas indirecta<a class="headerlink" href="#call-pickup-groups" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Para poder realizar <strong>capturas de llamada indirectas</strong>, el usuario que captura tiene que pertener al mismo grupo de captura que el usuario al que pretende capturar.</p>
+<p>La sección <strong>Grupos de captura de llamada</strong> nos permite crear estos grupos y decir qué usuarios pertenecen a ellos:</p>
+<img alt="../_images/capture_groups.png" src="../_images/capture_groups.png" />
+<p>Como vimos en la sección de <a class="reference internal" href="users.html#users"><span class="std std-ref">Usuarios</span></a>, también se puede editar un usuario para editar los grupos de captura a los que pertenece.</p>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Un usuario puede pertenecer a más de un grupo de captura, el sistema tendrá en cuenta todos sus grupos.</p>
+</div>
+</div>
+<div class="section" id="group-pickup-service-code">
+<h2>Código de captura de llamada<a class="headerlink" href="#group-pickup-service-code" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>IvozProvider permite definir los códigos de captura a 2 niveles:</p>
+<ul class="simple">
+<li><p class="first">A nivel de marca en <strong>Configuración de Marca</strong> &gt; <strong>Servicios</strong>.</p>
+</li>
+<li><p class="first">A nivel de empresa en <strong>Configuración de Empresa</strong> &gt; <strong>Servicios</strong>.</p>
+</li>
+</ul>
+<p>Esto permite que el administrador de marca pueda definir unos códigos genéricos para todas sus empresas y que, las empresas que deseen utilizar otros códigos, puedan redefinirlos.</p>
+<p><a class="reference internal" href="services.html#services"><span class="std std-ref">La siguiente sección</span></a> explica todo lo relativo a servicios, que engloba los códigos de captura y otros servicios adicionales a los que se accede marcando códigos que comienzan por *.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="services.html" class="btn btn-neutral float-right" title="Servicios adicionales" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="external_ddis.html" class="btn btn-neutral float-left" title="DDIs externos" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016-2017, Irontec
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-book"> Other Versions</span>
+        v: oasis
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Branches</dt>
+            <dd><a href="../../artemis/index.html">artemis</a></dd>
+            <dd><a href="../../bleeding/index.html">bleeding</a></dd>
+            <dd><a href="call_captures.html">oasis</a></dd>
+        </dl>
+    </div>
+</div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

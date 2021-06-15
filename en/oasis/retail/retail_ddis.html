@@ -1,0 +1,300 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Retail DDIs &mdash; IvozProvider Oasis documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'Oasis',
+              LANGUAGE:'en',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/banner.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Virtual Fax System" href="../faxing/index.html" />
+    <link rel="prev" title="Retail DDI filters" href="retail_filters.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> IvozProvider
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.7
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Introduction to IvozProvider</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/index.html">Platform general architecture</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../operation_roles/index.html">Platform roles</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Minimum Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Initial Installation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../internal_calls/index.html">Making internal calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external_incoming_calls/index.html">Receive external calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external_outgoing_calls/index.html">Making external calls</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Configuration</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../pbx_features/index.html">PBX Features</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Retail Clients</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="retail_accounts.html">Retail Accounts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="retail_filters.html">Retail DDI filters</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Retail DDIs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ddi-filters">DDI filters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#retail-ddi-routes">Retail DDI routes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#recordings">Recordings</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../pbx_features/call_recording.html">Call recording</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faxing/index.html">Virtual Fax System</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../billing_and_invoices/index.html">Billing and Invoices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../provisioning/index.html">Terminal provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faxing/index.html">Virtual Fax System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userportal/index.html">User Portal</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Security and Maintenance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html">Security elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maintenance/index.html">Maintenance and troubleshooting</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IvozProvider</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Retail Clients</a> &raquo;</li>
+        
+      <li>Retail DDIs</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/retail/retail_ddis.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="retail-ddis">
+<span id="id1"></span><h1>Retail DDIs<a class="headerlink" href="#retail-ddis" title="Permalink to this headline">¶</a></h1>
+<p>DDIs are the external entry point from Contract Peerings to Retail Clients that
+can be routed through Retail Accounts.</p>
+<div class="section" id="ddi-filters">
+<h2>DDI filters<a class="headerlink" href="#ddi-filters" title="Permalink to this headline">¶</a></h2>
+<p>We can assign an <strong>external call filter</strong> configured in <a class="reference internal" href="retail_filters.html#retail-filters"><span class="std std-ref">previous section</span></a>. Contrary to Virtual PBX External Call fiters, Retail DDIs
+filters only allow static redirection to another external number.</p>
+</div>
+<div class="section" id="retail-ddi-routes">
+<h2>Retail DDI routes<a class="headerlink" href="#retail-ddi-routes" title="Permalink to this headline">¶</a></h2>
+<p>Retail DDIs can only be routed to a <a class="reference internal" href="retail_accounts.html#retail-accounts"><span class="std std-ref">Retail Accounts</span></a>
+or <a class="reference internal" href="../faxing/index.html#faxing-system"><span class="std std-ref">Virtual Fax</span></a>.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Routing a DDI through a Retail account will allow to place external calls
+from that account presenting that DDI as origin.</p>
+</div>
+</div>
+<div class="section" id="recordings">
+<h2>Recordings<a class="headerlink" href="#recordings" title="Permalink to this headline">¶</a></h2>
+<p>If Retail Client has <em>Recordings</em> feature enabled, DDIs can also record incoming and/or
+outgoing calls.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../faxing/index.html" class="btn btn-neutral float-right" title="Virtual Fax System" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="retail_filters.html" class="btn btn-neutral float-left" title="Retail DDI filters" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016-2017, Irontec
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-book"> Other Versions</span>
+        v: oasis
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Branches</dt>
+            <dd><a href="../../artemis/index.html">artemis</a></dd>
+            <dd><a href="../../bleeding/index.html">bleeding</a></dd>
+            <dd><a href="retail_ddis.html">oasis</a></dd>
+        </dl>
+    </div>
+</div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

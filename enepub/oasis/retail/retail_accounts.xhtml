@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Retail Accounts</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="retail_filters.xhtml" title="Retail DDI filters"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.xhtml" title="Retail Clients"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">IvozProvider Oasis documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Retail Clients</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="retail-accounts">
+<span id="id1"></span><h1>Retail Accounts</h1>
+<p>Retail Accounts are the main routable option in Retail clients.
+More or less like <a class="reference internal" href="../pbx_features/friends.xhtml#friends"><span class="std std-ref">Friends</span></a> are to Virtual PBX Companies, accounts
+contain the required configurable options to provide a SIP connectivity
+service with IvozProvider and an external SIP entity.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Although both <strong>Contract peering</strong> and <strong>Retail accounts</strong> are defined by the
+<strong>brand operator</strong>, the first ones are designed to connect with the public network
+while the second ones connect the system with other SIP agents.</p>
+</div>
+<div class="section" id="types-of-retail-accounts">
+<h2>Types of retail accounts</h2>
+<p>There are 2 main types of SIP PBX that can use retail with IvozProvider:</p>
+<ul class="simple">
+<li><strong>Direct connection PBX</strong>: IvozProvider must be able to talk SIP directly with
+this kind of accounts by just redirecting the traffic to the proper port of
+the public IP address of the PBX.</li>
+<li><strong>PBX behind NAT</strong>: Not directly accesible. This kind of PBX must register at
+IvozProvider (just like all the <a class="reference internal" href="../pbx_features/terminals.xhtml#terminals"><span class="std std-ref">Terminals</span></a> do).</li>
+</ul>
+</div>
+<div class="section" id="what-kind-of-calls-can-be-routed-through-a-retail-account">
+<h2>What kind of calls can be routed through a <em>Retail Account</em>?</h2>
+<p>Contrary to Friends, <strong>Retail Accounts</strong> have some simplifications and limitations.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Retail Accounts only route their assigned DDIs</li>
+<li>Retail Accounts only place externals calls to Contract Peerings</li>
+<li>Retail Accounts only receive external calls from Contract Peerings</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="retail-accounts-configuration">
+<h2>Retail Accounts Configuration</h2>
+<p>These are the configurable settings of <em>Retail accounts</em>:</p>
+<dl class="glossary docutils">
+<dt id="term-name">Name</dt>
+<dd>Name of the <strong>retail account</strong>. This name must be unique in the whole brand so
+it&#8217;s recommended to use some kind of secuential identifier. This will also be used
+in SIP messages (sent <strong>From User</strong>).</dd>
+<dt id="term-description">Description</dt>
+<dd>Optional. Extra information for this <em>retail account</em>.</dd>
+<dt id="term-password">Password</dt>
+<dd>When the <em>retail account</em> send requests, IvozProvider will authenticate it using
+this password. Like in other SIP agents in IvozProvider <strong>using password IS A MUST</strong>.</dd>
+<dt id="term-direct-connection">Direct connection</dt>
+<dd>If you choose &#8216;Yes&#8217; here, you&#8217;ll have to fill the protocol, address and
+port where this <em>retail account</em> can be contacted.</dd>
+<dt id="term-fallback-outgoing-ddi">Fallback Outgoing DDI</dt>
+<dd>External calls from this <em>retail account</em> will be presented with this DDI, <strong>unless
+the source presented matches a DDI belonging to the account</strong>.</dd>
+<dt id="term-country-and-area-code">Country and Area code</dt>
+<dd>Used for number transformation from and to this retail account.</dd>
+<dt id="term-allowed-codecs">Allowed codecs</dt>
+<dd>Like a other SIP entities, <em>retail accounts</em> will talk the selected codec.</dd>
+<dt id="term-from-domain">From domain</dt>
+<dd>Request from IvozProvider to this account will include this domain in
+the From header.</dd>
+</dl>
+<div class="section" id="voicemail-service">
+<h3>Voicemail service</h3>
+<p>Each retail account has a separate voicemail mailbox to forward received calls using Call Forward Settings below.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">They can use <strong>Voicemail service code</strong> defined at brand level to listen to messages and to
+record a greeting locution different from the standard one.</p>
+</div>
+</div>
+<div class="section" id="call-forward-settings">
+<h3>Call Forward Settings</h3>
+<p>Call forward settings can be configured per retail account. These are the fields and available values:</p>
+<dl class="glossary docutils">
+<dt id="term-enabled">Enabled</dt>
+<dd>Determines if the forward must be applied or not. This way, you can have
+most used call forward configured and toggle if they apply or not.</dd>
+<dt id="term-call-forward-type">Call Forward type</dt>
+<dd><p class="first">When this forward must be applied:</p>
+<blockquote class="last">
+<div><ul class="simple">
+<li>Inconditional: always.</li>
+<li>No answer: when the call is not answered in X seconds.</li>
+<li>Busy: When the retail account is busy (486 response code).</li>
+<li>Not registered: when the retail account is not registered
+against IvozProvider.</li>
+</ul>
+</div></blockquote>
+</dd>
+<dt id="term-target-type">Target type</dt>
+<dd><p class="first">What route will use the forwarded call.</p>
+<blockquote class="last">
+<div><ul class="simple">
+<li>Retail account voicemail</li>
+<li>Number (external)</li>
+</ul>
+</div></blockquote>
+</dd>
+</dl>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">Calls forwarded to an external number by a call forward setting will keep the original
+caller identification, adding the forwarding info in a SIP <em>Diversion</em> header.</p>
+</div>
+</div>
+</div>
+<div class="section" id="asterisk-as-an-account-client">
+<h2>Asterisk as an account client</h2>
+<p>At the other end of a account can be any kind of SIP entity. This section takes
+as example an Asterisk PBX system using SIP channel driver that wants to connect
+to IvozProvider.</p>
+<div class="section" id="account-register">
+<h3>Account register</h3>
+<p>If the system can not be directly access, Asterisk will have to register in the
+platform (like a terminal will do).</p>
+<p>Configuration will be something like this:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>register =&gt; account-name:account-password@ivozprovider-brand.sip-domain.com
+</pre></div>
+</div>
+</div>
+<div class="section" id="account-peer">
+<h3>Account peer</h3>
+<div class="highlight-none"><div class="highlight"><pre><span></span>[name-peer]
+type=peer
+host=ivozprovider-brand.sip-domain.com
+context=XXXXXX
+disallow=all
+allow=alaw
+defaultuser=account-name
+secret=account-password
+fromdomain=ivozprovider-brand.sip-domain.com
+insecure=port,invite
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last"><em>Account clients</em> MUST NOT challenge IvozProvider. That&#8217;s
+why the <em>insecure</em> setting is used here.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

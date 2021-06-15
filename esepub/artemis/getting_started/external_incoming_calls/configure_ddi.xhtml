@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Dar de alta un DDI externo</title>
+    
+    <link rel="stylesheet" href="../../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="../external_outgoing_calls/index.xhtml" title="Realizar llamadas externas"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="peering.xhtml" title="Peering configuration"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.xhtml">documentación de IvozProvider - Artemis</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Receiving external calls</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <p>Once we have an agreement with a DDI provider and we have configured it in
+the previous section, only two task are pending:</p>
+<div class="section" id="configuring-an-external-ddi">
+<span id="settingup-ddi"></span><h1>Dar de alta un DDI externo</h1>
+<p>The brand operator, responsible of these <em>peering</em> agreements with VoIP providers,
+has the task to create the DDIs for each client.</p>
+<p>Notice that in order to access this section, the brand operator (or <em>god</em>)
+must have emulated the proper client and access the menu section <strong>Client
+Configuration</strong>.</p>
+<div class="admonition attention">
+<p class="first admonition-title">Atención</p>
+<p class="last">Section <strong>Client configuration &gt; DDIs</strong> is different when the
+client administrator access than the displayed data when a global or brand
+administrator does. Client administrator are unable to create or delete
+DDIs, just edit the one created by the brand or god administrator.</p>
+</div>
+<p>Taking into account these concepts, we create a new DDI and fill the required
+fields.</p>
+<p>For detailed information about configuration fields, check <a class="reference internal" href="../../administration_portal/client/vpbx/ddis.xhtml#pbx-ddis"><span class="std std-ref">DDIs</span></a> section.</p>
+<p class="rubric">Configurar tratamiento en entrada</p>
+<p>In the previous section, we have created the DDI and configure it (pointing it to user Alice),
+but <strong>the most common procedure</strong> is that the brand operator just creates the DDI while the
+<strong>client administrator</strong>, using the same section, <strong>configures</strong> it choosing
+the correct route (user, hunt group, etc.), calendars filters and so on.</p>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">En este punto, marcando el número público debería de sonar el teléfono de <em>Alice</em> consiguiendo, por tanto, el objetivo de este bloque :)</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2019, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

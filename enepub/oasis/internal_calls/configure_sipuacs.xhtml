@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>SIP Terminal configuration</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../external_incoming_calls/index.xhtml" title="Receive external calls"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="company_portal.xhtml" title="Company Configuration"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">IvozProvider Oasis documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Making internal calls</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="sip-terminal-configuration">
+<h1>SIP Terminal configuration</h1>
+<p>The last thing we need is 2 SIP terminals (hardphones, softphones or even
+mobile applications) and configure them as follows:</p>
+<p><strong>ALICE</strong></p>
+<ul class="simple">
+<li><strong>User</strong>: alice</li>
+<li><strong>Password</strong>: alice</li>
+<li><strong>Domain</strong>: users.democompany.com (or the IP if we are using <a class="reference internal" href="brand_portal.xhtml#dnshack"><span class="std std-ref">the DNS
+trick</span></a>)</li>
+</ul>
+<p><strong>BOB</strong></p>
+<ul class="simple">
+<li><strong>User</strong>: bob</li>
+<li><strong>Password</strong>: bob</li>
+<li><strong>Domain</strong>: users.democompany.com (or the IP if we are using <a class="reference internal" href="brand_portal.xhtml#dnshack"><span class="std std-ref">the DNS
+trick</span></a>)</li>
+</ul>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Sometimes the user and domain is configured in a single option. In this
+case we should enter <a class="reference external" href="mailto:alice&#37;&#52;&#48;users&#46;democompany&#46;com">alice<span>&#64;</span>users<span>&#46;</span>democompany<span>&#46;</span>com</a> and <a class="reference external" href="mailto:bob&#37;&#52;&#48;users&#46;democompany&#46;com">bob<span>&#64;</span>users<span>&#46;</span>democompany<span>&#46;</span>com</a>
+(or the IP if we are using <a class="reference internal" href="brand_portal.xhtml#dnshack"><span class="std std-ref">the DNS trick</span></a>)</p>
+</div>
+<p>After configuring the terminals, Alices should be able to call Bob only by
+dialing 102 in her terminal.</p>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

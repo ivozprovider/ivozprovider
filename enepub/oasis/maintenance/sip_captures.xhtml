@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Analyzing SIP traffic</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="log_viewer.xhtml" title="Log viewer"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.xhtml" title="Maintenance and troubleshooting"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">IvozProvider Oasis documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Maintenance and troubleshooting</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="analyzing-sip-traffic">
+<h1>Analyzing SIP traffic</h1>
+<p>Although all production IvozProvider installations mantained by
+<a class="reference external" href="https://www.irontec.com">Irontec</a><span class="link-target"> [https://www.irontec.com]</span> include a <a class="reference external" href="https://www.sipcapture.org/">Homer SIP Capture Server</a><span class="link-target"> [https://www.sipcapture.org/]</span>, it is not installed in the standlone version
+of IvozProvider. The reason behind this is that we prefer awesome SIPCAPTURE
+stack running on an additional machine.</p>
+<p><a class="reference external" href="https://github.com/irontec/sngrep">sngrep Ncurses SIP Messages flow viewer developed by Irontec</a><span class="link-target"> [https://github.com/irontec/sngrep]</span> is currently
+the preferred tool to inspect SIP traffic included in IvozProvider.</p>
+<img alt="../_images/sngrep_sample.png" src="../_images/sngrep_sample.png" />
+<div class="section" id="sngrep">
+<h2>sngrep</h2>
+<p>See live SIP traffic (all):</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">sngrep</span>
+</pre></div>
+</div>
+<p>See live SIP traffic related to calls:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">sngrep -c</span>
+</pre></div>
+</div>
+<p>See live SIP traffic and capture RTP too:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">sngrep -c -r</span>
+</pre></div>
+</div>
+<p>For more reference, visit <a class="reference external" href="https://github.com/irontec/sngrep">sngrep official site</a><span class="link-target"> [https://github.com/irontec/sngrep]</span>.</p>
+</div>
+<div class="section" id="other-capturing-tools">
+<h2>Other capturing tools</h2>
+<p>Although sngrep is our preferred capturing tool, IvozProvider ships other tools
+to capture SIP/RTP traffic, such as <a class="reference external" href="http://www.tcpdump.org">tcpdump</a><span class="link-target"> [http://www.tcpdump.org]</span> and
+<a class="reference external" href="http://ngrep.sourceforge.net">ngrep</a><span class="link-target"> [http://ngrep.sourceforge.net]</span>.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

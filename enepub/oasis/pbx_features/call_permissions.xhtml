@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Call ACL Control</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="users.xhtml" title="Users configuration"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="terminals.xhtml" title="Terminals configuration"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">IvozProvider Oasis documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">PBX Features</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="call-acl-control">
+<span id="call-permissions"></span><h1>Call ACL Control</h1>
+<p>The <strong>Call ACLs</strong> determines what users can call to external numbers.</p>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">The internal extensions are allowed to all users, the <strong>Call
+ACLs only apply to external numbers</strong></p>
+</div>
+<p>The <strong>Call ACL</strong> setup has two different parts:</p>
+<ul>
+<li><p class="first">Classify the call in different types based on <strong>regular expressions</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Brand level: <strong>Brand Configuration</strong> &gt; <strong>Generic call ACL patterns</strong></li>
+<li>Company level: <strong>Company Configuration</strong> &gt; <strong>Call ACL patterns</strong></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Choose policies for groups of patterns: <strong>Company Configuration</strong> &gt; <strong>Call
+ACLs</strong></p>
+</li>
+</ul>
+<div class="section" id="call-acl-patterns">
+<h2>Call ACL patterns</h2>
+<p>The destination number is matched against the <strong>Company ACL patterns</strong> to determine
+the destination type.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">When a Brand operator creates a new company, all of the <strong>Generic
+ACL patterns</strong> defined in the <strong>Brand configuration</strong> are copied to the
+<strong>Company configuration</strong> &gt; <strong>Call ACLs</strong>. This way, the brand operator can
+define the most common patterns to speed up the company configuration.</p>
+</div>
+<p>The patterns creation process is quite simple:</p>
+<img alt="../_images/permissions_patterns.png" src="../_images/permissions_patterns.png" />
+<p>This new ACL pattern includes the calls starting with the spanish country
+prefix followed by 6 or 7 and 8 more digits between 0 and 9. This is the E.164
+format for the spanish mobile numbers.</p>
+<p>Following this spanish example, other formats will be:</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Spanish Landline (including special numbers prefix: 902, etc.): ^34[89][0-9]{8}$</dt>
+<dd><ul class="first last">
+<li>34 (Spain country prefix), 8 or 9 followed by 8 digits</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Spanish Landline (excluding special number prefix: 902, etc.): ^34[89][1-9][0-9]{7}$</dt>
+<dd><ul class="first last">
+<li>34 (Spain country prefix), 8 or 9, followed by one digit between 1 and 9, followed by 7 digits.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>United Kingdom Landline: ^44[0-9]+$</dt>
+<dd><ul class="first last">
+<li>44 (UK country prefix), followed by more digits</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p class="rubric">External numbers format</p>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last"><strong>Regular expressions of Call ACL patterns must be in E.164 format</strong>.</p>
+</div>
+<p>There are two main reasons for this decision:</p>
+<ul class="simple">
+<li>The same pattern will apply to all the users of the company,  no matter
+what country the user is.</li>
+<li>Brand-level ACL patterns will be inherited by all new companies. The only way
+this inheritance could be useful was using an standard format, valid for all the
+companies countries.</li>
+</ul>
+<p>Besides, this way it is really easy to avoid (or allow) call to a country.</p>
+</div>
+<div class="section" id="call-acl">
+<h2>Call ACL</h2>
+<p>The <strong>Call ACL</strong> configuration is easier to explain with an example:</p>
+<p>Imagine the following <strong>CALL ACL patterns</strong>:</p>
+<img alt="../_images/permissions_patterns_list.png" src="../_images/permissions_patterns_list.png" />
+<p>We could create a <strong>Call ACL</strong> that only allow calling to this destinations:</p>
+<img alt="../_images/permissions_add.png" src="../_images/permissions_add.png" />
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The default action determines what to do with the call when the
+destination number <strong>does not match any ACL patterns</strong>.</p>
+</div>
+<p>After creating the <strong>Call ACL</strong> we can edit it to add the required rules:</p>
+<img alt="../_images/permissions_add2.png" src="../_images/permissions_add2.png" />
+<dl class="docutils">
+<dt>The <strong>metric</strong> determines the evaulation order of the rules and the action that</dt>
+<dd>that will be applied if it <em>matches</em> the pattern (allow/deny).</dd>
+</dl>
+<img alt="../_images/permissions_add3.png" src="../_images/permissions_add3.png" />
+<p>Once we have added our two spanish <strong>Call ACL patterns</strong>, our <strong>Call ACL</strong> will
+look like this:</p>
+<img alt="../_images/permissions_add4.png" src="../_images/permissions_add4.png" />
+<p>We only have to assign this ACL to the users in the section <strong>Company
+configuration</strong> &gt; <strong>Users</strong>:</p>
+<img alt="../_images/permissions_add5.png" src="../_images/permissions_add5.png" />
+<p>From this moment on, Alice will only be allowed to call internal extensions
+(they are always allowed) and spanish numbers.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

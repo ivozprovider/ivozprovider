@@ -1,0 +1,386 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Pricing plans &mdash; IvozProvider Oasis documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'Oasis',
+              LANGUAGE:'en',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/banner.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Call billing" href="bill_a_call.html" />
+    <link rel="prev" title="Billable calls" href="billable_calls.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> IvozProvider
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.7
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Introduction to IvozProvider</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/index.html">Platform general architecture</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../operation_roles/index.html">Platform roles</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Minimum Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Initial Installation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../internal_calls/index.html">Making internal calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external_incoming_calls/index.html">Receive external calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external_outgoing_calls/index.html">Making external calls</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../pbx_features/index.html">PBX Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../retail/index.html">Retail Clients</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Billing and Invoices</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="call_registry.html">Call Registry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="billable_calls.html">Billable calls</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Pricing plans</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#manual-creation">Manual creation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#importing-a-csv-file">Importing a CSV file</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#csv-format">CSV format</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="bill_a_call.html">Call billing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="invoices.html">Invoice generation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../provisioning/index.html">Terminal provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faxing/index.html">Virtual Fax System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userportal/index.html">User Portal</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Security and Maintenance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html">Security elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maintenance/index.html">Maintenance and troubleshooting</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IvozProvider</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Billing and Invoices</a> &raquo;</li>
+        
+      <li>Pricing plans</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/billing_and_invoices/pricing_plans.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pricing-plans">
+<h1>Pricing plans<a class="headerlink" href="#pricing-plans" title="Permalink to this headline">¶</a></h1>
+<p>In <a class="reference internal" href="../external_outgoing_calls/noplan_nocall.html#noplan-nocall"><span class="std std-ref">No pricing plan, no call</span></a> section the process of creating a <em>pricing plan</em> was
+described quite thoroughly and main concepts were introduced:</p>
+<ul>
+<li><p class="first">A pricing plan groups some pricing patterns (prefixes) with their cost details:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Cost per minute</li>
+<li>Call establishment cost</li>
+<li>Bill by seconds, by minutes, etc.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">A pricing plan is linked to an specific company with a period of time in which
+this asociation is valid.</p>
+</li>
+<li><p class="first">One company may have more than one valid pricing plan for an specific call in
+an specific moment.</p>
+</li>
+<li><p class="first">In such cases, the call price will be calculated using the price detail of the
+matching pricing plan with minor metric.</p>
+</li>
+</ul>
+<div class="section" id="manual-creation">
+<h2>Manual creation<a class="headerlink" href="#manual-creation" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../external_outgoing_calls/noplan_nocall.html#price-plan"><span class="std std-ref">Manual creation of a pricing plan</span></a> implied the previous
+creation of at least one <a class="reference internal" href="../external_outgoing_calls/noplan_nocall.html#price-pattern"><span class="std std-ref">price pattern</span></a>.</p>
+<p>At this point, the future brand operator may have noticed that creating thousands
+of pricing patterns would be a really annoying and time consuming task, as there
+are 254 countries, each of them with their mobile networks, landline networks,
+special service numbers, etc.</p>
+<p>That&#8217;s why the creation of pricing patterns and pricing plans is done using a
+<a class="reference external" href="https://es.wikipedia.org/wiki/CSV">CSV</a> file.</p>
+</div>
+<div class="section" id="importing-a-csv-file">
+<h2>Importing a CSV file<a class="headerlink" href="#importing-a-csv-file" title="Permalink to this headline">¶</a></h2>
+<p>The first step is creating an empty pricing plan to import the prices in (section
+<strong>Brand configuration</strong> &gt; <strong>Pricing plans</strong>):</p>
+<img alt="../_images/pricing_plans_add.png" src="../_images/pricing_plans_add.png" />
+<p>We enter the empty pricing plan we have just created:</p>
+<img alt="../_images/pricing_plans_add_price.png" src="../_images/pricing_plans_add_price.png" />
+<p>This is the key button for the massive pricing pattern import process:</p>
+<img alt="../_images/pricing_plan_csv.png" src="../_images/pricing_plan_csv.png" />
+<p>Once chosen the CSV file to import, this window turns up:</p>
+<img alt="../_images/pricing_plan_csv3.png" src="../_images/pricing_plan_csv3.png" />
+<p>We can select which column contains which field, in case we want to import a
+<a class="reference external" href="https://es.wikipedia.org/wiki/CSV">CSV</a> file in a non-recommended format. We
+can also decide whether to import the first line or discard it as it may have
+titles instead of data.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">The importing process is done in background, letting the brand operator
+continue doing other stuff while it is finished.</p>
+</div>
+<div class="section" id="csv-format">
+<h3>CSV format<a class="headerlink" href="#csv-format" title="Permalink to this headline">¶</a></h3>
+<p>Although the above window allowed importing non-recommended format <a class="reference external" href="https://es.wikipedia.org/wiki/CSV">CSV</a>  files, we encourage you to import a file
+in the proposed format, as it will make this process much easier.</p>
+<p>The recommended <a class="reference external" href="https://es.wikipedia.org/wiki/CSV">CSV</a> format is described
+in the contextual help section, that includes even a link to download an example
+file:</p>
+<img alt="../_images/pricing_plan_csv2.png" src="../_images/pricing_plan_csv2.png" />
+<p>The order of the columns should be:</p>
+<ul class="simple">
+<li>Pricing pattern name</li>
+<li>Pricing pattern description</li>
+<li>Prefix</li>
+<li>Price per minute</li>
+<li>Establishment cost</li>
+<li>Billing period</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">It is recommended to double quote alphanumeric entries, though
+it is not compulsory for single word entries (or entries without odd symbols).
+<strong>If they contain any comma, they MUST be quoted</strong>.</p>
+</div>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p class="last">Floating numbers <strong>MUST use point as decimal separator</strong>.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Numeric entries can be quoted with double quotes, but it is
+not mandatory.</p>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">The importing system will just bind the price to an existing
+price pattern or, if prefix doesn&#8217;t match any existing pricing pattern, it will
+create one.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>The price of the call will be increased every billing period unit.</p>
+<ul class="last simple">
+<li>If <em>billing period</em> is set to 1, every second the price will be increased
+<em>price per minute</em> divided by 60 (bill by seconds).</li>
+<li>If <em>billing period</em> is set to 60, every minute the price will be increased
+<em>price per minute</em> (bill by minutes).</li>
+</ul>
+</div>
+<p>Once the import process is over, we just have to bind the pricing plan to
+the companies we want following <a class="reference internal" href="../external_outgoing_calls/noplan_nocall.html#pricing-plan-to-company"><span class="std std-ref">the procedure explained in
+the previous block</span></a>.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="bill_a_call.html" class="btn btn-neutral float-right" title="Call billing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="billable_calls.html" class="btn btn-neutral float-left" title="Billable calls" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016-2017, Irontec
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-book"> Other Versions</span>
+        v: oasis
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Branches</dt>
+            <dd><a href="../../artemis/index.html">artemis</a></dd>
+            <dd><a href="../../bleeding/index.html">bleeding</a></dd>
+            <dd><a href="pricing_plans.html">oasis</a></dd>
+        </dl>
+    </div>
+</div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

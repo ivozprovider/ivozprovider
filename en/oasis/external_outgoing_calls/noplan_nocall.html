@@ -1,0 +1,373 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>No pricing plan, no call &mdash; IvozProvider Oasis documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'Oasis',
+              LANGUAGE:'en',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/banner.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="PBX Features" href="../pbx_features/index.html" />
+    <link rel="prev" title="Outgoing DDI configuration" href="external_ddi.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> IvozProvider
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.7
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Introduction to IvozProvider</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/index.html">Platform general architecture</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../operation_roles/index.html">Platform roles</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Minimum Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Initial Installation</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../internal_calls/index.html">Making internal calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external_incoming_calls/index.html">Receive external calls</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Making external calls</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="call_types.html">Where do I call?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_routing.html">Outgoing Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_ddi.html">Outgoing DDI configuration</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">No pricing plan, no call</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#creating-a-pricing-pattern">Creating a pricing pattern</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-a-pricing-plan">Creating a pricing plan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#assigning-a-pricing-plan-to-a-company">Assigning a pricing plan to a company</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../pbx_features/index.html">PBX Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../retail/index.html">Retail Clients</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../billing_and_invoices/index.html">Billing and Invoices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../provisioning/index.html">Terminal provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faxing/index.html">Virtual Fax System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userportal/index.html">User Portal</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Security and Maintenance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html">Security elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maintenance/index.html">Maintenance and troubleshooting</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IvozProvider</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Making external calls</a> &raquo;</li>
+        
+      <li>No pricing plan, no call</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/external_outgoing_calls/noplan_nocall.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <p>At this point, we are looking forward to make our first outgoing call with our
+new IvozProvider, we may have even tried to call with current configuration but...</p>
+<div class="section" id="no-pricing-plan-no-call">
+<span id="noplan-nocall"></span><h1>No pricing plan, no call<a class="headerlink" href="#no-pricing-plan-no-call" title="Permalink to this headline">¶</a></h1>
+<p>Just the way we warned <a class="reference internal" href="../operation_roles/index.html#brand-responsibilities"><span class="std std-ref">when we described the duties of the brand operator</span></a>, the brand operator is <strong>responsible for making all the
+needed setup so that IvozProvider is able to bill all external calls</strong>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>Billing a call</strong> is the action of <strong>assigning price</strong> to a call that implies
+cost.</p>
+</div>
+<p><strong>IvozProvider checks live that a call can be billed when it is established</strong> to avoid
+placing calls that imply cost but won&#8217;t be billed because Brand Operator, due to
+a mistake, hasn&#8217;t assigned a price.</p>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p class="last">If a call can&#8217;t be billed, IvozProvider won&#8217;t allow its establishment.</p>
+</div>
+<div class="section" id="creating-a-pricing-pattern">
+<span id="price-pattern"></span><h2>Creating a pricing pattern<a class="headerlink" href="#creating-a-pricing-pattern" title="Permalink to this headline">¶</a></h2>
+<p>Just the way <a class="reference internal" href="call_types.html#target-patterns"><span class="std std-ref">target patterns</span></a> exist, <strong>pricing patterns</strong>
+exist and are configured in this section:</p>
+<img alt="../_images/pricing_pattern_section.png" src="../_images/pricing_pattern_section.png" />
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">A call is considered billable if there is a pricing pattern that
+matches this call.</p>
+</div>
+<p>Pricing patterns section is empty by default, as opposed to target patterns section,
+that has all the 254 countries of the world. The reason is that pricing pattern
+will usually imply lots of pattern per country (GSM networks, especial numbers,
+mobile numbers, fixed lines, etc.).</p>
+<p>We will create the pricing plan &#8216;Spain&#8217; for our outgoing call:</p>
+<img alt="../_images/pricing_pattern_add.png" src="../_images/pricing_pattern_add.png" />
+</div>
+<div class="section" id="creating-a-pricing-plan">
+<span id="price-plan"></span><h2>Creating a pricing plan<a class="headerlink" href="#creating-a-pricing-plan" title="Permalink to this headline">¶</a></h2>
+<p>A <strong>Pricing plan</strong> determines the price of a type of call (of a pricing pattern)
+and is configured in this section:</p>
+<img alt="../_images/pricing_plans_section.png" src="../_images/pricing_plans_section.png" />
+<p>We create a <strong>pricing plan</strong> for our goal:</p>
+<img alt="../_images/pricing_plans_add1.png" src="../_images/pricing_plans_add1.png" />
+<p>And we add the <strong>pricing patter</strong> we have just created:</p>
+<img alt="../_images/pricing_plans_add_price1.png" src="../_images/pricing_plans_add_price1.png" />
+<img alt="../_images/pricing_plans_add_price2.png" src="../_images/pricing_plans_add_price2.png" />
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Floating number must use the &#8221;.&#8221; as decimal separator (e.g. 0.02)</p>
+</div>
+<p class="rubric">Finding a pricing plan for a specific destination</p>
+<p>To check the configuration so far we can <strong>find a pricing plan</strong> for a call
+pressing:</p>
+<img alt="../_images/pricing_plans_find_plan.png" src="../_images/pricing_plans_find_plan.png" />
+<p>We introduce the destination number in <a class="reference internal" href="../external_incoming_calls/numeric_transformations.html#e164"><span class="std std-ref">E.164 format</span></a>:</p>
+<img alt="../_images/pricing_plans_find_plan2.png" src="../_images/pricing_plans_find_plan2.png" />
+<p>And we can check that it matches the <strong>precing plan</strong> we have just created:</p>
+<img alt="../_images/pricing_plans_find_plan3.png" src="../_images/pricing_plans_find_plan3.png" />
+</div>
+<div class="section" id="assigning-a-pricing-plan-to-a-company">
+<span id="pricing-plan-to-company"></span><h2>Assigning a pricing plan to a company<a class="headerlink" href="#assigning-a-pricing-plan-to-a-company" title="Permalink to this headline">¶</a></h2>
+<p>A specific <strong>pricing plan</strong> can be linked to &#8216;n&#8217; companies and the <em>brand
+operator</em> is responsible for this task.</p>
+<p>In the section <strong>Brand configuration</strong> &gt; <strong>Companies</strong> we select the <em>demo</em>
+company:</p>
+<img alt="../_images/pricing_plans_relate_company.png" src="../_images/pricing_plans_relate_company.png" />
+<p>The <strong>Pricing plan</strong> and <strong>Companies</strong> relationship is set for a determined
+period of time, that&#8217;s why we have to select <em>Start time</em> and <em>End time</em>:</p>
+<img alt="../_images/pricing_plans_relate_company2.png" src="../_images/pricing_plans_relate_company2.png" />
+<p>The <strong>metric</strong> of the link lets you assign more than one <em>pricing plan</em> for a
+company, even though some destinations are included in more than one of those
+pricing plans.</p>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">If a given call can be billed with more than one active pricing
+plan, it will be billed using the pricing plan with lower metric.</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">This allows having a general <em>Pricing plan</em> and concrete the price of
+a specific destination in another <em>pricing plan</em> with lower metric (free cell
+phone calls, for example).</p>
+</div>
+<p class="rubric">Simulating a call of a specific company</p>
+<p>We can simulate a call for a given company and check the price it will imply.
+This way, we can be sure that the configuration is ok and that calls to that
+destination will be billed using a specific <em>Pricing plan</em>:</p>
+<img alt="../_images/pricing_plans_simulate_companycall.png" src="../_images/pricing_plans_simulate_companycall.png" />
+<p>We introduce the destination number in <a class="reference internal" href="../external_incoming_calls/numeric_transformations.html#e164"><span class="std std-ref">E.164 format</span></a>:</p>
+<img alt="../_images/pricing_plans_simulate_companycall2.png" class="align-center" src="../_images/pricing_plans_simulate_companycall2.png" />
+<p>And we confirm that it will be billed with the pricing plan that we have just
+created and linked:</p>
+<img alt="../_images/pricing_plans_simulate_companycall3.png" src="../_images/pricing_plans_simulate_companycall3.png" />
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">At this point, <em>Alice</em> should be able to make outgoing calls to
+spanish destinations and this calls should be billed accordingly.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../pbx_features/index.html" class="btn btn-neutral float-right" title="PBX Features" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="external_ddi.html" class="btn btn-neutral float-left" title="Outgoing DDI configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016-2017, Irontec
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-book"> Other Versions</span>
+        v: oasis
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Branches</dt>
+            <dd><a href="../../artemis/index.html">artemis</a></dd>
+            <dd><a href="../../bleeding/index.html">bleeding</a></dd>
+            <dd><a href="noplan_nocall.html">oasis</a></dd>
+        </dl>
+    </div>
+</div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>User Portal</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../security/index.xhtml" title="Security elements"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../provisioning/index.xhtml" title="Terminal provisioning"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">IvozProvider Oasis documentation</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="user-portal">
+<span id="userportal"></span><h1>User Portal</h1>
+<p>IvozProvider provides a web portal where final users can do the following
+actions:</p>
+<ul>
+<li><p class="first">See all calls he or she has been involved.</p>
+</li>
+<li><p class="first">Configure call forwards:</p>
+<blockquote>
+<div><ul class="simple">
+<li>To voicemail</li>
+<li>To an internal extension</li>
+<li>To an external number</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Enable functionalities:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Call waiting</li>
+<li>Do Not Disturb</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">See the state of his or her SIP device registration</p>
+</li>
+</ul>
+<div class="section" id="access-urls">
+<h2>Access URLs</h2>
+<p>Prior to accessing to user portal, the URL addresses must be configured (domains
+in these URLs must point to any of the public IP addresses of the platform).</p>
+<p>2 roles can perform this task:</p>
+<div class="section" id="god-operator">
+<h3>God operator</h3>
+<p>In the section <strong>Platform configuration &gt; Brands</strong> you can configure as many
+user URLs as you wish, using the button <strong>Portal list</strong> of each brand.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">URLs are linked to brands and god operator may choose where to create
+one shared user portal URL for all the companies of a brand or creating
+one per company.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">URLs MUST be HTTPS.</p>
+</div>
+<p>This section also allows setting a logo per URL, a theme and a phrase to use as
+the title of user portal.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">This allows creating corporative user portals.</p>
+</div>
+</div>
+<div class="section" id="brand-operator">
+<h3>Brand Operator</h3>
+<p>Brand Operator can also perform this same task in order to configure the user
+portal URLs of his companies.</p>
+<p>This way, he can choose whether to configure one URL per Company (with custom
+domains, logos, theme and title) or sharing a global URL for all of them.</p>
+<p>The section to do this is <strong>Brand configuration &gt; Portal URLs</strong>.</p>
+</div>
+</div>
+<div class="section" id="access-credentials">
+<h2>Access credentials</h2>
+<p>Access credentials to user portal is configured in <strong>Company configuration &gt;
+Users</strong> section.</p>
+<p>Specifically:</p>
+<ul class="simple">
+<li><strong>Login information</strong> block, the access of each user is enabled or disabled.</li>
+<li>You can set the <strong>Password</strong> too.</li>
+<li>To log in the user portal, the user must use his/her email address.</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The <strong>email</strong> of each user MUST be <strong>globally unique</strong>.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

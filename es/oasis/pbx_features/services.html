@@ -1,0 +1,365 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="es" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="es" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Servicios adicionales &mdash; documentación de IvozProvider - Oasis</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'Oasis',
+              LANGUAGE:'es',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/banner.css" type="text/css" />
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="next" title="Grabación de llamadas" href="call_recording.html" />
+    <link rel="prev" title="Capturas de llamada" href="call_captures.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> IvozProvider
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.7
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Introducción a Ivozprovider</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/index.html">Arquitectura general de la plataforma</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../operation_roles/index.html">Roles de la plataforma</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Minimum Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Instalación inicial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../internal_calls/index.html">Realizar llamadas internas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external_incoming_calls/index.html">Recibir llamadas externas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external_outgoing_calls/index.html">Realizar llamadas externas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Configuration</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Funcionalidades de PBX</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="extensions.html">Extensiones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="terminals.html">Terminales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_permissions.html">Control ACL para llamadas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="users.html">Usuarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="friends.html">Friends</a></li>
+<li class="toctree-l2"><a class="reference internal" href="music_on_hold.html">Música en espera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sounds.html">Locuciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="outgoingddi_rules.html">Reglas DDI de salida</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_filters.html">Filtros de entrada externo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="match_lists.html">Listas de coincidencia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="route_locks.html">Candados</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conditional_routes.html">Rutas condicionales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="huntgroups.html">Grupos de salto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="queues.html">Colas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ivrs.html">Interactive Voice Response (IVR)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conference_rooms.html">Salas de audioconferencias</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_ddis.html">DDIs externos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_captures.html">Capturas de llamada</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Servicios adicionales</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#global-services-codes">Listado de códigos a nivel global</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#services-and-codes-for-brands">Definición de servicios y códigos a nivel de marca</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#services-and-codes-for-companies">Definición de códigos a nivel de empresa</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="call_recording.html">Grabación de llamadas</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../retail/index.html">Clientes Retail</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../billing_and_invoices/index.html">Tarificación y facturación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../provisioning/index.html">Provisión de terminales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faxing/index.html">Sistema de Fax Virtual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userportal/index.html">Portal de usuario</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Security and Maintenance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html">Elementos de seguridad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maintenance/index.html">Mantenimiento de la solución</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IvozProvider</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Funcionalidades de PBX</a> &raquo;</li>
+        
+      <li>Servicios adicionales</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/pbx_features/services.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="additional-services">
+<span id="services"></span><h1>Servicios adicionales<a class="headerlink" href="#additional-services" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Existen <strong>servicios especiales</strong> a los que se accede <strong>marcando códigos</strong> especiales <strong>desde un terminal</strong> de usuario <strong>cuando éste está en reposo</strong>.</p>
+<div class="admonition danger">
+<p class="first admonition-title">Peligro</p>
+<p class="last">Los servicios que se definen en esta sección <strong>no son accesibles en medio de una conversación</strong>. Se activan <strong>llamando</strong> a los códigos que se mencionarán, no marcándolos en medio de una conversación.</p>
+</div>
+<div class="section" id="global-services-codes">
+<h2>Listado de códigos a nivel global<a class="headerlink" href="#global-services-codes" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>En el momento de realizar esta documentación, existen los siguientes <strong>servicios especiales</strong> visibles en la sección <strong>Gestión general</strong> &gt; <strong>Servicios</strong>:</p>
+<img alt="../_images/services_god1.png" src="../_images/services_god1.png" />
+<dl class="glossary docutils">
+<dt id="term-direct-pickup">Captura de llamadas directa</dt>
+<dd><p class="first last">Es el servicio que permite capturar metiendo el código que se asigne seguido de la extensión del teléfono a capturar.</p>
+</dd>
+<dt id="term-group-pickup">Captura de grupo</dt>
+<dd><p class="first last">Es el servicio que permite capturar el teléfono que esté sonando dentro de tu(s) grupo(s) de captura.</p>
+</dd>
+<dt id="term-check-voicemail">Consultar el buzón de voz</dt>
+<dd><p class="first last">Este servicio permite acceder a un menú de voz que te presenta los mensajes de voz nuevos, viejos, etc. Es una alternativa a la recepción de mensajes de voz vía correo electrónico. A partir de 1.4, este servicio acepta una extensión opcional trás el código de servicio para poder acceder a los buzones de otros usuarios. Los usuarios pueden proteger su buzón de voz empleando las opciones del menú de voz interno.</p>
+</dd>
+<dt id="term-record-locution">Grabar locución</dt>
+<dd><p class="first last">Este servicio permite grabar la locución llamando desde cualquier terminal de cualquier usuario a un código especial. Las instrucciones se mostrarán en el idioma del usuario.</p>
+</dd>
+<dt id="term-open-lock">Abrir Candado</dt>
+<dd><p class="first last">Al llamar a este código de servicio se abrirá el candado (ver <a class="reference internal" href="route_locks.html#route-locks"><span class="std std-ref">Candados</span></a>).</p>
+</dd>
+<dt id="term-close-lock">Cerrar Candado</dt>
+<dd><p class="first last">Al llamar a este código de servicio se cerrará el candado (ver <a class="reference internal" href="route_locks.html#route-locks"><span class="std std-ref">Candados</span></a>).</p>
+</dd>
+<dt id="term-toggle-lock">Conmutar Candado</dt>
+<dd><p class="first last">Al llamar a este código de servicio se conmutará el estado del candado (ver <a class="reference internal" href="route_locks.html#route-locks"><span class="std std-ref">Candados</span></a>).</p>
+</dd>
+</dl>
+<p>A medida que la solución vaya evolucionando y surjan servicios nuevos, aparecerán en este listado para que el operador global sepa de su existencia y lo comunique a sus operadores de marca.</p>
+<div class="admonition attention">
+<p class="first admonition-title">Atención</p>
+<p class="last">Este listado determina los servicios disponibles y los códigos por defecto de las <strong>nuevas marcas</strong>.</p>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Consejo</p>
+<p class="last">Cambiar un código solo afecta a las marcas que se creen tras el cambio.</p>
+</div>
+</div>
+<div class="section" id="services-and-codes-for-brands">
+<h2>Definición de servicios y códigos a nivel de marca<a class="headerlink" href="#services-and-codes-for-brands" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>La sección <strong>Configuración de Marca &gt; Servicios</strong> permite al operador de marca:</p>
+<ul class="simple">
+<li><p class="first">Redefinir el código de acceso por defecto a dichos servicios para las empresas que a su vez no lo redefinan.</p>
+</li>
+<li><p class="first">Borrar servicios que no quieran que puedan utilizar sus empresas.</p>
+</li>
+</ul>
+<p>Por defecto este listado aparece con todas los servicios y los códigos configurados a nivel Global:</p>
+<div class="admonition attention">
+<p class="first admonition-title">Atención</p>
+<p class="last">Este listado determina los servicios disponibles y los códigos por defecto de las <strong>nuevas empresas</strong>.</p>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Consejo</p>
+<p class="last">Cambiar un código solo afecta a las empresas que se creen tras el cambio. Borrar un servicio hace que no esté disponible para ninguna empresa de la marca.</p>
+</div>
+</div>
+<div class="section" id="services-and-codes-for-companies">
+<h2>Definición de códigos a nivel de empresa<a class="headerlink" href="#services-and-codes-for-companies" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Cada empresa puede <em>pisar</em> los valores por defecto asignados por su <em>operador de marca</em> accediendo a <strong>Configuración de Empresa</strong> &gt; <strong>Servicios</strong> y cambiando el código asignado.</p>
+<p class="rubric">Empresa que quiere capturar con ** en lugar de con *95:</p>
+<img alt="../_images/services_company_edit1.png" src="../_images/services_company_edit1.png" />
+<div class="admonition hint">
+<p class="first admonition-title">Consejo</p>
+<p class="last">Los servicios que el <em>administrador de empresa</em> borre no podrán ser utilizados por sus usuarios.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="call_recording.html" class="btn btn-neutral float-right" title="Grabación de llamadas" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="call_captures.html" class="btn btn-neutral float-left" title="Capturas de llamada" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016-2017, Irontec
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-book"> Other Versions</span>
+        v: oasis
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Branches</dt>
+            <dd><a href="../../artemis/index.html">artemis</a></dd>
+            <dd><a href="../../bleeding/index.html">bleeding</a></dd>
+            <dd><a href="services.html">oasis</a></dd>
+        </dl>
+    </div>
+</div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

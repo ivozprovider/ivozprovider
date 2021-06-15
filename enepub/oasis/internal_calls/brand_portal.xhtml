@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Brand Configuration</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="company_portal.xhtml" title="Company Configuration"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="god_portal.xhtml" title="Main Management"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">IvozProvider Oasis documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Making internal calls</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="brand-configuration">
+<h1>Brand Configuration</h1>
+<p>We need that the default DemoBrand have a company with at least 2 users. In
+order to archive this we will require little configuration in this section.</p>
+<p>In fact, if we check <strong>Companies</strong> in the brand menu, we&#8217;ll discover that there
+is already an existing <em>DemoCompany</em> that we can use to fulfill our desired
+goal :)</p>
+<img alt="../_images/company_list.png" src="../_images/company_list.png" />
+<p>Only a thing is required to configure for this company, marked as edit in the
+previous image.</p>
+<div class="section" id="company-sip-domain">
+<span id="domain-per-company"></span><h2>Company SIP Domain</h2>
+<p>As mentioned in the previous section, is <strong>required</strong> that each of the companies
+have a public domain that resolves to the configured IP address for
+<a class="reference internal" href="god_portal.xhtml#proxyusers"><span class="std std-ref">Users SIP Proxy</span></a>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">DNS register can be type A (supported by all the hardphones/softphones
+) or even NAPTR+SRV.</p>
+</div>
+<p>Once the domain has been configured (by means that are out of scope of this
+document), it will be enought to write it in our company configuration:</p>
+<img alt="../_images/set_domain.png" src="../_images/set_domain.png" />
+<p>Once the company has been saved, the domain will be also displayed in the list
+<a class="reference internal" href="god_portal.xhtml#god-sipdomains"><span class="std std-ref">previously mentioned</span></a>:</p>
+<img alt="../_images/domain_list.png" src="../_images/domain_list.png" />
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">It&#8217;s important to understand this block. <a class="reference internal" href="#dnshack"><span class="std std-ref">Unless we&#8217;ve a
+single company registered</span></a>, wihout a DNS domain pointing to our
+users proxy IP address, everything will fail.</p>
+</div>
+<p>This is a good sign for the domain we have configured right now, replacing the
+10.10.3.10 with the public address we have used to configure <a class="reference internal" href="god_portal.xhtml#proxyusers"><span class="std std-ref">Users SIP Proxy</span></a>.</p>
+<img alt="../_images/dominio_bien_configurado.png" src="../_images/dominio_bien_configurado.png" />
+<div class="admonition danger">
+<p class="first admonition-title">Danger</p>
+<p class="last">Have we stressed enough that without a properly configured DNS
+pointing to the Users proxy IP address nothing will work?</p>
+</div>
+<div class="section" id="i-have-no-time-for-a-dns-registry">
+<span id="dnshack"></span><h3>I have no time for a DNS registry</h3>
+<p>Everything we have said is true: as we create new brands and brands create new
+companies, each of them will need a DNS registry.</p>
+<p>But the first company of the platform is quite special and can take over the IP
+address of the proxy to use it as a domain:</p>
+<img alt="../_images/fake_domain.png" src="../_images/fake_domain.png" />
+<p>Although it is not a domain, but being used like it was, it will be displayed
+in Domain section:</p>
+<img alt="../_images/fake_domain2.png" src="../_images/fake_domain2.png" />
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">It’s important to understand the this trick is only valid for the first
+company of the platform ;)</p>
+</div>
+</div>
+</div>
+<div class="section" id="remaining-parameters">
+<h2>Remaining parameters</h2>
+<p>These are remaining relevant parameters configured in Companies section:</p>
+<dl class="glossary docutils">
+<dt id="term-name">Name</dt>
+<dd>Sets the name for this company.</dd>
+<dt id="term-nif">NIF</dt>
+<dd>Number used in this company&#8217;s invoices.</dd>
+<dt id="term-invoice-data">Invoice data</dt>
+<dd>Data included in invoices created by this brand.</dd>
+<dt id="term-outbound-prefix">Outbound prefix</dt>
+<dd>Some companies are used to dial an aditional prefix for outgoing calls.</dd>
+<dt id="term-outgoing-ddi">Outgoing DDI</dt>
+<dd>Introduced in 1.3, this setting selects a DDI for outgoing calls
+of this company, if it is no overridden in a lower level (e.g. user level)</dd>
+<dt id="term-media-relay-set">Media relay set</dt>
+<dd>As mentioned above, media-relay can be grouped in sets to reserve capacities
+or on a geographical purpose. This section lets you assign them to companies.</dd>
+<dt id="term-distribute-method">Distribute Method</dt>
+<dd>&#8216;Hash based&#8217; distributes calls hashing a parameter that is unique per
+company/retail, &#8216;Round robin&#8217; distributes calls equally between AS-es and
+&#8216;static&#8217; is used for debugging purposes.</dd>
+<dt id="term-application-server">Application Server</dt>
+<dd>If &#8216;static&#8217; <em>distribute method</em> is used, select an application server here.</dd>
+<dt id="term-recordings">Recordings</dt>
+<dd>Configures a limit for the size of recordings of this company. A
+notification is sent to configured address when 80% is reached and
+older recordings are rotated when configured size is reached.</dd>
+<dt id="term-features">Features</dt>
+<dd>Introduced in 1.3, lets brand operator choose the features of the company.
+Related sections are hidden consequently and the company cannot use them.</dd>
+</dl>
+<p>Most of the features are self-explanatory, but <strong>voice notification</strong> deserves
+an explanation: if you enable them, when a call fails, the user will listen a
+locution explaining what ocurred (&#8220;you have no permissions to place this call&#8221;,
+&#8220;the call cannot be billed&#8221;, etc.)</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Recordings rotation happens at two levels: brand and company. This
+means that <strong>a company&#8217;s recordings can be rotated even though its limit
+has not arrived (or even it has no limit) if brand&#8217;s limit applies first</strong>.</p>
+</div>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p class="last">Again: recordings rotation happens at two levels: brand and company. This
+means that <strong>a company&#8217;s recordings can be rotated even though its limit
+has not arrived (or even it has no limit) if brand&#8217;s limit applies first</strong>.</p>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">To avoid this, make sure that the sum of all companies does not exceed
+the size assigned to your brand and make sure that all companies has
+a size configured (if 0, it has unlimited size).</p>
+</div>
+<p>Both <strong>Distribute method</strong> and <strong>Application Server</strong> are only visible for God
+Administrator.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">&#8216;Round-robin&#8217; distribute method is reserved for huge companies/retails
+whose calls cannot be handled in a single AS. <strong>Use &#8216;Hash based&#8217;
+for remaining ones</strong>.</p>
+</div>
+</div>
+<div class="section" id="emulate-demo-company">
+<span id="emulate-company"></span><h2>Emulate Demo company</h2>
+<p>The company emulation process is the same as the brand emulation, with the
+difference that it filters the block ‘Company Configuration’ insted of
+‘Brand Configuration’.</p>
+<img alt="../_images/emulate_company.png" class="align-center" src="../_images/emulate_company.png" />
+<img alt="../_images/emulate_company2.png" class="align-center" src="../_images/emulate_company2.png" />
+<p>Once the company has been emulated, the top right corner of the portal will
+show that we are in the right path :)</p>
+<img alt="../_images/emular_empresa.png" class="align-center" src="../_images/emular_empresa.png" />
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

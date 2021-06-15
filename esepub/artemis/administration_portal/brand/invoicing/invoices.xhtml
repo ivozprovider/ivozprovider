@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Invoices</title>
+    
+    <link rel="stylesheet" href="../../../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="invoice_schedulers.xhtml" title="Invoice schedulers"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="index.xhtml" title="Invoicing"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.xhtml">documentación de IvozProvider - Artemis</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.xhtml" >Brand Configuration</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.xhtml" accesskey="U">Invoicing</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="invoices">
+<h1>Invoices</h1>
+<p><strong>Invoices</strong> section lets <strong>brand operator</strong> generate invoices to issue to its clients and lists all invoices of all
+clients, no matter if they were generated automatically or manually.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Truco</p>
+<p class="last">Brand administrators can also enable view mode on this section to their clients. Check Client&#8217;s Invoice data
+configuration section for more information.</p>
+</div>
+<div class="section" id="generating-a-new-invoice">
+<h2>Generating a new invoice</h2>
+<p>These are the fields shown when <em>Add Invoice</em> options is used:</p>
+<dl class="glossary docutils">
+<dt id="term-invoice-number-sequence">Invoice number sequence</dt>
+<dd>Use next number of a predefined sequence or use custom number</dd>
+<dt id="term-number">Number</dt>
+<dd>Only shown if no sequence number is used, lets brand operator to introduce a custom number</dd>
+<dt id="term-client">Client</dt>
+<dd>The client whose calls will be invoiced</dd>
+<dt id="term-template">Template</dt>
+<dd>Invoice template that will be used to generate the PDF invoice file</dd>
+<dt id="term-in-out-date">In/Out date</dt>
+<dd>The time period of the calls that will be invoiced</dd>
+<dt id="term-call-discount">Call discount</dt>
+<dd>Percentage to discount calls, prior to tax rate calculation. No effect on fixed concepts.</dd>
+<dt id="term-tax-rate">Tax rate</dt>
+<dd>Taxes to add to the final cost (e.g. VAT)</dd>
+</dl>
+<p>Once saved, some <a class="reference internal" href="fixed_costs.xhtml#fixed-costs"><span class="std std-ref">Fixed costs</span></a> can be added before generating the final invoice. This is achieved with <strong>Fixed costs</strong>
+subsection, that allows adding several positive concepts to the invoice:</p>
+<dl class="glossary docutils">
+<dt id="term-fixed-cost">Fixed cost</dt>
+<dd>Choose a predefined cost</dd>
+<dt id="term-quantity">Quantity</dt>
+<dd>How many of this must be included</dd>
+</dl>
+<p>The last step is pressing <strong>Generate invoice</strong> suboption to create the final PDF. Afterwards, we can see which calls have been
+included in a particular invoice with <strong>List of External Calls</strong> option or download the PDF file.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Advertencia</p>
+<p class="last">Only outbound external calls are included into invoices</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Truco</p>
+<p class="last"><strong>Status</strong> column shows if the PDF generation task is waiting for async worker (<em>waiting</em>), in process (<em>processing</em>),
+ended with errors (<em>failed</em>) or ended successfully (<em>created</em>). On blank, <em>Generate invoice</em> needs to be pressed.</p>
+</div>
+<div class="section" id="rules">
+<h3>Rules</h3>
+<p>Invoice subsystem enforces several rules before generating a new invoice:</p>
+<ul class="simple">
+<li><strong>Proper date interval</strong>: <em>out date</em> must be bigger (after) than <em>in date</em>.</li>
+<li><strong>Out date must be previous than today</strong>: Future dates or today&#8217;s calls cannot be invoiced.</li>
+<li><strong>One call, one invoice:</strong> All calls in time interval cannot be included in any other invoice.</li>
+<li><strong>All calls in interval must be billed</strong>.</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Advertencia</p>
+<p class="last">If any of these rules is not fulfilled, the invoice won&#8217;t be created and the system will warn.</p>
+</div>
+</div>
+<div class="section" id="timezones">
+<h3>Timezones</h3>
+<p><em>In date</em> and <em>Out date</em> will be interpreted using brand timezone. On the other hand, call times in invoices are converted
+to client timezone, leading to situations like this:</p>
+<ul class="simple">
+<li><em>In date</em>: 01/10/2018 00:00:00</li>
+<li><em>Out date</em>: 31/10/2018 23:59:59</li>
+<li>Brand timezone: UTC + 1</li>
+<li>Client timezone: UTC - 1</li>
+<li>Time interval in brand timezone: 01/10/2018 00:00 - 31/10/2018 23:59:59</li>
+<li>Time interval in client timezone: 30/09/2018 22:00 - 31/10/2018 21:59:59</li>
+</ul>
+<p>Invoice generated for the client will have calls from 30nd of september at 22:00 to 31st of october at 21:59:59, which
+may seem awkward to the client.</p>
+</div>
+</div>
+<div class="section" id="regenerating-an-existing-invoice">
+<h2>Regenerating an existing invoice</h2>
+<p>Brand operator can edit any invoice parameter (as long as rules above are fulfilled), add/remove fixed concepts, etc. and
+press <strong>Generate invoice</strong> again.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Truco</p>
+<p class="last">Whenever a change is made, <em>Status</em> column will change to blank to show that <em>Generate invoice</em> must be pressed.</p>
+</div>
+<div class="section" id="generate-invoice-for-rerated-calls">
+<h3>Generate invoice for rerated calls</h3>
+<p>If rating of any call included in an invoice is wrong, <a class="reference internal" href="../../platform/external_calls.xhtml#external-calls"><span class="std std-ref">External calls</span></a> section allows rerating it, as long as the
+invoice that includes the call is previously deleted.</p>
+<p>Once deleted and rerated, a new row can be added in <em>Invoices</em> section to include rerated calls.</p>
+</div>
+</div>
+<div class="section" id="list-of-external-calls">
+<h2>List of external calls</h2>
+<p>You can see calls of a given invoice using this option. You will see the same fields as in <a class="reference internal" href="../../platform/external_calls.xhtml#external-calls"><span class="std std-ref">External calls</span></a>.</p>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p class="last">It is compulsory to have <strong>a valid brand URL</strong> in order to use <em>Export to CSV</em> feature in this subsection.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2019, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

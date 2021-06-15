@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Grabación de llamadas</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="../retail/index.xhtml" title="Clientes Retail"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="services.xhtml" title="Servicios adicionales"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">documentación de IvozProvider - Oasis</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Funcionalidades de PBX</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="call-recording">
+<span id="call-recordings"></span><h1>Grabación de llamadas</h1>
+<div class="admonition attention">
+<p class="first admonition-title">Atención</p>
+<p class="last">Tenga en cuenta que la legislación local le puede requerir que anuncie que la llamada esta siendo grabada (en ocasiones a ambos participantes). Debería incluir un aviso en las locuciones de bienvenida para los DDI que tengan grabación automática habilitada.</p>
+</div>
+<p>IvozProvider permite grabar las llamadas que se cursan en 2 modalidades distintas:</p>
+<ul class="simple">
+<li><p class="first"><strong>Grabación automática</strong> para llamadas desde/hacia cierto <a class="reference internal" href="external_ddis.xhtml#external-ddis"><span class="std std-ref">DDI externo</span></a>.</p>
+</li>
+<li><p class="first"><strong>Grabación bajo demanda</strong> solicitada por un usuario en medio de una conversación.</p>
+</li>
+</ul>
+<div class="section" id="automatic-ddi-recordings">
+<h2>Grabación automática por DDI</h2>
+<p>En el caso de grabaciones automáticas por DDI, <strong>se graba toda la conversación</strong>: desde el principio hasta el final.</p>
+<p>Se distinguen 2 casos:</p>
+<ul class="simple">
+<li><p class="first"><strong>Llamadas entrantes a un DDI</strong>: la grabación seguirá mientras la parte externa de la llamada permanezca en la conversación.</p>
+</li>
+<li><p class="first"><strong>Llamadas salientes utilizando un DDI</strong> como <a class="reference internal" href="external_ddis.xhtml#external-ddis"><span class="std std-ref">DDI saliente</span></a>: mientras el interlocutor externo permanezca en la conversación, la grabación sigue.</p>
+</li>
+</ul>
+<div class="admonition attention">
+<p class="first admonition-title">Atención</p>
+<p class="last">El hecho de que <strong>mientras el interlocutor permanezca en llamada la grabación continúe</strong>, hace que no importe cuántes veces se transfiera la llamada de un usuario a otro, la grabación contendrá toda la conversación (desde el punto de vista del participante externo).</p>
+</div>
+<p class="rubric">Grabar todas las llamadas de un DDI</p>
+<p>Basta con editar el DDI en cuestión y habilitar las grabaciones:</p>
+<img alt="../_images/recordings_ddi.png" src="../_images/recordings_ddi.png" />
+<p>Existen 4 opciones:</p>
+<ul class="simple">
+<li><p class="first">Desactivar la grabación</p>
+</li>
+<li><p class="first">Activarla para llamadas entrantes a dicho DDI</p>
+</li>
+<li><p class="first">Activarla para llamadas salientes que presente dicho DDI</p>
+</li>
+<li><p class="first">Activarla para ambas</p>
+</li>
+</ul>
+</div>
+<div class="section" id="on-demand-recordings">
+<h2>Grabación bajo demanda</h2>
+<p>La grabación bajo demanda u <em>on-demand</em> la tiene que activar el <em>operador de marca</em> para las empresas que la necesiten, sin más que editar su empresa y configurar el código deseado:</p>
+<img alt="../_images/recordings_ondemand.png" src="../_images/recordings_ondemand.png" />
+<div class="admonition warning">
+<p class="first admonition-title">Advertencia</p>
+<p class="last">A diferencia de los <a class="reference internal" href="services.xhtml#services"><span class="std std-ref">Servicios</span></a> comentado en la sección anterior, la funcionalidad de grabación bajo demanda se activa en mitad de una conversación.</p>
+</div>
+<p>Al contrario que las grabaciones automáticas, las realizadas bajo demanda pueden detenerse empleando el mismo proceso que las ha iniciado.</p>
+<div class="section" id="activated-using-the-record-key">
+<h3>Activación por medio de tecla <em>Record</em></h3>
+<p>Los terminales <em>Yealink</em> soportan el envío de mensajes <a class="reference external" href="https://tools.ietf.org/html/rfc6086">SIP INFO</a><span class="link-target"> [https://tools.ietf.org/html/rfc6086]</span> con una cabecera <em>Record</em> (ver <a class="reference external" href="http://www.yealink.com/Upload/document/UsingCallRecordingFeatureonYealinkPhones/UsingCallRecordingFeatureonYealinkSIPT2XPphonesRev_610-20561729764.pdf">referencia</a><span class="link-target"> [http://www.yealink.com/Upload/document/UsingCallRecordingFeatureonYealinkPhones/UsingCallRecordingFeatureonYealinkSIPT2XPphonesRev_610-20561729764.pdf]</span>). No es un estándar, pero al ser <em>Yealink</em> uno de los modelos soportados, IvozProvider incluye soporte para la activación de grabación bajo demanda de esta forma.</p>
+<div class="admonition important">
+<p class="first admonition-title">Importante</p>
+<p class="last">El código seleccionado no influye en este caso, pero <strong>la empresa sí que tiene que tener las grabaciones bajo demanda activadas</strong>.</p>
+</div>
+<p>La activación de las grabaciones es muy simple en este caso, basta con pulsar la tecla y el sistema inicia la grabación.</p>
+</div>
+<div class="section" id="activated-using-dtmf-codes">
+<h3>Activación por códigos <em>DTMF</em></h3>
+<p>Comúnmente este tipo de funcionalidades se activan introduciendo una combinación de teclas durante la llamada. Se inicia el proceso después de algún tipo de notificación. Esta combinación es enviada empleando <a class="reference external" href="https://es.wikipedia.org/wiki/Marcaci%C3%B3n_por_tonos">tonos DTMF</a><span class="link-target"> [https://es.wikipedia.org/wiki/Marcaci%C3%B3n_por_tonos]</span> empleando el mismo flujo de audio que la conversación (como se menciona en el <a class="reference external" href="https://tools.ietf.org/html/rfc4733">RFC 4733</a><span class="link-target"> [https://tools.ietf.org/html/rfc4733]</span>).</p>
+<p>IvozProvider soporta este tipo de activaciones bajo demanda pero con una importante pega. Para poder capturar estos códigos, la pbx debe procesar los paquetes de audio de la conversación, evitando así la posible liberación del flujo entre los agentes finales.</p>
+<div class="admonition important">
+<p class="first admonition-title">Importante</p>
+<p class="last">Habilitar este modo afecta en gran medida el rendimiento de la plataforma. Úselo bajo su propio riesgo.</p>
+</div>
+</div>
+<div class="section" id="activated-using-a-frustated-blind-transfer">
+<h3>Activación por medio de transferencia ciega frustrada</h3>
+<p>Existe otra forma de acceder a esta funcionalidad para los terminales que no tengan soporte para el método anterior.</p>
+<div class="admonition danger">
+<p class="first admonition-title">Peligro</p>
+<p class="last">Este método de acceder a la funcionalidad es una forma imaginativa de hacerla accesible para terminales sin soporte nativo de tecla <em>Record</em> que es el método recomendado). En función del terminal en cuestión y de la configuración del mismo, resultará más o menos cómodo utilizar la funcionalidad (tecla rápida de transferencia ciega, no retener al interlocutor, etc.).</p>
+</div>
+<p>Los pasos a seguir en este método alternativo e imaginativo son los siguientes:</p>
+<ul class="simple">
+<li><p class="first">No se activa marcando el código en medio de la conversación.</p>
+</li>
+<li><p class="first">Se activa iniciando una transferencia ciega al código configurado.</p>
+</li>
+<li><p class="first">El sistema rechazará la transferencia e iniciará la grabación.</p>
+</li>
+<li><p class="first">El usuario podrá volver a la conversación que tenía (si es que su terminal no ha vuelto solo) y seguir hablando.</p>
+</li>
+</ul>
+<p class="rubric">¿Por qué esta forma tan <em>peculiar</em> de activar la grabación y no por medio de tonos normales?</p>
+<p>El motivo de activar la grabación por medio de una transferencia ciega frustrada se debe a la <a class="reference internal" href="../architecture/index.xhtml#architecture"><span class="std std-ref">Arquitectura general de la plataforma</span></a> y, más concretamente, al <a class="reference internal" href="../architecture/index.xhtml#audioflow"><span class="std std-ref">flujo de audio RTP</span></a>.</p>
+</div>
+</div>
+<div class="section" id="recordings-list">
+<h2>Listado de grabaciones</h2>
+<p>El <em>administrador de empresa</em> puede acceder a las grabaciones realizadas por medio de la sección <strong>Configuración de Empresa</strong> &gt; <strong>Grabaciones</strong>:</p>
+<img alt="../_images/recordings_list.png" src="../_images/recordings_list.png" />
+<p>Haciendo clic en una de ellas, podría escucharla desde la <em>web</em> o descargársela en formato MP3:</p>
+<img alt="../_images/recordings_list2.png" src="../_images/recordings_list2.png" />
+<p>En el caso de una grabación bajo demanda, se indica qué usuario la inició:</p>
+<img alt="../_images/recordings_list3.png" src="../_images/recordings_list3.png" />
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

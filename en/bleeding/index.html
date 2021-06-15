@@ -1,0 +1,623 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>IvozProvider Official Documentation &mdash; IvozProvider Artemis documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'Artemis',
+              LANGUAGE:'en',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/banner.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Introduction to IvozProvider" href="basic_concepts/intro/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="#" class="icon icon-home"> IvozProvider
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.18
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="basic_concepts/intro/index.html">Introduction to IvozProvider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_concepts/architecture/index.html">Platform general architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_concepts/installation/index.html">Initial Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_concepts/operation_roles/index.html">Platform roles</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/internal_calls/index.html">Making internal calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/external_incoming_calls/index.html">Receiving external calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/external_outgoing_calls/index.html">Making external calls</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Administration portal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="administration_portal/platform/index.html">Platform Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="administration_portal/brand/index.html">Brand Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="administration_portal/client/index.html">Client Configuration</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Specific portals</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="user_portal/index.html">User Portal</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Security and Maintenance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="security_and_maintenance/security/index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="security_and_maintenance/maintenance/index.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Rest API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api_rest/introduction.html">Introduction to IvozProvider API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_rest/multilevel.html">Multi-level API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_rest/web_client.html">Built-in web client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_rest/integrations.html">Third party integrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_rest/use_case.html">Use Case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_rest/acls.html">ACLs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">IvozProvider</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#">Docs</a> &raquo;</li>
+        
+      <li>IvozProvider Official Documentation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/index.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ivozprovider-official-documentation">
+<h1>IvozProvider Official Documentation<a class="headerlink" href="#ivozprovider-official-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Basic Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="basic_concepts/intro/index.html">Introduction to IvozProvider</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basic_concepts/intro/about.html">About this documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_concepts/intro/getting_help.html">Getting help</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_concepts/intro/what_is_ivozprovider.html">What is IvozProvider?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="basic_concepts/intro/what_is_ivozprovider.html#ip-telephony">IP Telephony</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basic_concepts/intro/what_is_ivozprovider.html#multilevel">Multilevel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basic_concepts/intro/what_is_ivozprovider.html#provider-oriented">Provider oriented</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basic_concepts/intro/what_is_ivozprovider.html#exposed-to-the-public-network">Exposed to the public network</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="basic_concepts/intro/what_is_inside.html">What is inside IvozProvider?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_concepts/intro/use_cases.html">Who should use IvozProvider?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="basic_concepts/architecture/index.html">Platform general architecture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basic_concepts/architecture/index.html#general-diagram">General diagram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_concepts/architecture/index.html#sip-signalling-flow">SIP signalling flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_concepts/architecture/index.html#rtp-audio-flow">RTP audio flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_concepts/architecture/index.html#https-traffic">HTTPS traffic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_concepts/architecture/index.html#additional-elements">Additional elements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_concepts/architecture/index.html#auxiliary-elements">Auxiliary elements</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="basic_concepts/installation/index.html">Initial Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basic_concepts/installation/install_types.html">Installation Types</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="basic_concepts/installation/install_types.html#distributed-install">Distributed Install</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basic_concepts/installation/install_types.html#standalone-install">StandAlone Install</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="basic_concepts/installation/requirements.html">Minimum requirements</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="basic_concepts/installation/requirements.html#system-requirements">System requirements</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="basic_concepts/installation/debian_install.html">Debian packages install</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="basic_concepts/installation/debian_install.html#apt-repository-configuration">APT Repository configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basic_concepts/installation/debian_install.html#installing-profile-package">Installing profile package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basic_concepts/installation/debian_install.html#finish-the-installation">Finish the installation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="basic_concepts/installation/cd_install.html">Automatic ISO CD image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_concepts/installation/extra_components.html">Extra components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="basic_concepts/installation/extra_components.html#g-729">G.729</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="basic_concepts/operation_roles/index.html">Platform roles</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basic_concepts/operation_roles/index.html#global-administrator-role">Global administrator role</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_concepts/operation_roles/index.html#brand-administrator-role">Brand administrator role</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_concepts/operation_roles/index.html#client-administrator-role">Client administrator role</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_concepts/operation_roles/index.html#final-user-role">Final user role</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/internal_calls/index.html">Making internal calls</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/internal_calls/god_portal.html">Global Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="getting_started/internal_calls/god_portal.html#emulate-the-demo-brand">Emulate the Demo brand</a></li>
+<li class="toctree-l3"><a class="reference internal" href="getting_started/internal_calls/god_portal.html#what-emulation-means">What emulation means</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/internal_calls/brand_portal.html">Brand Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="getting_started/internal_calls/brand_portal.html#client-sip-domain">Client SIP Domain</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="getting_started/internal_calls/brand_portal.html#i-have-no-time-for-a-dns-registry">I have no time for a DNS registry</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="getting_started/internal_calls/brand_portal.html#emulate-demo-client">Emulate Demo client</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/internal_calls/client_portal.html">Client Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="getting_started/internal_calls/client_portal.html#creating-terminals">Creating Terminals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="getting_started/internal_calls/client_portal.html#creating-extensions">Creating Extensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="getting_started/internal_calls/client_portal.html#creating-users">Creating Users</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/internal_calls/configure_sipuacs.html">SIP Terminal configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/external_incoming_calls/index.html">Receiving external calls</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/external_incoming_calls/transformations.html">Transformations configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/external_incoming_calls/peering.html">Peering configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/external_incoming_calls/configure_ddi.html">Configuring an external DDI</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/external_outgoing_calls/index.html">Making external calls</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/external_outgoing_calls/create_carrier.html">Create a new carrier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/external_outgoing_calls/where_do_i_call.html">Where do I call?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/external_outgoing_calls/call_routing.html">Outgoing Routing configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/external_outgoing_calls/outgoing_ddi.html">Outgoing DDI configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/external_outgoing_calls/noplan_nocall.html">No rating plan, no call</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="getting_started/external_outgoing_calls/noplan_nocall.html#creating-a-rating-plan">Creating a rating plan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="getting_started/external_outgoing_calls/noplan_nocall.html#assign-rating-plan-to-client">Assign rating plan to client</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/external_outgoing_calls/finish.html">Outgoing configuration complete!</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Administration portal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="administration_portal/platform/index.html">Platform Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="administration_portal/platform/brands.html">Brands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="administration_portal/platform/main_operators.html">Main operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="administration_portal/platform/antiflood_banned_ips.html">Antiflood banned IPs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="administration_portal/platform/terminal_manufacturers.html">Terminal manufacturers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="administration_portal/platform/services.html">Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="administration_portal/platform/currencies.html">Currencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="administration_portal/platform/default_notification_templates.html">Default Notification Templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="administration_portal/platform/default_invoice_templates.html">Default Invoice Templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="administration_portal/platform/global_special_numbers.html">Global Special Numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="administration_portal/platform/sip_domains.html">SIP domains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="administration_portal/platform/portals.html">Platform Portals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="administration_portal/platform/active_calls.html">Active calls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="administration_portal/platform/external_calls.html">External calls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="administration_portal/platform/infrastructure/index.html">Infrastructure</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/platform/infrastructure/proxy_users.html">Proxy Users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/platform/infrastructure/proxy_trunks.html">Proxy Trunks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/platform/infrastructure/media_relay_sets.html">Media relay sets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/platform/infrastructure/application_servers.html">Application Servers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="administration_portal/brand/index.html">Brand Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="administration_portal/brand/clients/index.html">Clients</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/brand/clients/virtual_pbx.html">Virtual PBX</a></li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/brand/clients/residential.html">Residential</a></li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/brand/clients/retail.html">Retail</a></li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/brand/clients/wholesale.html">Wholesale</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="administration_portal/brand/providers/index.html">Providers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/brand/providers/carriers.html">Carriers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/brand/providers/ddi_providers.html">DDI Providers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="administration_portal/brand/routing/index.html">Routing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/brand/routing/outgoing_routings.html">Outgoing Routings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/brand/routing/routing_patterns.html">Routing patterns</a></li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/brand/routing/routing_patterns_groups.html">Routing pattern groups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/brand/routing/routing_tags.html">Routing tags</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="administration_portal/brand/billing/index.html">Billing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/brand/billing/rating_plans.html">Rating plans</a></li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/brand/billing/destination_rates.html">Destination Rates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/brand/billing/destinations.html">Destinations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/brand/billing/prepaid_balances.html">Prepaid balances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/brand/billing/current_day_usages.html">Current day usages</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="administration_portal/brand/invoicing/index.html">Invoicing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/brand/invoicing/invoices.html">Invoices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/brand/invoicing/invoice_schedulers.html">Invoice schedulers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/brand/invoicing/invoice_number_sequences.html">Invoice number sequences</a></li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/brand/invoicing/fixed_costs.html">Fixed costs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/brand/invoicing/invoice_templates.html">Invoice templates</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="administration_portal/brand/calls/index.html">Calls</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/brand/calls/active_calls.html">Active calls</a></li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/brand/calls/external_calls.html">External calls</a></li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/brand/calls/call_csv_schedulers.html">Call CSV schedulers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="administration_portal/brand/settings/index.html">Settings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/brand/settings/client_portals.html">Client Portals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/brand/settings/special_numbers.html">Special Numbers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/brand/settings/numeric_transformations.html">Numeric transformations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/brand/settings/notification_templates.html">Notification Templates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/brand/settings/generic_music_on_hold.html">Generic Music on Hold</a></li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/brand/settings/generic_services.html">Generic Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/brand/settings/generic_match_lists.html">Generic Match Lists</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="administration_portal/brand/views/index.html">Views</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/brand/views/ddis.html">DDIs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/brand/views/retail_accounts.html">Retail accounts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/brand/views/residential_devices.html">Residential devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/brand/views/users.html">Users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/brand/views/ipfilter_blocked_addresses.html">IP filter blocked addresses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/brand/views/bruteforce_attacks.html">Brute-force attacks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="administration_portal/client/index.html">Client Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="administration_portal/client/vpbx/index.html">vPBX Clients</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/client/vpbx/users.html">Users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/client/vpbx/terminals.html">Terminals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/client/vpbx/extensions.html">Extensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/client/vpbx/ddis.html">DDIs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/client/vpbx/routing_endpoints/index.html">Routing endpoints</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="administration_portal/client/vpbx/routing_endpoints/ivrs.html">Interactive Voice Responses (IVRs)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="administration_portal/client/vpbx/routing_endpoints/hunt_groups.html">Hunt groups</a></li>
+<li class="toctree-l4"><a class="reference internal" href="administration_portal/client/vpbx/routing_endpoints/queues.html">Queues</a></li>
+<li class="toctree-l4"><a class="reference internal" href="administration_portal/client/vpbx/routing_endpoints/conditional_routes.html">Conditional routes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="administration_portal/client/vpbx/routing_endpoints/friends/index.html">Friends</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="administration_portal/client/vpbx/routing_endpoints/friends/remote_friends.html">Remote friends</a></li>
+<li class="toctree-l5"><a class="reference internal" href="administration_portal/client/vpbx/routing_endpoints/friends/internal_friends.html">Internal friends</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="administration_portal/client/vpbx/routing_endpoints/conference_rooms.html">Conference rooms</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/client/vpbx/routing_tools/index.html">Routing tools</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="administration_portal/client/vpbx/routing_tools/external_call_filters.html">External call filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="administration_portal/client/vpbx/routing_tools/calendars.html">Calendars</a></li>
+<li class="toctree-l4"><a class="reference internal" href="administration_portal/client/vpbx/routing_tools/schedules.html">Schedules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="administration_portal/client/vpbx/routing_tools/match_lists.html">Match Lists</a></li>
+<li class="toctree-l4"><a class="reference internal" href="administration_portal/client/vpbx/routing_tools/route_locks.html">Route locks</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/client/vpbx/user_configuration/index.html">User configuration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="administration_portal/client/vpbx/user_configuration/outgoing_ddi_rules.html">Outgoing DDI Rules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="administration_portal/client/vpbx/user_configuration/pick_up_groups.html">Pick up groups</a></li>
+<li class="toctree-l4"><a class="reference internal" href="administration_portal/client/vpbx/user_configuration/call_acls.html">Call ACLs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/client/vpbx/multimedia/index.html">Multimedia</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="administration_portal/client/vpbx/multimedia/locutions.html">Locutions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="administration_portal/client/vpbx/multimedia/music_on_hold.html">Music on Hold</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/client/vpbx/faxes.html">Faxes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/client/vpbx/services.html">Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/client/vpbx/rating_profiles.html">Rating profiles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/client/vpbx/calls/index.html">Calls</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="administration_portal/client/vpbx/calls/call_registry.html">Call registry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="administration_portal/client/vpbx/calls/active_calls.html">Active calls</a></li>
+<li class="toctree-l4"><a class="reference internal" href="administration_portal/client/vpbx/calls/external_calls.html">External calls</a></li>
+<li class="toctree-l4"><a class="reference internal" href="administration_portal/client/vpbx/calls/call_csv_schedulers.html">Call CSV schedulers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="administration_portal/client/vpbx/calls/call_recordings.html">Call recordings</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="administration_portal/client/residential/index.html">Residential Clients</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/client/residential/residential_devices.html">Residential devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/client/residential/ddis.html">DDIs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/client/residential/external_call_filters.html">External call filters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/client/residential/faxes.html">Faxes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/client/residential/rating_profiles.html">Rating profiles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/client/residential/calls/index.html">Calls</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="administration_portal/client/residential/calls/active_calls.html">Active calls</a></li>
+<li class="toctree-l4"><a class="reference internal" href="administration_portal/client/residential/calls/external_calls.html">External calls</a></li>
+<li class="toctree-l4"><a class="reference internal" href="administration_portal/client/residential/calls/call_csv_schedulers.html">Call CSV schedulers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="administration_portal/client/residential/calls/call_recordings.html">Call recordings</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="administration_portal/client/retail/index.html">Retail Clients</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/client/retail/retail_accounts.html">Retail Accounts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/client/retail/ddis.html">DDIs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/client/retail/rating_profiles.html">Rating profiles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/client/retail/calls/index.html">Calls</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="administration_portal/client/retail/calls/active_calls.html">Active calls</a></li>
+<li class="toctree-l4"><a class="reference internal" href="administration_portal/client/retail/calls/external_calls.html">External calls</a></li>
+<li class="toctree-l4"><a class="reference internal" href="administration_portal/client/retail/calls/call_csv_schedulers.html">Call CSV schedulers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="administration_portal/client/retail/calls/call_recordings.html">Call recordings</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="administration_portal/client/wholesale/index.html">Wholesale clients</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/client/wholesale/rating_profiles.html">Rating profiles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="administration_portal/client/wholesale/calls/index.html">Calls</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="administration_portal/client/wholesale/calls/active_calls.html">Active calls</a></li>
+<li class="toctree-l4"><a class="reference internal" href="administration_portal/client/wholesale/calls/external_calls.html">External calls</a></li>
+<li class="toctree-l4"><a class="reference internal" href="administration_portal/client/wholesale/calls/call_csv_schedulers.html">Call CSV schedulers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Specific portals</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="user_portal/index.html">User Portal</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user_portal/urls.html">URLs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user_portal/urls.html#god-operator">God operator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user_portal/urls.html#brand-operator">Brand Operator</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="user_portal/credentials.html">Credentials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_portal/features.html">Features</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Security and Maintenance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="security_and_maintenance/security/index.html">Security</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="security_and_maintenance/security/firewall.html">Firewall</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="security_and_maintenance/security/firewall.html#exposed-ports-services">Exposed ports/services</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="security_and_maintenance/security/antiflooding.html">SIP Antiflooding</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="security_and_maintenance/security/antiflooding.html#which-requests-are-taken-into-account-in-kamusers">Which requests are taken into account in KamUsers?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="security_and_maintenance/security/antiflooding.html#which-requests-are-taken-into-account-in-kamtrunks">Which requests are taken into account in KamTrunks?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="security_and_maintenance/security/geoip_filter.html">GeoIP filter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_and_maintenance/security/authorized_ip_ranges.html">Authorized IP ranges</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="security_and_maintenance/security/authorized_ip_ranges.html#roadwarrior-users">Roadwarrior users</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="security_and_maintenance/security/concurrent_call_limit.html">Concurrent call limit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_and_maintenance/security/current_day_max_usage.html">Current day max usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_and_maintenance/security/antibruteforce.html">Anti brute-force attacks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="security_and_maintenance/maintenance/index.html">Troubleshooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="security_and_maintenance/maintenance/sip_captures.html">Analyzing SIP traffic</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="security_and_maintenance/maintenance/sip_captures.html#sngrep">sngrep</a></li>
+<li class="toctree-l3"><a class="reference internal" href="security_and_maintenance/maintenance/sip_captures.html#other-capturing-tools">Other capturing tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="security_and_maintenance/maintenance/log_viewer.html">Log viewer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="security_and_maintenance/maintenance/log_viewer.html#asterisk-cli">Asterisk CLI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="security_and_maintenance/maintenance/log_viewer.html#kamailio-realtime-log-viewing">Kamailio realtime log viewing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="security_and_maintenance/maintenance/other_tools.html">Other tools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="security_and_maintenance/maintenance/other_tools.html#metrics-viewer">Metrics viewer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="security_and_maintenance/maintenance/other_tools.html#active-monitoring">Active monitoring</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Rest API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api_rest/introduction.html">Introduction to IvozProvider API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_rest/multilevel.html">Multi-level API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_rest/web_client.html">Built-in web client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_rest/integrations.html">Third party integrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_rest/use_case.html">Use Case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_rest/acls.html">ACLs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_rest/acls.html#restricted-global-brand-administrators">Restricted global/brand administrators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_rest/acls.html#client-restricted-administrators">Client restricted administrators</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="basic_concepts/intro/index.html" class="btn btn-neutral float-right" title="Introduction to IvozProvider" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016-2019, Irontec
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-book"> Other Versions</span>
+        v: bleeding
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Branches</dt>
+            <dd><a href="../artemis/index.html">artemis</a></dd>
+            <dd><a href="index.html">bleeding</a></dd>
+            <dd><a href="../oasis/index.html">oasis</a></dd>
+        </dl>
+    </div>
+</div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

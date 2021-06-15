@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Roles de la plataforma</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="../installation/index.xhtml" title="Instalación inicial"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="../architecture/index.xhtml" title="Arquitectura general de la plataforma"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">documentación de IvozProvider - Oasis</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="platform-roles">
+<span id="operation-roles"></span><h1>Roles de la plataforma</h1>
+<p>Ivozprovider es una solución orientada a operador con múltiples niveles de usuarios.</p>
+<p>La siguiente imagen ilustra los niveles que existen, así como la relación entre ellos:</p>
+<img alt="../_images/operator_levels3.png" src="../_images/operator_levels3.png" />
+<p>En esta sección se explicará cada uno de estos roles, describiendo sus responsabilidades y sus funciones más importantes.</p>
+<div class="section" id="global-administator-role">
+<h2>Rol de administrador global</h2>
+<p>El rol de administrador global (operador en la imagen) lo desempeña habitualmente instalador de IvozProvider.</p>
+<p>Tiene visibilidad total de todos los aspectos de la plataforma y suele ser el encargado del mantenimiento de la misma.</p>
+<p>Su <strong>función más importante es crear Marcas</strong> y hacer todo lo necesario para que dispongan de la autonomía necesaria para usar la plataforma:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="first">Configurar sus accesos web.</p>
+</li>
+<li><p class="first">Configurar el aspecto de su portal de administración de marca: tema, colores, etc.</p>
+</li>
+</ul>
+</div></blockquote>
+<p>Aparte de esta función principal, su visibilidad global y acceso total le hacen responsable de:</p>
+<ul>
+<li><p class="first">Monitorizar la plataforma para que esté siempre UP &amp; RUNNING.</p>
+</li>
+<li><p class="first">Analizar los logs de la plataforma en busca de posibles errores.</p>
+</li>
+<li><p class="first">Afinar los mecanismos de seguridad para evitar ataques externos.</p>
+</li>
+<li><p class="first">Obtener estadísticas globales de calidad de llamada.</p>
+</li>
+<li><p class="first">Ir aumentando los recursos de la plataforma a medida que se vaya necesitando:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="first">Aumentando los recursos de la instalación standalone.</p>
+</li>
+<li><p class="first">Migrando, llegado el momento, a una instalación distribuida con múltiples AS-es, media relays, etc.</p>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p>En resumen, <strong>es el único rol que no tiene límites dentro de la plataforma</strong>, de ahí la denominación <em>God</em> que se utilizará en múltiples lugares de esta documentación.</p>
+<div class="admonition important">
+<p class="first admonition-title">Importante</p>
+<p class="last"><strong>Este rol se encarga de mantener la plataforma</strong>, adaptándola a las necesidades de cada momento. Su rol <strong>no tiene ningún tipo de límite y</strong> es el que <strong>da acceso a</strong> los <em>n</em> <strong>operadores de marca</strong>.</p>
+</div>
+</div>
+<div class="section" id="brand-andministator-role">
+<h2>Rol de operador de marca</h2>
+<p>El operador de marca utiliza la plataforma con un acceso y una visibilidad menor que el rol anterior. En concreto, el operador global le facilita una URL y unas credenciales y ese portal web de operador de Marca es su único interfaz con IvozProvider.</p>
+<p>No obstante, este portal le permite desempeñar su función más importante,que es <strong>crear empresas y configurar todo lo necesario para que éstas desempeñen su función</strong>.</p>
+<p>Dado que el operador de marca es el encargado de facturar a sus empresas y de hacer que sus llamadas salgan al exterior, también tiene que gestionar:</p>
+<ul class="simple">
+<li><p class="first">Contratos de Peering con otros operadores IP para conectar con la PSTN.</p>
+</li>
+<li><p class="first">Incluir en los datos de la empresa toda información necesaria para las facturas.</p>
+</li>
+<li><p class="first">Planes de Precio que ofertarán a sus empresas, qué determinarán cuánto pagan por cada tipo de llamada.</p>
+</li>
+<li><p class="first">Configurar por dónde sale cada tipo de llamada de cada empresa, en función del destino.</p>
+</li>
+<li><p class="first">Generar las facturas en cada período de facturación y emitarlas al cliente.</p>
+</li>
+</ul>
+<p>Como se puede ver, las tareas del operador de marca poco tienen que ver con las del operador global, pero son vitales para que los usuarios finales puedan hacer uso de las funcionalidades de IvozProvider.</p>
+<div class="admonition important" id="brand-responsibilities">
+<p class="first admonition-title">Importante</p>
+<p class="last"><strong>En resumen</strong>, los operadores de marca <strong>dan acceso a</strong> los administradores de las <strong>empresas</strong> a las que den servicio <strong>y configuran la plataforma para poder enrutar, tarificar y facturar sus llamadas</strong>.</p>
+</div>
+</div>
+<div class="section" id="company-administator-role">
+<h2>Rol de administrador de empresa</h2>
+<p>El administrador de empresa dispone del acceso web que le proveé el administrador de marca.</p>
+<p>Desde su perspectiva, dispone de una centralita virtual en la nube que tiene que configurar para que la utilicen sus usuarios.</p>
+<p>Para ello, tendrá que:</p>
+<ul>
+<li><p class="first">Dar de alta terminales, extensiones y usuarios.</p>
+</li>
+<li><p class="first">Configurar el tratamiento de los DDIs de entrada, para que se comporten como quieran:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="first">Directos a usuario</p>
+</li>
+<li>IVRs</li>
+<li><p class="first">Grupos de Salto</p>
+</li>
+<li>Faxes</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Dar acceso a los usuarios finales a su portal web, para que configuren a su gusto aspectos como:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="first">Desvíos</p>
+</li>
+<li><p class="first">No molestar</p>
+</li>
+<li><p class="first">Llamada en espera</p>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<div class="admonition important">
+<p class="first admonition-title">Importante</p>
+<p class="last">En resumen, los administradores de empresa son los responsables de <strong>configurar su sistema de telefonía a su gusto y de utilizar todas las funcionalidades que proveé IvozProvider</strong>.</p>
+</div>
+</div>
+<div class="section" id="final-user-role">
+<h2>Rol de usuario final</h2>
+<p>El usuario final dispondrá de dos credenciales, ambas provistas por su administrador de empresa:</p>
+<ul class="simple">
+<li><p class="first">Credenciales de acceso web al portal de usuario.</p>
+</li>
+<li><p class="first">Credenciales SIP para registrar su terminal (o terminales) contra IvozProvider.</p>
+</li>
+</ul>
+<p>Desde el portal de usuario podrán ver sus registros de llamadas y configurar aspectos como:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="first">Desvíos</p>
+</li>
+<li><p class="first">No molestar</p>
+</li>
+<li><p class="first">Llamada en espera</p>
+</li>
+</ul>
+</div></blockquote>
+<p>Por otra parte, las credenciales SIP le permitirán configurar su terminal (o terminales) para poder emitir y recibir llamadas.</p>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Unas mismas credenciales se pueden utilizar desde múltiples dispositivos,dando lugar a lo que se conoce como <em>parallel-forking</em>: si llaman al usuario, sonarán todos sus dispositivos activos y podrá contestar la llamada desde cualquiera de ellos.</p>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Importante</p>
+<p class="last">Los usuarios son los que utilizan y disfrutan todas las funcionalidades de IvozProvider.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

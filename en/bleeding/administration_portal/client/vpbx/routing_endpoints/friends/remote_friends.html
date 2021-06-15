@@ -1,0 +1,460 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Remote friends &mdash; IvozProvider Artemis documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../../../../',
+              VERSION:'Artemis',
+              LANGUAGE:'en',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/banner.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="Internal friends" href="internal_friends.html" />
+    <link rel="prev" title="Friends" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../../index.html" class="icon icon-home"> IvozProvider
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.18
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../basic_concepts/intro/index.html">Introduction to IvozProvider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../basic_concepts/architecture/index.html">Platform general architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../basic_concepts/installation/index.html">Initial Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../basic_concepts/operation_roles/index.html">Platform roles</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../getting_started/internal_calls/index.html">Making internal calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../getting_started/external_incoming_calls/index.html">Receiving external calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../getting_started/external_outgoing_calls/index.html">Making external calls</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Administration portal</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../platform/index.html">Platform Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../brand/index.html">Brand Configuration</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Client Configuration</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">vPBX Clients</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../users.html">Users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../terminals.html">Terminals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../extensions.html">Extensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ddis.html">DDIs</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">Routing endpoints</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../ivrs.html">Interactive Voice Responses (IVRs)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../hunt_groups.html">Hunt groups</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../queues.html">Queues</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conditional_routes.html">Conditional routes</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">Friends</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conference_rooms.html">Conference rooms</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../routing_tools/index.html">Routing tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user_configuration/index.html">User configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../multimedia/index.html">Multimedia</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../faxes.html">Faxes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../services.html">Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rating_profiles.html">Rating profiles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../calls/index.html">Calls</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../residential/index.html">Residential Clients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../retail/index.html">Retail Clients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../wholesale/index.html">Wholesale clients</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Specific portals</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../user_portal/index.html">User Portal</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Security and Maintenance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../security_and_maintenance/security/index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../security_and_maintenance/maintenance/index.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Rest API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../api_rest/introduction.html">Introduction to IvozProvider API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../api_rest/multilevel.html">Multi-level API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../api_rest/web_client.html">Built-in web client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../api_rest/integrations.html">Third party integrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../api_rest/use_case.html">Use Case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../api_rest/acls.html">ACLs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">IvozProvider</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Client Configuration</a> &raquo;</li>
+        
+          <li><a href="../../index.html">vPBX Clients</a> &raquo;</li>
+        
+          <li><a href="../index.html">Routing endpoints</a> &raquo;</li>
+        
+          <li><a href="index.html">Friends</a> &raquo;</li>
+        
+      <li>Remote friends</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../../../_sources/administration_portal/client/vpbx/routing_endpoints/friends/remote_friends.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="remote-friends">
+<h1>Remote friends<a class="headerlink" href="#remote-friends" title="Permalink to this headline">¶</a></h1>
+<p>Remote friends connect a vPBX client with an external SIP entity.</p>
+<div class="section" id="types-of-remote-friends">
+<h2>Types of remote friends<a class="headerlink" href="#types-of-remote-friends" title="Permalink to this headline">¶</a></h2>
+<p>There are 2 main types of SIP PBX that can be integrate with IvozProvider:</p>
+<ul class="simple">
+<li><strong>Direct connection PBX</strong> (Connectivity mode: direct): IvozProvider must be able to talk SIP directly with
+this kind of friends by just redirecting the traffic to the proper port of
+the public IP address of the PBX.</li>
+<li><strong>PBX behind NAT</strong> (Connectivity mode: register): Not directly accessible. This kind of PBX must register at
+IvozProvider (just like all the <a class="reference internal" href="../../terminals.html#terminals"><span class="std std-ref">Terminals</span></a> do).</li>
+</ul>
+</div>
+<div class="section" id="what-do-remote-friends-allow">
+<h2>What do remote friends allow?<a class="headerlink" href="#what-do-remote-friends-allow" title="Permalink to this headline">¶</a></h2>
+<p>This section allows not just communication between users at boths ends of the
+SIP <em>trunk</em>, but also:</p>
+<ul class="simple">
+<li>Users &#8220;from the other side&#8221; can call to the public network just like native
+Ivozprovider <a class="reference internal" href="../../users.html#users"><span class="std std-ref">Users</span></a>.</li>
+<li>Public network calls can be routed to the other SIP <em>trunk</em> end.</li>
+</ul>
+</div>
+<div class="section" id="what-kind-of-calls-can-be-routed-through-a-remote-friend">
+<h2>What kind of calls can be routed through a <em>remote friend</em>?<a class="headerlink" href="#what-kind-of-calls-can-be-routed-through-a-remote-friend" title="Permalink to this headline">¶</a></h2>
+<p>IvozProvider must know what calls must be routed to the different defined <em>remote friends</em>.
+For that, <strong>client administrator</strong> will configure regular expressions that
+describe the numbers that <em>can be reached</em> through the <strong>friend</strong>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Internal <a class="reference internal" href="../../extensions.html#extensions"><span class="std std-ref">extensions</span></a> have priority over any expression
+defined in the <em>friends</em>.</p>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Avoid PCRE regular expressions in friend configuration: use [0-9] instead of \d.</p>
+</div>
+</div>
+<div class="section" id="configuration-of-remote-friends">
+<h2>Configuration of remote friends<a class="headerlink" href="#configuration-of-remote-friends" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>Friend</strong> configuration is a merge between a <strong>User</strong> and a <strong>Terminal</strong></p>
+<p>These are the configurable settings of <em>friends</em>:</p>
+<dl class="glossary docutils">
+<dt id="term-name">Name</dt>
+<dd>Name of the <strong>friend</strong>, like in <strong>Terminals</strong>. This will also be used
+in SIP messages (sent <strong>From User</strong>).</dd>
+<dt id="term-description">Description</dt>
+<dd>Optional. Extra information for this <strong>friend</strong>.</dd>
+<dt id="term-priority">Priority</dt>
+<dd>Used to solve conflicts while routing calls through <strong>friends</strong>.
+If a call destination <strong>matches</strong> more than one friend regular expression
+the call will be routed through the friend with <strong>less priority value</strong>.</dd>
+<dt id="term-password">Password</dt>
+<dd>When the <em>friend</em> send requests, IvozProvider will authenticate it using
+this password. <strong>Using password IS A MUST in &#8220;Register&#8221; mode</strong>. In &#8220;Direct&#8221; mode,
+leaving it blank disables SIP authentication and enables IP source check.</dd>
+<dt id="term-connectivity-mode">Connectivity mode</dt>
+<dd>Choose between &#8220;Direct&#8221; and &#8220;Register&#8221; for a remote friend.</dd>
+<dt id="term-call-acl">Call ACL</dt>
+<dd>Similar to <a class="reference internal" href="../../users.html#users"><span class="std std-ref">internal users</span></a>, friends can place internal
+client calls without restriction (including Extension or other Friends).
+When calling to external numbers, this ACL will be checked if set.</dd>
+<dt id="term-fallback-outgoing-ddi">Fallback Outgoing DDI</dt>
+<dd>External calls from this <em>friend</em> will be presented with this DDI, <strong>unless
+the source presented by friend is a DDI that exists in DDIs section</strong>.</dd>
+<dt id="term-country-and-area-code">Country and Area code</dt>
+<dd>Used for number transformation from and to this friend.</dd>
+<dt id="term-allowed-codecs">Allowed codecs</dt>
+<dd>Like a terminal, <em>friends</em> will talk the selected codec.</dd>
+<dt id="term-from-user">From user</dt>
+<dd>Request from IvozProvider to this friend will include this user in
+the From header.</dd>
+<dt id="term-from-domain">From domain</dt>
+<dd>Request from IvozProvider to this friend will include this domain in
+the From header.</dd>
+<dt id="term-ddi-in">DDI In</dt>
+<dd>If set to &#8216;Yes&#8217;, set destination (R-URI and To) to called DDI/number when calling to this endpoint. If set &#8216;No&#8217;, username
+used in Contact header of registration will be used, as specified in SIP RFC (friend name will be used for
+endpoints with direct connectivity). Defaults to &#8216;Yes&#8217;.</dd>
+<dt id="term-enable-t-38-passthrough">Enable T.38 passthrough</dt>
+<dd>If set to &#8216;yes&#8217;, this SIP endpoint must be a <strong>T.38 capable fax sender/receiver</strong>. IvozProvider
+will act as a T.38 gateway, bridging fax-calls of a T.38 capable carrier and a T.38 capable device.</dd>
+<dt id="term-always-apply-transformations">Always apply transformations</dt>
+<dd>Both numbers listed in Extensions section and numbers matching any friend regexp will be considered as internal and
+won&#8217;t traverse numeric transformation rules.  Enable this setting to force Numeric Transformation rules even on these numbers.</dd>
+<dt id="term-rtp-encryption">RTP Encryption</dt>
+<dd>If set to &#8216;yes&#8217;, call won&#8217;t be established unless it&#8217;s possible to encryption its audio. If set to &#8216;no&#8217;,
+audio won&#8217;t be encrypted.</dd>
+<dt id="term-multi-contact">Multi Contact</dt>
+<dd>Same SIP credentials can be configured in multiple SIP devices. In that case, all devices ring
+simultaneously when receiving a call. Setting this toggle to &#8216;No&#8217; limits this behaviour so that
+only latest registered SIP device rings.</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Calls to <em>friends</em> are considered internal. That means that ACLs won&#8217;t
+be checked when calling a friend, no matter if the origin of the call
+is a user or another friend.</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Friend can be contacted due to calls to several extensions/DDIs. <em>DDI In</em> setting allows remote SIP endpoint to
+know which number caused each call, setting that number as destination (R-URI and To headers). This way, friend
+can handle calls differently.</p>
+</div>
+</div>
+<div class="section" id="asterisk-as-a-remote-friend">
+<h2>Asterisk as a remote friend<a class="headerlink" href="#asterisk-as-a-remote-friend" title="Permalink to this headline">¶</a></h2>
+<p>At the other end of a friend can be any kind of SIP entity. This section takes
+as example an Asterisk PBX system using SIP channel driver that wants to connect
+to IvozProvider.</p>
+<p class="rubric">register</p>
+<p>If the system can not be directly access, Asterisk will have to register in the
+platform (like a terminal will do).</p>
+<p>Configuration will be something like this:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>register =&gt; friendName:friendPassword@ivozprovider-client.sip-domain.com
+</pre></div>
+</div>
+<p class="rubric">peer</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>[friendName]
+type=peer
+host=ivozprovider-client.sip-domain.com
+context=XXXXXX
+disallow=all
+allow=alaw
+defaultuser=friendName
+secret=friendPassword
+fromuser=friendName
+fromdomain=ivozprovider-brand.sip-domain.com
+insecure=port,invite
+sendrpid=pai
+directmedia=no
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last"><em>Friends</em>, like terminals, MUST NOT challenge IvozProvider. That&#8217;s
+why the <em>insecure</em> setting is used here.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">As from username is used to identify the friend, P-Asserted-Identity must be used to specify caller number.</p>
+</div>
+</div>
+<div class="section" id="summary-of-remote-friends">
+<h2>Summary of remote friends<a class="headerlink" href="#summary-of-remote-friends" title="Permalink to this headline">¶</a></h2>
+<p>The key point is understanding that a <em>remote friend</em> has a direct relation with the
+extension-user-terminal trio:</p>
+<ul class="simple">
+<li>Can place calls to all internal extensions and other friends.</li>
+<li>Can place external calls that its ACL allows</li>
+<li>Display their configured outgoing DDI when calling to external entities</li>
+<li>Never challenge IvozProvider requests (don&#8217;t request authentication on received requests)</li>
+<li>Answers IvozProvider authentication challenges (All request from them to
+IvozProvider must be authenticated for security reasons)</li>
+<li>Only connects with <em>Users SIP Proxy</em>, like terminals. In fact, SIP traffic from
+friends are identical to any other user terminal traffic in format.</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="internal_friends.html" class="btn btn-neutral float-right" title="Internal friends" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Friends" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016-2019, Irontec
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-book"> Other Versions</span>
+        v: bleeding
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Branches</dt>
+            <dd><a href="../../../../../../artemis/administration_portal/client/vpbx/routing_endpoints/friends/remote_friends.html">artemis</a></dd>
+            <dd><a href="remote_friends.html">bleeding</a></dd>
+            <dd><a href="../../../../../../oasis/index.html">oasis</a></dd>
+        </dl>
+    </div>
+</div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

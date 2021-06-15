@@ -1,0 +1,350 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="es" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="es" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Interactive Voice Response (IVR) &mdash; documentación de IvozProvider - Oasis</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'Oasis',
+              LANGUAGE:'es',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/banner.css" type="text/css" />
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="next" title="Salas de audioconferencias" href="conference_rooms.html" />
+    <link rel="prev" title="Colas" href="queues.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> IvozProvider
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.7
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Introducción a Ivozprovider</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/index.html">Arquitectura general de la plataforma</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../operation_roles/index.html">Roles de la plataforma</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Minimum Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Instalación inicial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../internal_calls/index.html">Realizar llamadas internas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external_incoming_calls/index.html">Recibir llamadas externas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external_outgoing_calls/index.html">Realizar llamadas externas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Configuration</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Funcionalidades de PBX</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="extensions.html">Extensiones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="terminals.html">Terminales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_permissions.html">Control ACL para llamadas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="users.html">Usuarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="friends.html">Friends</a></li>
+<li class="toctree-l2"><a class="reference internal" href="music_on_hold.html">Música en espera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sounds.html">Locuciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="outgoingddi_rules.html">Reglas DDI de salida</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_filters.html">Filtros de entrada externo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="match_lists.html">Listas de coincidencia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="route_locks.html">Candados</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conditional_routes.html">Rutas condicionales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="huntgroups.html">Grupos de salto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="queues.html">Colas</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Interactive Voice Response (IVR)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#generic-ivrs">IVRs genéricos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#custom-ivrs">IVRs a medida</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="conference_rooms.html">Salas de audioconferencias</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_ddis.html">DDIs externos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_captures.html">Capturas de llamada</a></li>
+<li class="toctree-l2"><a class="reference internal" href="services.html">Servicios adicionales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_recording.html">Grabación de llamadas</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../retail/index.html">Clientes Retail</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../billing_and_invoices/index.html">Tarificación y facturación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../provisioning/index.html">Provisión de terminales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faxing/index.html">Sistema de Fax Virtual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userportal/index.html">Portal de usuario</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Security and Maintenance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html">Elementos de seguridad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maintenance/index.html">Mantenimiento de la solución</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IvozProvider</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Funcionalidades de PBX</a> &raquo;</li>
+        
+      <li>Interactive Voice Response (IVR)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/pbx_features/ivrs.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="interactive-voice-response-ivr">
+<h1>Interactive Voice Response (IVR)<a class="headerlink" href="#interactive-voice-response-ivr" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Un IVR es la forma habitual de realizar <strong>menús telefónicos</strong> en los que <strong>el llamante puede decidir el destino de su llamada sin más que pulsar dígitos</strong> en base a las locuciones que se le van reproduciendo.</p>
+<div class="section" id="generic-ivrs">
+<span id="id1"></span><h2>IVRs genéricos<a class="headerlink" href="#generic-ivrs" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>En los IVR genéricos el llamante marca directamente una extensión interna que conoce (o que se le indica en la locución de bienvenida) y el sistema le pone en contacto con dicha extensión de forma automática:</p>
+<p>Describamos cada uno de los parámetros de un IVR genérico:</p>
+<dl class="glossary docutils">
+<dt id="term-name">Nombre</dt>
+<dd><p class="first last">Forma de referenciar el IVR</p>
+</dd>
+<dt id="term-timeout">Timeout</dt>
+<dd><p class="first last">Tiempo adicional al de la locución de bienvenida que el sistema espera a que el interlocutor marque los dígitos.</p>
+</dd>
+<dt id="term-welcome-locution">Locución de bienvenida</dt>
+<dd><p class="first last">Locución que se le presenta al llamante invitándole a marcar la extensión con la que quiera hablar.</p>
+</dd>
+<dt id="term-success-locution">Locución de éxito</dt>
+<dd><p class="first last">En caso de que la extensión marcada sea correcta, se reproducirá esta locución (típicamente dirá algo así como &#8220;Contactando...&#8221;).</p>
+</dd>
+<dt id="term-no-input-process">Configuración sin entrada</dt>
+<dd><p class="first last">Si el llamante no introduce ningún digito, se reproduce la locución indicada y se desvía la llamada al número externo, extensión interna o buzón seleccionado.</p>
+</dd>
+<dt id="term-error-process">Configuración Error</dt>
+<dd><p class="first last">Si lo que ha marcado el llamante no es válido, se reproduce la locución indicada y se desvía la llamada al número externo, extensión interna o buzón seleccionado.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="custom-ivrs">
+<span id="id2"></span><h2>IVRs a medida<a class="headerlink" href="#custom-ivrs" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>A diferencia de los IVRs genéricos en donde el llamante solo puede marcar extensiones internas, los IVRs a medida permiten marcar dígitos que luego se pueden convertir a lo que el administrador de empresa desee.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Consejo</p>
+<p class="last">El caso más típico es el IVR que dice algo así como &#8220;Marque 1 si quiere hablar con administración, marque 2 si quiere hablar con informática...&#8221;</p>
+</div>
+<p>Los campos que se presentan son prácticamente idénticos al IVR genérico:</p>
+<p>Pulsando el botón de la siguiente imagen se pueden definir las equivalencias deseadas:</p>
+<img alt="../_images/ivr_custom2.png" src="../_images/ivr_custom2.png" />
+<p>En este caso se puede marcar 1, 2 y 3 (todo lo demás será considerado inválido y activará la <strong>Configuración de Error</strong>):</p>
+<img alt="../_images/ivr_custom3.png" src="../_images/ivr_custom3.png" />
+<ul class="simple">
+<li><p class="first">1: Llamada a la extensión interna 200, creada <a class="reference internal" href="huntgroups.html#huntgroups"><span class="std std-ref">en la sección anterior</span></a> y que apunta al grupo de salto <em>Recepción</em>.</p>
+</li>
+<li><p class="first">2: Llama a la extensión interna 101.</p>
+</li>
+<li><p class="first">3: Desvía la llamada al número externo 676 676 676.</p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Cada una de las opciones del IVR a medida permite la selección de una locución que pisa a la <strong>locución de éxito</strong> si está definida. De esta forma aparte de tener una locución de éxito genérica con &#8220;Contactando&#8221; podríamos tener otra que dijera &#8220;Contactando con Administración, espere por favor&#8221;.</p>
+</div>
+<p class="rubric">Las opciones son expresiones regulares</p>
+<p>Aunque en el uso más habitual las opciones del IVR sean de un único dígito del 0 al 10, <strong>las opciones se interpretan internamente como expresiones regulares</strong>. De este modo, se podría añadir una opción &#8220;^2[0-9]{2}$&#8221; para agrupar el comportamiento de los números del 200 al 299. Es importante ajustar el valor del parámetro <strong>Max digits</strong>&#8220;</p>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p class="last">Para evitar comportamientos no deseados, <strong>en caso de utilizar opciones de más de un dígito, utilice la notación de expresiones regulares</strong> (&#8216;^1$&#8217; en lugar de &#8216;1&#8217;, &#8216;^10$&#8217; en lugar de &#8216;10&#8217;, etc.).</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="conference_rooms.html" class="btn btn-neutral float-right" title="Salas de audioconferencias" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="queues.html" class="btn btn-neutral float-left" title="Colas" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016-2017, Irontec
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-book"> Other Versions</span>
+        v: oasis
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Branches</dt>
+            <dd><a href="../../artemis/index.html">artemis</a></dd>
+            <dd><a href="../../bleeding/index.html">bleeding</a></dd>
+            <dd><a href="ivrs.html">oasis</a></dd>
+        </dl>
+    </div>
+</div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

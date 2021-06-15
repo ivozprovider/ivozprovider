@@ -1,0 +1,345 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="es" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="es" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Instalación por paquetes Debian &mdash; documentación de IvozProvider - Oasis</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'Oasis',
+              LANGUAGE:'es',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/banner.css" type="text/css" />
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="next" title="CDs automáticos de instalación" href="cd_install.html" />
+    <link rel="prev" title="Requisitos mínimos" href="requirements.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> IvozProvider
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.7
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Introducción a Ivozprovider</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/index.html">Arquitectura general de la plataforma</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../operation_roles/index.html">Roles de la plataforma</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Minimum Configuration</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Instalación inicial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="install_types.html">Tipos de instalación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="requirements.html">Requisitos mínimos</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Instalación por paquetes Debian</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#apt-repository-configuration">Configurar repositorios APT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installing-profile-package">Instalar el paquete del rol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#finish-the-installation">Completar instalación</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cd_install.html">CDs automáticos de instalación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extra_components.html">Componentes extra</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../internal_calls/index.html">Realizar llamadas internas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external_incoming_calls/index.html">Recibir llamadas externas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external_outgoing_calls/index.html">Realizar llamadas externas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../pbx_features/index.html">Funcionalidades de PBX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../retail/index.html">Clientes Retail</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../billing_and_invoices/index.html">Tarificación y facturación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../provisioning/index.html">Provisión de terminales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faxing/index.html">Sistema de Fax Virtual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userportal/index.html">Portal de usuario</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Security and Maintenance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html">Elementos de seguridad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maintenance/index.html">Mantenimiento de la solución</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IvozProvider</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Instalación inicial</a> &raquo;</li>
+        
+      <li>Instalación por paquetes Debian</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/installation/debian_install.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="debian-packages-install">
+<h1>Instalación por paquetes Debian<a class="headerlink" href="#debian-packages-install" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>IvozProvider está diseñado para instalarse y actualizarse mediante paquetes Debian. En concreto, la release actual esta pensada para funcionar sobre <a class="reference external" href="https://www.debian.org/releases/jessie">Debian Jessie 8</a>.</p>
+<p>Se recomienda emplear las <a class="reference external" href="https://www.debian.org/releases/jessie/installmanual">guias oficiales de instalación</a> para obtener un sistema base mínimo, ya que toda dependencia que necesite posteriormente será instalada automaticamente.</p>
+<p>Tanto si deseas realizar una <a class="reference internal" href="install_types.html#standalone-install"><span class="std std-ref">Instalación standalone</span></a> o una <a class="reference internal" href="install_types.html#distributed-install"><span class="std std-ref">Instalación distribuida</span></a>, es preciso configurar los repositorios de paquetes debian de Irontec.</p>
+<div class="section" id="apt-repository-configuration">
+<h2>Configurar repositorios APT<a class="headerlink" href="#apt-repository-configuration" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Actualmente se emplean dos repositorios diferentes tanto para la última release de IvozProvider (oasis) como para la de Klear (chloe)</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">cd /etc/apt/sources.list.d</span>
+<span class="go">echo deb http://packages.irontec.com/debian oasis main extra &gt; ivozprovider.list</span>
+<span class="go">echo deb http://packages.irontec.com/debian chloe main &gt; klear.list</span>
+</pre></div>
+</div>
+<p>Opcionalmente, añadimos la clave publica del repositorio:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">wget http://packages.irontec.com/public.key -q -O - | apt-key add -</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="installing-profile-package">
+<h2>Instalar el paquete del rol<a class="headerlink" href="#installing-profile-package" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Una vez configurados los repositorios será preciso seleccionar el paquete acorde al perfil que queramos instalar:</p>
+<ul>
+<li><dl class="first docutils">
+<dt>Para una <a class="reference internal" href="install_types.html#standalone-install"><span class="std std-ref">Instalación standalone</span></a>:</dt>
+<dd><ul class="first last simple">
+<li>ivozprovider</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">Para una <a class="reference internal" href="install_types.html#distributed-install"><span class="std std-ref">Instalación distribuida</span></a> uno de los paquetes en función rol se desee que desempeñe la máquina</p>
+<blockquote>
+<div><ul class="simple">
+<li>ivozprovider-profile-data</li>
+<li>ivozprovider-profile-proxy</li>
+<li>ivozprovider-profile-portal</li>
+<li>ivozprovider-profile-as</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">apt-get update</span>
+<span class="go">apt-get install ivozprovider</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="finish-the-installation">
+<h2>Completar instalación<a class="headerlink" href="#finish-the-installation" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Las instalaciones distribuidas requieren multiples configuraciones en funcion del rol que se haya instalado. Consulte <a class="reference external" href="http://github.com/irontec/ivozprovider">completar la instalción de un rol</a> para más información.</p>
+<p>Las instalaciones standalone cuentan con un menú que ayuda a configurar los datos básicos de los servicios empleados en IvozProvider. Puesto que todos los servicios se ejecutan en la misma máquina, muchos de los procesos vienen configurados automáticamente con los valores por defecto.</p>
+<p>El menú permite, entre otros:</p>
+<ul class="simple">
+<li><p class="first">Configurar la(s) IP(s) pública(s) de los proxies SIP</p>
+</li>
+<li><p class="first">El lenguaje por defecto que empleará la plataforma</p>
+</li>
+<li><p class="first">Las contraseñas para acceder a las bases de datos</p>
+</li>
+</ul>
+<p>Es posible cambiar cualquiera de estos valores una vez instalado IvozProvider volviendo a ejecutar:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">dpkg-reconfigure ivozprovider</span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Importante</p>
+<p class="last">Cualquiera de las IPs públicas configuradas en la instalación servirá para acceder al panel web. Las credenciales por defecto son <strong>admin / changeme</strong>.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cd_install.html" class="btn btn-neutral float-right" title="CDs automáticos de instalación" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="requirements.html" class="btn btn-neutral float-left" title="Requisitos mínimos" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016-2017, Irontec
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-book"> Other Versions</span>
+        v: oasis
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Branches</dt>
+            <dd><a href="../../artemis/index.html">artemis</a></dd>
+            <dd><a href="../../bleeding/index.html">bleeding</a></dd>
+            <dd><a href="debian_install.html">oasis</a></dd>
+        </dl>
+    </div>
+</div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

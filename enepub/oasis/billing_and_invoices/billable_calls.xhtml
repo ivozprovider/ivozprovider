@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Billable calls</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="pricing_plans.xhtml" title="Pricing plans"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="call_registry.xhtml" title="Call Registry"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">IvozProvider Oasis documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Billing and Invoices</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="billable-calls">
+<span id="id1"></span><h1>Billable calls</h1>
+<p><strong>Billable calls</strong> sections only list <strong>calls that imply cost</strong>.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last"><a class="reference internal" href="call_registry.xhtml#call-registry"><span class="std std-ref">Call Registry</span></a> sections, on the other hand, show all calls,
+even the ones that do not imply cost, such as internal calls, incoming calls,
+etc.</p>
+</div>
+<p>These lists therefore include the price of each call (once it is calculated). Since
+companies are notified about its call&#8217;s price via invoices issued by <strong>brand operator</strong>,
+this section is only available at two levels:</p>
+<ul class="simple">
+<li>Main level (god level)</li>
+<li>Brand level</li>
+</ul>
+<p>Each entry shows this information:</p>
+<dl class="glossary docutils">
+<dt id="term-date">Date</dt>
+<dd>Date and time of the call establishment.</dd>
+<dt id="term-brand">Brand</dt>
+<dd>Only visible for <em>god</em>, shows the brand of each call.</dd>
+<dt id="term-company">Company</dt>
+<dd>Visible for <em>god</em> and <em>brand operator</em>, show the company of each call.</dd>
+<dt id="term-destination">Destination</dt>
+<dd>External number dialed.</dd>
+<dt id="term-pricing-pattern">Pricing pattern</dt>
+<dd>Shows the <a class="reference internal" href="../external_outgoing_calls/noplan_nocall.xhtml#price-pattern"><span class="std std-ref">pricing pattern</span></a> used to set the price.</dd>
+<dt id="term-duration">Duration</dt>
+<dd>Shows how long the call lasted.</dd>
+<dt id="term-metered-yes-no">Metered (yes/no)</dt>
+<dd>Shows if the asynchronous task that sets the price of each call has
+parsed each call.</dd>
+<dt id="term-price">Price</dt>
+<dd>The cost of the call.</dd>
+<dt id="term-pricing-plan">Pricing plan</dt>
+<dd>Shows the <a class="reference internal" href="../external_outgoing_calls/noplan_nocall.xhtml#price-plan"><span class="std std-ref">Pricing plan</span></a> used to set the price.</dd>
+<dt id="term-peering-contract">Peering contract</dt>
+<dd>Shows which <a class="reference internal" href="../external_incoming_calls/peering_contracts.xhtml#peering-contracts"><span class="std std-ref">Peering contract</span></a> was used for
+each call.</dd>
+<dt id="term-invoice">Invoice</dt>
+<dd>Show if a call is already included in any <a class="reference internal" href="invoices.xhtml#invoices"><span class="std std-ref">invoice</span></a>.</dd>
+<dt id="term-type-inbound-outbound">Type (inbound/outbound)</dt>
+<dd>Since some incoming calls can imply cost (see
+<a class="reference internal" href="../external_incoming_calls/configure_ddi.xhtml#bill-inbound"><span class="std std-ref">billing of inbound calls</span></a>), show if the call is an
+incoming call or an outgoung one.</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">As soon as the call is hung up, they appear in this list. In some minutes
+time the asynchronous process will set <em>Metered</em> to &#8216;yes&#8217; and will assign a
+<strong>price</strong>.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

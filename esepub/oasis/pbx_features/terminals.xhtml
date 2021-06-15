@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Terminales</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="call_permissions.xhtml" title="Control ACL para llamadas"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="extensions.xhtml" title="Extensiones"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">documentación de IvozProvider - Oasis</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Funcionalidades de PBX</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="terminals-configuration">
+<span id="terminals"></span><h1>Terminales</h1>
+<p>La sección <strong>Configuración de empresa</strong> &gt; <strong>Terminales</strong> permite dar de alta credenciales SIP que podrán ser utilizados por diversos dispositivos SIP para realizar y recibir llamadas de IvozProvider.</p>
+<p>La mejor forma de entender la sección es crear uno nuevo y ver los campos que tenemos que cumplimentar:</p>
+<img alt="../_images/terminals_add1.png" src="../_images/terminals_add1.png" />
+<dl class="glossary docutils">
+<dt id="term-name">Nombre</dt>
+<dd><p class="first last">Usuario que utilizará el terminal para presentarse ante IvozProvider y para realizar la fase de autenticación SIP.</p>
+</dd>
+<dt id="term-password">Contraseña</dt>
+<dd><p class="first last">Contraseña que utilizará el terminal para responder a la fase de autenticación SIP. Utilizar el generador automático de contraseñas para cumplir los criterios de seguridad exigidos.</p>
+</dd>
+<dt id="term-allowed-disallowed-codecs">Codecs rechazados/permitidos</dt>
+<dd><p class="first last">Determina que codecs de audio y video serán empleados con el terminal.</p>
+</dd>
+<dt id="term-callerid-update-method">Modo de actualización</dt>
+<dd><p class="first last">Indica si el terminal prefiere utilizar reINVITEs o UPDATEs para actualizar la sesión. La sección de ayuda indica qué terminales suelen requerir qué método. En caso de duda, utilizar <em>invite</em>.</p>
+</dd>
+<dt id="term-terminal-model">Modelo de terminal</dt>
+<dd><p class="first last">Indica el tipo de provisión que tendrá que recibir este terminal concreto. En el apartado dedicado a la <a class="reference internal" href="../provisioning/index.xhtml#provisioning"><span class="std std-ref">provisión de terminales</span></a> se verá que existen unos modelos con provisión automática y se explicará todo en profundidad. En caso de no necesitar provisión, utilizar <em>Generic</em>.</p>
+</dd>
+<dt id="term-mac">MAC</dt>
+<dd><p class="first last">Campo necesario para modelos que utilizan el sistema de <a class="reference internal" href="../provisioning/index.xhtml#provisioning"><span class="std std-ref">provisión de terminales</span></a> de IvozProvider. Recoge la <a class="reference external" href="https://es.wikipedia.org/wiki/Direcci%C3%B3n_MAC">dirección física</a><span class="link-target"> [https://es.wikipedia.org/wiki/Direcci%C3%B3n_MAC]</span> del adaptador de red del dispositivo SIP.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last"><strong>En la mayoría</strong> de dispositivos, siempre que no requieran provisión, <strong>bastará con rellenar el nombre y contraseña</strong>.</p>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Consejo</p>
+<p class="last">Una vez dado de alta el Terminal, en la mayoría de dispositivos bastará con configurar nombre, contraseña y <a class="reference internal" href="../internal_calls/brand_portal.xhtml#domain-per-company"><span class="std std-ref">dominio SIP de la compañía</span></a> para poder llamar.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

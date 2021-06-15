@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Concurrent call limit</title>
+    
+    <link rel="stylesheet" href="../../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="current_day_max_usage.xhtml" title="Current day max usage"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="authorized_ip_ranges.xhtml" title="Authorized IP ranges"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.xhtml">IvozProvider Artemis documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Security</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="concurrent-call-limit">
+<h1>Concurrent call limit</h1>
+<p>This mechanism <strong>limits the number of concurrent calls</strong> of each client/brand.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Both incoming external calls and outgoing external calls will be limited.</p>
+</div>
+<p>It can be configured at two levels:</p>
+<ul class="simple">
+<li>At Brand level with <strong>Max calls</strong> setting.</li>
+<li>At Client level with <strong>Max calls</strong> setting.</li>
+</ul>
+<p>A brand clients&#8217; <em>Max calls</em> sum may be bigger than brand&#8217;s <em>Max calls</em> value, there is no control to avoid this situation.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">These counters are independent. Whenever one of this counter reaches its limit, call will be denied. This
+means that a call from a client that has not exceeded it own <em>Max call</em> setting may be denied if brand&#8217;s
+limit has been exceeded.</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">To disable this mechanism, set its value to 0.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2019, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

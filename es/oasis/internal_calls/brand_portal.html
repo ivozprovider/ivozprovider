@@ -1,0 +1,380 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="es" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="es" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Configuración de Marca &mdash; documentación de IvozProvider - Oasis</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'Oasis',
+              LANGUAGE:'es',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/banner.css" type="text/css" />
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="next" title="Configuración de Compañía" href="company_portal.html" />
+    <link rel="prev" title="Gestión General" href="god_portal.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> IvozProvider
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.7
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Introducción a Ivozprovider</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/index.html">Arquitectura general de la plataforma</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../operation_roles/index.html">Roles de la plataforma</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Minimum Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Instalación inicial</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Realizar llamadas internas</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="god_portal.html">Gestión General</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Configuración de Marca</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#company-sip-domain">Dominio SIP de la compañía</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#i-have-no-time-for-a-dns-registry">No tengo tiempo para crear registros DNS</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#remaining-parameters">Parámetros restantes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#emulate-demo-company">Emular la empresa Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="company_portal.html">Configuración de Compañía</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configure_sipuacs.html">Configurar terminales SIP</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../external_incoming_calls/index.html">Recibir llamadas externas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external_outgoing_calls/index.html">Realizar llamadas externas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../pbx_features/index.html">Funcionalidades de PBX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../retail/index.html">Clientes Retail</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../billing_and_invoices/index.html">Tarificación y facturación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../provisioning/index.html">Provisión de terminales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faxing/index.html">Sistema de Fax Virtual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userportal/index.html">Portal de usuario</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Security and Maintenance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html">Elementos de seguridad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maintenance/index.html">Mantenimiento de la solución</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IvozProvider</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Realizar llamadas internas</a> &raquo;</li>
+        
+      <li>Configuración de Marca</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/internal_calls/brand_portal.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="brand-configuration">
+<h1>Configuración de Marca<a class="headerlink" href="#brand-configuration" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Para conseguir que esta DemoBrand tenga una compañía con 2 usuarios que se puedan llamar entre sí, vamos a tener que hacer muy poco en este bloque.</p>
+<p>De hecho, al acceder a la sección <strong>Empresas</strong>, vemos que ya existe una compañía <em>DemoCompany</em> que podremos utilizar para cumplir nuestro ansiado objetivo :)</p>
+<img alt="../_images/company_list1.png" src="../_images/company_list1.png" />
+<p>Solo le falta una cosa a esta empresa, marcado con <strong>EDIT</strong> en la captura anterior.</p>
+<div class="section" id="company-sip-domain">
+<span id="domain-per-company"></span><h2>Dominio SIP de la compañía<a class="headerlink" href="#company-sip-domain" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Tal y como se introdujo en la sección anterior, es <strong>imprescindible</strong> que cada empresa tenga un dominio público que resuelva a la IP configurada para el <a class="reference internal" href="god_portal.html#proxyusers"><span class="std std-ref">Proxy de Usuarios</span></a>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">El registro DNS puede ser de tipo A (soportado por todos los hardphones/softphones) o del tipo NAPTR+SRV.</p>
+</div>
+<p>Una vez configurado el dominio (por medio de procedimientos que escapan al objetivo de este documento), bastará con escribir el parámetro en el campo adecuado de nuestra empresa:</p>
+<img alt="../_images/set_domain1.png" src="../_images/set_domain1.png" />
+<p>Una vez guardada la empresa, este dominio aparecerá en la sección descrita <a class="reference internal" href="god_portal.html#god-sipdomains"><span class="std std-ref">en la sección anterior</span></a>:</p>
+<img alt="../_images/domain_list1.png" src="../_images/domain_list1.png" />
+<div class="admonition attention">
+<p class="first admonition-title">Atención</p>
+<p class="last">Es fundamental entender este bloque. <a class="reference internal" href="#dnshack"><span class="std std-ref">Salvo que tengamos una única compañía registrada</span></a>, sin un registro DNS correctamente configurado apuntando a la IP del Proxy de Usuarios, ¡fracasaremos en nuestro objetivo!</p>
+</div>
+<p>Esta es una buena señal para el dominio que acabamos de configurar, siempre y cuando en lugar de 10.10.3.10 aparezca la IP pública configurada en <a class="reference internal" href="god_portal.html#proxyusers"><span class="std std-ref">Proxy de Usuarios</span></a>.</p>
+<img alt="../_images/dominio_bien_configurado1.png" src="../_images/dominio_bien_configurado1.png" />
+<div class="admonition danger">
+<p class="first admonition-title">Peligro</p>
+<p class="last">¿Se ha insistido suficiente en que sin un registro DNS correctamente configurado apuntando a la IP del Proxy de Usuarios no funcionará nada?</p>
+</div>
+<div class="section" id="i-have-no-time-for-a-dns-registry">
+<span id="dnshack"></span><h3>No tengo tiempo para crear registros DNS<a class="headerlink" href="#i-have-no-time-for-a-dns-registry" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Todo lo contado hasta este punto es verídico: a medida que vayamos creando marcas y éstas vayan creando empresas, cada una de ellas necesitará un registro DNS.</p>
+<p>Pero la primera empresa de la plataforma es especial y puede apoderarse de laIP del Proxy de Usuarios y usarla como si de un DNS se tratara:</p>
+<img alt="../_images/fake_domain1.png" src="../_images/fake_domain1.png" />
+<p>A pesar de no ser un dominio, al estar usándose como tal, aparecerá en la sección de <strong>Dominios</strong>:</p>
+<img alt="../_images/fake_domain21.png" src="../_images/fake_domain21.png" />
+<div class="admonition tip">
+<p class="first admonition-title">Truco</p>
+<p class="last">Es importante entender que este truco solo es válido para la primera   empresa de la plataforma ;)</p>
+</div>
+</div>
+</div>
+<div class="section" id="remaining-parameters">
+<h2>Parámetros restantes<a class="headerlink" href="#remaining-parameters" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Estos son los parámetros relevantes configurados en la sección Compañía:</p>
+<dl class="glossary docutils">
+<dt id="term-name">Nombre</dt>
+<dd><p class="first last">Configura el nombre de la compañía.</p>
+</dd>
+<dt id="term-nif">NIF</dt>
+<dd><p class="first last">Número empleado en las facturas de la compañía.</p>
+</dd>
+<dt id="term-invoice-data">Datos de facturación</dt>
+<dd><p class="first last">Información incluida en las facturas creadas por esta marca.</p>
+</dd>
+<dt id="term-outbound-prefix">Prefijo de salida.</dt>
+<dd><p class="first last">Algunas compañías emplean un prefijo adicional para las llamadas salientes.</p>
+</dd>
+<dt id="term-outgoing-ddi">DDI saliente</dt>
+<dd><p class="first last">Introducido en 1.3, esta opción permite elegir el DDI saliente para las llamadas de esta compañía, si no son especificadas en un nivel inferior (por ejemplo a nivel de usuario)</p>
+</dd>
+<dt id="term-media-relay-set">Servidores de Media</dt>
+<dd><p class="first last">Como se ha mencionado, los servidores de media pueden ser agrupados para reservar capacidades o para una distribución geográfica. Esta sección le permite asignarlos a las compañías.</p>
+</dd>
+<dt id="term-distribute-method">Método de distribución</dt>
+<dd><p class="first last">&#8216;Basado en hash&#8217; distribuye las llamadas en base a un parámetro único por empresa/cliente retail, &#8216;Round robin&#8217; distribuye las llamadas uniformemente entre todos los AS-es y &#8216;estático&#8217; se utiliza solo para <em>testing</em>.</p>
+</dd>
+<dt id="term-application-server">Servidores de aplicación</dt>
+<dd><p class="first last">Si se utiliza &#8216;estático&#8217;, selecciona un AS aquí.</p>
+</dd>
+<dt id="term-recordings">Grabaciones</dt>
+<dd><p class="first last">Configure el límite de tamaño de las grabaciones de esta compañía. Se enviará una notificación a la dirección configurada cuando se alcance el 80% y se rotarán las grabaciones más antiguas cuando se alcance el límite.</p>
+</dd>
+<dt id="term-features">Features</dt>
+<dd><p class="first last">Introducido en 1.3, permite a los operadores de marca elegir las features de la compañía. Esto habilitará o deshabilitará las diferentes secciones del menú de compañía.</p>
+</dd>
+</dl>
+<p>La mayoría de las features son auto-explicativas, pero las <strong>notificaciones de voz</strong> merecen una explicación: si se habilitan, cuando una llamada falla, el usuario escuchará una locución explicando lo ocurrido (&#8220;no tiene permisos para realizar esta llamada&#8221;, &#8220;la llamada no puede ser tarificada&#8221;, etc.)</p>
+<div class="admonition warning">
+<p class="first admonition-title">Advertencia</p>
+<p class="last">La rotación de grabaciones ocurre en dos niveles: marca y compañía. Esto significa que <strong>las grabaciones de una compañía puede llegar a ser rotadas incluso si esta no ha alcanzado su límite (o incluso si no tiene límite) si se ha alcanzado el límite de espacio de su marca</strong>.</p>
+</div>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p class="last">De nuevo: La rotación de grabaciones ocurre en dos niveles: marca y compañía. Esto significa que <strong>las grabaciones de una compañía puede llegar a ser rotadas incluso si esta no ha alcanzado su límite (o incluso si no tiene límite) si se ha alcanzado el límite de espacio de su marca</strong>.</p>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Consejo</p>
+<p class="last">Para evitar esto, asegurese que la suma de los límites de las companías no exceda el tamaño asignado a la marca y que todas las compañías tienen un límite de espacio configurado (si es 0, tendrán ilimitado).</p>
+</div>
+<p>Tanto <strong>Método de distibución</strong> como <strong>Servidor de aplicación</strong> solo son visibles para el operador global (<em>god</em>).</p>
+<div class="admonition warning">
+<p class="first admonition-title">Advertencia</p>
+<p class="last">El método de distribución &#8216;Round-robin&#8217; está reservado para compañías enormes cuyas llamadas no <em>entren</em> en un AS. <strong>Utilizar &#8216;Basado en hash&#8217; para el resto</strong>.</p>
+</div>
+</div>
+<div class="section" id="emulate-demo-company">
+<span id="emulate-company"></span><h2>Emular la empresa Demo<a class="headerlink" href="#emulate-demo-company" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>El proceso de emulación de empresa es idéntico al de emulación de marca, conla diferencia de que filtra el bloque &#8216;Configuración de Empresa&#8217; en lugar delbloque &#8216;Configuración de Marca&#8217;.</p>
+<img alt="../_images/emulate_company1.png" class="align-center" src="../_images/emulate_company1.png" />
+<img alt="../_images/emulate_company21.png" class="align-center" src="../_images/emulate_company21.png" />
+<p>Una vez emulada la empresa, la parte superior derecha de la pantalla mostraráque vamos por el buen camino :)</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="company_portal.html" class="btn btn-neutral float-right" title="Configuración de Compañía" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="god_portal.html" class="btn btn-neutral float-left" title="Gestión General" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016-2017, Irontec
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-book"> Other Versions</span>
+        v: oasis
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Branches</dt>
+            <dd><a href="../../artemis/index.html">artemis</a></dd>
+            <dd><a href="../../bleeding/index.html">bleeding</a></dd>
+            <dd><a href="brand_portal.html">oasis</a></dd>
+        </dl>
+    </div>
+</div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

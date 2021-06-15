@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>External calls</title>
+    
+    <link rel="stylesheet" href="../../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="infrastructure/index.xhtml" title="Infrastructure"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="active_calls.xhtml" title="Active calls"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.xhtml">documentación de IvozProvider - Artemis</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Platform Configuration</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="external-calls">
+<span id="id1"></span><h1>External calls</h1>
+<p><strong>External calls</strong> section lists <strong>both inbound and outbound external calls</strong>.</p>
+<p>This section is shown at different levels:</p>
+<ul class="simple">
+<li>Main level (god level)</li>
+<li>Brand level (filtered for emulated/logged brand).</li>
+<li>Client level (filtered for emulated/logged client).</li>
+</ul>
+<p>Each entry shows this information:</p>
+<dl class="glossary docutils">
+<dt id="term-start-time">Start time</dt>
+<dd>Date and time of the call establishment.</dd>
+<dt id="term-brand">Brand</dt>
+<dd>Only visible for <em>god</em>, shows the brand of each call.</dd>
+<dt id="term-client">Client</dt>
+<dd>Visible for <em>god</em> and <em>brand operator</em>, shows the client of each call.</dd>
+<dt id="term-caller">Caller</dt>
+<dd>DDI presented for the outgoing call.</dd>
+<dt id="term-callee">Callee</dt>
+<dd>External number dialed.</dd>
+<dt id="term-duration">Duration</dt>
+<dd>Shows how long the call lasted.</dd>
+<dt id="term-price">Price</dt>
+<dd>The money amount for the client. Visible for <em>god</em> and <em>brand operator</em> and <em>Client administrator</em> if
+<em>Display billing details to client</em> is enabled.</dd>
+<dt id="term-cost">Cost</dt>
+<dd>Visible for <em>god</em> and <em>brand operator</em>, the money amount for the brand (the money that the carrier will bill for the call).</dd>
+<dt id="term-rating-plan">Rating Plan</dt>
+<dd>Rating plan used to set price for the call. Visible for <em>god</em> and <em>brand operator</em> and <em>Client administrator</em> if
+<em>Display billing details to client</em> is enabled.</dd>
+<dt id="term-destination">Destination</dt>
+<dd>Destination that matched the call for billing. Visible for <em>god</em> and <em>brand operator</em> and <em>Client administrator</em> if
+<em>Display billing details to client</em> is enabled.</dd>
+<dt id="term-carrier">Carrier</dt>
+<dd>Visible for <em>god</em> and <em>brand operator</em>, shows which <a class="reference internal" href="../brand/providers/carriers.xhtml#carriers"><span class="std std-ref">Carrier</span></a> was used for each outbound call.</dd>
+<dt id="term-ddi-provider">DDI Provider</dt>
+<dd>Visible for <em>god</em> and <em>brand operator</em>, shows which <a class="reference internal" href="../brand/providers/ddi_providers.xhtml#ddi-providers"><span class="std std-ref">DDI Provider</span></a> was used for each inbound call.</dd>
+<dt id="term-invoice">Invoice</dt>
+<dd>Visible for <em>god</em> and <em>brand operator</em>, shows if a call is already included in any <a class="reference internal" href="../brand/invoicing/invoices.xhtml#invoices"><span class="std std-ref">Invoice</span></a>.</dd>
+<dt id="term-call-id">Call ID</dt>
+<dd>Shows the call ID of the call for troubleshooting and CSV export.</dd>
+<dt id="term-endpoint-type">Endpoint Type</dt>
+<dd>Possible values: RetailAccount, ResidentialDevice, User, Fax, Friend.</dd>
+<dt id="term-endpoint-id">Endpoint Id</dt>
+<dd>Internal ID of specific endpoint (only when <em>endpointType</em> is non-empty).</dd>
+<dt id="term-endpoint-name">Endpoint Name</dt>
+<dd>User extension, friend name, fax name, retail account name or residential device name (only when <em>endpointId</em> is non-empty).</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">An asynchronous process parses each external call and adds it to this list a few minutes after call hangup. Billing related fields, such as cost and price, will be empty for external incoming calls.</p>
+</div>
+<div class="section" id="call-rerating">
+<h2>Call rerating</h2>
+<p>At <strong>brand level</strong>, there is an additional available operation for outbound calls: <strong>Rerate call</strong>. This option allows calling rating engine again for a call or a bunch of calls.</p>
+<p>Notes about this rerating process:</p>
+<ul class="simple">
+<li>If a call is in an invoice, it cannot be rerated. Invoice must be deleted first.</li>
+<li>Call will be rerated with the <em>Start time</em> of the call (no with current active rating plans, but with active rating plans
+on the moment of the call).</li>
+<li>Both <em>Price</em> and <em>Cost</em> will be recalculated. This may imply updating <em>rating plan</em> and <em>destination</em> too.</li>
+</ul>
+<div class="admonition tip">
+<p class="first admonition-title">Truco</p>
+<p class="last">When a call is rerated, cost and price are emptied until the next iteration of the asynchronous task.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2019, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

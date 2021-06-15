@@ -1,0 +1,433 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Residential devices &mdash; IvozProvider Artemis documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../../',
+              VERSION:'Artemis',
+              LANGUAGE:'en',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/banner.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="DDIs" href="ddis.html" />
+    <link rel="prev" title="Residential Clients" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> IvozProvider
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.17
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../basic_concepts/intro/index.html">Introduction to IvozProvider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../basic_concepts/architecture/index.html">Platform general architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../basic_concepts/installation/index.html">Initial Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../basic_concepts/operation_roles/index.html">Platform roles</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/internal_calls/index.html">Making internal calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/external_incoming_calls/index.html">Receiving external calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/external_outgoing_calls/index.html">Making external calls</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Administration portal</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../platform/index.html">Platform Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../brand/index.html">Brand Configuration</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Client Configuration</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../vpbx/index.html">vPBX Clients</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Residential Clients</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Residential devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ddis.html">DDIs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="external_call_filters.html">External call filters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="faxes.html">Faxes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rating_profiles.html">Rating profiles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="calls/index.html">Calls</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../retail/index.html">Retail Clients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wholesale/index.html">Wholesale clients</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Specific portals</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_portal/index.html">User Portal</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Security and Maintenance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../security_and_maintenance/security/index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../security_and_maintenance/maintenance/index.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Rest API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api_rest/introduction.html">Introduction to IvozProvider API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api_rest/multilevel.html">Multi-level API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api_rest/web_client.html">Built-in web client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api_rest/integrations.html">Third party integrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api_rest/use_case.html">Use Case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api_rest/acls.html">ACLs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">IvozProvider</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Client Configuration</a> &raquo;</li>
+        
+          <li><a href="index.html">Residential Clients</a> &raquo;</li>
+        
+      <li>Residential devices</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/administration_portal/client/residential/residential_devices.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="residential-devices">
+<span id="id1"></span><h1>Residential devices<a class="headerlink" href="#residential-devices" title="Permalink to this headline">¶</a></h1>
+<p>Residential Devices are the main routable option in Residential clients.
+More or less like <a class="reference internal" href="../vpbx/routing_endpoints/friends/index.html#friends"><span class="std std-ref">Friends</span></a> are to Virtual PBX Clients, devices
+contain the required configurable options to provide a SIP connectivity
+service with IvozProvider and an external SIP entity.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Although both <strong>Carriers/DDI Providers</strong> and <strong>Residential Devices</strong> are defined by the
+<strong>brand operator</strong>, the former are designed to connect with the public switched telephony network
+while the latter connects the system with our clients&#8217; SIP entities.</p>
+</div>
+<div class="section" id="types-of-residential-devices">
+<h2>Types of residential devices<a class="headerlink" href="#types-of-residential-devices" title="Permalink to this headline">¶</a></h2>
+<p>There are 2 main types of SIP endpoints that can use residential with IvozProvider:</p>
+<ul class="simple">
+<li><strong>Direct connection endpoint</strong>: IvozProvider must be able to talk SIP directly with
+this kind of devices by just forwarding the traffic to the proper port of
+the public IP address of the PBX.</li>
+<li><strong>Endpoint behind NAT</strong>: Not directly reachable. This kind of endpoint must register at
+IvozProvider (just like all the <a class="reference internal" href="../vpbx/terminals.html#terminals"><span class="std std-ref">Terminals</span></a> do).</li>
+</ul>
+</div>
+<div class="section" id="what-kind-of-calls-can-be-routed-through-a-residential-device">
+<h2>What kind of calls can be routed through a <em>Residential Device</em>?<a class="headerlink" href="#what-kind-of-calls-can-be-routed-through-a-residential-device" title="Permalink to this headline">¶</a></h2>
+<p>Contrary to Friends, <strong>Residential Devices</strong> have some simplifications and limitations:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Residential Devices only route their assigned DDIs</li>
+<li>Residential Devices only place externals calls to Carriers</li>
+<li>Residential Devices only receive external calls from DDI Providers</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="residential-devices-configuration">
+<h2>Residential Devices Configuration<a class="headerlink" href="#residential-devices-configuration" title="Permalink to this headline">¶</a></h2>
+<p>These are the configurable settings of <em>Residential devices</em>:</p>
+<dl class="glossary docutils">
+<dt id="term-name">Name</dt>
+<dd>Name of the <strong>residential device</strong>. This name must be unique in the whole brand so
+it&#8217;s recommended to use some kind of sequential identifier. This will also be used
+in SIP messages (sent <strong>From User</strong>).</dd>
+<dt id="term-description">Description</dt>
+<dd>Optional. Extra information for this <em>residential device</em>.</dd>
+<dt id="term-password">Password</dt>
+<dd>When the <em>residential device</em> send requests, IvozProvider will authenticate it using
+this password. Like remaining SIP entities in IvozProvider (except Wholesale) <strong>using password IS MANDATORY</strong>.</dd>
+<dt id="term-direct-connectivity">Direct connectivity</dt>
+<dd>If you choose &#8216;Yes&#8217; here, you&#8217;ll have to fill the protocol, address and
+port where this <em>residential device</em> can be contacted.</dd>
+<dt id="term-language">Language</dt>
+<dd>Locutions will be played in this language</dd>
+<dt id="term-numeric-transformation">Numeric transformation</dt>
+<dd>Numeric transformation set that will be applied when communicating with this device.</dd>
+<dt id="term-fallback-outgoing-ddi">Fallback Outgoing DDI</dt>
+<dd>External calls from this <em>residential device</em> will be presented with this DDI, <strong>unless
+the source presented matches a DDI belonging to the residential client</strong>.</dd>
+<dt id="term-allowed-codec">Allowed codec</dt>
+<dd>Like vPBX terminals, <em>residential devices</em> will talk only the selected codec.</dd>
+<dt id="term-from-domain">From domain</dt>
+<dd>Request from IvozProvider to this device will include this domain in
+the From header.</dd>
+<dt id="term-ddi-in">DDI In</dt>
+<dd>If set to &#8216;Yes&#8217;, set destination (R-URI and To) to called DDI when calling to this endpoint. If set &#8216;No&#8217;, username
+used in Contact header of registration will be used, as specified in SIP RFC (residential device name will be used
+for endpoints with direct connectivity). Defaults to &#8216;No&#8217;.</dd>
+<dt id="term-call-waiting">Call waiting</dt>
+<dd>Limits received calls when already handling this number of calls. Set 0 for unlimited.</dd>
+<dt id="term-enable-t-38-passthrough">Enable T.38 passthrough</dt>
+<dd>If set to &#8216;yes&#8217;, this SIP endpoint must be a <strong>T.38 capable fax sender/receiver</strong>. IvozProvider
+will act as a T.38 gateway, bridging fax-calls of a T.38 capable carrier and a T.38 capable device.</dd>
+<dt id="term-rtp-encryption">RTP Encryption</dt>
+<dd>If set to &#8216;yes&#8217;, call won&#8217;t be established unless it&#8217;s possible to encryption its audio. If set to &#8216;no&#8217;,
+audio won&#8217;t be encrypted.</dd>
+<dt id="term-multi-contact">Multi Contact</dt>
+<dd>Same SIP credentials can be configured in multiple SIP devices. In that case, all devices ring
+simultaneously when receiving a call. Setting this toggle to &#8216;No&#8217; limits this behaviour so that
+only latest registered SIP device rings.</dd>
+</dl>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Residential device can be contacted due to calls to several DDIs. <em>DDI In</em> setting allows remote SIP endpoint to
+know which number caused each call, setting that number as destination (R-URI and To headers). This way, residential
+device can handle calls differently.</p>
+</div>
+</div>
+<div class="section" id="voicemail-settings">
+<h2>Voicemail settings<a class="headerlink" href="#voicemail-settings" title="Permalink to this headline">¶</a></h2>
+<p>Every residential device has a voicemail that can be accessed using voicemail service code defined at brand level.</p>
+</div>
+<div class="section" id="call-forwarding-settings">
+<span id="residential-devices-cfw"></span><h2>Call forwarding settings<a class="headerlink" href="#call-forwarding-settings" title="Permalink to this headline">¶</a></h2>
+<p>Apart from unconditional call forwarding to external number through <a class="reference internal" href="../vpbx/routing_tools/external_call_filters.html#external-call-filters"><span class="std std-ref">External call filters</span></a> applied to DDI,
+residential devices may have additional call forwarding settings that allow:</p>
+<ul class="simple">
+<li>Forwarding to another external number.</li>
+<li>Forwarding to voicemail associated to each residential device.</li>
+<li>Supported forwarding types: unconditional, no-answer, non-registered, busy.</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last"><a class="reference internal" href="../vpbx/routing_tools/external_call_filters.html#external-call-filters"><span class="std std-ref">External call filters</span></a> have precedence over residential devices call forwarding settings.</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Forwarding to national numbers can be configured using services codes
+(further information <a class="reference internal" href="../../brand/settings/generic_services.html#call-forward-services"><span class="std std-ref">here</span></a>).</p>
+</div>
+</div>
+<div class="section" id="asterisk-as-a-residential-device">
+<h2>Asterisk as a residential device<a class="headerlink" href="#asterisk-as-a-residential-device" title="Permalink to this headline">¶</a></h2>
+<p>At the other end of a device can be any kind of SIP entity. This section takes
+as example an Asterisk PBX system using SIP channel driver that wants to connect
+to IvozProvider.</p>
+<div class="section" id="device-register">
+<h3>Device register<a class="headerlink" href="#device-register" title="Permalink to this headline">¶</a></h3>
+<p>If the system can not be directly access, Asterisk will have to register in the
+platform (like a terminal will do).</p>
+<p>Configuration will be something like this:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>register =&gt; residentialDeviceName:residentialDevicePassword@ivozprovider-brand.sip-domain.com
+</pre></div>
+</div>
+</div>
+<div class="section" id="device-peer">
+<h3>Device peer<a class="headerlink" href="#device-peer" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none"><div class="highlight"><pre><span></span>[residentialDeviceName]
+type=peer
+host=ivozprovider-brand.sip-domain.com
+context=XXXXXX
+disallow=all
+allow=alaw
+defaultuser=residentialDeviceName
+secret=residentialDevicePassword
+fromuser=residentialDeviceName
+fromdomain=ivozprovider-brand.sip-domain.com
+insecure=port,invite
+sendrpid=pai
+directmedia=no
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last"><em>Residential devices</em> MUST NOT challenge IvozProvider. That&#8217;s
+why the <em>insecure</em> setting is used here.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">As from username is used to identify the retail account, P-Asserted-Identity must be used to specify caller number.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ddis.html" class="btn btn-neutral float-right" title="DDIs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Residential Clients" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016-2019, Irontec
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-book"> Other Versions</span>
+        v: artemis
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Branches</dt>
+            <dd><a href="residential_devices.html">artemis</a></dd>
+            <dd><a href="../../../../bleeding/administration_portal/client/residential/residential_devices.html">bleeding</a></dd>
+            <dd><a href="../../../../oasis/index.html">oasis</a></dd>
+        </dl>
+    </div>
+</div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

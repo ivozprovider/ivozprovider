@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Platform roles</title>
+    
+    <link rel="stylesheet" href="../../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../getting_started/internal_calls/index.xhtml" title="Making internal calls"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../installation/extra_components.xhtml" title="Extra components"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.xhtml">IvozProvider Artemis documentation</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="platform-roles">
+<span id="operation-roles"></span><h1>Platform roles</h1>
+<p>IvozProvider is a multilevel role provider solution.</p>
+<p>The following images shows the different available levels and the
+relation between them:</p>
+<img alt="../../_images/operator_levels2.png" src="../../_images/operator_levels2.png" />
+<p>This section will explain each of the available roles, describing their
+responsibilities and more important tasks.</p>
+<div class="section" id="global-administrator-role">
+<h2>Global administrator role</h2>
+<p>The global administrator role (operator in the image) is usually done by
+the installation responsible.</p>
+<p>All options and platform features are visible to this role and usually is
+in charge of its maintenance.</p>
+<p>Their most important task is to <strong>create Brands</strong> and configure them so
+they have the enough autonomy to properly use the platform:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Configure their web access.</li>
+<li>Configure their brand portal look and feel: themes, colors, etc.</li>
+</ul>
+</div></blockquote>
+<p>Apart from their main task, their global visibility and total access
+makes them responsible of:</p>
+<ul>
+<li><p class="first">Monitor the platform so it keeps always UP &amp; RUNNING</p>
+</li>
+<li><p class="first">Analyze platform logs to track possible errors.</p>
+</li>
+<li><p class="first">Polish the security mechanisms to avoid external attacks.</p>
+</li>
+<li><p class="first">Obtain global statistics of calls audio quality.</p>
+</li>
+<li><p class="first">Increase the available resources of the platform as long as is needed:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Increasing resources available in a standalone installation</li>
+<li>Migrating, whenever required, to a distributed installation with multiple
+AS, media relays, etc.</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p>To sum up, <strong>this role is the only one that has no limits within the
+platform</strong>, that&#8217;s why <em>God</em> is a term used in multiple places along this
+documentation.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last"><em>This role is responsible of maintaining the platform*</em>, configuring
+it for the correct behaviour. This role <strong>doesn&#8217;t have any kind
+of limit</strong> and <strong>grants access</strong> to the <strong>brand operators</strong>.</p>
+</div>
+</div>
+<div class="section" id="brand-administrator-role">
+<h2>Brand administrator role</h2>
+<p>Brand operator can access a portal with less sections available compared
+to the previous role. The general (God) administrator is in charge of
+providing an URL with credentials for its brand portal.</p>
+<p>The most important task for brand operator is to <strong>create and configure
+clients so they can work properly</strong>.</p>
+<p>Due to brand operators are also responsible of billing their clients and
+make sure the external calls are properly setup, it must also manage:</p>
+<ul class="simple">
+<li>Peering contracts with other IP providers for PSTN interconnection.</li>
+<li>Include all required client information for the billing process.</li>
+<li>Pricing plans that will offer to their clients, that will determine how
+match they pay for each call.</li>
+<li>Setup the routes for each outgoing call types based on their final
+destination</li>
+<li>Create the invoices for each billing period and send them to their
+clients.</li>
+</ul>
+<p>As you can see, the task of brand operator has little in common with the
+global operator, but their importance is vital so the final users can use
+all the features includes in IvozProvider</p>
+<div class="admonition important" id="brand-responsibilities">
+<p class="first admonition-title">Important</p>
+<p class="last"><strong>To sum up</strong>, brand operators <strong>grant access</strong> to their
+<strong>clients</strong> administrators and <strong>configure the platform
+to route and rate their calls</strong>.</p>
+</div>
+</div>
+<div class="section" id="client-administrator-role">
+<h2>Client administrator role</h2>
+<p>The client administrator has access to the portal supplied by the brand
+operator.</p>
+<p>From its point of view, it has a virtual pbx in the cloud that must
+configure for its users.</p>
+<p>To accomplish that, it&#8217;s required:</p>
+<ul>
+<li><p class="first">Configure terminals, extensions and users.</p>
+</li>
+<li><p class="first">Configure the DDI incoming process with the proper logic:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Directly to an user</li>
+<li>IVRs</li>
+<li>Hunt groups</li>
+<li>Faxes</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Give access to the final users to their web portal, so they can configure
+their profile options:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Call forward</li>
+<li>Do not disturb</li>
+<li>Call waiting</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">To sum up, the client administrators are responsible for
+<strong>configuring the telephony system and make use of all the
+features available in IvozProvider</strong>.</p>
+</div>
+</div>
+<div class="section" id="final-user-role">
+<h2>Final user role</h2>
+<p>The final user has two different kinds of credentials, both supplied by
+its client administrator:</p>
+<ul class="simple">
+<li>User portal access credentials</li>
+<li>SIP credentials used to register terminals to IvozProvider</li>
+</ul>
+<p>Through the user portal, it can browse their call registry and configure:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Call forward</li>
+<li>Do not disturb</li>
+<li>Call waiting</li>
+<li>Displayed data when calling</li>
+<li>Geographical configuration</li>
+</ul>
+</div></blockquote>
+<p>On the other hand, the SIP credentials allow users to configure their terminals to place and receive calls.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The same SIP credentials can be used in multiple devices at the same
+time,generating what is known as <em>parallel-forking</em>: whenever a call is
+placed to an user, all the active devices will ring so the user can
+answer the call from any of them.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2019, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Platform general architecture</title>
+    
+    <link rel="stylesheet" href="../../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../installation/index.xhtml" title="Initial Installation"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../intro/use_cases.xhtml" title="Who should use IvozProvider?"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.xhtml">IvozProvider Artemis documentation</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="platform-general-architecture">
+<span id="architecture"></span><h1>Platform general architecture</h1>
+<div class="section" id="general-diagram">
+<h2>General diagram</h2>
+<p>Following diagram shows the global architecture of IvozProvider solution,
+with all its components:</p>
+<img alt="../../_images/flows.png" src="../../_images/flows.png" />
+<p>This is a more conceptual diagram:</p>
+<img alt="../../_images/conceptual.png" src="../../_images/conceptual.png" />
+</div>
+<div class="section" id="sip-signalling-flow">
+<span id="signallingflow"></span><h2>SIP signalling flow</h2>
+<p>The first diagram shows the SIP signalling traffic involved in the
+establishment, modification and termination of sessions following the SIP
+<a class="reference external" href="https://tools.ietf.org/html/rfc3261">RFC 3261</a><span class="link-target"> [https://tools.ietf.org/html/rfc3261]</span> and any <a class="reference external" href="https://www.packetizer.com/ipmc/sip/standards.html">related RFCs</a><span class="link-target"> [https://www.packetizer.com/ipmc/sip/standards.html]</span>.</p>
+<p>These are the <strong>external SIP entities</strong> involved:</p>
+<ul class="simple">
+<li>UACs: users hardphones, softphones, SIP-capable gadget.</li>
+<li>SIP carriers/DDI Providers: carriers used to interconnect IvozProvider with external SIP
+networks (and, probably, with PSTN).</li>
+</ul>
+<p>All the SIP traffic (in any of the supported transports: TCP, UDP, TLS, WSS)
+they send/receive is to/from this two <strong>internal SIP entities</strong> of IvozProvider:</p>
+<ul class="simple">
+<li>Users SIP Proxy (running <a class="reference external" href="https://www.kamailio.org">Kamailio</a><span class="link-target"> [https://www.kamailio.org]</span>).</li>
+<li>Trunks SIP Proxy (running <a class="reference external" href="https://www.kamailio.org">Kamailio</a><span class="link-target"> [https://www.kamailio.org]</span>).</li>
+</ul>
+<dl class="docutils">
+<dt>In fact, users UACs only talk to <em>Users SIP Proxy</em> and &#8216;SIP carriers&#8217; and &#8216;DDI</dt>
+<dd>Providers&#8217; only talk to <em>Trunks SIP Proxy</em>.</dd>
+</dl>
+<p>Inside IvozProvider these two proxies may talk to <em>Application Servers</em> running
+<a class="reference external" href="http://www.asterisk.org/">Asterisk</a><span class="link-target"> [http://www.asterisk.org/]</span> for some client types but <strong>no external
+element is allowed to talk to Application Servers directly</strong>.</p>
+</div>
+<div class="section" id="rtp-audio-flow">
+<span id="audioflow"></span><h2>RTP audio flow</h2>
+<p>Sessions initiated by SIP signalling protocol imply media streams shared by
+involved entities.</p>
+<p>This media streams use <a class="reference external" href="https://tools.ietf.org/html/rfc3550">RTP</a><span class="link-target"> [https://tools.ietf.org/html/rfc3550]</span> to send and
+receive the media itself, usually using UDP as a transport protocol.</p>
+<p><strong>External entities</strong> involved in RTP sessions can be divided in:</p>
+<ul class="simple">
+<li>Clients endpoints.</li>
+<li>Carriers/DDI Providers.</li>
+</ul>
+<p>Both entities exchanges RTP with the same IvozProvider entity: <em>media-relays</em>.</p>
+<p>IvozProvider implements <em>media-relays</em> using <a class="reference external" href="https://github.com/sipwise/rtpengine">RTPengine</a><span class="link-target"> [https://github.com/sipwise/rtpengine]</span>.</p>
+<p>Similar to SIP, these <em>media-relays</em> exchanges RTP when is needed with
+<em>Application Servers</em>, but <strong>external entities never talk directly to them</strong>.</p>
+</div>
+<div class="section" id="https-traffic">
+<h2>HTTPS traffic</h2>
+<p>HTTPS is the third traffic type exchanged between IvozProvider and <em>external
+world</em>.</p>
+<p>HTTPS traffic is used for:</p>
+<ul>
+<li><p class="first"><strong>Terminal provisioning</strong>: several hardphones ask for their configuration when
+they wake up and this configuration files can be served through HTTPS.</p>
+</li>
+<li><p class="first"><strong>Web portals</strong>: IvozProvider has 4-level web portals for all the
+<a class="reference internal" href="../operation_roles/index.xhtml#operation-roles"><span class="std std-ref">platform roles</span></a>.</p>
+<p>Both of these traffics are handled by <em>Web portals</em> IvozProvider entity.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="additional-elements">
+<h2>Additional elements</h2>
+<p>IvozProvider has multiple elements that are not exposed to the <em>external world</em>
+but play a crucial task.</p>
+<p>The most remarkable profile is <strong>database profile</strong> that gathers all the
+information of the platform and shares it between the majority of software packaged.
+IvozProvider uses <a class="reference external" href="https://www.mysql.com/">MySQL database engine</a><span class="link-target"> [https://www.mysql.com/]</span> for this task.</p>
+<p>Another remarkable task is <strong>asynchronous tasks handler</strong> in charge of encoding recordings,
+generating invoices, reloading services, importing data, etc.</p>
+</div>
+<div class="section" id="auxiliary-elements">
+<h2>Auxiliary elements</h2>
+<p><strong>Aux profile</strong> runs software that, even though is not vital for calls placing,
+makes IvozProvider maintainer&#8217;s life much easier.</p>
+<p>In fact, without them, debugging problems would be much harder and the quality
+of given service would be damaged.</p>
+<p>Although IvozProvider does not include any of the tools mentioned here, we consider them crucial for dealing with
+production environments.</p>
+<p>We list here tools configured in all production IvozProvider installations maintained by
+<a class="reference external" href="https://www.irontec.com">Irontec</a><span class="link-target"> [https://www.irontec.com]</span>:</p>
+<ul class="simple">
+<li><strong>Homer SIP capture</strong>: This amazing software lets us capture all the SIP traffic
+for later analysis, for obtaining statistics, call quality measuring, etc.
+Visit <a class="reference external" href="http://sipcapture.org/">SIP Capture website</a><span class="link-target"> [http://sipcapture.org/]</span> for more information.</li>
+<li><strong>Kibana log viewer</strong>: Showing logs collected by remaining <a class="reference external" href="https://www.elastic.co/elk-stack">ELK stack components</a><span class="link-target"> [https://www.elastic.co/elk-stack]</span>.</li>
+<li><strong>Chronograf metric viewer</strong>: Showing metrics collected by remaining <a class="reference external" href="https://www.influxdata.com/time-series-platform/">TICK stack components</a><span class="link-target"> [https://www.influxdata.com/time-series-platform/]</span>.</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2019, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

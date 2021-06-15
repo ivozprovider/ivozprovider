@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Pricing plans</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="bill_a_call.xhtml" title="Call billing"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="billable_calls.xhtml" title="Billable calls"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">IvozProvider Oasis documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Billing and Invoices</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="pricing-plans">
+<h1>Pricing plans</h1>
+<p>In <a class="reference internal" href="../external_outgoing_calls/noplan_nocall.xhtml#noplan-nocall"><span class="std std-ref">No pricing plan, no call</span></a> section the process of creating a <em>pricing plan</em> was
+described quite thoroughly and main concepts were introduced:</p>
+<ul>
+<li><p class="first">A pricing plan groups some pricing patterns (prefixes) with their cost details:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Cost per minute</li>
+<li>Call establishment cost</li>
+<li>Bill by seconds, by minutes, etc.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">A pricing plan is linked to an specific company with a period of time in which
+this asociation is valid.</p>
+</li>
+<li><p class="first">One company may have more than one valid pricing plan for an specific call in
+an specific moment.</p>
+</li>
+<li><p class="first">In such cases, the call price will be calculated using the price detail of the
+matching pricing plan with minor metric.</p>
+</li>
+</ul>
+<div class="section" id="manual-creation">
+<h2>Manual creation</h2>
+<p><a class="reference internal" href="../external_outgoing_calls/noplan_nocall.xhtml#price-plan"><span class="std std-ref">Manual creation of a pricing plan</span></a> implied the previous
+creation of at least one <a class="reference internal" href="../external_outgoing_calls/noplan_nocall.xhtml#price-pattern"><span class="std std-ref">price pattern</span></a>.</p>
+<p>At this point, the future brand operator may have noticed that creating thousands
+of pricing patterns would be a really annoying and time consuming task, as there
+are 254 countries, each of them with their mobile networks, landline networks,
+special service numbers, etc.</p>
+<p>That&#8217;s why the creation of pricing patterns and pricing plans is done using a
+<a class="reference external" href="https://es.wikipedia.org/wiki/CSV">CSV</a><span class="link-target"> [https://es.wikipedia.org/wiki/CSV]</span> file.</p>
+</div>
+<div class="section" id="importing-a-csv-file">
+<h2>Importing a CSV file</h2>
+<p>The first step is creating an empty pricing plan to import the prices in (section
+<strong>Brand configuration</strong> &gt; <strong>Pricing plans</strong>):</p>
+<img alt="../_images/pricing_plans_add.png" src="../_images/pricing_plans_add.png" />
+<p>We enter the empty pricing plan we have just created:</p>
+<img alt="../_images/pricing_plans_add_price.png" src="../_images/pricing_plans_add_price.png" />
+<p>This is the key button for the massive pricing pattern import process:</p>
+<img alt="../_images/pricing_plan_csv.png" src="../_images/pricing_plan_csv.png" />
+<p>Once chosen the CSV file to import, this window turns up:</p>
+<img alt="../_images/pricing_plan_csv3.png" src="../_images/pricing_plan_csv3.png" />
+<p>We can select which column contains which field, in case we want to import a
+<a class="reference external" href="https://es.wikipedia.org/wiki/CSV">CSV</a><span class="link-target"> [https://es.wikipedia.org/wiki/CSV]</span> file in a non-recommended format. We
+can also decide whether to import the first line or discard it as it may have
+titles instead of data.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">The importing process is done in background, letting the brand operator
+continue doing other stuff while it is finished.</p>
+</div>
+<div class="section" id="csv-format">
+<h3>CSV format</h3>
+<p>Although the above window allowed importing non-recommended format <a class="reference external" href="https://es.wikipedia.org/wiki/CSV">CSV</a><span class="link-target"> [https://es.wikipedia.org/wiki/CSV]</span>  files, we encourage you to import a file
+in the proposed format, as it will make this process much easier.</p>
+<p>The recommended <a class="reference external" href="https://es.wikipedia.org/wiki/CSV">CSV</a><span class="link-target"> [https://es.wikipedia.org/wiki/CSV]</span> format is described
+in the contextual help section, that includes even a link to download an example
+file:</p>
+<img alt="../_images/pricing_plan_csv2.png" src="../_images/pricing_plan_csv2.png" />
+<p>The order of the columns should be:</p>
+<ul class="simple">
+<li>Pricing pattern name</li>
+<li>Pricing pattern description</li>
+<li>Prefix</li>
+<li>Price per minute</li>
+<li>Establishment cost</li>
+<li>Billing period</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">It is recommended to double quote alphanumeric entries, though
+it is not compulsory for single word entries (or entries without odd symbols).
+<strong>If they contain any comma, they MUST be quoted</strong>.</p>
+</div>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p class="last">Floating numbers <strong>MUST use point as decimal separator</strong>.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Numeric entries can be quoted with double quotes, but it is
+not mandatory.</p>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">The importing system will just bind the price to an existing
+price pattern or, if prefix doesn&#8217;t match any existing pricing pattern, it will
+create one.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>The price of the call will be increased every billing period unit.</p>
+<ul class="last simple">
+<li>If <em>billing period</em> is set to 1, every second the price will be increased
+<em>price per minute</em> divided by 60 (bill by seconds).</li>
+<li>If <em>billing period</em> is set to 60, every minute the price will be increased
+<em>price per minute</em> (bill by minutes).</li>
+</ul>
+</div>
+<p>Once the import process is over, we just have to bind the pricing plan to
+the companies we want following <a class="reference internal" href="../external_outgoing_calls/noplan_nocall.xhtml#pricing-plan-to-company"><span class="std std-ref">the procedure explained in
+the previous block</span></a>.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

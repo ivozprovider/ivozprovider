@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>&lt;no title&gt;</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">documentación de IvozProvider - Oasis</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <p>El primer diagrama muestra el tráfico de señalización SIP que ocurre en el establecimiento, modificación y finalización de sesiones acorde al  <a class="reference external" href="https://tools.ietf.org/html/rfc3261">RFC 3261</a><span class="link-target"> [https://tools.ietf.org/html/rfc3261]</span> y otros <a class="reference external" href="https://www.packetizer.com/ipmc/sip/standards.html">RFCs relacionados</a><span class="link-target"> [https://www.packetizer.com/ipmc/sip/standards.html]</span>.</p>
+<p>Estas son las <strong>entidades SIP externas</strong> involucradas:</p>
+<ul class="simple">
+<li><p class="first">UACs: teléfonos de usuarios, softphones, dispositivos compatibles con SIP.</p>
+</li>
+<li><p class="first">Proveedores SIP: proveedores usados para la interconexión de IvozProvider con redes externas SIP (y, probablemente, con la PSTN).</p>
+</li>
+</ul>
+<p>Todo el tráfico SIP (en cualquiera de los transportes soportados: TCP, UDP, TLS, WSS) que se envia/recibe desde la plataforma se hará deste las siguiente dos <strong>entidades SIP internas</strong> de IvozProvider:</p>
+<ul class="simple">
+<li><p class="first">Proxy SIP de Usuarios (ejecutando <a class="reference external" href="https://www.kamailio.org">Kamailio</a><span class="link-target"> [https://www.kamailio.org]</span>).</p>
+</li>
+<li><p class="first">Proxy SIP Proveedores (running <a class="reference external" href="https://www.kamailio.org">Kamailio</a><span class="link-target"> [https://www.kamailio.org]</span>).</p>
+</li>
+</ul>
+<p>De hecho, los UACs de usuario solo se comunican con el <em>Proxy SIP de usuarios</em> y los &#8216;Proveedores SIP&#8217; solo se comunican con el <em>Proxy SIP de Proveedores</em>.</p>
+<p>Dentro de IvozProvider estos dos proxies hablan a los <em>Servidores de Aplicación</em> que ejecutan <a class="reference external" href="http://www.asterisk.org/">Asterisk</a><span class="link-target"> [http://www.asterisk.org/]</span>, ya que <strong>ningun elemento externo puede hablar con los Servidores de Aplicación directamente</strong>.</p>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

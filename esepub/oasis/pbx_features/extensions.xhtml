@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Extensiones</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="terminals.xhtml" title="Terminales"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="index.xhtml" title="Funcionalidades de PBX"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">documentación de IvozProvider - Oasis</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Funcionalidades de PBX</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="extensions">
+<h1>Extensiones</h1>
+<p>La configuración de partida incluía 2 extensiones (101 y 102) que apuntaban directamente a <em>Alice</em> y <em>Bob</em>, por lo que apenas dijimos nada sobre la sección <strong>Configuración de empresa</strong> &gt; <strong>Extensiones</strong>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last"><strong>Una extensión es</strong>, por definición, <strong>un número interno con una lógica asignada</strong>.</p>
+</div>
+<p class="rubric">Crear una nueva extensión</p>
+<p>La ventana de creación de una nueva extensión es tal que así:</p>
+<img alt="../_images/extension_add.png" src="../_images/extension_add.png" />
+<dl class="glossary docutils">
+<dt id="term-number">Número</dt>
+<dd><p class="first last">El número que al ser marcado por un usuario interno activará la lógica que sigue. Tiene que tener una longitud mínima de 2 y estar compuesto únicamente por dígitos.</p>
+</dd>
+<dt id="term-route">Enrutar</dt>
+<dd><p class="first last">Este selector nos permite indicar la lógica que seguirá esta numeración cuando sea marcada por un usuario concreto. Al seleccionar un ítem en cuestión, se nos mostrará un selector adicional para seleccionar el grupo de salto, sala de conferencias, etc.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="first admonition-title">Advertencia</p>
+<p class="last">Si existe una extensión cuyo número conflicte con un número externo, el número externo quedará enmascarado y resultará, en la práctica, inaccesible para toda la empresa.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

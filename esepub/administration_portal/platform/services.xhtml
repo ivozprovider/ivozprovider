@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Services</title>
+    
+    <link rel="stylesheet" href="../../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="currencies.xhtml" title="Currencies"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="terminal_manufacturers.xhtml" title="Terminal manufacturers"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.xhtml">documentación de IvozProvider - Artemis</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Platform Configuration</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="services">
+<span id="god-services"></span><h1>Services</h1>
+<p>There are <strong>special services</strong> that can be accessed by calling to some codes
+<strong>from the terminal</strong>.</p>
+<div class="admonition danger">
+<p class="first admonition-title">Peligro</p>
+<p class="last">Services defined in this section <strong>are not accessible during a
+conversation</strong>. They are activated by <strong>calling the codes</strong>, not using
+DTMF codes while talking.</p>
+</div>
+<p>There are the following <strong>special services</strong> available in the section <strong>Global
+configuration</strong> &gt; <strong>Services</strong>:</p>
+<dl class="glossary docutils">
+<dt id="term-direct-pickup">Direct pickup</dt>
+<dd>This service allows capturing a ringing call from another terminal by
+calling the code followed by the extension from the target user.</dd>
+<dt id="term-group-pickup">Group pickup</dt>
+<dd>This service allows capturing a ringing call for any terminal whose user
+is part of one of the capturer pickup groups.</dd>
+<dt id="term-check-voicemail">Check voicemail</dt>
+<dd>This service allows checking the user&#8217;s voicemail using an interactive
+menu from which new voicemails can be listen, deleted, etc. This is an
+active alternative to receive voicemails via the email. Since 1.4, this
+service allows optional extension after the service code to check
+another users voicemails. Users can protect their voicemail using the
+internal menu options.</dd>
+<dt id="term-record-locution">Record locution</dt>
+<dd>This service allows any user to record their client&#8217;s locutions by
+dialing an special code. Voice instructions will be provided in the
+user&#8217;s language.</dd>
+<dt id="term-open-lock">Open Lock</dt>
+<dd>Calling this service code will set route lock status to &#8216;Opened&#8217; (see <a class="reference internal" href="../client/vpbx/routing_tools/route_locks.xhtml#route-locks"><span class="std std-ref">Route locks</span></a>).</dd>
+<dt id="term-close-lock">Close Lock</dt>
+<dd>Calling this service code will set route lock status to &#8216;Closed&#8217; (see <a class="reference internal" href="../client/vpbx/routing_tools/route_locks.xhtml#route-locks"><span class="std std-ref">Route locks</span></a>).</dd>
+<dt id="term-toggle-lock">Toggle Lock</dt>
+<dd>Calling this service code will change the current status of the lock (see <a class="reference internal" href="../client/vpbx/routing_tools/route_locks.xhtml#route-locks"><span class="std std-ref">Route locks</span></a>).</dd>
+<dt id="term-inconditional-call-forward">Inconditional call forward</dt>
+<dd>Calling this service code will change the current status of inconditional call forward (only available for
+residential clients, see <a class="reference internal" href="../client/residential/residential_devices.xhtml#residential-devices-cfw"><span class="std std-ref">Residential device call forward settings</span></a>).</dd>
+<dt id="term-busy-call-forward">Busy call forward</dt>
+<dd>Calling this service code will change the current status of busy call forward (only available for
+residential clients, see <a class="reference internal" href="../client/residential/residential_devices.xhtml#residential-devices-cfw"><span class="std std-ref">Residential device call forward settings</span></a>).</dd>
+<dt id="term-no-answer-call-forward">No answer call forward</dt>
+<dd>Calling this service code will change the current status of no answer call forward (only available for
+residential clients, see <a class="reference internal" href="../client/residential/residential_devices.xhtml#residential-devices-cfw"><span class="std std-ref">Residential device call forward settings</span></a>).</dd>
+<dt id="term-unreachable-call-forward">Unreachable call forward</dt>
+<dd>Calling this service code will change the current status of no answer call forward (only available for
+residential clients, see <a class="reference internal" href="../client/residential/residential_devices.xhtml#residential-devices-cfw"><span class="std std-ref">Residential device call forward settings</span></a>).it di</dd>
+</dl>
+<p>As soon as new services are implemented into IvozProvider, they will be listed
+in this section.</p>
+<div class="admonition attention">
+<p class="first admonition-title">Atención</p>
+<p class="last">This section lists the available services and the default codes
+when a <strong>new brand</strong> is created.</p>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Consejo</p>
+<p class="last">Changing the default code in this section will only affect new
+created brands.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2019, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

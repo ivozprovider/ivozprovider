@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Route locks</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="conditional_routes.xhtml" title="Conditional routes"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="match_lists.xhtml" title="Match Lists"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">IvozProvider Oasis documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">PBX Features</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="route-locks">
+<span id="id1"></span><h1>Route locks</h1>
+<p>Route locks are a simple but powerful way to fork route logics when delivering calls. This fork is done depending on the
+state of the lock on a particular moment:</p>
+<ul class="simple">
+<li><strong>Opened</strong>: green light, go ahead.</li>
+<li><strong>Closed</strong>: red light, no trespassing allowed.</li>
+</ul>
+<p>They are used as conditional route rule criteria (see how in <a class="reference internal" href="conditional_routes.xhtml#conditional-routes"><span class="std std-ref">Conditional routes</span></a>).</p>
+<div class="section" id="route-lock-creation">
+<h2>Route lock creation</h2>
+<p>When you add a new route lock in <strong>Route Locks</strong> section, you are asked for the following fields:</p>
+<dl class="glossary docutils">
+<dt id="term-name">Name</dt>
+<dd>This name will be used in conditional routes to identify the lock.</dd>
+<dt id="term-description">Description</dt>
+<dd>Just a description.</dd>
+<dt id="term-status">Status</dt>
+<dd>Set the initial status of the lock: opened or closed.</dd>
+</dl>
+</div>
+<div class="section" id="route-locks-service-codes">
+<h2>Route locks service codes</h2>
+<p>Although you can set the initial lock status on creation and change it using the admin portal too, the usual way to
+handle the status changes of a lock is to use the service codes listed in <strong>Route locks</strong> section.</p>
+<p>These services codes have two parts:</p>
+<ul class="simple">
+<li><strong>Service code</strong>: configured in <strong>Services</strong> section per brand/company.</li>
+<li><strong>Lock id</strong>: immutable numeric id assigned to each lock.</li>
+</ul>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p>There are 3 service codes available for most common operations on locks:</p>
+<ul class="simple">
+<li>Open Lock</li>
+<li>Close Lock</li>
+<li>Toggle Lock.</li>
+</ul>
+<p class="last">Read <a class="reference internal" href="services.xhtml#services"><span class="std std-ref">Additional services</span></a> for further details.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

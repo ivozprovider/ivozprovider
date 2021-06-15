@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Control ACL para llamadas</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="users.xhtml" title="Usuarios"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="terminals.xhtml" title="Terminales"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">documentación de IvozProvider - Oasis</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Funcionalidades de PBX</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="call-acl-control">
+<span id="call-permissions"></span><h1>Control ACL para llamadas</h1>
+<p>Los <strong>Permisos de llamada</strong> determinan qué usuarios pueden llamar a qué destinos internos.</p>
+<div class="admonition attention">
+<p class="first admonition-title">Atención</p>
+<p class="last">Las extensiones internas son accesibles por todos los usuarios, <strong>los permisos de llamada solo aplican a llamadas externas</strong>.</p>
+</div>
+<p>La configuración de <strong>permisos de llamada</strong> tiene 2 partes:</p>
+<ul>
+<li><p class="first">Clasificar las llamadas en determinados tipos utilizando <strong>expresiones regulares</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="first">A nivel de marca: <strong>Configuración de Marca</strong> &gt; <strong>Patrones de permiso genéricos</strong>.</p>
+</li>
+<li><p class="first">A nivel de empresa: <strong>Configuración de Empresa</strong> &gt; <strong>Patrones de permisos de llamada</strong>.</p>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Definir políticas para los patrones deseados: <strong>Configuración de Empresa</strong> &gt; <strong>Permisos llamada</strong></p>
+</li>
+</ul>
+<div class="section" id="call-acl-patterns">
+<h2>Patrones de permiso</h2>
+<p>La clasificación de llamadas se realiza en las secciones indicadas a nivel de marca o a nivel de empresa.</p>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Cuando un operador de marca crea una empresa, todos los <strong>Patrones permiso genéricos</strong> definidos en ese momento a nivel de <strong>Configuración de Marca</strong> se copian a <strong>Configuración de Empresa</strong> &gt; <strong>Patrones de permisos de llamada</strong>. De esta forma, el operador de marca puede definir los más habituales y evitar este trabajo a los administradores de empresa.</p>
+</div>
+<p>La creación de nuevos patrones es muy simple:</p>
+<img alt="../_images/permissions_patterns.png" src="../_images/permissions_patterns.png" />
+<p>Este nuevo patrón de permisos engloba las llamadas que comiencen el prefijo de país español seguido por 6 o 7 y sigan con 8 dígitos del 0 al 9. Es decir, engloba todas las numeraciones móviles nacionales.</p>
+<p>Otros patrones de permisos que pueden resultar interesantes son:</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Fijos nacionales (incluyendo numeraciones especiales: 902, etc.): ^34[89][0-9]{8}$</dt>
+<dd><ul class="first last">
+<li><p class="first">34 (prefijo de país español), un 8 o un 9 seguido de 8 dígitos.</p>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Fijos nacionales (excluyendo numeraciones especiales: 902, etc.): ^34[89][1-9][0-9]{7}$</dt>
+<dd><ul class="first last">
+<li><p class="first">34 (prefijo de país español), un 8 o un 9, seguido de 1 dígito del 1 al 9, seguido de 7 dígitos.</p>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Fijo Reino Unido: ^44[0-9]+$</dt>
+<dd><ul class="first last">
+<li><p class="first">44 (prefijo del Reino Unido), seguido de más dígitos.</p>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p class="rubric">Formato de los números externos</p>
+<div class="admonition attention">
+<p class="first admonition-title">Atención</p>
+<p class="last"><strong>Las expresiones regulares de los patrones de permiso tienen que estar en formato E.164</strong></p>
+</div>
+<p>Existen dos razones principales para esta decisión:</p>
+<ul class="simple">
+<li><p class="first">El mismo patrón aplicará para todos los usuarios de la compañía, independientemente del país del usuario.</p>
+</li>
+<li><p class="first">Los patrones a nivel de marca se heredarán en la creación de nuevas empresas. La única forma de que esto resulte útil es utilizar un formato estándar.</p>
+</li>
+</ul>
+<p>Además, con este formato es realmente fácil impedir (o permitir) llamadas a todo un país.</p>
+</div>
+<div class="section" id="call-acl">
+<h2>Permisos de llamada</h2>
+<p>La definición de un <strong>Permiso de llamada</strong> utiliza una lógica más fácil de describir con un ejemplo.</p>
+<p>Imaginemos que tenemos los siguientes <strong>patrones de permisos</strong>:</p>
+<img alt="../_images/permissions_patterns_list.png" src="../_images/permissions_patterns_list.png" />
+<p>Podríamos definir un <strong>Permiso de llamada</strong> como el que sigue:</p>
+<img alt="../_images/permissions_add.png" src="../_images/permissions_add.png" />
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">La acción por defecto describe lo que hay que hacer con la llamada una vez que se han evaluado todas las reglas (permitir/rechazar).</p>
+</div>
+<p>Editamos el <strong>permiso de llamada</strong> que acabamos de crear para añadir las reglas necesarias:</p>
+<img alt="../_images/permissions_add2.png" src="../_images/permissions_add2.png" />
+<dl class="docutils">
+<dt>La <strong>métrica</strong> determina el orden de evaluación de las reglas y la acción lo que</dt>
+<dd><p class="first last">se hará con la llamada en caso de <em>matchear</em> (permitir/rechazar).</p>
+</dd>
+</dl>
+<img alt="../_images/permissions_add3.png" src="../_images/permissions_add3.png" />
+<p>Una vez hecho lo propio para el otro <strong>patrón de permisos</strong>, nuestro <strong>permiso de llamadas</strong> quedará como sigue:</p>
+<img alt="../_images/permissions_add4.png" src="../_images/permissions_add4.png" />
+<p>Ya solo faltaría añadírselo a un usuario concreto en la sección <strong>Configuración de empresa</strong> &gt; <strong>Usuarios</strong>:</p>
+<img alt="../_images/permissions_add5.png" src="../_images/permissions_add5.png" />
+<p>Desde este momento, Alice solo podría llamar a extensiones internas (siempre están permitidas) y a móviles y fijos nacionales.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

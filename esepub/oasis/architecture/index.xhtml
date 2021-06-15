@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Arquitectura general de la plataforma</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="../operation_roles/index.xhtml" title="Roles de la plataforma"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="../intro/use_cases.xhtml" title="¿Quién debería de usar IvozProvider?"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">documentación de IvozProvider - Oasis</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="platform-general-architecture">
+<span id="architecture"></span><h1>Arquitectura general de la plataforma</h1>
+<div class="section" id="general-diagram">
+<h2>Esquema general</h2>
+<p>Este esquema refleja la arquitectura global de la solución IvozProvider, con todos los elementos que la componen.</p>
+<img alt="../_images/flows1.png" src="../_images/flows1.png" />
+<p>Este es otro esquema más conceptual:</p>
+<img alt="../_images/conceptual1.png" src="../_images/conceptual1.png" />
+</div>
+<div class="section" id="sip-signalling-flow">
+<span id="signallingflow"></span><h2>Flujo señalización SIP</h2>
+<p>El primer diagrama muestra el tráfico de señalización SIP que ocurre en el establecimiento, modificación y finalización de sesiones acorde al  <a class="reference external" href="https://tools.ietf.org/html/rfc3261">RFC 3261</a><span class="link-target"> [https://tools.ietf.org/html/rfc3261]</span> y otros <a class="reference external" href="https://www.packetizer.com/ipmc/sip/standards.html">RFCs relacionados</a><span class="link-target"> [https://www.packetizer.com/ipmc/sip/standards.html]</span>.</p>
+<p>Estas son las <strong>entidades SIP externas</strong> involucradas:</p>
+<ul class="simple">
+<li><p class="first">UACs: teléfonos de usuarios, softphones, dispositivos compatibles con SIP.</p>
+</li>
+<li><p class="first">Proveedores SIP: proveedores usados para la interconexión de IvozProvider con redes externas SIP (y, probablemente, con la PSTN).</p>
+</li>
+</ul>
+<p>Todo el tráfico SIP (en cualquiera de los transportes soportados: TCP, UDP, TLS, WSS) que se envia/recibe desde la plataforma se hará deste las siguiente dos <strong>entidades SIP internas</strong> de IvozProvider:</p>
+<ul class="simple">
+<li><p class="first">Proxy SIP de Usuarios (ejecutando <a class="reference external" href="https://www.kamailio.org">Kamailio</a><span class="link-target"> [https://www.kamailio.org]</span>).</p>
+</li>
+<li><p class="first">Proxy SIP Proveedores (running <a class="reference external" href="https://www.kamailio.org">Kamailio</a><span class="link-target"> [https://www.kamailio.org]</span>).</p>
+</li>
+</ul>
+<p>De hecho, los UACs de usuario solo se comunican con el <em>Proxy SIP de usuarios</em> y los &#8216;Proveedores SIP&#8217; solo se comunican con el <em>Proxy SIP de Proveedores</em>.</p>
+<p>Dentro de IvozProvider estos dos proxies hablan a los <em>Servidores de Aplicación</em> que ejecutan <a class="reference external" href="http://www.asterisk.org/">Asterisk</a><span class="link-target"> [http://www.asterisk.org/]</span>, ya que <strong>ningun elemento externo puede hablar con los Servidores de Aplicación directamente</strong>.</p>
+</div>
+<div class="section" id="rtp-audio-flow">
+<span id="audioflow"></span><h2>Flujo audio RTP</h2>
+<p>La sesiones iniciadas por el protocolo de señalizacion SIP implican la compartición de flujos de multimedia entre las entidades implicadas.</p>
+<p>Estos flujos emplean <a class="reference external" href="https://tools.ietf.org/html/rfc3550">RTP</a><span class="link-target"> [https://tools.ietf.org/html/rfc3550]</span> para enviar y recibir el propio media, generalmente empleando el protocolo de transporte UDP.</p>
+<p>Las <strong>entidades externas</strong> involucradas en las sesiones RTP se pueden dividir en</p>
+<ul class="simple">
+<li><p class="first">Usuarios.</p>
+</li>
+<li><p class="first">Proveedores.</p>
+</li>
+</ul>
+<p>Ambas entidades intercambian RTP con el mismo servicio de IvozProvider: <em>los servidores media</em>.</p>
+<p>IvozProvider implementa <em>servidores media</em> usando tanto <a class="reference external" href="https://github.com/sipwise/rtpengine">RTPengine</a><span class="link-target"> [https://github.com/sipwise/rtpengine]</span> como <a class="reference external" href="http://www.rtpproxy.org/">RTPproxy</a><span class="link-target"> [http://www.rtpproxy.org/]</span>.</p>
+<p>Al igual que ocurre con SIP, estos <em>servidores de media</em> intercambian RTP cuando es necesario con los <em>Servidores de aplicación</em>, pero <strong>nunca permiten que los extremos externos a la plataforma hablen entre ellos directamente</strong>.</p>
+</div>
+<div class="section" id="https-traffic">
+<h2>Tráfico HTTPS</h2>
+<p>HTTPS es el tercer tipo de tráfico que interncambian</p>
+<p>El tráfico HTTPS se emplea para:</p>
+<ul>
+<li><p class="first"><strong>Provisión de terminales</strong>: Muchos teléfonos piden su configuracion al iniciarse y esta puede ser enviada a través de HTTPS.</p>
+</li>
+<li><p class="first"><strong>Portales web</strong>: IvozProvider cuenta con 4 portales de web para los diferentes <a class="reference internal" href="../operation_roles/index.xhtml#operation-roles"><span class="std std-ref">platform roles</span></a>.</p>
+<p>Estos dos tipos de tráfico son gestionados por los <em>Portales web</em> de IvozProvider.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="additional-elements">
+<h2>Elementos adicionales</h2>
+<p>IvozProvider cuenta con multiples elementos que no están <em>expuestos al mundo</em> pero juegan un papel crucial.</p>
+<p>El perfil mas significativo es el de <strong>data</strong> que reune toda la informacion de la plataforma and la distribuye entre la mayoría de los softwares restantes. IvozProvider utiliza <a class="reference external" href="https://www.mysql.com/">MySQL</a><span class="link-target"> [https://www.mysql.com/]</span> para esta tarea.</p>
+<p>Otro proceso menos crucial son <strong>los gestores de tareas asíncronas</strong>: el CDR ha de ser parseado, la llamadas tarificadas, las grabaciones codificadas, etc.</p>
+</div>
+<div class="section" id="auxiliar-elements">
+<h2>Elementos auxiliares</h2>
+<p>El perfil <strong>auxiliar</strong> ejecuta programas, que aún no siendo vitales para el flujo de las llamadas, facilitan mucho las tareas para los mantenedores de las plataformas IvozProvider.</p>
+<p>De hecho, sin ellos, sería muchísimo más dificil debugear los problemas y la calidad del servicio proporcionado se vería afectada.</p>
+<p>IvozProvider incluye:</p>
+<ul class="simple">
+<li><p class="first"><strong>Homer SIP capture</strong>: Este fabuloso software nos permite capturar todo el tráfico SIP para ser analizado posteriormente y obtener estadísticas, métricas de calidad de la llamada, etc. Visite <a class="reference external" href="http://sipcapture.org/">SIP Capture website</a><span class="link-target"> [http://sipcapture.org/]</span> para más información.</p>
+</li>
+<li><p class="first"><strong>Visor de logs Graylog</strong>: Todos los logs de la plataforma IvozProvider se almacenan y muestran con <a class="reference external" href="https://www.graylog.org/">Graylog</a><span class="link-target"> [https://www.graylog.org/]</span> divido en marcas.</p>
+</li>
+<li><p class="first"><strong>Panel de gráficas Grafana</strong>: <a class="reference external" href="http://grafana.org/">Grafana</a><span class="link-target"> [http://grafana.org/]</span> nos permite tener gráficas de todo. Literalmente.</p>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

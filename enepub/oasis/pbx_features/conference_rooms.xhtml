@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Conference rooms</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="external_ddis.xhtml" title="External DDIs"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="ivrs.xhtml" title="Interactive Voice Response (IVR)"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">IvozProvider Oasis documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">PBX Features</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="conference-rooms">
+<span id="id1"></span><h1>Conference rooms</h1>
+<p>IvozProvider supports Conference rooms that can be configured in the section
+<strong>Company configuration</strong> &gt; <strong>Conference rooms</strong>.</p>
+<p class="rubric">Create a new audio conference</p>
+<p>The following image shows the process of creating a new confrence room:</p>
+<img alt="../_images/conference_room.png" src="../_images/conference_room.png" />
+<dl class="glossary docutils">
+<dt id="term-name">Name</dt>
+<dd>Name that will used to identify this conference room in other sections</dd>
+<dt id="term-max-members">Max members</dt>
+<dd>Maximum number of participants in the conference. When this limit is
+reached, join requests will be rejected.</dd>
+<dt id="term-pin-protected">Pin protected</dt>
+<dd>Conference rooms can be pin protected. The pin will be requested before
+entering and must be numeric.</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Member limit can be disabled by setting it to 0.</p>
+</div>
+<p class="rubric">Route an extension or DDI to the conference</p>
+<p>In order to enter a conference there must be a number that is route to them:</p>
+<img alt="../_images/conference_room_ext.png" src="../_images/conference_room_ext.png" />
+<p>In the following section we will see how to configure a <a class="reference internal" href="external_ddis.xhtml#external-ddis"><span class="std std-ref">external DDI</span></a> to a conference room so it can be used by external callers.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">There are other ways to make external callers join a conference room
+without using a DDI: it can be assigned to an Extension. This way, any user
+can transfer the call to the conference extension, or can be routed, for
+exmaple using an IVR entry.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

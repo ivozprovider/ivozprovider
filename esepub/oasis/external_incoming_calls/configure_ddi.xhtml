@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Dar de alta un DDI externo</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="../external_outgoing_calls/index.xhtml" title="Realizar llamadas externas"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="peering_contracts.xhtml" title="Configurar Contrato de Peering"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">documentación de IvozProvider - Oasis</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Recibir llamadas externas</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <p>Una vez que hemos llegado a un acuerdo con un Operador VoIP y hemos configuradoesta relación de <em>peering</em>, solo faltan dos tareas:</p>
+<div class="section" id="configuring-an-external-ddi">
+<span id="settingup-ddi"></span><h1>Dar de alta un DDI externo</h1>
+<p>El operador de marca, como único responsable de llegar a acuerdos de <em>peering</em> con operadores IP, es el responsable de dar de alta los DDIs de cada operador.</p>
+<p>Para ello, tiene que acceder a la siguiente sección:</p>
+<img alt="../_images/ddis_company_section1.png" class="align-center" src="../_images/ddis_company_section1.png" />
+<p>Observar que para poder acceder a esta sección el operador de marca (o <em>god</em>) tiene que haber emulado una empresa concreta y acceder desde el bloque <strong>Configuración de empresa</strong>.</p>
+<div class="admonition attention">
+<p class="first admonition-title">Atención</p>
+<p class="last">La sección <strong>Configuración de empresa &gt; DDIs</strong> es distinta cuando accede un administrador de empresa que cuando accede un operador global o de marca. El administrador de empresa no puede crear nuevos DDIs ni borrar los que ya existen, solo puede editar los que el operador de marca haya creado.</p>
+</div>
+<p>Por otra parte, la sección <strong>Configuración de marca &gt; DDIs</strong> solo sirve para que el operador de marca pueda ver los DDIs asociados a sus distintas empresas, es un listado en <em>read-only</em>.</p>
+<img alt="../_images/ddis_brand_section1.png" class="align-center" src="../_images/ddis_brand_section1.png" />
+<p>Una vez explicados estos conceptos, añadimos un nuevo DDI y rellenamos los campos necesarios:</p>
+<img alt="../_images/ddis_add1.png" class="align-center" src="../_images/ddis_add1.png" />
+<dl class="glossary docutils">
+<dt id="term-country">País</dt>
+<dd><p class="first last">El país de la númeración pública que estamos dando de alta.</p>
+</dd>
+<dt id="term-ddi">DDI</dt>
+<dd><p class="first last">El número en cuestión, sin códigos de país.</p>
+</dd>
+<dt id="term-peering-contract">Contrato de peering</dt>
+<dd><p class="first last">El contrato de peering por el que entra la numeración. Esta relación permite aplicar las <a class="reference internal" href="numeric_transformations.xhtml#numeric-transformations"><span class="std std-ref">Transformaciones numéricas</span></a> adecuadas.</p>
+</dd>
+<dt id="term-external-call-filter">Filtro de entrada</dt>
+<dd><p class="first last">Permite aplicar lógicas de filtrado en base a horario y calendario, se verán en <a class="reference internal" href="../pbx_features/external_filters.xhtml#external-filters"><span class="std std-ref">Filtros de entrada externo</span></a>. Dejar sin seleccionar para no aplicar filtro alguno.</p>
+</dd>
+<dt id="term-route">Enrutar</dt>
+<dd><p class="first last">Un DDI puede tener distintos <a class="reference internal" href="../pbx_features/external_ddis.xhtml#routing-logics"><span class="std std-ref">tratamientos</span></a>. Para nuestro objetivo, enrutar al usuario <em>Alice</em>.</p>
+</dd>
+<dt id="term-record-calls">Grabar llamadas</dt>
+<dd><p class="first last">Dejar desactivado de momento, se explicará en <a class="reference internal" href="../pbx_features/call_recording.xhtml#call-recordings"><span class="std std-ref">Grabación de llamadas</span></a>.</p>
+</dd>
+<dt id="term-tarificate-incoming-calls">Tarificar llamadas entrantes</dt>
+<dd><p class="first last">Requiere del módulo de tarificación externa y permite tarificar llamadas entrantes a numeraciones especiales. Consultar a los <a class="reference internal" href="../intro/getting_help.xhtml#getting-help"><span class="std std-ref">desarrolladores de la solución</span></a> en caso de estar interesados.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="configure-incoming-routes">
+<h1>Configurar tratamiento en entrada</h1>
+<p>En la sección anterior hemos dado de alta el DDI y lo hemos configurado, pero conviene tener claro que <strong>en un uso normal, el administrador de marca</strong> simplemente <strong>daría de alta el DDI y el administrador de empresa</strong>, accediendo a la misma sección, <strong>lo configuraría</strong> apuntándolo al usuario / grupo de salto / etc. adecuado, configurando horarios, calendarios, etc.</p>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">En este punto, marcando el número público debería de sonar el teléfono de <em>Alice</em> consiguiendo, por tanto, el objetivo de este bloque :)</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Candados</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="conditional_routes.xhtml" title="Rutas condicionales"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="match_lists.xhtml" title="Listas de coincidencia"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">documentación de IvozProvider - Oasis</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Funcionalidades de PBX</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="route-locks">
+<span id="id1"></span><h1>Candados</h1>
+<p>Los candados son una forma simple pero poderosa the crear bifurcaciones a la hora de entregar llamadas. Esta bifurcación se hará en función del estado de los candados en un momento concreto.</p>
+<ul class="simple">
+<li><p class="first"><strong>Abierto</strong>: luz verde, adelante.</p>
+</li>
+<li><p class="first"><strong>Cerrado</strong>: luz roja, paso prohibido.</p>
+</li>
+</ul>
+<p>Se utilizan como un criterio más en las reglas de rutas condicionales (ver cómo en <a class="reference internal" href="conditional_routes.xhtml#conditional-routes"><span class="std std-ref">Rutas condicionales</span></a>).</p>
+<div class="section" id="route-lock-creation">
+<h2>Creación de candados</h2>
+<p>Cuando creas un nuevo candado en la sección <strong>Candados</strong>, se te presentan los siguientes campos:</p>
+<dl class="glossary docutils">
+<dt id="term-name">Nombre</dt>
+<dd><p class="first last">Nombre identificativo del candado.</p>
+</dd>
+<dt id="term-description">Descripción</dt>
+<dd><p class="first last">Una simple descripción.</p>
+</dd>
+<dt id="term-status">Estado</dt>
+<dd><p class="first last">Estado inicial del candado: abierto o cerrado.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="route-locks-service-codes">
+<h2>Códigos de servicios de candados</h2>
+<p>Aunque en la creación se pueda indicar el estado inicial del candado y éste pueda ser modificado editando el candado, la forma más habitual de interactuar con los candados es usando los códigos de servicio listado en la sección <strong>Candados</strong>.</p>
+<p>Estos códigos tienen dos partes:</p>
+<ul class="simple">
+<li><p class="first"><strong>Código de servicio</strong>: configurado en la sección <strong>Servicios</strong>.</p>
+</li>
+<li><strong>Lock id</strong>: immutable numeric id assigned to each lock.</li>
+</ul>
+<div class="admonition tip">
+<p class="first admonition-title">Truco</p>
+<p>Existen 3 códigos de servicios disponibles para las operaciones más comunes:</p>
+<ul class="simple">
+<li><p class="first">Abrir Candado</p>
+</li>
+<li><p class="first">Cerrar Candado</p>
+</li>
+<li><p class="first">Conmutar Candado</p>
+</li>
+</ul>
+<p class="last">Leer <a class="reference internal" href="services.xhtml#services"><span class="std std-ref">Servicios adicionales</span></a> para más detalles.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,391 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Residential &mdash; IvozProvider Artemis documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../../',
+              VERSION:'Artemis',
+              LANGUAGE:'en',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/banner.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Retail" href="retail.html" />
+    <link rel="prev" title="Virtual PBX" href="virtual_pbx.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> IvozProvider
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.18
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../basic_concepts/intro/index.html">Introduction to IvozProvider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../basic_concepts/architecture/index.html">Platform general architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../basic_concepts/installation/index.html">Initial Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../basic_concepts/operation_roles/index.html">Platform roles</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/internal_calls/index.html">Making internal calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/external_incoming_calls/index.html">Receiving external calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/external_outgoing_calls/index.html">Making external calls</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Administration portal</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../platform/index.html">Platform Configuration</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Brand Configuration</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Clients</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="virtual_pbx.html">Virtual PBX</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Residential</a></li>
+<li class="toctree-l3"><a class="reference internal" href="retail.html">Retail</a></li>
+<li class="toctree-l3"><a class="reference internal" href="wholesale.html">Wholesale</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../providers/index.html">Providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../routing/index.html">Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../billing/index.html">Billing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../invoicing/index.html">Invoicing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calls/index.html">Calls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../settings/index.html">Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../views/index.html">Views</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../client/index.html">Client Configuration</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Specific portals</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_portal/index.html">User Portal</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Security and Maintenance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../security_and_maintenance/security/index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../security_and_maintenance/maintenance/index.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Rest API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api_rest/introduction.html">Introduction to IvozProvider API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api_rest/multilevel.html">Multi-level API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api_rest/web_client.html">Built-in web client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api_rest/integrations.html">Third party integrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api_rest/use_case.html">Use Case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api_rest/acls.html">ACLs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">IvozProvider</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Brand Configuration</a> &raquo;</li>
+        
+          <li><a href="index.html">Clients</a> &raquo;</li>
+        
+      <li>Residential</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/administration_portal/brand/clients/residential.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="residential">
+<h1>Residential<a class="headerlink" href="#residential" title="Permalink to this headline">¶</a></h1>
+<p>Residential clients are a more lightweight client type than <em>vPBX clients</em>.</p>
+<p>Their target is to provide these services to residential environments:</p>
+<ul class="simple">
+<li>Configure one or more residential devices (SIP devices).</li>
+<li>Setup one or more DDIs.</li>
+<li><strong>Place external calls</strong> showing one of those DDIs.</li>
+<li><strong>Receive external calls</strong> to their DDIs.</li>
+<li>Send/Receive virtual faxes.</li>
+<li>Record calls.</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">No users, no extensions, no internal calls, no hunt groups, no IVRs... just <strong>incoming and outgoing external
+calls (and a few voice services)</strong>.</p>
+</div>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p class="last">Residential clients and their devices <strong>MUST use Brand&#8217;s SIP domain in their SIP messages</strong>.</p>
+</div>
+<div class="section" id="adding-editing-residential-clients">
+<h2>Adding/Editing residential clients<a class="headerlink" href="#adding-editing-residential-clients" title="Permalink to this headline">¶</a></h2>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Some fields described below may not be visible depending on enabled features.</p>
+</div>
+<p>These are the fields shown when <strong>adding</strong> a new residential client:</p>
+<dl class="glossary docutils">
+<dt id="term-billing-method">Billing method</dt>
+<dd>To choose among postpaid, prepaid and pseudo-prepaid.</dd>
+<dt id="term-country-code">Country code</dt>
+<dd>Default country code for DDIs.</dd>
+<dt id="term-currency">Currency</dt>
+<dd>Chosen currency will be used in price calculation, invoices, balance movements and
+remaining money operations of this client.</dd>
+<dt id="term-default-timezone">Default timezone</dt>
+<dd>Used for showing call registries dates.</dd>
+<dt id="term-email">Email</dt>
+<dd>A notification email will be sent to given address when configured max daily usage is reached. Leave empty to
+avoid notification.</dd>
+<dt id="term-features">Features</dt>
+<dd>Enable/Disable faxing and call recording for this particular client.</dd>
+<dt id="term-filter-by-ip-address">Filter by IP address</dt>
+<dd>If set, the platform will only allow calls coming from allowed IP/ranges or countries.</dd>
+<dt id="term-geoip-allowed-countries">GeoIP allowed countries</dt>
+<dd>If <em>Filter by IP address</em> is enabled, traffic from selected countries will be allowed.</dd>
+<dt id="term-language">Language</dt>
+<dd>Used to choose the language of played locutions.</dd>
+<dt id="term-max-calls">Max calls</dt>
+<dd>Limits both incoming and outgoing external calls (0 for unlimited).</dd>
+<dt id="term-max-daily-usage">Max daily usage</dt>
+<dd>Limits external outbound calls when this limit is reached within a day. At midnight counters are reset and
+accounts are re-enabled.</dd>
+<dt id="term-name">Name</dt>
+<dd>Used to reference this particular client.</dd>
+<dt id="term-numeric-transformation">Numeric transformation</dt>
+<dd>Describes the way the client will &#8220;talk&#8221; and the way the client wants to be &#8220;talked&#8221;.</dd>
+</dl>
+<p>When <strong>editing</strong> a client, these additional fields can be configured:</p>
+<dl class="glossary docutils">
+<dt id="term-allow-client-to-remove-recordings">Allow Client to remove recordings</dt>
+<dd>Shown only if <em>Recording</em> feature is enabled for client, shows/hides recording
+removal button on client <em>Call Recordings</em> section.</dd>
+<dt id="term-invoice-data">Invoice data</dt>
+<dd>All the fields in this group will be included in invoices generated for this client. This section also allows
+showing/hiding billing details to client&#8217;s portal, such as Invoices, Rating Profiles and Price of external calls.</dd>
+<dt id="term-notification-options">Notification options</dt>
+<dd>This group allows choosing a notification template for both faxes and voicemail notifications.</dd>
+<dt id="term-outgoing-ddi">Outgoing DDI</dt>
+<dd>Fallback DDI for external outgoing calls (can be overridden at residential device level).</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Apart from these fields, main operator (<em>aka</em> God) will also see a <strong>Platform data</strong> group that allows:</p>
+<ul class="last simple">
+<li>Choosing an specific media relay set for the client.</li>
+<li>Choose the way that calls of this client will be distributed among existing application servers (<strong>hash based</strong> is recommended).</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">For outgoing calls, platform will use the CLID provided by the client as long as it is considered valid, otherwise fallback DDI
+will be used. The platform will consider as valid any CLID that matches one of the client&#8217;s DDIs.</p>
+</div>
+</div>
+<div class="section" id="additional-subsections">
+<h2>Additional subsections<a class="headerlink" href="#additional-subsections" title="Permalink to this headline">¶</a></h2>
+<p>Each entry in this table has these additional options:</p>
+<ul class="simple">
+<li><strong>List of authorized sources</strong>: if <em>Filter by IP address</em> is enabled, this subsection allows adding addresses or network ranges.</li>
+</ul>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p class="last">No outgoing call will be allowed if <em>Filter by IP address</em> is enabled and the corresponding list is empty.</p>
+</div>
+<ul class="simple">
+<li><strong>List of client admins</strong>: this subsection allows managing portal credentials for this specific client. Read <a class="reference internal" href="../../../api_rest/acls.html#acls"><span class="std std-ref">ACLs</span></a>
+for further explanation about restricted client administrators.</li>
+<li><strong>List of rating profiles</strong>: this subsection allows managing the rating profiles that will be used to bill its outgoing calls.</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">No outgoing call will be allowed for this client unless an active rating profiles that can
+bill the specific call.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="retail.html" class="btn btn-neutral float-right" title="Retail" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="virtual_pbx.html" class="btn btn-neutral float-left" title="Virtual PBX" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016-2019, Irontec
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-book"> Other Versions</span>
+        v: bleeding
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Branches</dt>
+            <dd><a href="../../../artemis/administration_portal/brand/clients/residential.html">artemis</a></dd>
+            <dd><a href="../../../bleeding/administration_portal/brand/clients/residential.html">bleeding</a></dd>
+            <dd><a href="../../../oasis/index.html">oasis</a></dd>
+        </dl>
+    </div>
+</div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

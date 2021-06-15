@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Faxes</title>
+    
+    <link rel="stylesheet" href="../../../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="rating_profiles.xhtml" title="Rating profiles"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="external_call_filters.xhtml" title="External call filters"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.xhtml">documentación de IvozProvider - Artemis</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.xhtml" >Client Configuration</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.xhtml" accesskey="U">Clientes residenciales</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="faxes">
+<span id="faxing-system"></span><h1>Faxes</h1>
+<p>IvozProvider includes a simple but efficient <em>virtual faxing</em> solution that allows:</p>
+<ul class="simple">
+<li>Sending PDF files via Fax.</li>
+<li>Receiving faxes through email or check them through the web portal.</li>
+</ul>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p class="last">IvozProvider uses
+<a class="reference external" href="http://www.voip-info.org/wiki/view/T.38">T.38</a><span class="link-target"> [http://www.voip-info.org/wiki/view/T.38]</span> for both sending and receiving
+faxes. Brand Operator must use <em>peering contracts</em> that have support for it.</p>
+</div>
+<div class="section" id="creating-a-virtual-fax">
+<h2>Creating a virtual fax</h2>
+<p>These are the fields that turn up when we create a new fax:</p>
+<dl class="glossary docutils">
+<dt id="term-name">Name</dt>
+<dd>Used by remaining section to reference a fax</dd>
+<dt id="term-email">Email</dt>
+<dd>Email address when we want to receive incoming faxes (if we check &#8216;Send
+by email&#8217;)</dd>
+<dt id="term-outbound-ddi">Outbound DDI</dt>
+<dd>DDI used as source number for outgoing faxes</dd>
+</dl>
+<p>To receive faxes in this DDI, we need to point it to our new fax in the section
+<strong>DDIs</strong>.</p>
+<p>Brand Operator can choose one or more <a class="reference internal" href="../../brand/routing/outgoing_routings.xhtml#outgoing-routings"><span class="std std-ref">Outgoing Routings</span></a> for sending faxes.</p>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last"><em>load-balancing</em> y <em>failover</em> logics described in <a class="reference internal" href="../../brand/routing/outgoing_routings.xhtml#outgoing-routings"><span class="std std-ref">Outgoing Routings</span></a>
+apply to faxes too.</p>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Importante</p>
+<p class="last">If no fax-specific route is defined, faxes will be routed using
+standard call routes.</p>
+</div>
+</div>
+<div class="section" id="sending-a-fax">
+<h2>Sending a fax</h2>
+<p>Sending a fax is an easy task that is done through <strong>List of outgoing faxfiles</strong> subsection.</p>
+<p>First, we upload de PDF file and set the destination. When we save the entry, the list shows the fax and its status.</p>
+</div>
+<div class="section" id="incoming-faxes-display">
+<h2>Incoming faxes display</h2>
+<p>Apart from being received by mail, faxes can be watched and downloaded within
+the web portal too in <strong>List of incoming faxfiles</strong> subsection.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2019, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

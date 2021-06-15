@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Friends</title>
+    
+    <link rel="stylesheet" href="../../../../../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="remote_friends.xhtml" title="Remote friends"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="../conditional_routes.xhtml" title="Conditional routes"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../../../index.xhtml">documentación de IvozProvider - Artemis</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../../index.xhtml" >Client Configuration</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.xhtml" >Clientes vPBX</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../index.xhtml" accesskey="U">Routing endpoints</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="friends">
+<h1>Friends</h1>
+<p><strong>Friends</strong> section in the <strong>Client configuration</strong> allows interconnection of
+IvozProvider with other SIP PBX systems through a SIP <em>trunk</em>. The most typical
+use case is when a client have multiple PBX systems that want to integrate in
+a single flow.</p>
+<p>Since 2.10, <strong>Friends</strong> also lets a vPBX client to call to extensions of another
+vPBX client in the same brand.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Advertencia</p>
+<p class="last">It&#8217;s important to understand the difference between <strong>Carrier</strong>
+defined by the <strong>brand operator</strong> to connect with the public network
+and <strong>Friends</strong>, defined by <strong>client administrators</strong> to connect the
+system with other PBXs.</p>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Consejo</p>
+<p class="last"><strong>Friends</strong> are so similar to <strong>Users</strong> that both talk SIP with the
+<a class="reference internal" href="../../../../platform/infrastructure/proxy_users.xhtml#proxyusers"><span class="std std-ref">Proxy Users</span></a>.</p>
+</div>
+<div class="section" id="types-of-friends">
+<h2>Types of friends</h2>
+<p>There are 2 main types of Friends:</p>
+<ul class="simple">
+<li><strong>Remote friends</strong>: SIP trunks to external SIP PBX system.</li>
+<li><strong>Internal friends</strong>: connection between extensions of two vPBX client in the same brand.</li>
+</ul>
+<div class="section" id="what-kind-of-calls-can-be-routed-through-an-internal-friend">
+<h3>What kind of calls can be routed through an <em>internal friend</em>?</h3>
+<p>IvozProvider will route a call received by a <a class="reference internal" href="../../users.xhtml#users"><span class="std std-ref">user</span></a> or a <a class="reference internal" href="#friends"><span class="std std-ref">friend</span></a> following this logic:</p>
+<ol class="arabic simple">
+<li>Destination matches an existing IvozProvider extension?</li>
+<li>If not: Destination matches any <em>friend</em> regular expression (for remote friends) or extensions (for internal ones)? Ordered by priority (lower has precedence).</li>
+<li>If not: This is an external call.</li>
+</ol>
+<p>Following sections explain both kind of friends:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="remote_friends.xhtml">Remote friends</a></li>
+<li class="toctree-l1"><a class="reference internal" href="internal_friends.xhtml">Internal friends</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2019, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Anti brute-force attacks</title>
+    
+    <link rel="stylesheet" href="../../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../maintenance/index.xhtml" title="Troubleshooting"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="current_day_max_usage.xhtml" title="Current day max usage"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.xhtml">IvozProvider Artemis documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Security</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="anti-brute-force-attacks">
+<h1>Anti brute-force attacks</h1>
+<p>IvozProvider ships a simple anti brute-force attack in KamUsers that bans sources after continuous SIP auth failures
+from same IP address.</p>
+<p>It works like this:</p>
+<ul class="simple">
+<li>On SIP failures (invalid user or invalid password cases only), a counter is increased:<ul>
+<li><dl class="first docutils">
+<dt>Key: <a class="reference external" href="mailto:fromUsername&#37;&#52;&#48;fromDomain">fromUsername<span>&#64;</span>fromDomain</a>::source_ip</dt>
+<dd><ul class="first last">
+<li>e.g. <a class="reference external" href="mailto:terminal&#37;&#52;&#48;vpbx&#46;domain&#46;net">terminal<span>&#64;</span>vpbx<span>&#46;</span>domain<span>&#46;</span>net</a>::1.2.3.4</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</li>
+<li>Counter is increased on every failure.</li>
+<li>When counter reaches 100, that specific source (user + domain + ip) is banned for 12 hours.</li>
+</ul>
+<p>After 12 hours, source is accepted again and:</p>
+<ul class="simple">
+<li>Counter starts counting again from 80.</li>
+<li>If it reaches 100 again, it is banned for another 12 hours.</li>
+</ul>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">See <a class="reference internal" href="../../administration_portal/brand/views/bruteforce_attacks.xhtml#brute-force-attacks"><span class="std std-ref">Brute-force attacks</span></a> for currently blocked sources.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2019, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

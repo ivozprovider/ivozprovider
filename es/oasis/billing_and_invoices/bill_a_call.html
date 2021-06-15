@@ -1,0 +1,333 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="es" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="es" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tarificación de llamadas &mdash; documentación de IvozProvider - Oasis</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'Oasis',
+              LANGUAGE:'es',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/banner.css" type="text/css" />
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="next" title="Generación de facturas" href="invoices.html" />
+    <link rel="prev" title="Planes de precio" href="pricing_plans.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> IvozProvider
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.7
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Introducción a Ivozprovider</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/index.html">Arquitectura general de la plataforma</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../operation_roles/index.html">Roles de la plataforma</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Minimum Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Instalación inicial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../internal_calls/index.html">Realizar llamadas internas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external_incoming_calls/index.html">Recibir llamadas externas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external_outgoing_calls/index.html">Realizar llamadas externas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../pbx_features/index.html">Funcionalidades de PBX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../retail/index.html">Clientes Retail</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tarificación y facturación</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="call_registry.html">Histórico de llamadas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="billable_calls.html">Llamadas facturables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pricing_plans.html">Planes de precio</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Tarificación de llamadas</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#automatic-billing">Tarificación automática</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#manual-re-billing">Retarificación manual</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="invoices.html">Generación de facturas</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../provisioning/index.html">Provisión de terminales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faxing/index.html">Sistema de Fax Virtual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userportal/index.html">Portal de usuario</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Security and Maintenance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html">Elementos de seguridad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maintenance/index.html">Mantenimiento de la solución</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IvozProvider</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Tarificación y facturación</a> &raquo;</li>
+        
+      <li>Tarificación de llamadas</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/billing_and_invoices/bill_a_call.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="call-billing">
+<h1>Tarificación de llamadas<a class="headerlink" href="#call-billing" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Tarificar una llamada es la <strong>acción de poner precio</strong> a una llamada que implica coste.</p>
+<div class="section" id="automatic-billing">
+<h2>Tarificación automática<a class="headerlink" href="#automatic-billing" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Tal y como se ha explicado con anterioridad, el proceso de tarificación es automático:</p>
+<ul>
+<li><p class="first">En el momento en el que una llamada se va a establecer, se verifica que se vaya a poder tarificar.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="first">Si no se va a poder tarificar atendiendo a los planes de precios activos para la empresa, la llamada no se cursará.</p>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">En el momento en el que una llamada que implique coste se cuelga, aparece en el listado de <a class="reference internal" href="billable_calls.html#billable-calls"><span class="std std-ref">Llamadas facturables</span></a>.</p>
+</li>
+<li><p class="first">Pasados unos minutos, el proceso tarificador evaluará las llamadas tarificables sin coste y rellenará los siguientes campos del registro anterior:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="first">Precio</p>
+</li>
+<li><p class="first">Plan de precio</p>
+</li>
+<li><p class="first">Patrón de destino (que es en realidad el patrón de precio)</p>
+</li>
+<li><p class="first">Tarificado a &#8216;Sí&#8217;</p>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="manual-re-billing">
+<h2>Retarificación manual<a class="headerlink" href="#manual-re-billing" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Puede ocurrir que una llamada se tarifique de forma incorrecta, por múltiples motivos:</p>
+<ul class="simple">
+<li><p class="first">Plan de precio importado con una errata.</p>
+</li>
+<li><p class="first">Múltiples planes de precios con métricas incorrectas.</p>
+</li>
+<li><p class="first">Plan de precio adicional sin vincular.</p>
+</li>
+<li>Etc.</li>
+</ul>
+<p>Para estos casos, el <em>administrador de marca</em> puede re-tarificar las llamadas que considere mal tarificadas.</p>
+<div class="admonition important">
+<p class="first admonition-title">Importante</p>
+<p class="last">Retarificar una llamada consiste en volver a calcular el precio de la misma. Lógicamente, la retarificación se calculará en el momento solicitado, teniendo en cuenta las configuración actual de planes de precio y no las del momento del establecimiento de la llamada).</p>
+</div>
+<p>Para retarificar, basta con seleccionar las llamadas en <strong>Configuración de Marca</strong> &gt; <strong>Llamada facturables</strong> y presionar el botón <strong>Tarificar llamadas</strong>:</p>
+<img alt="../_images/retarificate.png" src="../_images/retarificate.png" />
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p class="last"><strong>No se puede retarificar una llamada que esté incluida en una factura</strong>. Es decir, si la llamada seleccionada tiene el campo <strong>Factura</strong> con valor, habrá que borrar esta factura previamente. El motivo es estar seguros que no existen facturas con llamadas mal tarificadas: si retarificas una llamada, regeneras la factura que la contiene.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="invoices.html" class="btn btn-neutral float-right" title="Generación de facturas" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pricing_plans.html" class="btn btn-neutral float-left" title="Planes de precio" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016-2017, Irontec
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-book"> Other Versions</span>
+        v: oasis
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Branches</dt>
+            <dd><a href="../../artemis/index.html">artemis</a></dd>
+            <dd><a href="../../bleeding/index.html">bleeding</a></dd>
+            <dd><a href="bill_a_call.html">oasis</a></dd>
+        </dl>
+    </div>
+</div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

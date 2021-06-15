@@ -1,0 +1,377 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Additional services &mdash; IvozProvider Oasis documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'Oasis',
+              LANGUAGE:'en',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/banner.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Call recording" href="call_recording.html" />
+    <link rel="prev" title="Call pickup" href="call_captures.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> IvozProvider
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.7
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Introduction to IvozProvider</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/index.html">Platform general architecture</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../operation_roles/index.html">Platform roles</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Minimum Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Initial Installation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../internal_calls/index.html">Making internal calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external_incoming_calls/index.html">Receive external calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external_outgoing_calls/index.html">Making external calls</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Configuration</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">PBX Features</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="extensions.html">Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="terminals.html">Terminals configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_permissions.html">Call ACL Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="users.html">Users configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="friends.html">Friends</a></li>
+<li class="toctree-l2"><a class="reference internal" href="music_on_hold.html">Music on Hold</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sounds.html">Locutions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="outgoingddi_rules.html">Outgoing DDI Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_filters.html">External Call filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="match_lists.html">Match Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="route_locks.html">Route locks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conditional_routes.html">Conditional routes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="huntgroups.html">Hunt groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="queues.html">Queues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ivrs.html">Interactive Voice Response (IVR)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conference_rooms.html">Conference rooms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_ddis.html">External DDIs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_captures.html">Call pickup</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Additional services</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#global-services-codes">Global Services codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#services-and-codes-for-brands">Services and codes for Brands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#services-and-codes-for-companies">Services and codes for Companies</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="call_recording.html">Call recording</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../retail/index.html">Retail Clients</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../billing_and_invoices/index.html">Billing and Invoices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../provisioning/index.html">Terminal provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faxing/index.html">Virtual Fax System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userportal/index.html">User Portal</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Security and Maintenance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html">Security elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maintenance/index.html">Maintenance and troubleshooting</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IvozProvider</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">PBX Features</a> &raquo;</li>
+        
+      <li>Additional services</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/pbx_features/services.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="additional-services">
+<span id="services"></span><h1>Additional services<a class="headerlink" href="#additional-services" title="Permalink to this headline">¶</a></h1>
+<p>There are <strong>special services</strong> that can be accessed by calling to some codes
+<strong>from the terminal</strong>.</p>
+<div class="admonition danger">
+<p class="first admonition-title">Danger</p>
+<p class="last">Services defined in this section <strong>are not accessible during a
+conversation</strong>. They are activated by <strong>calling the codes</strong>, not using
+DTMF codes while talking.</p>
+</div>
+<div class="section" id="global-services-codes">
+<h2>Global Services codes<a class="headerlink" href="#global-services-codes" title="Permalink to this headline">¶</a></h2>
+<p>There are the folowing <strong>special services</strong> avaialble in the section <strong>Global
+configuration</strong> &gt; <strong>Services</strong>:</p>
+<img alt="../_images/services_god.png" src="../_images/services_god.png" />
+<dl class="glossary docutils">
+<dt id="term-direct-pickup">Direct pickup</dt>
+<dd>This service allows capturing a ringing call from another terminal by
+calling the code followed by the extension from the target user.</dd>
+<dt id="term-group-pickup">Group pickup</dt>
+<dd>This service allows capturing a ringing call for any terminal whose user
+is part of one of the capturer pickup groups.</dd>
+<dt id="term-check-voicemail">Check voicemail</dt>
+<dd>This service allows checking the user&#8217;s voicemail using an interactive
+menu from which new voicemails can be listen, deleted, etc. This is an
+active alternative to receive voicemails via the email. Since 1.4, this
+service allows optional extension after the service code to check
+another users voicemails. Users can protect their voicemail using the
+internal menu options.</dd>
+<dt id="term-record-locution">Record locution</dt>
+<dd>This service allows any user to record their company&#8217;s locutions by
+dialing an special code. Voice instructions will be provided in the
+user&#8217;s language.</dd>
+<dt id="term-open-lock">Open Lock</dt>
+<dd>Calling this service code will set route lock status to &#8216;Opened&#8217; (see <a class="reference internal" href="route_locks.html#route-locks"><span class="std std-ref">Route locks</span></a>).</dd>
+<dt id="term-close-lock">Close Lock</dt>
+<dd>Calling this service code will set route lock status to &#8216;Closed&#8217; (see <a class="reference internal" href="route_locks.html#route-locks"><span class="std std-ref">Route locks</span></a>).</dd>
+<dt id="term-toggle-lock">Toggle Lock</dt>
+<dd>Calling this service code will change the current status of the lock (see <a class="reference internal" href="route_locks.html#route-locks"><span class="std std-ref">Route locks</span></a>).</dd>
+</dl>
+<p>As soon as new services are implemented into IvozProvider, they will be listed
+in this section.</p>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">This section lists the available services and the default codes
+when a <strong>new brand</strong> is created.</p>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Changing the default code in this section will only affect new
+created brands.</p>
+</div>
+</div>
+<div class="section" id="services-and-codes-for-brands">
+<h2>Services and codes for Brands<a class="headerlink" href="#services-and-codes-for-brands" title="Permalink to this headline">¶</a></h2>
+<p>The section <strong>Brand configuration</strong> &gt; <strong>Services</strong> allows the brand operator to:</p>
+<ul class="simple">
+<li>Change the default service code for all the brand companies (assuming the
+company hasn&#8217;t already customized the code)</li>
+<li>Delete services so it won&#8217;t be available for the companies.</li>
+</ul>
+<p>By default this list has all the services and codes from the global
+configuration:</p>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">This section lists the available services and the default codes
+when a <strong>new company</strong> is created.</p>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Changing the default code in this section will only affect new
+created companies.</p>
+</div>
+</div>
+<div class="section" id="services-and-codes-for-companies">
+<h2>Services and codes for Companies<a class="headerlink" href="#services-and-codes-for-companies" title="Permalink to this headline">¶</a></h2>
+<p>Each company can <em>customize</em> the default values assigned by the <em>brand operator</em>
+using the section <strong>Company configuration</strong> &gt; <strong>Services</strong> and changing the codes
+listed there.</p>
+<p class="rubric">Company that wants to capture using ** instead of the default *95:</p>
+<img alt="../_images/services_company_edit.png" src="../_images/services_company_edit.png" />
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Services deleted by the <em>company admin</em> will not available to users.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="call_recording.html" class="btn btn-neutral float-right" title="Call recording" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="call_captures.html" class="btn btn-neutral float-left" title="Call pickup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016-2017, Irontec
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-book"> Other Versions</span>
+        v: oasis
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Branches</dt>
+            <dd><a href="../../artemis/index.html">artemis</a></dd>
+            <dd><a href="../../bleeding/index.html">bleeding</a></dd>
+            <dd><a href="services.html">oasis</a></dd>
+        </dl>
+    </div>
+</div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

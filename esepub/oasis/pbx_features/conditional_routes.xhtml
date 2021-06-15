@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Rutas condicionales</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="huntgroups.xhtml" title="Grupos de salto"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="route_locks.xhtml" title="Candados"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">documentación de IvozProvider - Oasis</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Funcionalidades de PBX</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="conditional-routes">
+<span id="id1"></span><h1>Rutas condicionales</h1>
+<p>Las rutas condicionales permiten alterar la lógica de llamadas bajo los siguientes criterios:</p>
+<ul class="simple">
+<li><p class="first">Quién está llamando.</p>
+</li>
+<li><p class="first">A qué hora está llamando.</p>
+</li>
+<li><p class="first">Qué día está llamando.</p>
+</li>
+<li><p class="first">Estado de candado(s)</p>
+</li>
+</ul>
+<p>Las rutas condicionales se pueden elegir en tres secciones:</p>
+<ul class="simple">
+<li>DDIs</li>
+<li><p class="first">Extensiones</p>
+</li>
+<li><p class="first">Opciones de IVR a medida</p>
+</li>
+</ul>
+<div class="admonition tip">
+<p class="first admonition-title">Truco</p>
+<p class="last">El resto de secciones pueden utilizar rutas condicionales por medio de una extensión que apunte a una ruta condicional.</p>
+</div>
+<div class="section" id="creating-a-conditional-route">
+<h2>Crear un ruta condicional</h2>
+<p>El primer paso es crear una ruta condicioal en <strong>Rutas condicionales</strong>:</p>
+<img alt="../_images/conditional_route_edit.png" src="../_images/conditional_route_edit.png" />
+<p>En la creación definimos cuál será el comportamiento por defecto en caso de que ninguna regla aplique.</p>
+</div>
+<div class="section" id="adding-rules">
+<h2>Añadir reglas</h2>
+<p>Una vez creada, necesitamos añadir reglas, por ejemplo:</p>
+<p class="rubric">Llamadas desde Japón y Alemania recibidas por la mañana, a un usuario concreto</p>
+<img alt="../_images/conditional_route_rule1.png" src="../_images/conditional_route_rule1.png" />
+<p class="rubric">Llamadas desde Japón y Alemania recibidas por la tarde, a otro usuario</p>
+<img alt="../_images/conditional_route_rule2.png" src="../_images/conditional_route_rule2.png" />
+<p class="rubric">Utilizar un IVR distinto para los días de verano</p>
+<img alt="../_images/conditional_route_rule3.png" src="../_images/conditional_route_rule3.png" />
+<p>Con estas reglas de ejemplo, nuestra ruta condicional tendrá este aspecto</p>
+<img alt="../_images/conditional_route_rules.png" src="../_images/conditional_route_rules.png" />
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Desde la versión 1.7 de IvozProvider se pueden utilizar <strong>Candados</strong> (ver <a class="reference internal" href="route_locks.xhtml#route-locks"><span class="std std-ref">Candados</span></a>) como un criterio más.</p>
+</div>
+<p>Notas sobre este ejemplo</p>
+<ul class="simple">
+<li><p class="first">Las reglas se aplican en orden de métrica, de menor a mayor. Una vez que una regla se cumple, se aplica su lógica.</p>
+</li>
+<li>Rules may have from 1 to 4 criteria:<ul>
+<li><p class="first">Ninguno, uno o más listas de coincidencia (pre-creadas, ver <a class="reference internal" href="match_lists.xhtml#match-lists"><span class="std std-ref">Listas de coincidencia</span></a>)</p>
+</li>
+<li><p class="first">Ninguno, uno o más listas de horarios (pre-creadas, ver <a class="reference internal" href="external_filters.xhtml#schedules"><span class="std std-ref">Horarios</span></a>)</p>
+</li>
+<li><p class="first">Ninguno, uno o más listas de calendarios (pre-creadas, ver <a class="reference internal" href="external_filters.xhtml#calendars"><span class="std std-ref">Calendarios</span></a>)</p>
+</li>
+<li>None, one or more route locks (pre-created, see <a class="reference internal" href="route_locks.xhtml#route-locks"><span class="std std-ref">Candados</span></a>)</li>
+</ul>
+</li>
+<li>These 4 criteria are combined (applying an AND logic).</li>
+</ul>
+<div class="admonition important">
+<p class="first admonition-title">Importante</p>
+<p class="last">Cuando se añade más de un candado, basta con que uno de ellos esté abierto para que el criterio se considere válido.</p>
+</div>
+</div>
+<div class="section" id="using-a-conditional-route">
+<h2>Utilizar una ruta condicional</h2>
+<p>El comportamiento cuando la opción de un IVR o una extensión se enruta a una ruta condicional es fácil de entender, pero su utilización con DDIs merece una explicación adicional.</p>
+<p>Imagina este escenario:</p>
+<img alt="../_images/conditional_route_ddi.png" src="../_images/conditional_route_ddi.png" />
+<p>El DDI tiene un filtro de entrada externo y se enruta a nuestra nueva ruta condicional</p>
+<p>Cuando se recibe una llamada:</p>
+<ul class="simple">
+<li><p class="first">Se evalúa el filtro de entrada externo:</p>
+<ul>
+<li><p class="first">Si el día actual está marcado en alguno de sus calendarios, se aplica la lógica de festivo.</p>
+</li>
+<li><p class="first">Si la hora actual no está incluida en ninguno de los horarios seleccionados, se aplica la lógica de fuera horario.</p>
+</li>
+</ul>
+</li>
+<li><p class="first">Si ninguna de las anteriores lógicas del filtro de entrada externo aplica, se evalúa la ruta condicional.</p>
+</li>
+</ul>
+<div class="admonition attention">
+<p class="first admonition-title">Atención</p>
+<p class="last">Las rutas condicionales no son un reemplazo para los filtros de entrada externos. El filtro se evalúa en primer lugar, la ruta condicional después.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

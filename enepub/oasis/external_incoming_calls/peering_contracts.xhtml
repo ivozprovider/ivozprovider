@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Configuring a Peering Contract</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="configure_ddi.xhtml" title="Configuring an external DDI"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="numeric_transformations.xhtml" title="Numeric transformations"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">IvozProvider Oasis documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Receive external calls</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="configuring-a-peering-contract">
+<span id="peering-contracts"></span><h1>Configuring a Peering Contract</h1>
+<p>We understand a <strong>Peering contract</strong> the agreeming between a <strong>Brand Operator</strong>
+and a VoIP Provider to make and receive calls.</p>
+<p>IvozProvider is ready to integrate with IP providers created on the secteion
+<strong>Perring contracts</strong>:</p>
+<img alt="../_images/peeringcontract_section.png" class="align-center" src="../_images/peeringcontract_section.png" />
+<div class="section" id="peering-contract-basic-data">
+<h2>Peering contract Basic data</h2>
+<p>These are the basic information of a Peering contract:</p>
+<img alt="../_images/peeringcontract.png" class="align-center" src="../_images/peeringcontract.png" />
+<p>If we edit it, well see something like this:</p>
+<img alt="../_images/peeringcontract_edit.png" class="align-center" src="../_images/peeringcontract_edit.png" />
+<dl class="glossary docutils">
+<dt id="term-name">Name</dt>
+<dd>Used to reference this Peering contract.</dd>
+<dt id="term-description">Description</dt>
+<dd>Optional field with any required extra information.</dd>
+<dt id="term-numeric-transformation">Numeric Transformation</dt>
+<dd>Transformation that will be applied to the origin and destination of the
+incoming and outgoing numbers that use this Peering contact
+(see <a class="reference internal" href="numeric_transformations.xhtml#numeric-transformations"><span class="std std-ref">Numeric transformations</span></a>).</dd>
+<dt id="term-external-tarification">External tarification</dt>
+<dd>This setting requires the external tarification module and allows
+tarification on special numbers. This module is not standard so don&#8217;t
+hesitate in <a class="reference internal" href="../intro/getting_help.xhtml#getting-help"><span class="std std-ref">contact us</span></a> if you are interested.</dd>
+</dl>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Fields marked with a red start are mandatory.</p>
+</div>
+</div>
+<div class="section" id="peer-servers">
+<h2>Peer Servers</h2>
+<p>A <strong>Peer Server</strong> is a SIP server associated to an IP Provider.
+In order to add some Peer Servers for the Peer Contract that
+have just created, we only have to use the following section:</p>
+<img alt="../_images/peerservers.png" class="align-center" src="../_images/peerservers.png" />
+<p>As displayed by the zero counter, no Peer Serve has been created yet:</p>
+<img alt="../_images/peerservers_add.png" class="align-center" src="../_images/peerservers_add.png" />
+<dl class="glossary docutils">
+<dt id="term-4">Name</dt>
+<dd>Used to identify this Peer Server</dd>
+<dt id="term-5">Description</dt>
+<dd>Optional field with any required extra information.</dd>
+<dt id="term-sip-proxy">SIP Proxy</dt>
+<dd>IP address (or DNS registry) of the Peer Server. You can also specify
+a port if it&#8217;s different from 5060.</dd>
+<dt id="term-uri-scheme">URI Scheme</dt>
+<dd>Supported schemes are sip and sips. Use &#8216;sip&#8217; in case of doubt.</dd>
+<dt id="term-transport">Transport</dt>
+<dd>Supported transport protocols. Use &#8216;udp&#8217; in case of doubt.</dd>
+<dt id="term-outbound-proxy">Outbound Proxy</dt>
+<dd>Usually this is left empty. It can be filled with the IP address of the
+<strong>SIP Proxy</strong> domain (to avoid DNS resolution, but keeping the domain
+in the SIP messages). It works like a web proxy: instead of sending the
+SIP messages to destination <strong>SIP Proxy</strong>, they will be sent to the
+IP:PORT of this field.</dd>
+<dt id="term-requires-authentication">Requires Authentication</dt>
+<dd>Some Peering contracts validate our platform by IP, others require
+each session that we want to establish. For this last case, this section
+allows to configure user and password for this authentication.</dd>
+<dt id="term-call-origin-header">Call Origin Header</dt>
+<dd>Some Providers get origin from SIP From header. Others use the From
+header for accounting and need extra headers to identify the origin.
+In case of doubt leave <strong>PAI</strong> checked.</dd>
+<dt id="term-r-uri-transformations-before-numeric-transformations">R-URI Transformations before numeric transformations</dt>
+<dd>This setting allow static changes to the destination of the calls before
+applying numeric transformation rules mentioned in
+<a class="reference internal" href="numeric_transformations.xhtml#numeric-transformations"><span class="std std-ref">Numeric transformations</span></a>. Some digits can be stripped from the
+begining, add a prefix, or even, add extra parameters to the URI
+followinging the given format. In case of doubt, leave empty.</dd>
+<dt id="term-from-header-customization">From header customization</dt>
+<dd>For those providers that show origin in other headers (PAI/RPID), it is
+possible that request that From User have the account code being used
+and from domain their SIP domain. In case of doubt, leave empty.</dd>
+</dl>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">There are many fields to establish <em>peering</em> with multiple kind of
+providers, but usually with the name and SIP Proxy will be enough (for
+those that validate our platform by IP) and Authentication (for those that
+won&#8217;t).</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">In case of defining multiple Peering Servers for a single
+Peering Contract, IvozProvider will balance and failover using all of them.
+Like with Application Servers, it will disable those who doesn&#8217;t respond to
+our requests.</p>
+</div>
+</div>
+<div class="section" id="sip-register">
+<h2>SIP Register</h2>
+<p>Some providerss require a <a class="reference external" href="https://tools.ietf.org/html/rfc3261#section-10">SIP Register</a><span class="link-target"> [https://tools.ietf.org/html/rfc3261#section-10]</span> active in order to receive
+incoming calls to our DDIs. Some of them, even require this register in order
+to process our outgoing calls through their services.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">IvozProvider supports any kind of <em>peering</em>, but we highly recomend
+<em>peer to peer peerings</em>: without authentication, without registry and
+validated by IP. This will avoid unnecessary traffic (authentication in each
+session and preriodic registers) and simplifies its configuration, just by
+leaving most of the fields by default.</p>
+</div>
+<p>For this reason, IvozProvider allows periodic SIP register configuration in the
+following section:</p>
+<img alt="../_images/sip_registers.png" src="../_images/sip_registers.png" />
+<p>If we create a new one, the following screen will be displayed:</p>
+<img alt="../_images/sip_registers_add.png" src="../_images/sip_registers_add.png" />
+<dl class="glossary docutils">
+<dt id="term-username">Username</dt>
+<dd>Account number or similar provider by the provider that requires SIP
+register.</dd>
+<dt id="term-domain">Domain</dt>
+<dd>Domain or IP of the registar server. Usually the same as the SIP proxy
+of the Peer server.</dd>
+<dt id="term-ddi">DDI</dt>
+<dd>This will be sent in the SIP Contact header and must be unique in all
+the platform. For Peering contracts with an associated DDI, it is
+recommended to enter that DDI. In case of multiples DDI for the same
+Peering Contract, use any of them. If no DDI is associated with this
+Peering Contract just enter an unique numeric value.</dd>
+<dt id="term-user">User</dt>
+<dd>Authentication user. Most of the time it&#8217;s the same as username, so
+it&#8217;s recommended to leave empty.</dd>
+<dt id="term-register-server-uri">Register server URI</dt>
+<dd>Usually this can be left empty, as it can be obtained from the
+Domain. If it is not the case, enter the IP address with the &#8216;sip:&#8217;
+prefix.</dd>
+<dt id="term-realm">Realm</dt>
+<dd>Leave empty to accept the authentication realm proposed by the provider.
+Define only if you are familiar to the authentication mechanism used
+in SIP.</dd>
+<dt id="term-expire">Expire</dt>
+<dd>Default suggested register expire time.</dd>
+</dl>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Similar to the Peer Servers, there are lots of fields in the screen.
+You must have into account that most of the provider doesn&#8217;t require register
+, and those who does, will only use user, domain and password.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,373 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>DDI Providers &mdash; IvozProvider Artemis documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../../',
+              VERSION:'Artemis',
+              LANGUAGE:'en',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/banner.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Routing" href="../routing/index.html" />
+    <link rel="prev" title="Carriers" href="carriers.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> IvozProvider
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.17
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../basic_concepts/intro/index.html">Introduction to IvozProvider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../basic_concepts/architecture/index.html">Platform general architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../basic_concepts/installation/index.html">Initial Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../basic_concepts/operation_roles/index.html">Platform roles</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/internal_calls/index.html">Making internal calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/external_incoming_calls/index.html">Receiving external calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/external_outgoing_calls/index.html">Making external calls</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Administration portal</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../platform/index.html">Platform Configuration</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Brand Configuration</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../clients/index.html">Clients</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Providers</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="carriers.html">Carriers</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">DDI Providers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../routing/index.html">Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../billing/index.html">Billing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../invoicing/index.html">Invoicing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calls/index.html">Calls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../settings/index.html">Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../views/index.html">Views</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../client/index.html">Client Configuration</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Specific portals</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_portal/index.html">User Portal</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Security and Maintenance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../security_and_maintenance/security/index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../security_and_maintenance/maintenance/index.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Rest API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api_rest/introduction.html">Introduction to IvozProvider API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api_rest/multilevel.html">Multi-level API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api_rest/web_client.html">Built-in web client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api_rest/integrations.html">Third party integrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api_rest/use_case.html">Use Case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api_rest/acls.html">ACLs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">IvozProvider</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Brand Configuration</a> &raquo;</li>
+        
+          <li><a href="index.html">Providers</a> &raquo;</li>
+        
+      <li>DDI Providers</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/administration_portal/brand/providers/ddi_providers.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ddi-providers">
+<h1>DDI Providers<a class="headerlink" href="#ddi-providers" title="Permalink to this headline">¶</a></h1>
+<p>DDI Providers are the SIP entities that will contact the platform when someone calls to one of our client&#8217;s DDIs.</p>
+<p>This are the fields that define a carrier:</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Some fields described below may not be visible depending on enabled features.</p>
+</div>
+<dl class="glossary docutils">
+<dt id="term-name">Name</dt>
+<dd>Used to reference this Carrier.</dd>
+<dt id="term-description">Description</dt>
+<dd>Optional field with any required extra information.</dd>
+<dt id="term-numeric-transformation">Numeric Transformation</dt>
+<dd>Transformation that will be applied to the origin and destination of the
+outgoing numbers that use this Carrier
+(see <a class="reference internal" href="../settings/numeric_transformations.html#numeric-transformations"><span class="std std-ref">Numeric transformations</span></a>).</dd>
+<dt id="term-local-socket">Local socket</dt>
+<dd>Selected address will be used as source address for signalling with this DDI provider. Brand operator can choose among
+addresses assigned by main operator via <a class="reference internal" href="../../platform/brands.html#brands"><span class="std std-ref">Brands</span></a>. Read <a class="reference internal" href="../../platform/infrastructure/proxy_trunks.html#proxy-trunks"><span class="std std-ref">Proxy Trunks</span></a> for further details.</dd>
+<dt id="term-media-relay-set">Media relay set</dt>
+<dd>Media-relays can be grouped in sets to reserve capacities or on a geographical purpose. Selected set will be used
+in calls through this specific DDI Provider. This field in only seen by Global administrator (aka God).</dd>
+</dl>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">If you want carrier-side media handled by the same mediarelay set than client-side, select &#8220;Client&#8217;s default&#8221;.</p>
+</div>
+<div class="section" id="ddi-provider-addresses">
+<h2>DDI Provider Addresses<a class="headerlink" href="#ddi-provider-addresses" title="Permalink to this headline">¶</a></h2>
+<p>The platform will recognize a DDI provider comparing SIP message&#8217;s source address with the addresses in this list:</p>
+<dl class="glossary docutils">
+<dt id="term-ip-address">IP address</dt>
+<dd>Used to reference this Carrier.</dd>
+<dt id="term-6">Description</dt>
+<dd>Optional field with any required extra information.</dd>
+</dl>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Once the DDI provider is recognized, its numeric transformations will be applied and the DDI will be searched.</p>
+</div>
+</div>
+<div class="section" id="ddi-provider-registrations">
+<h2>DDI Provider Registrations<a class="headerlink" href="#ddi-provider-registrations" title="Permalink to this headline">¶</a></h2>
+<p>Some DDI providers require a <a class="reference external" href="https://tools.ietf.org/html/rfc3261#section-10">SIP Register</a> active in order to receive
+incoming calls to our DDIs. Some of them, even require this register in order
+to process our outgoing calls through their services.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">IvozProvider supports any kind of <em>peering</em>, but we highly recommend
+<em>peer to peer peerings</em>: without authentication, without registry and
+validated by IP. This will avoid unnecessary traffic (authentication in each
+session and periodic registers) and simplifies its configuration, leaving this list empty.</p>
+</div>
+<p>To define a registration, these fields are shown:</p>
+<dl class="glossary docutils">
+<dt id="term-username">Username</dt>
+<dd>Account number or similar provider by the provider that requires SIP
+register.</dd>
+<dt id="term-domain">Domain</dt>
+<dd>Domain or IP of the registrar server. Usually the same as the SIP proxy
+of the Peer server.</dd>
+<dt id="term-password">Password</dt>
+<dd>Password used in auth process.</dd>
+<dt id="term-random-contact-username">Random contact Username</dt>
+<dd>If set, no contact username will be needed as a random string will be used. The
+DDI Provider is supposed to use the called DDI in the R-URI instead of this random string.</dd>
+<dt id="term-contact-username">Contact username</dt>
+<dd>This will be used in REGISTER message Contact header, making DDI provider to
+contact us with this in the R-URI.</dd>
+<dt id="term-auth-username">Auth username</dt>
+<dd>Authentication user. Most of the time it&#8217;s the same as username, so
+it&#8217;s recommended to leave empty.</dd>
+<dt id="term-register-server-uri">Register server URI</dt>
+<dd>Usually this can be left empty, as it can be obtained from the
+Domain. If it is not the case, enter the IP address with the &#8216;sip:&#8217;
+prefix.</dd>
+<dt id="term-realm">Realm</dt>
+<dd>Leave empty to accept the authentication realm proposed by the provider.
+Define only if you are familiar to the authentication mechanism used
+in SIP.</dd>
+<dt id="term-expire">Expire</dt>
+<dd>Default suggested register expire time.</dd>
+</dl>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Similar to the Carrier Servers, there are lots of fields in the screen.
+You must have into account that most of the providers don&#8217;t require register,
+and those who do, will only use user, domain and password.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../routing/index.html" class="btn btn-neutral float-right" title="Routing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="carriers.html" class="btn btn-neutral float-left" title="Carriers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016-2019, Irontec
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-book"> Other Versions</span>
+        v: artemis
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Branches</dt>
+            <dd><a href="ddi_providers.html">artemis</a></dd>
+            <dd><a href="../../../../bleeding/administration_portal/brand/providers/ddi_providers.html">bleeding</a></dd>
+            <dd><a href="../../../../oasis/index.html">oasis</a></dd>
+        </dl>
+    </div>
+</div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

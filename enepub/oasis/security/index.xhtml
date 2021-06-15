@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Security elements</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../maintenance/index.xhtml" title="Maintenance and troubleshooting"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../userportal/index.xhtml" title="User Portal"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">IvozProvider Oasis documentation</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="security-elements">
+<h1>Security elements</h1>
+<div class="section" id="firewall">
+<h2>Firewall</h2>
+<p><strong>IvozProvider does not currently include a firewall</strong> but...</p>
+<div class="admonition danger">
+<p class="first admonition-title">Danger</p>
+<p class="last">We <strong>strongly encourage any production installation to implement
+a firewall</strong> to protect the platform from the wild Internet.</p>
+</div>
+<p>The protection method could be:</p>
+<ul class="simple">
+<li>Local firewall based on <a class="reference external" href="https://www.netfilter.org/">iptables</a><span class="link-target"> [https://www.netfilter.org/]</span></li>
+<li>External firewall</li>
+<li>Both</li>
+</ul>
+<div class="section" id="exposed-ports-services">
+<h3>Exposed ports/services</h3>
+<p>These are the <strong>ports IvozProvider needs to expose</strong> to work properly:</p>
+<p><strong>SIP signalling</strong>:</p>
+<ul class="simple">
+<li>Port 5060 (TCP/UDP)</li>
+<li>Port 5061 (TCP)</li>
+<li>Port 7060 (TCP/UDP) y 7061 TCP (just in case both ProxyUsers and ProxyTrunks share IP)</li>
+</ul>
+<p><strong>RTP audioflow</strong>:</p>
+<ul class="simple">
+<li>Port range 13000-19000 UDP</li>
+</ul>
+<p><strong>Web portal and provisioning</strong>:</p>
+<ul class="simple">
+<li>Ports TCP 443, 1443 y 2443</li>
+</ul>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">We recommend using <strong>iptables geoIP module</strong> to drop connections from
+countries where we don&#8217;t have any users.</p>
+</div>
+</div>
+</div>
+<div class="section" id="authorized-company-ip-ranges">
+<h2>Authorized company IP ranges</h2>
+<p>During the Company creating process, we skipped the security mechanism that
+<strong>limits the IP addresses or ranges that the company terminals can use
+in their terminals</strong>.</p>
+<p>This can be activated in the section <strong>Brand configuration</strong> &gt; <strong>Company</strong>:</p>
+<img alt="../_images/authorized_ips2.png" class="align-center" src="../_images/authorized_ips2.png" />
+<p>Rest of the users won&#8217;t be allowed to connect from another network, even if the
+credentials are valid.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Once the filter has been activated you <strong>MUST</strong> add networks or
+valid IP addresses, otherwise, all the calls will be rejected.</p>
+</div>
+<img alt="../_images/authorized_ips.png" src="../_images/authorized_ips.png" />
+<p>Both IP addresses or ranges can be used, in CIDR format (IP/mask):</p>
+<img alt="../_images/authorized_ips3.png" src="../_images/authorized_ips3.png" />
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">This mechanism limits the origin of the users of a company, it
+doesn&#8217;t filter origin from <strong>Contract Peerings</strong>.</p>
+</div>
+<div class="section" id="roadwarrior-users">
+<span id="id1"></span><h3>Roadwarrior users</h3>
+<p>Some companies have roadwarrior users that travel often and connect from external
+networks, forcing Companies to disable the IP filter security mechanism.</p>
+<p>To solve this issue, there is a user option called <strong>Calls for non-granted IPs</strong>
+that enables these users to call from non-granted IPs while their companies are
+still protected with IP filter mechanism.</p>
+<p>When users like theese call from non-granted IPs, their amount of concurrent
+outgoing calls are limited to 1, 2 or 3 to avoid being a security breach.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Only calls generated by this kind of user (both internals and
+externals) are counted and limited, received calls are not affected
+by this setting (they are controlled with <strong>MaxCalls</strong> setting).</p>
+</div>
+<p>To sum up, with this feature:</p>
+<ul class="simple">
+<li>There are users that are allowed to make a fixed amount of calls from
+non-granted IPs.</li>
+<li>This calls from non-granted IPs are counted and limited.</li>
+</ul>
+<p class="rubric">Example 1 - Company without IP check</p>
+<p>It doesn&#8217;t matter if the user is allowed to make calls from non-granted IPs,
+as there are no non-granted IPs.</p>
+<p class="rubric">Example 2 - Company with IP check</p>
+<ul class="simple">
+<li>If the user is calling from one of the allowed IPs,
+it doesn&#8217;t matter if the user is allowed to make calls from non-granted IPs:
+this calls are not counted nor limited.</li>
+<li>If the user is NOT calling from one of the allowed IPs, it is verified the
+amount of calls that this user is allowed to make. If the user is allowed to
+make calls from non-granted IPs and has not exceeded his limit, the call is
+granted and counted.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If <strong>Calls for non-granted IPs</strong> is set to <em>None</em> the user must fulfill
+the IP policy of his company.</p>
+</div>
+</div>
+</div>
+<div class="section" id="anti-flooding">
+<h2>Anti-flooding</h2>
+<p>IvozProvider comes with an <em>anti-flooding</em> mechanism to avoid that a single
+sender can deny the platform service by sending lots of requests. Both <em>proxies</em>
+(users and trunks) use this mechanism, that <strong>limits the number of requests
+from an origin address in a time lapse</strong>.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">When an origin reaches this limit, the proxy will stop sending
+responses for a period of time. After this time, the requests will be again
+handled normally.</p>
+</div>
+<p>Some origins are automatically excluded from this <em>anti-flooding</em> mechanism:</p>
+<ul class="simple">
+<li>Application Servers from the platform.</li>
+<li>Company authorized IP addresses or ranges (see previous section).</li>
+</ul>
+<p>Global operator of the platform can also add exceptions to this mechanism in
+the section <strong>Global configuration</strong> &gt; <strong>Antiflood trusted IPs</strong>.</p>
+<img alt="../_images/trusted_ips.png" src="../_images/trusted_ips.png" />
+</div>
+<div class="section" id="concurrent-call-limit">
+<h2>Concurrent call limit</h2>
+<p>This mechanism limits the number of concurrent external calls for a company/retail account. It can also be configured
+at brand level.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Brand and company/retail limits are not related anyhow. The one that is reached first will prevent new calls.</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">To disable this mechanism, set its value to 0.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

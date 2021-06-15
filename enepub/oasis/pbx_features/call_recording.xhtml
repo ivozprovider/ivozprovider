@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Call recording</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../retail/index.xhtml" title="Retail Clients"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="services.xhtml" title="Additional services"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">IvozProvider Oasis documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">PBX Features</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="call-recording">
+<span id="call-recordings"></span><h1>Call recording</h1>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">Beware that local legislation may enforce to announce that the
+call is being recorded (sometimes to both parties). You should include
+a recording disclaimer in your welcome locutions for DDIs with automatic
+recording enabled.</p>
+</div>
+<p>IvozProvider supports two different ways of recording calls:</p>
+<ul class="simple">
+<li><strong>Automatic recordings</strong> for the incoming/outgoing calls that use a
+<a class="reference internal" href="external_ddis.xhtml#external-ddis"><span class="std std-ref">External DDI</span></a>.</li>
+<li><strong>On demand recordings</strong> requested by a user during a call.</li>
+</ul>
+<div class="section" id="automatic-ddi-recordings">
+<h2>Automatic DDI recordings</h2>
+<p>In this type of recording, <strong>the whole conversation will be recorded</strong>: from
+the start until it finishes.</p>
+<p>Two different scenarios:</p>
+<ul class="simple">
+<li><strong>Incoming calls to a DDI</strong>: The call will continue until the external
+dialer hangups (no matter whom is talking to).</li>
+<li><strong>Outgoing calls using a DDI</strong> as <a class="reference internal" href="external_ddis.xhtml#external-ddis"><span class="std std-ref">Outgoing DDI</span></a>: the
+recording will continue as long as the external destination keeps in the
+conversation.</li>
+</ul>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">Take into account that the call will be recorded while the
+external entity is present, even it the call is being transfered between
+multiple users of the platform.</p>
+</div>
+<p class="rubric">Record all the calls of a DDI</p>
+<p>To enable this feature, edit the DDI and configure the field under the section
+recording data:</p>
+<img alt="../_images/recordings_ddi.png" src="../_images/recordings_ddi.png" />
+<p>There are 4 available options:</p>
+<ul class="simple">
+<li>Disable recordings</li>
+<li>Enable incoming recordings</li>
+<li>Enable outgoing recordings</li>
+<li>Enable all call recordings</li>
+</ul>
+</div>
+<div class="section" id="on-demand-recordings">
+<h2>On demand recordings</h2>
+<p>The <em>on-demand</em> recordings must be enabled by the <em>brand administator</em> for the
+companies that request it. This can be done in the companey edit screen:</p>
+<img alt="../_images/recordings_ondemand.png" src="../_images/recordings_ondemand.png" />
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Contrary to the <a class="reference internal" href="services.xhtml#services"><span class="std std-ref">Services</span></a> mentioned in the
+previous section, the on demand record are actived within a conversation.</p>
+</div>
+<p>Contrary to automatic ones, on demand recording can be stoped using the same
+process that started them.</p>
+<div class="section" id="activated-using-the-record-key">
+<h3>Activated using the <em>Record</em> key</h3>
+<p>Some terminals (for example, <em>Yealink</em>) support sending a <a class="reference external" href="https://tools.ietf.org/html/rfc6086">SIP INFO</a><span class="link-target"> [https://tools.ietf.org/html/rfc6086]</span> message during the conversation with a
+special <em>Record</em> header (see <a class="reference external" href="http://www.yealink.com/Upload/document/UsingCallRecordingFeatureonYealinkPhones/UsingCallRecordingFeatureonYealinkSIPT2XPphonesRev_610-20561729764.pdf">reference</a><span class="link-target"> [http://www.yealink.com/Upload/document/UsingCallRecordingFeatureonYealinkPhones/UsingCallRecordingFeatureonYealinkSIPT2XPphonesRev_610-20561729764.pdf]</span>).
+This is not a standard for the protocol, but being Yealink one of the supported
+manufacturers of the solution, we include this kind of on-demand recording.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">For this recording requests, the configured code doesn&#8217;t matter
+but the company still must have on demand records enabled.</p>
+</div>
+<p>To start or stop this kind of recordings, just press the Record key in the
+terminal and the system will handle the sent message.</p>
+</div>
+<div class="section" id="activated-using-dtmf-codes">
+<h3>Activated using <em>DTMF</em> codes</h3>
+<p>The more traditional approach for this feature is to press a combination of
+keys during the call. Some notification will be played and the recording will
+start or stop. This combination is sent to the system using <a class="reference external" href="https://es.wikipedia.org/wiki/Marcaci%C3%B3n_por_tonos">DTMF tones</a><span class="link-target"> [https://es.wikipedia.org/wiki/Marcaci%C3%B3n_por_tonos]</span> using the same audio
+stream that the conversation (as mentioned in <a class="reference external" href="https://tools.ietf.org/html/rfc4733">RFC 4733</a><span class="link-target"> [https://tools.ietf.org/html/rfc4733]</span>).</p>
+<p>IvozProvider supports this kind of on demand record activation but with an
+important downside. In order to capture this codes, the pbx must process each
+audio packet to detect the code, avoiding the direct flow of media between the
+final endpoints.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Enabling this record mode highly affects the performance of the
+platform. Use at your own risk.</p>
+</div>
+</div>
+<div class="section" id="activated-using-a-frustated-blind-transfer">
+<h3>Activated using a frustated blind transfer</h3>
+<p>There is a tricky way to access this feature for terminals that does not support
+the INFO message and don&#8217;t want its audio to be parsed:</p>
+<div class="admonition danger">
+<p class="first admonition-title">Danger</p>
+<p class="last">This method is a workaround for those terminals that does not support
+the native <em>Record</em> key activation (recommended). Take into account that not
+all terminals will behave the same way while performing the transfer described
+in this section.</p>
+</div>
+<p>The keys for this methods are:</p>
+<ul class="simple">
+<li>It&#8217;s not activated using a code during the conversation.</li>
+<li>It&#8217;s activated making a <strong>blind transfer</strong> to the on demand record code.</li>
+<li>The system will understand this as a request to record and will reject the transfer.</li>
+<li>The user will continue with the existing call and keep talking.</li>
+</ul>
+<p class="rubric">Why this method does even exist?</p>
+<p>The reason behind this tricky method is based, as explained in the previous
+block, on the design of the <a class="reference internal" href="../architecture/index.xhtml#architecture"><span class="std std-ref">Platform general architecture</span></a> and the <a class="reference internal" href="../architecture/index.xhtml#audioflow"><span class="std std-ref">RTP audio
+flow</span></a>.</p>
+</div>
+</div>
+<div class="section" id="recordings-list">
+<h2>Recordings list</h2>
+<p>The <em>company administrator</em> can access to all the recordings in the section
+<strong>Company configuration</strong> &gt; <strong>Recordings</strong>:</p>
+<img alt="../_images/recordings_list.png" src="../_images/recordings_list.png" />
+<p>Recordings can be heard from the <em>web</em> or downloaded in MP3 format:</p>
+<img alt="../_images/recordings_list2.png" src="../_images/recordings_list2.png" />
+<p>If the recording has been started on demand, it will also include the user
+that requested it:</p>
+<img alt="../_images/recordings_list3.png" src="../_images/recordings_list3.png" />
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

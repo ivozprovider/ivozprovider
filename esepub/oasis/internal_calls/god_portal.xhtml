@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Gestión General</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="brand_portal.xhtml" title="Configuración de Marca"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="index.xhtml" title="Realizar llamadas internas"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">documentación de IvozProvider - Oasis</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Realizar llamadas internas</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="main-management">
+<h1>Gestión General</h1>
+<div class="admonition important">
+<p class="first admonition-title">Importante</p>
+<p class="last">Cualquiera de las 2 IPs públicas configuradas en la instalación servirá para acceder al panel web. Las credenciales por defecto son <strong>admin / changeme</strong>.</p>
+</div>
+<p>En esta sección haremos referencia a todo lo relativo al rol operador global, configurable en el bloque <strong>Gestión general</strong> del panel web (solo visible para God):</p>
+<img alt="../_images/bloque_god1.png" class="align-center" src="../_images/bloque_god1.png" />
+<div class="section" id="custom-installation-configuration">
+<h2>Configuración personalizada en la instalación</h2>
+<p>En el proceso de instalación se pregunta al administrador dos direcciones IP, con el fin de arrancar los siguientes 2 procesos:</p>
+<div class="section" id="users-sip-proxy">
+<span id="proxyusers"></span><h3>Proxy de Usuarios</h3>
+<p>Es el proxy SIP expuesto al mundo exterior al que se registran los terminalesde los usuarios.</p>
+<p>El valor mostrado en la sección <strong>Proxy de Usuarios</strong> reflejará la IP introducida en el proceso de instalación.</p>
+<img alt="../_images/proxyusers1.png" src="../_images/proxyusers1.png" />
+</div>
+<div class="section" id="providers-sip-proxy">
+<h3>Proxy de Salida</h3>
+<p>Es el proxy SIP expuesto al mundo exterior al que hablarán los Operadores IP con los que el operador de marca decida hacer <em>peering</em>.</p>
+<p>El valor mostrado en la sección <strong>Proxy de Salida</strong> reflejará la IP introducida en el proceso de instalación.</p>
+<img alt="../_images/proxytrunks1.png" src="../_images/proxytrunks1.png" />
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Solo se explicita la dirección IP, ya que el puerto siempre será 5060 (5061 para SIP sobre TLS).</p>
+</div>
+<div class="admonition danger">
+<p class="first admonition-title">Peligro</p>
+<p class="last">Estos 2 valores pueden editarse desde la web, pero siempre tienen que tener la dirección IP a la que escuchan dichos procesos.</p>
+</div>
+</div>
+</div>
+<div class="section" id="standard-global-configuration">
+<h2>Configuración global estándar</h2>
+<p>El proceso de instalación incluye otros valores globales que son iguales en toda instalación de IvozProvider (standalone) y que también se pueden ver desde la interfaz web.</p>
+<div class="section" id="application-servers">
+<h3>Servidores de aplicación</h3>
+<p>En la sección <strong>Servidores de Aplicación</strong> se listan las direcciones IP donde escuchan los distintos Asterisk que componen la solución que, tal y como se ha mencionado, escalan horizontalmente para adaptarse a la carga de la plataforma.</p>
+<p>A diferencia de los Proxies, estos Asterisk no están expuestos al exterior, porlo que en una instalación standalone solo habrá uno y escuchará en 127.0.0.1.</p>
+<img alt="../_images/app_servers1.png" src="../_images/app_servers1.png" />
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">El puerto en el que escuchan no se recoge en el campo, ya que siempre será 6060 (UDP).</p>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Importante</p>
+<p class="last">Desde el momento en el que se añade otro Servidor de Aplicación, se intentará contar con él a la hora de repartir la carga. Si éste no responde, se desactivará automáticamente.</p>
+</div>
+</div>
+<div class="section" id="media-relay">
+<h3>Servidores de Media</h3>
+<p>Los media-relays son los que mueven el tráfico RTP en una llamada establecida y, al igual que ocurre con los Servidores de Aplicación, permiten un escalado horizontal para adaptarse a la carga de la plataforma.</p>
+<p>Los media-relays se organizan en grupos con el fin de poder asignar un grupo concreto a una empresa concreta. Cada elemento del grupo tiene una <strong>métrica</strong> (peso) que permite repartos de carga desiguales dentro de un mismo grupo (por ej.media-relay1 métrica 1; media-relay2 métrica 2: media-relay2 gestionará el audio del doble de llamadas que media-relay1).</p>
+<div class="admonition hint">
+<p class="first admonition-title">Consejo</p>
+<p class="last">La asignación de grupos de media-relays concretos a empresas concretas permite asignar recursos estáticos a empresas que requieren tener garantizado unos recursos concretos. Pero, lo más útil de este tipo de configuración es que estos <strong>grupos de media-relays pueden estar en ubicaciones geográficas cercanas al emplazamiento de la empresa</strong> (y lejanas al resto de la plataforma) para <strong>reducir las latencias</strong> en sus conversaciones.</p>
+</div>
+<p>En una instalación standalone, no obstante, solo existe un grupo de media-relays:</p>
+<img alt="../_images/media_relay_groups1.png" src="../_images/media_relay_groups1.png" />
+<p>Por defecto, este grupo solo contiene un media-relay:</p>
+<img alt="../_images/media_relays1.png" src="../_images/media_relays1.png" />
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">La dirección que aparece es la dirección del socket de control, no la dirección que se acaba incluyendo en los SDPs de negociación de sesión. Por defecto, este único media-relay utiliza la misma IP que el Proxy de Usuarios.</p>
+</div>
+</div>
+<div class="section" id="sip-domains">
+<span id="god-sipdomains"></span><h3>Dominios SIP</h3>
+<p>En la sección <strong>Dominios</strong> se muestran los dominios SIP que apuntan a las 2 IPs públicas:</p>
+<ul class="simple">
+<li><p class="first">IP de Proxy de Usuarios</p>
+</li>
+<li><p class="first">IP de Proxy de Salida</p>
+</li>
+</ul>
+<p>Tras una instalación inicial existen 2 dominios, uno para cada una de esas 2 IPs:</p>
+<img alt="../_images/domain_list_local1.png" src="../_images/domain_list_local1.png" />
+<p>Estos dominios se utilizan internamente y el servidor de DNS incorporado en la solución los resuelve a las IPs concretas.</p>
+<div class="admonition attention">
+<p class="first admonition-title">Atención</p>
+<p class="last">Tal y como se verá en la sección <a class="reference internal" href="brand_portal.xhtml#domain-per-company"><span class="std std-ref">Dominio SIP de la compañía</span></a>, cada compañía necesitará un DNS que apunte a la IP del Proxy de Usuarios. Una vez configurado, el dominio aparecerá en esta sección para que el operador global sepa los dominios configurados para cada empresa de un vistazo.</p>
+</div>
+</div>
+<div class="section" id="brands">
+<h3>Marcas</h3>
+<p>Tras la instalación inicial, la plataforma incluye una marca pre-creada llamada DemoBrand. Inspeccionemos sus parámetros:</p>
+<dl class="glossary docutils">
+<dt id="term-name">Nombre</dt>
+<dd><p class="first last">Configura el nombre de esta marca.</p>
+</dd>
+<dt id="term-nif">NIF</dt>
+<dd><p class="first last">Número empleado en las facturas de la marca.</p>
+</dd>
+<dt id="term-logo">Logo</dt>
+<dd><p class="first last">Empleado como logo por defecto en las facturas y portales (si no se especifica otro logo).</p>
+</dd>
+<dt id="term-invoice-data">Datos de facturación</dt>
+<dd><p class="first last">Información incluida en las facturas creadas por esta marca.</p>
+</dd>
+<dt id="term-mail-data">Información de notificaciones</dt>
+<dd><p class="first last">Nombre y dirección origen empleada en los emails de notificación enviados por esta marca (faxes, voicemail, etc.)</p>
+</dd>
+<dt id="term-sip-domain">Dominio SIP</dt>
+<dd><p class="first last">Introducido en 1.4. Configura el dominio que apuntará al proxy SIP de usuarios empleado por todas las cuentas Retail de esta marca.</p>
+</dd>
+<dt id="term-recordings">Grabaciones</dt>
+<dd><p class="first last">Configura el límite de espacio de grabaciones para esta marca. Se enviará una notificación cuando el espacio ocupado alcance el 80% y las grabaciones más antiguas serán rotadas cuando se alcance el límte configurado.</p>
+</dd>
+<dt id="term-features">Features</dt>
+<dd><p class="first last">Introducido en 1.3, permite al administrador global elegir las feature de la marca recién creada. Existe una configuración similar en Compañías, para elegir entre las que el administrador global ha habilitado a la marca. Se habilitarán o deshabilitarán secciones en función de esta configuración.</p>
+</dd>
+</dl>
+<div class="admonition hint">
+<p class="first admonition-title">Consejo</p>
+<p class="last">Algunas features (actualmente facturas y tarificación) estan relacionadas con las marcas y no pueden ser asignadas a compañías. El resto de features estan relacionadas con compañías y el propio administrador de marca podrá asignarlas  a sus compañías.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Advertencia</p>
+<p class="last">Deshabilitar la tarificación ocultará las secciones relacionadas y asumirá que un elemento externo se encargá de poner precios a cada llamada (requerirá un módulo de tarificación externa, ¡pídelo!).</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Deshabilitar facturas ocultará las secciones relacionadas y asumirá que un elemento externo se encargará de generar las facturas.</p>
+</div>
+</div>
+</div>
+<div class="section" id="emulate-the-demo-brand">
+<h2>Emular la marca Demo</h2>
+<p>Como mencionamos anteriormente, tras la instalación inicial, la plataforma incluye una marca pre-creada llamada DemoBrand, que es la que utilizaremos para el fin que nos ocupa: tener 2 teléfonos registrados y que se puedan llamar entre sí.</p>
+<p>Antes de pasar a la siguiente sección, es importante entender el concepto de <strong>Emular una marca</strong>:</p>
+<ul class="simple">
+<li><p class="first">Como operador global, tienes acceso al bloque <strong>Gestión general</strong>, que solo ve <em>God</em>.</p>
+</li>
+<li><p class="first">Aparte de ese bloque, también ves los bloques <strong>Configuración de marca</strong> y <strong>Configuración de empresa</strong> que tienen este aspecto:</p>
+</li>
+</ul>
+<img alt="../_images/emular_marca_prev1.png" class="align-center" src="../_images/emular_marca_prev1.png" />
+<ul class="simple">
+<li><p class="first">Atención especial al siguiente botón:</p>
+</li>
+</ul>
+<img alt="../_images/emular_marca1.png" class="align-center" src="../_images/emular_marca1.png" />
+<ul class="simple">
+<li><p class="first">Una vez pulsado, muestra una ventana flotante tal que:</p>
+</li>
+</ul>
+<img alt="../_images/emular_marca21.png" class="align-center" src="../_images/emular_marca21.png" />
+<ul class="simple">
+<li><p class="first">Al seleccionar la marca DemoBrand, el icono cambia y muestra la marca que se está emulando:</p>
+</li>
+</ul>
+<img alt="../_images/emular_marca31.png" class="align-center" src="../_images/emular_marca31.png" />
+<ul class="simple">
+<li><p class="first">La parte superior derecha de la página también muestra la marca que se está emulando:</p>
+</li>
+</ul>
+<img alt="../_images/emular_marca41.png" class="align-center" src="../_images/emular_marca41.png" />
+<div class="section" id="what-emulation-means">
+<h3>¿Qué implica esta emulación?</h3>
+<p>Que <strong>todo lo que se ve en el bloque &#8216;Configuración de marca&#8217; es relativo a esa marca</strong> y es <em>exactamente</em> lo mismo que lo que ve el operador de marca cuando entra con sus credenciales de acceso.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Truco</p>
+<p class="last">Decir exactamente es mucho decir, ya que el operador global ve campos en ciertas secciones del bloque <strong>Configuración de marca</strong> que el operador de marca no ve. por ej. Al editar una empresa <em>God</em> ve &#8216;Servidores de media&#8217; y&#8217;AS&#8217;, que el operador de marca no ve.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

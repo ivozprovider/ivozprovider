@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>DDI Providers</title>
+    
+    <link rel="stylesheet" href="../../../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="../routing/index.xhtml" title="Routing"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="carriers.xhtml" title="Carriers"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.xhtml">documentación de IvozProvider - Artemis</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.xhtml" >Brand Configuration</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.xhtml" accesskey="U">Providers</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="ddi-providers">
+<h1>DDI Providers</h1>
+<p>DDI Providers are the SIP entities that will contact the platform when someone calls to one of our client&#8217;s DDIs.</p>
+<p>This are the fields that define a carrier:</p>
+<div class="admonition hint">
+<p class="first admonition-title">Consejo</p>
+<p class="last">Some fields described below may not be visible depending on enabled features.</p>
+</div>
+<dl class="glossary docutils">
+<dt id="term-name">Name</dt>
+<dd>Used to reference this Carrier.</dd>
+<dt id="term-description">Description</dt>
+<dd>Optional field with any required extra information.</dd>
+<dt id="term-numeric-transformation">Numeric Transformation</dt>
+<dd>Transformation that will be applied to the origin and destination of the
+outgoing numbers that use this Carrier
+(see <a class="reference internal" href="../settings/numeric_transformations.xhtml#numeric-transformations"><span class="std std-ref">Numeric transformations</span></a>).</dd>
+<dt id="term-local-socket">Local socket</dt>
+<dd>Selected address will be used as source address for signalling with this DDI provider. Brand operator can choose among
+addresses assigned by main operator via <a class="reference internal" href="../../platform/brands.xhtml#brands"><span class="std std-ref">Brands</span></a>. Read <a class="reference internal" href="../../platform/infrastructure/proxy_trunks.xhtml#proxy-trunks"><span class="std std-ref">Proxy Trunks</span></a> for further details.</dd>
+<dt id="term-media-relay-set">Media relay set</dt>
+<dd>Media-relays can be grouped in sets to reserve capacities or on a geographical purpose. Selected set will be used
+in calls through this specific DDI Provider. This field in only seen by Global administrator (aka God).</dd>
+</dl>
+<div class="admonition hint">
+<p class="first admonition-title">Consejo</p>
+<p class="last">If you want carrier-side media handled by the same mediarelay set than client-side, select &#8220;Client&#8217;s default&#8221;.</p>
+</div>
+<div class="section" id="ddi-provider-addresses">
+<h2>DDI Provider Addresses</h2>
+<p>The platform will recognize a DDI provider comparing SIP message&#8217;s source address with the addresses in this list:</p>
+<dl class="glossary docutils">
+<dt id="term-ip-address">IP address</dt>
+<dd>Used to reference this Carrier.</dd>
+<dt id="term-6">Description</dt>
+<dd>Optional field with any required extra information.</dd>
+</dl>
+<div class="admonition tip">
+<p class="first admonition-title">Truco</p>
+<p class="last">Once the DDI provider is recognized, its numeric transformations will be applied and the DDI will be searched.</p>
+</div>
+</div>
+<div class="section" id="ddi-provider-registrations">
+<h2>DDI Provider Registrations</h2>
+<p>Some DDI providers require a <a class="reference external" href="https://tools.ietf.org/html/rfc3261#section-10">SIP Register</a><span class="link-target"> [https://tools.ietf.org/html/rfc3261#section-10]</span> active in order to receive
+incoming calls to our DDIs. Some of them, even require this register in order
+to process our outgoing calls through their services.</p>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">IvozProvider supports any kind of <em>peering</em>, but we highly recommend
+<em>peer to peer peerings</em>: without authentication, without registry and
+validated by IP. This will avoid unnecessary traffic (authentication in each
+session and periodic registers) and simplifies its configuration, leaving this list empty.</p>
+</div>
+<p>To define a registration, these fields are shown:</p>
+<dl class="glossary docutils">
+<dt id="term-username">Username</dt>
+<dd>Account number or similar provider by the provider that requires SIP
+register.</dd>
+<dt id="term-domain">Domain</dt>
+<dd>Domain or IP of the registrar server. Usually the same as the SIP proxy
+of the Peer server.</dd>
+<dt id="term-password">Password</dt>
+<dd>Password used in auth process.</dd>
+<dt id="term-random-contact-username">Random contact Username</dt>
+<dd>If set, no contact username will be needed as a random string will be used. The
+DDI Provider is supposed to use the called DDI in the R-URI instead of this random string.</dd>
+<dt id="term-contact-username">Contact username</dt>
+<dd>This will be used in REGISTER message Contact header, making DDI provider to
+contact us with this in the R-URI.</dd>
+<dt id="term-auth-username">Auth username</dt>
+<dd>Authentication user. Most of the time it&#8217;s the same as username, so
+it&#8217;s recommended to leave empty.</dd>
+<dt id="term-register-server-uri">Register server URI</dt>
+<dd>Usually this can be left empty, as it can be obtained from the
+Domain. If it is not the case, enter the IP address with the &#8216;sip:&#8217;
+prefix.</dd>
+<dt id="term-realm">Realm</dt>
+<dd>Leave empty to accept the authentication realm proposed by the provider.
+Define only if you are familiar to the authentication mechanism used
+in SIP.</dd>
+<dt id="term-expire">Expire</dt>
+<dd>Default suggested register expire time.</dd>
+</dl>
+<div class="admonition tip">
+<p class="first admonition-title">Truco</p>
+<p class="last">Similar to the Carrier Servers, there are lots of fields in the screen.
+You must have into account that most of the providers don&#8217;t require register,
+and those who do, will only use user, domain and password.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2019, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,469 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="es" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="es" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Usuarios &mdash; documentación de IvozProvider - Oasis</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'Oasis',
+              LANGUAGE:'es',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/banner.css" type="text/css" />
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="next" title="Friends" href="friends.html" />
+    <link rel="prev" title="Control ACL para llamadas" href="call_permissions.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> IvozProvider
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.7
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Introducción a Ivozprovider</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/index.html">Arquitectura general de la plataforma</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../operation_roles/index.html">Roles de la plataforma</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Minimum Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Instalación inicial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../internal_calls/index.html">Realizar llamadas internas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external_incoming_calls/index.html">Recibir llamadas externas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external_outgoing_calls/index.html">Realizar llamadas externas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Configuration</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Funcionalidades de PBX</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="extensions.html">Extensiones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="terminals.html">Terminales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_permissions.html">Control ACL para llamadas</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Usuarios</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#personal-data">Datos personales</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#login-info">Credenciales portal de usuario</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#basic-configuration">Configuración básica</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#voicemail">Buzón de voz</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#boss-assistant">Jefe-Asistente</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#group-configuration">Pertenencia a grupos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#user-call-forward">Desvíos de llamada</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="friends.html">Friends</a></li>
+<li class="toctree-l2"><a class="reference internal" href="music_on_hold.html">Música en espera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sounds.html">Locuciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="outgoingddi_rules.html">Reglas DDI de salida</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_filters.html">Filtros de entrada externo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="match_lists.html">Listas de coincidencia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="route_locks.html">Candados</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conditional_routes.html">Rutas condicionales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="huntgroups.html">Grupos de salto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="queues.html">Colas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ivrs.html">Interactive Voice Response (IVR)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conference_rooms.html">Salas de audioconferencias</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_ddis.html">DDIs externos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_captures.html">Capturas de llamada</a></li>
+<li class="toctree-l2"><a class="reference internal" href="services.html">Servicios adicionales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_recording.html">Grabación de llamadas</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../retail/index.html">Clientes Retail</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../billing_and_invoices/index.html">Tarificación y facturación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../provisioning/index.html">Provisión de terminales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faxing/index.html">Sistema de Fax Virtual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userportal/index.html">Portal de usuario</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Security and Maintenance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html">Elementos de seguridad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maintenance/index.html">Mantenimiento de la solución</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IvozProvider</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Funcionalidades de PBX</a> &raquo;</li>
+        
+      <li>Usuarios</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/pbx_features/users.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="users-configuration">
+<span id="users"></span><h1>Usuarios<a class="headerlink" href="#users-configuration" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>El proceso de instalación nos creó a <em>Alice</em> y a <em>Bob</em>, y esto nos permitió ahorrar mucho tiempo a la hora de conseguir que se llamarán entre ellos.</p>
+<p>También nos permitió pasar un poco de puntillas por la sección de <strong>Usuarios</strong>, que ahora pasamos a definir en profundidad.</p>
+<div class="section" id="personal-data">
+<h2>Datos personales<a class="headerlink" href="#personal-data" title="Enlazar permanentemente con este título">¶</a></h2>
+<img alt="../_images/users_edit_personal_data.png" src="../_images/users_edit_personal_data.png" />
+<dl class="glossary docutils">
+<dt id="term-name">Nombre</dt>
+<dd><p class="first last">Se utilizará para referenciar al usuario en múltiples ámbitos, incluyendo el nombre que se presenta en llamadas internas.</p>
+</dd>
+<dt id="term-lastname">Apellidos</dt>
+<dd><p class="first last">Irá junto con el Nombre en casi todos los casos.</p>
+</dd>
+<dt id="term-email">Email</dt>
+<dd><p class="first last">Dirección de correo electrónico del usuario al que se enviarán los mensajes de voz del buzón.</p>
+</dd>
+<dt id="term-country-code-area-code">Código de país / Código de área</dt>
+<dd><p class="first last">Define cómo llama el usuario y qué formato tendrán los números externos que se le presenten.</p>
+</dd>
+<dt id="term-language">Idioma</dt>
+<dd><p class="first last">Cuando una locución se le reproduzca a este usuario, se usará este idioma.</p>
+</dd>
+<dt id="term-timezone">Zona horaria</dt>
+<dd><p class="first last">Las llamadas listadas en el portal de usuario mostrarán las horas en esta zona horaria.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="login-info">
+<h2>Credenciales portal de usuario<a class="headerlink" href="#login-info" title="Enlazar permanentemente con este título">¶</a></h2>
+<img alt="../_images/users_edit_login.png" src="../_images/users_edit_login.png" />
+<dl class="glossary docutils">
+<dt id="term-active">Activo</dt>
+<dd><p class="first last">Da posibilidad al administrador de la plataforma de desactivar el acceso al <a class="reference internal" href="../userportal/index.html#userportal"><span class="std std-ref">portal de usuario</span></a>.</p>
+</dd>
+<dt id="term-password">Contraseña</dt>
+<dd><p class="first last">Contraseña para acceder al <a class="reference internal" href="../userportal/index.html#userportal"><span class="std std-ref">portal de usuario</span></a>.</p>
+</dd>
+<dt id="term-qr-code">Código QR</dt>
+<dd><p class="first last">Si está activo, mostrará un código QR en el portal de usuario que permitirá configurar los softphones Grandstream Wave.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="basic-configuration">
+<h2>Configuración básica<a class="headerlink" href="#basic-configuration" title="Enlazar permanentemente con este título">¶</a></h2>
+<img alt="../_images/users_edit_basic_config.png" src="../_images/users_edit_basic_config.png" />
+<dl class="glossary docutils">
+<dt id="term-terminal">Terminal</dt>
+<dd><p class="first last">Los terminales dados de alta en <a class="reference internal" href="terminals.html#terminals"><span class="std std-ref">Terminales</span></a> se listan aquí para realizar la vinculación usuario-terminal.</p>
+</dd>
+<dt id="term-screen-extension">Extensión principal</dt>
+<dd><p class="first last">Tal y como se explicaba en <a class="reference internal" href="extensions.html#extensions"><span class="std std-ref">Extensiones</span></a>, fija la extensión del usuario para llamadas internas.</p>
+</dd>
+<dt id="term-outgoing-ddi">DDI de salida</dt>
+<dd><p class="first last">Adelantado en <a class="reference internal" href="../external_outgoing_calls/external_ddi.html#external-ddi"><span class="std std-ref">Configurar DDI saliente</span></a>, determina el número que presenta el usuario en llamadas externas salientes.</p>
+</dd>
+<dt id="term-outgoing-ddi-rules">Reglas DDI de salida</dt>
+<dd><p class="first last">Gestiona excepciones al parámetro anterior. Leer <a class="reference internal" href="outgoingddi_rules.html#outgoingddi-rules"><span class="std std-ref">Reglas DDI de salida</span></a> para más referencia.</p>
+</dd>
+<dt id="term-call-acl">Permisos de llamada</dt>
+<dd><p class="first last">Asignación de un grupo de permisos explicado en profundidad <a class="reference internal" href="call_permissions.html#call-permissions"><span class="std std-ref">aquí</span></a>.</p>
+</dd>
+<dt id="term-do-not-disturb">No molestar</dt>
+<dd><p class="first last">Impide que nadie pueda llamar a este usuario, sin impedirle a él llamar a donde desee.</p>
+</dd>
+<dt id="term-max-calls">Límite de llamadas</dt>
+<dd><p class="first last">Limita el número de llamadas recibidas si el usuario está gestionando un número igual o superior a este límite. El valor 0 desactiva el límite.</p>
+</dd>
+<dt id="term-calls-from-non-granted-ips">Llamadas desde IPs no autorizadas:</dt>
+<dd><p class="first last">Permitir a este usuario llamar desde IPs no autorizadas. Se limita el número de llamadas salientes para evitar fraude. Seleccionar &#8216;Ninguna&#8217; permite un número ilimitado de llamadas siempre y cuando se cumpla la política de restricción de IPs de la empresa. Leer <a class="reference internal" href="../security/index.html#roadwarrior-users"><span class="std std-ref">Usuarios remotos</span></a> para más información.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="voicemail">
+<h2>Buzón de voz<a class="headerlink" href="#voicemail" title="Enlazar permanentemente con este título">¶</a></h2>
+<img alt="../_images/users_voicemail.png" src="../_images/users_voicemail.png" />
+<dl class="glossary docutils">
+<dt id="term-voicemail-enabled">Buzón de voz</dt>
+<dd><p class="first last">Activa o desactiva <strong>la existencia</strong> del buzón de voz del usuario. Aparte de existir, como veremos <a class="reference internal" href="#fwd-to-vm"><span class="std std-ref">más adelante</span></a>, habrá que desviar las llamadas que queramos al buzón.</p>
+</dd>
+<dt id="term-voicemail-locution">Locución de buzón</dt>
+<dd><p class="first last">Esta locución se reproduce como locución de bienvenida al buzón de voz cuando alguien va a dejar un mensaje de voz al usuario. Solo se reproduce para los desvíos al buzón de voz descritos en <a class="reference internal" href="#fwd-to-vm"><span class="std std-ref">desvíos a buzón</span></a>.</p>
+</dd>
+<dt id="term-email-notification">Notificar por email</dt>
+<dd><p class="first last">Mandar a la dirección del usuario un correo notificando del mensaje de voz.</p>
+</dd>
+<dt id="term-attach-sounds">Adjuntar audio del mensaje</dt>
+<dd><p class="first last">Adjuntar o no en dicho mail el audio del mensaje</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Si no se configura ninguna locución de buzón, se utilizará la locución por defecto, siempre y cuando el usuario no haya grabado su locución personal utilizando el menú de voz (llamando al código de servicio del buzón de voz).</p>
+</div>
+</div>
+<div class="section" id="boss-assistant">
+<h2>Jefe-Asistente<a class="headerlink" href="#boss-assistant" title="Enlazar permanentemente con este título">¶</a></h2>
+<img alt="../_images/users_edit_boss1.png" class="align-center" src="../_images/users_edit_boss1.png" />
+<p>La funcionalidad jefe-asistente impide que un usuario sea molestado por nadie que no sea:</p>
+<ul class="simple">
+<li><p class="first">Su asistente.</p>
+</li>
+<li><p class="first">Origenes que coincidan con la lista blanca.</p>
+</li>
+</ul>
+<p>Toda llamada con destino a <em>un jefe</em> será desviada al asistente.</p>
+<dl class="glossary docutils">
+<dt id="term-is-boss">Jefe</dt>
+<dd><p class="first last">Indica que el usuario en cuestión es jefe o no.</p>
+</dd>
+<dt id="term-assistant">Asistente</dt>
+<dd><p class="first last">Si el usuario es jefe, indica quién es su asistente.</p>
+</dd>
+<dt id="term-whitelist">Lista blanca</dt>
+<dd><p class="first last"><a class="reference internal" href="match_lists.html#match-lists"><span class="std std-ref">Listas de coincidencia</span></a> con los orígenes que pueden llamar directamente al jefe.</p>
+</dd>
+</dl>
+<p>Con la configuración de la imagen, toda llamada a <em>Alice</em> acabará en <em>Bob</em>, salvo las que haga el propio <em>Bob</em> y aquellas cuyo origen coincida con la lista <em>Alice&#8217;s friends</em>.</p>
+</div>
+<div class="section" id="group-configuration">
+<h2>Pertenencia a grupos<a class="headerlink" href="#group-configuration" title="Enlazar permanentemente con este título">¶</a></h2>
+<img alt="../_images/users_edit_groups.png" src="../_images/users_edit_groups.png" />
+<p>Tal y como se verá en las secciones <a class="reference internal" href="huntgroups.html#huntgroups"><span class="std std-ref">Grupos de salto</span></a> y <a class="reference internal" href="call_captures.html#capture-groups"><span class="std std-ref">Capturas de llamada</span></a>, un usuario puede pertenecer a uno o a varios grupos de captura y grupos de salto.</p>
+<p>Aparte de poder configurar dicha pertenencia desde las propias secciones <a class="reference internal" href="huntgroups.html#huntgroups"><span class="std std-ref">Grupos de salto</span></a> y <a class="reference internal" href="call_captures.html#capture-groups"><span class="std std-ref">Capturas de llamada</span></a>, se puede añadir al usuario que estamos editando a los grupos de captura y grupos de salto deseados que ya existan.</p>
+<p>En el caso de la pertenencia a <strong>grupos de salto</strong>, también se puede configurar desde el listado general:</p>
+<img alt="../_images/users_huntgroups.png" class="align-center" src="../_images/users_huntgroups.png" />
+</div>
+<div class="section" id="user-call-forward">
+<h2>Desvíos de llamada<a class="headerlink" href="#user-call-forward" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Los desvíos de las llamadas de un usuario concreto se configura pulsando el siguiente botón:</p>
+<img alt="../_images/users_call_fwd.png" class="align-center" src="../_images/users_call_fwd.png" />
+<p id="fwd-to-vm">Estos son los campos y los posibles valores:</p>
+<dl class="glossary docutils">
+<dt id="term-enabled">Activado</dt>
+<dd><p class="first last">Determina si el desvío debe aplicarse o no. De esta forma, un usuario puede configurar los desvíos que más utilice e ir activándolos y desactivándolos.</p>
+</dd>
+<dt id="term-call-type">Tipo de llamada</dt>
+<dd><p class="first last">Limita el desvío a cierto tipo de llamadas, a elegir entre externa, interna o ambas</p>
+</dd>
+<dt id="term-forward-type">Tipo de desvío</dt>
+<dd><p class="first">Indica cuándo aplica el desvío:</p>
+<blockquote class="last">
+<div><ul class="simple">
+<li><p class="first">Incondicional: siempre</p>
+</li>
+<li><p class="first">Perdida: cuando no se conteste al de X segundos</p>
+</li>
+<li><p class="first">Ocupado: cuando el usuario esté ocupado (hablando o con el <em>No molestar</em> activo)</p>
+</li>
+<li><p class="first">No registrado: cuando el usuario tenga su terminal sin conectar con IvozProvider</p>
+</li>
+</ul>
+</div></blockquote>
+</dd>
+<dt id="term-target-type">Tipo de destino</dt>
+<dd><p class="first">Indica a dónde se enviará la llamada cuando el desvío aplique:</p>
+<blockquote class="last">
+<div><ul class="simple">
+<li><p class="first">Buzón de voz</p>
+</li>
+<li><p class="first">Número (externo)</p>
+</li>
+<li><p class="first">Extensión (interna)</p>
+</li>
+</ul>
+</div></blockquote>
+</dd>
+</dl>
+<div class="admonition hint">
+<p class="first admonition-title">Consejo</p>
+<p class="last">Si queremos desviar a un grupo de salto, por ejemplo, bastaría con crear una extensión que apunte al grupo de salto deseado y seleccionar <em>Extensión</em> en el <strong>Tipo de destino</strong>.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="friends.html" class="btn btn-neutral float-right" title="Friends" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="call_permissions.html" class="btn btn-neutral float-left" title="Control ACL para llamadas" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016-2017, Irontec
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-book"> Other Versions</span>
+        v: oasis
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Branches</dt>
+            <dd><a href="../../artemis/index.html">artemis</a></dd>
+            <dd><a href="../../bleeding/index.html">bleeding</a></dd>
+            <dd><a href="users.html">oasis</a></dd>
+        </dl>
+    </div>
+</div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

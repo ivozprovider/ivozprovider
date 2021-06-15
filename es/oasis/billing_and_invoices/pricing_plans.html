@@ -1,0 +1,372 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="es" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="es" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Planes de precio &mdash; documentación de IvozProvider - Oasis</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'Oasis',
+              LANGUAGE:'es',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/banner.css" type="text/css" />
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="next" title="Tarificación de llamadas" href="bill_a_call.html" />
+    <link rel="prev" title="Llamadas facturables" href="billable_calls.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> IvozProvider
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.7
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Introducción a Ivozprovider</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/index.html">Arquitectura general de la plataforma</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../operation_roles/index.html">Roles de la plataforma</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Minimum Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Instalación inicial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../internal_calls/index.html">Realizar llamadas internas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external_incoming_calls/index.html">Recibir llamadas externas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external_outgoing_calls/index.html">Realizar llamadas externas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../pbx_features/index.html">Funcionalidades de PBX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../retail/index.html">Clientes Retail</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tarificación y facturación</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="call_registry.html">Histórico de llamadas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="billable_calls.html">Llamadas facturables</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Planes de precio</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#manual-creation">Creación manual</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#importing-a-csv-file">Importación vía CSV</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#csv-format">Formato CSV</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="bill_a_call.html">Tarificación de llamadas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="invoices.html">Generación de facturas</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../provisioning/index.html">Provisión de terminales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faxing/index.html">Sistema de Fax Virtual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userportal/index.html">Portal de usuario</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Security and Maintenance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html">Elementos de seguridad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maintenance/index.html">Mantenimiento de la solución</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IvozProvider</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Tarificación y facturación</a> &raquo;</li>
+        
+      <li>Planes de precio</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/billing_and_invoices/pricing_plans.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pricing-plans">
+<h1>Planes de precio<a class="headerlink" href="#pricing-plans" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>En la sección <a class="reference internal" href="../external_outgoing_calls/noplan_nocall.html#noplan-nocall"><span class="std std-ref">Sin plan de precio, no hay llamada</span></a> se hacía una introducción bastante completa sobre el proceso manual de creación de un plan de precios y los conceptos más importantes:</p>
+<ul>
+<li><p class="first"><strong>Un plan de precios agrupa un listado de patrones de precio (prefijos de llamada) con sus detalles de precio</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="first">Precio por minuto</p>
+</li>
+<li><p class="first">Establecimiento de llamada</p>
+</li>
+<li><p class="first">Facturación por segundos / minutos /etc.</p>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Un plan de precios se asocia a una empresa concreta, indicando el período de validez de dicho plan.</p>
+</li>
+<li><p class="first">Una empresa podía tener varios planes de precios en un momento concreto para una llamada concreta.</p>
+</li>
+<li><p class="first">En este último caso, el coste de la llamada se calcularía utilizando el plan de precio de menor métrica.</p>
+</li>
+</ul>
+<div class="section" id="manual-creation">
+<h2>Creación manual<a class="headerlink" href="#manual-creation" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>La <a class="reference internal" href="../external_outgoing_calls/noplan_nocall.html#price-plan"><span class="std std-ref">creación manual de un plan de precio</span></a> implicaba la creación previa de un <a class="reference internal" href="../external_outgoing_calls/noplan_nocall.html#price-pattern"><span class="std std-ref">patrón de precio</span></a>.</p>
+<p>En ese momento, es posible que el futuro administrador de marca se haya dado cuenta de la titánica tarea que implicaría crear miles de patrones de precio (254 países por las distintas redes móviles, fijos, numeraciones especiales, etc.) para luego poder agruparlos en un plan de precios.</p>
+<p>Es por ello que el proceso de creación de planes y patrones de precio se realiza partiendo de un <a class="reference external" href="https://es.wikipedia.org/wiki/CSV">CSV</a>.</p>
+</div>
+<div class="section" id="importing-a-csv-file">
+<h2>Importación vía CSV<a class="headerlink" href="#importing-a-csv-file" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>El primer paso es crear un plan de precios vacío sobre el que importar nuestros precios (sección <strong>Configuración de marca</strong> &gt; <strong>Planes de precio</strong>):</p>
+<img alt="../_images/pricing_plans_add.png" src="../_images/pricing_plans_add.png" />
+<p>Accedemos al listado (vacío) del plan de precio que acabamos de crear:</p>
+<img alt="../_images/pricing_plans_add_price.png" src="../_images/pricing_plans_add_price.png" />
+<p>El botón clave para este proceso de importación masiva es el siguiente:</p>
+<img alt="../_images/pricing_plan_csv.png" src="../_images/pricing_plan_csv.png" />
+<p>Una vez elegido el archivo a importar, se nos presenta la siguiente ventana:</p>
+<img alt="../_images/pricing_plan_csv3.png" src="../_images/pricing_plan_csv3.png" />
+<p>En esta ventana podríamos seleccionar qué contiene cada columna, en caso de no haber creado el <a class="reference external" href="https://es.wikipedia.org/wiki/CSV">CSV</a> en el formato recomendado. Del mismo modo, se nos ofrece la posibilidad de ignorar la primera línea, en caso de que incluya los nombres de las columnas en lugar de datos.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Consejo</p>
+<p class="last">El proceso de importación se realiza en segundo plano, permitiendo al administrador de marca seguir configurando otros aspectos de la plataforma mientras se completa.</p>
+</div>
+<div class="section" id="csv-format">
+<h3>Formato CSV<a class="headerlink" href="#csv-format" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>A pesar de que la ventana anterior nos permite importar archivos <a class="reference external" href="https://es.wikipedia.org/wiki/CSV">CSV</a> en distintos formatos, lo mejor es importar un archivo en el formato adecuado para simplicar este proceso.</p>
+<p>El formato del archivo <a class="reference external" href="https://es.wikipedia.org/wiki/CSV">CSV</a> está explicado en la propia sección de ayuda contextual, que incluye un enlace para poder descargar un archivo de ejemplo:</p>
+<img alt="../_images/pricing_plan_csv2.png" src="../_images/pricing_plan_csv2.png" />
+<p>El orden de las columnas debería de ser:</p>
+<ul class="simple">
+<li><p class="first">Nombre del patrón de precio</p>
+</li>
+<li><p class="first">Descripción del patrón de precio</p>
+</li>
+<li><p class="first">Prefijo</p>
+</li>
+<li><p class="first">Precio por minuto</p>
+</li>
+<li><p class="first">Precio de establecimiento</p>
+</li>
+<li><p class="first">Período de facturación</p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Se recomienda entrecomillar con comillas dobles las entradas alfanuméricas, aunque no es necesario para entradas con una única palabra (o entradas sin símbolos raros). <strong>Si contienen coma, es OBLIGATORIO entrecomillarlos</strong>.</p>
+</div>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p class="last">Los <strong>números decimales</strong> tienen que usar el <strong>punto como separador decimal</strong>.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Las entradas numéricas se pueden entrecomillar con comillas dobles, pero no es obligatorio.</p>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Importante</p>
+<p class="last">El sistema de importación creará los patrones de precio que sean necesarios. Si ya existe un patrón de precios con ese prefijo, no se creará, simplemente se vinculará.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Advertencia</p>
+<p>El precio de la llamada sera incrementado cada periodo de facturacion.</p>
+<ul class="last simple">
+<li><p class="first">Si se pone a 1, implica una tarificación por segundos y cada segundo implicará un coste que será el <em>precio por minuto</em> dividido entre 60.</p>
+</li>
+<li><p class="first">Si se pone a 60, implica una tarificación por minutos y cada minuto implicará un coste que será el <em>precio por minuto</em>.</p>
+</li>
+</ul>
+</div>
+<p>Una vez completada la importación, solo faltaría asociar el nuevo plan de precios a las empresas que queramos, siguiendo <a class="reference internal" href="../external_outgoing_calls/noplan_nocall.html#pricing-plan-to-company"><span class="std std-ref">el procedimiento explicado en el bloque anterior</span></a>.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="bill_a_call.html" class="btn btn-neutral float-right" title="Tarificación de llamadas" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="billable_calls.html" class="btn btn-neutral float-left" title="Llamadas facturables" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016-2017, Irontec
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-book"> Other Versions</span>
+        v: oasis
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Branches</dt>
+            <dd><a href="../../artemis/index.html">artemis</a></dd>
+            <dd><a href="../../bleeding/index.html">bleeding</a></dd>
+            <dd><a href="pricing_plans.html">oasis</a></dd>
+        </dl>
+    </div>
+</div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

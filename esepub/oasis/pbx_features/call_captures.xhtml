@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Capturas de llamada</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="services.xhtml" title="Servicios adicionales"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="external_ddis.xhtml" title="DDIs externos"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">documentación de IvozProvider - Oasis</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Funcionalidades de PBX</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="call-pickup">
+<span id="capture-groups"></span><h1>Capturas de llamada</h1>
+<p>Se entiende por captura de llamada <strong>la acción de un usuario que escucha</strong> (o se entera de otro modo, vía panel de supervisión, etc.) <strong>que una extensión está sonando y, desde su terminal, roba dicha llamada</strong>.</p>
+<p>IvozProvider soporta dos tipos de captura de llamadas:</p>
+<dl class="glossary docutils">
+<dt id="term-direct-pickup">Captura de llamadas directa</dt>
+<dd><p class="first last">En las capturas de llamadas directas el usuario indica un código que incluye la extensión del teléfono cuya llamada quiere <em>robar</em>. Si el código fuera *95, por ejemplo, marcaría *95101 para capturar una llamada que esté sonando en la extensión 101.</p>
+</dd>
+<dt id="term-group-pickup">Captura de grupo</dt>
+<dd><p class="first last">En las capturas de llamadas indirectas, en cambio, el usuario indica un código y el sistema busca qué teléfono está sonando dentro de sus grupos de captura.</p>
+</dd>
+</dl>
+<div class="section" id="call-pickup-groups">
+<h2>Captura de llamadas indirecta</h2>
+<p>Para poder realizar <strong>capturas de llamada indirectas</strong>, el usuario que captura tiene que pertener al mismo grupo de captura que el usuario al que pretende capturar.</p>
+<p>La sección <strong>Grupos de captura de llamada</strong> nos permite crear estos grupos y decir qué usuarios pertenecen a ellos:</p>
+<img alt="../_images/capture_groups.png" src="../_images/capture_groups.png" />
+<p>Como vimos en la sección de <a class="reference internal" href="users.xhtml#users"><span class="std std-ref">Usuarios</span></a>, también se puede editar un usuario para editar los grupos de captura a los que pertenece.</p>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Un usuario puede pertenecer a más de un grupo de captura, el sistema tendrá en cuenta todos sus grupos.</p>
+</div>
+</div>
+<div class="section" id="group-pickup-service-code">
+<h2>Código de captura de llamada</h2>
+<p>IvozProvider permite definir los códigos de captura a 2 niveles:</p>
+<ul class="simple">
+<li><p class="first">A nivel de marca en <strong>Configuración de Marca</strong> &gt; <strong>Servicios</strong>.</p>
+</li>
+<li><p class="first">A nivel de empresa en <strong>Configuración de Empresa</strong> &gt; <strong>Servicios</strong>.</p>
+</li>
+</ul>
+<p>Esto permite que el administrador de marca pueda definir unos códigos genéricos para todas sus empresas y que, las empresas que deseen utilizar otros códigos, puedan redefinirlos.</p>
+<p><a class="reference internal" href="services.xhtml#services"><span class="std std-ref">La siguiente sección</span></a> explica todo lo relativo a servicios, que engloba los códigos de captura y otros servicios adicionales a los que se accede marcando códigos que comienzan por *.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

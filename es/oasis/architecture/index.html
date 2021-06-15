@@ -1,0 +1,347 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="es" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="es" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Arquitectura general de la plataforma &mdash; documentación de IvozProvider - Oasis</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'Oasis',
+              LANGUAGE:'es',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/banner.css" type="text/css" />
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="next" title="Roles de la plataforma" href="../operation_roles/index.html" />
+    <link rel="prev" title="¿Quién debería de usar IvozProvider?" href="../intro/use_cases.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> IvozProvider
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.7
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Introducción a Ivozprovider</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Arquitectura general de la plataforma</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#general-diagram">Esquema general</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sip-signalling-flow">Flujo señalización SIP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rtp-audio-flow">Flujo audio RTP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#https-traffic">Tráfico HTTPS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#additional-elements">Elementos adicionales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#auxiliar-elements">Elementos auxiliares</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../operation_roles/index.html">Roles de la plataforma</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Minimum Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Instalación inicial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../internal_calls/index.html">Realizar llamadas internas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external_incoming_calls/index.html">Recibir llamadas externas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external_outgoing_calls/index.html">Realizar llamadas externas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../pbx_features/index.html">Funcionalidades de PBX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../retail/index.html">Clientes Retail</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../billing_and_invoices/index.html">Tarificación y facturación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../provisioning/index.html">Provisión de terminales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faxing/index.html">Sistema de Fax Virtual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userportal/index.html">Portal de usuario</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Security and Maintenance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html">Elementos de seguridad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maintenance/index.html">Mantenimiento de la solución</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IvozProvider</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Arquitectura general de la plataforma</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/architecture/index.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="platform-general-architecture">
+<span id="architecture"></span><h1>Arquitectura general de la plataforma<a class="headerlink" href="#platform-general-architecture" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="section" id="general-diagram">
+<h2>Esquema general<a class="headerlink" href="#general-diagram" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Este esquema refleja la arquitectura global de la solución IvozProvider, con todos los elementos que la componen.</p>
+<img alt="../_images/flows1.png" src="../_images/flows1.png" />
+<p>Este es otro esquema más conceptual:</p>
+<img alt="../_images/conceptual1.png" src="../_images/conceptual1.png" />
+</div>
+<div class="section" id="sip-signalling-flow">
+<span id="signallingflow"></span><h2>Flujo señalización SIP<a class="headerlink" href="#sip-signalling-flow" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>El primer diagrama muestra el tráfico de señalización SIP que ocurre en el establecimiento, modificación y finalización de sesiones acorde al  <a class="reference external" href="https://tools.ietf.org/html/rfc3261">RFC 3261</a> y otros <a class="reference external" href="https://www.packetizer.com/ipmc/sip/standards.html">RFCs relacionados</a>.</p>
+<p>Estas son las <strong>entidades SIP externas</strong> involucradas:</p>
+<ul class="simple">
+<li><p class="first">UACs: teléfonos de usuarios, softphones, dispositivos compatibles con SIP.</p>
+</li>
+<li><p class="first">Proveedores SIP: proveedores usados para la interconexión de IvozProvider con redes externas SIP (y, probablemente, con la PSTN).</p>
+</li>
+</ul>
+<p>Todo el tráfico SIP (en cualquiera de los transportes soportados: TCP, UDP, TLS, WSS) que se envia/recibe desde la plataforma se hará deste las siguiente dos <strong>entidades SIP internas</strong> de IvozProvider:</p>
+<ul class="simple">
+<li><p class="first">Proxy SIP de Usuarios (ejecutando <a class="reference external" href="https://www.kamailio.org">Kamailio</a>).</p>
+</li>
+<li><p class="first">Proxy SIP Proveedores (running <a class="reference external" href="https://www.kamailio.org">Kamailio</a>).</p>
+</li>
+</ul>
+<p>De hecho, los UACs de usuario solo se comunican con el <em>Proxy SIP de usuarios</em> y los &#8216;Proveedores SIP&#8217; solo se comunican con el <em>Proxy SIP de Proveedores</em>.</p>
+<p>Dentro de IvozProvider estos dos proxies hablan a los <em>Servidores de Aplicación</em> que ejecutan <a class="reference external" href="http://www.asterisk.org/">Asterisk</a>, ya que <strong>ningun elemento externo puede hablar con los Servidores de Aplicación directamente</strong>.</p>
+</div>
+<div class="section" id="rtp-audio-flow">
+<span id="audioflow"></span><h2>Flujo audio RTP<a class="headerlink" href="#rtp-audio-flow" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>La sesiones iniciadas por el protocolo de señalizacion SIP implican la compartición de flujos de multimedia entre las entidades implicadas.</p>
+<p>Estos flujos emplean <a class="reference external" href="https://tools.ietf.org/html/rfc3550">RTP</a> para enviar y recibir el propio media, generalmente empleando el protocolo de transporte UDP.</p>
+<p>Las <strong>entidades externas</strong> involucradas en las sesiones RTP se pueden dividir en</p>
+<ul class="simple">
+<li><p class="first">Usuarios.</p>
+</li>
+<li><p class="first">Proveedores.</p>
+</li>
+</ul>
+<p>Ambas entidades intercambian RTP con el mismo servicio de IvozProvider: <em>los servidores media</em>.</p>
+<p>IvozProvider implementa <em>servidores media</em> usando tanto <a class="reference external" href="https://github.com/sipwise/rtpengine">RTPengine</a> como <a class="reference external" href="http://www.rtpproxy.org/">RTPproxy</a>.</p>
+<p>Al igual que ocurre con SIP, estos <em>servidores de media</em> intercambian RTP cuando es necesario con los <em>Servidores de aplicación</em>, pero <strong>nunca permiten que los extremos externos a la plataforma hablen entre ellos directamente</strong>.</p>
+</div>
+<div class="section" id="https-traffic">
+<h2>Tráfico HTTPS<a class="headerlink" href="#https-traffic" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>HTTPS es el tercer tipo de tráfico que interncambian</p>
+<p>El tráfico HTTPS se emplea para:</p>
+<ul>
+<li><p class="first"><strong>Provisión de terminales</strong>: Muchos teléfonos piden su configuracion al iniciarse y esta puede ser enviada a través de HTTPS.</p>
+</li>
+<li><p class="first"><strong>Portales web</strong>: IvozProvider cuenta con 4 portales de web para los diferentes <a class="reference internal" href="../operation_roles/index.html#operation-roles"><span class="std std-ref">platform roles</span></a>.</p>
+<p>Estos dos tipos de tráfico son gestionados por los <em>Portales web</em> de IvozProvider.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="additional-elements">
+<h2>Elementos adicionales<a class="headerlink" href="#additional-elements" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>IvozProvider cuenta con multiples elementos que no están <em>expuestos al mundo</em> pero juegan un papel crucial.</p>
+<p>El perfil mas significativo es el de <strong>data</strong> que reune toda la informacion de la plataforma and la distribuye entre la mayoría de los softwares restantes. IvozProvider utiliza <a class="reference external" href="https://www.mysql.com/">MySQL</a> para esta tarea.</p>
+<p>Otro proceso menos crucial son <strong>los gestores de tareas asíncronas</strong>: el CDR ha de ser parseado, la llamadas tarificadas, las grabaciones codificadas, etc.</p>
+</div>
+<div class="section" id="auxiliar-elements">
+<h2>Elementos auxiliares<a class="headerlink" href="#auxiliar-elements" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>El perfil <strong>auxiliar</strong> ejecuta programas, que aún no siendo vitales para el flujo de las llamadas, facilitan mucho las tareas para los mantenedores de las plataformas IvozProvider.</p>
+<p>De hecho, sin ellos, sería muchísimo más dificil debugear los problemas y la calidad del servicio proporcionado se vería afectada.</p>
+<p>IvozProvider incluye:</p>
+<ul class="simple">
+<li><p class="first"><strong>Homer SIP capture</strong>: Este fabuloso software nos permite capturar todo el tráfico SIP para ser analizado posteriormente y obtener estadísticas, métricas de calidad de la llamada, etc. Visite <a class="reference external" href="http://sipcapture.org/">SIP Capture website</a> para más información.</p>
+</li>
+<li><p class="first"><strong>Visor de logs Graylog</strong>: Todos los logs de la plataforma IvozProvider se almacenan y muestran con <a class="reference external" href="https://www.graylog.org/">Graylog</a> divido en marcas.</p>
+</li>
+<li><p class="first"><strong>Panel de gráficas Grafana</strong>: <a class="reference external" href="http://grafana.org/">Grafana</a> nos permite tener gráficas de todo. Literalmente.</p>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../operation_roles/index.html" class="btn btn-neutral float-right" title="Roles de la plataforma" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../intro/use_cases.html" class="btn btn-neutral float-left" title="¿Quién debería de usar IvozProvider?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016-2017, Irontec
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-book"> Other Versions</span>
+        v: oasis
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Branches</dt>
+            <dd><a href="../../artemis/index.html">artemis</a></dd>
+            <dd><a href="../../bleeding/index.html">bleeding</a></dd>
+            <dd><a href="index.html">oasis</a></dd>
+        </dl>
+    </div>
+</div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

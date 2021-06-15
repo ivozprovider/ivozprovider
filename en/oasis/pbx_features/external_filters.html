@@ -1,0 +1,389 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>External Call filters &mdash; IvozProvider Oasis documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'Oasis',
+              LANGUAGE:'en',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/banner.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Match Lists" href="match_lists.html" />
+    <link rel="prev" title="Outgoing DDI Rules" href="outgoingddi_rules.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> IvozProvider
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.7
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Introduction to IvozProvider</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/index.html">Platform general architecture</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../operation_roles/index.html">Platform roles</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Minimum Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Initial Installation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../internal_calls/index.html">Making internal calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external_incoming_calls/index.html">Receive external calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external_outgoing_calls/index.html">Making external calls</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Configuration</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">PBX Features</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="extensions.html">Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="terminals.html">Terminals configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_permissions.html">Call ACL Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="users.html">Users configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="friends.html">Friends</a></li>
+<li class="toctree-l2"><a class="reference internal" href="music_on_hold.html">Music on Hold</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sounds.html">Locutions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="outgoingddi_rules.html">Outgoing DDI Rules</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">External Call filters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#schedules">Schedules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#calendars">Calendars</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="match_lists.html">Match Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="route_locks.html">Route locks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conditional_routes.html">Conditional routes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="huntgroups.html">Hunt groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="queues.html">Queues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ivrs.html">Interactive Voice Response (IVR)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conference_rooms.html">Conference rooms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_ddis.html">External DDIs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_captures.html">Call pickup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="services.html">Additional services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_recording.html">Call recording</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../retail/index.html">Retail Clients</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../billing_and_invoices/index.html">Billing and Invoices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../provisioning/index.html">Terminal provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faxing/index.html">Virtual Fax System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userportal/index.html">User Portal</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Security and Maintenance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html">Security elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maintenance/index.html">Maintenance and troubleshooting</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IvozProvider</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">PBX Features</a> &raquo;</li>
+        
+      <li>External Call filters</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/pbx_features/external_filters.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="external-call-filters">
+<span id="external-filters"></span><h1>External Call filters<a class="headerlink" href="#external-call-filters" title="Permalink to this headline">¶</a></h1>
+<p>One of the most common task a company&#8217;s administrator will do is to
+configure schedules and calendards to apply to existing <a class="reference internal" href="external_ddis.html#external-ddis"><span class="std std-ref">External DDIs</span></a>.</p>
+<p>The first step is creating a schedule.</p>
+<div class="section" id="schedules">
+<h2>Schedules<a class="headerlink" href="#schedules" title="Permalink to this headline">¶</a></h2>
+<p>The section <strong>Company configuration</strong> &gt; <strong>Schedule</strong> allows to configure
+different time gaps when an <a class="reference internal" href="external_ddis.html#external-ddis"><span class="std std-ref">external DDI</span></a> will be available.</p>
+<p>The screen displayed to the company administrator looks like this:</p>
+<img alt="../_images/timetables_add.png" src="../_images/timetables_add.png" />
+<p>With the above configuration, we have defined a morining schedule that will be
+applied from Monday to Thursday.</p>
+<p>We can also define an afternoon schedule for Monday to Thursday too:</p>
+<img alt="../_images/timetables_add2.png" src="../_images/timetables_add2.png" />
+<p>And apply a different time gap for the Fridays:</p>
+<img alt="../_images/timetables_add3.png" src="../_images/timetables_add3.png" />
+<p>We have the following time gaps that combined will determine our company
+office schedule.</p>
+<img alt="../_images/timetables_add4.png" src="../_images/timetables_add4.png" />
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The schedule will be defined by combining the active time gaps:
+Any time outside this grouped gaps will be considered out-of-schedule.</p>
+</div>
+</div>
+<div class="section" id="calendars">
+<h2>Calendars<a class="headerlink" href="#calendars" title="Permalink to this headline">¶</a></h2>
+<p>Calenders are used to define what days are considered as holiday. Like
+schedules, multiples calendars can be combined.</p>
+<p>Let&#8217;s imagine three calendars with the following configuration:</p>
+<img alt="../_images/calendars_list.png" src="../_images/calendars_list.png" />
+<p>Calendar creation process only requires a name. Once created, we can add what
+days will be holidays using the buttons in its row:</p>
+<img alt="../_images/calendars_add_day.png" src="../_images/calendars_add_day.png" />
+<p>From this moment on, the calendar has the 1st of January of 2016 as holiday
+date with the locution &#8220;Happy New Year&#8221;.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Calendars logic is opposite to Schedulers: If a day is not defined
+as holiday in any of the calendars, it will considered a normal day and no
+filtering will be applied.</p>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Holidays without special locutions will apply the external call filter
+holiday generic locution (see below).</p>
+</div>
+<p class="rubric">Create a new External call filter</p>
+<p>Once we have our new created schedules and calendars, it&#8217;s time to apply them
+in what we call <strong>External call filter</strong>.</p>
+<p>The company admin can configure them in the following screen:</p>
+<img alt="../_images/external_call_filter.png" src="../_images/external_call_filter.png" />
+<dl class="glossary docutils">
+<dt id="term-name">Name</dt>
+<dd>Descriptive name that will reference this filter in DDIs configuration.</dd>
+<dt id="term-welcome-locution">Welcome locution</dt>
+<dd>This locution will be played if the call is not going to be
+forwarded by out of schedule or holiday filtering (in other words if
+the normal routing of the DDI is going to be applied).</dd>
+<dt id="term-black-list">Black list</dt>
+<dd>External origin will be checked against the associated <a class="reference internal" href="match_lists.html#match-lists"><span class="std std-ref">Match Lists</span></a>,
+if a coincidence is found, the call will be rejected immediately.</dd>
+<dt id="term-white-list">White list</dt>
+<dd>External origin will be checked against the associated <a class="reference internal" href="match_lists.html#match-lists"><span class="std std-ref">Match Lists</span></a>,
+if a coincidence is found, the call will be directly routed to the DDI
+destination, skipping the filter process. Take into account that black
+listed are checked before white lists.</dd>
+<dt id="term-holiday-locution">Holiday locution</dt>
+<dd>The locution will be  played when the day is maked as holiday in any
+of the calendars associated with the filter <strong>if the calendar entry has
+no locution</strong> for that day.</dd>
+<dt id="term-holiday-forward-type">Holiday forward type</dt>
+<dd>After playing the above locution (if configured), call can be forwarded
+to a voicemail, external number or internal extension. For example, the
+filter of the image will redirect calls during holidays to the external
+number 676 676 676.</dd>
+<dt id="term-out-of-schedule-locution">Out of schedule locution</dt>
+<dd>The locution will be played when, not being holiday, the current time
+is not in any of the time gaps defined in the schedules assigned to the
+filter.</dd>
+<dt id="term-out-of-schedule-forward-type">Out of schedule forward type</dt>
+<dd>Like in the holidays forward, but for out of schedule. The image above
+won&#8217;t apply any forward (and the call will be hanguped).</dd>
+<dt id="term-calendars">Calendars</dt>
+<dd>One or more calendars can be associated with the filter. The combination
+of all the callendars will be applied.</dd>
+<dt id="term-schedules">Schedules</dt>
+<dd>One or more schedules can be applied. The combination of all the time
+gaps defined in the schedules will be applied.</dd>
+</dl>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">Holidays are processed <strong>before</strong> out of schedule events.</p>
+</div>
+<p>In the next section we will use this new created filter with
+<a class="reference internal" href="external_ddis.html#external-ddis"><span class="std std-ref">External DDIs</span></a> so we can configure a welcome locution for normal days,
+and especial behaviours for hoildays and out of schedule events.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="match_lists.html" class="btn btn-neutral float-right" title="Match Lists" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="outgoingddi_rules.html" class="btn btn-neutral float-left" title="Outgoing DDI Rules" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016-2017, Irontec
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-book"> Other Versions</span>
+        v: oasis
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Branches</dt>
+            <dd><a href="../../artemis/index.html">artemis</a></dd>
+            <dd><a href="../../bleeding/index.html">bleeding</a></dd>
+            <dd><a href="external_filters.html">oasis</a></dd>
+        </dl>
+    </div>
+</div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

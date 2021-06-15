@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Currencies</title>
+    
+    <link rel="stylesheet" href="../../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="default_notification_templates.xhtml" title="Default Notification Templates"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="services.xhtml" title="Services"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.xhtml">documentación de IvozProvider - Artemis</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Platform Configuration</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="currencies">
+<h1>Currencies</h1>
+<p>This section allows adding as many currencies as wanted. It is a multilanguage field with a symbol that will be used
+in invoices, balance movements, etc.</p>
+<p>These IvozProvider elements have an assigned currency:</p>
+<dl class="glossary docutils">
+<dt id="term-brand">Brand</dt>
+<dd>Used as default currency for all underlying items that have currency.</dd>
+<dt id="term-client">Client</dt>
+<dd>Chosen currency will be used in price calculation, invoices, invoice&#8217;s fixed costs, balance movements and
+remaining money operations of this client.</dd>
+<dt id="term-carrier">Carrier</dt>
+<dd>Chosen currency will be used in cost calculation, balance movements and
+remaining money operations of this carrier.</dd>
+<dt id="term-destination-rate">Destination rate</dt>
+<dd>All rates within a destination rate will assume this currency.</dd>
+<dt id="term-rating-plan">Rating plan</dt>
+<dd>All destination rates grouped in a rating plan <strong>must</strong> use this currency.</dd>
+</dl>
+<p>It is important to take into account notes below before using this feature:</p>
+<ul class="simple">
+<li>Rating plans <strong>must</strong> only group destination rates using its currency.</li>
+<li>Clients and carriers <strong>must</strong> only use rating plans using its currency.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Some backend checks avoid some of previous misconfigurations, but not all of them: <strong>use this feature carefully</strong>.</p>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Importante</p>
+<p class="last"><strong>There is no currency conversion involved</strong>: call cost will be calculated in carrier&#8217;s currency, call price
+will be calculated in client&#8217;s currency.</p>
+</div>
+<div class="admonition caution">
+<p class="first admonition-title">Prudencia</p>
+<p class="last">LCR routes involving carriers with different currencies are not supported.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2019, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

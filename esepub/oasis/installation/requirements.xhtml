@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Requisitos mínimos</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="debian_install.xhtml" title="Instalación por paquetes Debian"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="install_types.xhtml" title="Tipos de instalación"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">documentación de IvozProvider - Oasis</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Instalación inicial</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="minimum-requirements">
+<h1>Requisitos mínimos</h1>
+<div class="section" id="system-requirements">
+<h2>Requisitos de sistema</h2>
+<p>IvozProvider está diseñado para funcionar e instalarse a través del sistema de paquetes APT de Debian GNU/Linux.</p>
+<div class="admonition important">
+<p class="first admonition-title">Importante</p>
+<p class="last">Es recomendable instalar IvozProvider en una máquina dedicada para la plataforma. Muchos de los software instalados podrían hacer malfuncionar otros software pre-instalados (por ejemplo MySQL o servidores DNS).</p>
+</div>
+<p>Para una instalación standalone, se requiere al menos:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="first">4 CPUs (x86_64 o i386)</p>
+</li>
+<li><p class="first">4 Gb memoria</p>
+</li>
+<li><p class="first">30GB Disco Duro</p>
+</li>
+<li><p class="first">1/2 IPs públicas (leer nota)</p>
+</li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Desde la versión 1.2 is posible hacer que el proxy de usuarios y el proxy de salida utilicen la misma direción IP pública. En este caso, <strong>se cambiarán los puertos del proxy de salida de 5060 (TCP/UDP) a 7060 (TCP/UDP) y de 5061 (TCP) a 7061 (TCP)</strong>.</p>
+</div>
+<p>Si no está empleando la <a class="reference internal" href="cd_install.xhtml#automatic-iso-cd-image"><span class="std std-ref">CDs automáticos de instalación</span></a> también será necesario:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="first">Instalación base de Debian Jessie 8.0</p>
+</li>
+<li><p class="first">Acceso a Internet</p>
+</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

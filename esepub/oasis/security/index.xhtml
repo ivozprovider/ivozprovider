@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Elementos de seguridad</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="../maintenance/index.xhtml" title="Mantenimiento de la solución"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="../userportal/index.xhtml" title="Portal de usuario"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">documentación de IvozProvider - Oasis</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="security-elements">
+<h1>Elementos de seguridad</h1>
+<div class="section" id="firewall">
+<h2>Cortafuegos</h2>
+<p><strong>IvozProvider actualmente no viene con un cortafuegos configurado</strong> pero...</p>
+<div class="admonition danger">
+<p class="first admonition-title">Peligro</p>
+<p class="last"><strong>Recomendamos encarecidamente que las instalaciones en producción cuenten con un cortafuegos</strong> que protejan la plataforma del salvaje Internet.</p>
+</div>
+<p>Los metodos de protección podrían ser:</p>
+<ul class="simple">
+<li><p class="first">Cortafuegos locales basados en <a class="reference external" href="https://www.netfilter.org/">iptables</a><span class="link-target"> [https://www.netfilter.org/]</span></p>
+</li>
+<li><p class="first">Cortafuegos externos</p>
+</li>
+<li><p class="first">Ambos</p>
+</li>
+</ul>
+<div class="section" id="exposed-ports-services">
+<h3>Servicios/Puertos expuestos</h3>
+<p>Estos son los puertos que <strong>IvozProvider necesita exponer</strong> para funcionar correctamente:</p>
+<p><strong>Señalizacion SIP</strong>:</p>
+<ul class="simple">
+<li><p class="first">Puerto 5060 (TCP/UDP)</p>
+</li>
+<li><p class="first">Puerto 5061 (TCP)</p>
+</li>
+<li><p class="first">Puerto 7060 (TCP/UDP) y 7061 TCP (para casos en que ambos proxies compartan la misma dirección IP)</p>
+</li>
+</ul>
+<p><strong>Flujo de audio RTP</strong>:</p>
+<ul class="simple">
+<li><p class="first">Rango de puertos 13000-19000 UDP</p>
+</li>
+</ul>
+<p><strong>Portal web y provisión</strong>:</p>
+<ul class="simple">
+<li><p class="first">Puertos TCP 443, 1443 y 2443</p>
+</li>
+</ul>
+<div class="admonition hint">
+<p class="first admonition-title">Consejo</p>
+<p class="last">Recomendamos emplear el <strong>módulo GeoIP de iptales</strong> para rechazar tráfico de paises en los que no se tenga ningun usuario.</p>
+</div>
+</div>
+</div>
+<div class="section" id="authorized-company-ip-ranges">
+<h2>Rangos de IP autorizados por empresa</h2>
+<p>En el proceso de creación de empresas nos saltamos deliberademente un mecanismo de seguridad que <strong>limita las direcciones IP o rangos de red que pueden utilizar las credenciales de los terminales de una empresa concreta</strong>.</p>
+<p>Se puede activar en la sección <strong>Configuración de Marca</strong> &gt; <strong>Empresas</strong>:</p>
+<img alt="../_images/authorized_ips2.png" class="align-center" src="../_images/authorized_ips2.png" />
+<p>Todo usuario que quiera conectarse desde una red no incluida no podrá, a pesar de disponer de unas credenciales válidas.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Advertencia</p>
+<p class="last">Una vez activado el filtrado, <strong>es obligatorio</strong> añadir redes o direcciones válidas o, por el contrario, todas las llamadas se rechazarán:</p>
+</div>
+<img alt="../_images/authorized_ips.png" src="../_images/authorized_ips.png" />
+<p>Se pueden añadir direcciones IP y rangos de direcciones, en formato CIDR (IP/mask)</p>
+<img alt="../_images/authorized_ips3.png" src="../_images/authorized_ips3.png" />
+<div class="admonition important">
+<p class="first admonition-title">Importante</p>
+<p class="last">Este mecanismo limita los orígenes de los usuarios de una empresa, no filtra en absoluto los orígenes de los <strong>Contratos de Peering</strong>.</p>
+</div>
+<div class="section" id="roadwarrior-users">
+<span id="id1"></span><h3>Usuarios remotos</h3>
+<p>Algunos usuarios de ciertas empresas viajan con mucha frecuencia y necesitan llamar desde redes externas no controladas. Estos usuarios obligan a la empresa a desactivar el mecanismo de protección de IP.</p>
+<p>Para solventar este problema, en la sección de Usuarios existe la opción <strong>Llamadas desde IPs no autorizadas</strong> que permite que ciertos usuarios llamen desde redes no permitidas mientras su empresa sigue protegida con el mecanismo de protección de IP.</p>
+<p>Para evitar que estos usuarios signifiquen una brecha de seguridad, el número de llamadas que pueden hacer desde redes no autorizadas se limita a 1, 2 ó 3.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Advertencia</p>
+<p class="last">Solo se cuentan y se limitan las llamadas generadas por estos usuarios (tanto las internas como las externas), la recepción de llamadas no se ve afectada por esta funcionalidad (sí por el parámetro <strong>Límite de llamadas</strong>).</p>
+</div>
+<p>En resumen, con esta funcionalidad:</p>
+<ul class="simple">
+<li><p class="first">Ciertos usuarios pueden realizar un determinado número de llamadas desde IPs no autorizadas.</p>
+</li>
+<li><p class="first">Estas llamadas se cuentan y se limitan.</p>
+</li>
+</ul>
+<p class="rubric">Ejemplo 1 - Compañía sin mecanismo de protección de IP</p>
+<p>Al no estar el mecanismo activado, el valor de este parámetro no aplica.</p>
+<p class="rubric">Ejemplo 2- Compañía con mecanismo de protección de IP</p>
+<ul class="simple">
+<li><p class="first">Si el usuario llamada desde una IP autorizada, el valor de este parámetro no aplica: la llamada se permite y no se cuenta.</p>
+</li>
+<li><p class="first">Si el usuario llama desde una IP NO autorizada, se verifica el valor de este parámetro y, en caso de tener un valor 1, 2 ó 3 y de no haber superado este límite, la llamada se permite y se cuenta. Si no, se rechaza la llamada.</p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Si el valor de <strong>Llamadas desde IPs no autorizadas</strong> se configura a <em>Ninguna</em> el usuario tendrá que cumplir la política de IPs de su empresa, cualquiera que sea.</p>
+</div>
+</div>
+</div>
+<div class="section" id="anti-flooding">
+<h2>Anti-Flooding</h2>
+<p>IvozProvider incorpora un mecanismo de <em>anti-flooding</em> que evita que un emisor sature nuestra plataforma enviando peticiones. Ambos <em>proxies</em> (usuarios y salida) incorporan este mecanismo, que <strong>limita el número de peticiones desde un dirección origen en un tramo concreto de tiempo</strong>.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Advertencia</p>
+<p class="last">Cuando un origen llega al límite, el proxy dejará de contestarle durante un tiempo dado. Pasado ese tiempo, volverá a contestarle con normalidad</p>
+</div>
+<p>Ciertos orígenes que están automáticamente excluidos de este mecanismo de <em>anti-flooding</em>:</p>
+<ul class="simple">
+<li><p class="first">Servidores de aplicación de la plataforma.</p>
+</li>
+<li><p class="first">IPs o rangos autorizados de empresas (ver sección anterior).</p>
+</li>
+</ul>
+<p>El operador global puede añadir otras direcciones que queden excluidas de este mecanismo por medio del apartado <strong>Configuración global</strong> &gt; <strong>IPs de confianza</strong></p>
+<img alt="../_images/trusted_ips.png" src="../_images/trusted_ips.png" />
+</div>
+<div class="section" id="concurrent-call-limit">
+<h2>Límite de llamadas concurrentes</h2>
+<p>Este mecanismo limita las llamadas externas de un cliente (vPBX/retail). También se puede configurar a nivel de marca.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Advertencia</p>
+<p class="last">Los límites de marca y de empresa (vPBX/retail) no están relacionados de ninguna manera (es decir, si una marca tiene 10, la suma de llamadas de sus empresas puede sumar más de 10). Aplicará el límite que antes sea alcanzado.</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Truco</p>
+<p class="last">Para desactivar este mecanismo, basta con fijar el valor a 0.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

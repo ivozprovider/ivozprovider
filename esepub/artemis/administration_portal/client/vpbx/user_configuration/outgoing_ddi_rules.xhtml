@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Outgoing DDI Rules</title>
+    
+    <link rel="stylesheet" href="../../../../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="pick_up_groups.xhtml" title="Pick up groups"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="index.xhtml" title="User configuration"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../../index.xhtml">documentación de IvozProvider - Artemis</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.xhtml" >Client Configuration</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.xhtml" >Clientes vPBX</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="index.xhtml" accesskey="U">User configuration</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="outgoing-ddi-rules">
+<span id="outgoingddi-rules"></span><h1>Outgoing DDI Rules</h1>
+<p>Most calling entities in IvozProvider require an outgoing DDI when placing calls
+to external numbers. This includes: Users, Friends, Faxes, Retail Accounts, and
+so on..</p>
+<p>But there are some cases when a single outgoing DDI is not enough, and the
+presented DDI depends on the called number or a given prefix. To archive this
+dynamic outgoing DDI selection you can use Outgoing DDI rules.</p>
+<div class="section" id="outgoing-ddi-based-on-destination">
+<h2>Outgoing DDI based on destination</h2>
+<p>For destination based rules, you would require first group the destination
+numbers in <a class="reference internal" href="../routing_tools/match_lists.xhtml#match-lists"><span class="std std-ref">Match Lists</span></a>.</p>
+<p>For this example, we will create a match list of corporate mobiles with all
+the mobile numbers of our client workers. When we call to those numbers, we
+will keep the original outgoing DDI assigned to the user, and for the rest of
+the cases we will force the DDI to the main client outgoing DDI.</p>
+<p class="rubric">Create a new Outgoing DDI Rule</p>
+<p>The main creation screen defines the action that will take place when no rule
+matches the dialed destination, so we define to force the main client DDI here.</p>
+<p class="rubric">Assign rule lists actions</p>
+<p>Now we add a new rule that will match our mobiles to make the user&#8217;s outgoing
+DDI be kept untouched.</p>
+<p class="rubric">Assign rule to callers</p>
+<p>At last, we have to configure who will use this rule to dynamically change it&#8217;s
+presentation number. We can do this in the <strong>Client&#8217;s edit screen</strong> or the
+<strong>Users&#8217;s edit screen</strong>.</p>
+<p>In this case, the User will present 777777777 DDI when calling corporate mobiles
+and 666666666 when calling the rest of the external numbers.</p>
+</div>
+<div class="section" id="outgoing-ddi-based-on-prefix">
+<h2>Outgoing DDI based on prefix</h2>
+<p>Outgoing DDI Rules can be also used to change the default Outgoing DDI based on
+a call prefix.</p>
+<p class="rubric">Create a new Outgoing DDI Rule</p>
+<p>The main creation screen defines the action that will take place when no rule
+matches the dialed destination, we will keep original DDI if no prefix is used.</p>
+<p class="rubric">Assign a prefix pattern</p>
+<p>Now we add a new rule that with prefix (let&#8217;s say 111) and action to force
+the DDI to 666666666.</p>
+<p>In this case, the User will present 666666666 DDI when calling any destination
+with 111 prefix and 777777777 when not using any prefix.</p>
+<div class="admonition important">
+<p class="first admonition-title">Importante</p>
+<p class="last">Prefix <strong>must</strong> have this format: from 1 to 3 digits ended by * symbol.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2019, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

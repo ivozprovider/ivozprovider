@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Terminals configuration</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="call_permissions.xhtml" title="Call ACL Control"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="extensions.xhtml" title="Extensions"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">IvozProvider Oasis documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">PBX Features</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="terminals-configuration">
+<span id="terminals"></span><h1>Terminals configuration</h1>
+<p>The section <strong>Company configuration</strong> &gt; <strong>Terminals</strong> allows creating new
+SIP credentials that can be used by multiple SIP devices to place and receive
+calls from IvozProvider.</p>
+<p>The best way to understand this section is creating a new item and see the
+fields that must be filled.</p>
+<img alt="../_images/terminals_add.png" src="../_images/terminals_add.png" />
+<dl class="glossary docutils">
+<dt id="term-name">Name</dt>
+<dd>Username that will use the terminal during the SIP authentication phase
+with IvozProvider.</dd>
+<dt id="term-password">Password</dt>
+<dd>Password that will use the terminal to answer the SIP authentication
+challenge. You can use the automatic password generator to fullfill the
+secure password requirements.</dd>
+<dt id="term-allowed-disallowed-codecs">Allowed/Disallowed codecs</dt>
+<dd>Determines what audio and video codecs will be used with the terminal.</dd>
+<dt id="term-callerid-update-method">CallerID update method</dt>
+<dd>Choose the SIP method the terminal prefers to received the session
+update information: INVITE or UPDATE. The help hint can be used as
+guide to configure different terminal manufacturers. Use <em>INVITE</em> in
+case of doubt.</dd>
+<dt id="term-terminal-model">Terminal model</dt>
+<dd>Determines the provisioning type that will receive this terminal.
+The section <a class="reference internal" href="../provisioning/index.xhtml#provisioning"><span class="std std-ref">terminal provisioning</span></a> will explain
+in depth the different models for automatic provision. If your device
+does not require provisioning, just select <em>Generic</em>.</dd>
+<dt id="term-mac">MAC</dt>
+<dd>Optional field that is only required if you plan to use IvozProvider
+<a class="reference internal" href="../provisioning/index.xhtml#provisioning"><span class="std std-ref">terminal provisioning</span></a>. This is the <a class="reference external" href="https://wikipedia.org/wiki/MAC_Address">phisical
+address</a><span class="link-target"> [https://wikipedia.org/wiki/MAC_Address]</span> of the network
+adapter of the SIP device.</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For <strong>most of devices</strong> that doesn&#8217;t require provisioning just
+filling <strong>username</strong> and <strong>password</strong> will be enough.</p>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Once the terminal has been created, most devices will only
+require the name, password and <a class="reference internal" href="../internal_calls/brand_portal.xhtml#domain-per-company"><span class="std std-ref">Company SIP domain</span></a>
+in order to place calls.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

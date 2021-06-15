@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Interactive Voice Response (IVR)</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="conference_rooms.xhtml" title="Salas de audioconferencias"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="queues.xhtml" title="Colas"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">documentación de IvozProvider - Oasis</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Funcionalidades de PBX</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="interactive-voice-response-ivr">
+<h1>Interactive Voice Response (IVR)</h1>
+<p>Un IVR es la forma habitual de realizar <strong>menús telefónicos</strong> en los que <strong>el llamante puede decidir el destino de su llamada sin más que pulsar dígitos</strong> en base a las locuciones que se le van reproduciendo.</p>
+<div class="section" id="generic-ivrs">
+<span id="id1"></span><h2>IVRs genéricos</h2>
+<p>En los IVR genéricos el llamante marca directamente una extensión interna que conoce (o que se le indica en la locución de bienvenida) y el sistema le pone en contacto con dicha extensión de forma automática:</p>
+<p>Describamos cada uno de los parámetros de un IVR genérico:</p>
+<dl class="glossary docutils">
+<dt id="term-name">Nombre</dt>
+<dd><p class="first last">Forma de referenciar el IVR</p>
+</dd>
+<dt id="term-timeout">Timeout</dt>
+<dd><p class="first last">Tiempo adicional al de la locución de bienvenida que el sistema espera a que el interlocutor marque los dígitos.</p>
+</dd>
+<dt id="term-welcome-locution">Locución de bienvenida</dt>
+<dd><p class="first last">Locución que se le presenta al llamante invitándole a marcar la extensión con la que quiera hablar.</p>
+</dd>
+<dt id="term-success-locution">Locución de éxito</dt>
+<dd><p class="first last">En caso de que la extensión marcada sea correcta, se reproducirá esta locución (típicamente dirá algo así como &#8220;Contactando...&#8221;).</p>
+</dd>
+<dt id="term-no-input-process">Configuración sin entrada</dt>
+<dd><p class="first last">Si el llamante no introduce ningún digito, se reproduce la locución indicada y se desvía la llamada al número externo, extensión interna o buzón seleccionado.</p>
+</dd>
+<dt id="term-error-process">Configuración Error</dt>
+<dd><p class="first last">Si lo que ha marcado el llamante no es válido, se reproduce la locución indicada y se desvía la llamada al número externo, extensión interna o buzón seleccionado.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="custom-ivrs">
+<span id="id2"></span><h2>IVRs a medida</h2>
+<p>A diferencia de los IVRs genéricos en donde el llamante solo puede marcar extensiones internas, los IVRs a medida permiten marcar dígitos que luego se pueden convertir a lo que el administrador de empresa desee.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Consejo</p>
+<p class="last">El caso más típico es el IVR que dice algo así como &#8220;Marque 1 si quiere hablar con administración, marque 2 si quiere hablar con informática...&#8221;</p>
+</div>
+<p>Los campos que se presentan son prácticamente idénticos al IVR genérico:</p>
+<p>Pulsando el botón de la siguiente imagen se pueden definir las equivalencias deseadas:</p>
+<img alt="../_images/ivr_custom2.png" src="../_images/ivr_custom2.png" />
+<p>En este caso se puede marcar 1, 2 y 3 (todo lo demás será considerado inválido y activará la <strong>Configuración de Error</strong>):</p>
+<img alt="../_images/ivr_custom3.png" src="../_images/ivr_custom3.png" />
+<ul class="simple">
+<li><p class="first">1: Llamada a la extensión interna 200, creada <a class="reference internal" href="huntgroups.xhtml#huntgroups"><span class="std std-ref">en la sección anterior</span></a> y que apunta al grupo de salto <em>Recepción</em>.</p>
+</li>
+<li><p class="first">2: Llama a la extensión interna 101.</p>
+</li>
+<li><p class="first">3: Desvía la llamada al número externo 676 676 676.</p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Cada una de las opciones del IVR a medida permite la selección de una locución que pisa a la <strong>locución de éxito</strong> si está definida. De esta forma aparte de tener una locución de éxito genérica con &#8220;Contactando&#8221; podríamos tener otra que dijera &#8220;Contactando con Administración, espere por favor&#8221;.</p>
+</div>
+<p class="rubric">Las opciones son expresiones regulares</p>
+<p>Aunque en el uso más habitual las opciones del IVR sean de un único dígito del 0 al 10, <strong>las opciones se interpretan internamente como expresiones regulares</strong>. De este modo, se podría añadir una opción &#8220;^2[0-9]{2}$&#8221; para agrupar el comportamiento de los números del 200 al 299. Es importante ajustar el valor del parámetro <strong>Max digits</strong>&#8220;</p>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p class="last">Para evitar comportamientos no deseados, <strong>en caso de utilizar opciones de más de un dígito, utilice la notación de expresiones regulares</strong> (&#8216;^1$&#8217; en lugar de &#8216;1&#8217;, &#8216;^10$&#8217; en lugar de &#8216;10&#8217;, etc.).</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

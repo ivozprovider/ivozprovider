@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Generación de facturas</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="../provisioning/index.xhtml" title="Provisión de terminales"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="bill_a_call.xhtml" title="Tarificación de llamadas"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">documentación de IvozProvider - Oasis</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Tarificación y facturación</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="invoice-generation">
+<span id="invoices"></span><h1>Generación de facturas</h1>
+<p>El objetivo final de todo el proceso de facturación es generar facturas que incluyan las llamadas con coste de una empresa concreta.</p>
+<div class="section" id="invoice-templates">
+<h2>Plantillas de facturas</h2>
+<p>Antes de generar una factura de ejemplo, es importante entender que las facturas generadas utilizan unas plantillas que permiten su modificación.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Consejo</p>
+<p class="last">De este modo, cada <em>operador de marca</em> puede crear plantillas con los datos deseados, la estética deseada, añadir logos y hasta gráficas de consumo.</p>
+</div>
+<p>Las plantillas son interpretadas con <a class="reference external" href="https://github.com/XaminProject/handlebars.php">handlebars</a><span class="link-target"> [https://github.com/XaminProject/handlebars.php]</span> y renderizadas con la librería <a class="reference external" href="https://wkhtmltopdf.org/">wkhtmltopdf</a><span class="link-target"> [https://wkhtmltopdf.org/]</span>.</p>
+<p>La ayuda contextual de la sección <strong>Configuración de Marca</strong> &gt; <strong>Plantillas de facturas</strong> incluye una explicación resumida del proceso de creación de plantillas. En la <a class="reference external" href="https://wkhtmltopdf.org/usage/wkhtmltopdf.txt">página oficial de wkhtmltopdf</a><span class="link-target"> [https://wkhtmltopdf.org/usage/wkhtmltopdf.txt]</span> puede encontrar más información. También puede profundicar en las expresiones disponibles en las plantillas <a class="reference external" href="http://handlebarsjs.com/expressions.html">aquí</a><span class="link-target"> [http://handlebarsjs.com/expressions.html]</span>.</p>
+<p>Por defecto, IvozProvider incluye las siguientes plantillas de ejemplo (en la ayuda contextual se pueden encontrar enlaces a las mismas):</p>
+<img alt="../_images/invoices_templates.png" src="../_images/invoices_templates.png" />
+</div>
+<div class="section" id="fixed-costs">
+<h2>Costes fijos</h2>
+<p>Los costes fijos son un concepto fijo que se pueden añadir a las facturas que utilicen plantillas que tengan en cuenta costes fijos.</p>
+<p>Sirva la siguiente imagen de ejemplo (sección <strong>Costes Fijos</strong>):</p>
+<img alt="../_images/fixed_costs.png" src="../_images/fixed_costs.png" />
+<p>A la hora de generar una factura, como se verá más adelante, se podrá indicar cuáles de estos conceptos se incluyen en la factura (y en qué cantidades).</p>
+</div>
+<div class="section" id="invoice-creation">
+<h2>Creacion de una factura</h2>
+<p>La sección <strong>Facturas</strong> es la que permite al <strong>operador de marca</strong> generar facturas para emitir a sus empresas.</p>
+<p>Añadimos una factura nueva para explicar el proceso:</p>
+<img alt="../_images/invoice_add.png" class="align-center" src="../_images/invoice_add.png" />
+<dl class="glossary docutils">
+<dt id="term-number">Número</dt>
+<dd><p class="first last">Será incluído en la factura y representa el número de factura</p>
+</dd>
+<dt id="term-company">Compañía</dt>
+<dd><p class="first last">Empresa para la cual estamos generando la factura</p>
+</dd>
+<dt id="term-start-end-date">Fecha inicio/fin</dt>
+<dd><p class="first last">Tramo temporal cuyas llamadas queremos tener en cuenta</p>
+</dd>
+<dt id="term-taxes">Impuesto</dt>
+<dd><p class="first last">Impuesto a añadir al coste total calculado</p>
+</dd>
+<dt id="term-template">Plantilla</dt>
+<dd><p class="first last">Plantilla que queremos utilizar para generar esta factura</p>
+</dd>
+</dl>
+<p>Añadamos ahora unos costes fijos a esta factura concreta pulsando:</p>
+<img alt="../_images/invoice_add2.png" class="align-center" src="../_images/invoice_add2.png" />
+<p>Y añadamos los costes fijos que queramos, así como sus cantidades:</p>
+<img alt="../_images/invoice_add3.png" class="align-center" src="../_images/invoice_add3.png" />
+<p>En este punto, podemos generar la factura pulsando:</p>
+<img alt="../_images/invoice_add4.png" class="align-center" src="../_images/invoice_add4.png" />
+<p>Pulsando el siguiente botón podemos ver las llamadas que han sido incluidas en la factura:</p>
+<img alt="../_images/invoice_add5.png" class="align-center" src="../_images/invoice_add5.png" />
+<p>Y pulsando este botón podemos descargar la factura en formato PDF:</p>
+<img alt="../_images/invoice_add6.png" class="align-center" src="../_images/invoice_add6.png" />
+<div class="admonition warning">
+<p class="first admonition-title">Advertencia</p>
+<p class="last">La fecha fin tiene que ser una fecha ya pasada. Es decir, no se puede sacar facturas de tramos futuros o del día actual.</p>
+</div>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p class="last">Todas las llamadas del tramo escogido tienen que estar facturadas para poder emitir la factura.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Internal friends</title>
+    
+    <link rel="stylesheet" href="../../../../../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../conference_rooms.xhtml" title="Conference rooms"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="remote_friends.xhtml" title="Remote friends"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../../../index.xhtml">IvozProvider Artemis documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../../index.xhtml" >Client Configuration</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.xhtml" >vPBX Clients</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../index.xhtml" >Routing endpoints</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="index.xhtml" accesskey="U">Friends</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="internal-friends">
+<h1>Internal friends</h1>
+<p>Internal friends allows a vPBX client to call to <strong>Extensions</strong> of another vPBX client in the same brand.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Only extensions in <a class="reference internal" href="../../extensions.xhtml#extensions"><span class="std std-ref">Extensions</span></a> section.</p>
+</div>
+<p>If calling to an extension in another vPBX causes an external call, it is allowed:</p>
+<ul class="simple">
+<li>Calling to a user with an external call forwarding settings.</li>
+<li>Calling to an extension routed to an external number.</li>
+<li>Calling to an extension routed to a IVR with an option pointing an external number.</li>
+<li>Etc.</li>
+</ul>
+<div class="section" id="what-kind-of-calls-can-be-routed-through-an-internal-friend">
+<h2>What kind of calls can be routed through an <em>internal friend</em>?</h2>
+<p>IvozProvider will route any call matching an Extension in vpbx client connected by the internal friend.</p>
+</div>
+<div class="section" id="configuration-of-internal-friends">
+<h2>Configuration of internal friends</h2>
+<p>These are the configurable settings of <em>internal friends</em>:</p>
+<dl class="glossary docutils">
+<dt id="term-description">Description</dt>
+<dd>Optional. Extra information for this <strong>friend</strong>.</dd>
+<dt id="term-priority">Priority</dt>
+<dd>Used to solve conflicts while routing calls through <strong>friends</strong>.
+If a call destination <strong>matches</strong> more than one friend regular expression
+the call will be routed through the friend with <strong>less priority value</strong>.</dd>
+<dt id="term-connectivity-mode">Connectivity mode</dt>
+<dd>Choose &#8220;IntervPBX&#8221; for internal friends.</dd>
+<dt id="term-target-client">Target Client</dt>
+<dd>vPBX client inside the same brand you want to connect.</dd>
+<dt id="term-fallback-outgoing-ddi">Fallback Outgoing DDI</dt>
+<dd>If called extension causes an external call, this DDI will be used as source number.</dd>
+<dt id="term-always-apply-transformations">Always apply transformations</dt>
+<dd>Numbers listed in Extensions section of both source and destination client will be considered as internal and
+won&#8217;t traverse numeric transformation rules. Enable this setting to force Numeric Transformation rules even on these numbers.</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Calls to <em>friends</em> are considered internal. That means that ACLs won&#8217;t
+be checked when calling a friend, no matter if the origin of the call
+is a user or another friend.</p>
+</div>
+</div>
+<div class="section" id="summary-of-internal-friends">
+<h2>Summary of internal friends</h2>
+<p>These are key points to understand <em>internal friends</em>:</p>
+<ul class="simple">
+<li>They have been designed to allow users from a vPBX to call to extensions (normally users)
+of another vPBX of the same brand.</li>
+<li>Usually they will allow user-user calls.</li>
+<li>You cannot use an internal friend to generate external calls paid by the other client.</li>
+<li>But external calls may happen if extensions are pointed to external numbers (controlled external calls).</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2019, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

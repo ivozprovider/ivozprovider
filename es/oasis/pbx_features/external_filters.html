@@ -1,0 +1,370 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="es" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="es" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Filtros de entrada externo &mdash; documentación de IvozProvider - Oasis</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'Oasis',
+              LANGUAGE:'es',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/banner.css" type="text/css" />
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="next" title="Listas de coincidencia" href="match_lists.html" />
+    <link rel="prev" title="Reglas DDI de salida" href="outgoingddi_rules.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> IvozProvider
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.7
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Introducción a Ivozprovider</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/index.html">Arquitectura general de la plataforma</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../operation_roles/index.html">Roles de la plataforma</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Minimum Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Instalación inicial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../internal_calls/index.html">Realizar llamadas internas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external_incoming_calls/index.html">Recibir llamadas externas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external_outgoing_calls/index.html">Realizar llamadas externas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Configuration</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Funcionalidades de PBX</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="extensions.html">Extensiones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="terminals.html">Terminales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_permissions.html">Control ACL para llamadas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="users.html">Usuarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="friends.html">Friends</a></li>
+<li class="toctree-l2"><a class="reference internal" href="music_on_hold.html">Música en espera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sounds.html">Locuciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="outgoingddi_rules.html">Reglas DDI de salida</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Filtros de entrada externo</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#schedules">Horarios</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#calendars">Calendarios</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="match_lists.html">Listas de coincidencia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="route_locks.html">Candados</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conditional_routes.html">Rutas condicionales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="huntgroups.html">Grupos de salto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="queues.html">Colas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ivrs.html">Interactive Voice Response (IVR)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conference_rooms.html">Salas de audioconferencias</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_ddis.html">DDIs externos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_captures.html">Capturas de llamada</a></li>
+<li class="toctree-l2"><a class="reference internal" href="services.html">Servicios adicionales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_recording.html">Grabación de llamadas</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../retail/index.html">Clientes Retail</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../billing_and_invoices/index.html">Tarificación y facturación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../provisioning/index.html">Provisión de terminales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faxing/index.html">Sistema de Fax Virtual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userportal/index.html">Portal de usuario</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Security and Maintenance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html">Elementos de seguridad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maintenance/index.html">Mantenimiento de la solución</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IvozProvider</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Funcionalidades de PBX</a> &raquo;</li>
+        
+      <li>Filtros de entrada externo</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/pbx_features/external_filters.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="external-call-filters">
+<span id="external-filters"></span><h1>Filtros de entrada externo<a class="headerlink" href="#external-call-filters" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Una de las configuraciones más habituales que todo administrador de empresa querrá realizar en un momento dado es poner filtros de horario y de calendario a sus <a class="reference internal" href="external_ddis.html#external-ddis"><span class="std std-ref">DDIs externos</span></a>.</p>
+<p>Para ello, el primer paso es crear un horario.</p>
+<div class="section" id="schedules">
+<h2>Horarios<a class="headerlink" href="#schedules" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>La sección <strong>Configuración de Empresa</strong> &gt; <strong>Horarios</strong> permite definir los tramos horarios en los que un <a class="reference internal" href="external_ddis.html#external-ddis"><span class="std std-ref">DDI externo</span></a> está dentro de horario.</p>
+<p>La interfaz que se le presenta al administrador de empresa cuando añade un horario es la siguiente:</p>
+<img alt="../_images/timetables_add.png" src="../_images/timetables_add.png" />
+<p>Con la configuración anterior, hemos definido el tramo horario de mañana de una empresa de Lunes a Jueves.</p>
+<p>Sigamos con el ejemplo y definamos el tramo horario de tarde de Lunes a Jueves:</p>
+<img alt="../_images/timetables_add2.png" src="../_images/timetables_add2.png" />
+<p>Y el horario reducido de los viernes:</p>
+<img alt="../_images/timetables_add3.png" src="../_images/timetables_add3.png" />
+<p>Ya tenemos los siguientes tramos horarios que, combinados, describen un horario de oficina tradicional:</p>
+<img alt="../_images/timetables_add4.png" src="../_images/timetables_add4.png" />
+<div class="admonition warning">
+<p class="first admonition-title">Advertencia</p>
+<p class="last">Los horarios definen, una vez sumados, los tramos horarios activos: toda hora que no caiga dentro de uno de los tramos agrupados será considerada como llamada fuera de horario.</p>
+</div>
+</div>
+<div class="section" id="calendars">
+<h2>Calendarios<a class="headerlink" href="#calendars" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Los calendarios definen, una vez sumados, los días que se tienen que considerar festivos.</p>
+<p>Imaginemos que creamos 3 calendarios tal que:</p>
+<img alt="../_images/calendars_list.png" src="../_images/calendars_list.png" />
+<p>La creación de calendarios solo requiere dar un nombre al mismo, una vez creado hay que añadir días festivos a dicho calendario pulsando el botón de la derecha del lápiz:</p>
+<img alt="../_images/calendars_add_day.png" src="../_images/calendars_add_day.png" />
+<p>Desde este momento, ese calendario tiene marcado el día 1 de Enero de 2016 como día festivo con locución de festivo especial llamada &#8220;Feliz año&#8221;.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Advertencia</p>
+<p class="last">Los calendarios tienen una lógica contraria a los horarios: si un día concreto no está definido como festivo en uno de los calendarios, será considerado como día laborable.</p>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Consejo</p>
+<p class="last">Si un día es festivo en un calendario y no hay locución de festivo especial, se reproducirá la locución de festivo del filtro de entrada externo (ver más abajo).</p>
+</div>
+<p class="rubric">Crear un filtro de entrada externo</p>
+<p>Una vez que tenemos unos horarios y unos calendarios creados, llega el momento de agruparlos en lo que en IvozProvider se conoce por <strong>Filtro de entrada externos</strong>.</p>
+<p>El interfaz que se le presenta al administrador de empresa es el siguiente:</p>
+<img alt="../_images/external_call_filter.png" src="../_images/external_call_filter.png" />
+<dl class="glossary docutils">
+<dt id="term-name">Nombre</dt>
+<dd><p class="first last">Nombre con el que se referenciará este filtro.</p>
+</dd>
+<dt id="term-welcome-locution">Locución de bienvenida</dt>
+<dd><p class="first last">Esta locución se reproduce siempre que la llamada no se va a rechazar por festivo o fuera horario (es decir, en una hora normal de un día normal).</p>
+</dd>
+<dt id="term-black-list">Lista negra</dt>
+<dd><p class="first last">Los origenes externos serán comprobados contra las <a class="reference internal" href="match_lists.html#match-lists"><span class="std std-ref">Listas de coincidencia</span></a> asociadas, si se encuentra una coincidencia, la llamada será directamente rechazada.</p>
+</dd>
+<dt id="term-white-list">Lista blanca</dt>
+<dd><p class="first last">Los origenes externos serán comprobados contra las <a class="reference internal" href="match_lists.html#match-lists"><span class="std std-ref">Listas de coincidencia</span></a> asociadas, si se encuentra una coincidencia, la llamada será directamente enrutada al destino del DDI, ignorando el proceso del filtro. Tenga en cuenta que las listas negras son comprobadas antes que las listas blancas.</p>
+</dd>
+<dt id="term-holiday-locution">Locución de festivo</dt>
+<dd><p class="first last">Esta locución se reproducirá cuando el día de hoy esté marcado como festivo en uno de los calendarios y no se haya definido una locución de festivo especial en dicho calendario para ese día.</p>
+</dd>
+<dt id="term-holiday-forward-type">Tipo de desvío festivo</dt>
+<dd><p class="first last">Si una llamada entra un día festivo, aparte de la locución de festivo (si la hay), se puede realizar un desvío a un buzón de voz, a un número externo o a una extensión interna. En el ejemplo, la llamada se desviará los días festivos al móvil 676 676 676.</p>
+</dd>
+<dt id="term-out-of-schedule-locution">Locución fuera horario</dt>
+<dd><p class="first last">Esta locución se reproducirá cuando, siendo un día no festivo, la hora actual no esté dentro de ningunos de los horarios vinculados.</p>
+</dd>
+<dt id="term-out-of-schedule-forward-type">Tipo de desvío fuera horario</dt>
+<dd><p class="first last">Lo mismo que en festivo, pero para el caso de fuera horario. En la imagen, no se ejecutaría ningún desvío.</p>
+</dd>
+<dt id="term-calendars">Calendarios</dt>
+<dd><p class="first last">Permite seleccionar múltiples calendarios, de forma que el calendario del filtro es la suma de todos ellos.</p>
+</dd>
+<dt id="term-schedules">Horarios</dt>
+<dd><p class="first last">Permite seleccionar múltiples horarios, de forma que el horario del filtro es la suma de todos ellos.</p>
+</dd>
+</dl>
+<div class="admonition attention">
+<p class="first admonition-title">Atención</p>
+<p class="last">El día festivo tiene prevalencia sobre el fuera horario. Primero se evalúan los calendarios, luego los horarios.</p>
+</div>
+<p>En la siguiente sección veremos como este filtro se asigna a los <a class="reference internal" href="external_ddis.html#external-ddis"><span class="std std-ref">DDIs externos</span></a> que queramos, definiendo así el comportamiento de los mismos fuera de horario y en días festivos, así como dentro de horario en el caso de <em>setear</em> locución de bienvenida en el filtro.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="match_lists.html" class="btn btn-neutral float-right" title="Listas de coincidencia" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="outgoingddi_rules.html" class="btn btn-neutral float-left" title="Reglas DDI de salida" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016-2017, Irontec
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-book"> Other Versions</span>
+        v: oasis
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Branches</dt>
+            <dd><a href="../../artemis/index.html">artemis</a></dd>
+            <dd><a href="../../bleeding/index.html">bleeding</a></dd>
+            <dd><a href="external_filters.html">oasis</a></dd>
+        </dl>
+    </div>
+</div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

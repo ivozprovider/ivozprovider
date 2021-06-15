@@ -1,0 +1,329 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="es" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="es" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Llamadas facturables &mdash; documentación de IvozProvider - Oasis</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'Oasis',
+              LANGUAGE:'es',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/banner.css" type="text/css" />
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="next" title="Planes de precio" href="pricing_plans.html" />
+    <link rel="prev" title="Histórico de llamadas" href="call_registry.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> IvozProvider
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.7
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Introducción a Ivozprovider</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/index.html">Arquitectura general de la plataforma</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../operation_roles/index.html">Roles de la plataforma</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Minimum Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Instalación inicial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../internal_calls/index.html">Realizar llamadas internas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external_incoming_calls/index.html">Recibir llamadas externas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external_outgoing_calls/index.html">Realizar llamadas externas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../pbx_features/index.html">Funcionalidades de PBX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../retail/index.html">Clientes Retail</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tarificación y facturación</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="call_registry.html">Histórico de llamadas</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Llamadas facturables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pricing_plans.html">Planes de precio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bill_a_call.html">Tarificación de llamadas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="invoices.html">Generación de facturas</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../provisioning/index.html">Provisión de terminales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faxing/index.html">Sistema de Fax Virtual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userportal/index.html">Portal de usuario</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Security and Maintenance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html">Elementos de seguridad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maintenance/index.html">Mantenimiento de la solución</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IvozProvider</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Tarificación y facturación</a> &raquo;</li>
+        
+      <li>Llamadas facturables</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/billing_and_invoices/billable_calls.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="billable-calls">
+<span id="id1"></span><h1>Llamadas facturables<a class="headerlink" href="#billable-calls" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Los listados de llamadas de las secciones <strong>Llamadas facturables</strong> muestran solo las <strong>llamadas que implican coste</strong>.</p>
+<div class="admonition important">
+<p class="first admonition-title">Importante</p>
+<p class="last">La gran diferencia respecto a las llamadas del <a class="reference internal" href="call_registry.html#call-registry"><span class="std std-ref">Histórico de llamadas</span></a> es que todas las que aparecen aquí implican coste (no aparecen, por tanto, llamadas internas, etc.)</p>
+</div>
+<p>Se muestra el coste asociado a las llamadas (una vez calculado) y, dado que las empresas son notificadas de sus llamadas por medio de facturas emitidas por el <em>operador de marca</em>, solo se existe a dos niveles:</p>
+<ul class="simple">
+<li><p class="first">A nivel global (<em>god</em>).</p>
+</li>
+<li><p class="first">A nivel de marca.</p>
+</li>
+</ul>
+<p>Estos listados muestran la siguiente información:</p>
+<dl class="glossary docutils">
+<dt id="term-date">Fecha</dt>
+<dd><p class="first last">Fecha y hora del establecimiento de la llamada.</p>
+</dd>
+<dt id="term-brand">Marca</dt>
+<dd><p class="first last">Solo visible a nivel <em>god</em>, indica la marca de la empresa en cuestión.</p>
+</dd>
+<dt id="term-company">Compañía</dt>
+<dd><p class="first last">Empresa responsable de la llamada.</p>
+</dd>
+<dt id="term-destination">Destino</dt>
+<dd><p class="first last">Número externo al que se ha llamado.</p>
+</dd>
+<dt id="term-pricing-pattern">Patrón de destino (que es en realidad el patrón de precio)</dt>
+<dd><p class="first last">Indica el <a class="reference internal" href="../external_outgoing_calls/noplan_nocall.html#price-pattern"><span class="std std-ref">patrón de precio</span></a> en base al cual se ha puesto precio a la llamada.</p>
+</dd>
+<dt id="term-duration">Duración</dt>
+<dd><p class="first last">Indica cuánto ha durado la llamada.</p>
+</dd>
+<dt id="term-metered-yes-no">Tarificado (sí/no)</dt>
+<dd><p class="first last">Indica si el proceso que pone precio a las llamadas ha calculado el precio de esta llamada concreta.</p>
+</dd>
+<dt id="term-price">Precio</dt>
+<dd><p class="first last">Coste calculado para la llamada.</p>
+</dd>
+<dt id="term-pricing-plan">Plan de precio</dt>
+<dd><p class="first last"><a class="reference internal" href="../external_outgoing_calls/noplan_nocall.html#price-plan"><span class="std std-ref">Plan de precio</span></a> en base al cual se ha puesto precio a la llamada.</p>
+</dd>
+<dt id="term-peering-contract">Contrato de peering</dt>
+<dd><p class="first last">Indica por qué <a class="reference internal" href="../external_incoming_calls/peering_contracts.html#peering-contracts"><span class="std std-ref">Contrato de peering</span></a> ha salido la llamada.</p>
+</dd>
+<dt id="term-invoice">Factura</dt>
+<dd><p class="first last">Indica si la llamada está incluida en alguna <a class="reference internal" href="invoices.html#invoices"><span class="std std-ref">factura</span></a>.</p>
+</dd>
+<dt id="term-type-inbound-outbound">Tipo (entrante/saliente)</dt>
+<dd><p class="first last">Dado que ciertas llamadas entrantes pueden implicar coste (ver <a class="reference internal" href="../external_incoming_calls/configure_ddi.html#bill-inbound"><span class="std std-ref">tarificación de llamadas entrantes</span></a>), indica si la llamada es entrante o saliente.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Las llamadas aparecen en este listado en cuanto se cuelgan. Pasados unos minutos, el proceso que pone precios a las llamadas habrá tarificado la llamada (<em>Tarificado</em> igual a &#8216;Sí&#8217;) y tendremos disponible el <strong>Precio</strong> calculado.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pricing_plans.html" class="btn btn-neutral float-right" title="Planes de precio" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="call_registry.html" class="btn btn-neutral float-left" title="Histórico de llamadas" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016-2017, Irontec
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-book"> Other Versions</span>
+        v: oasis
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Branches</dt>
+            <dd><a href="../../artemis/index.html">artemis</a></dd>
+            <dd><a href="../../bleeding/index.html">bleeding</a></dd>
+            <dd><a href="billable_calls.html">oasis</a></dd>
+        </dl>
+    </div>
+</div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

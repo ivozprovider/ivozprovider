@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Outgoing Routing</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="external_ddi.xhtml" title="Outgoing DDI configuration"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="call_types.xhtml" title="Where do I call?"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">IvozProvider Oasis documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Making external calls</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <p id="outgoing-routes">We already have our test call categorized as a call within the <strong>Target pattern</strong>
+&#8216;Spain&#8217;. In addition, we also have a <strong>Target pattern group</strong> including &#8216;Spain&#8217;,
+called &#8216;Europe&#8217;.</p>
+<p>Now we have to tell IvozProvider that calls to &#8216;Spain&#8217; or &#8216;Europe&#8217; should be
+established through our <strong>Contract Peering</strong>.</p>
+<div class="section" id="outgoing-routing">
+<h1>Outgoing Routing</h1>
+<p>To make this assignment, we use the section <strong>Outgoing routing</strong>:</p>
+<img alt="../_images/outgoing_routes_section.png" class="align-center" src="../_images/outgoing_routes_section.png" />
+<p>If we choose routing &#8216;Spain&#8217; calls only through our <em>Peering contract</em>, we will
+make this configuration:</p>
+<img alt="../_images/outgoing_routes_by_pattern.png" class="align-center" src="../_images/outgoing_routes_by_pattern.png" />
+<p>On the other hand, if we are more generous and we decide to place calls to all
+european countries, we would make this configuration:</p>
+<img alt="../_images/outgoing_routes_by_patterngroup.png" class="align-center" src="../_images/outgoing_routes_by_patterngroup.png" />
+<p id="routes-metrics">Two parameters deserve an explanation in this section:</p>
+<dl class="glossary docutils">
+<dt id="term-priority">Priority</dt>
+<dd>If a call matches several routes, it will be placed using the outgoing
+route with lower priority, as long as it is available.</dd>
+<dt id="term-metric">Metric</dt>
+<dd>If a call matches several routes with equal priority, metric will determine
+the proportion of calls that will use one route or another.</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This are the key parameters to achieve two interesting features:
+<strong>load-balancing</strong> and <strong>failover-routes</strong>.</p>
+</div>
+<div class="section" id="load-balancing">
+<h2>Load balancing</h2>
+<p><em>Load-balancing</em> lets us distribute calls matching the same pattern using
+several valid outgoing routes.</p>
+<p class="rubric">Example 1</p>
+<ul class="simple">
+<li>Route A: priority 1, metric 1</li>
+<li>Route B: priority 1, metric 1</li>
+</ul>
+<p>Call matching these routes will use route A for %50 of the calls and route B for
+%50 of the calls.</p>
+<p class="rubric">Example 2</p>
+<ul class="simple">
+<li>Route A: priority 1, metric 1</li>
+<li>Route B: priority 1, metric 2</li>
+</ul>
+<p>Call matching these routes will use route A for %33 of the calls and route B for
+%66 of the calls.</p>
+</div>
+<div class="section" id="failover-routes">
+<h2>Failover routes</h2>
+<p>Failover route lets us use another route whenever the main route fails.</p>
+<p class="rubric">Example</p>
+<ul class="simple">
+<li>Route A: priority 1, metric 1</li>
+<li>Route B: priority 2, metric 1</li>
+</ul>
+<p>All calls matching these routes will try to use route A. In case the call fails,
+the call will be placed using route B.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Although given examples use two routes, more routes can be chained and
+failover and load-balancing estrategies can be combined.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

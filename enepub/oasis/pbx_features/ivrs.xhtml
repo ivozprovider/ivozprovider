@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Interactive Voice Response (IVR)</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="conference_rooms.xhtml" title="Conference rooms"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="queues.xhtml" title="Queues"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">IvozProvider Oasis documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">PBX Features</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="interactive-voice-response-ivr">
+<h1>Interactive Voice Response (IVR)</h1>
+<p>IVRs are the most common way to make <strong>audio menus</strong> where the caller must
+choose the destination of the call by <strong>pressing codes</strong> based on the locutions
+instructions that will be played.</p>
+<div class="section" id="generic-ivrs">
+<span id="id1"></span><h2>Generic IVRs</h2>
+<p>In this type of IVRs, the caller will directly press the extension that must
+previously know (or the welcome locution suggests) and the system will
+automatically connect with that extension:</p>
+<p>Generic IVRs have the following fields:</p>
+<dl class="glossary docutils">
+<dt id="term-name">Name</dt>
+<dd>Descriptive name of the IVR that will be used in other sections.</dd>
+<dt id="term-timeout">Timeout</dt>
+<dd>Time that caller has to enter the digits of the target extension.</dd>
+<dt id="term-welcome-locution">Welcome locution</dt>
+<dd>This locution will be played as soon as the caller enters the IVR.</dd>
+<dt id="term-success-locution">Success locution</dt>
+<dd>In case the dialed extension exists in the company, this locution will
+be played (usually something like &#8216;Connecting, please wait...&#8217;).</dd>
+<dt id="term-no-input-process">No input process</dt>
+<dd>If the caller does not input any digit in the timeout value, the
+no input process will trigger, playing the configured locution and
+redirecting the call to another number, extension or voicemail.</dd>
+<dt id="term-error-process">Error process</dt>
+<dd>If the dialed extension is invalid, the error process will trigger,
+playing the configured locution and redirecting the call to another
+number, extension or voicemail.</dd>
+</dl>
+</div>
+<div class="section" id="custom-ivrs">
+<span id="id2"></span><h2>Custom IVRs</h2>
+<p>Contrary to the generic IVRs where the caller can only dial internal
+extensions, the custom IVRS can configure options that can be routed
+in different ways.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">The most common usage for this IVR is combining them with a welcome
+locution that says something like &#8216;Press 1 to contact XXX, Press 2 to
+contact YYY, ...&#8221;</p>
+</div>
+<p>Most of the configurable fields are the same that generic IVR uses:</p>
+<p>The process of each entry of the IVR can be defined in the following button:</p>
+<img alt="../_images/ivr_custom2.png" src="../_images/ivr_custom2.png" />
+<p>In this example, the caller can dial 1, 2 or 3 (the rest will be considered as
+an error and will trigger the <strong>Error process</strong>):</p>
+<img alt="../_images/ivr_custom3.png" src="../_images/ivr_custom3.png" />
+<ul class="simple">
+<li>1: Call to the internal extension 200, created in <a class="reference internal" href="huntgroups.xhtml#huntgroups"><span class="std std-ref">previous section</span></a> that routes to hunt group <em>Reception</em>.</li>
+<li>2: Call to the internal extension 101.</li>
+<li>3: Route this call to the external number 676 676 676.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Each of the Custom IVR entries supports a locution that, if set,
+will be played instead of the IVR <strong>success locution</strong>. This way, you can
+configure a generic locution (like &#8216;Connecting....&#8217;) or a custom one for
+a given entry (like &#8216;Connecting reception department, please wait...&#8217;).</p>
+</div>
+<p class="rubric">Entries are regular expressions</p>
+<p>Although on the most typical usage of this IVRs options will be digits from 1
+to 9, <strong>entries are interpreted as regular expressions</strong>. This way, you could
+add an entry like &#8220;^2[0-9]{2}$&#8221; to group the behaviour of all numbers from 200
+to 299. With this usage, <strong>Max digits</strong> parameter is important too.</p>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p class="last">To avoid undesired behaviour, <strong>if you use options out of 0-9, use
+regular expression notation</strong> (&#8216;^1$&#8217; instead of &#8216;1&#8217;, &#8216;^10$&#8217; instead
+of &#8216;10&#8217; and so on).</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

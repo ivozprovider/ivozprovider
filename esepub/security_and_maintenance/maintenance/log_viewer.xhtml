@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Visor de logs</title>
+    
+    <link rel="stylesheet" href="../../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="other_tools.xhtml" title="Otras herramientas"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="sip_captures.xhtml" title="Analizador de tráfico SIP"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.xhtml">documentación de IvozProvider - Artemis</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Resolución de problemas</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="log-viewer">
+<h1>Visor de logs</h1>
+<p>Aunque todas las instalaciones mantenidas por <a class="reference external" href="https://www.irontec.com">Irontec</a><span class="link-target"> [https://www.irontec.com]</span> incluyen un visor de logs basado en un <a class="reference external" href="https://www.elastic.co/elk-stack">stack ELK</a><span class="link-target"> [https://www.elastic.co/elk-stack]</span>, <a class="reference external" href="https://www.freedesktop.org/software/systemd/man/journalctl.html">journalctl</a><span class="link-target"> [https://www.freedesktop.org/software/systemd/man/journalctl.html]</span> es la única herramientas incluida en IvozProvider que permite analizar los logs generados por los diferentes elementos que componen la solución.</p>
+<div class="section" id="asterisk-cli">
+<h2>CLI de Asterisk</h2>
+<p>El CLI de Asterisk proporciona mucha información realtime sobre lo que está pasando y están formateados de una forma que permite la detección rápida de errores:</p>
+<img alt="../../_images/asterisk_cli.png" src="../../_images/asterisk_cli.png" />
+<p>Para acceder a la línea de comandos de Asterisk basta con ejecutar <em>ast</em> en la consola.</p>
+</div>
+<div class="section" id="kamailio-realtime-log-viewing">
+<h2>Visualización en tiempo real de logs de Kamailio</h2>
+<p>Los logs de Kamailio se pueden ver en tiempo real ejecutando <em>kamtail-proxyusers</em> y <em>kamtail-proxytrunks</em> en la consola:</p>
+<img alt="../../_images/kamtail.png" src="../../_images/kamtail.png" />
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2019, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

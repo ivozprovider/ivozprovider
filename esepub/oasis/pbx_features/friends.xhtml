@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Friends</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="music_on_hold.xhtml" title="Música en espera"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="users.xhtml" title="Usuarios"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">documentación de IvozProvider - Oasis</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Funcionalidades de PBX</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="friends">
+<h1>Friends</h1>
+<p>La sección <strong>Amigos</strong> permite a los <strong>administradores de empresa</strong> conectar su PBX virtual con otras centralitas SIP por medio de <em>trunks</em> SIP. El caso de uso habitual es el de conectar IvozProvider a otra centralita SIP de la empresa, otra sede, etc.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Advertencia</p>
+<p class="last">Es importante entender la diferencia entre los <strong>Contratos de peering</strong> definidos por el <strong>operador de marca</strong> para conectar con la red pública y los <strong>Amigos</strong>, definidos por el <strong>administrador de empresa</strong> para conectar su PBX con otras PBXs.</p>
+</div>
+<div class="section" id="what-does-this-allow">
+<h2>¿Qué permite?</h2>
+<p>Esta sección permite comunicar los usuarios de ambos extremos del <em>trunk</em> SIP, pero también permite:</p>
+<ul class="simple">
+<li><p class="first">Que los usuarios del &#8220;otro lado&#8221; llamen a la red pública igual que los <a class="reference internal" href="users.xhtml#users-configuration"><span class="std std-ref">Usuarios</span></a> nativos.</p>
+</li>
+<li><p class="first">Que llamadas de la red pública se puedan dirigir a usuarios del otro extremo del <em>trunk</em> SIP</p>
+</li>
+</ul>
+</div>
+<div class="section" id="types-of-friends">
+<h2>Tipos de amigos</h2>
+<p>Se pueden unir 2 tipos de centralitas SIP a IvozProvider:</p>
+<ul class="simple">
+<li><p class="first"><strong>Centralitas con conectividad directa</strong>: Esto implica que IvozProvider tiene la posibilidad de hablar SIP directamente sin más que dirigir su tráfico a una IP pública a un puerto concreto.</p>
+</li>
+<li><p class="first"><strong>Centralitas tras NAT</strong>, no accesibles directamente. Este tipo de centralitas tendran que registrarse en IvozProvider (exactamente igual que lo hacen los <a class="reference internal" href="terminals.xhtml#terminals"><span class="std std-ref">Terminales</span></a>).</p>
+</li>
+</ul>
+</div>
+<div class="section" id="what-kind-of-calls-can-be-routed-through-a-friend">
+<h2>¿Qué llamadas se envían al <em>friend</em>?</h2>
+<p>IvozProvider tiene que saber qué llamadas envía por los distintos <em>friends</em> que se definan. Para ello, el <strong>administrador de empresa</strong> definirá por medio de tantas expresiones regulares como desee los destinos que son <em>alcanzables</em> por medio del <strong>amigo</strong>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Las <a class="reference internal" href="extensions.xhtml#extensions"><span class="std std-ref">extesiones internas</span></a> tienen prevalencia sobre las expresiones regulares de los <em>friends</em>.</p>
+</div>
+<p>Es decir, IvozProvider encamina una llamada recibida por un <a class="reference internal" href="users.xhtml#users"><span class="std std-ref">usuario</span></a> o por un <a class="reference internal" href="#friends"><span class="std std-ref">amigo</span></a> aplicando esta lógica:</p>
+<ol class="arabic simple">
+<li><p class="first">¿Coincide con una extensión definida en la sección Extensiones?</p>
+</li>
+<li><p class="first">Si no, ¿coincide con alguna expresión regular vinculada a alǵun <em>friend</em>?</p>
+</li>
+<li><p class="first">Si no, se considera una llamada externa.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="configuration">
+<h2>Configuración</h2>
+<p>La configuración de un <strong>Amigo</strong> es una fusión de la configuración de un <strong>Usuario</strong> y un <strong>Terminal</strong>.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Consejo</p>
+<p class="last">La equivalencia <strong>Amigo</strong> &lt;-&gt; <strong>Usuario</strong> es tal, que los <strong>Amigos</strong> hablarán SIP con el <a class="reference internal" href="../internal_calls/god_portal.xhtml#proxyusers"><span class="std std-ref">Proxy de Usuarios</span></a>.</p>
+</div>
+<p>Estos son los parámetros a configurar a la hora de definir un <em>amigo</em>:</p>
+<dl class="glossary docutils">
+<dt id="term-name">Nombre</dt>
+<dd><p class="first last">Nombre del <strong>Amigo</strong>, equivalente al nombre del <strong>Terminal</strong>. Se utiliza en los mensajes SIP (<strong>From User</strong> enviado).</p>
+</dd>
+<dt id="term-description">Descripción</dt>
+<dd><p class="first last">No se utiliza más que para describir el <strong>amigo</strong></p>
+</dd>
+<dt id="term-priority">Prioridad</dt>
+<dd><p class="first last">Sirve para resolver conflictos a la hora de dirigir llamadas hacia un <strong>amigo</strong> u otro. Si una llamada <em>matchea</em> expresiones regulares más de un <em>friend</em>, <strong>se encaminará la llamada al que tenga menor valor de prioridad</strong>.</p>
+</dd>
+<dt id="term-password">Contraseña</dt>
+<dd><p class="first last">Cuando el <em>friend</em> nos envíe peticiones, IvozProvider le autenticará utilizando esta contraseña. <strong>Es obligatorio el uso de contraseña</strong>.</p>
+</dd>
+<dt id="term-direct-connection">Conectividad directa</dt>
+<dd><p class="first last">En caso de seleccionar &#8216;Sí&#8217;, se pedirá el protocolo, la IP y el puerto en el que se puede contactar con el <em>friend</em>.</p>
+</dd>
+<dt id="term-call-acl">Permisos de llamada</dt>
+<dd><p class="first last">Un <em>friend</em>, al igual que un <a class="reference internal" href="users.xhtml#users"><span class="std std-ref">usuario interno</span></a>, puede llamar a usuarios internos (todo lo que esté en Extensiones + Friends). Además, puede llamar a los destinos externos que permita este parámetro (igual que los usuarios).</p>
+</dd>
+<dt id="term-fallback-outgoing-ddi">DDI de salida alternativo</dt>
+<dd><p class="first last">Este DDI se empleará si el mostrado por el friend no coincide con ninguno de la compañía.</p>
+</dd>
+<dt id="term-country-and-area-code">Código de país y Area Code</dt>
+<dd><p class="first last">Las cabeceras de origen/destino se esperarán y enviarán en estos formatos.</p>
+</dd>
+<dt id="term-allowed-codecs">Codecs rechazados/permitidos</dt>
+<dd><p class="first last">Al igual que un Terminal, un <em>friend</em> habla el codec seleccionado.</p>
+</dd>
+<dt id="term-from-domain">From domain</dt>
+<dd><p class="first last">IvozProvider utilizará este valor en el From Domain de las peticiones al <em>friend</em>.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Las llamadas a los <em>friends</em> no atraviesan ACLs. Es decir, se consideran internas, por lo que todos los usuarios/amigos pueden llamar a todos los usuarios/amigos.</p>
+</div>
+</div>
+<div class="section" id="asterisk-as-a-friend">
+<h2>Configuración Asterisk remoto</h2>
+<p>Al otro lado puede haber entidades SIP muy diversas, pero añadimos la configuración ejemplo para conectar IvozProvider con una centralita Asterisk:</p>
+<div class="section" id="register">
+<h3>register</h3>
+<p>En caso de no estar directamente visible, el Asterisk tendrá que registrarse en IvozProvider (al igual que hacen los terminales).</p>
+<p>La configuración sería tal que:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>register =&gt; friend-name:friend-password@ivozprovider-company.sip-domain.com
+</pre></div>
+</div>
+</div>
+<div class="section" id="peer">
+<h3>peer</h3>
+<div class="highlight-none"><div class="highlight"><pre><span></span>[nombre-friend]
+type=peer
+host=ivozprovider-company.sip-domain.com
+context=XXXXXX
+disallow=all
+allow=alaw
+defaultuser=friend-name
+secret=friend-password
+fromdomain=ivozprovider-company.sip-domain.com
+insecure=port,invite
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Advertencia</p>
+<p class="last">El <em>friend</em> no puede desafiar a IvozProvider, al igual que un terminal no desafía a IvozProvider cuando éste le llama. De ahí el <em>insecure</em>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="summary">
+<h2>Resumen final</h2>
+<p>Lo vital para entender esta sección es pensar que un <em>friend</em> tiene una relación directa con el trío extension-usuario-terminal:</p>
+<ul class="simple">
+<li><p class="first">Puede realizar llamadas a todas las extensiones internas y a otros amigos.</p>
+</li>
+<li><p class="first">Pueden realizar las llamadas que le permita su grupo de permisos.</p>
+</li>
+<li><p class="first">Presentan el DDI saliente que tengan configurado en sus llamadas salientes.</p>
+</li>
+<li><p class="first">No desafían a IvozProvider (no hay autenticación SIP en las peticiones hacia ellos).</p>
+</li>
+<li><p class="first">Responden a los desafíos de IvozProvider (hay autenticación SIP obligatoria en las peticiones desde ellos).</p>
+</li>
+<li><p class="first">Hablan al <em>Proxy de usuarios</em>, igual que los terminales. De hecho, el tráfico SIP de una llamada de un <em>friend</em> es indistinguible al tráfico SIP de una llamada de un terminal.</p>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,1 @@
+.. include:: ../../vpbx/calls/active_calls.rst

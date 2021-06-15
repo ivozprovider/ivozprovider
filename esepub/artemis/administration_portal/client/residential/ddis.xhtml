@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>DDIs</title>
+    
+    <link rel="stylesheet" href="../../../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="external_call_filters.xhtml" title="External call filters"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="residential_devices.xhtml" title="Residential devices"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.xhtml">documentación de IvozProvider - Artemis</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.xhtml" >Client Configuration</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.xhtml" accesskey="U">Clientes residenciales</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="ddis">
+<span id="residential-ddis"></span><h1>DDIs</h1>
+<p>DDIs are the external entry point from DDI Providers to Residential Clients that
+can be routed through Residential Devices.</p>
+<p>We can assign an <a class="reference internal" href="../vpbx/routing_tools/external_call_filters.xhtml#external-call-filters"><span class="std std-ref">External call filters</span></a>. Contrary to vPBX External Call filters, Residential DDIs
+filters only allow static redirection to another external number.</p>
+<div class="section" id="residential-ddi-routes">
+<h2>Residential DDI routes</h2>
+<p>Residential DDIs can only be routed to a <a class="reference internal" href="residential_devices.xhtml#residential-devices"><span class="std std-ref">Residential Devices</span></a>
+or <a class="reference internal" href="../vpbx/faxes.xhtml#faxing-system"><span class="std std-ref">Virtual Fax</span></a>.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Consejo</p>
+<p class="last">Routing a DDI through a Residential device will allow to place external calls
+from that device presenting that DDI as origin.</p>
+</div>
+</div>
+<div class="section" id="residential-recordings">
+<h2>Residential Recordings</h2>
+<p>If Residential Client has <em>Recordings</em> feature enabled, DDIs can also record incoming and/or
+outgoing calls.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2019, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

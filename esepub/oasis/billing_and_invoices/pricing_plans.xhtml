@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Planes de precio</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="bill_a_call.xhtml" title="Tarificación de llamadas"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="billable_calls.xhtml" title="Llamadas facturables"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">documentación de IvozProvider - Oasis</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Tarificación y facturación</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="pricing-plans">
+<h1>Planes de precio</h1>
+<p>En la sección <a class="reference internal" href="../external_outgoing_calls/noplan_nocall.xhtml#noplan-nocall"><span class="std std-ref">Sin plan de precio, no hay llamada</span></a> se hacía una introducción bastante completa sobre el proceso manual de creación de un plan de precios y los conceptos más importantes:</p>
+<ul>
+<li><p class="first"><strong>Un plan de precios agrupa un listado de patrones de precio (prefijos de llamada) con sus detalles de precio</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="first">Precio por minuto</p>
+</li>
+<li><p class="first">Establecimiento de llamada</p>
+</li>
+<li><p class="first">Facturación por segundos / minutos /etc.</p>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Un plan de precios se asocia a una empresa concreta, indicando el período de validez de dicho plan.</p>
+</li>
+<li><p class="first">Una empresa podía tener varios planes de precios en un momento concreto para una llamada concreta.</p>
+</li>
+<li><p class="first">En este último caso, el coste de la llamada se calcularía utilizando el plan de precio de menor métrica.</p>
+</li>
+</ul>
+<div class="section" id="manual-creation">
+<h2>Creación manual</h2>
+<p>La <a class="reference internal" href="../external_outgoing_calls/noplan_nocall.xhtml#price-plan"><span class="std std-ref">creación manual de un plan de precio</span></a> implicaba la creación previa de un <a class="reference internal" href="../external_outgoing_calls/noplan_nocall.xhtml#price-pattern"><span class="std std-ref">patrón de precio</span></a>.</p>
+<p>En ese momento, es posible que el futuro administrador de marca se haya dado cuenta de la titánica tarea que implicaría crear miles de patrones de precio (254 países por las distintas redes móviles, fijos, numeraciones especiales, etc.) para luego poder agruparlos en un plan de precios.</p>
+<p>Es por ello que el proceso de creación de planes y patrones de precio se realiza partiendo de un <a class="reference external" href="https://es.wikipedia.org/wiki/CSV">CSV</a><span class="link-target"> [https://es.wikipedia.org/wiki/CSV]</span>.</p>
+</div>
+<div class="section" id="importing-a-csv-file">
+<h2>Importación vía CSV</h2>
+<p>El primer paso es crear un plan de precios vacío sobre el que importar nuestros precios (sección <strong>Configuración de marca</strong> &gt; <strong>Planes de precio</strong>):</p>
+<img alt="../_images/pricing_plans_add.png" src="../_images/pricing_plans_add.png" />
+<p>Accedemos al listado (vacío) del plan de precio que acabamos de crear:</p>
+<img alt="../_images/pricing_plans_add_price.png" src="../_images/pricing_plans_add_price.png" />
+<p>El botón clave para este proceso de importación masiva es el siguiente:</p>
+<img alt="../_images/pricing_plan_csv.png" src="../_images/pricing_plan_csv.png" />
+<p>Una vez elegido el archivo a importar, se nos presenta la siguiente ventana:</p>
+<img alt="../_images/pricing_plan_csv3.png" src="../_images/pricing_plan_csv3.png" />
+<p>En esta ventana podríamos seleccionar qué contiene cada columna, en caso de no haber creado el <a class="reference external" href="https://es.wikipedia.org/wiki/CSV">CSV</a><span class="link-target"> [https://es.wikipedia.org/wiki/CSV]</span> en el formato recomendado. Del mismo modo, se nos ofrece la posibilidad de ignorar la primera línea, en caso de que incluya los nombres de las columnas en lugar de datos.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Consejo</p>
+<p class="last">El proceso de importación se realiza en segundo plano, permitiendo al administrador de marca seguir configurando otros aspectos de la plataforma mientras se completa.</p>
+</div>
+<div class="section" id="csv-format">
+<h3>Formato CSV</h3>
+<p>A pesar de que la ventana anterior nos permite importar archivos <a class="reference external" href="https://es.wikipedia.org/wiki/CSV">CSV</a><span class="link-target"> [https://es.wikipedia.org/wiki/CSV]</span> en distintos formatos, lo mejor es importar un archivo en el formato adecuado para simplicar este proceso.</p>
+<p>El formato del archivo <a class="reference external" href="https://es.wikipedia.org/wiki/CSV">CSV</a><span class="link-target"> [https://es.wikipedia.org/wiki/CSV]</span> está explicado en la propia sección de ayuda contextual, que incluye un enlace para poder descargar un archivo de ejemplo:</p>
+<img alt="../_images/pricing_plan_csv2.png" src="../_images/pricing_plan_csv2.png" />
+<p>El orden de las columnas debería de ser:</p>
+<ul class="simple">
+<li><p class="first">Nombre del patrón de precio</p>
+</li>
+<li><p class="first">Descripción del patrón de precio</p>
+</li>
+<li><p class="first">Prefijo</p>
+</li>
+<li><p class="first">Precio por minuto</p>
+</li>
+<li><p class="first">Precio de establecimiento</p>
+</li>
+<li><p class="first">Período de facturación</p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Se recomienda entrecomillar con comillas dobles las entradas alfanuméricas, aunque no es necesario para entradas con una única palabra (o entradas sin símbolos raros). <strong>Si contienen coma, es OBLIGATORIO entrecomillarlos</strong>.</p>
+</div>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p class="last">Los <strong>números decimales</strong> tienen que usar el <strong>punto como separador decimal</strong>.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Las entradas numéricas se pueden entrecomillar con comillas dobles, pero no es obligatorio.</p>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Importante</p>
+<p class="last">El sistema de importación creará los patrones de precio que sean necesarios. Si ya existe un patrón de precios con ese prefijo, no se creará, simplemente se vinculará.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Advertencia</p>
+<p>El precio de la llamada sera incrementado cada periodo de facturacion.</p>
+<ul class="last simple">
+<li><p class="first">Si se pone a 1, implica una tarificación por segundos y cada segundo implicará un coste que será el <em>precio por minuto</em> dividido entre 60.</p>
+</li>
+<li><p class="first">Si se pone a 60, implica una tarificación por minutos y cada minuto implicará un coste que será el <em>precio por minuto</em>.</p>
+</li>
+</ul>
+</div>
+<p>Una vez completada la importación, solo faltaría asociar el nuevo plan de precios a las empresas que queramos, siguiendo <a class="reference internal" href="../external_outgoing_calls/noplan_nocall.xhtml#pricing-plan-to-company"><span class="std std-ref">el procedimiento explicado en el bloque anterior</span></a>.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

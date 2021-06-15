@@ -1,0 +1,464 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="es" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="es" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Users &mdash; documentación de IvozProvider - Artemis</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../../',
+              VERSION:'Artemis',
+              LANGUAGE:'es',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/translations.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/banner.css" type="text/css" />
+    <link rel="index" title="Índice" href="../../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../../search.html" />
+    <link rel="next" title="Terminals" href="terminals.html" />
+    <link rel="prev" title="Clientes vPBX" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> IvozProvider
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.18
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../basic_concepts/intro/index.html">Introduction to IvozProvider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../basic_concepts/architecture/index.html">Platform general architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../basic_concepts/installation/index.html">Instalación inicial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../basic_concepts/operation_roles/index.html">Roles de la plataforma</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/internal_calls/index.html">Realizar llamadas internas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/external_incoming_calls/index.html">Receiving external calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/external_outgoing_calls/index.html">Realizar llamadas externas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Administration portal</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../platform/index.html">Platform Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../brand/index.html">Brand Configuration</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Client Configuration</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Clientes vPBX</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="terminals.html">Terminals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="extensions.html">Extensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ddis.html">DDIs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routing_endpoints/index.html">Routing endpoints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routing_tools/index.html">Routing tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user_configuration/index.html">User configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="multimedia/index.html">Multimedia</a></li>
+<li class="toctree-l3"><a class="reference internal" href="faxes.html">Faxes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="services.html">Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rating_profiles.html">Rating profiles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="calls/index.html">Calls</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../residential/index.html">Clientes residenciales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../retail/index.html">Clientes retail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wholesale/index.html">Clientes wholesale</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Specific portals</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_portal/index.html">Portal de usuario</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Security and Maintenance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../security_and_maintenance/security/index.html">Seguridad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../security_and_maintenance/maintenance/index.html">Resolución de problemas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Rest API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api_rest/introduction.html">Introducción a la API de Ivoz Provider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api_rest/multilevel.html">Multi-level API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api_rest/web_client.html">Cliente web incorporado</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api_rest/integrations.html">Integraciones de terceros</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api_rest/use_case.html">Use Case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api_rest/acls.html">ACLs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">IvozProvider</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Client Configuration</a> &raquo;</li>
+        
+          <li><a href="index.html">Clientes vPBX</a> &raquo;</li>
+        
+      <li>Users</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/administration_portal/client/vpbx/users.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="users">
+<span id="id1"></span><h1>Users<a class="headerlink" href="#users" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>The installation process creates <em>Alice</em> and <em>Bob</em> users, allowing us
+to test internals calls between them without too much effort.</p>
+<p>We skipped most of the settings in <strong>Users</strong> configuration that we will described
+in this section.</p>
+<div class="section" id="personal-data">
+<h2>Personal data<a class="headerlink" href="#personal-data" title="Enlazar permanentemente con este título">¶</a></h2>
+<dl class="glossary docutils">
+<dt id="term-name">Name</dt>
+<dd>Used to identify this user in most of the screens. This is also the
+name that will be displayed in internal calls made from this user.</dd>
+<dt id="term-lastname">Lastname</dt>
+<dd>Most of the times this is used to complete the previous field.</dd>
+<dt id="term-email">Email</dt>
+<dd>Email used to send the user&#8217;s received voicemails. This is also used to
+identify the user in their portal.</dd>
+<dt id="term-country-code-area-code">Country code / Area code</dt>
+<dd>Defines the way the user calls and the way the numbers are presented to
+this user.</dd>
+<dt id="term-language">Language</dt>
+<dd>When a locution is played to this user, this language is used.</dd>
+<dt id="term-timezone">Timezone</dt>
+<dd>User portal call list times will use this timezone.</dd>
+</dl>
+</div>
+<div class="section" id="login-info">
+<h2>Login Info<a class="headerlink" href="#login-info" title="Enlazar permanentemente con este título">¶</a></h2>
+<dl class="glossary docutils">
+<dt id="term-active">Active</dt>
+<dd>Allows administrators to grant or disable user&#8217;s acces to the
+<a class="reference internal" href="../../../user_portal/index.html#userportal"><span class="std std-ref">user&#8217;s portal</span></a>.</dd>
+<dt id="term-password">Password</dt>
+<dd>Password used to access the <a class="reference internal" href="../../../user_portal/index.html#userportal"><span class="std std-ref">user&#8217;s portal</span></a>.</dd>
+<dt id="term-qr-code">QR Code</dt>
+<dd>If enabled, a QR code for Grandstream Wave softphone configuration
+will be shown.</dd>
+</dl>
+</div>
+<div class="section" id="basic-configuration">
+<h2>Basic Configuration<a class="headerlink" href="#basic-configuration" title="Enlazar permanentemente con este título">¶</a></h2>
+<dl class="glossary docutils">
+<dt id="term-terminal">Terminal</dt>
+<dd>The available terminals created in <a class="reference internal" href="terminals.html#terminals"><span class="std std-ref">Terminals</span></a> are listed here
+for assignment.</dd>
+<dt id="term-screen-extension">Screen Extension</dt>
+<dd>One of the available <a class="reference internal" href="extensions.html#extensions"><span class="std std-ref">Extensions</span></a> that this user will display when
+placing internal calls. While multiple extensions can be routed to the
+user, only one of them will be presented when the user calls.</dd>
+<dt id="term-outgoing-ddi">Outgoing DDI</dt>
+<dd>As described in <a class="reference internal" href="../../../getting_started/external_outgoing_calls/outgoing_ddi.html#external-ddi"><span class="std std-ref">Configurar DDI saliente</span></a>, determines the number that will
+present when placing external outgoing calls.</dd>
+<dt id="term-outgoing-ddi-rules">Outgoing DDI Rules</dt>
+<dd>Manages exceptions to previous setting. Read <a class="reference internal" href="user_configuration/outgoing_ddi_rules.html#outgoingddi-rules"><span class="std std-ref">Outgoing DDI Rules</span></a>
+for further reference.</dd>
+<dt id="term-call-acl">Call ACL</dt>
+<dd>One of the created <a class="reference internal" href="user_configuration/call_acls.html#call-permissions"><span class="std std-ref">Call ACL</span></a> groups, described
+it the previous sections.</dd>
+<dt id="term-do-not-disturb">Do not disturb</dt>
+<dd>When this setting is enabled, the user won&#8217;t receive any call but can
+still place calls.</dd>
+<dt id="term-call-waiting">Call waiting</dt>
+<dd>Limits received calls when already handling this number of calls. Set 0 for unlimited.</dd>
+<dt id="term-calls-from-non-granted-ips">Calls from non-granted IPs</dt>
+<dd>Enable calling from non-granted IP addresses for this user.
+It limits the number of outgoing calls to avoid toll-fraud.
+&#8216;None&#8217; value makes outgoing calls unlimited as long as client IP
+policy is fulfilled. Read <a class="reference internal" href="../../../security_and_maintenance/security/authorized_ip_ranges.html#roadwarrior-users"><span class="std std-ref">Usuarios remotos</span></a> for further reference.</dd>
+<dt id="term-multi-contact">Multi Contact</dt>
+<dd>Same SIP credentials can be configured in multiple SIP devices. In that case, all devices ring
+simultaneously when receiving a call. Setting this toggle to &#8216;No&#8217; limits this behaviour so that
+only latest registered SIP device rings.</dd>
+<dt id="term-call-rejection-method">Call Rejection Method</dt>
+<dd>This setting allows configuring a behaviour on call rejection for users with several
+SIP devices (Multi Contact: yes). In such scenarios, all devices ring simultaneously and call rejection must
+choose whether rejecting call just in the device that declined or in all ringing devices.
+Default behaviour is to cancel call in all devices for 600/603 response codes and only in
+current device for 480/486. Choose whether you want to force one behaviour or another no
+matter which response code your SIP device sends on call rejection.</dd>
+</dl>
+</div>
+<div class="section" id="voicemail">
+<h2>Voicemail<a class="headerlink" href="#voicemail" title="Enlazar permanentemente con este título">¶</a></h2>
+<dl class="glossary docutils">
+<dt id="term-voicemail-enabled">VoiceMail enabled</dt>
+<dd>Enables or disables the <strong>existance</strong> of a users voicemail.
+This only makes the voicemail available to be routed as destination of a call forwarding.</dd>
+<dt id="term-voicemail-locution">Voicemail Locution</dt>
+<dd>If set, this locution is played as voicemail welcome message when a voicemail
+for this user is going to be recorded. This only applies for call forwards
+to voicemail.</dd>
+<dt id="term-email-notification">Email notification</dt>
+<dd>Send an email to the configured user address when a new voicemail is
+received.</dd>
+<dt id="term-attach-sounds">Attach sounds:</dt>
+<dd>Attach the audio message to the sent email.</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">If voicemail locution is not assigned, default locution will be used as long as
+the user has not recorded a custom message through the voicemail menu (calling to
+voicemail service code).</p>
+</div>
+</div>
+<div class="section" id="boss-assistant">
+<h2>Boss-Assistant<a class="headerlink" href="#boss-assistant" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>This feature will turn the user into a boss that can only be directly call by:</p>
+<ul class="simple">
+<li>The selected assistant.</li>
+<li>Any origin that matches the white list.</li>
+</ul>
+<p>The rest of the calls to <em>a boss</em> will be redirected to the assistant.</p>
+<dl class="glossary docutils">
+<dt id="term-is-boss">Is boss</dt>
+<dd>Determines if this user is a boss.</dd>
+<dt id="term-assistant">Assistant</dt>
+<dd>Who will receive the redirected calls of this boss.</dd>
+<dt id="term-whitelist">Whitelist</dt>
+<dd><a class="reference internal" href="routing_tools/match_lists.html#match-lists"><span class="std std-ref">Match Lists</span></a> with origins that are allowed to call directly to
+the boss.</dd>
+</dl>
+<p>With the setup in the image, every call to <em>Alice</em> will be redirected to <em>Bob</em>,
+except the ones placed by <em>Bob</em> itself and those coming from any origin that matches
+<em>Alice&#8217;s friends</em> matchlist.</p>
+</div>
+<div class="section" id="group-configuration">
+<h2>Group Configuration<a class="headerlink" href="#group-configuration" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>As described in the sections <a class="reference internal" href="routing_endpoints/hunt_groups.html#huntgroups"><span class="std std-ref">Hunt groups</span></a> and <a class="reference internal" href="user_configuration/pick_up_groups.html#capture-groups"><span class="std std-ref">Pick up groups</span></a>, the
+user can be part of one or more hunt groups and pickup groups.</p>
+<p>Those groups can be configured from the sections <a class="reference internal" href="routing_endpoints/hunt_groups.html#huntgroups"><span class="std std-ref">Hunt groups</span></a> and
+<a class="reference internal" href="user_configuration/pick_up_groups.html#capture-groups"><span class="std std-ref">Pick up groups</span></a> or the user&#8217;s screen if the groups already exists.</p>
+<p>You can also configure the user&#8217;s <strong>hunt groups</strong> from the icon in each user
+line of the users list.</p>
+</div>
+<div class="section" id="user-call-forward">
+<h2>User Call Forward<a class="headerlink" href="#user-call-forward" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>The user&#8217;s call forward can be configured with the <strong>List of call forward settings</strong>  button.</p>
+<p>These are the fields and available values:</p>
+<dl class="glossary docutils">
+<dt id="term-call-type">Call Type</dt>
+<dd>Determines if the forward must be applied to external, internal or any
+type of call.</dd>
+<dt id="term-forward-type">Forward type</dt>
+<dd><dl class="first last docutils">
+<dt>When this forward must be applied:</dt>
+<dd><ul class="first last simple">
+<li>Unconditional: always</li>
+<li>No answer: when the call is not answered in X seconds</li>
+<li>Busy: When the user is talking to someone (and call waiting is
+disabled), when <em>Do not disturb</em> is enabled or when the user
+rejects an incoming call.</li>
+<li>Not registered: when the user SIP terminal is not registered
+against IvozProvider.</li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt id="term-target-type">Target type</dt>
+<dd><dl class="first last docutils">
+<dt>What route will use the forwarded call.</dt>
+<dd><ul class="first last simple">
+<li>VoiceMail</li>
+<li>Number (external)</li>
+<li>Extension (internal)</li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition hint">
+<p class="first admonition-title">Consejo</p>
+<p class="last">If we want to forward to other process, we can create an extension
+routed to that object and use the target type <em>Extension</em>.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="terminals.html" class="btn btn-neutral float-right" title="Terminals" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Clientes vPBX" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016-2019, Irontec
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-book"> Other Versions</span>
+        v: bleeding
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Branches</dt>
+            <dd><a href="../../../../artemis/administration_portal/client/vpbx/users.html">artemis</a></dd>
+            <dd><a href="users.html">bleeding</a></dd>
+            <dd><a href="../../../../oasis/index.html">oasis</a></dd>
+        </dl>
+    </div>
+</div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

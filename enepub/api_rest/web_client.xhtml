@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Built-in web client</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="integrations.xhtml" title="Third party integrations"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="multilevel.xhtml" title="Multi-level API"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">IvozProvider Artemis documentation</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="built-in-web-client">
+<h1>Built-in web client</h1>
+<p>APIs come with their own web client so that you can test them easily. Go to <a class="reference external" href="/api/platform/index.html">Platform API</a> for instance.</p>
+<img alt="../_images/web-client.png" class="align-center" src="../_images/web-client.png" />
+<p>You will need to get an access token with some valid admin credentials before anything else. You can do that from [Auth] &gt; [POST /admin_login] section. Click on <cite>Try it out</cite> button, set your credentials and click on <cite>execute</cite> to send the request. You should get a response that contains a token and a refresh token.</p>
+<img alt="../_images/access-token.png" class="align-center" src="../_images/access-token.png" />
+<p>Copy the token and set it on <cite>Authorize</cite> button at the top of the page. The token ttl (time to live) is one hour by default, you can use the refresh token then to get a new one without sending admin credentials again.</p>
+<p>Once you have got your token properly set, click on [GET /administrators] endpoint, <cite>Try it out</cite> and <cite>Execute</cite>. You may want to switch <cite>Response content type</cite> as well (JSON or LD+JSON for this endpoint).</p>
+<img alt="../_images/response.png" class="align-center" src="../_images/response.png" />
+<p>It&#8217;s possible to filter and sort response using <cite>Parameters</cite> input fields as well.</p>
+<p class="rubric">Specification</p>
+<p>You can check out request and response models from the web client itself.</p>
+<img alt="../_images/spec.png" class="align-center" src="../_images/spec.png" />
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2019, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

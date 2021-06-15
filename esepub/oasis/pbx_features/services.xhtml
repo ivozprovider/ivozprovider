@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Servicios adicionales</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="call_recording.xhtml" title="Grabación de llamadas"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="call_captures.xhtml" title="Capturas de llamada"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">documentación de IvozProvider - Oasis</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Funcionalidades de PBX</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="additional-services">
+<span id="services"></span><h1>Servicios adicionales</h1>
+<p>Existen <strong>servicios especiales</strong> a los que se accede <strong>marcando códigos</strong> especiales <strong>desde un terminal</strong> de usuario <strong>cuando éste está en reposo</strong>.</p>
+<div class="admonition danger">
+<p class="first admonition-title">Peligro</p>
+<p class="last">Los servicios que se definen en esta sección <strong>no son accesibles en medio de una conversación</strong>. Se activan <strong>llamando</strong> a los códigos que se mencionarán, no marcándolos en medio de una conversación.</p>
+</div>
+<div class="section" id="global-services-codes">
+<h2>Listado de códigos a nivel global</h2>
+<p>En el momento de realizar esta documentación, existen los siguientes <strong>servicios especiales</strong> visibles en la sección <strong>Gestión general</strong> &gt; <strong>Servicios</strong>:</p>
+<img alt="../_images/services_god1.png" src="../_images/services_god1.png" />
+<dl class="glossary docutils">
+<dt id="term-direct-pickup">Captura de llamadas directa</dt>
+<dd><p class="first last">Es el servicio que permite capturar metiendo el código que se asigne seguido de la extensión del teléfono a capturar.</p>
+</dd>
+<dt id="term-group-pickup">Captura de grupo</dt>
+<dd><p class="first last">Es el servicio que permite capturar el teléfono que esté sonando dentro de tu(s) grupo(s) de captura.</p>
+</dd>
+<dt id="term-check-voicemail">Consultar el buzón de voz</dt>
+<dd><p class="first last">Este servicio permite acceder a un menú de voz que te presenta los mensajes de voz nuevos, viejos, etc. Es una alternativa a la recepción de mensajes de voz vía correo electrónico. A partir de 1.4, este servicio acepta una extensión opcional trás el código de servicio para poder acceder a los buzones de otros usuarios. Los usuarios pueden proteger su buzón de voz empleando las opciones del menú de voz interno.</p>
+</dd>
+<dt id="term-record-locution">Grabar locución</dt>
+<dd><p class="first last">Este servicio permite grabar la locución llamando desde cualquier terminal de cualquier usuario a un código especial. Las instrucciones se mostrarán en el idioma del usuario.</p>
+</dd>
+<dt id="term-open-lock">Abrir Candado</dt>
+<dd><p class="first last">Al llamar a este código de servicio se abrirá el candado (ver <a class="reference internal" href="route_locks.xhtml#route-locks"><span class="std std-ref">Candados</span></a>).</p>
+</dd>
+<dt id="term-close-lock">Cerrar Candado</dt>
+<dd><p class="first last">Al llamar a este código de servicio se cerrará el candado (ver <a class="reference internal" href="route_locks.xhtml#route-locks"><span class="std std-ref">Candados</span></a>).</p>
+</dd>
+<dt id="term-toggle-lock">Conmutar Candado</dt>
+<dd><p class="first last">Al llamar a este código de servicio se conmutará el estado del candado (ver <a class="reference internal" href="route_locks.xhtml#route-locks"><span class="std std-ref">Candados</span></a>).</p>
+</dd>
+</dl>
+<p>A medida que la solución vaya evolucionando y surjan servicios nuevos, aparecerán en este listado para que el operador global sepa de su existencia y lo comunique a sus operadores de marca.</p>
+<div class="admonition attention">
+<p class="first admonition-title">Atención</p>
+<p class="last">Este listado determina los servicios disponibles y los códigos por defecto de las <strong>nuevas marcas</strong>.</p>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Consejo</p>
+<p class="last">Cambiar un código solo afecta a las marcas que se creen tras el cambio.</p>
+</div>
+</div>
+<div class="section" id="services-and-codes-for-brands">
+<h2>Definición de servicios y códigos a nivel de marca</h2>
+<p>La sección <strong>Configuración de Marca &gt; Servicios</strong> permite al operador de marca:</p>
+<ul class="simple">
+<li><p class="first">Redefinir el código de acceso por defecto a dichos servicios para las empresas que a su vez no lo redefinan.</p>
+</li>
+<li><p class="first">Borrar servicios que no quieran que puedan utilizar sus empresas.</p>
+</li>
+</ul>
+<p>Por defecto este listado aparece con todas los servicios y los códigos configurados a nivel Global:</p>
+<div class="admonition attention">
+<p class="first admonition-title">Atención</p>
+<p class="last">Este listado determina los servicios disponibles y los códigos por defecto de las <strong>nuevas empresas</strong>.</p>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Consejo</p>
+<p class="last">Cambiar un código solo afecta a las empresas que se creen tras el cambio. Borrar un servicio hace que no esté disponible para ninguna empresa de la marca.</p>
+</div>
+</div>
+<div class="section" id="services-and-codes-for-companies">
+<h2>Definición de códigos a nivel de empresa</h2>
+<p>Cada empresa puede <em>pisar</em> los valores por defecto asignados por su <em>operador de marca</em> accediendo a <strong>Configuración de Empresa</strong> &gt; <strong>Servicios</strong> y cambiando el código asignado.</p>
+<p class="rubric">Empresa que quiere capturar con ** en lugar de con *95:</p>
+<img alt="../_images/services_company_edit1.png" src="../_images/services_company_edit1.png" />
+<div class="admonition hint">
+<p class="first admonition-title">Consejo</p>
+<p class="last">Los servicios que el <em>administrador de empresa</em> borre no podrán ser utilizados por sus usuarios.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

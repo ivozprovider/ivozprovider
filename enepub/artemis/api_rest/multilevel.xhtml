@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Multi-level API</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="web_client.xhtml" title="Built-in web client"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="introduction.xhtml" title="Introduction to IvozProvider API"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">IvozProvider Artemis documentation</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="multi-level-api">
+<h1>Multi-level API</h1>
+<p>IvozProvider API is divided in same three levels as the web administration portal:</p>
+<ul class="simple">
+<li>God</li>
+<li>Brand</li>
+<li>Client</li>
+</ul>
+<p>This split allows different roles with different responsibilities to be integrated against it without compromising
+security (read, edit, update or delete the data they should not).</p>
+<p>If you check out <a class="reference external" href="https://github.com/irontec/ivozprovider/blob/bleeding/web/rest/brand/config/api/raw/provider.yml">security policies</a><span class="link-target"> [https://github.com/irontec/ivozprovider/blob/bleeding/web/rest/brand/config/api/raw/provider.yml]</span>
+(read_access_control and write_access_control attributes), you’ll see that we apply
+read filters and write validations based on user information (token). One single API approach would require a complex
+validations more prone to failure, introduce errors and require huge queries that would impact the performance.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">That is why we split it into three APIs with <strong>impersonate mechanism</strong> to move between them. This mechanism is
+explained in <a class="reference internal" href="use_case.xhtml#use-case"><span class="std std-ref">Use Case</span></a> section.</p>
+</div>
+<p>In order to access to each level, <strong>you will need a corresponding level URL and credentials</strong>:</p>
+<p class="rubric">God API access</p>
+<ul class="simple">
+<li>URL: God URL defined in <a class="reference internal" href="../administration_portal/platform/portals.xhtml#platform-portals"><span class="std std-ref">Platform Portals</span></a> + /api/platform</li>
+<li>Credentials: God credentials defined in <a class="reference internal" href="../administration_portal/platform/main_operators.xhtml#main-operators"><span class="std std-ref">Main operators</span></a>.</li>
+</ul>
+<p class="rubric">Brand API access</p>
+<ul class="simple">
+<li>URL: Brand URL defined in <a class="reference internal" href="../administration_portal/platform/brands.xhtml#brand-portals"><span class="std std-ref">Brand Portals</span></a> + /api/brand</li>
+<li>Credentials: Brand credentials defined in <a class="reference internal" href="../administration_portal/platform/brands.xhtml#brand-operators"><span class="std std-ref">Brand operators</span></a>.</li>
+</ul>
+<p class="rubric">Client API access</p>
+<ul class="simple">
+<li>URL: Client URL defined in <a class="reference internal" href="../administration_portal/brand/settings/client_portals.xhtml#client-portals"><span class="std std-ref">Client Portals</span></a> + /api/client</li>
+<li>Credentials: Client credentials defined in <a class="reference internal" href="../administration_portal/brand/clients/wholesale.xhtml#additional-subsections"><span class="std std-ref">Additional subsections</span></a> <em>Client admins</em>.</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">All credentials usernames are unique at brand level. This is why <em>username + brand URL</em> duple is needed to
+identify a user (both in API and in web portal).</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">As both brand and client URLs are internally linked to the same brand (client within that brand), it is also
+possible to access to client API using a brand URL + /api/client.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2019, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

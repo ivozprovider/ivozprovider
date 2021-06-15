@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>&lt;no title&gt;</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">documentación de IvozProvider - Oasis</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <p>La sesiones iniciadas por el protocolo de señalizacion SIP implican la compartición de flujos de multimedia entre las entidades implicadas.</p>
+<p>Estos flujos emplean <a class="reference external" href="https://tools.ietf.org/html/rfc3550">RTP</a><span class="link-target"> [https://tools.ietf.org/html/rfc3550]</span> para enviar y recibir el propio media, generalmente empleando el protocolo de transporte UDP.</p>
+<p>Las <strong>entidades externas</strong> involucradas en las sesiones RTP se pueden dividir en</p>
+<ul class="simple">
+<li><p class="first">Usuarios.</p>
+</li>
+<li><p class="first">Proveedores.</p>
+</li>
+</ul>
+<p>Ambas entidades intercambian RTP con el mismo servicio de IvozProvider: <em>los servidores media</em>.</p>
+<p>IvozProvider implementa <em>servidores media</em> usando tanto <a class="reference external" href="https://github.com/sipwise/rtpengine">RTPengine</a><span class="link-target"> [https://github.com/sipwise/rtpengine]</span> como <a class="reference external" href="http://www.rtpproxy.org/">RTPproxy</a><span class="link-target"> [http://www.rtpproxy.org/]</span>.</p>
+<p>Al igual que ocurre con SIP, estos <em>servidores de media</em> intercambian RTP cuando es necesario con los <em>Servidores de aplicación</em>, pero <strong>nunca permiten que los extremos externos a la plataforma hablen entre ellos directamente</strong>.</p>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

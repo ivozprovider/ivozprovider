@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Filtros de entrada externo</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="match_lists.xhtml" title="Listas de coincidencia"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="outgoingddi_rules.xhtml" title="Reglas DDI de salida"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">documentación de IvozProvider - Oasis</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Funcionalidades de PBX</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="external-call-filters">
+<span id="external-filters"></span><h1>Filtros de entrada externo</h1>
+<p>Una de las configuraciones más habituales que todo administrador de empresa querrá realizar en un momento dado es poner filtros de horario y de calendario a sus <a class="reference internal" href="external_ddis.xhtml#external-ddis"><span class="std std-ref">DDIs externos</span></a>.</p>
+<p>Para ello, el primer paso es crear un horario.</p>
+<div class="section" id="schedules">
+<h2>Horarios</h2>
+<p>La sección <strong>Configuración de Empresa</strong> &gt; <strong>Horarios</strong> permite definir los tramos horarios en los que un <a class="reference internal" href="external_ddis.xhtml#external-ddis"><span class="std std-ref">DDI externo</span></a> está dentro de horario.</p>
+<p>La interfaz que se le presenta al administrador de empresa cuando añade un horario es la siguiente:</p>
+<img alt="../_images/timetables_add.png" src="../_images/timetables_add.png" />
+<p>Con la configuración anterior, hemos definido el tramo horario de mañana de una empresa de Lunes a Jueves.</p>
+<p>Sigamos con el ejemplo y definamos el tramo horario de tarde de Lunes a Jueves:</p>
+<img alt="../_images/timetables_add2.png" src="../_images/timetables_add2.png" />
+<p>Y el horario reducido de los viernes:</p>
+<img alt="../_images/timetables_add3.png" src="../_images/timetables_add3.png" />
+<p>Ya tenemos los siguientes tramos horarios que, combinados, describen un horario de oficina tradicional:</p>
+<img alt="../_images/timetables_add4.png" src="../_images/timetables_add4.png" />
+<div class="admonition warning">
+<p class="first admonition-title">Advertencia</p>
+<p class="last">Los horarios definen, una vez sumados, los tramos horarios activos: toda hora que no caiga dentro de uno de los tramos agrupados será considerada como llamada fuera de horario.</p>
+</div>
+</div>
+<div class="section" id="calendars">
+<h2>Calendarios</h2>
+<p>Los calendarios definen, una vez sumados, los días que se tienen que considerar festivos.</p>
+<p>Imaginemos que creamos 3 calendarios tal que:</p>
+<img alt="../_images/calendars_list.png" src="../_images/calendars_list.png" />
+<p>La creación de calendarios solo requiere dar un nombre al mismo, una vez creado hay que añadir días festivos a dicho calendario pulsando el botón de la derecha del lápiz:</p>
+<img alt="../_images/calendars_add_day.png" src="../_images/calendars_add_day.png" />
+<p>Desde este momento, ese calendario tiene marcado el día 1 de Enero de 2016 como día festivo con locución de festivo especial llamada &#8220;Feliz año&#8221;.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Advertencia</p>
+<p class="last">Los calendarios tienen una lógica contraria a los horarios: si un día concreto no está definido como festivo en uno de los calendarios, será considerado como día laborable.</p>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Consejo</p>
+<p class="last">Si un día es festivo en un calendario y no hay locución de festivo especial, se reproducirá la locución de festivo del filtro de entrada externo (ver más abajo).</p>
+</div>
+<p class="rubric">Crear un filtro de entrada externo</p>
+<p>Una vez que tenemos unos horarios y unos calendarios creados, llega el momento de agruparlos en lo que en IvozProvider se conoce por <strong>Filtro de entrada externos</strong>.</p>
+<p>El interfaz que se le presenta al administrador de empresa es el siguiente:</p>
+<img alt="../_images/external_call_filter.png" src="../_images/external_call_filter.png" />
+<dl class="glossary docutils">
+<dt id="term-name">Nombre</dt>
+<dd><p class="first last">Nombre con el que se referenciará este filtro.</p>
+</dd>
+<dt id="term-welcome-locution">Locución de bienvenida</dt>
+<dd><p class="first last">Esta locución se reproduce siempre que la llamada no se va a rechazar por festivo o fuera horario (es decir, en una hora normal de un día normal).</p>
+</dd>
+<dt id="term-black-list">Lista negra</dt>
+<dd><p class="first last">Los origenes externos serán comprobados contra las <a class="reference internal" href="match_lists.xhtml#match-lists"><span class="std std-ref">Listas de coincidencia</span></a> asociadas, si se encuentra una coincidencia, la llamada será directamente rechazada.</p>
+</dd>
+<dt id="term-white-list">Lista blanca</dt>
+<dd><p class="first last">Los origenes externos serán comprobados contra las <a class="reference internal" href="match_lists.xhtml#match-lists"><span class="std std-ref">Listas de coincidencia</span></a> asociadas, si se encuentra una coincidencia, la llamada será directamente enrutada al destino del DDI, ignorando el proceso del filtro. Tenga en cuenta que las listas negras son comprobadas antes que las listas blancas.</p>
+</dd>
+<dt id="term-holiday-locution">Locución de festivo</dt>
+<dd><p class="first last">Esta locución se reproducirá cuando el día de hoy esté marcado como festivo en uno de los calendarios y no se haya definido una locución de festivo especial en dicho calendario para ese día.</p>
+</dd>
+<dt id="term-holiday-forward-type">Tipo de desvío festivo</dt>
+<dd><p class="first last">Si una llamada entra un día festivo, aparte de la locución de festivo (si la hay), se puede realizar un desvío a un buzón de voz, a un número externo o a una extensión interna. En el ejemplo, la llamada se desviará los días festivos al móvil 676 676 676.</p>
+</dd>
+<dt id="term-out-of-schedule-locution">Locución fuera horario</dt>
+<dd><p class="first last">Esta locución se reproducirá cuando, siendo un día no festivo, la hora actual no esté dentro de ningunos de los horarios vinculados.</p>
+</dd>
+<dt id="term-out-of-schedule-forward-type">Tipo de desvío fuera horario</dt>
+<dd><p class="first last">Lo mismo que en festivo, pero para el caso de fuera horario. En la imagen, no se ejecutaría ningún desvío.</p>
+</dd>
+<dt id="term-calendars">Calendarios</dt>
+<dd><p class="first last">Permite seleccionar múltiples calendarios, de forma que el calendario del filtro es la suma de todos ellos.</p>
+</dd>
+<dt id="term-schedules">Horarios</dt>
+<dd><p class="first last">Permite seleccionar múltiples horarios, de forma que el horario del filtro es la suma de todos ellos.</p>
+</dd>
+</dl>
+<div class="admonition attention">
+<p class="first admonition-title">Atención</p>
+<p class="last">El día festivo tiene prevalencia sobre el fuera horario. Primero se evalúan los calendarios, luego los horarios.</p>
+</div>
+<p>En la siguiente sección veremos como este filtro se asigna a los <a class="reference internal" href="external_ddis.xhtml#external-ddis"><span class="std std-ref">DDIs externos</span></a> que queramos, definiendo así el comportamiento de los mismos fuera de horario y en días festivos, así como dentro de horario en el caso de <em>setear</em> locución de bienvenida en el filtro.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

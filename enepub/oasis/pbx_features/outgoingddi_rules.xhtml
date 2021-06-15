@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Outgoing DDI Rules</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="external_filters.xhtml" title="External Call filters"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="sounds.xhtml" title="Locutions"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">IvozProvider Oasis documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">PBX Features</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="outgoing-ddi-rules">
+<span id="outgoingddi-rules"></span><h1>Outgoing DDI Rules</h1>
+<p>Most calling entities in IvozProvider require an outgoing DDI when placing calls
+to external numbers. This includes: Users, Friends, Faxes, Retail Accounts, and
+so on..</p>
+<p>But there are some cases when a single outgoing DDI is not enough, and the
+presented DDI depends on the called number. To archive this dynamic outgoing DDI
+selection you can use Outgoing DDI rules.</p>
+<p>Before creating a new rule, it would be required to frist group the destination
+numbers in <a class="reference internal" href="match_lists.xhtml#match-lists"><span class="std std-ref">Match Lists</span></a>.</p>
+<p>For this example, we will create a match list of corporative mobiles with all
+the mobile numbers of our company workers. When we call to those numbers, we
+will keep the original outgoing DDI assigned to the user, and for the rest of
+the cases we will force the DDI to the main company outgoing DDI.</p>
+<p class="rubric">Create a new Outgoing DDI Rule</p>
+<p>The main creation screen defines the action that will take place when no rule
+matches the dialed destination, so we define to force the main company DDI here.</p>
+<img alt="../_images/outgoingddi_rules_edit.png" class="align-center" src="../_images/outgoingddi_rules_edit.png" />
+<p class="rubric">Assign rule lists actions</p>
+<p>Now we add a new rule that will match our mobiles to make the user&#8217;s outgoing
+DDI be kept uptouched.</p>
+<img alt="../_images/outgoingddi_rulepatterns_edit.png" class="align-center" src="../_images/outgoingddi_rulepatterns_edit.png" />
+<p class="rubric">Assign rule to callers</p>
+<p>At last, we have to configure who will use this rule to dynamically change it&#8217;s
+presentation number. We can do this in the <strong>Company&#8217;s edit screen</strong> or the
+<strong>Users&#8217;s edit screen</strong>.</p>
+<img alt="../_images/user_outgoingddirule.png" class="align-center" src="../_images/user_outgoingddirule.png" />
+<p>In this case, the User will present 777777777 DDI when calling Coporative mobiles
+and 666666666 when calling the rest of the external numbers.</p>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">Current implementation of Outgoing DDI rules won&#8217;t work for
+diverted calls (out of schedule, holidays or user&#8217;s call forward settings).</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

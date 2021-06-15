@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Global Special Numbers</title>
+    
+    <link rel="stylesheet" href="../../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="sip_domains.xhtml" title="SIP domains"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="default_invoice_templates.xhtml" title="Default Invoice Templates"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.xhtml">documentación de IvozProvider - Artemis</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Platform Configuration</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="global-special-numbers">
+<h1>Global Special Numbers</h1>
+<p>This section allows adding external numbers that will be handled in a different way by IvozProvider when a client
+calls to those destinations (<strong>only for external outgoing calls</strong>).</p>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Numbers listed here will apply in every brand. Brand operator may add numbers too using <a class="reference internal" href="../brand/settings/special_numbers.xhtml#special-numbers"><span class="std std-ref">Special Numbers</span></a>.</p>
+</div>
+<div class="section" id="disable-cdr">
+<h2>Disable CDR</h2>
+<p>Currently there is only one special treatment: <strong>Disable CDR</strong>. Setting this to <em>Yes</em> for a number will:</p>
+<ul>
+<li><p class="first">Prevent outgoing external calls from being listed in following sections:</p>
+<ul class="simple">
+<li><em>Active Calls</em></li>
+<li><em>External Calls</em></li>
+<li><em>Call Registry</em> (both client portal and user portal)</li>
+</ul>
+</li>
+<li><p class="first">As a consequence, calls won&#8217;t be included in any:</p>
+<ul class="simple">
+<li><a class="reference internal" href="../brand/invoicing/invoices.xhtml#invoices"><span class="std std-ref">Invoices</span></a></li>
+<li>CSV defined by <a class="reference internal" href="../client/wholesale/calls/call_csv_schedulers.xhtml#call-csv-schedulers"><span class="std std-ref">Call CSV schedulers</span></a></li>
+<li>API response of related endpoints</li>
+</ul>
+</li>
+<li><p class="first">Do not call CGRateS for these calls: call will be allowed no matter if active pricing plan allows it.</p>
+<blockquote>
+<div><ul class="simple">
+<li>As a consequence, no price/cost will be decreased from carrier/client account.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Prevent recording these calls. As a consequence, <em>Recordings</em> section won&#8217;t list them.</p>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Advertencia</p>
+<p class="last">Adding a number will cause this special handling <strong>only for future outgoing external calls</strong>.
+No change is made in previous calls.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2019, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

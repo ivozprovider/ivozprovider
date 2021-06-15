@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>External DDIs</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="call_captures.xhtml" title="Call pickup"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="conference_rooms.xhtml" title="Conference rooms"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">IvozProvider Oasis documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">PBX Features</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="external-ddis">
+<span id="id1"></span><h1>External DDIs</h1>
+<p>In the previous section <a class="reference internal" href="../external_incoming_calls/configure_ddi.xhtml#settingup-ddi"><span class="std std-ref">Configuring an external DDI</span></a> we described in detail the required
+configuration for an external DDI routed to user. This section will go a bit
+further and explain the rest of configurable options of DDIs.</p>
+<div class="section" id="ddi-external-filters">
+<h2>DDI external filters</h2>
+<p>We can assign a <strong>external call filter</strong> configured in <a class="reference internal" href="external_filters.xhtml#external-filters"><span class="std std-ref">previous section</span></a>.</p>
+<img alt="../_images/ddi_edit.png" src="../_images/ddi_edit.png" />
+</div>
+<div class="section" id="ddi-routes">
+<span id="routing-logics"></span><h2>DDI routes</h2>
+<p>Once the call has passed all the checks in the filter (schedules and calendars)
+and after the welcome locution has been played (if there is any configured),
+we can route the call to the following processes:</p>
+<ul class="simple">
+<li><a class="reference internal" href="huntgroups.xhtml#huntgroups"><span class="std std-ref">Hunt groups</span></a></li>
+</ul>
+<img alt="../_images/ddi_edit2.png" src="../_images/ddi_edit2.png" />
+<ul class="simple">
+<li><a class="reference internal" href="ivrs.xhtml#generic-ivrs"><span class="std std-ref">Generic IVR</span></a></li>
+</ul>
+<img alt="../_images/ddi_edit3.png" src="../_images/ddi_edit3.png" />
+<ul class="simple">
+<li><a class="reference internal" href="ivrs.xhtml#custom-ivrs"><span class="std std-ref">Custom IVR</span></a></li>
+</ul>
+<img alt="../_images/ddi_edit4.png" src="../_images/ddi_edit4.png" />
+<ul class="simple">
+<li><a class="reference internal" href="conference_rooms.xhtml#conference-rooms"><span class="std std-ref">Conference rooms</span></a></li>
+</ul>
+<img alt="../_images/ddi_edit5.png" src="../_images/ddi_edit5.png" />
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">We can also route the DDI to a <a class="reference internal" href="../faxing/index.xhtml#faxing-system"><span class="std std-ref">Virtual Fax</span></a>, but
+this is something we will explain in the following block.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

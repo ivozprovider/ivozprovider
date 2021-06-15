@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Rating plans</title>
+    
+    <link rel="stylesheet" href="../../../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="destination_rates.xhtml" title="Destination Rates"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="index.xhtml" title="Billing"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.xhtml">documentación de IvozProvider - Artemis</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.xhtml" >Brand Configuration</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.xhtml" accesskey="U">Billing</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="rating-plans">
+<h1>Rating plans</h1>
+<p>Rating plans describe how calls are rated for different destinations at different times of the day.</p>
+<div class="section" id="rating-plan-definition">
+<h2>Rating plan definition</h2>
+<p><a class="reference internal" href="destination_rates.xhtml#destination-rates"><span class="std std-ref">Destination Rates</span></a> are grouped using Rating plans. This offers the possibility to have base pricing data and customize
+some destinations with different prices at different times of the day.</p>
+<p>This are the fields that define a Rating plan:</p>
+<dl class="glossary docutils">
+<dt id="term-name">Name</dt>
+<dd>Name that will be use to reference this rating plan.</dd>
+<dt id="term-description">Description</dt>
+<dd>A field to enter additional information. Not used anywhere.</dd>
+<dt id="term-currency">Currency</dt>
+<dd>All destination rates grouped must use this currency.</dd>
+</dl>
+<div class="admonition tip">
+<p class="first admonition-title">Truco</p>
+<p class="last">Rating plan names appear on final clients&#8217; invoices, choose something with commercial sense.</p>
+</div>
+</div>
+<div class="section" id="adding-destination-rates-to-rating-plan">
+<h2>Adding Destination rates to Rating Plan</h2>
+<p>Rating plans group several <a class="reference internal" href="destination_rates.xhtml#destination-rates"><span class="std std-ref">Destination Rates</span></a> to allow flexible configuration that rate destinations differently
+at different times of the day (<strong>List of destination rates</strong> subsection).</p>
+<dl class="glossary docutils">
+<dt id="term-destination-rate">Destination rate</dt>
+<dd>Adds selected destination rate to rating plan</dd>
+<dt id="term-weight">Weight</dt>
+<dd>If a given call can be billed with more than one destination rate within the rating plan,
+it will be billed using the one with highest weight.</dd>
+<dt id="term-timing-type">Timing type</dt>
+<dd>Should this association apply always or just at given times of the week?</dd>
+</dl>
+<div class="admonition tip">
+<p class="first admonition-title">Truco</p>
+<p class="last">Weight allows having a general <em>Destination rate</em> and concrete the price of
+a specific destination in another <em>destination rate</em> with higher weight (free cell
+phone calls, for example).</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Advertencia</p>
+<p class="last">A rating plan MUST be capable of rating calls 24x7. Adding the timings of all destination rates in a rating
+plan MUST cover every moment of the week.</p>
+</div>
+<p class="rubric">Checking Rating plans</p>
+<p>To check the configuration so far we can <strong>Simulate a call</strong> from the rating plans list.</p>
+<p>We introduce the destination number in <a class="reference internal" href="../settings/numeric_transformations.xhtml#e164"><span class="std std-ref">E.164 format</span></a>, and we can check the price every rating plan on the
+list will charge for that call.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Truco</p>
+<p class="last">Rating plans can be linked to both Clients (for price calculation) and Carriers (for cost calculation).</p>
+</div>
+</div>
+<div class="section" id="assigning-rating-plans-to-clients">
+<h2>Assigning rating plans to clients</h2>
+<p>An specific <strong>rating plan</strong> can be linked to multiple clients.</p>
+<p>In the section <strong>Brand configuration</strong> &gt; <strong>Virtual PBXs</strong> (<strong>Residential</strong>, <strong>Retail</strong> and <strong>Wholesale</strong>) we select
+<strong>List of Rating Plans</strong> subsection.</p>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Every <strong>Rating plan</strong> has an activation time and only one can be active for each
+client at a specific moment (the one whose activation time is nearer in the past).</p>
+</div>
+<p class="rubric">Simulating a call of a specific client</p>
+<p>In this list we can also simulate a call for a given client like we did previously
+in the rating plan list and check the price it will imply. This way, we can be sure
+that the configuration is ok.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Truco</p>
+<p class="last">Active rating plan of a given client will be used to set Price for its calls.</p>
+</div>
+</div>
+<div class="section" id="assigning-rating-plans-to-carriers">
+<h2>Assigning rating plans to carriers</h2>
+<p>An specific <strong>rating plan</strong> can be linked to multiple carriers to calculate cost of calls (see <a class="reference internal" href="../providers/carriers.xhtml#cost-calculation"><span class="std std-ref">Cost calculation</span></a>).</p>
+<p>In the section <strong>Brand configuration</strong> &gt; <strong>Providers</strong> &gt; <strong>Carriers</strong> we select <strong>List of Rating Plans</strong> subsection.</p>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Every <strong>Rating plan</strong> has an activation time and only one can be active for each
+client at a specific moment (the one whose activation time is nearer in the past).</p>
+</div>
+<p class="rubric">Simulating a call of a specific carrier</p>
+<p>In this list we can also simulate a call for a given carrier like we did previously
+in the rating plan list and check the price it will imply. This way, we can be sure
+that the configuration is ok.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Truco</p>
+<p class="last">Active rating plan of a given carrier will be used to set Cost for calls established using it.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2019, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

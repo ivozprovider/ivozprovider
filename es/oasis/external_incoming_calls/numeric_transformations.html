@@ -1,0 +1,434 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="es" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="es" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Transformaciones numéricas &mdash; documentación de IvozProvider - Oasis</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'Oasis',
+              LANGUAGE:'es',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/banner.css" type="text/css" />
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="next" title="Configurar Contrato de Peering" href="peering_contracts.html" />
+    <link rel="prev" title="Recibir llamadas externas" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> IvozProvider
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.7
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Introducción a Ivozprovider</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/index.html">Arquitectura general de la plataforma</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../operation_roles/index.html">Roles de la plataforma</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Minimum Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Instalación inicial</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../internal_calls/index.html">Realizar llamadas internas</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Recibir llamadas externas</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Transformaciones numéricas</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#concept">Concepto</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#incoming-transformations">Adaptación en entrada</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#outgoing-transformations">Adaptación en salida</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#national-provider-transformations">Transformación &#8216;Operador Nacional&#8217;</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#spanish-incoming-transformation">Adaptación en entrada España</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#spanish-outgoing-transformation">Adaptación en salida España</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="peering_contracts.html">Configurar Contrato de Peering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configure_ddi.html">Dar de alta un DDI externo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configure_ddi.html#configure-incoming-routes">Configurar tratamiento en entrada</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../external_outgoing_calls/index.html">Realizar llamadas externas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../pbx_features/index.html">Funcionalidades de PBX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../retail/index.html">Clientes Retail</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../billing_and_invoices/index.html">Tarificación y facturación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../provisioning/index.html">Provisión de terminales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faxing/index.html">Sistema de Fax Virtual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userportal/index.html">Portal de usuario</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Security and Maintenance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html">Elementos de seguridad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maintenance/index.html">Mantenimiento de la solución</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IvozProvider</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Recibir llamadas externas</a> &raquo;</li>
+        
+      <li>Transformaciones numéricas</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/external_incoming_calls/numeric_transformations.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="numeric-transformations">
+<span id="id1"></span><h1>Transformaciones numéricas<a class="headerlink" href="#numeric-transformations" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="section" id="concept">
+<h2>Concepto<a class="headerlink" href="#concept" title="Enlazar permanentemente con este título">¶</a></h2>
+<p><strong>IvozProvider</strong> está diseñado con la intención de <strong>poder dar servicio en cualquier lugar del planeta</strong>, no solamente en el país originario de la solución.</p>
+<p>Un concepto muy importante para conseguir este objetivo es el de las transformaciones númericas, que consisten en la <strong>adaptación de los distintos sistemas de numeración de los países del mundo</strong> definidos en <a class="reference external" href="https://www.itu.int/rec/T-REC-E.164/es">E.164</a> <strong>a un formato neutro</strong>.</p>
+<p>La sección que le permite configurar al operador de marca todo lo relativo a <strong>Transformaciones numéricas</strong> es:</p>
+<img alt="../_images/numeric_transformations_section1.png" class="align-center" src="../_images/numeric_transformations_section1.png" />
+<p>En concreto, se distinguen 2 casos:</p>
+<div class="section" id="incoming-transformations">
+<h3>Adaptación en entrada<a class="headerlink" href="#incoming-transformations" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Cuando una llamada entra a IvozProvider procedente de un operador con el que tenemos un acuerdo de <em>peering</em>, hay que adaptar las numeraciones que hacen referencia a:</p>
+<ul class="simple">
+<li><p class="first">Origen de la llamada.</p>
+</li>
+<li><p class="first">Destino de la llamada.</p>
+</li>
+</ul>
+<p>En función del país del operador indicará los números internacionales de una forma distinta. En el caso de un operador español, por ejemplo:</p>
+<ul class="simple">
+<li><p class="first">Utilizará 00 + 33 + número para una llamada con origen francés.</p>
+</li>
+<li><p class="first">Puede que muestre las numeraciones internacionales sin el 00.</p>
+</li>
+<li><p class="first">Es probable que si la llamada procede del mismo país del operador, no se muestre el prefijo del país (911234567 en lugar de 00 + 34 + 911234567)</p>
+</li>
+</ul>
+<p>En el caso de un operador de Ucrania, que no utiliza 00 como código internacional:</p>
+<ul class="simple">
+<li><p class="first">Utilizará 810 + 33 + número francés para el mismo número.</p>
+</li>
+<li><p class="first">Puede incluso que aparte del código internacional (00 en la mayoría de países del mundo) un operador concreto anteceda sus números con un prefijo concreto.</p>
+</li>
+</ul>
+<p>El objetivo de la adaptación de entrada es que, independientemente de la notación utilizada por el operador, la llamada se acabe en un formato homogéneo y común.</p>
+<div class="admonition important" id="e164">
+<p class="first admonition-title">Importante</p>
+<p class="last">Este formato común se suele llamar E.164 y muestra los números sin el código internacional y con el prefijo de país: e.g. 34911234567</p>
+</div>
+</div>
+<div class="section" id="outgoing-transformations">
+<h3>Adaptación en salida<a class="headerlink" href="#outgoing-transformations" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Del mismo modo que el origen y el destino se tiene que adaptar en entrada, habrá que adaptar también las numeraciones en salida en función del operador por el que se vaya a sacar la llamada.</p>
+<p>Por ejemplo, para una llamada a un número español:</p>
+<ul class="simple">
+<li><p class="first"><em>Operador español</em>: El destino vendrá en E164 (34911234567) y habrá que quitar el prefijo de país: 911234567.</p>
+</li>
+<li><p class="first"><em>Operador francés</em>: El destino vendrá en E164 (34911234567) y habrá que añadir el código internacional: 0034911234567.</p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">En resumen, consiste en entregar origen y destino en el formato en el que el operador elegido los espera, para que la llamada progrese con normalidad.</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Truco</p>
+<p class="last">Las transformaciones numéricas utilizan <a class="reference external" href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">expresiones regulares</a> muy simples para describir los cambios a realizar en las numeraciones. En Internet se pueden encontrar múltiples tutoriales sobre el uso básico de expresiones regulares.</p>
+</div>
+</div>
+</div>
+<div class="section" id="national-provider-transformations">
+<h2>Transformación &#8216;Operador Nacional&#8217;<a class="headerlink" href="#national-provider-transformations" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>IvozProvider permite crear automáticamente las reglas de transformación típicas de la mayoría de países.</p>
+<p>Para crear el set de reglas necesarias para los operadores españoles, basta con:</p>
+<img alt="../_images/numeric_transformations_auto1.png" class="align-center" src="../_images/numeric_transformations_auto1.png" />
+<p>Las reglas que se han autocreado realizan las modificaciones adecuadas para operadores nacionales que muestren las numeraciones siguiendo estas reglas:</p>
+<ul class="simple">
+<li><p class="first">Número español: se muestra sin código internacional y sin el 34.</p>
+</li>
+<li><p class="first">Número internacional: se precede de 00 y del código del país.</p>
+</li>
+</ul>
+<p>Los <em>sets</em> de transformaciones numéricas se asignan a <strong>PeeringContracts</strong>, tal y como veremos en la siguiente sección. Este <em>set</em> será el adecuado para la mayoría de operadores españoles.</p>
+<p>Analicemos el <em>set</em> para entender lo que hace cada regla de transformación:</p>
+<img alt="../_images/numeric_transformations1.png" src="../_images/numeric_transformations1.png" />
+<div class="admonition attention">
+<p class="first admonition-title">Atención</p>
+<p class="last">La creación automática genera las 8 reglas habituales en función de los parámetros especificados. Estas reglas se pueden editar después, el proceso de automatización termina una vez creado el set.</p>
+</div>
+<div class="section" id="spanish-incoming-transformation">
+<h3>Adaptación en entrada España<a class="headerlink" href="#spanish-incoming-transformation" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Aparece en azul en la imagen anterior:</p>
+<ul class="simple">
+<li><p class="first">Izquierda llamado/destino</p>
+</li>
+<li><p class="first">Derecha llamante/origen</p>
+</li>
+</ul>
+<p>Tanto para el origen como para el destino las reglas que se aplican son las mismas:</p>
+<img alt="../_images/numeric_transformations21.png" src="../_images/numeric_transformations21.png" />
+<ul>
+<li><p class="first">Las reglas se evalúan antes o después en función del campo <strong>métrica</strong> (de menor a mayor).</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="first">Si una regla no <em>matchea</em>, se evalúa la siguiente regla.</p>
+</li>
+<li><p class="first">Si una regla <em>matchea</em>, no se evalúan más reglas.</p>
+</li>
+<li><p class="first">Si ninguna regla <em>matchea</em>, no se aplica ningún cambio.</p>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">El campo <strong>Buscar</strong> se evalúa contra el campo en cuestión (en el caso de la captura, contra el campo Llamado/Destino de una llamada saliente).</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="first">Métrica 1: Que empiece por (^) 00 o &#8216;+&#8217;, seguido de un dígito del 1 al 9, seguido de 1 o más dígitos del 0 al 9 hasta el final ($).</p>
+</li>
+<li><p class="first">Métrica 2: Que empiece por un dígito del 1 al 9, seguido de 1 o más dígitos del 0 al 9 hasta el final ($).</p>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">El campo <strong>Reemplazar</strong> recoge las capturas del campo buscar (expresadas entre paréntesis, 1 para la primera, 2 para la segunda, etc.) y expresa cómo tiene que quedar el número:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="first">Métrica 1: El campo mostrará solo el segundo elemento capturado (2).</p>
+</li>
+<li><p class="first">Métrica 1: El campo añadirá 34 al primer elemento capturado (1).</p>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Explicación <em>en modo texto</em>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="first">Métrica 1: Quitar código internacional (00 o &#8216;+&#8217;) si lo hay.</p>
+</li>
+<li><p class="first">Métrica 2: Añadir 34 a los números españoles mostrados sin prefijo de país para que queden en E.164.</p>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="spanish-outgoing-transformation">
+<h3>Adaptación en salida España<a class="headerlink" href="#spanish-outgoing-transformation" title="Enlazar permanentemente con este título">¶</a></h3>
+<img alt="../_images/numeric_transformations31.png" src="../_images/numeric_transformations31.png" />
+<p>Siguiendo la misma lógica, estas 2 reglas realizan los siguientes cambios sobre el destino en llamadas salientes:</p>
+<ul class="simple">
+<li><p class="first">Métrica 1: Si empieza con 34 seguido de más dígitos, quitamos 34. Convierte números españoles de E.164 a formato nacional.</p>
+</li>
+<li><p class="first">Métrica 2: Si no empieza por 34, añadimos 00. Convierte númerosinternacionales de E.164 a formato internacional español.</p>
+</li>
+</ul>
+<div class="admonition attention">
+<p class="first admonition-title">Atención</p>
+<p class="last"><strong>En resumen</strong>: las transformaciones numéricas adaptan orígenes y destinos, a E.164 en entrada y a los formatos que los operadores esperan en salida, utilizando reglas con expresiones regulares y métricas agrupadas en <em>sets</em> que se asocian a <strong>PeeringContracts</strong>.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="peering_contracts.html" class="btn btn-neutral float-right" title="Configurar Contrato de Peering" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Recibir llamadas externas" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016-2017, Irontec
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-book"> Other Versions</span>
+        v: oasis
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Branches</dt>
+            <dd><a href="../../artemis/index.html">artemis</a></dd>
+            <dd><a href="../../bleeding/index.html">bleeding</a></dd>
+            <dd><a href="numeric_transformations.html">oasis</a></dd>
+        </dl>
+    </div>
+</div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

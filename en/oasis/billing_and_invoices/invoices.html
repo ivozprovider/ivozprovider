@@ -1,0 +1,344 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Invoice generation &mdash; IvozProvider Oasis documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'Oasis',
+              LANGUAGE:'en',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/banner.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Terminal provisioning" href="../provisioning/index.html" />
+    <link rel="prev" title="Call billing" href="bill_a_call.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> IvozProvider
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.7
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Introduction to IvozProvider</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/index.html">Platform general architecture</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../operation_roles/index.html">Platform roles</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Minimum Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Initial Installation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../internal_calls/index.html">Making internal calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external_incoming_calls/index.html">Receive external calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external_outgoing_calls/index.html">Making external calls</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../pbx_features/index.html">PBX Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../retail/index.html">Retail Clients</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Billing and Invoices</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="call_registry.html">Call Registry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="billable_calls.html">Billable calls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pricing_plans.html">Pricing plans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bill_a_call.html">Call billing</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Invoice generation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#invoice-templates">Invoice templates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fixed-costs">Fixed costs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#invoice-creation">Invoice creation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../provisioning/index.html">Terminal provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faxing/index.html">Virtual Fax System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userportal/index.html">User Portal</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Security and Maintenance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html">Security elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maintenance/index.html">Maintenance and troubleshooting</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IvozProvider</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Billing and Invoices</a> &raquo;</li>
+        
+      <li>Invoice generation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/billing_and_invoices/invoices.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="invoice-generation">
+<span id="invoices"></span><h1>Invoice generation<a class="headerlink" href="#invoice-generation" title="Permalink to this headline">¶</a></h1>
+<p>The final goal of this section is to generate invoices with the call that imply
+cost of a given company.</p>
+<div class="section" id="invoice-templates">
+<h2>Invoice templates<a class="headerlink" href="#invoice-templates" title="Permalink to this headline">¶</a></h2>
+<p>Before generating an example invoice, it is important to understand that invoice
+creation process uses templates.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">This way, every <strong>brand operator</strong> can adapt which information
+is shown and how this information is shown, add logos, graphs, etc..</p>
+</div>
+<p>Templates are parsed by <a class="reference external" href="https://github.com/XaminProject/handlebars.php">handlebars</a> and rendered
+using <a class="reference external" href="https://wkhtmltopdf.org/">wkhtmltopdf</a> library.</p>
+<p>The helper in the section <strong>Brand configuration</strong> &gt; <strong>Invoice templates</strong> include
+a summarized explanation of the creation of templates. In the <a class="reference external" href="https://wkhtmltopdf.org/usage/wkhtmltopdf.txt">official site of wkhtmltopdf</a> there is plenty additional information.
+You can delve into template expressions <a class="reference external" href="http://handlebarsjs.com/expressions.html">here</a> as well.</p>
+<p>By default, this section provides some basic example templates:</p>
+<img alt="../_images/invoices_templates.png" src="../_images/invoices_templates.png" />
+</div>
+<div class="section" id="fixed-costs">
+<h2>Fixed costs<a class="headerlink" href="#fixed-costs" title="Permalink to this headline">¶</a></h2>
+<p>Fixed cost are a constant concept that can be added to invoices that use invoice
+templates that take into account these fixed costs.</p>
+<p>Take this image as an example (section <strong>Fixed costs</strong>):</p>
+<img alt="../_images/fixed_costs.png" src="../_images/fixed_costs.png" />
+<p>We will explain afterwords how these fixed costs can be added to a invoice and
+in what amount.</p>
+</div>
+<div class="section" id="invoice-creation">
+<h2>Invoice creation<a class="headerlink" href="#invoice-creation" title="Permalink to this headline">¶</a></h2>
+<p><strong>Invoices</strong> section lets <strong>brand operator</strong> to generate invoices to issue to its
+clients.</p>
+<p>This is the process to add a create a new invoice:</p>
+<img alt="../_images/invoice_add.png" class="align-center" src="../_images/invoice_add.png" />
+<dl class="glossary docutils">
+<dt id="term-number">Number</dt>
+<dd>Will be included in the invoice and shows the invoice number</dd>
+<dt id="term-company">Company</dt>
+<dd>The company whose calls will be invoiced</dd>
+<dt id="term-start-end-date">Start/End date</dt>
+<dd>The time period of the calls that will be invoiced</dd>
+<dt id="term-taxes">Taxes</dt>
+<dd>Taxes to add to the final cost (e.g. VAT)</dd>
+<dt id="term-template">Template</dt>
+<dd>Invoice template that will be used</dd>
+</dl>
+<p>Let&#8217;s add some fixed costs to this invoice:</p>
+<img alt="../_images/invoice_add2.png" class="align-center" src="../_images/invoice_add2.png" />
+<p>Select previously defined fixed costs and their amounts:</p>
+<img alt="../_images/invoice_add3.png" class="align-center" src="../_images/invoice_add3.png" />
+<p>At this point, we can generate the invoice pressing this button:</p>
+<img alt="../_images/invoice_add4.png" class="align-center" src="../_images/invoice_add4.png" />
+<p>Pressing this button we can see which calls have been included in the invoice:</p>
+<img alt="../_images/invoice_add5.png" class="align-center" src="../_images/invoice_add5.png" />
+<p>And pressing this one we can download the invoice in PDF format:</p>
+<img alt="../_images/invoice_add6.png" class="align-center" src="../_images/invoice_add6.png" />
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">End date must be a past date. In other words, it is not allowed to
+generate invoices for future dates o dates including today.</p>
+</div>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p class="last">All the calls of the selected period must be billed.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../provisioning/index.html" class="btn btn-neutral float-right" title="Terminal provisioning" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="bill_a_call.html" class="btn btn-neutral float-left" title="Call billing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016-2017, Irontec
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-book"> Other Versions</span>
+        v: oasis
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Branches</dt>
+            <dd><a href="../../artemis/index.html">artemis</a></dd>
+            <dd><a href="../../bleeding/index.html">bleeding</a></dd>
+            <dd><a href="invoices.html">oasis</a></dd>
+        </dl>
+    </div>
+</div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

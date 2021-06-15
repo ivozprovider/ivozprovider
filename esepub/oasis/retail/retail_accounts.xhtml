@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Cuentas Retail</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="retail_filters.xhtml" title="Filtros DDI Retail"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="index.xhtml" title="Clientes Retail"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">documentación de IvozProvider - Oasis</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Clientes Retail</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="retail-accounts">
+<span id="id1"></span><h1>Cuentas Retail</h1>
+<p>Las cuentas Retail son la principal opción enrutable de los clientes Retail. Semejantes a los <a class="reference internal" href="../pbx_features/friends.xhtml#friends"><span class="std std-ref">Friends</span></a> en las compañías de PBX Virtual, las cuentas tienen todas las opciones de configuración necesarias para proveer un servicio de connectividad entre IvozProvider y una entidad SIP externa.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Advertencia</p>
+<p class="last">A pesar de que tanto los <strong>Contratos de peering</strong> como <strong>las cuentas Retail</strong> son definidas por el <strong>operador de marca</strong>, los primeros están diseñados para connectar con la red publica mientras que los segundos se emplean para conectar el sistema con otros agentes SIP.</p>
+</div>
+<div class="section" id="types-of-retail-accounts">
+<h2>Tipos de cuentas retail</h2>
+<p>Hay dos tipos principales de PBX SIP que puede emplear retail con IvozProvider:</p>
+<ul class="simple">
+<li><p class="first"><strong>Centralitas con conectividad directa</strong>: Esto implica que IvozProvider tiene la posibilidad de hablar SIP directamente sin más que dirigir su tráfico a una IP pública a un puerto concreto.</p>
+</li>
+<li><p class="first"><strong>Centralitas tras NAT</strong>: No accesibles directamente. Este tipo de centralitas tendran que registrarse en IvozProvider (exactamente igual que lo hacen los <a class="reference internal" href="../pbx_features/terminals.xhtml#terminals"><span class="std std-ref">Terminales</span></a>)</p>
+</li>
+</ul>
+</div>
+<div class="section" id="what-kind-of-calls-can-be-routed-through-a-retail-account">
+<h2>¿Qué llamadas se envían a una cuenta retail?</h2>
+<p>Contrary to Friends, <strong>Retail Accounts</strong> have some simplifications and limitations.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="first">Las cuentas Retail solo enrutan sus DDIs asignados</p>
+</li>
+<li><p class="first">Las cuentas Retail solo realizan llamadas externas a través de Contratos de peering</p>
+</li>
+<li><p class="first">Las cuentas Retail sólo reciben llamadas externas desde Contratos de peering</p>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="retail-accounts-configuration">
+<h2>Configuracion de las cuentas retail</h2>
+<p>Estas son las opciones de configuracion de las <em>Cuentas retail</em>:</p>
+<dl class="glossary docutils">
+<dt id="term-name">Nombre</dt>
+<dd><p class="first last">Nombre de la <strong>cuenta retail</strong>. Este nombre ha de ser único en toda la marca por lo que se recomienda emplear algun identificador secuencial. También se empleará en los mensajes SIP (enviado como usuario en la cabecera <strong>From</strong>).</p>
+</dd>
+<dt id="term-description">Descripción</dt>
+<dd><p class="first last">Opcional. Información extra para esta <em>cuenta retail</em></p>
+</dd>
+<dt id="term-password">Contraseña</dt>
+<dd><p class="first last">Cuando una <em>cuenta retail</em> envia peticiones, IvozProvider se autenticará empleando esta contraseña. Como en otros agentes SIP en IvozProvider <strong>emplear contraseña ES OBLIGATORIO</strong>.</p>
+</dd>
+<dt id="term-direct-connection">Conexión directa</dt>
+<dd><p class="first last">Si elijes &#8216;Sí&#8217; aquí, tendras que informar el protocol, dirección y puerto donde se enviarán las peticiones de esta <em>cuenta retail</em>.</p>
+</dd>
+<dt id="term-fallback-outgoing-ddi">DDI Saliente alternativo</dt>
+<dd><p class="first last">Las llamadas externas de esta <em>cuenta retail</em> presentarán este DDI, <strong>a no ser que el DDI presentado sea uno de los asociados a la cuenta</strong>.</p>
+</dd>
+<dt id="term-country-and-area-code">Pais y Código de area</dt>
+<dd><p class="first last">Empleado para las transformaciones numéricas de esta cuenta retail.</p>
+</dd>
+<dt id="term-allowed-codecs">Codecs permitidos</dt>
+<dd><p class="first last">Como otras entidades SIP, las <em>cuentas retail</em> hablarán en el códec seleccionado.</p>
+</dd>
+<dt id="term-from-domain">Dominio From</dt>
+<dd><p class="first last">Las peticiones desde IvozProvider a esta cuenta incluirán este dominio en la cabecera From.</p>
+</dd>
+</dl>
+<div class="section" id="voicemail-service">
+<h3>Servicio de buzón de voz</h3>
+<p>Cada cuenta retail tiene un buzón de voz al que poder desvíar las llamadas entrantes a través de los Desvíos de llamadas que se explican a continuación.</p>
+<div class="admonition important">
+<p class="first admonition-title">Importante</p>
+<p class="last">Se puede utilizar el <strong>Código de servicio de buzón de voz</strong> definido a nivel de marca para escuchar los mensajes de voz y para grabar una locución de buzón distinta a la estándar.</p>
+</div>
+</div>
+<div class="section" id="call-forward-settings">
+<h3>Desvíos de llamada</h3>
+<p>Se pueden configurar desvíos de llamadas a nivel de cuenta retail. Estos son los campos disponibles:</p>
+<dl class="glossary docutils">
+<dt id="term-enabled">Activado</dt>
+<dd><p class="first last">Determina si el desvío debe aplicarse o no. De esta forma, un usuario puede configurar los desvíos que más utilice e ir activándolos y desactivándolos.</p>
+</dd>
+<dt id="term-call-forward-type">Tipo de desvío</dt>
+<dd><p class="first">Indica cuándo aplica el desvío:</p>
+<blockquote class="last">
+<div><ul class="simple">
+<li><p class="first">Incondicional: siempre.</p>
+</li>
+<li><p class="first">No contesta: cuando la llamada no se contesta en X segundos.</p>
+</li>
+<li><p class="first">Ocupado: Cuando la cuenta retail está ocupada (código de respuesta 486).</p>
+</li>
+<li><p class="first">No registrada: cuando la cuenta retail no está registrada contra IvozProvider.</p>
+</li>
+</ul>
+</div></blockquote>
+</dd>
+<dt id="term-target-type">Tipo de destino</dt>
+<dd><p class="first">Indica a dónde se enviará la llamada cuando el desvío aplique.</p>
+<blockquote class="last">
+<div><ul class="simple">
+<li><p class="first">Buzón de voz de la cuenta retail</p>
+</li>
+<li><p class="first">Número externo</p>
+</li>
+</ul>
+</div></blockquote>
+</dd>
+</dl>
+<div class="admonition attention">
+<p class="first admonition-title">Atención</p>
+<p class="last">Las llamadas desviadas por un desvío mantendrán la identificación original del llamante, añadiendo los datos del desviador en una cabecera SIP <em>Diversion</em>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="asterisk-as-an-account-client">
+<h2>Asterisk como cliente de cuenta retail</h2>
+<p>En el otro extremo de una cuenta puede haber cualquier entidad. Esta sección toma como ejemplo una PBX Asterisk usando su driver de canal SIP que deseamos conectar a IvozProvider</p>
+<div class="section" id="account-register">
+<h3>register cuenta</h3>
+<p>En caso de no estar directamente visible, el Asterisk tendrá que registrarse en IvozProvider (al igual que hacen los terminales).</p>
+<p>La configuración sería tal que:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>register =&gt; account-name:account-password@ivozprovider-brand.sip-domain.com
+</pre></div>
+</div>
+</div>
+<div class="section" id="account-peer">
+<h3>peer cuenta</h3>
+<div class="highlight-none"><div class="highlight"><pre><span></span>[name-peer]
+type=peer
+host=ivozprovider-brand.sip-domain.com
+context=XXXXXX
+disallow=all
+allow=alaw
+defaultuser=account-name
+secret=account-password
+fromdomain=ivozprovider-brand.sip-domain.com
+insecure=port,invite
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Advertencia</p>
+<p class="last">Los clientes tras cuentas no pueden desafiar a IvozProvider, al igual que un terminal no desafía a IvozProvider cuando éste le llama. De ahí el insecure.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

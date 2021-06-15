@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Proxy Trunks</title>
+    
+    <link rel="stylesheet" href="../../../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="media_relay_sets.xhtml" title="Media relay sets"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="proxy_users.xhtml" title="Proxy Users"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.xhtml">IvozProvider Artemis documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.xhtml" >Platform Configuration</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.xhtml" accesskey="U">Infrastructure</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="proxy-trunks">
+<h1>Proxy Trunks</h1>
+<p>This is the SIP proxy exposed to external world and is in charge of connecting
+with providers (carriers / DDI providers) brand administrators will configure for <em>SIP peering</em>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Only the IP addresses will be listed, as the port will be always 5060
+(5061 for SIP over TLS).</p>
+</div>
+<div class="section" id="main-address">
+<h2>Main address</h2>
+<p>The value displayed in the entry <strong>proxytrunks</strong> will show the IP address
+entered during the installation process.</p>
+<div class="admonition danger">
+<p class="first admonition-title">Danger</p>
+<p class="last">This entry cannot be removed.</p>
+</div>
+<p>This IP address:</p>
+<ul class="simple">
+<li>Will be used for internal signalling:<ul>
+<li>KamTrunks &lt;-&gt; KamUsers</li>
+<li>KamTrunks &lt;-&gt; Application Servers</li>
+</ul>
+</li>
+<li>Will be used to reload Kamailio modules when needed (XMLRPC).</li>
+</ul>
+<p>This value can be changed from the portal, but Kamailio make sure that KamTrunks is binded to given IP.</p>
+</div>
+<div class="section" id="additional-addresses">
+<h2>Additional addresses</h2>
+<p>Apart from unremovable <strong>proxytrunks</strong> entry, additional addresses can be added here. These additional addresses can be
+removed as long as they are not assigned to any Carrier / DDI Provider.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Apart from adding here, addresses must be configured in <em>/etc/kamailio/proxytrunks/additional_addresses.cfg</em>
+(<em>additional_addresses.cfg.in</em> is given as an example). Make sure Kamailio can bind to given addresses,
+otherwise it won&#8217;t boot.</p>
+</div>
+<p>The purpose of these additional addresses is to talk to different Providers using different addresses:</p>
+<ul class="simple">
+<li>Main operator (<em>God</em>) will assign IP addresses listed in this section to Brands (read <a class="reference internal" href="../brands.xhtml#brands"><span class="std std-ref">Brands</span></a>).<ul>
+<li>Each brand must have at least one address.</li>
+<li>Each address can be assigned in several brands.</li>
+</ul>
+</li>
+<li>Brand operator will assign these addresses to Carriers (read <a class="reference internal" href="../../brand/providers/carriers.xhtml#carriers"><span class="std std-ref">Carriers</span></a>) and DDI Providers (read <a class="reference internal" href="../../brand/providers/ddi_providers.xhtml#ddi-providers"><span class="std std-ref">DDI Providers</span></a>).<ul>
+<li>Each Provider (both Carriers and DDI Providers) must have one address.</li>
+</ul>
+</li>
+<li>IvozProvider will use assigned addresses in SIP signalling with those Carriers / DDI Providers.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Be aware that it only applies to SIP signalling, no changes are made in RTP media handling.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2019, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

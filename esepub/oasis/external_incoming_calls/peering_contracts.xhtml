@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Configurar Contrato de Peering</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="configure_ddi.xhtml" title="Dar de alta un DDI externo"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="numeric_transformations.xhtml" title="Transformaciones numéricas"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">documentación de IvozProvider - Oasis</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Recibir llamadas externas</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="configuring-a-peering-contract">
+<span id="peering-contracts"></span><h1>Configurar Contrato de Peering</h1>
+<p>En IvozProvider se entiende por <strong>Contrato de Peering</strong> el acuerdo entre un <strong>Operador de Marca</strong> y un Operador VoIP para sacar y recibir llamadas.</p>
+<p>IvozProvider permite integrarse con Operadores IP por medio de la sección <strong>Contratos de Peering</strong> que pasamos a describir:</p>
+<img alt="../_images/peeringcontract_section1.png" class="align-center" src="../_images/peeringcontract_section1.png" />
+<div class="section" id="peering-contract-basic-data">
+<h2>Datos básicos</h2>
+<p>Analicemos los campos de un PeeringContract de ejemplo:</p>
+<img alt="../_images/peeringcontract1.png" class="align-center" src="../_images/peeringcontract1.png" />
+<p>Si entramos a editar este Contrato de Peering concreto:</p>
+<img alt="../_images/peeringcontract_edit1.png" class="align-center" src="../_images/peeringcontract_edit1.png" />
+<dl class="glossary docutils">
+<dt id="term-name">Nombre</dt>
+<dd><p class="first last">Se utilizará para referencia a este Contrato de Peering.</p>
+</dd>
+<dt id="term-description">Descripción</dt>
+<dd><p class="first last">Un campo adicional para escribir algún detalle.</p>
+</dd>
+<dt id="term-numeric-transformation">Transformación numérica</dt>
+<dd><p class="first last">Transformaciones que se aplicarán al origen y al destino a lasnumeraciones que entren o salgan por este contrato de peering (ver <a class="reference internal" href="numeric_transformations.xhtml#numeric-transformations"><span class="std std-ref">Transformaciones numéricas</span></a>).</p>
+</dd>
+<dt id="term-external-tarification">External tarification</dt>
+<dd><p class="first last">Requiere del módulo de tarificación externa y permite tarificar llamadas entrantes a numeraciones especiales. Consultar a los <a class="reference internal" href="../intro/getting_help.xhtml#getting-help"><span class="std std-ref">desarrolladores de la solución</span></a> en caso de estar interesados.</p>
+</dd>
+</dl>
+<div class="admonition important">
+<p class="first admonition-title">Importante</p>
+<p class="last">Los campos marcados con una estrella roja son obligatorios.</p>
+</div>
+</div>
+<div class="section" id="peer-servers">
+<h2>Peer Servers</h2>
+<p>El concepto de <strong>PeerServer</strong> se refiere a los distintos servidores SIP que puede tener un Operador IP para servir su dominio SIP. Para definir los PeerServers del OPERADOR que acabamos de definir, hay que pulsar este botón:</p>
+<img alt="../_images/peerservers1.png" class="align-center" src="../_images/peerservers1.png" />
+<p>Tal y como indica el 0, no hay ningún PeerServer definido, por lo que añadimos uno:</p>
+<img alt="../_images/peerservers_add1.png" class="align-center" src="../_images/peerservers_add1.png" />
+<dl class="glossary docutils">
+<dt id="term-4">Nombre</dt>
+<dd><p class="first last">Se utilizará para referencia a este PeerServer.</p>
+</dd>
+<dt id="term-5">Descripción</dt>
+<dd><p class="first last">Un campo adicional para escribir algún detalle.</p>
+</dd>
+<dt id="term-sip-proxy">SIP Proxy</dt>
+<dd><p class="first last">Dirección IP (o registro DNS) del PeerServer. Si utiliza un puerto        distinto a 5060, se puede indicar con &#8216;:&#8217;.</p>
+</dd>
+<dt id="term-uri-scheme">Esquema URI</dt>
+<dd><p class="first last">Los esquemas soportados son sip y sips. Dejar en &#8216;sip&#8217; en caso de duda.</p>
+</dd>
+<dt id="term-transport">Transporte</dt>
+<dd><p class="first last">Los protocolos de transporte SIP soportados. En caso de duda, dejar &#8216;udp&#8217;.</p>
+</dd>
+<dt id="term-outbound-proxy">Outbound Proxy</dt>
+<dd><p class="first last">Normalmente se deja vacío o se pone la IP del dominio indicado en <strong>SIP Proxy</strong> (para evitar resolución de dominios y hacer que el mensaje SIP contenga el dominio en lugar de una IP). Funciona como un proxy web:en lugar de enviar los mensajes SIP al destino de <strong>SIP Proxy</strong>, los envía a la IP:PUERTO de este campo.</p>
+</dd>
+<dt id="term-requires-authentication">Requiere autenticación</dt>
+<dd><p class="first last">Existen contratos de Peering que nos validarán por IP, otros necesitarán que nos autentiquemos en cada sesión que queramos establecer. En caso de ser del último grupo, este selector nos permite introducir un usuario y una contraseña para responder a esa autenticación.</p>
+</dd>
+<dt id="term-call-origin-header">Cabecera de origen de llamada</dt>
+<dd><p class="first last">Algunos operadores recogen el origen del From. Otros utilizan el From para validar la cuenta de cliente y necesitan cabeceras adicionales para recoger el origen. En caso de duda, marcar <strong>PAI</strong>.</p>
+</dd>
+<dt id="term-r-uri-transformations-before-numeric-transformations">Transformaciones R-URI previas a las transformaciones numéricas</dt>
+<dd><p class="first last">Permiten realizar cambios estáticos al destino de la llamada antes de aplicar las reglas de transformación numéricas mencionadas en <a class="reference internal" href="numeric_transformations.xhtml#numeric-transformations"><span class="std std-ref">Transformaciones numéricas</span></a>. Se pueden quitar unos dígitos del comienzo, añadir un prefijo después e, incluso, añadir parámetros a la URI siguiendo el formato indicado. En caso de duda, dejar todo el bloque en blanco.</p>
+</dd>
+<dt id="term-from-header-customization">Personalización de la cabecera From</dt>
+<dd><p class="first last">Los operadores que muestren el origen en otras cabeceras (PAI/RPID), es posible que nos soliciten que el From User sea el número de cuenta de cliente y el From Domain (por ejemplo), su dominio SIP. En caso de duda, dejar en blanco.</p>
+</dd>
+</dl>
+<div class="admonition tip">
+<p class="first admonition-title">Truco</p>
+<p class="last">Existen muchos campos para poder establecer <em>peering</em> con operadores de todo tipo, pero lo habitual será poner solo nombre y SIP Proxy (para los operadores que nos validen por IP) o nombre, SIP Proxy y Autenticación.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Advertencia</p>
+<p class="last">En caso de definir múltiples PeerServers para un PeeringContract, IvozProvider hará balanceo y failover utilizando todos. Es decir, a veces hablará a uno y otras veces a otro. En caso de que uno no le conteste, lo intentará con el resto hasta dar con uno que conteste.</p>
+</div>
+</div>
+<div class="section" id="sip-register">
+<h2>Registro SIP</h2>
+<p>Hay operadores que exigen que tengamos un <a class="reference external" href="https://tools.ietf.org/html/rfc3261#section-10">Registro SIP</a><span class="link-target"> [https://tools.ietf.org/html/rfc3261#section-10]</span> activo para que nos metan las llamadas de nuestras numeraciones. Es más, existen operadores que exigen un registro activo para poder sacar llamadas a través de ellos.</p>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">IvozProvider soporta <em>peerings</em> de todo tipo, pero recomendamos acordar <em>peerings de tú a tú</em>: sin autenticación, sin registro y validados por IP. Esto evita tráfico innecesario (autenticación en cada sesión y registros periódicos) y simplifica la configuración, quedándose casi todo con los valores por defecto.</p>
+</div>
+<p>Por este motivo IvozProvider permite configurar registros SIP periódicos por medio del siguiente botón:</p>
+<img alt="../_images/sip_registers1.png" src="../_images/sip_registers1.png" />
+<p>Si creamos uno nuevo, nos encontramos con la siguiente ventana:</p>
+<img alt="../_images/sip_registers_add1.png" src="../_images/sip_registers_add1.png" />
+<dl class="glossary docutils">
+<dt id="term-username">Nombre de usuario</dt>
+<dd><p class="first last">Número de cuenta de cliente o similar proporcionada por el operador que exige registro SIP.</p>
+</dd>
+<dt id="term-domain">Dominio</dt>
+<dd><p class="first last">Dominio o IP del servidor de registros. Habitualmente el mismo que sirve de Proxy SIP en el PeerServer.</p>
+</dd>
+<dt id="term-ddi">DDI</dt>
+<dd><p class="first last">Se envía en la cabecera Contact y tiene que ser único a nivel de toda laplataforma. En PeeringContracts con un DDI asociado, se recomienda meter ese DDI. En caso de múltiples DDIs asociados, se recomienda meter uno de ellos. En caso de ningún DDI asociado, se recomienda meter un valor único (cualquier valor que te deje guardar).</p>
+</dd>
+<dt id="term-user">Usuario</dt>
+<dd><p class="first last">Usuario de autenticación, prácticamente siempre es igual al &#8220;Nombre de usuario&#8221; por lo que se recomienda dejar en blanco.</p>
+</dd>
+<dt id="term-register-server-uri">URI Servidor de registro</dt>
+<dd><p class="first last">Normalmente se puede dejar en blanco ya que se deduce del Dominio introducido. Si no fuera así, poner una dirección IP con &#8216;sip:&#8217; por delante.</p>
+</dd>
+<dt id="term-realm">Realm</dt>
+<dd><p class="first last">Dejar en blanco para aceptar el propuesto por el extremo contrario.Definir solo si de estar familiarizado el mecanismo de autorización de SIP y saber lo que este campo implica.</p>
+</dd>
+<dt id="term-expire">Expire</dt>
+<dd><p class="first last">Tiempo que IvozProvider sugerirá como tiempo de expiración del registro.</p>
+</dd>
+</dl>
+<div class="admonition tip">
+<p class="first admonition-title">Truco</p>
+<p class="last">Al igual que ocurre con los PeerServers, existen múltiples campos. Hay que tener en cuenta, no obstante, que la mayoría de operadores no deberían de exigir registro y, los que lo hagan, habitualmente solo requerirán de usuario, dominio y contraseña.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

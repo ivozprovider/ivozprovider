@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Firewall</title>
+    
+    <link rel="stylesheet" href="../../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="antiflooding.xhtml" title="SIP Antiflooding"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.xhtml" title="Security"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.xhtml">IvozProvider Artemis documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Security</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="firewall">
+<h1>Firewall</h1>
+<p><strong>IvozProvider does not currently include a firewall</strong> but...</p>
+<div class="admonition danger">
+<p class="first admonition-title">Danger</p>
+<p class="last">We <strong>strongly encourage any production installation to implement
+a firewall</strong> to protect the platform from the wild Internet.</p>
+</div>
+<p>The protection method could be:</p>
+<ul class="simple">
+<li>Local firewall based on <a class="reference external" href="https://www.netfilter.org/">iptables</a><span class="link-target"> [https://www.netfilter.org/]</span></li>
+<li>External firewall</li>
+<li>Both</li>
+</ul>
+<div class="section" id="exposed-ports-services">
+<h2>Exposed ports/services</h2>
+<p>These are the <strong>ports IvozProvider needs to expose</strong> to work properly:</p>
+<p><strong>Client side SIP signalling</strong>:</p>
+<ul class="simple">
+<li>Port 5060 (TCP/UDP)</li>
+<li>Port 5061 (TCP)</li>
+<li>Port 10080 (TCP) for Websocket connections (WS).</li>
+<li>Port 10081 (TCP) for Websocket secure connections (WSS).</li>
+</ul>
+<p><strong>Provider side SIP signalling</strong>:</p>
+<ul class="simple">
+<li>Port 5060 (TCP/UDP)</li>
+<li>Port 5061 (TCP)</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Port 7060 (TCP/UDP) y 7061 TCP in case both proxies share a unique IP address.</p>
+</div>
+<p><strong>RTP audioflow</strong>:</p>
+<ul class="simple">
+<li>Port range 13000-19000 UDP</li>
+</ul>
+<p><strong>Web portal and provisioning</strong>:</p>
+<ul class="simple">
+<li>Ports TCP 443, 1443 y 2443</li>
+</ul>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">We recommend using any <strong>geoIP blocking</strong> mechanism to drop connections from
+countries without clients.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2019, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

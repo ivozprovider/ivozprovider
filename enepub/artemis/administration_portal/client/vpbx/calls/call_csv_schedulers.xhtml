@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Call CSV schedulers</title>
+    
+    <link rel="stylesheet" href="../../../../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="call_recordings.xhtml" title="Call recordings"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="external_calls.xhtml" title="External calls"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../../index.xhtml">IvozProvider Artemis documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.xhtml" >Client Configuration</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.xhtml" >vPBX Clients</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="index.xhtml" accesskey="U">Calls</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <blockquote>
+<div></div></blockquote>
+<div class="section" id="call-csv-schedulers">
+<h1>Call CSV schedulers</h1>
+<p>This section allows programming automatic periodical CSV reports to vPBX client administrators.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This section is almost identical to <a class="reference internal" href="../../../brand/invoicing/invoice_schedulers.xhtml#invoice-schedulers"><span class="std std-ref">Invoice schedulers</span></a> except to the
+fields that do not apply to CSVs (Invoice number sequence, Tax rate...)</p>
+</div>
+<p>When adding a new definition, these fields are shown:</p>
+<dl class="glossary docutils">
+<dt id="term-name">Name</dt>
+<dd>Name of the scheduled Call CSV</dd>
+<dt id="term-email">Email</dt>
+<dd>Send generated Call CSV via email. Empty if no automatic mail is wanted.</dd>
+<dt id="term-frequency-unit">Frequency/Unit</dt>
+<dd>Defines the frequency (once a month, every 7 days, etc.) of the programmed task</dd>
+<dt id="term-direction">Direction</dt>
+<dd>Defines which calls should be included attending to its direction (inbound, outbound, both).</dd>
+<dt id="term-ddi">DDI</dt>
+<dd>Allows selecting a client&#8217;s specific DDI.</dd>
+<dt id="term-endpoint-type">Endpoint type</dt>
+<dd>Allows selecting one specific endpoint type between: user, friend and fax.</dd>
+<dt id="term-user">User</dt>
+<dd>Only for <em>Endpoint type: user</em>, allows selecting one specific user.</dd>
+<dt id="term-fax">Fax</dt>
+<dd>Only for <em>Endpoint type: fax</em>, allows selecting one specific fax.</dd>
+<dt id="term-friend">Friend</dt>
+<dd>Only for <em>Endpoint type: friend</em>, allows selecting one specific friend.</dd>
+</dl>
+<p>Once created, some new fields and subsections are accesible:</p>
+<dl class="glossary docutils">
+<dt id="term-next-execution">Next execution</dt>
+<dd>Shows next execution date</dd>
+<dt id="term-last-execution">Last execution</dt>
+<dd>Shows last execution and its result.</dd>
+</dl>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Modifying <em>Next execution</em> value allows forcing specific runs. For example, setting <em>Next execution</em> to
+current month&#8217;s first day will create again last month&#8217;s CSV report (for a monthly scheduler).</p>
+</div>
+<p>Generated CSVs of each scheduler can be accessed in <strong>List of Call CSV reports</strong> subsection.</p>
+<div class="section" id="csv-fields">
+<h2>CSV fields</h2>
+<p>These are the fields of the generated CSV files:</p>
+<dl class="glossary docutils">
+<dt id="term-callid">callid</dt>
+<dd>Call-ID of the SIP dialog</dd>
+<dt id="term-starttime">startTime</dt>
+<dd>Time and date of the call establishment</dd>
+<dt id="term-duration">duration</dt>
+<dd>Call duration in seconds</dd>
+<dt id="term-caller">caller</dt>
+<dd>Caller number in E.164 format (with &#8216;+&#8217;)</dd>
+<dt id="term-callee">callee</dt>
+<dd>Callee number in E.164 format (with &#8216;+&#8217;)</dd>
+<dt id="term-price">price</dt>
+<dd>Calculated price for the given call (empty if <em>Display billing details to client</em> is disabled)</dd>
+<dt id="term-17">direction</dt>
+<dd>Possible values: inbound, outbound.</dd>
+<dt id="term-ddiid">ddiId</dt>
+<dd>Client DDI to which call will be assigned (callee for inbound calls, caller for outbound calls).</dd>
+<dt id="term-endpointtype">endpointType</dt>
+<dd>Possible values: User, Fax, Friend.</dd>
+<dt id="term-endpointid">endpointId</dt>
+<dd>Internal ID of specific endpoint (only when <em>endpointType</em> has a non-empty value).</dd>
+<dt id="term-endpointname">endpointName</dt>
+<dd>User extension, friend name or fax name</dd>
+</dl>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2019, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

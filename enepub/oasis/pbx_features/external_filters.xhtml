@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>External Call filters</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="match_lists.xhtml" title="Match Lists"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="outgoingddi_rules.xhtml" title="Outgoing DDI Rules"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">IvozProvider Oasis documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">PBX Features</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="external-call-filters">
+<span id="external-filters"></span><h1>External Call filters</h1>
+<p>One of the most common task a company&#8217;s administrator will do is to
+configure schedules and calendards to apply to existing <a class="reference internal" href="external_ddis.xhtml#external-ddis"><span class="std std-ref">External DDIs</span></a>.</p>
+<p>The first step is creating a schedule.</p>
+<div class="section" id="schedules">
+<h2>Schedules</h2>
+<p>The section <strong>Company configuration</strong> &gt; <strong>Schedule</strong> allows to configure
+different time gaps when an <a class="reference internal" href="external_ddis.xhtml#external-ddis"><span class="std std-ref">external DDI</span></a> will be available.</p>
+<p>The screen displayed to the company administrator looks like this:</p>
+<img alt="../_images/timetables_add.png" src="../_images/timetables_add.png" />
+<p>With the above configuration, we have defined a morining schedule that will be
+applied from Monday to Thursday.</p>
+<p>We can also define an afternoon schedule for Monday to Thursday too:</p>
+<img alt="../_images/timetables_add2.png" src="../_images/timetables_add2.png" />
+<p>And apply a different time gap for the Fridays:</p>
+<img alt="../_images/timetables_add3.png" src="../_images/timetables_add3.png" />
+<p>We have the following time gaps that combined will determine our company
+office schedule.</p>
+<img alt="../_images/timetables_add4.png" src="../_images/timetables_add4.png" />
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The schedule will be defined by combining the active time gaps:
+Any time outside this grouped gaps will be considered out-of-schedule.</p>
+</div>
+</div>
+<div class="section" id="calendars">
+<h2>Calendars</h2>
+<p>Calenders are used to define what days are considered as holiday. Like
+schedules, multiples calendars can be combined.</p>
+<p>Let&#8217;s imagine three calendars with the following configuration:</p>
+<img alt="../_images/calendars_list.png" src="../_images/calendars_list.png" />
+<p>Calendar creation process only requires a name. Once created, we can add what
+days will be holidays using the buttons in its row:</p>
+<img alt="../_images/calendars_add_day.png" src="../_images/calendars_add_day.png" />
+<p>From this moment on, the calendar has the 1st of January of 2016 as holiday
+date with the locution &#8220;Happy New Year&#8221;.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Calendars logic is opposite to Schedulers: If a day is not defined
+as holiday in any of the calendars, it will considered a normal day and no
+filtering will be applied.</p>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Holidays without special locutions will apply the external call filter
+holiday generic locution (see below).</p>
+</div>
+<p class="rubric">Create a new External call filter</p>
+<p>Once we have our new created schedules and calendars, it&#8217;s time to apply them
+in what we call <strong>External call filter</strong>.</p>
+<p>The company admin can configure them in the following screen:</p>
+<img alt="../_images/external_call_filter.png" src="../_images/external_call_filter.png" />
+<dl class="glossary docutils">
+<dt id="term-name">Name</dt>
+<dd>Descriptive name that will reference this filter in DDIs configuration.</dd>
+<dt id="term-welcome-locution">Welcome locution</dt>
+<dd>This locution will be played if the call is not going to be
+forwarded by out of schedule or holiday filtering (in other words if
+the normal routing of the DDI is going to be applied).</dd>
+<dt id="term-black-list">Black list</dt>
+<dd>External origin will be checked against the associated <a class="reference internal" href="match_lists.xhtml#match-lists"><span class="std std-ref">Match Lists</span></a>,
+if a coincidence is found, the call will be rejected immediately.</dd>
+<dt id="term-white-list">White list</dt>
+<dd>External origin will be checked against the associated <a class="reference internal" href="match_lists.xhtml#match-lists"><span class="std std-ref">Match Lists</span></a>,
+if a coincidence is found, the call will be directly routed to the DDI
+destination, skipping the filter process. Take into account that black
+listed are checked before white lists.</dd>
+<dt id="term-holiday-locution">Holiday locution</dt>
+<dd>The locution will be  played when the day is maked as holiday in any
+of the calendars associated with the filter <strong>if the calendar entry has
+no locution</strong> for that day.</dd>
+<dt id="term-holiday-forward-type">Holiday forward type</dt>
+<dd>After playing the above locution (if configured), call can be forwarded
+to a voicemail, external number or internal extension. For example, the
+filter of the image will redirect calls during holidays to the external
+number 676 676 676.</dd>
+<dt id="term-out-of-schedule-locution">Out of schedule locution</dt>
+<dd>The locution will be played when, not being holiday, the current time
+is not in any of the time gaps defined in the schedules assigned to the
+filter.</dd>
+<dt id="term-out-of-schedule-forward-type">Out of schedule forward type</dt>
+<dd>Like in the holidays forward, but for out of schedule. The image above
+won&#8217;t apply any forward (and the call will be hanguped).</dd>
+<dt id="term-calendars">Calendars</dt>
+<dd>One or more calendars can be associated with the filter. The combination
+of all the callendars will be applied.</dd>
+<dt id="term-schedules">Schedules</dt>
+<dd>One or more schedules can be applied. The combination of all the time
+gaps defined in the schedules will be applied.</dd>
+</dl>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">Holidays are processed <strong>before</strong> out of schedule events.</p>
+</div>
+<p>In the next section we will use this new created filter with
+<a class="reference internal" href="external_ddis.xhtml#external-ddis"><span class="std std-ref">External DDIs</span></a> so we can configure a welcome locution for normal days,
+and especial behaviours for hoildays and out of schedule events.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

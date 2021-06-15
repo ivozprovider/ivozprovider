@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Listas de coincidencia</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="route_locks.xhtml" title="Candados"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="external_filters.xhtml" title="Filtros de entrada externo"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">documentación de IvozProvider - Oasis</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Funcionalidades de PBX</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="match-lists">
+<span id="id1"></span><h1>Listas de coincidencia</h1>
+<p>Las listas de coincidencia estan diseñadas para agrupar números conocidos o patrones numéricos para asociarlos a distintos tratamientos.</p>
+<p>En función de la sección en la que se empleen, las listas se emplearán para comprobar un origen o destino de la llamada, por lo que se recomienda emplear nombres distintivos para las listas de coincidencia.</p>
+<p>Por ejemplo, como se menciona en la seccion anterior <a class="reference internal" href="external_filters.xhtml#external-filters"><span class="std std-ref">Filtros de entrada externo</span></a>, las listas blancas y negras pueden contener una o más listas de coincidencia. En este caso, el <strong>origen</strong> de la llamadas será comprobado contra las entradas de la lista para determinar si se deberá <strong>ignorar</strong> el filtro o <strong>rechazar</strong> la llamada directamente.</p>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Las listas de coincidencia por si mismas no tiene un comportamiento asociado, tan solo proveen una manera común de agrupar números y patrones que serán empleados en otros procesos.</p>
+</div>
+<div class="admonition attention">
+<p class="first admonition-title">Atención</p>
+<p class="last">Tenga en cuenta que en función de donde se emplee la lista, se comprobarán el origen o el destino de la llamada.</p>
+</div>
+<p>La sección <strong>Configuración de Empresa</strong> &gt; <strong>Listas de coincidencia</strong> permite definir las diferentes listas que agruparán números y patrones.</p>
+<p>La interfaz que se le presenta al administrador de empresa cuando añade un horario es la siguiente:</p>
+<img alt="../_images/matchlist_add1.png" class="align-center" src="../_images/matchlist_add1.png" />
+<p>Tras la creación de la lista, se podrán incluir entradas en esta.</p>
+<img alt="../_images/matchlist_patterns_add1.png" class="align-center" src="../_images/matchlist_patterns_add1.png" />
+<p>Tal como se muestra, la lista puede contener números específicos o grupos empleando <a class="reference external" href="http://php.net/manual/en/reference.pcre.pattern.syntax.php">Expresiones regulares</a><span class="link-target"> [http://php.net/manual/en/reference.pcre.pattern.syntax.php]</span></p>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

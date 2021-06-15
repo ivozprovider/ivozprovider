@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Residential</title>
+    
+    <link rel="stylesheet" href="../../../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="retail.xhtml" title="Retail"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="virtual_pbx.xhtml" title="Virtual PBX"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.xhtml">IvozProvider Artemis documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.xhtml" >Brand Configuration</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.xhtml" accesskey="U">Clients</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="residential">
+<h1>Residential</h1>
+<p>Residential clients are a more lightweight client type than <em>vPBX clients</em>.</p>
+<p>Their target is to provide these services to residential environments:</p>
+<ul class="simple">
+<li>Configure one or more residential devices (SIP devices).</li>
+<li>Setup one or more DDIs.</li>
+<li><strong>Place external calls</strong> showing one of those DDIs.</li>
+<li><strong>Receive external calls</strong> to their DDIs.</li>
+<li>Send/Receive virtual faxes.</li>
+<li>Record calls.</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">No users, no extensions, no internal calls, no hunt groups, no IVRs... just <strong>incoming and outgoing external
+calls (and a few voice services)</strong>.</p>
+</div>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p class="last">Residential clients and their devices <strong>MUST use Brand&#8217;s SIP domain in their SIP messages</strong>.</p>
+</div>
+<div class="section" id="adding-editing-residential-clients">
+<h2>Adding/Editing residential clients</h2>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Some fields described below may not be visible depending on enabled features.</p>
+</div>
+<p>These are the fields shown when <strong>adding</strong> a new residential client:</p>
+<dl class="glossary docutils">
+<dt id="term-billing-method">Billing method</dt>
+<dd>To choose among postpaid, prepaid and pseudo-prepaid.</dd>
+<dt id="term-country-code">Country code</dt>
+<dd>Default country code for DDIs.</dd>
+<dt id="term-currency">Currency</dt>
+<dd>Chosen currency will be used in price calculation, invoices, balance movements and
+remaining money operations of this client.</dd>
+<dt id="term-default-timezone">Default timezone</dt>
+<dd>Used for showing call registries dates.</dd>
+<dt id="term-email">Email</dt>
+<dd>A notification email will be sent to given address when configured max daily usage is reached. Leave empty to
+avoid notification.</dd>
+<dt id="term-features">Features</dt>
+<dd>Enable/Disable faxing and call recording for this particular client.</dd>
+<dt id="term-filter-by-ip-address">Filter by IP address</dt>
+<dd>If set, the platform will only allow calls coming from allowed IP/ranges or countries.</dd>
+<dt id="term-geoip-allowed-countries">GeoIP allowed countries</dt>
+<dd>If <em>Filter by IP address</em> is enabled, traffic from selected countries will be allowed.</dd>
+<dt id="term-language">Language</dt>
+<dd>Used to choose the language of played locutions.</dd>
+<dt id="term-max-calls">Max calls</dt>
+<dd>Limits both incoming and outgoing external calls (0 for unlimited).</dd>
+<dt id="term-max-daily-usage">Max daily usage</dt>
+<dd>Limits external outbound calls when this limit is reached within a day. At midnight counters are reset and
+accounts are re-enabled.</dd>
+<dt id="term-name">Name</dt>
+<dd>Used to reference this particular client.</dd>
+<dt id="term-numeric-transformation">Numeric transformation</dt>
+<dd>Describes the way the client will &#8220;talk&#8221; and the way the client wants to be &#8220;talked&#8221;.</dd>
+</dl>
+<p>When <strong>editing</strong> a client, these additional fields can be configured:</p>
+<dl class="glossary docutils">
+<dt id="term-allow-client-to-remove-recordings">Allow Client to remove recordings</dt>
+<dd>Shown only if <em>Recording</em> feature is enabled for client, shows/hides recording
+removal button on client <em>Call Recordings</em> section.</dd>
+<dt id="term-invoice-data">Invoice data</dt>
+<dd>All the fields in this group will be included in invoices generated for this client. This section also allows
+showing/hiding billing details to client&#8217;s portal, such as Invoices, Rating Profiles and Price of external calls.</dd>
+<dt id="term-notification-options">Notification options</dt>
+<dd>This group allows choosing a notification template for both faxes and voicemail notifications.</dd>
+<dt id="term-outgoing-ddi">Outgoing DDI</dt>
+<dd>Fallback DDI for external outgoing calls (can be overridden at residential device level).</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Apart from these fields, main operator (<em>aka</em> God) will also see a <strong>Platform data</strong> group that allows:</p>
+<ul class="last simple">
+<li>Choosing an specific media relay set for the client.</li>
+<li>Choose the way that calls of this client will be distributed among existing application servers (<strong>hash based</strong> is recommended).</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">For outgoing calls, platform will use the CLID provided by the client as long as it is considered valid, otherwise fallback DDI
+will be used. The platform will consider as valid any CLID that matches one of the client&#8217;s DDIs.</p>
+</div>
+</div>
+<div class="section" id="additional-subsections">
+<h2>Additional subsections</h2>
+<p>Each entry in this table has these additional options:</p>
+<ul class="simple">
+<li><strong>List of authorized sources</strong>: if <em>Filter by IP address</em> is enabled, this subsection allows adding addresses or network ranges.</li>
+</ul>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p class="last">No outgoing call will be allowed if <em>Filter by IP address</em> is enabled and the corresponding list is empty.</p>
+</div>
+<ul class="simple">
+<li><strong>List of client admins</strong>: this subsection allows managing portal credentials for this specific client. Read <a class="reference internal" href="../../../api_rest/acls.xhtml#acls"><span class="std std-ref">ACLs</span></a>
+for further explanation about restricted client administrators.</li>
+<li><strong>List of rating profiles</strong>: this subsection allows managing the rating profiles that will be used to bill its outgoing calls.</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">No outgoing call will be allowed for this client unless an active rating profiles that can
+bill the specific call.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2019, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

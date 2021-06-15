@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Interactive Voice Responses (IVRs)</title>
+    
+    <link rel="stylesheet" href="../../../../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="hunt_groups.xhtml" title="Hunt groups"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="index.xhtml" title="Routing endpoints"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../../index.xhtml">documentación de IvozProvider - Artemis</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.xhtml" >Client Configuration</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.xhtml" >Clientes vPBX</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="index.xhtml" accesskey="U">Routing endpoints</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="interactive-voice-responses-ivrs">
+<h1>Interactive Voice Responses (IVRs)</h1>
+<p>IVRs are the most common way to make <strong>audio menus</strong> where the caller must
+choose the destination of the call by <strong>pressing codes</strong> based on the locutions
+instructions that will be played.</p>
+<div class="section" id="ivrs">
+<h2>IVRs</h2>
+<p>IVRs support specifying actions for dialed digits, but also they can be also be used
+to route any existing client extension.</p>
+<p>IVRs have the following fields:</p>
+<dl class="glossary docutils">
+<dt id="term-name">Name</dt>
+<dd>Descriptive name of the IVR that will be used in other sections.</dd>
+<dt id="term-timeout">Timeout</dt>
+<dd>Time that caller has to enter the digits of the target extension.</dd>
+<dt id="term-max-digits">Max digits</dt>
+<dd>Maximum number of digits allowed in this IVR.</dd>
+<dt id="term-welcome-locution">Welcome locution</dt>
+<dd>This locution will be played as soon as the caller enters the IVR.</dd>
+<dt id="term-success-locution">Success locution</dt>
+<dd>In case the dialed number matches one of the IVR entries or extension
+exists in the client (and allow extensions is enabled), this locution
+will be played (usually something like &#8216;Connecting, please wait...&#8217;).</dd>
+<dt id="term-allow-dialing-extensions">Allow dialing extensions</dt>
+<dd>When this setting is enabled, the caller can directly press the extension
+that must previously know (or the welcome locution suggests) and the system
+will automatically connect with that extension.</dd>
+<dt id="term-excluded-extensions">Excluded Extensions</dt>
+<dd>When Allow extensions is enabled, you can exclude some extensions to be
+directly dialed adding them to the exclusion list.</dd>
+<dt id="term-no-input-process">No input process</dt>
+<dd>If the caller does not input any digit in the timeout value, the
+no input process will trigger, playing the configured locution and
+redirecting the call to another number, extension or voicemail.</dd>
+<dt id="term-error-process">Error process</dt>
+<dd>If the dialed extension does not match any IVR entry, any client extensions
+(when allow extensions is enabled), or it matches one of the extensions in the
+excluded Extensions list, the error process will trigger, playing the configured
+locution and redirecting the call to another number, extension or voicemail.</dd>
+</dl>
+</div>
+<div class="section" id="ivr-entries">
+<h2>IVR Entries</h2>
+<div class="admonition hint">
+<p class="first admonition-title">Consejo</p>
+<p class="last">The most common usage for IVR is combining them with a welcome
+locution that says something like &#8216;Press 1 to contact XXX, Press 2 to
+contact YYY, ...&#8221;</p>
+</div>
+<p>The process of each entry of the IVR can be defined in the following button:</p>
+<p>In this example, the caller can dial 1, 2 or 3 (the rest will be considered as
+an error and will trigger the <strong>Error process</strong>):</p>
+<ul class="simple">
+<li>1: Call to the internal extension 200, created in <a class="reference internal" href="hunt_groups.xhtml#huntgroups"><span class="std std-ref">previous section</span></a> that routes to hunt group <em>Reception</em>.</li>
+<li>2: Call to the internal extension 101.</li>
+<li>3: Route this call to the external number 676 676 676.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Each of the IVR entries supports a locution that, if set,
+will be played instead of the IVR <strong>success locution</strong>. This way, you can
+configure a generic locution (like &#8216;Connecting....&#8217;) or a custom one for
+a given entry (like &#8216;Connecting reception department, please wait...&#8217;).</p>
+</div>
+<p class="rubric">Entries are regular expressions</p>
+<p>You can specify IVR entries as Regular Expressions. If entry is just
+a numeric value, it will be handled as a sequence of digits, otherwise it
+will be handled a regular expression. This can be handy if you have the
+same behaviour for a group of dialed numbers.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2019, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

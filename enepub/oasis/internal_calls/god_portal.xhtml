@@ -1,0 +1,262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Main Management</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="brand_portal.xhtml" title="Brand Configuration"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.xhtml" title="Making internal calls"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">IvozProvider Oasis documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Making internal calls</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="main-management">
+<h1>Main Management</h1>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Any of the 2 Public IP addresses configured during the
+installation will work to acces the web portal. Default credentials are
+<strong>admin / changeme</strong>.</p>
+</div>
+<p>In this section will reference global administrator configuration options,
+avaible in the menu (<strong>Main management</strong>) of the web portal (only visible to
+God Admins):</p>
+<img alt="../_images/bloque_god.png" class="align-center" src="../_images/bloque_god.png" />
+<div class="section" id="custom-installation-configuration">
+<h2>Custom installation configuration</h2>
+<p>During the install process two IP addresses will be requested in order to run
+the following two processes:</p>
+<div class="section" id="users-sip-proxy">
+<span id="proxyusers"></span><h3>Users SIP Proxy</h3>
+<p>This is the SIP proxy exposed to the external world where users register their
+terminals.</p>
+<p>The value displayed in the section <strong>Proxy users</strong> will show the IP address
+entered during the installation process.</p>
+<img alt="../_images/proxyusers.png" src="../_images/proxyusers.png" />
+</div>
+<div class="section" id="providers-sip-proxy">
+<h3>Providers SIP proxy</h3>
+<p>This is the SIP proxy exposed to the external world in charge of connecting
+the provider that brand aministrators will configure for <em>peering</em>.</p>
+<p>The value displayed in the section <strong>Proxy trunk</strong> will show the IP address
+entered during the installation process.</p>
+<img alt="../_images/proxytrunks.png" src="../_images/proxytrunks.png" />
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Only the IP address will be entered as the port will be always 5060
+(5061 for SIP over TLS).</p>
+</div>
+<div class="admonition danger">
+<p class="first admonition-title">Danger</p>
+<p class="last">This 2 values can be changed from the portal, but they must always
+have the same IP address that proxy process listen to requests.</p>
+</div>
+</div>
+</div>
+<div class="section" id="standard-global-configuration">
+<h2>Standard global configuration</h2>
+<p>The installation process includes other global values that are the same in
+any standalone IvozProvider installation and can also be checked from the
+web interface.</p>
+<div class="section" id="application-servers">
+<h3>Application Servers</h3>
+<p>The section <strong>Application Servers</strong> will list the IP address where the existing
+Asterisk processes will listen for request, and like previously mentioned,
+can scale horizontaly to adapt the platform for the required load.</p>
+<p>Contrary to the Proxies, Asterisk is not exposed to the external world, so
+for a standalone installation there will only be one listening at 127.0.0.1.</p>
+<img alt="../_images/app_servers.png" src="../_images/app_servers.png" />
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The listening port will not be displayed in the field because it will
+always be 6060 (UDP).</p>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">As soon as another Application Server is added, the proxies will
+try to balance load using it. If no response is received from added
+Application server, it will be disabled automatically.</p>
+</div>
+</div>
+<div class="section" id="media-relay">
+<h3>Media relay</h3>
+<p>Media relays are in charge of bridging RTP traffic of established calls. Like
+the Application Servers, they can scale horizontally as much as required.</p>
+<p>Media relays are organized in groups so they can be assigned to a company. Each
+element of the group has a <strong>metric</strong> that allows non-equal load balancing
+within the same group (i.e. media-relay1 metric 1; media-relay2 metric 2:
+the second media relay will handle two times the calls than the first one).</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">The static assigment of media relay groups is not the common practice
+but allow us to assign strategic resources to companies that need a warranted
+service. The most common usage of this <strong>groups of media relays</strong> is to
+place them near the geographic area of the company (usually far from the
+rest of the platform systems) in order to reduce <strong>latencies</strong> in their
+conversations.</p>
+</div>
+<p>In a standalone installation, only one media relay group will be exist:</p>
+<img alt="../_images/media_relay_groups.png" src="../_images/media_relay_groups.png" />
+<p>By default this group only has a media server:</p>
+<img alt="../_images/media_relays.png" src="../_images/media_relays.png" />
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The address displayed is the control socket, not the SDP address that
+will be included during SIP negociation. By default this alone media-relay
+will share the same IP address that the User&#8217;s SIP proxy.</p>
+</div>
+</div>
+<div class="section" id="sip-domains">
+<span id="god-sipdomains"></span><h3>SIP Domains</h3>
+<p>The section <strong>Domains</strong> will display the SIP domains that points to our two
+public IP addresses.</p>
+<ul class="simple">
+<li>Users SIP Proxy IP address</li>
+<li>Trunks SIP Proxy IP address</li>
+</ul>
+<p>After the initial installation, there will be two domains, one for each address:</p>
+<img alt="../_images/domain_list_local.png" src="../_images/domain_list_local.png" />
+<p>This domains will be used internally by a builtin DNS server included in the
+solution.</p>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">As mentioned in the section <a class="reference internal" href="brand_portal.xhtml#domain-per-company"><span class="std std-ref">Company SIP Domain</span></a>, each
+company will require a DNS pointing to the users SIP proxy. Once configured,
+the domain will be displayed in this list so global administrator can check
+what domains are registered for each company.</p>
+</div>
+</div>
+<div class="section" id="brands">
+<h3>Brands</h3>
+<p>After the initial installation, the platform will have an already created brand
+called DemoBrand. Let&#8217;s inspect its parameters:</p>
+<dl class="glossary docutils">
+<dt id="term-name">Name</dt>
+<dd>Sets the name for this brand.</dd>
+<dt id="term-nif">NIF</dt>
+<dd>Number used in this brand&#8217;s invoices.</dd>
+<dt id="term-logo">Logo</dt>
+<dd>Used as default logo in invoices and in portals (if they don&#8217;t specify
+another logo).</dd>
+<dt id="term-invoice-data">Invoice data</dt>
+<dd>Data included in invoices created by this brand.</dd>
+<dt id="term-mail-data">Mail data</dt>
+<dd>Display name and from address used in external emails for this brand
+(faxes, voicemail, etc.)</dd>
+<dt id="term-sip-domain">SIP domain</dt>
+<dd>Introduced in 1.4. Domain pointing to Users SIP proxy used by all the
+Retail Accounts of this brand.</dd>
+<dt id="term-recordings">Recordings</dt>
+<dd>Configures a limit for the size of recordings of this brand. A
+notification is sent to configured address when 80% is reached and
+older recordings are rotated when configured size is reached.</dd>
+<dt id="term-features">Features</dt>
+<dd>Introduced in 1.3, lets god operator choose the features of the created
+brand. An equivalent configuration is available in Companies, to choose
+between the ones that god operator gave to your Brand. Related sections
+are hidden consequently.</dd>
+</dl>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Some features (currently invoices and billing) are related to brand and
+cannot be assigned to companies. Remaining features are related to
+companies and lets the brand operator to assign them to its companies.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Disabling billing hides all related sections and assumes that an
+external element will set a price for calls (external tarification
+module is needed, ask for it!).</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Disabling invoices hides related sections, assuming you will use an
+external tool to generate them.</p>
+</div>
+</div>
+</div>
+<div class="section" id="emulate-the-demo-brand">
+<h2>Emulate the Demo brand</h2>
+<p>As mentioned above, the initial installation will have an already created brand
+called DemoBrand, that will be used for our goal: to have 2 telephones registered
+that can call each other.</p>
+<p>Before going to the next section, is quite important to understand how the
+<strong>emulation</strong> works.</p>
+<ul class="simple">
+<li>As global operator, you have access to the menu <strong>Main management</strong> only
+visible to <em>God</em> administators.</li>
+<li>Apart from that menu, you will also have access to the <strong>Brand configuration</strong>
+and <strong>Company configuration</strong> that will look more or less like this:</li>
+</ul>
+<img alt="../_images/emular_marca_prev.png" class="align-center" src="../_images/emular_marca_prev.png" />
+<ul class="simple">
+<li>Check following button</li>
+</ul>
+<img alt="../_images/emular_marca.png" class="align-center" src="../_images/emular_marca.png" />
+<ul class="simple">
+<li>When pressed, a popup will be displayed:</li>
+</ul>
+<img alt="../_images/emular_marca2.png" class="align-center" src="../_images/emular_marca2.png" />
+<ul class="simple">
+<li>After selecting the DemoBrand brand, the icon will change and shows the
+emulted brand:</li>
+</ul>
+<img alt="../_images/emular_marca3.png" class="align-center" src="../_images/emular_marca3.png" />
+<ul class="simple">
+<li>The upper right corner of the portal will also display the brand that is being
+emulted:</li>
+</ul>
+<img alt="../_images/emular_marca4.png" class="align-center" src="../_images/emular_marca4.png" />
+<div class="section" id="what-emulation-means">
+<h3>What emulation means</h3>
+<p>Basically, that <strong>everything in the menu &#8216;Brand configuration&#8217; will be relative
+to the chosen brand</strong> and is <strong>exactly</strong> the same menu entries that the brand
+operator will see using its brand portal.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Ok, ok. maybe exactly is not totally accurate. The global operator is
+able to see some fields in some screens that other admins cann&#8217;t (i.e. On
+Company edit screen, fields like &#8216;Media relays&#8217; or &#8216;Application server&#8217; are
+only configurable by the global operator.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

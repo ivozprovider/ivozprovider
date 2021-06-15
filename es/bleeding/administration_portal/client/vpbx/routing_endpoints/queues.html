@@ -1,0 +1,402 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="es" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="es" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Queues &mdash; documentación de IvozProvider - Artemis</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../../../',
+              VERSION:'Artemis',
+              LANGUAGE:'es',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../../_static/translations.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/banner.css" type="text/css" />
+    <link rel="index" title="Índice" href="../../../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../../../search.html" />
+    <link rel="next" title="Conditional routes" href="conditional_routes.html" />
+    <link rel="prev" title="Hunt groups" href="hunt_groups.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> IvozProvider
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.18
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../basic_concepts/intro/index.html">Introduction to IvozProvider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../basic_concepts/architecture/index.html">Platform general architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../basic_concepts/installation/index.html">Instalación inicial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../basic_concepts/operation_roles/index.html">Roles de la plataforma</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../getting_started/internal_calls/index.html">Realizar llamadas internas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../getting_started/external_incoming_calls/index.html">Receiving external calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../getting_started/external_outgoing_calls/index.html">Realizar llamadas externas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Administration portal</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../platform/index.html">Platform Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../brand/index.html">Brand Configuration</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Client Configuration</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Clientes vPBX</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../users.html">Users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../terminals.html">Terminals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../extensions.html">Extensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ddis.html">DDIs</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Routing endpoints</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ivrs.html">Interactive Voice Responses (IVRs)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="hunt_groups.html">Hunt groups</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Queues</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conditional_routes.html">Conditional routes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="friends/index.html">Friends</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conference_rooms.html">Conference rooms</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../routing_tools/index.html">Routing tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user_configuration/index.html">User configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../multimedia/index.html">Multimedia</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faxes.html">Faxes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../services.html">Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../rating_profiles.html">Rating profiles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../calls/index.html">Calls</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../residential/index.html">Clientes residenciales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../retail/index.html">Clientes retail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../wholesale/index.html">Clientes wholesale</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Specific portals</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../user_portal/index.html">Portal de usuario</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Security and Maintenance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security_and_maintenance/security/index.html">Seguridad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security_and_maintenance/maintenance/index.html">Resolución de problemas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Rest API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api_rest/introduction.html">Introducción a la API de Ivoz Provider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api_rest/multilevel.html">Multi-level API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api_rest/web_client.html">Cliente web incorporado</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api_rest/integrations.html">Integraciones de terceros</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api_rest/use_case.html">Use Case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api_rest/acls.html">ACLs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">IvozProvider</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Client Configuration</a> &raquo;</li>
+        
+          <li><a href="../index.html">Clientes vPBX</a> &raquo;</li>
+        
+          <li><a href="index.html">Routing endpoints</a> &raquo;</li>
+        
+      <li>Queues</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../../_sources/administration_portal/client/vpbx/routing_endpoints/queues.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="queues">
+<h1>Queues<a class="headerlink" href="#queues" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Easy queue behaviour was included in IvozProvider in 1.3 version. It is a simple
+approach with <strong>the unique goal to provide the capability to handle more calls
+than users attending them</strong>.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Advertencia</p>
+<p class="last">Queues and callcenter are close terms but different. <strong>IvozProvider
+is not a suitable product for callcenters</strong>, as it does not provide
+advanced features that are crucial to them (reports, RT visualization,
+queue related stat, etc.).</p>
+</div>
+<p><strong>In distributed installations</strong> using Queues is only compatible with an static
+assignment or &#8216;hash based&#8217; distribution (see <strong>Distribute method</strong> <a class="reference internal" href="../../../brand/clients/virtual_pbx.html#virtual-pbx"><span class="std std-ref">here</span></a>).</p>
+<div class="admonition hint">
+<p class="first admonition-title">Consejo</p>
+<p class="last">Brand operators can choose which Clients have queues (see <strong>Features</strong>
+in <a class="reference internal" href="../../../../getting_started/internal_calls/brand_portal.html#brand-configuration"><span class="std std-ref">Brand Configuration</span></a> and <a class="reference internal" href="../../../../getting_started/internal_calls/client_portal.html#client-configuration"><span class="std std-ref">Client Configuration</span></a>).</p>
+</div>
+<div class="section" id="queue-configuration">
+<h2>Queue configuration<a class="headerlink" href="#queue-configuration" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>This are the settings related to a queue:</p>
+<dl class="glossary docutils">
+<dt id="term-name">Name</dt>
+<dd>Use to reference this queue</dd>
+<dt id="term-weight">Weight</dt>
+<dd>Prioritizes calls to an agent that attends calls in two (or more) calls. The
+higher, the more prioritized.</dd>
+<dt id="term-strategy">Strategy</dt>
+<dd>How will the queue deliver the calls? Calling to all agents, calling to a
+random one?</dd>
+<dt id="term-member-call-seconds">Member call seconds</dt>
+<dd>Defines how long will a call to an agent last.</dd>
+<dt id="term-member-rest-seconds">Member rest seconds</dt>
+<dd>Seconds between calls for an agent.</dd>
+<dt id="term-prevent-missed-calls">Prevent missed calls</dt>
+<dd>When &#8216;Yes&#8217;, calls will never generate a missed call. When &#8216;No&#8217;, missed calls will be prevented only for RingAll
+queues if someone answers.</dd>
+<dt id="term-announce">Announce</dt>
+<dd>Select a locution and its frequency. Caller waiting in the call will listen
+to this locution.</dd>
+<dt id="term-timeout-configuration">Timeout configuration</dt>
+<dd>Limits the time that a call can wait in a queue and the following behaviour.</dd>
+<dt id="term-full-queue-configuration">Full Queue configuration</dt>
+<dd>Limits the amount of people waiting in a call and the behaviour when this limit
+it reached.</dd>
+</dl>
+<p>Apart from creating a queue, you have to assign users to it. This users will have
+a <strong>penalty: a user will not be selected to deliver a call if any user with lower
+penalty is available</strong>.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Consejo</p>
+<p class="last">A call can be sent to a queue selecting it in the &#8220;Route type&#8221; selectors
+available in multiple sections of IvozProvider (extension to queue, DDI
+to queue, etc.)</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Truco</p>
+<p>When configuring a queue, you can prevent missed calls on called members with <strong>Prevent missed calls</strong> setting:</p>
+<ul class="last simple">
+<li><strong>Yes</strong>: calls generated by the queue will never generate missed calls on called members.</li>
+<li><strong>No</strong>: The behaviour of this setting depends on the queue strategy:</li>
+<li><strong>RingAll</strong>: calls generated by the queue will generate missed calls on called members only if none of them answers the call.</li>
+<li><strong>Remaining types</strong>: calls generated by the queue will generate missed calls on every called member that does not answer the call.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="queue-strategy">
+<h2>Queue strategy<a class="headerlink" href="#queue-strategy" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>The queue strategy <strong>always applies to current penalty members</strong> starting with
+the smallest penalty value and only going to the next penalty if all members of
+current one are busy or unavailable.</p>
+<dl class="glossary docutils">
+<dt id="term-ring-all">Ring all</dt>
+<dd>The call will make all the members of the current priority during a
+predefined time.</dd>
+<dt id="term-least-recent">Least recent</dt>
+<dd>The call will <em>jump</em> from one member to another in a predefined order
+based on the last time the member attended a call. Members whose latest
+call is older will be called first.</dd>
+<dt id="term-fewer-calls">Fewer calls</dt>
+<dd>The call will <em>jump</em> from one member to another in a predefined order
+based on the number of attended calls. Members that have attended less
+calls will be called first.</dd>
+<dt id="term-random">Random</dt>
+<dd>The call will <em>jump</em> from one member to another in a random order,
+ringing during the configured time.</dd>
+<dt id="term-round-robin-memory">Round Robin memory</dt>
+<dd>The call will <em>jump</em> from one member to another in a predefined order
+starting past the last member that attended a call.</dd>
+<dt id="term-linear">Linear</dt>
+<dd>The call will <em>jump</em> from one member to another in a predefined order
+based on the creation time of the member.</dd>
+</dl>
+<div class="admonition warning">
+<p class="first admonition-title">Advertencia</p>
+<p class="last">A given penalty will never the called until all users with lower priority are on call.</p>
+</div>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p class="last"><em>Linear</em> queues are special: a non-linear queue cannot be converted to linear.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="conditional_routes.html" class="btn btn-neutral float-right" title="Conditional routes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="hunt_groups.html" class="btn btn-neutral float-left" title="Hunt groups" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016-2019, Irontec
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-book"> Other Versions</span>
+        v: bleeding
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Branches</dt>
+            <dd><a href="../../../../../artemis/administration_portal/client/vpbx/routing_endpoints/queues.html">artemis</a></dd>
+            <dd><a href="queues.html">bleeding</a></dd>
+            <dd><a href="../../../../../oasis/index.html">oasis</a></dd>
+        </dl>
+    </div>
+</div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

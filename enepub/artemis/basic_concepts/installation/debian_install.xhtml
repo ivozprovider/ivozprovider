@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Debian packages install</title>
+    
+    <link rel="stylesheet" href="../../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="cd_install.xhtml" title="Automatic ISO CD image"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="requirements.xhtml" title="Minimum requirements"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.xhtml">IvozProvider Artemis documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Initial Installation</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="debian-packages-install">
+<h1>Debian packages install</h1>
+<p>IvozProvider is designed to be installed and updated using Debian packages.
+More exactly, the current release is ready to be installed on
+<a class="reference external" href="https://www.debian.org/releases/stretch">Debian Stretch 9</a><span class="link-target"> [https://www.debian.org/releases/stretch]</span>.</p>
+<p>It&#8217;s recommended to use one of the <a class="reference external" href="https://www.debian.org/releases/stretch/installmanual">official installation guides</a><span class="link-target"> [https://www.debian.org/releases/stretch/installmanual]</span> to install the minimum
+base system. The rest of required  dependencies will be installed automatically
+with IvozProvider meta packages.</p>
+<p>No matter if you are installing a <a class="reference internal" href="install_types.xhtml#standalone-install"><span class="std std-ref">StandAlone Install</span></a> or a
+<a class="reference internal" href="install_types.xhtml#distributed-install"><span class="std std-ref">Distributed Install</span></a>, it&#8217;s required to configure Irontec debian
+repositories.</p>
+<div class="section" id="apt-repository-configuration">
+<h2>APT Repository configuration</h2>
+<p>Right now, two different repositories are used for the latest IvozProvider
+release (called artemis) and it&#8217;s frontend Klear release (called tayler).</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">cd /etc/apt/sources.list.d</span>
+<span class="go">echo deb http://packages.irontec.com/debian artemis main extra &gt; ivozprovider.list</span>
+<span class="go">echo deb http://packages.irontec.com/debian tayler main &gt; klear.list</span>
+</pre></div>
+</div>
+<p>Optionally, we can add the repository key to check signed packages:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">wget http://packages.irontec.com/public.key -q -O - | apt-key add -</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="installing-profile-package">
+<h2>Installing profile package</h2>
+<p>Once the repositories are configured, it will be required to select the proper
+metapackage depending on the type of installation.</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>For a <a class="reference internal" href="install_types.xhtml#standalone-install"><span class="std std-ref">StandAlone Install</span></a>:</dt>
+<dd><ul class="first last">
+<li>ivozprovider</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">apt-get update</span>
+<span class="go">apt-get install ivozprovider</span>
+</pre></div>
+</div>
+<ul>
+<li><p class="first">For a <a class="reference internal" href="install_types.xhtml#distributed-install"><span class="std std-ref">Distributed Install</span></a>: one of the profile packages depending on the
+role the machine will perform.</p>
+<blockquote>
+<div><ul class="simple">
+<li>ivozprovider-profile-data</li>
+<li>ivozprovider-profile-proxy</li>
+<li>ivozprovider-profile-portal</li>
+<li>ivozprovider-profile-as</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">Distributed installation require a couple manual configuration based on the
+roles that are performing. Take into account that distributed installation process
+is not documented yet. You can refer to <a class="reference external" href="https://github.com/irontec/ivozprovider/issues/271">documentation request</a><span class="link-target"> [https://github.com/irontec/ivozprovider/issues/271]</span> for more information.</p>
+</div>
+</div>
+<div class="section" id="finish-the-installation">
+<h2>Finish the installation</h2>
+<p>Standalone installation have a menu that can be used to configure the basic
+services used in IvozProvider. Most of the services are automatically configured
+to work in the same machine with the default values.</p>
+<p>This menu allows:</p>
+<ul class="simple">
+<li>Configure IP address(es) for SIP proxies</li>
+<li>Default platform language</li>
+<li>Administrator MySQL database password</li>
+</ul>
+<p>It&#8217;s possible to change any of this values anytime by running:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">dpkg-reconfigure ivozprovider</span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Any of the public IP addresses configured during the
+installation will work to access the web portal. Default credentials are
+<strong>admin / changeme</strong>.</p>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">You must reboot your machine after a package installation in order to start
+all required sevices.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2019, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

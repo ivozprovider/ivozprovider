@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Componentes extra</title>
+    
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.xhtml" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="../internal_calls/index.xhtml" title="Realizar llamadas internas"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="cd_install.xhtml" title="CDs automáticos de instalación"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.xhtml">documentación de IvozProvider - Oasis</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.xhtml" accesskey="U">Instalación inicial</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="extra-components">
+<h1>Componentes extra</h1>
+<div class="section" id="g-729">
+<h2>G.729</h2>
+<div class="admonition important">
+<p class="first admonition-title">Importante</p>
+<p class="last">En algunos paises, es posible que tenga que pagar derechos a los titulares de las patentes de G.729. No somos asesores legales al respecto de las patentes activas o retiradas.</p>
+</div>
+<p>Puede emplear G.729 con IvozProvider, pero la instalación debe ser realizada manualmente. El codec G.729 esta optimizado para cada tipo de CPU y versión de asterisk, por lo que cada instalación puede requerir un módulo de codec diferente.</p>
+<p>Puede descargar el codec <a class="reference external" href="http://asterisk.hosting.lv/">aqui</a><span class="link-target"> [http://asterisk.hosting.lv/]</span> bajo la sección Asterisk 13.</p>
+<p>Una vez descargado, mueva el fichero <cite>.so</cite> a la ruta <strong>/usr/lib/asterisk/modules/</strong> y renómbrelo a <strong>codec_g729.so</strong></p>
+<p>Puede comprobar si el codec es válido reiniciado asterisk y mostrando la lista de traducciones de codes disponibles:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">systemctl restart asterisk # Restart asterisk</span>
+<span class="go">asterisk -rx &#39;core show translation&#39; | grep 729</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, Irontec.
+      Creado con <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

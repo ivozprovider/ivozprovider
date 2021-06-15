@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Destination Rates</title>
+    
+    <link rel="stylesheet" href="../../../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/banner.css" type="text/css" /> 
+  </head>
+  <body role="document">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.xhtml" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="destinations.xhtml" title="Destinations"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="rating_plans.xhtml" title="Rating plans"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.xhtml">IvozProvider Artemis documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.xhtml" >Brand Configuration</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.xhtml" accesskey="U">Billing</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="destination-rates">
+<span id="destination-rate"></span><h1>Destination Rates</h1>
+<p>A <em>Destination rate</em> groups some prefixes with their cost details.</p>
+<p>They only have two fields:</p>
+<dl class="glossary docutils">
+<dt id="term-name">Name</dt>
+<dd>Name to reference the destination rate</dd>
+<dt id="term-description">Description</dt>
+<dd>Additional details</dd>
+<dt id="term-currency">Currency</dt>
+<dd>All rates imported/added will use this currency</dd>
+<dt id="term-deductible-connection-fee">Deductible Connection Fee</dt>
+<dd>Set to &#8216;No&#8217; for typical fee charged at call establishment. Set to &#8216;Yes&#8217; to enable
+minimal-cost-alike behaviour (read below).</dd>
+</dl>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Destination rate names are not shown to the final client, you can use whatever makes sense to you.</p>
+</div>
+<div class="section" id="deductible-connection-fee-minimal-cost">
+<h2>Deductible Connection Fee (Minimal Cost)</h2>
+<p>When Destination Rate has <em>Deductible Connection Fee</em> set to yes, all rates&#8217; Connection Fee will behave like Minimal Cost.</p>
+<p>This is underlying logic:</p>
+<ul>
+<li><p class="first">When call is established, Connection Fee of matched prefix is charged.</p>
+</li>
+<li><p class="first">When call is hung up:</p>
+<ul>
+<li><p class="first">Total cost without connection fee is calculated (CostWithoutConnectionFee):</p>
+<ul>
+<li><p class="first">If is greater than connection fee, connection fee is subtracted from total cost.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Final connection fee: 0</li>
+<li>Final cost: CostWithoutConnectionFee</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">If is lower than connection fee, connection fee is adjusted so that total cost is equal to connection fee.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Final connection fee: ConnectionFee - CostWithoutConnectionFee</li>
+<li>Final cost: ConnectionFee</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p class="first">In both cases, cost difference is refunded to affected balances.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p class="rubric">Connection fee 0.01 - Total cost 0.21</p>
+<ul class="simple">
+<li>Cost without connection fee: 0.20</li>
+<li>As 0.20 &gt; 0.01:<ul>
+<li>Call cost is reduced to 0.20</li>
+<li>0.01 is refunded to affected balances</li>
+</ul>
+</li>
+</ul>
+<p class="rubric">Connection fee 0.01 - Total cost 0.013</p>
+<ul class="simple">
+<li>Cost without connection fee: 0.003</li>
+<li>As 0.003 &lt; 0.01:<ul>
+<li>Call cost is reduced to 0.01</li>
+<li>0.003 is refunded to affected balances</li>
+</ul>
+</li>
+</ul>
+<p>This setting guarantees a minimal cost of 0.01.</p>
+</div>
+<div class="section" id="add-rates-manually">
+<h2>Add rates manually</h2>
+<p>Brand operator can add rates by hand, filling these fields (<strong>List of rates</strong> subsection):</p>
+<dl class="glossary docutils">
+<dt id="term-destination">Destination</dt>
+<dd>Pre-created destination that specifies a concrete prefix.</dd>
+<dt id="term-connection-charge">Connection charge</dt>
+<dd>The amount that is charged just for call establishment.</dd>
+<dt id="term-interval-start">Interval start</dt>
+<dd>When should the billing engine start rating the calls. If you set it to 10, first 10 seconds will be for free.</dd>
+<dt id="term-per-minute-rate">Per minute rate</dt>
+<dd>Price per minute of conversation.</dd>
+<dt id="term-charge-period">Charge period</dt>
+<dd>Increase cost every seconds? Or in 10 second intervals? Or every minute?</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">A call with less duration that the one defined in interval start will have the price of the <strong>Connection fee</strong>.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">All decimals must use point as decimal delimiter. 4 decimals precision is used.</p>
+</div>
+<p class="rubric">How it works</p>
+<p>Call cost/price is increased by (<em>Per minute rate</em> / 60 ) * <em>charge period</em> every <em>charge period</em> seconds:</p>
+<ul class="simple">
+<li>If <em>billing period</em> is set to 1, every second the price will be increased
+<em>price per minute</em> divided by 60 (bill by seconds).</li>
+<li>If <em>billing period</em> is set to 60, every minute the price will be increased
+<em>price per minute</em> (bill by minutes).</li>
+</ul>
+</div>
+<div class="section" id="importing-a-csv-file">
+<h2>Importing a CSV file</h2>
+<p>At this point, the brand operator may have noticed that adding thousands
+of rates would be a really annoying and time consuming task, as there
+are 254 countries, each of them with their mobile networks, landline networks,
+special service numbers, etc.</p>
+<p>That&#8217;s why the creation of destination rates is done using a
+<a class="reference external" href="https://es.wikipedia.org/wiki/CSV">CSV</a><span class="link-target"> [https://es.wikipedia.org/wiki/CSV]</span> file.</p>
+<p>The first step is creating an empty <em>Destination rate</em> to import the prices in and using <strong>Import rates</strong> option.</p>
+<p>We can select which column contains which field, in case we want to import a
+<a class="reference external" href="https://es.wikipedia.org/wiki/CSV">CSV</a><span class="link-target"> [https://es.wikipedia.org/wiki/CSV]</span> file in a non-recommended format. We
+can also decide whether to import the first line or discard it as it may have
+titles instead of data.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">The importing process is done in background, letting the brand operator
+continue doing other stuff while it is finished.</p>
+</div>
+<div class="section" id="csv-format">
+<h3>CSV format</h3>
+<p>Although the import window allows importing non-recommended format CSV files,
+we encourage you to import a file in the proposed format, as it will make
+this process much easier:</p>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p class="last">Comma is the only allowed separator character.</p>
+</div>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p class="last">Single quotes are not supported.</p>
+</div>
+<p>You can find a sample CSV for importing <a class="reference external" href="https://raw.githubusercontent.com/irontec/ivozprovider/artemis/web/admin/samples/pricesSample.csv">here</a><span class="link-target"> [https://raw.githubusercontent.com/irontec/ivozprovider/artemis/web/admin/samples/pricesSample.csv]</span>.</p>
+<p>The order of the columns should be:</p>
+<ul class="simple">
+<li>Destination name</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">If they contain any comma, they MUST be quoted with double quotes. Otherwise, double quotes are optional.</p>
+</div>
+<ul class="simple">
+<li>Destination prefix</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">MUST start with + sign.</p>
+</div>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p class="last">If same prefix is used in multiple times in CSV file, import process will fail.</p>
+</div>
+<ul class="simple">
+<li>Per minute rate</li>
+<li>Connection charge</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">MUST use point as decimal separator.</p>
+</div>
+<ul class="simple">
+<li>Charge period</li>
+</ul>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Given in seconds, only integers greater or equal 1 are supported.</p>
+</div>
+<p>Once the import process is over, we only have to include this destination rate into some
+rating plan and bind it to the clients/carriers we want following the procedure explained in
+<a class="reference internal" href="rating_plans.xhtml#rating-plans"><span class="std std-ref">Rating plans</span></a>.</p>
+</div>
+</div>
+<div class="section" id="re-importing-a-csv-file">
+<h2>Re-importing a CSV file</h2>
+<p>Once a CSV (first.csv) is imported into an empty destination-rates row, you can <strong>import another CSV</strong> (second.csv).</p>
+<p>However, it is <strong>important to understand what happens</strong> when you do so:</p>
+<ul class="simple">
+<li>Prefixes in both CSV will get its rate <strong>updated</strong> with second&#8217;s CSV one.</li>
+<li>Prefixes existing only in the first CSV file will be <strong>kept</strong>.</li>
+<li>Prefixes existing only in the second CSV file will be <strong>added</strong>.</li>
+</ul>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p class="last">Downloading CSV using <em>Imported file</em> option will always download <strong>last imported CSV file</strong> (no the
+combination of both as described above).</p>
+</div>
+<p>Note that if both <em>first.csv</em> and <em>second.csv</em> contain exactly the same prefixes, resulting destination-rate will be as
+we had only imported <em>second.csv</em>. And downloading <em>Imported file</em> will download <em>second.csv</em>, that is exactly the current
+state of destination-rate.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2019, Irontec.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>
