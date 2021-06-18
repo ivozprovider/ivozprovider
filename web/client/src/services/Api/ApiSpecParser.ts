@@ -184,7 +184,12 @@ export default class ApiSpecParser {
                     ? this.filterByResponseSchema(action, regExp)
                     : this.filterByRequestSchema(action, regExp)
 
-                if (! matches.length) {
+                const uploadActionMatch =
+                    !isGetRequest
+                    && (this.filterByResponseSchema(action, regExp)).length > 0
+                    && this.isUploadAction(action);
+
+                if (! matches.length && !uploadActionMatch) {
                     continue;
                 }
 
@@ -230,5 +235,16 @@ export default class ApiSpecParser {
             .filter((ref:string) => {
                 return ref && ref.search(regExp) === 0;
             });
+    }
+
+    private isUploadAction(action:any): boolean
+    {
+        const fileParams:Array<any> = action
+            .parameters
+            .filter((param:any) => {
+                return param.type == 'file';
+            });
+
+        return fileParams.length > 0;
     }
 }

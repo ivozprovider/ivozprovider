@@ -69,7 +69,7 @@ const extension:EntityInterface = {
     ...defaultEntityBehavior,
     icon: <SettingsApplications />,
     iden: 'ExternalCallFilter',
-    title: _('External Call Filter', {count: 2}),
+    title: _('External call filter', {count: 2}),
     path: '/external_call_filters',
     properties,
     Form

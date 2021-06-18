@@ -24,7 +24,7 @@ const terminal:EntityInterface = {
     ...defaultEntityBehavior,
     icon: <SettingsApplications />,
     iden: 'OutgoingDdiRule',
-    title: _('Outgoing Ddi Rule', {count: 2}),
+    title: _('Outgoing DDI Rule', {count: 2}),
     path: '/outgoing_ddi_rules',
     properties,
     Form

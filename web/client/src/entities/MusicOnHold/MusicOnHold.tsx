@@ -2,30 +2,22 @@ import SettingsApplications from '@material-ui/icons/SettingsApplications';
 import EntityInterface, { PropertiesList } from 'entities/EntityInterface';
 import _ from 'services/Translations/translate';
 import defaultEntityBehavior from 'entities/DefaultEntityBehavior';
-import Form from './Form'
 
 const properties:PropertiesList = {
     'name': {
         label: _('Name'),
     },
-    'defaultPolicy': {
-        label: _('Default policy'),
-        enum: {
-            'allow': _('allow'),
-            'deny': _('deny'),
-        }
-    },
-    //@TODO CallAclRelMatchLists subscreen list
+    //@TODO originalFile
+    //@TODO encodedFile
 };
 
 const terminal:EntityInterface = {
     ...defaultEntityBehavior,
     icon: <SettingsApplications />,
-    iden: 'CallAcl',
-    title: _('Call ACL', {count: 2}),
-    path: '/call_acls',
-    properties,
-    Form
+    iden: 'MusicOnHold',
+    title: _('Music on hold', {count: 2}),
+    path: '/music_on_holds',
+    properties
 };
 
 export default terminal;

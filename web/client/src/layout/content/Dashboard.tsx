@@ -132,10 +132,14 @@ const Dashboard = (props:dashboardProps) => {
                     <div>
                         <ul>
                             <li>
-                                Locutions
+                                <Link to={entities.Locution.path}>
+                                    {entities.Locution.title}
+                                </Link>
                             </li>
                             <li>
-                                Music on Hold
+                                <Link to={entities.MusicOnHold.path}>
+                                    {entities.MusicOnHold.title}
+                                </Link>
                             </li>
                         </ul>
                     </div>

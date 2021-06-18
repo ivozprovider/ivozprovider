@@ -15,7 +15,7 @@ const terminal:EntityInterface = {
     ...defaultEntityBehavior,
     icon: <SettingsApplications />,
     iden: 'PickUpGroup',
-    title: _('Pick Up Group', {count: 2}),
+    title: _('Pick up group', {count: 2}),
     path: '/pick_up_groups',
     properties,
     Form

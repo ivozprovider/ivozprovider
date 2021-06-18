@@ -2,35 +2,32 @@ import SettingsApplications from '@material-ui/icons/SettingsApplications';
 import EntityInterface, { PropertiesList } from 'entities/EntityInterface';
 import _ from 'services/Translations/translate';
 import defaultEntityBehavior from 'entities/DefaultEntityBehavior';
-import Form from './Form';
 
 const properties:PropertiesList = {
     'name': {
         label: _('Name'),
     },
-    'pinProtected': {
-        label: _('Pin protected'),
+    //@TODO recordingExtension
+    //@TODO originalFile
+    //@TODO encodedFile
+    'status': {
+        label: _('Status'),
         enum: {
-            '0': _("No"),
-            '1': _("yes"),
+            'pending': _('pending'),
+            'encoding': _('encoding'),
+            'ready': _('ready'),
+            'error': _('error'),
         }
-    },
-    'pinCode': {
-        label: _('Pin code'),
-    },
-    'maxMembers': {
-        label: _('Max member'),
-    },
+    }
 };
 
-const extension:EntityInterface = {
+const terminal:EntityInterface = {
     ...defaultEntityBehavior,
     icon: <SettingsApplications />,
-    iden: 'ConferenceRoom',
-    title: _('Conference room', {count: 2}),
-    path: '/conference_rooms',
-    properties,
-    Form
+    iden: 'Locution',
+    title: _('Locution', {count: 2}),
+    path: '/locutions',
+    properties
 };
 
-export default extension;
+export default terminal;

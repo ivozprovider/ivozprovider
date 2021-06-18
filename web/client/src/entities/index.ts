@@ -18,6 +18,8 @@ import RouteLock from './RouteLock/RouteLock';
 import OutgoingDdiRule from './OutgoingDdiRule/OutgoingDdiRule';
 import PickUpGroup from './PickUpGroup/PickUpGroup';
 import CallAcl from './CallAcl/CallAcl';
+import Locution from './Locution/Locution';
+import MusicOnHold from './MusicOnHold/MusicOnHold';
 
 interface EntityList {
   [name:string]: EntityInterface
@@ -42,7 +44,9 @@ const entities:EntityList = {
   RouteLock,
   OutgoingDdiRule,
   PickUpGroup,
-  CallAcl
+  CallAcl,
+  Locution,
+  MusicOnHold
 };
 
 export default entities;
