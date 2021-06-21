@@ -65,7 +65,7 @@ const properties:PropertiesList = {
     },
 };
 
-const extension:EntityInterface = {
+const externalCallFilter:EntityInterface = {
     ...defaultEntityBehavior,
     icon: <SettingsApplications />,
     iden: 'ExternalCallFilter',
@@ -75,4 +75,4 @@ const extension:EntityInterface = {
     Form
 };
 
-export default extension;
+export default externalCallFilter;

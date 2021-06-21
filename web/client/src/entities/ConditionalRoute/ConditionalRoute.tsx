@@ -60,7 +60,7 @@ const properties:PropertiesList = {
     },
 };
 
-const extension:EntityInterface = {
+const conditionalRoute:EntityInterface = {
     ...defaultEntityBehavior,
     icon: <SettingsApplications />,
     iden: 'ConditionalRoute',
@@ -70,4 +70,4 @@ const extension:EntityInterface = {
     Form
 };
 
-export default extension;
+export default conditionalRoute;

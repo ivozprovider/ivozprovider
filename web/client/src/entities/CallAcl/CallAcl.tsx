@@ -18,7 +18,7 @@ const properties:PropertiesList = {
     //@TODO CallAclRelMatchLists subscreen list
 };
 
-const terminal:EntityInterface = {
+const callAcl:EntityInterface = {
     ...defaultEntityBehavior,
     icon: <SettingsApplications />,
     iden: 'CallAcl',
@@ -28,4 +28,4 @@ const terminal:EntityInterface = {
     Form
 };
 
-export default terminal;
+export default callAcl;

@@ -23,7 +23,7 @@ const properties:PropertiesList = {
     },
 };
 
-const extension:EntityInterface = {
+const conferenceRoom:EntityInterface = {
     ...defaultEntityBehavior,
     icon: <SettingsApplications />,
     iden: 'ConferenceRoom',
@@ -33,4 +33,4 @@ const extension:EntityInterface = {
     Form
 };
 
-export default extension;
+export default conferenceRoom;

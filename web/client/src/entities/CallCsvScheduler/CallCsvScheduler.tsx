@@ -110,7 +110,7 @@ const properties:PropertiesList = {
     },
 };
 
-const extension:EntityInterface = {
+const callCsvScheduler:EntityInterface = {
     ...defaultEntityBehavior,
     icon: <SettingsApplications />,
     iden: 'CallCsvScheduler',
@@ -120,4 +120,4 @@ const extension:EntityInterface = {
     Form
 };
 
-export default extension;
+export default callCsvScheduler;

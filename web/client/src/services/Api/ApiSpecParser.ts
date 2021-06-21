@@ -242,7 +242,7 @@ export default class ApiSpecParser {
         const fileParams:Array<any> = action
             .parameters
             .filter((param:any) => {
-                return param.type == 'file';
+                return param.type === 'file';
             });
 
         return fileParams.length > 0;

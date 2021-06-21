@@ -146,7 +146,7 @@ const properties:PropertiesList = {
     },
 };
 
-const extension:EntityInterface = {
+const friend:EntityInterface = {
     ...defaultEntityBehavior,
     icon: <SettingsApplications />,
     iden: 'Friend',
@@ -156,4 +156,4 @@ const extension:EntityInterface = {
     Form
 };
 
-export default extension;
+export default friend;

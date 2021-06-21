@@ -25,7 +25,7 @@ const properties:PropertiesList = {
     //@TODO toggleExtension
 };
 
-const terminal:EntityInterface = {
+const routeLock:EntityInterface = {
     ...defaultEntityBehavior,
     icon: <SettingsApplications />,
     iden: 'RouteLock',
@@ -34,4 +34,4 @@ const terminal:EntityInterface = {
     properties
 };
 
-export default terminal;
+export default routeLock;

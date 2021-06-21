@@ -21,7 +21,7 @@ const properties:PropertiesList = {
     }
 };
 
-const terminal:EntityInterface = {
+const locution:EntityInterface = {
     ...defaultEntityBehavior,
     icon: <SettingsApplications />,
     iden: 'Locution',
@@ -30,4 +30,4 @@ const terminal:EntityInterface = {
     properties
 };
 
-export default terminal;
+export default locution;

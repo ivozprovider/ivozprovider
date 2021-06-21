@@ -45,7 +45,7 @@ const properties:PropertiesList = {
         helpText: _('Max number of unattended calls that this queue can have. When this value has been reached, full queue logic will be activated on new calls. Leave empty to disable.'),
     },
     'fullLocution': {
-        label:_('Name'),
+        label:_('Full queue Locution'),
     },
     'fullTargetType': {
         label:_('Full queue route'),
@@ -100,7 +100,7 @@ const properties:PropertiesList = {
     },
 };
 
-const terminal:EntityInterface = {
+const queue:EntityInterface = {
     ...defaultEntityBehavior,
     icon: <SettingsApplications />,
     iden: 'Queue',
@@ -110,4 +110,4 @@ const terminal:EntityInterface = {
     Form
 };
 
-export default terminal;
+export default queue;

@@ -11,7 +11,7 @@ const properties:PropertiesList = {
     //@TODO encodedFile
 };
 
-const terminal:EntityInterface = {
+const musicOnHold:EntityInterface = {
     ...defaultEntityBehavior,
     icon: <SettingsApplications />,
     iden: 'MusicOnHold',
@@ -20,4 +20,4 @@ const terminal:EntityInterface = {
     properties
 };
 
-export default terminal;
+export default musicOnHold;

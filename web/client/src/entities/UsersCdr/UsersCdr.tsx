@@ -42,7 +42,7 @@ const properties:PropertiesList = {
     },
 };
 
-const extension:EntityInterface = {
+const usersCdr:EntityInterface = {
     ...defaultEntityBehavior,
     icon: <SettingsApplications />,
     iden: 'UsersCdr',
@@ -51,4 +51,4 @@ const extension:EntityInterface = {
     properties,
 };
 
-export default extension;
+export default usersCdr;

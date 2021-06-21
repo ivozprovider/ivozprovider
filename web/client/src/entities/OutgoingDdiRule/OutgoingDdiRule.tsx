@@ -20,7 +20,7 @@ const properties:PropertiesList = {
     }
 };
 
-const terminal:EntityInterface = {
+const outgoingDdiRule:EntityInterface = {
     ...defaultEntityBehavior,
     icon: <SettingsApplications />,
     iden: 'OutgoingDdiRule',
@@ -30,4 +30,4 @@ const terminal:EntityInterface = {
     Form
 };
 
-export default terminal;
+export default outgoingDdiRule;

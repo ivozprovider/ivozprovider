@@ -11,7 +11,7 @@ const properties:PropertiesList = {
     //@TODO relUsers multiselect
 };
 
-const terminal:EntityInterface = {
+const pickUpGroup:EntityInterface = {
     ...defaultEntityBehavior,
     icon: <SettingsApplications />,
     iden: 'PickUpGroup',
@@ -21,4 +21,4 @@ const terminal:EntityInterface = {
     Form
 };
 
-export default terminal;
+export default pickUpGroup;

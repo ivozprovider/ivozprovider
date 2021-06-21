@@ -80,7 +80,7 @@ const properties:PropertiesList = {
     },
 };
 
-const extension:EntityInterface = {
+const ddi:EntityInterface = {
     ...defaultEntityBehavior,
     icon: <SettingsApplications />,
     iden: 'Ddi',
@@ -90,4 +90,4 @@ const extension:EntityInterface = {
     Form
 };
 
-export default extension;
+export default ddi;

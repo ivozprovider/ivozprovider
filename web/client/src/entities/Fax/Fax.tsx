@@ -24,7 +24,7 @@ const properties:PropertiesList = {
     },
 };
 
-const extension:EntityInterface = {
+const fax:EntityInterface = {
     ...defaultEntityBehavior,
     icon: <SettingsApplications />,
     iden: 'Fax',
@@ -34,4 +34,4 @@ const extension:EntityInterface = {
     Form
 };
 
-export default extension;
+export default fax;

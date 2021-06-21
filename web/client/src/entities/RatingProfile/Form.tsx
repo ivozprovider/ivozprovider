@@ -1,6 +1,5 @@
 import defaultEntityBehavior from '../DefaultEntityBehavior';
 import { useEffect, useState } from 'react';
-import LocutionSelectOptions from 'entities/Locution/SelectOptions';
 import RatingPlanGroupSelectOptions from 'entities/RatingPlanGroup/SelectOptions';
 import RoutingTagSelectOptions from 'entities/RoutingTag/SelectOptions';
 

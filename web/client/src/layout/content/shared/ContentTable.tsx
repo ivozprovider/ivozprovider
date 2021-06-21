@@ -106,6 +106,7 @@ export default function ContentTable(props: propsType) {
         handleClose={handleFiltersClose}
         currentFilter={criteria}
         setFilters={setWhereCondition}
+        path={path}
       />
 
       <div>

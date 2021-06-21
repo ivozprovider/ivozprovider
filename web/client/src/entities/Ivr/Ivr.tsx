@@ -83,7 +83,7 @@ const properties:PropertiesList = {
     }
 };
 
-const extension:EntityInterface = {
+const ivr:EntityInterface = {
     ...defaultEntityBehavior,
     icon: <SettingsApplications />,
     iden: 'Ivr',
@@ -93,4 +93,4 @@ const extension:EntityInterface = {
     Form
 };
 
-export default extension;
+export default ivr;

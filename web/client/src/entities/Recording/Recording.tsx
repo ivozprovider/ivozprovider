@@ -35,7 +35,7 @@ const properties:PropertiesList = {
     },
 };
 
-const terminal:EntityInterface = {
+const recording:EntityInterface = {
     ...defaultEntityBehavior,
     icon: <SettingsApplications />,
     iden: 'Recording',
@@ -44,4 +44,4 @@ const terminal:EntityInterface = {
     properties,
 };
 
-export default terminal;
+export default recording;

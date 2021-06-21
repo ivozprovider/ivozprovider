@@ -16,7 +16,7 @@ const properties:PropertiesList = {
     },
 };
 
-const terminal:EntityInterface = {
+const ratingProfile:EntityInterface = {
     ...defaultEntityBehavior,
     icon: <SettingsApplications />,
     iden: 'RatingProfile',
@@ -26,4 +26,4 @@ const terminal:EntityInterface = {
     Form
 };
 
-export default terminal;
+export default ratingProfile;

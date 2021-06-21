@@ -28,7 +28,7 @@ const properties:PropertiesList = {
     },
 };
 
-const terminal:EntityInterface = {
+const service:EntityInterface = {
     ...defaultEntityBehavior,
     icon: <SettingsApplications />,
     iden: 'Service',
@@ -37,4 +37,4 @@ const terminal:EntityInterface = {
     properties
 };
 
-export default terminal;
+export default service;

@@ -38,7 +38,7 @@ const properties:PropertiesList = {
     }
 };
 
-const terminal:EntityInterface = {
+const schedule:EntityInterface = {
     ...defaultEntityBehavior,
     icon: <SettingsApplications />,
     iden: 'Schedule',
@@ -47,4 +47,4 @@ const terminal:EntityInterface = {
     properties
 };
 
-export default terminal;
+export default schedule;
