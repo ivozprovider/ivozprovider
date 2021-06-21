@@ -2,6 +2,7 @@ import { withRouter } from "react-router-dom";
 import entities from '../../entities/index';
 import { Link } from "react-router-dom";
 import { Grid } from "@material-ui/core";
+import _ from 'services/Translations/translate';
 
 interface dashboardProps {
 }
@@ -33,7 +34,7 @@ const Dashboard = (props:dashboardProps) => {
                     </Link>
                 </li>
                 <li className="submenu">
-                    <h3>Routing endpoints</h3>
+                    <h3>{_('Routing endpoints')}</h3>
                     <div>
                         <ul>
                             <li>
@@ -70,7 +71,7 @@ const Dashboard = (props:dashboardProps) => {
                     </div>
                 </li>
                 <li className="submenu">
-                    <h3>Routing tools</h3>
+                    <h3>{_('Routing tools')}</h3>
                     <div>
                         <ul>
                             <li>
@@ -106,7 +107,7 @@ const Dashboard = (props:dashboardProps) => {
         <Grid item xs={6}>
             <ul>
                 <li className="submenu">
-                    <h3>User configuration</h3>
+                    <h3>{_('User configuration')}</h3>
                     <div>
                         <ul>
                             <li>
@@ -128,7 +129,7 @@ const Dashboard = (props:dashboardProps) => {
                     </div>
                 </li>
                 <li className="submenu">
-                    <h3>Multimedia</h3>
+                    <h3>{_('Multimedia')}</h3>
                     <div>
                         <ul>
                             <li>
@@ -145,19 +146,25 @@ const Dashboard = (props:dashboardProps) => {
                     </div>
                 </li>
                 <li>
-                    Faxes
+                    <Link to={entities.Fax.path}>
+                        {entities.Fax.title}
+                    </Link>
                 </li>
                 <li>
-                    Services
+                    <Link to={entities.Service.path}>
+                        {entities.Service.title}
+                    </Link>
                 </li>
                 <li>
-                    Rating Profiles
+                    <Link to={entities.RatingProfile.path}>
+                        {entities.RatingProfile.title}
+                    </Link>
                 </li>
                 <li>
                     Invoices
                 </li>
                 <li className="submenu">
-                    <h3>Calls</h3>
+                    <h3>{_('Calls')}</h3>
                     <div>
                         <ul>
                             <li>

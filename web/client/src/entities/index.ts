@@ -20,6 +20,9 @@ import PickUpGroup from './PickUpGroup/PickUpGroup';
 import CallAcl from './CallAcl/CallAcl';
 import Locution from './Locution/Locution';
 import MusicOnHold from './MusicOnHold/MusicOnHold';
+import Fax from './Fax/Fax';
+import Service from './Service/Service';
+import RatingProfile from './RatingProfile/RatingProfile';
 
 interface EntityList {
   [name:string]: EntityInterface
@@ -46,7 +49,10 @@ const entities:EntityList = {
   PickUpGroup,
   CallAcl,
   Locution,
-  MusicOnHold
+  MusicOnHold,
+  Fax,
+  Service,
+  RatingProfile
 };
 
 export default entities;
