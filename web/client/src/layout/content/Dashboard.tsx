@@ -181,10 +181,14 @@ const Dashboard = (props:dashboardProps) => {
                                 </Link>
                             </li>
                             <li>
-                                Call CSV schedulers
+                                <Link to={entities.CallCsvScheduler.path}>
+                                    {entities.CallCsvScheduler.title}
+                                </Link>
                             </li>
                             <li>
-                                Call recordings
+                                <Link to={entities.Recording.path}>
+                                    {entities.Recording.title}
+                                </Link>
                             </li>
                         </ul>
                     </div>

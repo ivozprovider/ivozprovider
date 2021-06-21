@@ -24,6 +24,8 @@ import Fax from './Fax/Fax';
 import Service from './Service/Service';
 import RatingProfile from './RatingProfile/RatingProfile';
 import UsersCdr from './UsersCdr/UsersCdr';
+import CallCsvScheduler from './CallCsvScheduler/CallCsvScheduler';
+import Recording from './Recording/Recording';
 
 interface EntityList {
   [name:string]: EntityInterface
@@ -54,7 +56,9 @@ const entities:EntityList = {
   Fax,
   Service,
   RatingProfile,
-  UsersCdr
+  UsersCdr,
+  CallCsvScheduler,
+  Recording
 };
 
 export default entities;
