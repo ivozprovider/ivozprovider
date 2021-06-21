@@ -171,10 +171,14 @@ const Dashboard = (props:dashboardProps) => {
                                 Active calls
                             </li>
                             <li>
-                                Call registry
+                                <Link to={entities.UsersCdr.path}>
+                                    {entities.UsersCdr.title}
+                                </Link>
                             </li>
                             <li>
-                                External calls
+                                <Link to={entities.BillableCall.path}>
+                                    {entities.BillableCall.title}
+                                </Link>
                             </li>
                             <li>
                                 Call CSV schedulers

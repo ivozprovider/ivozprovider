@@ -4,19 +4,60 @@ import genericForeignKeyResolver from 'services/genericForeigKeyResolver';
 import EntityService from 'services/Entity/EntityService';
 import defaultEntityBehavior from '../DefaultEntityBehavior';
 import _ from 'services/Translations/translate';
+import Form from './Form';
 
 const properties:PropertiesList = {
-    id:  {
-        label: "id",
+    'startTime':  {
+        label: 'Start time',
     },
-    ddi: {
-        label: "ddi",
+    'callid':  {
+        label: 'Call ID',
     },
-    duration: {
-        label: "duration",
+    'caller':  {
+        label: 'Caller',
     },
-    price: {
-        label: "price"
+    'callee':  {
+        label: 'Callee',
+    },
+    'destinationName':  {
+        label: 'Destination',
+    },
+    'direction':  {
+        label: 'Direction',
+        enum: {
+            'inbound': _('Inbound'),
+            'outbound': _('Outbound'),
+        }
+    },
+    'invoice':  {
+        label: 'Invoice',
+    },
+    'price':  {
+        label: 'Price',
+    },
+    'duration':  {
+        label: 'Duration',
+    },
+    'cost':  {
+        label: 'Cost',
+    },
+    'carrierName':  {
+        label: 'Carrier',
+    },
+    'ratingPlanName':  {
+        label: 'Rating plan',
+    },
+    'endpointType':  {
+        label: 'Endpoint type',
+    },
+    'endpointId':  {
+        label: 'Endpoint id',
+    },
+    'endpointName':  {
+        label: 'Endpoint name',
+    },
+    'ddiProvider':  {
+        label: 'DDI Provider',
     },
 };
 
@@ -32,15 +73,16 @@ async function foreignKeyResolver(data: any, entityService: EntityService) {
     return data;
 }
 
-const calendar:EntityInterface = {
+const billableCall:EntityInterface = {
     ...defaultEntityBehavior,
     icon: <SettingsApplications />,
     iden: 'BillableCall',
-    title: _('Billable calls', {count: 2}),
+    title: _('External call', {count: 2}),
     path: '/billable_calls',
     properties,
     foreignKeyResolver,
+    Form
 
 };
 
-export default calendar;
+export default billableCall;

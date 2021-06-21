@@ -23,6 +23,7 @@ import MusicOnHold from './MusicOnHold/MusicOnHold';
 import Fax from './Fax/Fax';
 import Service from './Service/Service';
 import RatingProfile from './RatingProfile/RatingProfile';
+import UsersCdr from './UsersCdr/UsersCdr';
 
 interface EntityList {
   [name:string]: EntityInterface
@@ -52,7 +53,8 @@ const entities:EntityList = {
   MusicOnHold,
   Fax,
   Service,
-  RatingProfile
+  RatingProfile,
+  UsersCdr
 };
 
 export default entities;
