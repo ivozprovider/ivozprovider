@@ -1,18 +1,27 @@
 import ReactDOM from 'react-dom';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import * as locales from '@material-ui/core/locale';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { StoreProvider, createStore } from "easy-peasy";
 import storeModel from './store';
-import './i18n';
+import i18n from './i18n';
+
+const currentLanguage = i18n.language === 'es'
+  ? 'esES'
+  : 'enUS';
+const theme = createMuiTheme({}, locales[currentLanguage]);
 
 const store = createStore(storeModel);
 
 ReactDOM.render(
   //<React.StrictMode>
-      <StoreProvider store={store}>
-        <App />
-      </StoreProvider>
+  <ThemeProvider theme={theme}>
+    <StoreProvider store={store}>
+      <App />
+    </StoreProvider>
+  </ThemeProvider>
   //</React.StrictMode>
   ,
   document.getElementById('root')

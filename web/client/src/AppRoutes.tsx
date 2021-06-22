@@ -50,11 +50,15 @@ const RouteContent = (props:any) => {
   const setRoute = useStoreActions((actions:any) => {
     return actions.route.setRoute;
   });
+  const setRouteName = useStoreActions((actions:any) => {
+    return actions.route.setName;
+  });
 
   const path = route.path;
   useEffect(
     () => {
       setRoute(path);
+      setRouteName(route.entity.title);
     },
     [path, setRoute]
   );
