@@ -47,18 +47,18 @@ const properties:PropertiesList = {
     'outOfScheduleVoiceMailUser': {
         label: _('Voicemail'),
     },
-    'schedules': {
+    'scheduleIds': {
         label: _('Schedule'),
     },
-    'calendars': {
+    'calendarIds': {
         label: _('Calendar'),
     },
-    'whiteLists': {
+    'whiteListIds': {
         label: _('White Lists'),
         helpText: _("Incoming numbers that match this lists will be always ACCEPTED without checking this filter configuration.")
         //@TODO multiselect
     },
-    'blackLists': {
+    'blackListIds': {
         label: _('Black Lists'),
         helpText: _("Incoming numbers that match this lists will be always REJECTED without checking this filter configuration."),
         //@TODO multiselect

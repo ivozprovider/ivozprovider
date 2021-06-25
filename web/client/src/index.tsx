@@ -1,12 +1,12 @@
 import ReactDOM from 'react-dom';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import * as locales from '@material-ui/core/locale';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { StoreProvider, createStore } from "easy-peasy";
 import storeModel from './store';
 import i18n from './i18n';
+import './index.css';
 
 const currentLanguage = i18n.language === 'es'
   ? 'esES'

@@ -2,6 +2,9 @@ import defaultEntityBehavior from '../DefaultEntityBehavior';
 
 const CarrierSelectOptions = (callback: Function) => {
 
+    callback({}); //@TODO missing in the API
+    return;
+
     defaultEntityBehavior.fetchFks(
         '/carriers',
         ['id', 'name'],

@@ -1,4 +1,4 @@
-import defaultEntityBehavior from '../DefaultEntityBehavior';
+import defaultEntityBehavior, { FieldsetGroups } from '../DefaultEntityBehavior';
 import { useEffect, useState } from 'react';
 import LocutionSelectOptions from 'entities/Locution/SelectOptions';
 import IvrSelectOptions from 'entities/Ivr/SelectOptions';
@@ -8,6 +8,7 @@ import CountrySelectOptions from 'entities/Country/SelectOptions';
 import QueueSelectOptions from 'entities/Queue/SelectOptions';
 import ConferenceRoomSelectOptions from 'entities/ConferenceRoom/SelectOptions';
 import ExtensionSelectOptions from 'entities/Extension/SelectOptions';
+import _ from 'services/Translations/translate';
 
 const Form = (props:any) => {
 
@@ -53,7 +54,7 @@ const Form = (props:any) => {
                     setFkChoices((fkChoices:any) => {
                         return {
                             ...fkChoices,
-                            voiceMailUser: options,
+                            voicemailUser: options,
                             user: options,
                         }
                     });
@@ -105,7 +106,33 @@ const Form = (props:any) => {
         [loadingFks, fkChoices]
     );
 
-    return (<DefaultEntityForm fkChoices={fkChoices} {...props}  />);
+    const groups:Array<FieldsetGroups> = [
+        {
+            legend: _('Basic Configuration'),
+            fields: [
+                'name',
+            ]
+        },
+        {
+            legend: _('No matching condition handler'),
+            fields: [
+                'locution',
+                'routetype',
+                'ivr',
+                'huntGroup',
+                'voicemailUser',
+                'user',
+                'numberCountry',
+                'numbervalue',
+                'friendvalue',
+                'queue',
+                'conferenceRoom',
+                'extension',
+            ]
+        },
+    ];
+
+    return (<DefaultEntityForm fkChoices={fkChoices} groups={groups} {...props}  />);
 }
 
 export default Form;

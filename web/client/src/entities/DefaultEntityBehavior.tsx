@@ -3,6 +3,8 @@ import EntityService from 'services/Entity/EntityService';
 import FormFieldFactory from 'services/Form/FormFieldFactory';
 import { useFormikType } from 'services/Form/types';
 import ApiClient from "services/Api/ApiClient";
+import { Grid, makeStyles } from '@material-ui/core';
+import Typography from '@material-ui/core/Typography';
 
 export const initialValues = {};
 
@@ -77,6 +79,23 @@ export const RowIcons = (props:any) => {
     );
 };
 
+export type FieldsetGroups = {
+    legend: string|React.ReactElement,
+    fields: Array<string>
+}
+
+const useStyles = makeStyles((theme: any) => ({
+    legend: {
+        marginBottom: '40px',
+        paddingBottom: '10px',
+        borderBottom: '1px solid #aaa',
+    },
+    grid: {
+        paddingLeft: '15px',
+        marginBottom: '15px',
+    }
+}));
+
 const Form = (props: any) => {
 
     const { entityService, formik }: { entityService: EntityService, formik: useFormikType } = props;
@@ -86,23 +105,48 @@ const Form = (props: any) => {
     const columns = entityService.getColumns();
     const columnNames = Object.keys(columns);
 
+    let groups:Array<FieldsetGroups> = [];
+    if (props.groups) {
+        groups = props.groups;
+    } else {
+        groups.push({
+            legend: "",
+            fields: columnNames
+        });
+    }
+
+    const classes = useStyles();
+
     return (
         <React.Fragment>
-            {columnNames.map((columnName:string, idx: number) => {
+        {groups.map((group:FieldsetGroups, idx:number) => {
+            return (
+                <React.Fragment key={idx}>
+                    <Typography variant="h6" color="inherit" gutterBottom  className={classes.legend}>
+                        {group.legend}
+                    </Typography>
+                    <Grid container spacing={3} className={classes.grid}>
+                        {group.fields.map((columnName:string, idx: number) => {
 
-                const choices = fkChoices
-                    ? fkChoices[columnName]
-                    : null;
+                            const choices = fkChoices
+                                ? fkChoices[columnName]
+                                : null;
 
-                return (
-                    <div key={idx}>
-                        {formFieldFactory.getFormField(columnName, choices)}
-                    </div>
-                );
-            })}
+                            return (
+                                <Grid item xs={12} md={6} lg={4} key={idx}>
+                                    {formFieldFactory.getFormField(columnName, choices)}
+                                </Grid>
+                            );
+                        })}
+                    </Grid>
+                </React.Fragment>
+            );
+        })}
         </React.Fragment>
     );
 };
+
+
 
 const fetchFks = (endpoint: string, properties: Array<string>, setter: Function) =>
 {

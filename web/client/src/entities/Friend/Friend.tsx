@@ -34,7 +34,7 @@ const properties:PropertiesList = {
         label: _('Password'),
         helpText: _("Minimal length 10, including 3 uppercase letters, 3 lowercase letters, 3 digits and one character in '+*_-'"),
     },
-    'callACL': {
+    'callAcl': {
         label: _('Call ACL'),
     },
     'transformationRuleSet': {
@@ -89,6 +89,7 @@ const properties:PropertiesList = {
         label: _('From domain'),
     },
     'fromUser': {
+        //@TODO missing in the API
         label: _('From user'),
     },
     'directConnectivity': {
@@ -100,6 +101,7 @@ const properties:PropertiesList = {
         }
     },
     'interCompany': {
+        //@TODO missing in the API
         label: _('Target client'),
     },
     'ddiIn': {
@@ -121,6 +123,7 @@ const properties:PropertiesList = {
         },
     },
     'alwaysApplyTransformations': {
+        //@TODO missing in the API
         label: _('Always apply transformations'),
         enum: {
             '0': _('Yes'),
@@ -129,6 +132,7 @@ const properties:PropertiesList = {
         helpText: _("Enable to force numeric transformation on numbers in Extensions or numbers matching any Friend regexp. Otherwise, those numbers won't traverse numeric transformations rules.")
     },
     'rtpEncryption': {
+        //@TODO missing in the API
         label: _('RTP encryption'),
         enum: {
             '0': _('Yes'),
@@ -137,6 +141,7 @@ const properties:PropertiesList = {
         helpText: _("Enable to force audio encryption. Call won't be established unless it is encrypted.")
     },
     'multiContact': {
+        //@TODO missing in the API
         label: _('Multi contact'),
         enum: {
             '0': _('Yes'),

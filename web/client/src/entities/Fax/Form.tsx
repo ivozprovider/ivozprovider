@@ -1,6 +1,7 @@
-import defaultEntityBehavior from '../DefaultEntityBehavior';
+import defaultEntityBehavior, { FieldsetGroups } from '../DefaultEntityBehavior';
 import { useEffect, useState } from 'react';
 import DdiSelectOptions from 'entities/Ddi/SelectOptions';
+import _ from 'services/Translations/translate';
 
 const Form = (props:any) => {
 
@@ -35,7 +36,24 @@ const Form = (props:any) => {
         [loadingFks, fkChoices]
     );
 
-    return (<DefaultEntityForm fkChoices={fkChoices} {...props}  />);
+    const groups:Array<FieldsetGroups> = [
+        {
+            legend: _('Outbound configuration'),
+            fields: [
+                'name',
+                'outgoingDdi',
+            ]
+        },
+        {
+            legend: _('Inbound configuration'),
+            fields: [
+                'sendByEmail',
+                'email',
+            ]
+        },
+    ];
+
+    return (<DefaultEntityForm fkChoices={fkChoices} groups={groups} {...props}  />);
 }
 
 export default Form;

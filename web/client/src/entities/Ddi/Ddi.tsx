@@ -57,6 +57,7 @@ const properties:PropertiesList = {
         label: _('Friend value'),
     },
     'ddiProvider': {
+        //@TODO missing in the API
         label: _('DDI Provider'),
         helpText: _("This assignment has no functional purpose, it is just for DDI Provider <-> DDI navigation in some brand level sections.")
     },

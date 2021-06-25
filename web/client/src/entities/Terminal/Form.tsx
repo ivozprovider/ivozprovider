@@ -1,6 +1,7 @@
-import defaultEntityBehavior from '../DefaultEntityBehavior';
+import defaultEntityBehavior, { FieldsetGroups } from '../DefaultEntityBehavior';
 import TerminalModelSelectOptions from '../TerminalModel/SelectOptions';
 import { useEffect, useState } from 'react';
+import _ from 'services/Translations/translate';
 
 const Form = (props:any) => {
 
@@ -32,7 +33,35 @@ const Form = (props:any) => {
         [loadingFks, fkChoices]
     );
 
-    return (<DefaultEntityForm fkChoices={fkChoices} {...props}  />);
+    const groups:Array<FieldsetGroups> = [
+        {
+            legend: _('Login Info'),
+            fields: [
+                'name',
+                'password',
+            ]
+        },
+        {
+            legend: _('Connection Info'),
+            fields: [
+                'allowAudio',
+                'allowVideo',
+                'directMediaMethod',
+                't38Passthrough',
+                'rtpEncryption',
+            ]
+        },
+        {
+            legend: _('Provisioning Info'),
+            fields: [
+                'terminalModel',
+                'mac',
+                'lastProvisionDate'
+            ]
+        },
+    ];
+
+    return (<DefaultEntityForm fkChoices={fkChoices} groups={groups} {...props}  />);
 }
 
 export default Form;

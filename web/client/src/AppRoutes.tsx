@@ -60,7 +60,7 @@ const RouteContent = (props:any) => {
       setRoute(path);
       setRouteName(route.entity.title);
     },
-    [path, setRoute]
+    [path, route.entity.title, setRoute, setRouteName]
   );
 
   const entity = route.entity;

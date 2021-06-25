@@ -1,4 +1,4 @@
-import defaultEntityBehavior from '../DefaultEntityBehavior';
+import defaultEntityBehavior, { FieldsetGroups } from '../DefaultEntityBehavior';
 import { useEffect, useState } from 'react';
 import CountrySelectOptions from 'entities/Country/SelectOptions';
 import IvrSelectOptions from 'entities/Ivr/SelectOptions';
@@ -94,7 +94,31 @@ const Form = (props:any) => {
         [loadingFks, fkChoices]
     );
 
-    return (<DefaultEntityForm fkChoices={fkChoices} {...props}  />);
+    const groups:Array<FieldsetGroups> = [
+        {
+            legend: '',
+            fields: [
+                'number',
+            ]
+        },
+        {
+            legend: '',
+            fields: [
+                'routeType',
+                'ivr',
+                'huntGroup',
+                'conferenceRoom',
+                'user',
+                'numberCountry',
+                'numberValue',
+                'friendValue',
+                'queue',
+                'conditionalRoute',
+            ]
+        },
+    ];
+
+    return (<DefaultEntityForm fkChoices={fkChoices} groups={groups} {...props}  />);
 }
 
 export default Form;

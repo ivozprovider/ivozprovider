@@ -2,6 +2,7 @@ import SettingsApplications from '@material-ui/icons/SettingsApplications';
 import EntityInterface, { PropertiesList } from 'entities/EntityInterface';
 import _ from 'services/Translations/translate';
 import defaultEntityBehavior from 'entities/DefaultEntityBehavior';
+import Form from './Form';
 
 const properties:PropertiesList = {
     'name': {
@@ -27,7 +28,8 @@ const locution:EntityInterface = {
     iden: 'Locution',
     title: _('Locution', {count: 2}),
     path: '/locutions',
-    properties
+    properties,
+    Form
 };
 
 export default locution;

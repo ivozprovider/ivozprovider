@@ -1,6 +1,7 @@
-import defaultEntityBehavior from '../DefaultEntityBehavior';
+import defaultEntityBehavior, { FieldsetGroups } from '../DefaultEntityBehavior';
 import { useEffect, useState } from 'react';
 import DdiSelectOptions from 'entities/Ddi/SelectOptions';
+import _ from 'services/Translations/translate';
 
 const Form = (props:any) => {
 
@@ -32,7 +33,23 @@ const Form = (props:any) => {
         [loadingFks, fkChoices]
     );
 
-    return (<DefaultEntityForm fkChoices={fkChoices} {...props}  />);
+    const groups:Array<FieldsetGroups> = [
+        {
+            legend: _('Basic Configuration'),
+            fields: [
+                'name',
+            ]
+        },
+        {
+            legend: _('Action Configuration'),
+            fields: [
+                'defaultAction',
+                'forcedDdi',
+            ]
+        },
+    ];
+
+    return (<DefaultEntityForm fkChoices={fkChoices} groups={groups} {...props}  />);
 }
 
 export default Form;

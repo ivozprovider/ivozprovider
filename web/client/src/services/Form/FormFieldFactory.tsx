@@ -1,4 +1,4 @@
-import { FormControlLabel, TextField, Switch, FormHelperText, LinearProgress } from '@material-ui/core';
+import { FormControlLabel, TextField, Switch, FormHelperText, LinearProgress, FormControl, makeStyles, Theme } from '@material-ui/core';
 import { ScalarProperty, FkProperty, PropertySpec } from 'services/Api/ParsedApiSpecInterface';
 import EntityService from 'services/Entity/EntityService';
 import { useFormikType } from './types';
@@ -7,10 +7,23 @@ import React from 'react';
 
 export default class FormFieldFactory
 {
+    private styles:any;
+
     constructor(
         private entityService: EntityService,
         private formik: useFormikType
     ) {
+        this.styles = makeStyles((theme: Theme) => ({
+            switch: {
+                marginTop: '10px',
+            },
+            inputText: {
+                marginTop: '0px',
+            },
+            linearProgress: {
+                paddingTop: '60px',
+            }
+          }));
     }
 
     public getFormField(fld:string, choices?:any)
@@ -42,11 +55,12 @@ export default class FormFieldFactory
     {
         const property = this.getProperty(fld);
         const disabled = (property as ScalarProperty).readOnly;
+        const classes:any = this.styles();
 
         if ((property as FkProperty).$ref) {
 
             if (!choices) {
-                return (<div className={fld}><LinearProgress /></div>);
+                return (<div className={classes.linearProgress}><LinearProgress /></div>);
             }
 
             return (
@@ -54,48 +68,57 @@ export default class FormFieldFactory
                     name={fld}
                     label={property.label}
                     value={this.formik.values[fld]}
+                    required={property.required}
                     disabled={disabled}
                     onChange={this.formik.handleChange}
                     choices={choices}
                 />
             );
 
-        } else if ((property as ScalarProperty).type === 'boolean') {
+        }
+
+        if ((property as ScalarProperty).type === 'boolean') {
 
             const checked = !!(this.formik.values[fld]);
 
             return (
-                <FormControlLabel
-                    control={<Switch
-                        name={fld}
-                        checked={checked}
-                        disabled={disabled}
-                        onChange={this.formik.handleChange}
-                    />}
-                    label={property.label}
-                />
+                <FormControl className={classes.switch} fullWidth={true} variant="outlined">
+                    <FormControlLabel
+                        control={<Switch
+                            name={fld}
+                            checked={checked}
+                            required={property.required}
+                            disabled={disabled}
+                            onChange={this.formik.handleChange}
+                        />}
+                        label={property.label}
+                    />
+                </FormControl>
             );
+        }
 
-        } else if ((property as ScalarProperty).type === 'integer') {
+        if ((property as ScalarProperty).type === 'integer') {
 
             return (
                 <TextField
                     name={fld}
-                    label={property.label}
+                    type="number"
                     value={this.formik.values[fld]}
                     disabled={disabled}
-                    type="number"
-                    InputLabelProps={{
-                        shrink: true,
-                    }}
+                    label={property.label}
+                    InputLabelProps={{ shrink: true, required: property.required }}
                     onChange={this.formik.handleChange}
                     error={this.formik.touched[fld] && Boolean(this.formik.errors[fld])}
                     helperText={this.formik.touched[fld] && this.formik.errors[fld]}
+                    fullWidth={true}
+                    className={classes.inputText}
                     margin="normal"
+                    variant="outlined"
                 />
             );
+        }
 
-        } else if ((property as ScalarProperty).type === 'string') {
+        if ((property as ScalarProperty).type === 'string') {
 
             if ((property as ScalarProperty).enum) {
 
@@ -115,47 +138,53 @@ export default class FormFieldFactory
                         name={fld}
                         label={property.label}
                         value={this.formik.values[fld]}
+                        required={property.required}
                         disabled={disabled}
                         onChange={this.formik.handleChange}
                         choices={choices}
                     />
                 );
+            }
 
-            } else if ((property as ScalarProperty).format === 'date-time') {
+            if ((property as ScalarProperty).format === 'date-time') {
                 return (
                     <TextField
                         name={fld}
                         type="datetime-local"
-                        label={property.label}
                         value={this.formik.values[fld]}
-                        disabled={disabled}
                         inputProps={{
                             step: 1,
                         }}
-                        InputLabelProps={{
-                          shrink: true,
-                        }}
+                        disabled={disabled}
+                        label={property.label}
+                        InputLabelProps={{ shrink: true, required: property.required }}
                         onChange={this.formik.handleChange}
                         error={this.formik.touched[fld] && Boolean(this.formik.errors[fld])}
                         helperText={this.formik.touched[fld] && this.formik.errors[fld]}
+                        fullWidth={true}
+                        className={classes.inputText}
                         margin="normal"
+                        variant="outlined"
                     />
                 );
-            } else if ((property as ScalarProperty).format === 'time') {
+            }
+
+            if ((property as ScalarProperty).format === 'time') {
                 return (
                     <TextField
                         name={fld}
                         type="time"
-                        label={property.label}
                         value={this.formik.values[fld]}
                         disabled={disabled}
-                        InputLabelProps={{
-                          shrink: true,
-                        }}
+                        label={property.label}
+                        InputLabelProps={{ shrink: true, required: property.required }}
                         onChange={this.formik.handleChange}
                         error={this.formik.touched[fld] && Boolean(this.formik.errors[fld])}
                         helperText={this.formik.touched[fld] && this.formik.errors[fld]}
+                        fullWidth={true}
+                        className={classes.inputText}
                         margin="normal"
+                        variant="outlined"
                     />
                 );
             }
@@ -164,13 +193,17 @@ export default class FormFieldFactory
                 <TextField
                     name={fld}
                     type="text"
-                    label={property.label}
                     value={this.formik.values[fld]}
                     disabled={disabled}
+                    label={property.label}
+                    InputLabelProps={{ shrink: true, required: property.required }}
                     onChange={this.formik.handleChange}
                     error={this.formik.touched[fld] && Boolean(this.formik.errors[fld])}
                     helperText={this.formik.touched[fld] && this.formik.errors[fld]}
+                    fullWidth={true}
+                    className={classes.inputText}
                     margin="normal"
+                    variant="outlined"
                 />
             );
         }

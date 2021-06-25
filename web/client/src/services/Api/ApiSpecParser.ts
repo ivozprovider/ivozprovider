@@ -111,9 +111,14 @@ export default class ApiSpecParser {
                             properties[propertyName] = {};
                         }
 
+                        const isRequired =
+                            variantData.required
+                            && variantData.required.includes(propertyName);
+
                         properties[propertyName] = {
                             ...properties[propertyName],
                             ...variantData.properties[propertyName],
+                            required: isRequired || false
                         };
                     }
 

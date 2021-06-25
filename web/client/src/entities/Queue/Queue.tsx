@@ -5,9 +5,6 @@ import defaultEntityBehavior from 'entities/DefaultEntityBehavior';
 import Form from './Form'
 
 const properties:PropertiesList = {
-    'id': {
-        label: _('Id')
-    },
     'name': {
         label:_('Name'),
         helpText: _("Allowed characters: a-z, A-Z, 0-9, underscore and '-'"),
@@ -97,6 +94,14 @@ const properties:PropertiesList = {
     },
     'weight': {
         label: _('Weight'),
+    },
+    'preventMissedCalls': {
+        label: _('Prevent missed calls'),
+        enum: {
+            '0': _('No'),
+            '1': _('Yes'),
+        },
+        helpText: _("When 'Yes', calls will never generate a missed call. When 'No', missed calls will be prevented only for RingAll queues if someone answers."),
     },
 };
 

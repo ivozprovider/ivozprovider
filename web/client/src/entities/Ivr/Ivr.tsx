@@ -31,7 +31,7 @@ const properties:PropertiesList = {
     'allowExtensions': {
         label: _('Allow dialing extensions'),
     },
-    'excludedExtensions': {
+    'excludedExtensionIds': {
         label: _('Excluded Extension'),
         //@TODO multiselect
     },

@@ -1,6 +1,5 @@
-import defaultEntityBehavior from '../DefaultEntityBehavior';
+import defaultEntityBehavior, { FieldsetGroups } from '../DefaultEntityBehavior';
 import { useEffect, useState } from 'react';
-import NotificationTemplateSelectOptions from 'entities/NotificationTemplate/SelectOptions';
 import DdiSelectOptions from 'entities/Ddi/SelectOptions';
 import CarrierSelectOptions from 'entities/Carrier/SelectOptions';
 import RetailAccountSelectOptions from 'entities/RetailAccount/SelectOptions';
@@ -9,6 +8,7 @@ import UserSelectOptions from 'entities/User/SelectOptions';
 import FaxSelectOptions from 'entities/Fax/SelectOptions';
 import FriendSelectOptions from 'entities/Friend/SelectOptions';
 import DdiProviderSelectOptions from 'entities/DdiProvider/SelectOptions';
+import _ from 'services/Translations/translate';
 
 const Form = (props:any) => {
 
@@ -22,15 +22,6 @@ const Form = (props:any) => {
         () => {
 
             if (loadingFks) {
-
-                NotificationTemplateSelectOptions((options:any) => {
-                    setFkChoices((fkChoices:any) => {
-                        return {
-                            ...fkChoices,
-                            callCsvNotificationTemplate: options
-                        }
-                    });
-                });
 
                 DdiSelectOptions((options:any) => {
                     setFkChoices((fkChoices:any) => {
@@ -114,7 +105,38 @@ const Form = (props:any) => {
         [loadingFks, fkChoices]
     );
 
-    return (<DefaultEntityForm fkChoices={fkChoices} {...props}  />);
+    const groups:Array<FieldsetGroups> = [
+        {
+            legend: _('Basic Information'),
+            fields: [
+                'name',
+                'email',
+            ]
+        },
+        {
+            legend: _('Filters'),
+            fields: [
+                'callDirection',
+                'ddi',
+                'retailAccount',
+                'residentialDevice',
+                'user',
+                'fax',
+                'friend',
+            ]
+        },
+        {
+            legend: _('Time Information'),
+            fields: [
+                'frequency',
+                'unit',
+                'nextExecution',
+                'lastExecution',
+            ]
+        },
+    ];
+
+    return (<DefaultEntityForm fkChoices={fkChoices} groups={groups} {...props}  />);
 }
 
 export default Form;

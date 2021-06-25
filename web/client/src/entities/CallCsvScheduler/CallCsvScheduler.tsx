@@ -41,25 +41,11 @@ const properties:PropertiesList = {
     'brand': {
         label: _('Brand'),
     },
-    'companyType': {
-        label: _('Client Type'),
-        //@TODO data-autofilter-select-by-data
-        enum: {
-            '__null__': _('All'),
-            vpbx: _('vPBX'),
-            retail: _('Retail'),
-            residential: _('Residential'),
-            wholesale: _('Wholesale'),
-        }
-    },
     'callCsvNotificationTemplate': {
         label: _('Notification template'),
     },
     'ddi': {
         label: _('DDI'),
-    },
-    'carrier': {
-        label: _('Carrier'),
     },
     'retailAccount': {
         label: _('Retail Account'),
@@ -75,38 +61,6 @@ const properties:PropertiesList = {
     },
     'friend': {
         label: _('Friend'),
-    },
-    'ddiProvider': {
-        label: _('DDI Provider'),
-    },
-    'vpbx': {
-        label: _('Client'),
-        //@TODO visualFilter
-    },
-    'retail': {
-        label: _('Client'),
-        //@TODO visualFilter
-    },
-    'residential': {
-        label: _('Client'),
-        //@TODO visualFilter
-    },
-    'endpointType': {
-        label: _('Endpoint type'),
-        enum: {
-            '_NULL_': _('All'),
-            user: _('User'),
-            fax: _('Fax'),
-            friend: _('Friend'),
-        }
-    },
-    'residentialEndpointType': {
-        label: _('Endpoint type'),
-        enum: {
-            '_NULL_': _('All'),
-            residentialDevice: _('Residential Device'),
-            fax: _('Fax'),
-        }
     },
 };
 

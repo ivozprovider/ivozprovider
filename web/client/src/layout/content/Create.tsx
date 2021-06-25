@@ -5,12 +5,12 @@ import {
   Button,
   makeStyles
 } from '@material-ui/core';
-import Title from 'layout/Title';
 import ErrorMessage from './shared/ErrorMessage';
 import EntityService from 'services/Entity/EntityService';
 import EntityInterface from 'entities/EntityInterface';
 import { useFormikType } from 'services/Form/types';
 import { useStoreActions } from 'easy-peasy';
+import _ from 'services/Translations/translate';
 
 interface CreateProps extends EntityInterface {
   entityService: EntityService,
@@ -20,7 +20,7 @@ interface CreateProps extends EntityInterface {
 
 const Create = (props:CreateProps) => {
 
-  const { marshaller, path, history, title, properties } = props;
+  const { marshaller, path, history, properties } = props;
   const { Form: EntityForm, entityService }: { Form: any, entityService:EntityService } = props;
   const [error, setError] = useState(null);
   const apiPost = useStoreActions((actions:any) => {
@@ -72,13 +72,10 @@ const Create = (props:CreateProps) => {
   return (
     <div>
       <form onSubmit={formik.handleSubmit}>
-        <Title>
-          { title }
-        </Title>
         <EntityForm formik={formik} create={true} classes={classes} {...props} />
         <br />
         <Button color="primary" variant="contained" type="submit">
-          Submit
+          {_('Save')}
         </Button>
         { error && <ErrorMessage message={error} /> }
       </form>
