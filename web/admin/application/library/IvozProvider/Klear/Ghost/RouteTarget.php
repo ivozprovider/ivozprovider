@@ -70,4 +70,9 @@ class IvozProvider_Klear_Ghost_RouteTarget extends KlearMatrix_Model_Field_Ghost
             []
         );
     }
+
+    public function getCallForwardTarget(DataTransferObjectInterface $model)
+    {
+        return $this->getTarget($model, 'getCallForwardTarget');
+    }
 }

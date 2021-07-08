@@ -31,6 +31,22 @@ production:
           order:
             ResidentialDevice.name: asc
       default: true
+    cfwToretailAccount:
+      title:  ngettext('Retail Account', 'Retail Accounts', 1)
+      type: select
+      required: true
+      source:
+        data: mapper
+        config:
+          entity: \Ivoz\Provider\Domain\Model\RetailAccount\RetailAccount
+          filterClass: IvozProvider_Klear_Filter_RetailAccounts
+          fieldName:
+            fields:
+            - name
+            template: '%name%'
+          order:
+            RetailAccount.name: asc
+        'null': _("Unassigned")
     callTypeFilter:
       title: _('Call type')
       type: select
@@ -77,22 +93,27 @@ production:
             title: _('Unassigned')
             visualFilter:
               show: [ ]
-              hide: [ extension, voiceMailUser, numberCountry, numberValue ]
+              hide: [ extension, voiceMailUser, numberCountry, numberValue, cfwToretailAccount ]
           'number':
             title: _('Number')
             visualFilter:
               show: [ numberCountry, numberValue ]
-              hide: [ extension, voiceMailUser ]
+              hide: [ extension, voiceMailUser, cfwToretailAccount ]
           'extension':
             title: ngettext('Extension', 'Extensions', 1)
             visualFilter:
               show: [ extension ]
-              hide: [ numberCountry, numberValue, voiceMailUser ]
+              hide: [ numberCountry, numberValue, voiceMailUser, cfwToretailAccount ]
           'voicemail':
             title: ngettext('Voicemail', 'Voicemails', 1)
             visualFilter:
               show: [ voiceMailUser ]
-              hide: [ extension, numberCountry, numberValue ]
+              hide: [ extension, numberCountry, numberValue, cfwToretailAccount ]
+          'retail':
+            title: ngettext('Retail Account', 'Retail Accounts', 1)
+            visualFilter:
+              show: [ cfwToretailAccount ]
+              hide: [ extension, numberCountry, numberValue, voiceMailUser ]
     numberCountry:
       title: _('Country')
       type: select
@@ -159,7 +180,7 @@ production:
       type: ghost
       source:
         class: IvozProvider_Klear_Ghost_RouteTarget
-        method: getTarget
+        method: getCallForwardTarget
     enabled:
       title: _('Enabled')
       type: select

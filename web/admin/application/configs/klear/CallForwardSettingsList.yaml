@@ -35,6 +35,7 @@ production:
           noAnswerTimeout: true
           user: true
           residentialDevice: true
+          cfwToretailAccount: true
       options:
         title: _("Options")
         screens:
@@ -77,6 +78,7 @@ production:
             numberValue: 2
             extension: 3
             voiceMailUser: 3
+            cfwToretailAccount: 3
 
     callForwardSettingsEdit_screen: &callForwardSettingsEdit_screenLink 
       <<: *CallForwardSettings
