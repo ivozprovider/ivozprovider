@@ -20,6 +20,7 @@ interface CallForwardSettingInterface extends LoggableEntityInterface
     const TARGETTYPE_NUMBER = 'number';
     const TARGETTYPE_EXTENSION = 'extension';
     const TARGETTYPE_VOICEMAIL = 'voicemail';
+    const TARGETTYPE_RETAIL = 'retail';
 
 
     /**
@@ -161,6 +162,13 @@ interface CallForwardSettingInterface extends LoggableEntityInterface
      * @return \Ivoz\Provider\Domain\Model\RetailAccount\RetailAccountInterface | null
      */
     public function getRetailAccount();
+
+    /**
+     * Get cfwToRetailAccount
+     *
+     * @return \Ivoz\Provider\Domain\Model\RetailAccount\RetailAccountInterface | null
+     */
+    public function getCfwToRetailAccount();
 
     /**
      * @return bool

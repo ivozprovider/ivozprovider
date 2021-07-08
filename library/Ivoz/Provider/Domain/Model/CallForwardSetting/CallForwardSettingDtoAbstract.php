@@ -75,6 +75,11 @@ abstract class CallForwardSettingDtoAbstract implements DataTransferObjectInterf
      */
     private $retailAccount;
 
+    /**
+     * @var \Ivoz\Provider\Domain\Model\RetailAccount\RetailAccountDto | null
+     */
+    private $cfwToRetailAccount;
+
 
     use DtoNormalizer;
 
@@ -105,7 +110,8 @@ abstract class CallForwardSettingDtoAbstract implements DataTransferObjectInterf
             'voiceMailUserId' => 'voiceMailUser',
             'numberCountryId' => 'numberCountry',
             'residentialDeviceId' => 'residentialDevice',
-            'retailAccountId' => 'retailAccount'
+            'retailAccountId' => 'retailAccount',
+            'cfwToRetailAccountId' => 'cfwToRetailAccount'
         ];
     }
 
@@ -127,7 +133,8 @@ abstract class CallForwardSettingDtoAbstract implements DataTransferObjectInterf
             'voiceMailUser' => $this->getVoiceMailUser(),
             'numberCountry' => $this->getNumberCountry(),
             'residentialDevice' => $this->getResidentialDevice(),
-            'retailAccount' => $this->getRetailAccount()
+            'retailAccount' => $this->getRetailAccount(),
+            'cfwToRetailAccount' => $this->getCfwToRetailAccount()
         ];
 
         if (!$hideSensitiveData) {
@@ -554,6 +561,52 @@ abstract class CallForwardSettingDtoAbstract implements DataTransferObjectInterf
     public function getRetailAccountId()
     {
         if ($dto = $this->getRetailAccount()) {
+            return $dto->getId();
+        }
+
+        return null;
+    }
+
+    /**
+     * @param \Ivoz\Provider\Domain\Model\RetailAccount\RetailAccountDto $cfwToRetailAccount
+     *
+     * @return static
+     */
+    public function setCfwToRetailAccount(\Ivoz\Provider\Domain\Model\RetailAccount\RetailAccountDto $cfwToRetailAccount = null)
+    {
+        $this->cfwToRetailAccount = $cfwToRetailAccount;
+
+        return $this;
+    }
+
+    /**
+     * @return \Ivoz\Provider\Domain\Model\RetailAccount\RetailAccountDto | null
+     */
+    public function getCfwToRetailAccount()
+    {
+        return $this->cfwToRetailAccount;
+    }
+
+    /**
+     * @param mixed | null $id
+     *
+     * @return static
+     */
+    public function setCfwToRetailAccountId($id)
+    {
+        $value = !is_null($id)
+            ? new \Ivoz\Provider\Domain\Model\RetailAccount\RetailAccountDto($id)
+            : null;
+
+        return $this->setCfwToRetailAccount($value);
+    }
+
+    /**
+     * @return mixed | null
+     */
+    public function getCfwToRetailAccountId()
+    {
+        if ($dto = $this->getCfwToRetailAccount()) {
             return $dto->getId();
         }
 
