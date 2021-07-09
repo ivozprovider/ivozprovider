@@ -23,7 +23,7 @@ Ivoz\Provider\Domain\Model\CallForwardSetting\CallForwardSettingAbstract:
       length: 25
       options:
         fixed: false
-        comment: '[enum:number|extension|voicemail]'
+        comment: '[enum:number|extension|voicemail|retail]'
       column: targetType
     numberValue:
       type: string
@@ -113,6 +113,18 @@ Ivoz\Provider\Domain\Model\CallForwardSetting\CallForwardSettingAbstract:
       inversedBy: callForwardSettings
       joinColumns:
         retailAccountId:
+          referencedColumnName: id
+          nullable: true
+          onDelete: cascade
+      orphanRemoval: false
+    cfwToRetailAccount:
+      targetEntity: \Ivoz\Provider\Domain\Model\RetailAccount\RetailAccountInterface
+      cascade: {  }
+      fetch: LAZY
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        cfwToRetailAccountId:
           referencedColumnName: id
           nullable: true
           onDelete: cascade
