@@ -73,9 +73,10 @@ class DdiFactory
 
         $ddi = $this
             ->ddiRepository
-            ->findOneByDdiAndCountry(
+            ->findOneByDdiAndCountryAndBrand(
                 $ddiNumber,
-                $country->getId()
+                $country->getId(),
+                $company->getBrand()->getId()
             );
 
         if ($ddi) {

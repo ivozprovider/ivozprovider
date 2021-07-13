@@ -172,6 +172,10 @@ class Encoder
                 if ($kamAccCdr instanceof TrunksCdrInterface) {
                     $type = 'ddi';
                     $direction = $kamAccCdr->getDirection();
+                    $brand = $kamAccCdr->getBrand();
+
+                    /* @var \Ivoz\Provider\Domain\Model\Brand\BrandInterface $brand */
+                    $brand = $kamAccCdr->getBrand();
 
                     if ($direction == 'outbound') {
                         // If call first leg, caller is who activated the recording
@@ -182,7 +186,7 @@ class Encoder
                     }
 
                     // Check this ddi has recording enabled
-                    $ddi = $this->ddiRepository->findOneByDdiE164($recorder);
+                    $ddi = $this->ddiRepository->findOneByDdiE164AndBrand($recorder, $brand->getId());
                     if (!$ddi) {
                         $stats['error']++;
                         $this->logger->error(

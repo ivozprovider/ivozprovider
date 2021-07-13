@@ -17,7 +17,7 @@ class DdiRepositoryTest extends KernelTestCase
     public function test_runner()
     {
         $this->its_instantiable();
-        $this->it_finds_one_by_ddi_e164();
+        $this->it_finds_one_by_ddi_e164_n_brand();
     }
 
     public function its_instantiable()
@@ -33,14 +33,14 @@ class DdiRepositoryTest extends KernelTestCase
         );
     }
 
-    public function it_finds_one_by_ddi_e164()
+    public function it_finds_one_by_ddi_e164_n_brand()
     {
         /** @var DdiRepository $repository */
         $repository = $this
             ->em
             ->getRepository(Ddi::class);
 
-        $ddi = $repository->findOneByDdiE164('+34123');
+        $ddi = $repository->findOneByDdiE164AndBrand('+34123', '1');
 
         $this->assertInstanceOf(
             Ddi::class,

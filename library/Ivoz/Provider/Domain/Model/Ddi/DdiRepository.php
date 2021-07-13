@@ -8,13 +8,12 @@ use Doctrine\Common\Persistence\ObjectRepository;
 interface DdiRepository extends ObjectRepository, Selectable
 {
     /**
-     * @param string $ddiE164
-     * @return DdiInterface | null
+     * @return \Ivoz\Provider\Domain\Model\Ddi\DdiInterface | null
      */
-    public function findOneByDdiE164($ddiE164);
+    public function findOneByDdiAndCountryAndBrand(string $ddi, int $countryId, int $brandId);
 
     /**
      * @return \Ivoz\Provider\Domain\Model\Ddi\DdiInterface | null
      */
-    public function findOneByDdiAndCountry(string $ddi, int $countryId);
+    public function findOneByDdiE164AndBrand(string $ddiE164, int $brandId);
 }

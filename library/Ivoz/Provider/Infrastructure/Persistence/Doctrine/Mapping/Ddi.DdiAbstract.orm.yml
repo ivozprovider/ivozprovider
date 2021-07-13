@@ -5,9 +5,10 @@ Ivoz\Provider\Domain\Model\Ddi\DdiAbstract:
       columns:
         - DdiE164
   uniqueConstraints:
-    Ddicountry:
+    Ddicountrybrand:
       columns:
         - Ddi
+        - brandId
         - countryId
   fields:
     ddi:

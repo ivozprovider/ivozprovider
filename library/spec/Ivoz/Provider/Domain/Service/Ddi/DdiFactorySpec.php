@@ -103,8 +103,9 @@ class DdiFactorySpec extends ObjectBehavior
 
         $this
             ->ddiRepository
-            ->findOneByDdiAndCountry(
+            ->findOneByDdiAndCountryAndBrand(
                 Argument::type('string'),
+                Argument::type('int'),
                 Argument::type('int')
             )
             ->shouldBeCalled()
@@ -121,8 +122,9 @@ class DdiFactorySpec extends ObjectBehavior
 
         $this
             ->ddiRepository
-            ->findOneByDdiAndCountry(
+            ->findOneByDdiAndCountryAndBrand(
                 Argument::type('string'),
+                Argument::type('int'),
                 Argument::type('int')
             )
             ->shouldBeCalled()

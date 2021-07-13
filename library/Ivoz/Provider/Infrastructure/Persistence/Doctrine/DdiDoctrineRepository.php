@@ -22,14 +22,14 @@ class DdiDoctrineRepository extends ServiceEntityRepository implements DdiReposi
     }
 
     /**
-     * @param string $ddiE164
      * @return \Ivoz\Provider\Domain\Model\Ddi\DdiInterface | null
      */
-    public function findOneByDdiE164($ddiE164)
+    public function findOneByDdiE164AndBrand(string $ddiE164, int $brandId)
     {
         /** @var DdiInterface $response */
         $response = $this->findOneBy([
-            "ddie164" => $ddiE164
+            "ddie164" => $ddiE164,
+            "brand" => $brandId
         ]);
 
         return $response;
@@ -38,12 +38,13 @@ class DdiDoctrineRepository extends ServiceEntityRepository implements DdiReposi
     /**
      * @return \Ivoz\Provider\Domain\Model\Ddi\DdiInterface | null
      */
-    public function findOneByDdiAndCountry(string $ddi, int $countryId)
+    public function findOneByDdiAndCountryAndBrand(string $ddi, int $countryId, int $brandId)
     {
         /** @var DdiInterface $response */
         $response = $this->findOneBy([
             'ddi' => $ddi,
-            'country' => $countryId
+            'country' => $countryId,
+            'brand' => $brandId
         ]);
 
         return $response;

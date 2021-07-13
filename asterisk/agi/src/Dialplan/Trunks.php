@@ -66,8 +66,15 @@ class Trunks extends RouteHandlerAbstract
         /** @var \Ivoz\Provider\Domain\Model\Ddi\DdiRepository $ddiRepository */
         $ddiRepository = $this->em->getRepository(Ddi::class);
 
+        $brandId = $this->agi->getSIPHeader('X-Info-BrandId');
+        if (!$brandId) {
+            $this->agi->error("Missing X-Info-BrandId header, drop call");
+            $this->agi->decline();
+            return;
+        }
+
         /** @var \Ivoz\Provider\Domain\Model\Ddi\DdiInterface $ddi */
-        $ddi = $ddiRepository->findOneByDdiE164($exten);
+        $ddi = $ddiRepository->findOneByDdiE164AndBrand($exten, $brandId);
 
         // Check if incoming DDI is for us
         Assertion::notNull(
