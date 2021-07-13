@@ -51,22 +51,11 @@ class BalanceNotification extends BalanceNotificationAbstract implements Balance
         }
 
         $company = $this->getCompany();
-        $language = $company
-            ? $company->getLanguage()
-            : null;
-
-        if (!$language && $company) {
-
-            /**
-             * @todo remove this. Company will already have brand language
-             * @see Company::sanitizeValues()
-             */
-            $language = $company
-                ->getBrand()
-                ->getLanguage();
+        if (!$company) {
+            return null;
         }
 
-        return $language;
+        return $company->getLanguage();
     }
 
     /**

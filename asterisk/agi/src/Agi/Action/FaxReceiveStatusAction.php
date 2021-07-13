@@ -153,30 +153,13 @@ class FaxReceiveStatusAction
                     '${FAX_PAGES}'      => $faxIn->getPages(),
             );
 
-            // Get Company Notification Template for faxes
-            $faxNotificationTemplate = $company->getFaxNotificationTemplate();
-
-            // If company has no template associated, fallback to brand notification template for faxes
-            if (!$faxNotificationTemplate) {
-                $faxNotificationTemplate = $brand->getFaxNotificationTemplate();
-            }
-
             // Get Generic Notification Template for faxes
             /** @var NotificationTemplateRepository $notificationTemplateRepository */
             $notificationTemplateRepository = $this->em->getRepository(NotificationTemplate::class);
-            $genericFaxlNotificationTemplate = $notificationTemplateRepository->findGenericFaxTemplate();
-
-            // If no template is associated, fallback to generic notification template for faxes
-            if (!$faxNotificationTemplate) {
-                $faxNotificationTemplate = $genericFaxlNotificationTemplate;
-            }
+            $faxNotificationTemplate = $notificationTemplateRepository->findFaxTemplateByCompany($company);
 
             // Get Notification contents for required language
             $notificationTemplateContent = $faxNotificationTemplate->getContentsByLanguage($company->getLanguage());
-            if (!$notificationTemplateContent) {
-                // Fallback to generic template language content
-                $notificationTemplateContent = $genericFaxlNotificationTemplate->getContentsByLanguage($company->getLanguage());
-            }
 
             // Get data from template
             $fromName = $notificationTemplateContent->getFromName();

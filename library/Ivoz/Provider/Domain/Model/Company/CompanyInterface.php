@@ -65,6 +65,8 @@ interface CompanyInterface extends LoggableEntityInterface
      */
     public function setName(string $name): static;
 
+    public function getLanguage(): ?LanguageInterface;
+
     /**
      * {@inheritDoc}
      */
@@ -230,8 +232,6 @@ interface CompanyInterface extends LoggableEntityInterface
     public function getBalance(): ?float;
 
     public function getShowInvoices(): ?bool;
-
-    public function getLanguage(): ?LanguageInterface;
 
     public function getMediaRelaySets(): ?MediaRelaySetInterface;
 

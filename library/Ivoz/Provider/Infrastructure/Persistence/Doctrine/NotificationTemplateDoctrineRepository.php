@@ -4,6 +4,9 @@ namespace Ivoz\Provider\Infrastructure\Persistence\Doctrine;
 
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Ivoz\Provider\Domain\Model\BalanceNotification\BalanceNotificationInterface;
+use Ivoz\Provider\Domain\Model\CallCsvReport\CallCsvReportInterface;
+use Ivoz\Provider\Domain\Model\Company\CompanyInterface;
+use Ivoz\Provider\Domain\Model\Language\LanguageInterface;
 use Ivoz\Provider\Domain\Model\NotificationTemplate\NotificationTemplate;
 use Ivoz\Provider\Domain\Model\NotificationTemplate\NotificationTemplateInterface;
 use Ivoz\Provider\Domain\Model\NotificationTemplate\NotificationTemplateRepository;
@@ -25,8 +28,22 @@ class NotificationTemplateDoctrineRepository extends ServiceEntityRepository imp
     /**
      * @return null | NotificationTemplateInterface
      */
-    public function findGenericCallCsvTemplate()
+    public function findCallCsvTemplateByCallCsvReport(CallCsvReportInterface $callCsvReport)
     {
+        $template = $this->getNotificationTemplateByReport($callCsvReport);
+        $company = $callCsvReport->getCompany();
+        $brand = $callCsvReport->getBrand();
+
+        $language = $company
+            ? $company->getLanguage()
+            : $brand->getLanguage();
+
+        if ($template
+            && $template->getContentsByLanguage($language)
+        ) {
+            return $template;
+        }
+
         /** @var NotificationTemplateInterface $response */
         $response = $this->findOneBy([
             'brand' => null,
@@ -37,10 +54,47 @@ class NotificationTemplateDoctrineRepository extends ServiceEntityRepository imp
     }
 
     /**
-     * @return null | NotificationTemplateInterface
+     * @param CallCsvReportInterface $callCsvReport
+     * @return NotificationTemplateInterface | null
      */
-    public function findGenericInvoiceTemplate()
+    private function getNotificationTemplateByReport(CallCsvReportInterface $callCsvReport)
     {
+        $company = $callCsvReport->getCompany();
+        if ($company) {
+            $callCsvNotificationTemplate = $company->getCallCsvNotificationTemplate();
+            if (!$callCsvNotificationTemplate) {
+                $brand = $company->getBrand();
+                $callCsvNotificationTemplate = $brand->getCallCsvNotificationTemplate();
+            }
+            return $callCsvNotificationTemplate;
+        }
+
+        $scheduler = $callCsvReport
+            ->getCallCsvScheduler();
+
+        if (!$scheduler) {
+            return null;
+        }
+
+        return $scheduler->getCallCsvNotificationTemplate();
+    }
+
+    /**
+     * @param CompanyInterface $company
+     * @return NotificationTemplateInterface
+     */
+    public function findInvoiceNotificationTemplateByCompany(
+        CompanyInterface $company
+    ) {
+        $language = $company->getLanguage();
+        $invoiceNotificationTemplate = $company->getInvoiceNotificationTemplate();
+
+        if ($invoiceNotificationTemplate
+            && $invoiceNotificationTemplate->getContentsByLanguage($language)
+        ) {
+            return $invoiceNotificationTemplate;
+        }
+
         /** @var NotificationTemplateInterface $response */
         $response = $this->findOneBy([
             'brand' => null,
@@ -53,8 +107,28 @@ class NotificationTemplateDoctrineRepository extends ServiceEntityRepository imp
     /**
      * @return null | NotificationTemplateInterface
      */
-    public function findGenericFaxTemplate()
+    public function findFaxTemplateByCompany(CompanyInterface $company)
     {
+        $language = $company->getLanguage();
+        $faxNotificationTemplate = $company->getFaxNotificationTemplate();
+        if ($faxNotificationTemplate) {
+            if ($faxNotificationTemplate->getContentsByLanguage($language)) {
+                return $faxNotificationTemplate;
+            }
+        }
+
+        // no company template associated, fallback to brand notification template for faxes
+        $faxNotificationTemplate = $company
+            ->getBrand()
+            ->getFaxNotificationTemplate();
+
+        if ($faxNotificationTemplate) {
+            if ($faxNotificationTemplate->getContentsByLanguage($language)) {
+                return $faxNotificationTemplate;
+            }
+        }
+
+        // use generic template
         /** @var NotificationTemplateInterface $response */
         $response = $this->findOneBy([
             'brand' => null,
@@ -67,8 +141,23 @@ class NotificationTemplateDoctrineRepository extends ServiceEntityRepository imp
     /**
      * @return null | NotificationTemplateInterface
      */
-    public function findGenericMaxDailyUsageTemplate()
+    public function findMaxDailyUsageTemplateByCompany(CompanyInterface $company)
     {
+        $notificationTemplate = $company->getMaxDailyUsageNotificationTemplate();
+        if (!$notificationTemplate) {
+            $notificationTemplate = $company
+                ->getBrand()
+                ->getMaxDailyUsageNotificationTemplate();
+        }
+
+        $language = $company->getLanguage();
+
+        if ($notificationTemplate
+            && $notificationTemplate->getContentsByLanguage($language)
+        ) {
+            return $notificationTemplate;
+        }
+
         /** @var NotificationTemplateInterface $response */
         $response = $this->findOneBy([
             'brand' => null,
@@ -81,8 +170,27 @@ class NotificationTemplateDoctrineRepository extends ServiceEntityRepository imp
     /**
      * @return null | NotificationTemplateInterface
      */
-    public function findGenericVoicemailTemplate()
-    {
+    public function findVoicemailTemplateByCompany(
+        CompanyInterface $company,
+        LanguageInterface $language
+    ) {
+        // Get Company Notification Template for voicemails
+        $notificationTemplate = $company->getVoicemailNotificationTemplate();
+        if ($notificationTemplate) {
+            if ($notificationTemplate->getContentsByLanguage($language)) {
+                return $notificationTemplate;
+            }
+        }
+
+        // If company has no template associated, fallback to brand notification template for voicemails
+        $notificationTemplate = $company->getBrand()->getVoicemailNotificationTemplate();
+        if ($notificationTemplate) {
+            if ($notificationTemplate->getContentsByLanguage($language)) {
+                return $notificationTemplate;
+            }
+        }
+
+        // use generic notification template
         /** @var NotificationTemplateInterface $response */
         $response = $this->findOneBy([
             'brand' => null,
@@ -96,11 +204,17 @@ class NotificationTemplateDoctrineRepository extends ServiceEntityRepository imp
      * @inheritdoc
      * @see NotificationTemplateRepository::findTemplateByBalanceNotification
      */
-    public function findTemplateByBalanceNotification(BalanceNotificationInterface $balanceNotification)
-    {
+    public function findTemplateByBalanceNotification(
+        BalanceNotificationInterface $balanceNotification,
+        LanguageInterface $language
+    ) {
         $notificationTemplate = $balanceNotification->getNotificationTemplate();
         if ($notificationTemplate) {
-            return $notificationTemplate;
+            //make sure we've contents for required language,
+            // use default notification template otherwise
+            if ($notificationTemplate->getContentsByLanguage($language)) {
+                return $notificationTemplate;
+            }
         }
 
         return $this->findOneBy([

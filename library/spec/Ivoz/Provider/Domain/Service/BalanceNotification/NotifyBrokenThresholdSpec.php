@@ -151,7 +151,7 @@ class NotifyBrokenThresholdSpec extends ObjectBehavior
 
         $this
             ->notificationTemplateRepository
-            ->findTemplateByBalanceNotification($balanceNotification)
+            ->findTemplateByBalanceNotification($balanceNotification, $language)
             ->willReturn($notificationTemplate);
 
         $this

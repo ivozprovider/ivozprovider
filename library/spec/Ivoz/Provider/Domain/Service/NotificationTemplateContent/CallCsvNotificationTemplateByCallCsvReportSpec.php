@@ -2,24 +2,15 @@
 
 namespace spec\Ivoz\Provider\Domain\Service\NotificationTemplateContent;
 
-use Ivoz\Provider\Domain\Model\Brand\BrandInterface;
-use Ivoz\Provider\Domain\Model\CallCsvScheduler\CallCsvSchedulerInterface;
+use Ivoz\Provider\Domain\Model\CallCsvReport\CallCsvReportInterface;
 use Ivoz\Provider\Domain\Model\Company\CompanyInterface;
 use Ivoz\Provider\Domain\Model\Language\LanguageInterface;
+use Ivoz\Provider\Domain\Model\NotificationTemplate\NotificationTemplateInterface;
+use Ivoz\Provider\Domain\Model\NotificationTemplate\NotificationTemplateRepository;
 use Ivoz\Provider\Domain\Model\NotificationTemplateContent\NotificationTemplateContentInterface;
-use Ivoz\Provider\Domain\Model\Timezone\TimezoneInterface;
-use Ivoz\Provider\Domain\Service\CallCsvReport\EmailSender;
 use Ivoz\Provider\Domain\Service\NotificationTemplateContent\CallCsvNotificationTemplateByCallCsvReport;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
-use Ivoz\Core\Application\Service\EntityTools;
-use Ivoz\Core\Domain\Model\Mailer\Message;
-use Ivoz\Provider\Domain\Model\CallCsvReport\CallCsvReportDto;
-use Ivoz\Provider\Domain\Model\CallCsvReport\CallCsvReportInterface;
-use Ivoz\Provider\Domain\Model\NotificationTemplate\NotificationTemplateInterface;
-use Ivoz\Provider\Domain\Model\NotificationTemplate\NotificationTemplateRepository;
-use Ivoz\Core\Domain\Service\MailerClientInterface;
-use Psr\Log\LoggerInterface;
 use spec\HelperTrait;
 
 class CallCsvNotificationTemplateByCallCsvReportSpec extends ObjectBehavior
@@ -37,11 +28,6 @@ class CallCsvNotificationTemplateByCallCsvReportSpec extends ObjectBehavior
     protected $callCsvReport;
 
     /**
-     * @var CallCsvSchedulerInterface
-     */
-    protected $callCsvScheduler;
-
-    /**
      * @var CompanyInterface
      */
     protected $company;
@@ -57,11 +43,6 @@ class CallCsvNotificationTemplateByCallCsvReportSpec extends ObjectBehavior
     protected $callCsvNotificationTemplate;
 
     /**
-     * @var NotificationTemplateInterface
-     */
-    protected $genericCallCsvNotificationTemplate;
-
-    /**
      * @var NotificationTemplateContentInterface
      */
     protected $notificationTemplateContent;
@@ -74,20 +55,58 @@ class CallCsvNotificationTemplateByCallCsvReportSpec extends ObjectBehavior
         $this->beConstructedWith(
             $this->notificationTemplateRepository
         );
+    }
 
+    function it_is_initializable()
+    {
+        $this->shouldHaveType(CallCsvNotificationTemplateByCallCsvReport::class);
+    }
+
+    public function it_prioritizes_company_language()
+    {
         $this->prepareExecution();
+
+        $this
+            ->company
+            ->getLanguage()
+            ->willReturn($this->language)
+            ->shouldBeCalled();
+
+        $this->execute($this->callCsvReport);
+    }
+
+    public function it_searchs_notification_template()
+    {
+        $this->prepareExecution();
+
+        $this
+            ->notificationTemplateRepository
+            ->findCallCsvTemplateByCallCsvReport(
+                Argument::type(CallCsvReportInterface::class)
+            )
+            ->willReturn($this->callCsvNotificationTemplate)
+            ->shouldBeCalled();
+
+        $this->execute($this->callCsvReport);
+    }
+
+    public function it_returns_notification_template_content()
+    {
+        $this->prepareExecution();
+
+        $this
+            ->callCsvNotificationTemplate
+            ->getContentsByLanguage(
+                Argument::type(LanguageInterface::class)
+            )->shouldBeCalled();
+
+        $this
+            ->execute($this->callCsvReport)
+            ->shouldReturn($this->notificationTemplateContent);
     }
 
     protected function prepareExecution()
     {
-        $this->callCsvReport = $this->getTestDouble(
-            CallCsvReportInterface::class
-        );
-
-        $this->callCsvScheduler = $this->getTestDouble(
-            CallCsvSchedulerInterface::class
-        );
-
         $this->company = $this->getTestDouble(
             CompanyInterface::class
         );
@@ -96,11 +115,28 @@ class CallCsvNotificationTemplateByCallCsvReportSpec extends ObjectBehavior
             LanguageInterface::class
         );
 
-        $this->callCsvNotificationTemplate = $this->getTestDouble(
-            NotificationTemplateInterface::class
+        $this->getterProphecy(
+            $this->company,
+            [
+                'getLanguage' => $this->language,
+            ],
+            false
         );
 
-        $this->genericCallCsvNotificationTemplate = $this->getTestDouble(
+        $this->callCsvReport = $this->getTestDouble(
+            CallCsvReportInterface::class
+        );
+
+        $this->getterProphecy(
+            $this->callCsvReport,
+            [
+                'getBrand' => null,
+                'getCompany' => $this->company
+            ],
+            false
+        );
+
+        $this->callCsvNotificationTemplate = $this->getTestDouble(
             NotificationTemplateInterface::class
         );
 
@@ -110,164 +146,17 @@ class CallCsvNotificationTemplateByCallCsvReportSpec extends ObjectBehavior
 
         $this
             ->notificationTemplateRepository
-            ->findGenericCallCsvTemplate()
-            ->willReturn($this->genericCallCsvNotificationTemplate);
+            ->findCallCsvTemplateByCallCsvReport($this->callCsvReport)
+            ->willReturn($this->callCsvNotificationTemplate)
+            ->shouldBeCalled();
 
         $this
-            ->genericCallCsvNotificationTemplate
-            ->getContentsByLanguage(
-                Argument::type(LanguageInterface::class)
-            )
-            ->willReturn($this->notificationTemplateContent);
-
-        $this->getterProphecy(
-            $this->callCsvReport,
-            [
-                'getBrand' => null,
-                'getCallCsvScheduler' => $this->callCsvScheduler,
-                'getCompany' => $this->company
-            ],
-            false
-        );
-
-        $this->callCsvNotificationTemplate
+            ->callCsvNotificationTemplate
             ->getContentsByLanguage(
                 Argument::type(LanguageInterface::class)
             )
             ->willReturn(
                 $this->notificationTemplateContent
             );
-
-        $this->getterProphecy(
-            $this->company,
-            [
-                'getName' => 'Mikel',
-                'getLanguage' => $this->language,
-                'getCallCsvNotificationTemplate' => null,
-            ],
-            false
-        );
-    }
-
-    function it_is_initializable()
-    {
-        $this->shouldHaveType(CallCsvNotificationTemplateByCallCsvReport::class);
-    }
-
-    public function it_prioritizes_company_notification_template()
-    {
-        $this
-            ->company
-            ->getCallCsvNotificationTemplate()
-            ->willReturn($this->callCsvNotificationTemplate)
-            ->shouldBeCalled();
-
-
-        $this
-            ->notificationTemplateRepository
-            ->findGenericCallCsvTemplate()
-            ->shouldNotBeCalled();
-
-        $this->execute($this->callCsvReport);
-    }
-
-    public function it_searchs_for_scheduler_notification_template_when_no_company()
-    {
-        $brand = $this->getTestDouble(
-            BrandInterface::class
-        );
-
-        $this
-            ->callCsvReport
-            ->getCompany()
-            ->willReturn(null);
-
-        $this
-            ->callCsvReport
-            ->getBrand()
-            ->willReturn(
-                $brand
-            );
-
-        $this->getterProphecy(
-            $brand,
-            [
-                'getLanguage' => $this->language
-            ],
-            true
-        );
-
-        $this
-            ->callCsvScheduler
-            ->getCallCsvNotificationTemplate()
-            ->willReturn($this->callCsvNotificationTemplate)
-            ->shouldBeCalled();
-
-        $this->execute($this->callCsvReport);
-    }
-
-    public function it_uses_brand_notification_template_as_fallback()
-    {
-        $brand = $this->getTestDouble(
-            BrandInterface::class
-        );
-
-        $this
-            ->company
-            ->getCallCsvNotificationTemplate()
-            ->willReturn(null)
-            ->shouldBeCalled();
-
-        $this
-            ->company
-            ->getBrand()
-            ->willReturn($brand)
-            ->shouldBeCalled();
-
-        $this->getterProphecy(
-            $brand,
-            [
-                'getCallCsvNotificationTemplate' => $this->callCsvNotificationTemplate,
-            ],
-            true
-        );
-
-        $this->execute($this->callCsvReport);
-    }
-
-
-    public function it_uses_generic_notification_template_as_fallback()
-    {
-        $brand = $this->getTestDouble(
-            BrandInterface::class
-        );
-
-        $this
-            ->company
-            ->getCallCsvNotificationTemplate()
-            ->willReturn(null)
-            ->shouldBeCalled();
-
-        $this
-            ->company
-            ->getBrand()
-            ->willReturn($brand)
-            ->shouldBeCalled();
-
-        $this->getterProphecy(
-            $brand,
-            [
-                'getCallCsvNotificationTemplate' => null,
-            ],
-            true
-        );
-
-        $this
-            ->notificationTemplateRepository
-            ->findGenericCallCsvTemplate()
-            ->willReturn($this->genericCallCsvNotificationTemplate)
-            ->shouldBeCalled();
-
-        $this->execute($this->callCsvReport);
     }
 }
