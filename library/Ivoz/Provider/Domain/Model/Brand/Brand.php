@@ -59,17 +59,11 @@ class Brand extends BrandAbstract implements FileContainerInterface, BrandInterf
         return parent::setDomainUsers(trim($domainUsers));
     }
 
-    /**
-     * @return string
-     */
-    public function getLanguageCode()
+    public function getLanguageCode(): string
     {
-        $language = $this->getLanguage();
-        if (!$language) {
-            return 'en';
-        }
-
-        return $language->getIden();
+        return $this
+            ->getLanguage()
+            ->getIden();
     }
 
     /**

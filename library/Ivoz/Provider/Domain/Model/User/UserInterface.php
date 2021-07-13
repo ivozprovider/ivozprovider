@@ -138,11 +138,9 @@ interface UserInterface extends LoggableEntityInterface
     public function canBeCalled();
 
     /**
-     * Get user language
      * returns company language if empty
-     * @return \Ivoz\Provider\Domain\Model\Language\LanguageInterface
      */
-    public function getLanguage(): ?LanguageInterface;
+    public function getLanguage(): LanguageInterface;
 
     /**
      * Get User language code.

@@ -3,6 +3,7 @@
 namespace Ivoz\Provider\Domain\Model\BalanceNotification;
 
 use Ivoz\Core\Domain\Model\LoggableEntityInterface;
+use Ivoz\Provider\Domain\Model\Language\LanguageInterface;
 use Ivoz\Provider\Domain\Model\Company\CompanyInterface;
 use Ivoz\Provider\Domain\Model\Carrier\CarrierInterface;
 use Ivoz\Provider\Domain\Model\NotificationTemplate\NotificationTemplateInterface;
@@ -18,10 +19,7 @@ interface BalanceNotificationInterface extends LoggableEntityInterface
      */
     public function getChangeSet();
 
-    /**
-     * @return \Ivoz\Provider\Domain\Model\Language\LanguageInterface | null
-     */
-    public function getLanguage();
+    public function getLanguage(): ?LanguageInterface;
 
     /**
      * @return string
