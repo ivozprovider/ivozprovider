@@ -37,7 +37,7 @@ export default function App() {
           <Header loggedIn={!!token} />
           <main className={classes.content}>
             <div className={classes.appBarSpacer} />
-            <Container maxWidth={false} className={classes.container}>
+            <Container maxWidth={'lg'} className={classes.container}>
               <Grid container spacing={3}>
                 <Grid item xs={12}>
                   <Paper className={classes.paper}>

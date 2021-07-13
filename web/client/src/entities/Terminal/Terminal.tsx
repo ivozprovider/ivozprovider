@@ -5,9 +5,6 @@ import defaultEntityBehavior from 'entities/DefaultEntityBehavior';
 import Form from './Form'
 
 const properties:PropertiesList = {
-    'id': {
-        label: _('Id')
-    },
     'name': {
         label:_('Name'),
         helpText: _("Allowed characters: a-z, A-Z, 0-9, underscore and '*'"),
@@ -17,6 +14,7 @@ const properties:PropertiesList = {
     },
     'lastProvisionDate': {
         label: _('Last provision date'),
+        readOnly: true //@TODO set into API spec
     },
     'disallow': {
         label: _('Disallowed audio codecs'),

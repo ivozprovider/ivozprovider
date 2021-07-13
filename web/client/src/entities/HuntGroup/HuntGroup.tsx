@@ -66,7 +66,7 @@ const properties:PropertiesList = {
     },
 };
 
-const extension:EntityInterface = {
+const huntGroup:EntityInterface = {
     ...defaultEntityBehavior,
     icon: <SettingsApplications />,
     iden: 'HuntGroup',
@@ -76,4 +76,4 @@ const extension:EntityInterface = {
     Form
 };
 
-export default extension;
+export default huntGroup;

@@ -23,14 +23,14 @@ const properties:PropertiesList = {
     },
 };
 
-const extension:EntityInterface = {
+const conferenceRoom:EntityInterface = {
     ...defaultEntityBehavior,
     icon: <SettingsApplications />,
     iden: 'ConferenceRoom',
-    title: _('Conference Room', {count: 2}),
+    title: _('Conference room', {count: 2}),
     path: '/conference_rooms',
     properties,
     Form
 };
 
-export default extension;
+export default conferenceRoom;

@@ -8,7 +8,7 @@ class ApiClient {
         axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
     }
 
-    static async get(endpoint: string, params: any = undefined, ...callbacks: Array<AsyncFunction>) {
+    static async get(endpoint: string, params: any = undefined, callback: AsyncFunction) {
         try {
 
             const response = await axios.get(
@@ -21,15 +21,17 @@ class ApiClient {
                 }
             );
 
-            if (callbacks.length) {
-                for (const idx in callbacks) {
-                    await callbacks[idx](response.data, response.headers);
-                }
-            }
+            await callback(response.data, response.headers);
 
             return response;
 
         } catch (error) {
+
+            if (error.response.status === 403) {
+                await callback([], error.response.headers);
+                return;
+            }
+
             throw error.response;
         }
     }

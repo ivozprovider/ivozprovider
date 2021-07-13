@@ -1,9 +1,10 @@
-import defaultEntityBehavior from '../DefaultEntityBehavior';
+import defaultEntityBehavior, { FieldsetGroups } from '../DefaultEntityBehavior';
 import { useEffect, useState } from 'react';
 import LocutionSelectOptions from 'entities/Locution/SelectOptions';
 import CountrySelectOptions from 'entities/Country/SelectOptions';
 import ExtensionSelectOptions from 'entities/Extension/SelectOptions';
 import UserSelectOptions from 'entities/User/SelectOptions';
+import _ from 'services/Translations/translate';
 
 const Form = (props:any) => {
 
@@ -63,7 +64,32 @@ const Form = (props:any) => {
         [loadingFks, fkChoices]
     );
 
-    return (<DefaultEntityForm fkChoices={fkChoices} {...props}  />);
+    const groups:Array<FieldsetGroups> = [
+        {
+            legend: _('Basic Configuration'),
+            fields: [
+                'name',
+                'description',
+                'preventMissedCalls',
+                'allowCallForwards',
+                'strategy',
+                'ringAllTimeout',
+            ]
+        },
+        {
+            legend: _('No answer configuration'),
+            fields: [
+                'noAnswerLocution',
+                'noAnswerTargetType',
+                'noAnswerNumberCountry',
+                'noAnswerNumberValue',
+                'noAnswerExtension',
+                'noAnswerVoiceMailUser',
+            ]
+        },
+    ];
+
+    return (<DefaultEntityForm fkChoices={fkChoices} groups={groups} {...props}  />);
 }
 
 export default Form;

@@ -57,6 +57,7 @@ const properties:PropertiesList = {
         label: _('Friend value'),
     },
     'ddiProvider': {
+        //@TODO missing in the API
         label: _('DDI Provider'),
         helpText: _("This assignment has no functional purpose, it is just for DDI Provider <-> DDI navigation in some brand level sections.")
     },
@@ -80,7 +81,7 @@ const properties:PropertiesList = {
     },
 };
 
-const extension:EntityInterface = {
+const ddi:EntityInterface = {
     ...defaultEntityBehavior,
     icon: <SettingsApplications />,
     iden: 'Ddi',
@@ -90,4 +91,4 @@ const extension:EntityInterface = {
     Form
 };
 
-export default extension;
+export default ddi;

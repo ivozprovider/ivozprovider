@@ -5,6 +5,7 @@ import {
 } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 import { TransitionProps } from '@material-ui/core/transitions/transition';
+import _ from 'services/Translations/translate';
 
 const useStyles = makeStyles((theme: Theme) => ({
   appBar: {
@@ -34,10 +35,10 @@ export default function FullScreenDialog(props: any) {
               <CloseIcon />
             </IconButton>
             <Typography variant="h6" className={classes.title}>
-              Search
+              {_('Search')}
             </Typography>
             <Button autoFocus color="inherit" onClick={apply}>
-              Apply
+              {_('Apply')}
             </Button>
           </Toolbar>
         </AppBar>

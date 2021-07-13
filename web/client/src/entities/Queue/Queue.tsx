@@ -5,9 +5,6 @@ import defaultEntityBehavior from 'entities/DefaultEntityBehavior';
 import Form from './Form'
 
 const properties:PropertiesList = {
-    'id': {
-        label: _('Id')
-    },
     'name': {
         label:_('Name'),
         helpText: _("Allowed characters: a-z, A-Z, 0-9, underscore and '-'"),
@@ -45,7 +42,7 @@ const properties:PropertiesList = {
         helpText: _('Max number of unattended calls that this queue can have. When this value has been reached, full queue logic will be activated on new calls. Leave empty to disable.'),
     },
     'fullLocution': {
-        label:_('Name'),
+        label:_('Full queue Locution'),
     },
     'fullTargetType': {
         label:_('Full queue route'),
@@ -98,9 +95,17 @@ const properties:PropertiesList = {
     'weight': {
         label: _('Weight'),
     },
+    'preventMissedCalls': {
+        label: _('Prevent missed calls'),
+        enum: {
+            '0': _('No'),
+            '1': _('Yes'),
+        },
+        helpText: _("When 'Yes', calls will never generate a missed call. When 'No', missed calls will be prevented only for RingAll queues if someone answers."),
+    },
 };
 
-const terminal:EntityInterface = {
+const queue:EntityInterface = {
     ...defaultEntityBehavior,
     icon: <SettingsApplications />,
     iden: 'Queue',
@@ -110,4 +115,4 @@ const terminal:EntityInterface = {
     Form
 };
 
-export default terminal;
+export default queue;

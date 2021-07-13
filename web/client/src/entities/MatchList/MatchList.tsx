@@ -9,7 +9,7 @@ const properties:PropertiesList = {
     },
 };
 
-const terminal:EntityInterface = {
+const matchList:EntityInterface = {
     ...defaultEntityBehavior,
     icon: <SettingsApplications />,
     iden: 'MatchList',
@@ -18,4 +18,4 @@ const terminal:EntityInterface = {
     properties
 };
 
-export default terminal;
+export default matchList;

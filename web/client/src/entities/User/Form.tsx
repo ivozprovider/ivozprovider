@@ -1,4 +1,4 @@
-import defaultEntityBehavior from '../DefaultEntityBehavior';
+import defaultEntityBehavior, { FieldsetGroups } from '../DefaultEntityBehavior';
 import { useEffect, useState } from 'react';
 import TerminalSelectOptions from 'entities/Terminal/SelectOptions';
 import CallAclSelectOptions from 'entities/CallAcl/SelectOptions';
@@ -11,6 +11,7 @@ import LanguageSelectOptions from 'entities/Language/SelectOptions';
 import TransformationRuleSetSelectOptions from 'entities/TransformationRuleSet/SelectOptions';
 import MatchListSelectOptions from 'entities/MatchList/SelectOptions';
 import UserSelectOptions from './SelectOptions';
+import _ from 'services/Translations/translate';
 
 const Form = (props:any) => {
 
@@ -134,7 +135,76 @@ const Form = (props:any) => {
         [loadingFks, fkChoices]
     );
 
-    return (<DefaultEntityForm fkChoices={fkChoices} {...props}  />);
+    const groups:Array<FieldsetGroups> = [
+        {
+            legend: _('Personal data'),
+            fields: [
+                'name',
+                'language', //
+                'lastname',
+                'email',
+            ]
+        },
+        {
+            legend: _('Geographic Configuration'),
+            fields: [
+                //'language',
+                'timezone',
+                'transformationRuleSet',
+            ]
+        },
+        {
+            legend: _('Login Info'),
+            fields: [
+                'active',
+                'pass',
+                'gsQRCode',
+            ]
+        },
+        {
+            legend: _('Boss-Assistant'),
+            fields: [
+                'isBoss',
+                'bossAssistant',
+                'bossAssistantWhiteList',
+            ]
+        },
+        {
+            legend: _('Basic Configuration'),
+            fields: [
+                'terminal',
+                'extension',
+                'outgoingDdi',
+                'outgoingDdiRule',
+                'callAcl',
+                'doNotDisturb',
+                'maxCalls',
+                'externalIpCalls',
+                'multiContact',
+                'rejectCallMethod',
+            ]
+        },
+        {
+            legend: _('Voicemail'),
+            fields: [
+                'voicemailEnabled',
+                'voicemailLocution',
+                'voicemailSendMail',
+                'voicemailAttachSound',
+            ]
+        },
+        {
+            legend: _('Group belonging'),
+            fields: [
+                'pickupGroupIds',
+                'HuntGroupsRelUsers',
+            ]
+        }
+    ];
+
+    return (
+        <DefaultEntityForm fkChoices={fkChoices} groups={groups} {...props}  />
+    );
 }
 
 export default Form;

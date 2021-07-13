@@ -10,6 +10,7 @@ import EntityService from 'services/Entity/EntityService';
 import EntityInterface from 'entities/EntityInterface';
 import { useFormikType } from 'services/Form/types';
 import { useStoreActions } from 'easy-peasy';
+import _ from 'services/Translations/translate';
 
 interface EditProps extends EntityInterface {
   entityService: EntityService,
@@ -68,7 +69,7 @@ const EditForm = (props: EditProps) => {
         <EntityForm formik={formik} edit={true} classes={classes} {...props} />
         <br />
         <Button color="primary" variant="contained" type="submit">
-          Submit
+          {_('Save')}
         </Button>
         {error && <ErrorMessage message={error} />}
       </form>

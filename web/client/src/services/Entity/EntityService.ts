@@ -178,17 +178,17 @@ export default class EntityService
         return this.entityConfig.RowIcons;
     }
 
-    public getPropertyFilters(propertyName: string): Array<string>
+    public getPropertyFilters(propertyName: string, path?:string): Array<string>
     {
-        const filters = this.getFilters();
+        const filters = this.getFilters(path);
 
         return filters[propertyName] || [];
     }
 
-    private getFilters(): any
+    private getFilters(path?:string): any
     {
         const collectionAction = this.actions?.get?.collection || {};
-        const action = this.getFromModelList(collectionAction);
+        const action = this.getFromModelList(collectionAction, path);
         if (!action) {
             return {};
         }

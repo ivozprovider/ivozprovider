@@ -12,6 +12,9 @@ import ContentTableHead from './ContentTableHead';
 import FilterIconFactory from 'icons/FilterIconFactory';
 import ContentTableRow from './ContentTableRow';
 import EntityService from 'services/Entity/EntityService';
+import _ from 'services/Translations/translate';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import * as locales from '@material-ui/core/locale';
 
 interface propsType {
   loading?: boolean,
@@ -82,7 +85,7 @@ export default function ContentTable(props: propsType) {
       <div className={classes.title}>
         <div />
         <div className={classes.fabContainer}>
-          <Tooltip title="Search">
+          <Tooltip title={_('Search')}>
             <Fab
               color="secondary" size="small" variant="extended" className={classes.fab}
               onClick={filterButtonHandler}
@@ -106,6 +109,7 @@ export default function ContentTable(props: propsType) {
         handleClose={handleFiltersClose}
         currentFilter={criteria}
         setFilters={setWhereCondition}
+        path={path}
       />
 
       <div>
@@ -171,27 +175,29 @@ export default function ContentTable(props: propsType) {
           })}
         </TableBody>
       </Table>
-      <TablePagination
-        rowsPerPageOptions={[5, 10, 25]}
-        component="div"
-        count={parseInt(headers['x-total-items'], 10)}
-        rowsPerPage={rowsPerPage}
-        page={page - 1}
-        backIconButtonProps={{
-          'aria-label': 'previous page',
-        }}
-        nextIconButtonProps={{
-          'aria-label': 'next page',
-        }}
-        onChangePage={(event: any, newPage: any) => {
-          setPage(newPage + 1);
-          setLoading(true);
-        }}
-        onChangeRowsPerPage={(newRowsPerpage: any) => {
-          setRowsPerPage(newRowsPerpage.target.value);
-          setLoading(true);
-        }}
-      />
+      <ThemeProvider theme={(outerTheme) => createMuiTheme(outerTheme, locales['esES'])}>
+        <TablePagination
+          component="div"
+          page={page - 1}
+          rowsPerPage={rowsPerPage}
+          rowsPerPageOptions={[1, 10, 50, 100]}
+          count={parseInt(headers['x-total-items'], 10)}
+          backIconButtonProps={{
+            'aria-label': 'previous page',
+          }}
+          nextIconButtonProps={{
+            'aria-label': 'next page',
+          }}
+          onChangePage={(event: any, newPage: any) => {
+            setPage(newPage + 1);
+            setLoading(true);
+          }}
+          onChangeRowsPerPage={(newRowsPerpage: any) => {
+            setRowsPerPage(newRowsPerpage.target.value);
+            setLoading(true);
+          }}
+        />
+      </ThemeProvider>
     </React.Fragment >
   );
 }

@@ -75,7 +75,8 @@ const ContentFilterMenu = function (props: any) {
         open,
         handleClose,
         currentFilter,
-        setFilters
+        setFilters,
+        path
     } = props;
 
     const [loading, setLoading] = useState<boolean>(true);
@@ -128,7 +129,7 @@ const ContentFilterMenu = function (props: any) {
         >
             {!loading && Object.keys(columns).map((key: string, idx: number) => {
 
-                const propertyFilter = entityService.getPropertyFilters(key);
+                const propertyFilter = entityService.getPropertyFilters(key, path);
                 if (!propertyFilter.length) {
                     return null;
                 }

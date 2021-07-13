@@ -1,11 +1,12 @@
-import defaultEntityBehavior from '../DefaultEntityBehavior';
+import defaultEntityBehavior, { FieldsetGroups } from '../DefaultEntityBehavior';
 import { useEffect, useState } from 'react';
+import _ from 'services/Translations/translate';
 
 const Form = (props:any) => {
 
     const DefaultEntityForm = defaultEntityBehavior.Form;
 
-    const [fkChoices, setFkChoices] = useState<any>({});
+    const [fkChoices/*, setFkChoices*/] = useState<any>({});
     const [, setMounted] = useState<boolean>(true);
     const [loadingFks, setLoadingFks] = useState<boolean>(true);
 
@@ -33,7 +34,17 @@ const Form = (props:any) => {
         [loadingFks, fkChoices]
     );
 
-    return (<DefaultEntityForm fkChoices={fkChoices} {...props}  />);
+    const groups:Array<FieldsetGroups> = [
+        {
+            legend: _('ACL data'),
+            fields: [
+                'name',
+                'defaultPolicy',
+            ]
+        },
+    ];
+
+    return (<DefaultEntityForm fkChoices={fkChoices} groups={groups} {...props}  />);
 }
 
 export default Form;

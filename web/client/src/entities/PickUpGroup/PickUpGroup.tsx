@@ -11,14 +11,14 @@ const properties:PropertiesList = {
     //@TODO relUsers multiselect
 };
 
-const terminal:EntityInterface = {
+const pickUpGroup:EntityInterface = {
     ...defaultEntityBehavior,
     icon: <SettingsApplications />,
     iden: 'PickUpGroup',
-    title: _('Pick Up Group', {count: 2}),
+    title: _('Pick up group', {count: 2}),
     path: '/pick_up_groups',
     properties,
     Form
 };
 
-export default terminal;
+export default pickUpGroup;

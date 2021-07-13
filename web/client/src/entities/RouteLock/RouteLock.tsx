@@ -2,6 +2,7 @@ import SettingsApplications from '@material-ui/icons/SettingsApplications';
 import EntityInterface, { PropertiesList } from 'entities/EntityInterface';
 import _ from 'services/Translations/translate';
 import defaultEntityBehavior from 'entities/DefaultEntityBehavior';
+import Form from './Form';
 
 const properties:PropertiesList = {
     'name': {
@@ -25,13 +26,14 @@ const properties:PropertiesList = {
     //@TODO toggleExtension
 };
 
-const terminal:EntityInterface = {
+const routeLock:EntityInterface = {
     ...defaultEntityBehavior,
     icon: <SettingsApplications />,
     iden: 'RouteLock',
     title: _('Route Lock', {count: 2}),
     path: '/route_locks',
-    properties
+    properties,
+    Form
 };
 
-export default terminal;
+export default routeLock;

@@ -1,4 +1,4 @@
-import defaultEntityBehavior from '../DefaultEntityBehavior';
+import defaultEntityBehavior, { FieldsetGroups } from '../DefaultEntityBehavior';
 import { useEffect, useState } from 'react';
 import ExternalCallFilterSelectOptions from 'entities/ExternalCallFilter/SelectOptions';
 import UserSelectOptions from 'entities/User/SelectOptions';
@@ -13,6 +13,7 @@ import LanguageSelectOptions from 'entities/Language/SelectOptions';
 import QueueSelectOptions from 'entities/Queue/SelectOptions';
 import ConditionalRouteSelectOptions from 'entities/ConditionalRoute/SelectOptions';
 import RetailAccountSelectOptions from 'entities/RetailAccount/SelectOptions';
+import _ from 'services/Translations/translate';
 
 const Form = (props:any) => {
 
@@ -154,7 +155,48 @@ const Form = (props:any) => {
         [loadingFks, fkChoices]
     );
 
-    return (<DefaultEntityForm fkChoices={fkChoices} {...props}  />);
+    const groups:Array<FieldsetGroups> = [
+        {
+            legend: _('Number data'),
+            fields: [
+                'country',
+                'ddi',
+                'ddiProvider',
+                'displayName',
+                'language',
+            ]
+        },
+        {
+            legend: _('Filters data'),
+            fields: [
+                'externalCallFilter',
+            ]
+        },
+        {
+            legend: _('Routing configuration'),
+            fields: [
+                'routeType',
+                'user',
+                'fax',
+                'ivr',
+                'huntGroup',
+                'conferenceRoom',
+                'friendValue',
+                'queue',
+                'residentialDevice',
+                'conditionalRoute',
+                'retailAccount',
+            ]
+        },
+        {
+            legend: _('Recording data'),
+            fields: [
+                'recordCalls',
+            ]
+        },
+    ];
+
+    return (<DefaultEntityForm fkChoices={fkChoices} groups={groups} {...props}  />);
 }
 
 export default Form;

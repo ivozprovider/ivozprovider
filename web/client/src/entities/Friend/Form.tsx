@@ -1,9 +1,11 @@
-import defaultEntityBehavior from '../DefaultEntityBehavior';
+import defaultEntityBehavior, { FieldsetGroups } from '../DefaultEntityBehavior';
 import { useEffect, useState } from 'react';
 import CallAclSelectOptions from 'entities/CallAcl/SelectOptions';
 import TransformationRuleSetSelectOptions from 'entities/TransformationRuleSet/SelectOptions';
 import DdiSelectOptions from 'entities/Ddi/SelectOptions';
 import LanguageSelectOptions from 'entities/Language/SelectOptions';
+import _ from 'services/Translations/translate';
+
 const Form = (props:any) => {
 
     const DefaultEntityForm = defaultEntityBehavior.Form;
@@ -23,7 +25,7 @@ const Form = (props:any) => {
                     setFkChoices((fkChoices:any) => {
                         return {
                             ...fkChoices,
-                            callACL: options,
+                            callAcl: options,
                         }
                     });
                 });
@@ -65,7 +67,51 @@ const Form = (props:any) => {
         [loadingFks, fkChoices]
     );
 
-    return (<DefaultEntityForm fkChoices={fkChoices} {...props}  />);
+    const groups:Array<FieldsetGroups> = [
+        {
+            legend: _('Basic Configuration'),
+            fields: [
+                'directConnectivity',
+                'priority',
+                'description',
+                'name',
+                'password',
+                //'interCompany',
+                'transport',
+                'ip',
+                'port',
+                //'alwaysApplyTransformations',
+            ]
+        },
+        {
+            legend: _('Geographic Configuration'),
+            fields: [
+                'language',
+                'transformationRuleSet',
+            ]
+        },
+        {
+            legend: _('Outgoing Configuration'),
+            fields: [
+                'callAcl',
+                'outgoingDdi',
+            ]
+        },
+                {
+            legend: _('Advanced Configuration'),
+            fields: [
+                //'fromUser',
+                'fromDomain',
+                'allow',
+                'ddiIn',
+                't38Passthrough',
+                //'rtpEncryption',
+                //'multiContact',
+            ]
+        },
+    ];
+
+    return (<DefaultEntityForm fkChoices={fkChoices} groups={groups} {...props}  />);
 }
 
 export default Form;

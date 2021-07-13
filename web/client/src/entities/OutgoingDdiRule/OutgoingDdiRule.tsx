@@ -20,14 +20,14 @@ const properties:PropertiesList = {
     }
 };
 
-const terminal:EntityInterface = {
+const outgoingDdiRule:EntityInterface = {
     ...defaultEntityBehavior,
     icon: <SettingsApplications />,
     iden: 'OutgoingDdiRule',
-    title: _('Outgoing Ddi Rule', {count: 2}),
+    title: _('Outgoing DDI Rule', {count: 2}),
     path: '/outgoing_ddi_rules',
     properties,
     Form
 };
 
-export default terminal;
+export default outgoingDdiRule;

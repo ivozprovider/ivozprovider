@@ -11,7 +11,7 @@ const properties:PropertiesList = {
     'locution': {
         label:_('Locution'),
     },
-    'routeType': {
+    'routetype': {
         label: _('Route type'),
         enum: {
             'user': _('User'),
@@ -31,7 +31,7 @@ const properties:PropertiesList = {
     'huntGroup': {
         label: _('Hunt Group'),
     },
-    'voiceMailUser': {
+    'voicemailUser': {
         label: _('Voicemail'),
     },
     'user': {
@@ -40,10 +40,10 @@ const properties:PropertiesList = {
     'numberCountry': {
         label: _('Country'),
     },
-    'numberValue': {
+    'numbervalue': {
         label: _('Number'),
     },
-    'friendValue': {
+    'friendvalue': {
         label: _('Friend value'),
     },
     'queue': {
@@ -60,7 +60,7 @@ const properties:PropertiesList = {
     },
 };
 
-const extension:EntityInterface = {
+const conditionalRoute:EntityInterface = {
     ...defaultEntityBehavior,
     icon: <SettingsApplications />,
     iden: 'ConditionalRoute',
@@ -70,4 +70,4 @@ const extension:EntityInterface = {
     Form
 };
 
-export default extension;
+export default conditionalRoute;

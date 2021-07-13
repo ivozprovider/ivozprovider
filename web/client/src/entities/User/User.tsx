@@ -5,9 +5,6 @@ import defaultEntityBehavior from 'entities/DefaultEntityBehavior';
 import Form from './Form'
 
 const properties:PropertiesList = {
-    'id': {
-        label: _('Id'),
-    },
     'name': {
         label: _('Name'),
     },
@@ -44,7 +41,7 @@ const properties:PropertiesList = {
         label: _('Outgoing DDI Rule'),
         helpText: _("Rules to manipulate outgoingDDI when user directly calls to external numbers."),
     },
-    'callACL': {
+    'callAcl': {
         label: _('Call ACL'),
     },
     'doNotDisturb': {
@@ -76,7 +73,7 @@ const properties:PropertiesList = {
     'voicemailAttachSound': {
         label: _('Voicemail attach sound'),
     },
-    'PickUpRelUsers': {
+    'pickupGroupIds': {
         label: _('Pick Up Groups'),
     },
     'language': {

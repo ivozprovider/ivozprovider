@@ -41,12 +41,14 @@ export interface ScalarProperty {
     default?: any,
     enum?: Array<string|number>|KeyValList,
     label: string|React.ReactElement,
+    required: boolean,
     helpText?: string|React.ReactElement,
 }
 
 export interface FkProperty {
     $ref: string,
     label: string|React.ReactElement,
+    required: boolean,
     helpText?: string,
 }
 
